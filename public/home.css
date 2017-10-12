@@ -1,0 +1,191 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  font-family: sans-serif;
+}
+
+.bodywrapper {
+  width: 95vw;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.section {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-bottom: gray dashed 2px;
+  border-top: gray dashed 2px;
+  padding: 15px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  border: black 1.5px solid;
+}
+
+.section div {
+  border: none;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.topic {
+  display: flex;
+  align-self: center;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.topic input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2.5px;
+  font-size: 20px;
+  width: 450px;
+  text-align: center;
+}
+
+.topic label {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.talkHeader {
+  align-self: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.talkHeader label {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.talkHeader input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: black solid 2.5px;
+  font-size: 20px;
+  width: 450px;
+  text-align: center;
+}
+
+.content div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.contentColumn div {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 7px;
+}
+
+.contentColumn input {
+  border: none;
+  outline: none;
+  border-bottom: black 2.5px solid;
+  font-size: 18px;
+  font-weight: bold;
+  height: 40px;
+}
+
+.contentColumn textarea {
+  border: none;
+  outline: none;
+  border: black 2.5px solid;
+  font-size: 14px;
+  width: 250px;
+}
+
+
+textarea {
+  min-height: 150px;
+}
+
+label {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.inputfield3 {
+  width: 250px;
+}
+
+.button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  filter: contrast(110%) ;
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.button2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.button2:hover {
+  transform: scale(1.1);
+  filter: contrast(110%) ;
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.button1 {
+  filter: opacity(0%);
+  width: 195px;
+  height: 30px;
+  position: absolute;
+  border: black solid 2px;
+  z-index: 3;
+  cursor: pointer;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.submit {
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.submit:hover {
+  transform: scale(1.12);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}

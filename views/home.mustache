@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+  <script>
+    function add_section4() {
+      document.getElementById('wrapper6').innerHTML +=
+        `<div class="topic">
+        <label>
+        Section Topic 4:
+        </label>
+        <input class="inputfield" type="text" name="logout" />
+        </div>
+
+        <div class="section">
+
+
+<div class="buttonContainer">
+        <div class="button">
+          <input class="button1" type="button" id="more_fields" onclick="add_content4();">
+          <img src="/down.png"/>
+          Add content to this section
+        </input>
+      </div>
+
+      <div class="button">
+      <input class="button1" type="button" id="more_fields" onclick="add_section4();">
+      <img src="/down.png"/>
+      Add another section
+      </input>
+      </div>
+</div>
+          <div class="content">
+            <div class="contentColumn" id="wrapper"></div>
+          </div>
+        </div>`
+    }
+  </script>
+  <script>
+    function add_section2() {
+      document.getElementById('wrapper4').innerHTML +=
+        `<div class="topic">
+        <label>
+        Section Topic 3:
+        </label>
+        <input class="inputfield" type="text" name="logout" />
+        </div>
+
+        <div class="section">
+
+<div class="buttonContainer">
+        <div class="button">
+          <input class="button1" type="button" id="more_fields" onclick="add_content3();">
+          <img src="/down.png"/>
+          Add content to this section
+        </input>
+      </div>
+
+
+
+      <div class="button">
+      <input class="button1" type="button" id="more_fields" onclick="add_section4();">
+      <img src="/down.png"/>
+      Add another section
+      </input>
+      </div>
+      </div>
+
+      <div class="content">
+        <div class="contentColumn" id="wrapper3"></div>
+      </div>
+    </div>`
+    }
+  </script>
+  <script>
+    function add_section() {
+      document.getElementById('wrapper2').innerHTML +=
+        `<div class="topic">
+        <label>
+        Section Topic 2:
+        </label>
+        <input class="inputfield" type="text" name="logout" />
+        </div>
+
+        <div class="section">
+
+<div class="buttonContainer">
+        <div class="button">
+          <input class="button1" type="button" id="more_fields" onclick="add_content2();">
+          <img src="/down.png"/>
+          Add content to this section
+        </input>
+      </div>
+
+
+      <div class="button">
+      <input class="button1" type="button" id="more_fields" onclick="add_section2();">
+      <img src="/down.png"/>
+      Add another section
+      </input>
+      </div>
+      </div>
+
+
+                      <div class="content">
+                        <div class="contentColumn" id="wrapper"></div>
+                      </div>
+                    </div>
+`
+    }
+  </script>
+  <script>
+    function add_content4() {
+      document.getElementById('wrapper7').innerHTML +=
+        `<div class="contentColumn">
+          <label>
+            Title, Type or Author:
+          </label>
+          <input class="inputfield3" type="text" name="logout" />
+          <label>
+            Content Text:
+          </label>
+          <textarea class="inputfield2" type="text" name="logout"></textarea>
+        </div>`
+    }
+  </script>
+  <script>
+    function add_content3() {
+      document.getElementById('wrapper5').innerHTML +=
+        `<div class="contentColumn">
+          <label>
+            Title, Type or Author:
+          </label>
+          <input class="inputfield3" type="text" name="logout" />
+          <label>
+            Content Text:
+          </label>
+          <textarea class="inputfield2" type="text" name="logout"></textarea>
+        </div>`
+    }
+  </script>
+  <script>
+    function add_content2() {
+      document.getElementById('wrapper3').innerHTML +=
+        `<div class="contentColumn">
+          <label>
+            Title, Type or Author:
+          </label>
+          <input class="inputfield3" type="text" name="logout" />
+          <label>
+            Content Text:
+          </label>
+          <textarea class="inputfield2" type="text" name="logout"></textarea>
+        </div>`
+    }
+  </script>
+  <script>
+    function add_content() {
+      document.getElementById('wrapper').innerHTML +=
+        `<div class="contentColumn">
+          <label>
+            Title, Type or Author:
+          </label>
+          <input class="inputfield3" type="text" name="logout" />
+          <label>
+            Content Text:
+          </label>
+          <textarea class="inputfield2" type="text" name="logout"></textarea>
+        </div>`
+    }
+  </script>
+</head>
+
+<body>
+  <div class="bodywrapper">
+
+
+    <div class="talkHeader">
+      <label>Talk topic:</label>
+      <form class="form1" action="/talkform" method="post">
+        <input class="inputfield" type="text" name="logout" />
+    </div>
+
+    <div class="section">
+      <div class="topic">
+        <label>
+              Section Topic 1:
+            </label>
+        <input class="inputfield" type="text" name="logout" />
+      </div>
+
+      <div class="buttonContainer">
+          <div class="button">
+            <input class="button1" type="button" id="more_fields" onclick="add_content();">
+            <img src="/down.png" /> Add content to this section
+            </input>
+          </div>
+
+          <div class="button">
+            <input class="button1" type="button" id="more_fields" onclick="add_section();">
+            <img src="/down.png" /> Add another section
+            </input>
+          </div>
+      </div>
+
+    </div>
+
+    <div class="content">
+      <div class="contentColumn" id="wrapper"></div>
+    </div>
+
+    <div class="section" id="wrapper2">
+
+    </div>
+
+    <div class="content">
+      <div class="contentColumn" id="wrapper3"></div>
+    </div>
+
+
+
+    <div class="section" id="wrapper4">
+
+    </div>
+
+
+    <div class="content">
+      <div class="contentColumn" id="wrapper5"></div>
+    </div>
+
+
+
+    <div class="section" id="wrapper6"></div>
+
+    <div class="content">
+      <div class="contentColumn" id="wrapper7"></div>
+    </div>
+
+  <input class="submit" type="submit">
+</form>
+</body>
+
+</html>
