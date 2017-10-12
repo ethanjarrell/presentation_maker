@@ -4,7 +4,8 @@
   "description": "I'm trying to make a program that would make it easier to make a presentation/talk for church and other events",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "Ethan Jarrell",
   "license": "ISC",
