@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Talk Maker</title>
+    <link rel="stylesheet" href="/home.css">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+    <img class="logo" src="/logo.png">
+    <a class="link" href="/talkname">start a new talk</a>
+    <a class="link" href="/mytalks">organize a talk</a>
+    <a class="link" href="/completed">view completed talks</a>
+
+    <form class="plink" action="/logout" method="post">
+
+          <input class="submitbtn1" value="logout" type="submit">
+        </form>
+    </div>
+<div class="bodywrapper2">
+<label class="labelContainer2">Choose a talk name from the ones listed below to begin organizing:</label>
+{{#talknames}}
+<ul>
+    <li>
+      <a href="/completed/{{talk_name}}">{{talk_name}}</a>
+    </li>
+</ul>
+{{/talknames}}
+
+  </body>
+
+  </html>
+
+</div>
+</body>
+
+</html>

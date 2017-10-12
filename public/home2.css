@@ -1,0 +1,125 @@
+* {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  font-family: sans-serif;
+}
+
+.bodywrapper {
+  width: 95vw;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.talkContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sectionHeading {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.outerSectionContainer {
+  background-color: #e0e0e0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: black solid 1.5px;
+  margin: 10px;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+}
+
+.topicContainer {
+  background-color: white;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: black solid 1px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 4px 3px 11px -1px rgba(0,0,0,0.92);
+}
+
+.listTitle {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding-bottom: 4px;
+  border-bottom: solid black 1.5px;
+}
+
+.listItem {
+  font-size: 15px;
+}
+
+.logo {
+  width: 100px;
+  height: 60px;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: flex-start;
+  z-index: -10;
+  width: 97vw;
+  height: 100px;
+  top: 5px;
+  border: black solid 2px;
+}
+
+.submitbtn1 {
+  background-color: none;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.submitbtn1:hover {
+  transform: scale(1.1);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+.plink input{
+  background: transparent;
+}
+
+a {
+  z-index: 2;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+a:hover {
+  transform: scale(1.1);
+  color: white;
+  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
