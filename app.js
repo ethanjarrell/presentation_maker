@@ -1,3 +1,7 @@
+//=====MODELS======//
+const Talk = require('./models/talk.js');
+//=================//
+
 //====LIST DEPENDENCIES===//
 const express = require('express');
 const parseurl = require('parseurl');
@@ -9,7 +13,7 @@ const mustacheExpress = require('mustache-express');
 const session = require('express-session');
 // const cors = require('cors')
 const app = express();
-const url = 'mongodb://localhost:27017/talkmaker';
+const url = 'mongodb://EthanJarrell:EJ3102nl1@ds117485.mlab.com:17485/presentation-maker';
 //=========================//
 
 //====SET APP ENGINE===//
@@ -61,6 +65,27 @@ app.get('/', function(req, res) {
 
 app.get('/home', function(req, res) {
   res.render('home')
+});
+
+//==========================//
+
+//====POST TALK===//
+
+app.post('/talkform', function(req, res) {
+  Talk.create({
+    talk_topic: req.body.talk_topic,
+    section1_topic: req.body.section1_topic,
+    topic1: req.body.topic1,
+    textarea1: req.body.textarea1,
+    topic2: req.body.topic2,
+    textarea2: req.body.textarea2,
+    topic3: req.body.topic3,
+    textarea3: req.body.textarea3,
+    topic4: req.body.topic4,
+    textarea4: req.body.textarea4,
+  }).then(talk => {
+  res.json(talk)
+});
 });
 
 //==========================//

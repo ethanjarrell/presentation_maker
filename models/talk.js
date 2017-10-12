@@ -3,21 +3,42 @@ const mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
 
-const endingMineSchema = new Schema({
+const talkSchema = new Schema({
 
-beginning: {
+talk_topic: {
   type: String,
 },
-text: {
+section1_topic: {
   type: String,
 },
-end: {
+topic1: {
+  type: String,
+},
+textarea1: {
+  type: String,
+},
+topic2: {
+  type: String,
+},
+textarea2: {
+  type: String,
+},
+topic3: {
+  type: String,
+},
+textarea3: {
+  type: String,
+},
+topic4: {
+  type: String,
+},
+textarea4: {
   type: String,
 },
 
 
 })
 
-const EndingMine = mongoose.model('endingMine', endingMineSchema);
+const Talk = mongoose.model('talk', talkSchema);
 
-module.exports = EndingMine;
+module.exports = Talk;
