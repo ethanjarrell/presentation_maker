@@ -21,6 +21,17 @@
   flex-flow: column wrap;
 }
 
+.link2 {
+  background-color: #e0e0e0;
+  border: black solid 1px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
 .section {
   display: flex;
   flex-flow: column wrap;
