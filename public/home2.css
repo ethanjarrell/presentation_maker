@@ -12,6 +12,14 @@
   flex-flow: column wrap;
 }
 
+.listTitle:empty {
+  display: none;
+}
+
+.listItem:empty {
+  display: none;
+}
+
 .talkContainer {
   display: flex;
   flex-flow: column wrap;
@@ -133,4 +141,22 @@ a:hover {
   transform: scale(1.1);
   color: white;
   text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
+}
+
+label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.labelContainer2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+.labelContainer3 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }

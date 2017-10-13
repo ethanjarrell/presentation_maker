@@ -10,7 +10,7 @@ user: {
   ref: 'User',
 },
 talk_name: {
-  type: String,
+  type: mongoose.Schema.Types.Mixed,
   ref: 'Talkname',
 },
 talk_topic: {

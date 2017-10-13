@@ -21,6 +21,39 @@
   flex-flow: column wrap;
 }
 
+.bodywrapper4 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodywrapper6 {
+  width: 90vw;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  border-left: solid black 2px;
+}
+
+.form1 {
+  width: 100%;
+}
+
+a img {
+  width: 90%;
+}
+
+.mormon {
+  height: 60px;
+}
+
+.byu {
+  height: 60px;
+}
+
 .link2 {
   background-color: #e0e0e0;
   border: black solid 1px;
@@ -30,6 +63,29 @@
   align-items: center;
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.link4 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.navbar3 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: flex-start;
+  margin-top: 25px;
+  width: 100px;
+  height: 700px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .section {
