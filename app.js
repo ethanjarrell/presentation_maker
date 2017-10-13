@@ -13,7 +13,7 @@ const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 const mustacheExpress = require('mustache-express');
 const session = require('express-session');
-// const cors = require('cors')
+const cors = require('cors')
 const app = express();
 const url = process.env.MONGOLAB_URI;
 //=========================//
@@ -23,6 +23,7 @@ const url = process.env.MONGOLAB_URI;
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', './views');
+app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -75,7 +76,7 @@ app.get('/', function(req, res) {
 
 //====RENDER LANDING PAGE===//
 
-app.get('/landing', function(req, res) {
+app.get('/landing', cors(), function(req, res) {
   res.render('landing')
 });
 
@@ -173,7 +174,7 @@ app.post('/signup', function(req, res) {
 
 //====RENDER DISPLAY PAGE===//
 
-app.get('/home2', function(req, res) {
+app.get('/home2', cors(), function(req, res) {
   Talk.find({}).then(function(talks){
     res.render('home2', {
       talks: talks,
@@ -185,7 +186,7 @@ app.get('/home2', function(req, res) {
 
 //====RENDER MY TALKS PAGE===//
 
-app.get('/mytalks', function(req, res) {
+app.get('/mytalks', cors(), function(req, res) {
   Talkname.find({
     user: req.session.username
   }).then(function(talknames){
@@ -199,7 +200,7 @@ app.get('/mytalks', function(req, res) {
 
 //====RENDER TALKNAME===//
 
-app.get('/talkname', function(req, res) {
+app.get('/talkname', cors(), function(req, res) {
   res.render('talkname')
 });
 
@@ -229,7 +230,7 @@ app.get('/completed', function(req, res) {
 
 //====RENDER COMPLETED TALKS===//
 
-app.get('/completed/:talkname', function(req, res) {
+app.get('/completed/:talkname', cors(), function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
     Talkname.findOne({talk_name: req.params.talkname}).then(function(talknames){
       Talk.findOne({talk_name: req.params.talkname}).then(function(talks){
@@ -247,7 +248,7 @@ app.get('/completed/:talkname', function(req, res) {
 
 //====POST TALKNAME===//
 
-app.post('/talkname', function(req, res) {
+app.post('/talkname', cors(), function(req, res) {
   Talkname.create({
     user: req.session.username,
     talk_name: req.body.talk_name,
@@ -260,7 +261,7 @@ app.post('/talkname', function(req, res) {
 
 //====RENDER HOME PAGE===//
 
-app.get('/:talkname', function(req, res) {
+app.get('/:talkname', cors(), function(req, res) {
   User.findOne({username: req.session.username}).then(function(users) {
     Talkname.findOne({talk_name: req.params.talkname}).then(function(talknames) {
       res.render('home', {
@@ -275,7 +276,7 @@ app.get('/:talkname', function(req, res) {
 
 //====POST TALK===//
 
-app.post('/:talkname', function(req, res) {
+app.post('/:talkname', cors(), function(req, res) {
   Talk.create({
     user: req.session.username,
     talk_name: req.params.talkname,
