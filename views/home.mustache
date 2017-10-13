@@ -491,19 +491,21 @@
   <div class="bodywrapper4">
 
     <div class="navbar3">
-    <a class="link4" href="http://www.dictionary.com/"><img class="dict" src="/dictionary.png" />dictionary</a>
-    <a class="link4" href="https://www.lds.org/?lang=eng"><img class="lds" src="/lds.png" />lds.org</a>
-    <a class="link4" href="https://speeches.byu.edu/"><img class="byu" src="/byu.png" />byu speeches</a>
-    <a class="link4" href="https://rsc.byu.edu/"><img class="byu" src="/byu.png" />byu religious studies</a>
-    <a class="link4" href="https://bookofmormoncentral.org/"><img class="mormon" src="/mormon.png" />book of mormon central</a>
+      {{#talknames}}
+    <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_name}}?s=t"><img class="dict" src="/dictionary.png" />dictionary</a>
+    <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_name}}"><img class="lds" src="/lds.png" />lds.org</a>
+    <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_name}}&stp=1"><img class="byu" src="/byu.png" />byu speeches</a>
+    <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_name}}"><img class="byu" src="/byu.png" />byu religious studies</a>
+    <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_name}}"><img class="mormon" src="/mormon.png" />book of mormon central</a>
+    {{/talknames}}
     </div>
 
 <div class="bodywrapper6">
 <form class="form1" action="/{{#talknames}}{{talk_name}}{{/talknames}}" method="post">
 
-  {{#talknames}}<div class="labelContainer"><label>Talk Name: </label><h2>{{talk_name}}</h2></div>{{/talknames}}
+  {{#talknames}}<div class="labelContainer"><label>Talk Topic: </label><h2>{{talk_name}}</h2></div>{{/talknames}}
     <div class="talkHeader">
-      <label>Talk topic:</label>
+      <label>Talk Name:</label>
 
         <input class="inputfield" type="text" name="talk_topic" />
     </div>
