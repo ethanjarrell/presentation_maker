@@ -477,6 +477,101 @@
         </div>`
     }
   </script>
+  <script>
+
+  function add_new2() {
+    document.getElementById('add_div2').innerHTML +=
+      `<div id="definition" class="fetch_results"></div>`
+
+{{#talknames}}
+  fetch('https://od-api.oxforddictionaries.com:443/api/v1/inflections/en/{{talk_name}}')
+  {{/talknames}}
+.then(
+  function(response) {
+    if (response.status != 200) {
+      console.log('Looks like there was a problem. Status Code' + response.status);
+      return;
+    }
+
+  response.json().then(function(data){
+    let name = data.noun;
+    console.log(name);
+
+
+
+
+
+  for (var i = 0; i < 1; i++) {
+  let profile = data.noun[i];
+
+        let markup = `<div class ="profile">
+          <div class="synContainer">
+            {{#talknames}}
+            <label class="defin">Synonyms for {{talk_name}}</label>
+            {{/talknames}}
+            <div class="synonyms">${data.noun.syn}</div>
+
+          </div>
+       </div>`
+      console.log(markup);
+      document.getElementById('definition').innerHTML += markup;
+
+
+
+  }
+
+});
+});
+}
+  </script>
+  <script>
+
+  function add_new() {
+    document.getElementById('add_div').innerHTML +=
+      `<div id="synonyms" class="fetch_results"></div>`
+
+{{#talknames}}
+  fetch('http://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_name}}/json')
+  {{/talknames}}
+.then(
+  function(response) {
+    if (response.status != 200) {
+      console.log('Looks like there was a problem. Status Code' + response.status);
+      return;
+    }
+
+  response.json().then(function(data){
+    let name = data.noun;
+    console.log(name);
+
+
+
+
+
+  for (var i = 0; i < 1; i++) {
+  let profile = data.noun[i];
+
+        let markup = `<div class ="profile">
+          <div class="synContainer">
+            {{#talknames}}
+            <label class="defin">Synonyms for {{talk_name}}</label>
+            {{/talknames}}
+            <div class="synonyms">${data.noun.syn}</div>
+
+          </div>
+       </div>`
+      console.log(markup);
+      document.getElementById('synonyms').innerHTML += markup;
+
+
+
+  }
+
+});
+});
+}
+
+  </script>
 </head>
 
 <body>
@@ -492,15 +587,38 @@
 
     <div class="navbar3">
       {{#talknames}}
-    <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_name}}?s=t"><img class="dict" src="/dictionary.png" />dictionary</a>
-    <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_name}}"><img class="lds" src="/lds.png" />lds.org</a>
-    <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_name}}&stp=1"><img class="byu" src="/byu.png" />byu speeches</a>
-    <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_name}}"><img class="byu" src="/byu.png" />byu religious studies</a>
-    <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_name}}"><img class="mormon" src="/mormon.png" />book of mormon central</a>
+    <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_name}}?s=t"><img class="dict" src="/dictionary.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_name}}"><img class="lds" src="/lds.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=bofm&type=word"><img class="bom" src="/BofM.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=dc-testament&type=word"><img class="lds" src="/DC.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=pgp&type=word"><img class="pgp" src="/PofGP.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=nt&type=word"><img class="lds" src="/NT.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=text&query={{talk_name}}&testament=ot&type=word&options=headings"><img class="lds" src="/OT.png" /></a>
+    <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_name}}&stp=1"><img class="byu" src="/byu.png" /></a>
+    <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_name}}"><img class="byu" src="/byu2.png" /></a>
+    <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_name}}"><img class="mormon" src="/mormon.png" /></a>
     {{/talknames}}
     </div>
 
 <div class="bodywrapper6">
+  <div id="add_div2" class="dynamic">
+  <div id="add_div" class="dynamic">
+
+  </div>
+<div class="buttonWrapper">
+  <div class="button">
+    <input class="button1" type="button" id="more_fields" onclick="add_new();">
+      <img src="/down.png" /> get synonyms
+    </input>
+  </div>
+
+  <div class="button">
+    <input class="button1" type="button" id="more_fields" onclick="add_new2();">
+      <img src="/down.png" /> get definitions
+    </input>
+  </div>
+</div>
+
 <form class="form1" action="/{{#talknames}}{{talk_name}}{{/talknames}}" method="post">
 
   {{#talknames}}<div class="labelContainer"><label>Talk Topic: </label><h2>{{talk_name}}</h2></div>{{/talknames}}
@@ -605,6 +723,7 @@
 </form>
 </div>
 </div>
+<script src="/scripts/main.js"></script>
 </body>
 
 </html>

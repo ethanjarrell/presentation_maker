@@ -54,6 +54,14 @@ a img {
   height: 60px;
 }
 
+.pgp {
+  height: 60px;
+}
+
+.bom {
+  height: 60px;
+}
+
 .link2 {
   background-color: #e0e0e0;
   border: black solid 1px;
@@ -75,6 +83,10 @@ a img {
   text-align: center;
 }
 
+.link4:hover {
+  filter: brightness(190%) contrast(145%) invert(100%);
+}
+
 .navbar3 {
   display: flex;
   flex-flow: column wrap;
@@ -83,9 +95,52 @@ a img {
   align-self: flex-start;
   margin-top: 25px;
   width: 100px;
-  height: 700px;
+  overflow-y: scroll;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.dynamic {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.fetch_results {
+
+  width: 100%;
+}
+
+.synContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.defin {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.synonyms div{
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .section {
