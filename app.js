@@ -205,6 +205,14 @@ app.get('/talkname', function(req, res) {
 
 //==========================//
 
+//==== LOGOUT ===//
+
+app.get('/logout', function(req, res) {
+  res.render('logout')
+});
+
+//==========================//
+
 //====RENDER COMPLETED===//
 
 app.get('/completed', function(req, res) {
@@ -296,16 +304,6 @@ app.post('/:talkname', function(req, res) {
   }).then(talks => {
   res.redirect('/home2')
 });
-});
-
-//==========================//
-
-//==== LOGOUT ===//
-
-app.post('/logout', function(req, res) {
-  req.session.destroy(function(err) {})
-  res.redirect('/landing');
-  console.log(req.session);
 });
 
 //==========================//
