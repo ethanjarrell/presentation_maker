@@ -246,6 +246,38 @@ app.get('/completed/:talkname', cors(), function(req, res) {
 
 //==========================//
 
+//====RENDER SAVED===//
+
+app.get('/saved', function(req, res) {
+  Talkname.find({
+    user: req.session.username
+  }).then(function(talknames){
+    res.render('saved', {
+      talknames: talknames,
+    });
+  });
+});
+
+//==========================//
+
+//====RENDER SAVED TALKS===//
+
+app.get('/saved/:talkname', cors(), function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talkname.findOne({talk_name: req.params.talkname}).then(function(talknames){
+      Talk.findOne({talk_name: req.params.talkname}).then(function(talks){
+  res.render('saved_files', {
+    users: users,
+    talknames: talknames,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
 //====POST TALKNAME===//
 
 app.post('/talkname', cors(), function(req, res) {

@@ -20,15 +20,35 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js">
+</script>
+<script type="text/javascript" src="/scripts/jquery-1.10.2.js">
+</script>
+<script>
+var doc = new jsPDF();
+var specialElementHandlers = {
+  '#editor': function (element, renderer) {
+      return true;
+  }
+};
 
+$('#cmd').click(function () {
+  doc.fromHTML($('#content').html(), 15, 15, {
+      'width': 170,
+          'elementHandlers': specialElementHandlers
+  });
+  doc.save('sample-file.pdf');
+});
+</script>
 </head>
 
 <body>
   <div class="navbar">
   <img class="logo" src="/logo.png">
-  <a class="link" href="/talkname">start a new talk</a>
-  <a class="link" href="/mytalks">organize a talk</a>
-  <a class="link2" href="/completed">view completed talks</a>
+  <a class="link" href="/talkname">create a talk topic</a>
+  <a class="link" href="/mytalks">make a new talk</a>
+  <a class="link" href="/saved">saved talks</a>
+  <a class="link2" href="/completed">completed talks</a>
   <a class="link" href="/logout">logout</a>
   </div>
   {{#talknames}}<div class="labelContainer3"><label>Talk Topic:</label><label class="labelContainer2">{{talk_name}}</label></div>{{/talknames}}
@@ -1024,6 +1044,10 @@ function drop(ev) {
 </div>
 </div>
   {{/talks}}
+
+  <div id="editor"></div>
+
+  <button id="cmd">Generate PDF</button>
 
 </body>
 

@@ -13,11 +13,13 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  margin: 0px;
+  background-color: #262630;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #a0d9ff;
   cursor: pointer;
   font-size: 45px;
   font-weight: bold;

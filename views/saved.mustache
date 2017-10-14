@@ -12,17 +12,17 @@
     <div class="navbar">
     <img class="logo" src="/logo.png">
     <a class="link" href="/talkname">create a talk topic</a>
-    <a class="link2" href="/mytalks">make a new talk</a>
-    <a class="link" href="/saved">saved talks</a>
+    <a class="link" href="/mytalks">make a new talk</a>
+    <a class="link2" href="/saved">saved talks</a>
     <a class="link" href="/completed">completed talks</a>
     <a class="link" href="/logout">logout</a>
     </div>
 <div class="bodywrapper2">
-<label class="labelContainer2">Choose a talk name from the ones listed below to begin organizing:</label>
+<label class="labelContainer2">Choose an available talk:</label>
 {{#talknames}}
 <ul>
     <li>
-      <a href={{talk_name}}>{{talk_name}}</a>
+      <a href="/saved/{{talk_name}}">{{talk_name}}</a>
     </li>
 </ul>
 {{/talknames}}
