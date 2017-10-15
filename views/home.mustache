@@ -531,7 +531,7 @@
       `<div id="synonyms" class="fetch_results"></div>`
 
 {{#talknames}}
-  fetch('http://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_name}}/json')
+  fetch('https://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_name}}/json')
   {{/talknames}}
 .then(
   function(response) {
@@ -720,7 +720,7 @@
       <div class="contentColumn" id="wrapper19"></div>
     </div>
 
-  <input class="submit" type="submit">
+  <input class="submit" value="save talk" type="submit">
 </form>
 </div>
 </div>

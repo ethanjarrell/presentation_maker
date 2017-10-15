@@ -42,6 +42,43 @@ body {
   border-left: solid black 2px;
 }
 
+.content2 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sectionContainer1 {
+  padding: 15px;
+  border-radius: 10px;
+  border: black solid 1.5px;
+  background-color: #dbdbdb;
+}
+
+.inputContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+  border: black solid 1px;
+  background-color: #b2b2b2;
+}
+
+.inputContainer input {
+  border: black solid 1.5px;
+  background-color: white;
+  margin-bottom: 8px;
+}
+
+.inputContainer textarea {
+  border: black solid 1.5px;
+  background-color: white;
+}
+
+
 .form1 {
   width: 100%;
 }
@@ -214,6 +251,13 @@ a img {
 .content div {
   display: flex;
   flex-flow: row wrap;
+}
+
+.contentColumn2 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .contentColumn div {
@@ -451,6 +495,32 @@ li {
 .inputfield4:focus {
   transform: scaleX(1.1);
   background-color: white;
+}
+
+.contentColumn2 {
+  margin: 8px;
+}
+
+.contentColumn2 input {
+  background-color: white;
+  border: black solid 1px;
+  width: 200px;
+}
+
+.contentColumn2 label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.contentColumn2 textarea {
+  background-color: white;
+  border: black solid 1px;
+  width: 200px;
+}
+
+.topic input {
+  background-color: white;
+  border: black solid 1px;
 }
 
 .talk_name {

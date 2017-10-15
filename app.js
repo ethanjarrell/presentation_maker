@@ -341,6 +341,41 @@ app.post('/:talkname', cors(), function(req, res) {
 
 //==========================//
 
+//====UPDATE TALK===//
+
+app.post('/saved/:talkname', cors(), function(req, res) {
+  Talk.findOneAndUpdate({
+    user: req.session.username,
+    talk_name: req.params.talkname,
+    talk_topic: req.body.talk_topic,
+    section1_topic: req.body.section1_topic,
+    topic1: req.body.topic1,
+    textarea1: req.body.textarea1,
+    topic2: req.body.topic2,
+    textarea2: req.body.textarea2,
+    topic3: req.body.topic3,
+    textarea3: req.body.textarea3,
+    topic4: req.body.topic4,
+    textarea4: req.body.textarea4,
+    topic5: req.body.topic5,
+    textarea5: req.body.textarea5,
+    topic6: req.body.topic6,
+    textarea6: req.body.textarea6,
+    topic7: req.body.topic7,
+    textarea7: req.body.textarea7,
+    topic8: req.body.topic8,
+    textarea8: req.body.textarea8,
+    topic9: req.body.topic9,
+    textarea9: req.body.textarea9,
+    topic10: req.body.topic10,
+    textarea10: req.body.textarea10,
+  }).then(talks => {
+  res.redirect('/saved')
+});
+});
+
+//==========================//
+
 //====APP LISTEN ON ENVIRONMENT PORT===//
 
 app.listen(process.env.PORT || 3000);
