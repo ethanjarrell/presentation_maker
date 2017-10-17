@@ -483,9 +483,9 @@
     document.getElementById('add_div2').innerHTML +=
       `<div id="definition" class="fetch_results"></div>`
 
-{{#talknames}}
-  fetch('https://od-api.oxforddictionaries.com:443/api/v1/inflections/en/{{talk_name}}')
-  {{/talknames}}
+{{#talktopics}}
+  fetch('https://od-api.oxforddictionaries.com:443/api/v1/inflections/en/{{talk_topic}}')
+  {{/talktopics}}
 .then(
   function(response) {
     if (response.status != 200) {
@@ -506,9 +506,9 @@
 
         let markup = `<div class ="profile">
           <div class="synContainer">
-            {{#talknames}}
-            <label class="defin">Synonyms for {{talk_name}}</label>
-            {{/talknames}}
+            {{#talktopics}}
+            <label class="defin">Synonyms for {{talk_topic}}</label>
+            {{/talktopics}}
             <div class="synonyms">${data.noun.syn}</div>
 
           </div>
@@ -530,9 +530,9 @@
     document.getElementById('add_div').innerHTML +=
       `<div id="synonyms" class="fetch_results"></div>`
 
-{{#talknames}}
-  fetch('https://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_name}}/json')
-  {{/talknames}}
+{{#talktopics}}
+  fetch('https://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_topic}}/json')
+  {{/talktopics}}
 .then(
   function(response) {
     if (response.status != 200) {
@@ -553,9 +553,9 @@
 
         let markup = `<div class ="profile">
           <div class="synContainer">
-            {{#talknames}}
-            <label class="defin">Synonyms for {{talk_name}}</label>
-            {{/talknames}}
+            {{#talktopics}}
+            <label class="defin">Synonyms for {{talk_topic}}</label>
+            {{/talktopics}}
             <div class="synonyms">${data.noun.syn}</div>
 
           </div>
@@ -576,9 +576,8 @@
 
 <body>
   <div class="navbar">
-  <img class="logo" src="/logo.png">
-  <a class="link" href="/talkname">create a talk topic</a>
-  <a class="link2" href="/mytalks">make a new talk</a>
+  <img class="logo" src="/logo2.png">
+  <a class="link" href="/createp1">new talk</a>
   <a class="link" href="/saved">saved talks</a>
   <a class="link" href="/completed">completed talks</a>
   <a class="link" href="/logout">logout</a>
@@ -587,18 +586,18 @@
   <div class="bodywrapper4">
 
     <div class="navbar3">
-      {{#talknames}}
-    <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_name}}?s=t"><img class="dict" src="/dictionary.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_name}}"><img class="lds" src="/lds.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=bofm&type=word"><img class="bom" src="/BofM.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=dc-testament&type=word"><img class="lds" src="/DC.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=pgp&type=word"><img class="pgp" src="/PofGP.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_name}}&testament=nt&type=word"><img class="lds" src="/NT.png" /></a>
-    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=text&query={{talk_name}}&testament=ot&type=word&options=headings"><img class="lds" src="/OT.png" /></a>
-    <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_name}}&stp=1"><img class="byu" src="/byu.png" /></a>
-    <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_name}}"><img class="byu" src="/byu2.png" /></a>
-    <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_name}}"><img class="mormon" src="/mormon.png" /></a>
-    {{/talknames}}
+      {{#talktopics}}
+    <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_topic}}?s=t"><img class="dict" src="/dictionary.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_topic}}"><img class="lds" src="/lds.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=bofm&type=word"><img class="bom" src="/BofM.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=dc-testament&type=word"><img class="lds" src="/DC.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=pgp&type=word"><img class="pgp" src="/PofGP.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=nt&type=word"><img class="lds" src="/NT.png" /></a>
+    <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=text&query={{talk_topic}}&testament=ot&type=word&options=headings"><img class="lds" src="/OT.png" /></a>
+    <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_topic}}&stp=1"><img class="byu" src="/byu.png" /></a>
+    <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_topic}}"><img class="byu" src="/byu2.png" /></a>
+    <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_topic}}"><img class="mormon" src="/mormon.png" /></a>
+    {{/talktopics}}
     </div>
 
 <div class="bodywrapper6">
@@ -606,6 +605,7 @@
   <div id="add_div" class="dynamic">
 
   </div>
+  <div class="homelabeldiv1">
 <div class="buttonWrapper">
   <div class="button">
     <input class="button1" type="button" id="more_fields" onclick="add_new();">
@@ -619,15 +619,29 @@
     </input>
   </div>
 </div>
+{{#talktopics}}
+<div class="homelabeldiv">
+  <h3>
+    Talk Topic:
+  </h3>
+  <h2>
+    {{talk_topic}}
+  </h2>
+</div>
+<div class="homelabeldiv">
+  <h3>
+    Talk Name:
+  </h3>
+  <h2>
+    {{talk_name}}
+  </h2>
+</div>
+{{/talktopics}}
+</div>
+<form class="form1" action="/talk/talkid/{{#talkids}}{{talkid}}{{/talkids}}" method="post">
 
-<form class="form1" action="/{{#talknames}}{{talk_name}}{{/talknames}}" method="post">
 
-  {{#talknames}}<div class="labelContainer"><label>Talk Topic: </label><h2>{{talk_name}}</h2></div>{{/talknames}}
-    <div class="talkHeader">
-      <label>Talk Name:</label>
 
-        <input class="inputfield" type="text" name="talk_topic" />
-    </div>
 
     <div class="section">
       <div class="topic">

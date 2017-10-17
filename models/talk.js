@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var timestamps = require('mongoose-timestamp');
 
 
 let Schema = mongoose.Schema;
@@ -9,12 +10,17 @@ user: {
   type: String,
   ref: 'User',
 },
+talkid: {
+  type: String,
+  ref: 'Talkid',
+},
 talk_name: {
-  type: mongoose.Schema.Types.Mixed,
+  type: String,
   ref: 'Talkname',
 },
 talk_topic: {
   type: String,
+  ref: 'Talktopic',
 },
 section1_topic: [{
   type: String,
@@ -79,10 +85,14 @@ topic10: [{
 textarea10: [{
   type: String,
 }],
+time: {
+  type : Date,
+  default: Date.now,
+},
 
 
 })
-
+talkSchema.plugin(timestamps);
 const Talk = mongoose.model('talk', talkSchema);
 
 module.exports = Talk;

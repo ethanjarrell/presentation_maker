@@ -42,6 +42,152 @@ body {
   border-left: solid black 2px;
 }
 
+.bodywrapper7 {
+  display: flex;
+  width: 90vw;
+  height: 80vh;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-left: solid black 2px;
+}
+
+.bodywrapper8 {
+  display: flex;
+  width: 80vw;
+  height: 80vh;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10vw;
+}
+
+.bodywrapper9 {
+  width: 85vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
+.savedContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #dddddd;
+  border: black solid 2px;
+  border-radius: 13px;
+}
+
+.savedContainer label{
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-style: solid;
+  margin-right: 10px;
+}
+
+.savedContainer div{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.homelabeldiv {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.homelabeldiv h3{
+  text-decoration: underline;
+}
+
+.homelabeldiv h2{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.homelabeldiv1 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.steps {
+  width: 480px;
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+td {
+  text-align: center;
+  word-wrap:break-word;
+}
+
+.blink2 {
+  cursor: pointer;
+  display: flex;
+  width: 90vw;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0e0e0;
+  box-shadow: 4px 3px 30px 0px rgba(0,0,0,0.92);
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.blink2:hover {
+  filter: invert(100%);
+}
+
+.button6 {
+  margin: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button6:hover {
+  transform: scale(1.1);
+}
+
+#talkname {
+  text-align: center;
+}
+
+tr {
+  display: block;
+  border: black solid 1.5px;
+}
+
+th {
+  width: 120px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  text-align: center;
+}
+
+td {
+  width: 120px;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  text-align: center;
+}
+
 .content2 {
   display: flex;
   flex-flow: row wrap;
@@ -539,6 +685,7 @@ li {
   font-size: 23px;
   font-weight: bold;
   margin: 15px;
+  text-align: center;
 }
 
 .labelContainer label {

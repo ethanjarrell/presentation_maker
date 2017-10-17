@@ -4,7 +4,7 @@ var timestamps = require('mongoose-timestamp');
 
 let Schema = mongoose.Schema;
 
-const talknameSchema = new Schema({
+const talktopicSchema = new Schema({
 
 user: {
   type: String,
@@ -16,9 +16,13 @@ talkid: {
 },
 talk_name: {
   type: String,
-}
+  ref: 'Talkname',
+},
+talk_topic: {
+  type: String,
+},
 })
-talknameSchema.plugin(timestamps);
-const Talkname = mongoose.model('talkname', talknameSchema);
+talktopicSchema.plugin(timestamps);
+const Talktopic = mongoose.model('talktopic', talktopicSchema);
 
-module.exports = Talkname;
+module.exports = Talktopic;

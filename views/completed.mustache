@@ -10,28 +10,30 @@
   <body>
 
     <div class="navbar">
-    <img class="logo" src="/logo.png">
-    <a class="link" href="/talkname">create a talk topic</a>
-    <a class="link" href="/mytalks">make a new talk</a>
+    <img class="logo" src="/logo2.png">
+    <a class="link" href="/createp1">new talk</a>
     <a class="link" href="/saved">saved talks</a>
     <a class="link2" href="/completed">completed talks</a>
     <a class="link" href="/logout">logout</a>
     </div>
-<div class="bodywrapper2">
-<label class="labelContainer2">Choose an available talk:</label>
-{{#talknames}}
-<ul>
-    <li>
-      <a href="/completed/{{talk_name}}">{{talk_name}}</a>
-    </li>
-</ul>
-{{/talknames}}
 
-  </body>
 
-  </html>
+    <div class="bodywrapper9">
+      <label class="labelContainer2">Choose an available talk:</label>
+    {{#talktopics}}
+      <div class="savedContainer">
+        <div><label>talk name:</label><span>{{talk_name}}</span></div>
+          <div><label>talk ID:</label><span>{{talkid}}</span></div>
+              <div><label>talk topic:</label><span>{{talk_topic}}</span></div>
+                <div><label>created at:</label><span>{{createdAt}}</span></div>
+                  <div><label>updated at:</label><span>{{updatedAt}}</span></div>
+                    <div><a href="completed/{{talkid}}">select this talk</a></div>
+                </div>
+    {{/talktopics}}
 
-</div>
+
+
+    </div>
 </body>
 
 </html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+
+
+</head>
+
+<body>
+  <div class="navbar">
+  <img class="logo" src="/logo2.png">
+  <a class="link2" href="/createp1">new talk</a>
+
+  <a class="link" href="/saved">saved talks</a>
+  <a class="link" href="/completed">completed talks</a>
+  <a class="link" href="/logout">logout</a>
+  </div>
+
+  <div class="bodywrapper7">
+
+<img class="steps" src="/step2.png" />
+
+    <form class="blink">
+          <label class="talk_name">You entered:</label>
+          {{#talknames}}
+          <input id="talkid" class="inputfield4" value="{{talk_name}}" type="text" disabled />
+          <label class="talk_name">Is this correct?</label>
+          <a href="/createp4/{{#talkids}}{{talkid}}{{/talkids}}/{{talk_name}}">Yes<a/><a>No<a/>
+          {{/talknames}}
+        </form>
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var timestamps = require('mongoose-timestamp');
 
 
 let Schema = mongoose.Schema;
@@ -33,7 +34,7 @@ const userSchema = new Schema({
     type: String,
   },
 })
-
+userSchema.plugin(timestamps);
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
