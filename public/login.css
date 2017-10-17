@@ -48,7 +48,7 @@ form {
 }
 
 .inputfield {
-  background-color: transparent;
+  background-color: white;
   border: none;
   border-bottom: white solid 2.5px;
   font-size: 23px;
@@ -60,7 +60,7 @@ form {
 }
 
 .inputfield:focus {
-  background-color: #a0d9ff;
+  background-color: white;
   border: white: solid 3px;
   transform: scaleX(1.3);
 }
