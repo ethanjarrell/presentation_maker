@@ -391,7 +391,7 @@ app.get('/createp6', function(req, res) {
 app.get('/logout', function(req, res) {
   User.find({username: req.session.username}).then(function(users){
   req.session.destroy(function(err) {
-  res.render('logout')
+  res.redirect('/login')
 })
 })
 });
@@ -423,6 +423,24 @@ app.get('/completed/:talkid', function(req, res) {
     Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
       Talk.findOne({talkid: req.params.talkid}).then(function(talks){
   res.render('home2', {
+    users: users,
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
+//====RENDER COMPLETED TALKS===//
+
+app.get('/slideshow/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('slideshow', {
     users: users,
     talktopics: talktopics,
     talks: talks,

@@ -93,42 +93,6 @@ a img {
   filter: brightness(190%) contrast(145%) invert(100%);
 }
 
-
-.homelabeldiv2 {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.homelabeldiv {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-}
-
-.homelabeldiv h3{
-  text-decoration: underline;
-}
-
-.homelabeldiv h2{
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-
-.homelabeldiv1 {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
 .navbar3 {
   display: flex;
   flex-flow: column wrap;
