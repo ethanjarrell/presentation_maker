@@ -21,6 +21,12 @@ body {
   width: 500px;
 }
 
+.video:hover {
+  transform: scale(1.05);
+  filter: brightness(125%) invert(80%);
+
+}
+
 .buttons {
   margin-left: 3vw;
 }
