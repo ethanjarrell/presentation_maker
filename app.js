@@ -567,7 +567,7 @@ app.post('/talk/talkid/:talkid', function(req, res) {
     topic10: req.body.topic10,
     textarea10: req.body.textarea10,
   }).then(talks => {
-  res.redirect('/home2')
+  res.redirect('/completed')
 });
 });
 
