@@ -112,11 +112,19 @@ body {
   margin-bottom: 5px;
 }
 
-.homelabeldiv {
+.homelabeldiv2 {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+}
+
+.homelabeldiv {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
 }
 
 .homelabeldiv h3{
@@ -136,6 +144,7 @@ body {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .steps {

@@ -78,8 +78,13 @@ $('#cmd').click(function () {
 <button id="cmd">generate PDF</button>
 </div>
 <div id="target">
-  {{#talktopics}}<div class="labelContainer3"><label class="labelContainer2">{{talkid}}</label></div>
-  <div class="title">{{talk_topic}}</div>
+  {{#talktopics}}
+  <div class="labelContainer3">
+    <label>Talk Title:</label>
+    <label class="labelContainer2">{{talkid}}</label>
+    <label>Talk Topic:</label>
+    <label class="labelContainer2">{{talk_topic}}</label>
+  </div>
   {{/talktopics}}
     {{#talks}}<div class="talkContainer">
 
@@ -1073,6 +1078,7 @@ $('#cmd').click(function () {
 </div>
 </div>
   {{/talks}}
+</div>
 </div>
 </body>
 
