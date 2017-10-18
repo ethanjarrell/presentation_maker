@@ -69,8 +69,8 @@ $('#cmd').click(function () {
   <img class="logo" src="/logo2.png">
   <a class="link" href="/createp1">new</a>
   <a class="link" href="/saved">saved</a>
-  <a class="link2" href="/completed">completed</a>
-  <a class="link" href="/shared">shared</a>
+  <a class="link" href="/completed">completed</a>
+  <a class="link2" href="/shared">shared</a>
   <a class="link" href="/account">account</a>
   <a class="link" href="/logout">logout</a>
   </div>
@@ -78,11 +78,9 @@ $('#cmd').click(function () {
 <button id="cmd">generate PDF</button>
 </div>
 <div id="target">
-  {{#talktopics}}<div class="labelContainer3"><label class="labelContainer2">{{talkid}}</label></div>
-  <div class="title">{{talk_topic}}</div>
-  {{/talktopics}}
+  {{#talktopics}}<div class="labelContainer3"><label class="labelContainer2">{{talk_name}}</label></div>{{/talktopics}}
     {{#talks}}<div class="talkContainer">
-
+      <div class="title">{{talk_topic}}</div>
       <div class="outerSectionContainer"  >
       <div class="sectionHeading">{{section1_topic.0}}</div>
       <div class="sectionContainer">

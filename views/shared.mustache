@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Talk Maker</title>
+    <link rel="stylesheet" href="/home.css">
+  </head>
+
+  <body>
+
+    <div class="navbar">
+    <img class="logo" src="/logo2.png">
+    <a class="link" href="/createp1">new</a>
+    <a class="link" href="/saved">saved</a>
+    <a class="link" href="/completed">completed</a>
+    <a class="link2" href="/shared">shared</a>
+    <a class="link" href="/account">account</a>
+    <a class="link" href="/logout">logout</a>
+    </div>
+
+
+<div class="bodywrapper9">
+  <label class="labelContainer2">Talks that have been shared with you:</label>
+  {{#talks}}
+
+    <div class="savedContainer">
+      <div><label>user:</label><span>{{user}}</span></div>
+          <div><label>talk title:</label><span>{{talkid}}</span></div>
+              <div><label>created at:</label><span>{{createdAt}}</span></div>
+                <div><label>updated at:</label><span>{{updatedAt}}</span></div>
+                  <div><a href="shared/{{talkid}}">select this talk</a></div>
+              </div>
+
+  {{/talks}}
+
+
+
+</div>
+</body>
+
+</html>

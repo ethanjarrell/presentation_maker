@@ -5,31 +5,36 @@
     <meta charset="utf-8">
     <title>The Talk Maker</title>
     <link rel="stylesheet" href="/home.css">
+
   </head>
 
   <body>
 
     <div class="navbar">
     <img class="logo" src="/logo2.png">
-    <a class="link" href="/createp1">new talk</a>
-    <a class="link" href="/saved">saved talks</a>
-    <a class="link2" href="/completed">completed talks</a>
+    <a class="link" href="/createp1">new</a>
+    <a class="link" href="/saved">saved</a>
+    <a class="link2" href="/completed">completed</a>
+    <a class="link" href="/shared">shared</a>
+    <a class="link" href="/account">account</a>
     <a class="link" href="/logout">logout</a>
     </div>
 
 
+
     <div class="bodywrapper9">
-      <label class="labelContainer2">Choose an available talk:</label>
-    {{#talktopics}}
-      <div class="savedContainer">
-        <div><label>talk name:</label><span>{{talk_name}}</span></div>
-          <div><label>talk ID:</label><span>{{talkid}}</span></div>
-              <div><label>talk topic:</label><span>{{talk_topic}}</span></div>
-                <div><label>created at:</label><span>{{createdAt}}</span></div>
-                  <div><label>updated at:</label><span>{{updatedAt}}</span></div>
-                    <div><a href="completed/{{talkid}}">select this talk</a></div>
-                </div>
-    {{/talktopics}}
+      <label class="labelContainer2">Select a completed talk:</label>
+      {{#talktopics}}
+        <div class="savedContainer">
+          <div><label>for:</label><span>{{talk_name}}</span></div>
+                <div><label>talk topic:</label><span>{{talk_topic}}</span></div>
+                <div><label>talk title:</label><span>{{talkid}}</span></div>
+                  <div><label>created at:</label><span>{{createdAt}}</span></div>
+                    <div><label>updated at:</label><span>{{updatedAt}}</span></div>
+                      <div><a href="completed/{{talkid}}">select this talk</a></div>
+
+                  </div>
+      {{/talktopics}}
 
 
 

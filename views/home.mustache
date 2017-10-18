@@ -478,6 +478,28 @@
     }
   </script>
   <script>
+    function add_email() {
+      document.getElementById('new_email').innerHTML +=
+        `<div class="contentColumn3">
+          <label>
+            add email addresses of users to share this talk with
+          </label>
+          <div class="row_of_input">
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          <input class="inputfield7" type="email" name="shared" />
+          </div>
+        </div>`
+    }
+  </script>
+  <script>
 
   function add_new2() {
     document.getElementById('add_div2').innerHTML +=
@@ -580,6 +602,7 @@
   <a class="link" href="/createp1">new talk</a>
   <a class="link" href="/saved">saved talks</a>
   <a class="link" href="/completed">completed talks</a>
+  <a class="link" href="/shared">public talks</a>
   <a class="link" href="/logout">logout</a>
   </div>
 
@@ -640,7 +663,23 @@
 </div>
 <form class="form1" action="/talk/talkid/{{#talkids}}{{talkid}}{{/talkids}}" method="post">
 
+  <label>share talk?</label>
 
+  <div class="buttonWrapper5">
+    <div class="button">
+      <input class="button1" type="button" id="more_fields" onclick="add_email();">
+        <img src="/down.png" /> Yes
+      </input>
+    </div>
+    <div class="button">
+      <input class="button1" type="button" >
+        <img src="/down.png" /> No
+      </input>
+    </div>
+    </div>
+    <div id="new_email">
+
+    </div>
 
 
     <div class="section">

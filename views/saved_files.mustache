@@ -121,10 +121,11 @@ let profile = data.noun[i];
 <body>
   <div class="navbar">
   <img class="logo" src="/logo2.png">
-  <a class="link" href="/createp1">new talk</a>
-
-  <a class="link2" href="/saved">saved talks</a>
-  <a class="link" href="/completed">completed talks</a>
+  <a class="link" href="/createp1">new</a>
+  <a class="link2" href="/saved">saved</a>
+  <a class="link" href="/completed">completed</a>
+  <a class="link" href="/shared">shared</a>
+  <a class="link" href="/account">account</a>
   <a class="link" href="/logout">logout</a>
   </div>
 
@@ -173,18 +174,35 @@ let profile = data.noun[i];
 </div>
 <div class="homelabeldiv">
 <h3>
-  Talk Name:
+  Talk Title:
 </h3>
 <h2>
-  {{talk_name}}
+  {{talkid}}
 </h2>
 </div>
 {{/talktopics}}
 </div>
 
 <form class="form1" action="/saved/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
-
 {{#talks}}
+  <div class="contentColumn3">
+    <label>
+      add email addresses of users to share this talk with
+    </label>
+    <div class="row_of_input">
+    <input class="inputfield7" type="text" value="{{shared.0}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.1}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.2}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.3}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.4}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.5}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.6}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.7}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.8}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.9}}" name="shared" />
+    </div>
+  </div>
+
   <div class="talkHeader">
 
 

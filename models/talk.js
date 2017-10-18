@@ -22,6 +22,9 @@ talk_topic: {
   type: String,
   ref: 'Talktopic',
 },
+shared: [{
+  type: String,
+}],
 section1_topic: [{
   type: String,
 }],

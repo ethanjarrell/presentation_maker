@@ -5,6 +5,9 @@ var timestamps = require('mongoose-timestamp');
 let Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+  email: {
+    type: String,
+  },
   username: {
     type: String,
     required: true,

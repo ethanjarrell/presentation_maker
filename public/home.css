@@ -16,6 +16,19 @@ body {
   flex-flow: column wrap;
 }
 
+.row_of_input {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.talk_info {
+  color: #666666;
+  font-weight: lighter;
+}
+
 .bodywrapper2 {
   width: 95vw;
   display: flex;
@@ -316,6 +329,13 @@ a img {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  align-items: center;
+}
+
+.buttonWrapper5 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -641,6 +661,36 @@ li {
 .inputfield4:focus {
   transform: scaleX(1.1);
   background-color: white;
+}
+
+.inputfield7 {
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  border: black solid 1.7px;
+  width: 250px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.inputfield7:focus {
+  transform: scaleX(1.1);
+  background-color: white;
+}
+
+.contentColumn3 {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#new_email {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .contentColumn2 {

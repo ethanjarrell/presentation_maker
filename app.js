@@ -162,24 +162,72 @@ app.post('/login', function(req, res) {
 
 app.post('/signup', function(req, res) {
   User.create({
+    email: req.body.email,
     username: req.body.username,
     password: req.body.password,
   }).then(function(user) {
     req.username = user.username;
     req.session.authenticated = true;
 }).then(user => {
-  res.redirect('/thanks')
+  res.redirect('/login')
 });
 });
+
+//==========================//
+
+//====RENDER ACCOUNTS PAGE===//
+
+app.get('/account', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.find({user: req.session.username}).then(function(talktopics){
+    res.render('account', {
+      users: users,
+      talktopics: talktopics,
+    });
+  });
+});
+});
+
+//==========================//
+
+//====RENDER ACCOUNTS UPDATE PAGE===//
+
+// app.get('/change/:username', function(req, res) {
+//   User.findOne({username: req.session.username}).then(function(users){
+//     Talktopic.find({}).then(function(talktopics){
+//     res.render('account_change', {
+//       users: users,
+//       talktopics: talktopics,
+//     });
+//   });
+// });
+// });
+
+//==========================//
+
+//====POST ACCOUNTS UPDATE PAGE===//
+
+// app.post('/change/:username', function(req, res) {
+//   User.findOneAndUpdate({
+//     email: req.body.email,
+//     username: req.body.username,
+//     password: req.body.password,
+//   }).then(users => {
+//   res.redirect('/account')
+// });
+// });
 
 //==========================//
 
 //====RENDER DISPLAY PAGE===//
 
 app.get('/home2', function(req, res) {
-  Talk.find({}).then(function(talks){
+  User.find({username: req.session.username}).then(function(users){
+    Talk.find({}).then(function(talks){
     res.render('home2', {
+      users: users,
       talks: talks,
+    });
     });
   });
 });
@@ -189,7 +237,7 @@ app.get('/home2', function(req, res) {
 //====RENDER MY TALKS PAGE===//
 
 app.get('/mytalks', function(req, res) {
-  User.find({user: req.session.username}).then(function(users){
+  User.find({username: req.session.username}).then(function(users){
     Talktopic.find({}).then(function(talktopics){
     res.render('mytalks', {
       users: users,
@@ -341,7 +389,11 @@ app.get('/createp6', function(req, res) {
 //==== LOGOUT ===//
 
 app.get('/logout', function(req, res) {
+  User.find({username: req.session.username}).then(function(users){
+  req.session.destroy(function(err) {
   res.render('logout')
+})
+})
 });
 
 //==========================//
@@ -349,9 +401,9 @@ app.get('/logout', function(req, res) {
 //====RENDER COMPLETED===//
 
 app.get('/completed', function(req, res) {
-  User.findOne({ user: req.session.username}).then(function(users){
-    Talk.find({}).then(function(talks){
-      Talktopic.find({}).then(function(talktopics) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talk.find({user: req.session.username}).then(function(talks){
+      Talktopic.find({user: req.session.username}).then(function(talktopics) {
     res.render('completed', {
       users: users,
       talks: talks,
@@ -382,48 +434,39 @@ app.get('/completed/:talkid', function(req, res) {
 
 //==========================//
 
-//====RENDER PUBLIC===//
+//====RENDER SHARED===//
 
-// app.get('/completed', function(req, res) {
-//   User.findOne({ user: req.session.username}).then(function(users){
-//     Talk.find({}).then(function(talks){
-//       Talktopic.find({}).then(function(talktopics) {
-//     res.render('completed', {
-//       users: users,
-//       talks: talks,
-//       talktopics: talktopics,
-//         });
-//       });
-//     });
-//   });
-// });
+app.get('/shared', function(req, res) {
+    Talk.find({shared: req.session.username}).then(function(talks){
+    res.render('shared', {
+        talks: talks,
+    })
+  })
+})
 
 //==========================//
 
-//====RENDER PUBLIC TALKS===//
+//====RENDER SHARED TALKS===//
 
-// app.get('/completed/:talkid', function(req, res) {
-//   User.findOne({username: req.session.username}).then(function(users){
-//     Talkid.find({}).then(function(talknames){
-//       Talk.find({}).then(function(talks){
-//   res.render('home2', {
-//     users: users,
-//     talkids: talkids,
-//     talks: talks,
-//         })
-//       })
-//     })
-//   })
-// });
+app.get('/shared/:talkid', function(req, res) {
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({}).then(function(talks){
+  res.render('home3', {
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
 
 //==========================//
 
 //====RENDER SAVED===//
 
 app.get('/saved', function(req, res) {
-  User.findOne({ user: req.session.username}).then(function(users){
-    Talk.find({}).then(function(talks){
-      Talktopic.find({}).then(function(talktopics) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talk.find({user: req.session.username}).then(function(talks){
+      Talktopic.find({user: req.session.username}).then(function(talktopics) {
     res.render('saved', {
       users: users,
       talks: talks,
@@ -483,6 +526,7 @@ app.post('/talk/talkid/:talkid', function(req, res) {
     talkid: req.params.talkid,
     talk_name: req.params.talk_name,
     talk_topic: req.params.talk_topic,
+    shared: req.body.shared,
     section1_topic: req.body.section1_topic,
     topic1: req.body.topic1,
     textarea1: req.body.textarea1,
@@ -519,6 +563,7 @@ app.post('/saved/:talkid', function(req, res) {
     talkid: req.params.talkid,
     talk_name: req.params.talk_name,
     talk_topic: req.params.talk_topic,
+    shared: req.body.shared,
     section1_topic: req.body.section1_topic,
     topic1: req.body.topic1,
     textarea1: req.body.textarea1,
