@@ -28,10 +28,16 @@ shared: [{
 section1_topic: [{
   type: String,
 }],
+image1: [{
+  type: String,
+}],
 topic1: [{
   type: String,
 }],
 textarea1: [{
+  type: String,
+}],
+image2: [{
   type: String,
 }],
 topic2: [{
@@ -40,10 +46,16 @@ topic2: [{
 textarea2: [{
   type: String,
 }],
+image3: [{
+  type: String,
+}],
 topic3: [{
   type: String,
 }],
 textarea3: [{
+  type: String,
+}],
+image4: [{
   type: String,
 }],
 topic4: [{
@@ -52,10 +64,16 @@ topic4: [{
 textarea4: [{
   type: String,
 }],
+image5: [{
+  type: String,
+}],
 topic5: [{
   type: String,
 }],
 textarea5: [{
+  type: String,
+}],
+image6: [{
   type: String,
 }],
 topic6: [{
@@ -64,10 +82,16 @@ topic6: [{
 textarea6: [{
   type: String,
 }],
+image7: [{
+  type: String,
+}],
 topic7: [{
   type: String,
 }],
 textarea7: [{
+  type: String,
+}],
+image8: [{
   type: String,
 }],
 topic8: [{
@@ -76,10 +100,16 @@ topic8: [{
 textarea8: [{
   type: String,
 }],
+image9: [{
+  type: String,
+}],
 topic9: [{
   type: String,
 }],
 textarea9: [{
+  type: String,
+}],
+image10: [{
   type: String,
 }],
 topic10: [{

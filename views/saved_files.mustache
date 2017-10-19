@@ -5,114 +5,9 @@
   <meta charset="utf-8">
   <title>The Talk Maker</title>
   <link rel="stylesheet" href="/home.css">
-  <script>
-function allowDrop(ev) {
-    ev.preventDefault();
-}
 
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-}
 
-function drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-}
-</script>
 <script>
-
-function add_new2() {
-  document.getElementById('add_div2').innerHTML +=
-    `<div id="definition" class="fetch_results"></div>`
-
-{{#talktopics}}
-fetch('https://od-api.oxforddictionaries.com:443/api/v1/inflections/en/{{talk_topic}}')
-{{/talktopics}}
-.then(
-function(response) {
-  if (response.status != 200) {
-    console.log('Looks like there was a problem. Status Code' + response.status);
-    return;
-  }
-
-response.json().then(function(data){
-  let name = data.noun;
-  console.log(name);
-
-
-
-
-
-for (var i = 0; i < 1; i++) {
-let profile = data.noun[i];
-
-      let markup = `<div class ="profile">
-        <div class="synContainer">
-          {{#talktopics}}
-          <label class="defin">Synonyms for {{talk_topic}}</label>
-          {{/talktopics}}
-          <div class="synonyms">${data.noun.syn}</div>
-
-        </div>
-     </div>`
-    console.log(markup);
-    document.getElementById('definition').innerHTML += markup;
-
-
-
-}
-
-});
-});
-}
-</script>
-<script>
-
-function add_new() {
-  document.getElementById('add_div').innerHTML +=
-    `<div id="synonyms" class="fetch_results"></div>`
-
-{{#talktopics}}
-fetch('https://words.bighugelabs.com/api/2/b411513824bff394944b6ccca525b7c1/{{talk_topic}}/json')
-{{/talktopics}}
-.then(
-function(response) {
-  if (response.status != 200) {
-    console.log('Looks like there was a problem. Status Code' + response.status);
-    return;
-  }
-
-response.json().then(function(data){
-  let name = data.noun;
-  console.log(name);
-
-
-
-
-
-for (var i = 0; i < 1; i++) {
-let profile = data.noun[i];
-
-      let markup = `<div class ="profile">
-        <div class="synContainer">
-          {{#talktopics}}
-          <label class="defin">Synonyms for {{talk_topic}}</label>
-          {{/talktopics}}
-          <div class="synonyms">${data.noun.syn}</div>
-
-        </div>
-     </div>`
-    console.log(markup);
-    document.getElementById('synonyms').innerHTML += markup;
-
-
-
-}
-
-});
-});
-}
 
 </script>
 
@@ -133,36 +28,29 @@ let profile = data.noun[i];
 
   <div class="navbar3">
     {{#talktopics}}
-  <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_topic}}?s=t"><img class="dict" src="/dictionary.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_topic}}"><img class="lds" src="/lds.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=bofm&type=word"><img class="bom" src="/BofM.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=dc-testament&type=word"><img class="lds" src="/DC.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=pgp&type=word"><img class="pgp" src="/PofGP.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=nt&type=word"><img class="lds" src="/NT.png" /></a>
-  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=text&query={{talk_topic}}&testament=ot&type=word&options=headings"><img class="lds" src="/OT.png" /></a>
-  <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_topic}}&stp=1"><img class="byu" src="/byu.png" /></a>
-  <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_topic}}"><img class="byu" src="/byu2.png" /></a>
-  <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_topic}}"><img class="mormon" src="/mormon.png" /></a>
+    <h6 class="link6">Resources</h6>
+  <a target="_blank" class="link4" href="http://www.dictionary.com/browse/{{talk_topic}}?s=t">dictionary</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/search?lang=eng&query={{talk_topic}}">lds.org</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=bofm&type=word">book of mormon</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=dc-testament&type=word">Doctrine & Covenants</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=pgp&type=word">Pearl of Great Price</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=highlight&options=text&query={{talk_topic}}&testament=nt&type=word">New Testament</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/scriptures/search?lang=eng&options=verse&options=text&query={{talk_topic}}&testament=ot&type=word&options=headings">Old Testament</a>
+  <a target="_blank" class="link4" href="https://speeches.byu.edu/search/?q=brave&submit=Submit#stq={{talk_topic}}&stp=1">BYU speeches</a>
+  <a target="_blank" class="link4" href="https://rsc.byu.edu/search/site/{{talk_topic}}">BYU religious studies center</a>
+  <a target="_blank" class="link4" href="https://archive.bookofmormoncentral.org/search/site/{{talk_topic}}">book of mormon central</a>
+  <a target="_blank" class="link4" href="https://www.lds.org/search?query={{talk_topic}}&x=0&y=0&lang=eng&domains=images">LDS images</a>
   {{/talktopics}}
   </div>
 
 <div class="bodywrapper6">
 
 
-<div class="homelabeldiv1">
-<div class="buttonWrapper">
-<div class="button">
-  <input class="button1" type="button" id="more_fields" onclick="add_new();">
-    <img src="/down.png" /> get synonyms
-  </input>
-</div>
 
-<div class="button">
-  <input class="button1" type="button" id="more_fields" onclick="add_new2();">
-    <img src="/down.png" /> get definitions
-  </input>
-</div>
-</div>
+<div class="homelabeldiv1">
+
+  
+
 {{#talktopics}}
 <div class="homelabeldiv">
   <div class="homelabeldiv2">
@@ -195,23 +83,7 @@ let profile = data.noun[i];
 
 <form class="form1" action="/saved/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
 {{#talks}}
-  <div class="contentColumn3">
-    <label>
-      Add usernames of the users you want to share your talk with:
-    </label>
-    <div class="row_of_input">
-    <input class="inputfield7" type="text" value="{{shared.0}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.1}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.2}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.3}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.4}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.5}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.6}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.7}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.8}}" name="shared" />
-    <input class="inputfield7" type="text" value="{{shared.9}}" name="shared" />
-    </div>
-  </div>
+
 
   <div class="talkHeader">
 
@@ -226,18 +98,27 @@ let profile = data.noun[i];
       <input class="inputfield5" name="section1_topic" value="{{section1_topic.0}}" />
 
 <div class="content2">
-      <div class="contentColumn2">
+      <div id="1" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.0}} />
         <label>
           Title, Type or Author:
         </label>
-        <input type="text" class="inputfield5" name="topic1" value="{{topic1.0}}" />
+        <input  type="text" class="inputfield5" name="topic1" value="{{topic1.0}}" />
         <label>
           Content Text:
         </label>
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.0}}</textarea>
+        <button>Remove div element</button>
       </div>
 
-      <div class="contentColumn2">
+      <div id="2" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.1}} />
         <label>
           Title, Type or Author:
         </label>
@@ -246,9 +127,14 @@ let profile = data.noun[i];
           Content Text:
         </label>
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.1}}</textarea>
+
       </div>
 
-      <div class="contentColumn2">
+      <div id="3" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.2}} />
         <label>
           Title, Type or Author:
         </label>
@@ -259,7 +145,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.2}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="4" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.3}} />
         <label>
           Title, Type or Author:
         </label>
@@ -270,7 +160,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.3}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="5" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.4}} />
         <label>
           Title, Type or Author:
         </label>
@@ -281,7 +175,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.4}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="6" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.5}} />
         <label>
           Title, Type or Author:
         </label>
@@ -292,7 +190,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.5}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="7" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.6}} />
         <label>
           Title, Type or Author:
         </label>
@@ -303,7 +205,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.6}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="8" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.7}} />
         <label>
           Title, Type or Author:
         </label>
@@ -314,7 +220,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.7}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="9" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.8}} />
         <label>
           Title, Type or Author:
         </label>
@@ -325,7 +235,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.8}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="10" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.9}} />
         <label>
           Title, Type or Author:
         </label>
@@ -336,7 +250,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.9}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="11" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.10}} />
         <label>
           Title, Type or Author:
         </label>
@@ -347,7 +265,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.10}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="12" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.11}} />
         <label>
           Title, Type or Author:
         </label>
@@ -358,7 +280,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.11}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="13" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.12}} />
         <label>
           Title, Type or Author:
         </label>
@@ -369,7 +295,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.12}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="14" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.13}} />
         <label>
           Title, Type or Author:
         </label>
@@ -380,7 +310,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.13}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="15" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.14}} />
         <label>
           Title, Type or Author:
         </label>
@@ -391,7 +325,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.14}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="16" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.15}} />
         <label>
           Title, Type or Author:
         </label>
@@ -402,7 +340,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.15}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="17" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.16}} />
         <label>
           Title, Type or Author:
         </label>
@@ -413,7 +355,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.16}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="18" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.17}} />
         <label>
           Title, Type or Author:
         </label>
@@ -424,7 +370,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.17}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="19" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.18}} />
         <label>
           Title, Type or Author:
         </label>
@@ -435,7 +385,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.18}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="20" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.19}} />
         <label>
           Title, Type or Author:
         </label>
@@ -446,7 +400,11 @@ let profile = data.noun[i];
         <textarea type="text" class="inputfield2" name="textarea1" >{{textarea1.19}}</textarea>
       </div>
 
-      <div class="contentColumn2">
+      <div id="21" class="contentColumn2">
+        <label>
+          Image URL:
+        </label>
+          <input class="inputfield3" type="text" name="image1" value={{image1.20}} />
         <label>
           Title, Type or Author:
         </label>
@@ -471,233 +429,338 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.0}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.0}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.1}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.1}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.2}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.2}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.3}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.3}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.4}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.4}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.5}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.5}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.6}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.6}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.7}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.7}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.8}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.8}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.9}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.9}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.10}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.10}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.11}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.11}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.12}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.12}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.13}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.13}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.14}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.14}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.15}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.15}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.16}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.16}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.17}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.17}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.18}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.18}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.19}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.19}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image2" value={{image2.20}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic2.20}}" />
+  <input type="text" class="inputfield5" name="topic2" value="{{topic2.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea2.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea2" >{{textarea2.20}}</textarea>
 </div>
 
 </div>
@@ -712,233 +775,338 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.0}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.0}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.1}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.1}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.2}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.2}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.3}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.3}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.4}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.4}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.5}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.5}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.6}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.6}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.7}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.7}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.8}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.8}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.9}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.9}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.10}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.10}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.11}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.11}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.12}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.12}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.13}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.13}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.14}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.14}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.15}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.15}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.16}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.16}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.17}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.17}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.18}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.18}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.19}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.19}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image3" value={{image3.20}} />
+
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic3.20}}" />
+  <input type="text" class="inputfield5" name="topic3" value="{{topic3.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea3.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea3" >{{textarea3.20}}</textarea>
 </div>
 
 </div>
@@ -951,235 +1119,319 @@ let profile = data.noun[i];
 <input class="inputfield5" name="section1_topic" value="{{section1_topic.3}}" />
 
 <div class="content2">
+  <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.0}} />
 <div class="contentColumn2">
   <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.0}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.1}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.2}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.3}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.4}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.5}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.6}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.7}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.8}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.9}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.10}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.11}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.12}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.13}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.14}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.15}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.16}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.17}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.18}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.19}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image4" value={{image4.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic4.20}}" />
+  <input type="text" class="inputfield5" name="topic4" value="{{topic4.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea4.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea4" >{{textarea4.20}}</textarea>
 </div>
 
 </div>
@@ -1194,233 +1446,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.0}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.1}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.2}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.3}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.4}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.5}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.6}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.7}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.8}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.9}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.10}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.11}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.12}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.13}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.14}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.15}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.16}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.17}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.18}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.19}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image5" value={{image5.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic5.20}}" />
+  <input type="text" class="inputfield5" name="topic5" value="{{topic5.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea5.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea5" >{{textarea5.20}}</textarea>
 </div>
 
 </div>
@@ -1435,233 +1771,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.0}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.1}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.2}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.3}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.4}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.5}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.6}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.7}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.8}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.9}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.10}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.11}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.12}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.13}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.14}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.15}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.16}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.17}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.18}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.19}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image6" value={{image6.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic6.20}}" />
+  <input type="text" class="inputfield5" name="topic6" value="{{topic6.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea6.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea6" >{{textarea6.20}}</textarea>
 </div>
 
 </div>
@@ -1676,233 +2096,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.0}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.1}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.2}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.3}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.4}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.5}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.6}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.7}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.8}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.9}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.10}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.11}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.12}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.13}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.14}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.15}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.16}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.17}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.18}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.19}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image7" value={{image7.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic7.20}}" />
+  <input type="text" class="inputfield5" name="topic7" value="{{topic7.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea7.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea7" >{{textarea7.20}}</textarea>
 </div>
 
 </div>
@@ -1917,233 +2421,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.0}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.1}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.2}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.3}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.4}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.5}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.6}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.7}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.8}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.9}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.10}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.11}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.12}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.13}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.14}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.15}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.16}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.17}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.18}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.19}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image8" value={{image8.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic8.20}}" />
+  <input type="text" class="inputfield5" name="topic8" value="{{topic8.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea8.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea8" >{{textarea8.20}}</textarea>
 </div>
 
 </div>
@@ -2158,233 +2746,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.0}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.1}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.2}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.3}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.4}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.5}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.6}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.7}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.8}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.9}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.10}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.11}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.12}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.13}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.14}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.15}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.16}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.17}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.18}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.19}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image9" value={{image9.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic9.20}}" />
+  <input type="text" class="inputfield5" name="topic9" value="{{topic9.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea9.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea9" >{{textarea9.20}}</textarea>
 </div>
 
 </div>
@@ -2399,233 +3071,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.0}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.1}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.2}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.3}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.4}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.5}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.6}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.7}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.8}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.9}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.10}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.11}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.12}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.13}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.14}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.15}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.16}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.17}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.18}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.19}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image10" value={{image10.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic10.20}}" />
+  <input type="text" class="inputfield5" name="topic10" value="{{topic10.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea10.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea10" >{{textarea10.20}}</textarea>
 </div>
 
 </div>
@@ -2640,233 +3396,317 @@ let profile = data.noun[i];
 <div class="content2">
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.0}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.0}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.0}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.0}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.0}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.1}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.1}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.1}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.1}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.1}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.2}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.2}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.2}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.2}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.2}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.3}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.3}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.3}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.3}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.3}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.4}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.4}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.4}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.4}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.4}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.5}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.5}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.5}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.5}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.5}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.6}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.6}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.6}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.6}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.6}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.7}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.7}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.7}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.7}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.7}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.8}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.8}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.8}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.8}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.8}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.9}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.9}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.9}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.9}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.9}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.10}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.10}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.10}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.10}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.10}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.11}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.11}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.11}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.11}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.11}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.12}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.12}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.12}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.12}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.12}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.13}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.13}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.13}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.13}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.13}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.14}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.14}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.14}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.14}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.14}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.15}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.15}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.15}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.15}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.15}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.16}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.16}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.16}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.16}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.16}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.17}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.17}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.17}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.17}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.17}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.18}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.18}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.18}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.18}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.18}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.19}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.19}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.19}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.19}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.19}}</textarea>
 </div>
 
 <div class="contentColumn2">
   <label>
+    Image URL:
+  </label>
+  <input class="inputfield3" type="text" name="image11" value={{image11.20}} />
+  <label>
     Title, Type or Author:
   </label>
-  <input type="text" class="inputfield5" name="topic1" value="{{topic11.20}}" />
+  <input type="text" class="inputfield5" name="topic11" value="{{topic11.20}}" />
   <label>
     Content Text:
   </label>
-  <textarea type="text" class="inputfield2" name="textarea1" >{{textarea11.20}}</textarea>
+  <textarea type="text" class="inputfield2" name="textarea11" >{{textarea11.20}}</textarea>
 </div>
 
 </div>
@@ -2874,6 +3714,25 @@ let profile = data.noun[i];
 </div>
 </div>
   {{/talks}}
+
+  <div class="contentColumn3">
+    <label>
+      Add usernames of the users you want to share your talk with:
+    </label>
+    <div class="row_of_input">
+    <input class="inputfield7" type="text" value="{{shared.0}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.1}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.2}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.3}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.4}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.5}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.6}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.7}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.8}}" name="shared" />
+    <input class="inputfield7" type="text" value="{{shared.9}}" name="shared" />
+    </div>
+  </div>
+
   <input class="submit" value="save talk" type="submit">
   </form>
 </body>

@@ -8,6 +8,26 @@
 
 body {
   margin: 0;
+
+}
+
+.form-control {
+  border: black solid 2px;
+  width: 350px;
+  height: 30px;
+  font-size: 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group label {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .bodywrapper {
@@ -272,6 +292,8 @@ a img {
 }
 
 .link4 {
+  color: #a0d9ff;
+  flex-basis: 1;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -282,18 +304,34 @@ a img {
 }
 
 .link4:hover {
-  filter: brightness(190%) contrast(145%) invert(100%);
+  background-color: #4c4c60;
+
+  width: 100px;
+  text-shadow: none;
+}
+
+.link6 {
+  color: #a0d9ff;
+  font-size: 20px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: solid white 2px;
+  padding-bottom: 10px;
 }
 
 .navbar3 {
+  background-color: #262630;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   align-self: flex-start;
-  margin-top: 25px;
   width: 100px;
-  overflow-y: scroll;
   padding-left: 10px;
   padding-right: 10px;
 }
