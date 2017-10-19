@@ -292,7 +292,7 @@ a img {
 }
 
 .link4 {
-  color: #a0d9ff;
+  color: white;
   flex-basis: 1;
   display: flex;
   flex-flow: column wrap;
@@ -311,7 +311,7 @@ a img {
 }
 
 .link6 {
-  color: #a0d9ff;
+  color: white;
   font-size: 20px;
   display: flex;
   flex-flow: column wrap;
@@ -325,7 +325,9 @@ a img {
 }
 
 .navbar3 {
-  background-color: #262630;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -561,8 +563,8 @@ label {
 }
 
 .logo {
-  width: 90px;
-  height: 40px;
+  width: 120px;
+  height: 50px;
 }
 
 .navbar {
@@ -576,7 +578,9 @@ label {
   height: 50px;
   top: 5px;
   border: black solid 2px;
-  background-color: #262630;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
 }
 
 a {
@@ -596,12 +600,12 @@ a:hover {
 .link {
   display: flex;
   flex-basis: .2;
-  color: #a0d9ff;
+  color: white;
 }
 
 .link:hover {
   flex-grow: .27;
-  background-color: #4c4c60;
+  background-color: #4f658e;
   border: black solid 1px;
   transform: scaleY(1);
   height: 100%;
@@ -617,7 +621,7 @@ a:hover {
 .link2 {
   flex-basis: .2;
   width: 20%;
-  background-color: #a0d9ff;
+  background-color: #1691BA;
   border: black solid 1px;
   height: 100%;
   display: flex;
@@ -625,12 +629,12 @@ a:hover {
   align-items: center;
   padding-left: 8px;
   padding-right: 8px;
-  color: #262630;
+  color: white;
 }
 
 .link2:hover {
   flex-grow: .27;
-  background-color: #4c4c60;
+  background-color: #4f658e;
   border: black solid 1px;
   transform: scaleY(1);
   height: 100%;

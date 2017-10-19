@@ -4,6 +4,7 @@
   -o-transition: all .25s ease;
   transition: all .25s ease;
   font-family: sans-serif;
+  font-family: 'Volkhov', serif;
 }
 
 body {
@@ -14,12 +15,20 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0px;
-  background-color: #262630;
+  background-color: #3D4E6F;
+}
+
+img {
+  width: 50vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  min-width: 300px;
+  margin-bottom: 2vh;
 }
 
 a {
   text-decoration: none;
-  color: #a0d9ff;
+  color: white;
   cursor: pointer;
   font-size: 25px;
   font-weight: bold;
@@ -66,11 +75,11 @@ form {
 }
 
 label {
-  color: #a0d9ff;
+  color: white;
 }
 
 h1 {
-  color: #a0d9ff;
+  color: white;
 }
 
 .container1 {
@@ -92,5 +101,4 @@ h1 {
 .submit:hover {
   transform: scale(1.1);
   color: white;
-  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
 }

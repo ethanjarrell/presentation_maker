@@ -4,6 +4,7 @@
   -o-transition: all .25s ease;
   transition: all .25s ease;
   font-family: sans-serif;
+  font-family: 'Volkhov', serif;
 }
 
 body {
@@ -14,13 +15,13 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0px;
-  background-color: #262630;
+  background-color: #3D4E6F;
 }
 
 .watchDemo {
   margin: 25px;
   font-size: 25px;
-  color: #a0d9ff;
+  color: white;
 }
 
 .watchDemo:Hover {
@@ -36,8 +37,16 @@ body {
   align-items: center;
 }
 
+img {
+  width: 50vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  min-width: 300px;
+  margin-bottom: 2vh;
+}
+
 .logo {
-  margin-top: 15vh;
+  margin-top: 25vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -46,7 +55,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #a0d9ff;
+  color: white;
   cursor: pointer;
   font-size: 45px;
   font-weight: bold;
