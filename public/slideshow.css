@@ -137,6 +137,7 @@ img {
   height: 500px;
   object-fit: cover;
   object-position: 80% 20%;
+  margin-bottom: 0px;
 }
 
 .labelContainer2 {
@@ -144,6 +145,12 @@ img {
   font-size: 65px;
   font-weight: bold;
   text-align: center;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0px;
 }
 
 .labelContainer3 {
@@ -153,6 +160,7 @@ img {
   padding-left: 5vw;
   padding-right: 5vw;
   margin-top: 4vh;
+
 }
 
 .labelContainer4 {
