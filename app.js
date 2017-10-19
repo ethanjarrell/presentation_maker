@@ -630,6 +630,73 @@ app.post('/saved/:talkid', function(req, res) {
 
 //==========================//
 
+//====GET DELETE===//
+
+app.get('/delete', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talkid.findOne({talkid: req.params.talkid}).then(function(talkids){
+        Talkname.findOne({talkid: req.params.talkid}).then(function(talknames){
+          Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('delete', {
+    users: users,
+    talktopics: talktopics,
+    talkids: talkids,
+    talknames: talknames,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+})
+})
+
+//==========================//
+
+//====GET DELETE TALK===//
+
+app.get('/delete/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talkid.findOne({talkid: req.params.talkid}).then(function(talkids){
+        Talkname.findOne({talkid: req.params.talkid}).then(function(talknames){
+          Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('delete', {
+    users: users,
+    talktopics: talktopics,
+    talkids: talkids,
+    talknames: talknames,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+})
+})
+
+//==========================//
+
+//====POST DELETE TALK===//
+
+app.post('/delete/1/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOneAndRemove({talkid: req.params.talkid}).then(function(talktopics){
+      Talkid.findOneAndRemove({talkid: req.params.talkid}).then(function(talkids){
+        Talkname.findOneAndRemove({talkid: req.params.talkid}).then(function(talknames){
+          Talk.findOneAndRemove({talkid: req.params.talkid}).then(function(talks){
+      }).then(talks => {
+      res.redirect('/completed')
+    });
+    });
+  })
+})
+})
+})
+
+//==========================//
+
 //====APP LISTEN ON ENVIRONMENT PORT===//
 
 app.listen(process.env.PORT || 3000);

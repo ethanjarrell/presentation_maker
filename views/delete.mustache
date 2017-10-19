@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+  <script>
+        function goBack() {
+          window.history.back();
+        }
+        </script>
+
+</head>
+
+<body>
+  <div class="navbar">
+  <img class="logo" src="/logo2.png">
+  <a class="link2" href="/createp1">new</a>
+  <a class="link" href="/saved">saved</a>
+  <a class="link" href="/completed">completed</a>
+  <a class="link" href="/shared">shared</a>
+  <a class="link" href="/account">account</a>
+  <a class="link" href="/logout">logout</a>
+  </div>
+
+  <div class="bodywrapper7">
+
+
+{{#talktopics}}
+    <form class="blink" action="/delete/1/{{talkid}}" method="post">
+          <label class="talk_name">You selected this talk:</label>
+          <input id="talkid" class="inputfield4" value="{{talkid}}" type="text" disabled/>
+          <label class="talk_name">Are you sure you want to delte it?</label>
+          <div class="submitContainer"><input class="submit1" value="yes" type="submit">
+          {{/talktopics}}
+        </form>
+<a class="submit1" onclick="goBack()">no</a>
+
+</div>
+
+
+
+</div>
+
+</body>
+
+</html>

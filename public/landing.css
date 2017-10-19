@@ -17,21 +17,27 @@ body {
   background-color: #262630;
 }
 
-.video {
-  width: 500px;
+.watchDemo {
+  margin: 25px;
+  font-size: 25px;
+  color: #a0d9ff;
 }
 
-.video:hover {
-  transform: scale(1.05);
-  filter: brightness(125%) invert(80%);
-
+.watchDemo:Hover {
+  transform: scale(1.1);
+  filter: brightness(150%);
 }
 
 .buttons {
-  margin-left: 3vw;
+  margin-right: 8vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
+  margin-top: 15vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
