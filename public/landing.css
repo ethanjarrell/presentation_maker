@@ -41,12 +41,13 @@ img {
   width: 50vw;
   padding-left: 10vw;
   padding-right: 10vw;
+  max-width: 500px;
   min-width: 300px;
   margin-bottom: 2vh;
 }
 
 .logo {
-  margin-top: 25vh;
+  margin-top: 10vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

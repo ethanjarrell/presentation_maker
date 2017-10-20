@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+<link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="navbar">
+  <img class="logo" src="/logo2.png">
+  <a class="link" href="/createp1">new</a>
+  <a class="link" href="/saved">saved</a>
+  <a class="link" href="/completed">completed</a>
+  <a class="link" href="/shared">shared</a>
+  <a class="link" href="/account">account</a>
+  <a class="link" href="/logout">logout</a>
+  </div>
+
+  <div class="bodywrapper8">
+<div class="formContainer">
+<form class="form2" action="/api/images/people" method="post">
+  <label>People</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+<form class="form2" action="/api/images/events" method="post">
+  <label>Events</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+<form class="form2" action="/api/images/bookofmormon" method="post">
+  <label>Book of Mormon</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+<form class="form2" action="/api/images/newtestament" method="post">
+  <label>New Testament</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+<form class="form2" action="/api/images/oldtestament" method="post">
+  <label>Old Testament</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+<form class="form2" action="/api/images/doctrinecovenants" method="post">
+  <label>Doctrine & Covenants</label>
+  <label>Tags</label>
+  <input type="text" name="image_data[tag][0]" />
+  <input type="text" name="image_data[tag][1]" />
+  <input type="text" name="image_data[tag][2]" />
+  <input type="text" name="image_data[tag][3]" />
+  <input type="text" name="image_data[tag][4]" />
+  <input type="text" name="image_data[tag][5]" />
+  <input type="text" name="image_data[tag][6]" />
+  <label>image url</label>
+  <input type="text" name="image_data[image]" />
+  <input type="submit" value="submit">
+</form>
+
+  <form class="form2" action="/api/images/baptism" method="post">
+    <label>Topics: Baptism</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/faith" method="post">
+    <label>Topics: Faith</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/repentence" method="post">
+    <label>Topics: Repentence</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/charity" method="post">
+    <label>Topics: Charity</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/prophets" method="post">
+    <label>Topics: Prophets</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/atonement" method="post">
+    <label>Topics: Atonement</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/wordofwisdom" method="post">
+    <label>Topics: Word of Wisdom</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/service" method="post">
+    <label>Topics: Service</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/creation" method="post">
+    <label>Topics: The Creation</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/agency" method="post">
+    <label>Topics: Agency</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/thefall" method="post">
+    <label>Topics: The Fall</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/holyghost" method="post">
+    <label>Topics: Holy Ghost</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/scriptures" method="post">
+    <label>Topics: Scriptures</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/priesthood" method="post">
+    <label>Topics: priesthood</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/sacrament" method="post">
+    <label>Topics: sacrament</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/honesty" method="post">
+    <label>Topics: honesty</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  <form class="form2" action="/api/images/obedience" method="post">
+    <label>Topics: obedience</label>
+    <label>Tags</label>
+    <input type="text" name="image_data[tag][0]" />
+    <input type="text" name="image_data[tag][1]" />
+    <input type="text" name="image_data[tag][2]" />
+    <input type="text" name="image_data[tag][3]" />
+    <input type="text" name="image_data[tag][4]" />
+    <input type="text" name="image_data[tag][5]" />
+    <input type="text" name="image_data[tag][6]" />
+    <label>image url</label>
+    <input type="text" name="image_data[image]" />
+    <input type="submit" value="submit">
+  </form>
+  </div>
+</div>
+
+
+</body>
+
+</html>
