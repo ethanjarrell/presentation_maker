@@ -8,6 +8,8 @@
 
 body {
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .bodywrapper8 {
@@ -55,7 +57,6 @@ body {
   align-items: center;
   flex-grow: 3;
   flex-basis: 0;
-  background-color: green;
   height: 600px;
   width: 100%;
 }
@@ -74,23 +75,53 @@ body {
 }
 
 .mainbarcontent {
-  font-size: 15px;
   font-family: 'Volkhov', serif;
   color: #3D4E6F;
   background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: row wrap;
   width: 100%;
   flex-grow: 2;
 }
 
 .mainbarcontent img{
-  z-index: -1;
   object-fit: cover;
-  width: 10%;
-  height: 450px;
   position: absolute;
+  margin-left: 5px;
+  height: 320px;
+  width: 51%;
+  align-self: center;
+}
+
+.mainbarcontent div{
+  z-index: 0;
+  object-fit: cover;
+  position: absolute;
+  margin-left: 5px;
+}
+
+.mainbarcontenttext {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+    width: 25%;
+}
+
+.mainbarcontent h1 {
+  margin-left: 210%;
+  width: 100%;
+  text-align: left;
+  font-family: 'Volkhov', serif;
+}
+
+.mainbarcontent h4 {
+  margin-left: 210%;
+  width: 100%;
+  text-align: left;
+  font-family: 'Volkhov', serif;
 }
 
 .mainbarcontent h2 {
@@ -153,18 +184,19 @@ h1 {
   justify-content: flex-start;
   align-items: flex-end;
   flex-grow: 1;
-  height: 100px;
+  height: 200px;
   width: 33%;
   object-fit: contain;
   padding-left: 3px;
   padding-right: 3px;
   text-overflow: ellipsis;
+  margin: 5px;
 }
 
 .linkContent img{
   object-fit: cover;
   width: 26%;
-  height: 100px;
+  height: 200px;
   position: absolute;
 }
 

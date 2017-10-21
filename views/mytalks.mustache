@@ -34,11 +34,15 @@
       <div class="mainbarheader">Getting Started with Talk Organizer</div>
       <div class="mainbarcontent">
         {{#splashinfos.3}}
-          <h1>{{title_text}}</h1>
+        <a href="{{link_url}}">
+        <img src="{{image_url}}" />
+          <div class="mainbarcontenttext">
+            <h1>{{title_text}}</h1>
           <h4>{{blurb_text}}</h4>
-          <img src="{{image_url}}" />
-        {{/splashinfos.3}}
+        </div>
+      </a>
       </div>
+      {{/splashinfos.3}}
       <div class="mainbarfooter">
         {{#splashinfos.0}}
         <a target="_blank" href="{{link_url}}" class="linkContent">

@@ -48,7 +48,7 @@ const mustacheExpress = require('mustache-express');
 const session = require('express-session');
 const cors = require('cors')
 const app = express();
-const url = process.env.MONGOLAB_URI;
+const url = 'mongodb://EthanJarrell:EJ3102nl1@ds117485.mlab.com:17485/presentation-maker';
 //=========================//
 
 //====SET APP ENGINE===//
