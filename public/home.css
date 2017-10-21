@@ -10,11 +10,28 @@ body {
   margin: 0;
 }
 
+
+#updatediv {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
 .images {
+  margin-top: 8px;
+  margin-bottom: 8px;
   height: 80px;
   width: 200px;
   object-fit: cover;
   border: black solid 2px;
+}
+
+.images:hover {
+  transform: scale(1.2);
+  zoom: 150%;
 }
 
 .invisible {
@@ -102,12 +119,86 @@ body {
 
 .bodywrapper8 {
   display: flex;
-  width: 80vw;
-  height: 80vh;
-  flex-flow: column nowrap;
+  width: 1000px;
+  height: 900px;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  margin-left: 10vw;
+  align-content: center;
+}
+
+.sidebar {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  height: 600px;
+  background-color: white;
+  width: 300px;
+}
+
+.sidebarbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px;
+  font-family: 'Volkhov', serif;
+  background-color: #3D4E6F;
+  width: 100%;
+  height: 16%;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.sidebarbutton:hover {
+  transform: scale(1.1);
+}
+
+.mainbar {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 5;
+  background-color: green;
+  height: 600px;
+  width: 800px;
+}
+
+.mainbarheader {
+  font-size: 30px;
+  font-family: 'Volkhov', serif;
+  color: #3D4E6F;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid 2px #3D4E6F;
+  border-bottom: solid 2px #3D4E6F;
+  width: 100%;
+}
+
+.mainbarcontent {
+  font-size: 15px;
+  font-family: 'Volkhov', serif;
+  color: #3D4E6F;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.mainbarfooter {
+  font-size: 15px;
+  font-family: 'Volkhov', serif;
+  background-color: #3D4E6F;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .bodywrapper9 {

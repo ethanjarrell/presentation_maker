@@ -4,33 +4,71 @@
 <head>
   <meta charset="utf-8">
   <title>The Talk Maker</title>
-  <link rel="stylesheet" href="/home.css">
-<link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+  <link rel="stylesheet" href="/mytalks.css">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 
 </head>
 
 <body>
   <div class="navbar">
-  <img class="logo" src="/logo2.png">
-  <a class="link" href="/createp1">new</a>
-  <a class="link" href="/saved">saved</a>
-  <a class="link" href="/completed">completed</a>
-  <a class="link" href="/shared">shared</a>
-  <a class="link" href="/account">account</a>
-  <a class="link" href="/logout">logout</a>
+    <img class="logo" src="/logo2.png">
+    <a class="link" href="/createp1">new</a>
+    <a class="link" href="/saved">saved</a>
+    <a class="link" href="/completed">completed</a>
+    <a class="link" href="/shared">shared</a>
+    <a class="link" href="/account">account</a>
+    <a class="link" href="/logout">logout</a>
   </div>
 
   <div class="bodywrapper8">
 
-    <h2>Welcome to the Talk & Lesson Organizer!</h2>
+    <div class="sidebar">
+      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton"></div>
+    </div>
+    <div class="mainbar">
+      <div class="mainbarheader">Getting Started with Talk Organizer</div>
+      <div class="mainbarcontent">
+        {{#splashinfos.3}}
+          <h1>{{title_text}}</h1>
+          <h4>{{blurb_text}}</h4>
+          <img src="{{image_url}}" />
+        {{/splashinfos.3}}
+      </div>
+      <div class="mainbarfooter">
+        {{#splashinfos.0}}
+        <a target="_blank" href="{{link_url}}" class="linkContent">
 
-<div class="paragraph">
-    <p>You can start be createing a new talk with the menu button on the left.
-    When you create a talk, after giving it a name and a topic, you will begin creating the content.  This app lets you divide your talk up into sections, or sub-topics within your main lesson or talk.  That way, all of your content is easier to find when you are giving your talk or lesson</p>
+            <h2>{{title_text}}</h2>
 
-    <p>Once you've gotten to a stopping point, you can save your talk, and then come back to it via the saved talks link.  You can also view your completed talks via the completed talks link.  This completed talks proviedes an easy desktop and mobile view of all your talk content, which makes it easier to find and present your material.</p>
-</div>
-</div>
+            <img src="{{image_url}}" />
+          {{/splashinfos.0}}
+        </a>
+          {{#splashinfos.1}}
+        <a target="_blank" href="{{link_url}}" class="linkContent">
+
+            <h2>{{title_text}}</h2>
+
+            <img src="{{image_url}}" />
+
+        </a>
+        {{/splashinfos.1}}
+        <a target="_blank" href="{{link_url}}" class="linkContent">
+          {{#splashinfos.2}}
+            <h2>{{title_text}}</h2>
+
+            <img src="{{image_url}}" />
+          {{/splashinfos.2}}
+        </a>
+      </div>
+    </div>
+
+  </div>
+
 
 </body>
 

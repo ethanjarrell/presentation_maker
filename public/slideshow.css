@@ -10,6 +10,7 @@ body {
   margin: 0px;
   display: block;
   margin-top: -90vh;
+  overflow: hidden;
 }
 
 
@@ -127,22 +128,30 @@ body {
 }
 
 .insideSlide {
-  display: block;
-  object-position: center;
-  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+
 }
 
 img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  object-position: 80% 20%;
-  margin-bottom: 0px;
+box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: 40vw;
+    height: 100vh;
+    border: 14px solid #3D4E6F;
+    background: #00f;
+    margin: 0px;
+    object-fit: cover;
+}
+
+.imglabelcontainer {
+
 }
 
 .labelContainer2 {
   width: 100%;
-  font-size: 65px;
+  font-size: 45px;
   font-weight: bold;
   text-align: center;
   background-color: #3D4E6F;
@@ -150,7 +159,10 @@ img {
   font-family: 'Volkhov', serif;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
   margin: 0px;
+  z-index: 1;
 }
 
 .labelContainer3 {
@@ -159,8 +171,12 @@ img {
   font-size: 30px;
   padding-left: 5vw;
   padding-right: 5vw;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: #3D4E6F solid 3px;
+  border-top: #3D4E6F solid 3px;
   margin-top: 4vh;
-
+  z-index: 0;
 }
 
 .labelContainer4 {

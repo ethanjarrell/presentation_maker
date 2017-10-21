@@ -33,6 +33,10 @@ const Imagehonesty = require('./models/imagehonesty.js');
 const Imageobedience = require('./models/imageobedience.js');
 //=================//
 
+//=====SPLASH API======//
+const Splashinfo = require('./models/splashinfo.js');
+//=================//
+
 //====LIST DEPENDENCIES===//
 const express = require('express');
 const parseurl = require('parseurl');
@@ -265,13 +269,16 @@ app.get('/home2', function(req, res) {
 
 app.get('/mytalks', function(req, res) {
   User.find({username: req.session.username}).then(function(users){
+    Splashinfo.aggregate().sample(4).then(function(splashinfos){
     Talktopic.find({}).then(function(talktopics){
     res.render('mytalks', {
       users: users,
+      splashinfos: splashinfos,
       talktopics: talktopics,
       });
     });
   });
+});
 });
 
 //==========================//
@@ -728,6 +735,32 @@ app.post('/delete/1/:talkid', function(req, res) {
 
 app.get('/test0012', function(req, res) {
   res.render('test0012')
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/splashinfo', function(req, res) {
+  Splashinfo.find({}).then(function(splashinfos){
+  res.json(splashinfos)
+});
+});
+
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/splashinfo', function(req, res) {
+  Splashinfo.create({
+    link_url: req.body.link_url,
+    image_url: req.body.image_url,
+    title_text: req.body.title_text,
+    blurb_text: req.body.blurb_text,
+  }).then(splashinfos => {
+  res.json(splashinfos)
+});
 });
 
 //==========================//
