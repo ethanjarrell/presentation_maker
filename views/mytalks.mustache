@@ -10,8 +10,9 @@
 </head>
 
 <body>
+  <div class="bodywrapper8">
   <div class="navbar">
-    <img class="logo" src="/logo2.png">
+    <a href="/mytalks"><img class="logo" src="/logo2.png"></a>
     <a class="link" href="/createp1">new</a>
     <a class="link" href="/saved">saved</a>
     <a class="link" href="/completed">completed</a>
@@ -20,28 +21,40 @@
     <a class="link" href="/logout">logout</a>
   </div>
 
-  <div class="bodywrapper8">
 
+<div class="body">
     <div class="sidebar">
-      <div class="sidebarbutton"></div>
-      <div class="sidebarbutton"></div>
-      <div class="sidebarbutton"></div>
-      <div class="sidebarbutton"></div>
-      <div class="sidebarbutton"></div>
-      <div class="sidebarbutton"></div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/gospel-teaching-and-learning-a-handbook-for-teachers-and-leaders-in-seminaries-and-institutes-of-religion/fundamentals-of-gospel-teaching-and-learning?lang=eng">Fundamentals of Gospel Teaching and Learning</a>
+      </div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-11-making-a-plan-to-improve-your-teaching?lang=eng">Making a Plan to Improve Your Teaching</a>
+      </div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-2-understanding-those-you-teach?lang=eng">Understanding Those You Teach</a>
+      </div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-12-teaching-from-the-scriptures?lang=eng">Teaching From The Scriptures</a>
+      </div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/teaching-in-the-saviors-way/part-2-teach-by-the-spirit/teach-by-the-spirit?lang=eng">Teach By The Spirit</a>
+      </div>
+      <div class="sidebarbutton">
+        <a target="_blank" href="https://www.lds.org/manual/gospel-teaching-and-learning-a-handbook-for-teachers-and-leaders-in-seminaries-and-institutes-of-religion/preparing-to-teach?lang=eng&query=teachers">Preparing to Teach</a>
+      </div>
     </div>
     <div class="mainbar">
-      <div class="mainbarheader">Getting Started with Talk Organizer</div>
-      <div class="mainbarcontent">
-        {{#splashinfos.3}}
+      <div class="mainbarheader">Be Inspired. Study. Organize Ideas.</div>
+      {{#splashinfos.3}}
         <a href="{{link_url}}">
-        <img src="{{image_url}}" />
+      <div class="mainbarcontent">
+        <img class="imglarge" src="{{image_url}}" />
           <div class="mainbarcontenttext">
             <h1>{{title_text}}</h1>
           <h4>{{blurb_text}}</h4>
         </div>
-      </a>
       </div>
+        </a>
       {{/splashinfos.3}}
       <div class="mainbarfooter">
         {{#splashinfos.0}}
@@ -49,7 +62,7 @@
 
             <h2>{{title_text}}</h2>
 
-            <img src="{{image_url}}" />
+            <img class="imgsmall" src="{{image_url}}" />
           {{/splashinfos.0}}
         </a>
           {{#splashinfos.1}}
@@ -57,7 +70,7 @@
 
             <h2>{{title_text}}</h2>
 
-            <img src="{{image_url}}" />
+            <img class="imgsmall" src="{{image_url}}" />
 
         </a>
         {{/splashinfos.1}}
@@ -65,12 +78,12 @@
           {{#splashinfos.2}}
             <h2>{{title_text}}</h2>
 
-            <img src="{{image_url}}" />
+            <img class="imgsmall" src="{{image_url}}" />
           {{/splashinfos.2}}
         </a>
       </div>
     </div>
-
+</div>
   </div>
 
 
