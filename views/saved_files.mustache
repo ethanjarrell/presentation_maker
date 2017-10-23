@@ -55,9 +55,15 @@ var mapObj = {
    "labor":"service",
    "fall of man":"thefall",
    "law of health":"wordofwisdom",
-
-
-
+   "apostles":"apostle",
+   "the godhead":"godhead",
+   "devil":"hell",
+   "celestial kingdom":"heaven",
+   "missionaries":"missionary",
+   "christmas":"nativity",
+   "church history":"pioneer",
+   "easter":"resurrection",
+   "woman":"women",
 };
 var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
 str = str.replace(re, function(matched){
@@ -139,7 +145,7 @@ function convert()
 
       <div class="homelabeldiv1">
         <section class="search">
-
+          <label> TOPIC SEARCH: </label>
         <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
         <button class="submitButton2" type="submit" id="submitButton"  name="button">SEARCH</button>
 
