@@ -12,24 +12,33 @@ body {
 
 
 #updatediv {
+  position: relative;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: row;
+  height: 175px;
+  width: 80vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .images {
   margin-top: 8px;
   margin-bottom: 8px;
-  height: 80px;
-  width: 200px;
+  height: 150px;
+  width: 80px;
   object-fit: cover;
   border: black solid 2px;
+  object-fit: cover;
 }
 
 .images:hover {
-  transform: scale(1.2);
-  zoom: 150%;
+  transform: scaleX(1.1);
+  object-fit: cover;
+  object-position: center;
+}
+
+.invisiblespan {
+  display: none;
 }
 
 .invisible {
@@ -117,6 +126,17 @@ body {
 
 .bodywrapper8 {
   display: flex;
+  width: 1000px;
+  height: 900px;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.bodywrapper11 {
+  display: flex;
+  margin-top: 25vh;
   width: 1000px;
   height: 900px;
   flex-flow: row wrap;

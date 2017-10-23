@@ -555,19 +555,50 @@
   console.log(submitButton);
   //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
   // 2. Create your `onSubmit` event for getting the user's search term
-  function remove() {
-      $.stripSpaces = function(str) {
-          var reg = new RegExp("[ ]+","g");
-          return str.replace(/\s/g, '');
-      }
-  };
 
 
   function searchAPI() {
 
   let searchResults = searchInput.value;
 
-  fetch('https://presentation-maker.herokuapp.com/api/images/' + searchResults).then(function(response) {
+  var str = searchInput.value;
+
+
+var mapObj = {
+   "free agency":"agency",
+   "the atonement":"atonement",
+   "baptize":"baptism",
+   "book of mormon":"bookofmormon",
+   "love":"charity",
+   "created":"creation",
+   "d&c":"doctrinecovenants",
+   "events":"events",
+   "belief":"faith",
+   "holy spirit":"holy ghost",
+   "honest":"honesty",
+   "bible":"newtestament",
+   "follow":"obedience",
+   "old testament":"oldtestament",
+   "people":"people",
+   "melchizedek priesthood":"priesthood",
+   "prophets of god":"prophets",
+   "repentance":"repentence",
+   "bread and water":"sacrament",
+   "scripture":"scriptures",
+   "labor":"service",
+   "fall of man":"thefall",
+   "law of health":"wordofwisdom",
+
+
+
+};
+var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+str = str.replace(re, function(matched){
+  return mapObj[matched.toLowerCase()];
+});
+
+
+  fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
       if (response.status != 200) {
           console.log('Looks like there was a problem. Status Code' + response.status);
           return;
@@ -579,7 +610,7 @@
           function renderapis() {
 
             return `${api.map(api =>
-            `<img onclick="Copy();" class="images" src="${api.image_data[0].image}" />`
+            `<img class="images" src="${api.image_data[0].image}" />`
             )}
             `
             }
@@ -594,11 +625,6 @@
 
   </script>
 
-  <script language="javascript" type="text/javascript">
-  function removeSpaces(string) {
-  return string.split(' ').join('');
-  }
-  </script>
 <script type="text/javascript">
 function convert()
 {
@@ -608,9 +634,7 @@ function convert()
     document.writeln(str.toLowerCase());
 }
 </script>
-<script>
 
-</script>
 
 </head>
 
@@ -652,8 +676,8 @@ function convert()
 
     <section class="search">
 
-    <input placeholder="image search" class="searchInput" onblur="this.value=removeSpaces(this.value);" type="text" id="searchInput">
-    <button class="submitButton2" type="submit" id="submitButton"name="button">SUBMIT</button>
+    <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
+    <button class="submitButton2" type="submit" id="submitButton"  name="button">SUBMIT</button>
 
 </section>
 
