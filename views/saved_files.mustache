@@ -7,7 +7,100 @@
   <link rel="stylesheet" href="/home.css">
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+  console.log("talking");
+  /*
+  Here is a guide for the steps you could take:
+  */
+  // 1. First select and store the elements you'll be working with
+  let searchInput = document.getElementById('searchInput');
+  let submitButton = document.getElementById('submitButton');
+  submitButton.onclick = searchAPI;
+  console.log(searchInput);
+  console.log(submitButton);
+  //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
+  // 2. Create your `onSubmit` event for getting the user's search term
 
+
+  function searchAPI() {
+
+  let searchResults = searchInput.value;
+
+  var str = searchInput.value;
+
+
+var mapObj = {
+   "free agency":"agency",
+   "the atonement":"atonement",
+   "baptize":"baptism",
+   "book of mormon":"bookofmormon",
+   "love":"charity",
+   "created":"creation",
+   "d&c":"doctrinecovenants",
+   "events":"events",
+   "belief":"faith",
+   "holy spirit":"holy ghost",
+   "honest":"honesty",
+   "bible":"newtestament",
+   "follow":"obedience",
+   "old testament":"oldtestament",
+   "people":"people",
+   "melchizedek priesthood":"priesthood",
+   "prophets of god":"prophets",
+   "repentance":"repentence",
+   "bread and water":"sacrament",
+   "scripture":"scriptures",
+   "labor":"service",
+   "fall of man":"thefall",
+   "law of health":"wordofwisdom",
+
+
+
+};
+var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+str = str.replace(re, function(matched){
+  return mapObj[matched.toLowerCase()];
+});
+
+
+  fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
+      if (response.status != 200) {
+          console.log('Looks like there was a problem. Status Code' + response.status);
+          return;
+      }
+
+      response.json().then(function(data) {
+          let api = data;
+
+          function renderapis() {
+
+            return `${api.map(api =>
+            `<img class="images" src="${api.image_data[0].image}" />`
+            )}
+            `
+            }
+
+          let markup = `${renderapis()}`;
+          document.getElementById('updatediv').innerHTML = markup;
+          })
+        })
+      }
+    })
+
+
+  </script>
+
+<script type="text/javascript">
+function convert()
+{
+    alert("hi");
+    var str ;
+    str = document.getElementById("searchInput").value;
+    document.writeln(str.toLowerCase());
+}
+</script>
 </head>
 
 <body>
@@ -45,7 +138,18 @@
 
 
       <div class="homelabeldiv1">
+        <section class="search">
 
+        <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
+        <button class="submitButton2" type="submit" id="submitButton"  name="button">SEARCH</button>
+
+        </section>
+
+        </section>
+        <div id="searched"></div>
+        <div class="results">
+        <section id="updatediv"></section>
+        </div>
 
 
         {{#talktopics}}

@@ -15,10 +15,48 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 175px;
+  align-items: center;
+  height: 255px;
   width: 80vw;
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.search {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#submitButton {
+  cursor: pointer;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  height: 20px;
+  font-size: 17px;
+
+}
+
+.searchInput {
+  width: 380px;
+  height: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: solid black 1.5px;
+  outline: none;
+}
+
+.searchInput:hover {
+  transform: scaleX(1.1);
+}
+
+.searchInput:focus {
+  transform: scaleX(1.3);
 }
 
 .images {
@@ -32,9 +70,13 @@ body {
 }
 
 .images:hover {
-  transform: scaleX(1.1);
+  transform: scalex(1.8) scaleY(1.3);
   object-fit: cover;
   object-position: center;
+}
+
+#updatediv::-webkit-scrollbar {
+    display: none;
 }
 
 .invisiblespan {
@@ -136,13 +178,12 @@ body {
 
 .bodywrapper11 {
   display: flex;
-  margin-top: 25vh;
-  width: 1000px;
-  height: 900px;
+  width: 100vw;
+  height: 100vh;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .sidebar {

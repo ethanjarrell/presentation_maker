@@ -31,6 +31,19 @@ const Imagepriesthood = require('./models/imagepriesthood.js');
 const Imagesacrament = require('./models/imagesacrament.js');
 const Imagehonesty = require('./models/imagehonesty.js');
 const Imageobedience = require('./models/imageobedience.js');
+const Imageangels = require('./models/imageangels.js');
+const Imageapostasy = require('./models/imageapostasy.js');
+const Imagechurch = require('./models/imagechurch.js');
+const Imagefamily = require('./models/imagefamily.js');
+const Imagefasting = require('./models/imagefasting.js');
+const Imagehumility = require('./models/imagehumility.js');
+const Imagejesus = require('./models/imagejesus.js');
+const Imagemarriage = require('./models/imagemarriage.js');
+const Imageprayer = require('./models/imageprayer.js');
+const Imagesecondcoming = require('./models/imagesecondcoming.js');
+const Imagetemple = require('./models/imagetemple.js');
+const Imagetithing = require('./models/imagetithing.js');
+const Imagetrials = require('./models/imagetrials.js');
 //=================//
 
 //=====SPLASH API======//
@@ -1341,7 +1354,341 @@ app.post('/api/images/obedience', function(req, res) {
 
 //==========================//
 
+//====GET IMAGE UPLOAD FOR API===//
 
+app.get('/api/images/angels', function(req, res) {
+  Imageangels.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/angels', function(req, res) {
+  Imageangels.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/apostasy', function(req, res) {
+  Imageapostasy.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/apostasy', function(req, res) {
+  Imageapostasy.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/church', function(req, res) {
+  Imagechurch.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/church', function(req, res) {
+  Imagechurch.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/family', function(req, res) {
+  Imagefamily.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/family', function(req, res) {
+  Imagefamily.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/fasting', function(req, res) {
+  Imagefasting.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/fasting', function(req, res) {
+  Imagefasting.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/humility', function(req, res) {
+  Imagehumility.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/humility', function(req, res) {
+  Imagehumility.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/jesus', function(req, res) {
+  Imagejesus.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/jesus', function(req, res) {
+  Imagejesus.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/marriage', function(req, res) {
+  Imagemarriage.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/marriage', function(req, res) {
+  Imagemarriage.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/prayer', function(req, res) {
+  Imageprayer.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/prayer', function(req, res) {
+  Imageprayer.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/premortal', function(req, res) {
+  Imagepremortal.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/premortal', function(req, res) {
+  Imagepremortal.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/secondcoming', function(req, res) {
+  Imagesecondcoming.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/secondcoming', function(req, res) {
+  Imagesecondcoming.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/temple', function(req, res) {
+  Imagetemple.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/temple', function(req, res) {
+  Imagetemple.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/tithing', function(req, res) {
+  Imagetithing.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/tithing', function(req, res) {
+  Imagetithing.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/trials', function(req, res) {
+  Imagetrials.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/trials', function(req, res) {
+  Imagetrials.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
 
 //====APP LISTEN ON ENVIRONMENT PORT===//
 
