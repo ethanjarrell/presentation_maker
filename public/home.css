@@ -29,6 +29,35 @@ body {
   align-items: center;
 }
 
+.buttong a{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.buttonz a{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.buttonz img {
+  height: 150px;
+  width: 100px;
+  margin-top: 8px;
+}
+
+.pickerbtn {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #submitButton {
   outline: none;
   cursor: pointer;

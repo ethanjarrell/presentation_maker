@@ -27,8 +27,10 @@
     <form class="blink">
           <label class="talk_name">Pick a slideshow template:</label>
           {{#talktopics}}
-          <div class="buttonz"><a href="slideshow/{{talkid}}">classic lds.org theme</a></div>
-          <div class="buttonz"><a href="slideshow2/{{talkid}}">retro church material theme</a></div>
+          <div class="pickerbtn">
+          <div class="buttonz"><a href="slideshow/{{talkid}}">classic lds.org theme<img src="/manual2.png"></a></div>
+          <div class="buttonz"><a href="slideshow2/{{talkid}}">family home evening book theme<img src="/manual1.png"></a></div>
+        </div>
           {{/talktopics}}
         </form>
 
