@@ -65,7 +65,7 @@ const Imagegiftsofthespirit = require('./models/imagegiftsofthespirit.js');
 const Imagegospel = require('./models/imagegospel.js');
 const Imagehappiness = require('./models/imagehappiness.js');
 const Imagemiracles = require('./models/imagemiracles.js');
-
+const Imagegod = require('./models/imagegod.js');
 //=================//
 
 //=====SPLASH API======//
@@ -2218,6 +2218,30 @@ app.get('/api/images/miracles', function(req, res) {
 
 app.post('/api/images/miracles', function(req, res) {
   Imagemiracles.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/god', function(req, res) {
+  Imagegod.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/god', function(req, res) {
+  Imagegod.create({
     image_data: req.body.image_data,
     tag: req.body.tag,
     image: req.body.image,

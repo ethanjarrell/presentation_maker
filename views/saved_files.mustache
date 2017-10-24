@@ -45,6 +45,10 @@ var mapObj = {
    "church organization":"church",
    "d&c":"doctrinecovenants",
    "events":"events",
+   "god":"heavenlyfather",
+   "father in heaven":"heavenlyfather",
+   "god the father":"heavenlyfather",
+   "father":"heavenlyfather",
    "belief":"faith",
    "hope":"faith",
    "holy spirit":"holyghost",
@@ -141,6 +145,8 @@ var mapObj = {
    "daughters of god":"women",
    "the great apostasy":"apostasy",
    "restoration":"apostasy",
+   "first vision":"apostasy",
+   "the first vision":"apostasy",
    "the restoration":"apostasy",
    "apostasy and restoration":"apostasy",
    "first vision":"apostasy",
@@ -183,10 +189,13 @@ str = str.replace(re, function(matched){
 
 
   fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
+
       if (response.status != 200) {
-          console.log('Looks like there was a problem. Status Code' + response.status);
+          window.alert("Sorry, nothing matches those search terms.  Try another search.");
           return;
       }
+
+
 
       response.json().then(function(data) {
           let api = data;
