@@ -40,6 +40,7 @@ const Imagehumility = require('./models/imagehumility.js');
 const Imagejesus = require('./models/imagejesus.js');
 const Imagemarriage = require('./models/imagemarriage.js');
 const Imageprayer = require('./models/imageprayer.js');
+const Imagepremortal = require('./models/imagepremortal.js');
 const Imagesecondcoming = require('./models/imagesecondcoming.js');
 const Imagetemple = require('./models/imagetemple.js');
 const Imagetithing = require('./models/imagetithing.js');
@@ -53,6 +54,7 @@ const Imagenativity = require('./models/imagenativity.js');
 const Imagepioneer = require('./models/imagepioneer.js');
 const Imageresurrection = require('./models/imageresurrection.js');
 const Imagewomen = require('./models/imagewomen.js');
+const Imageapostle = require('./models/imageapostle.js');
 const Imageselfreliance = require('./models/imageselfreliance.js');
 //=================//
 
@@ -491,13 +493,49 @@ app.get('/completed/:talkid', function(req, res) {
 
 //==========================//
 
-//====RENDER COMPLETED TALKS===//
+//====RENDER SLIDESHOW PICKER===//
 
-app.get('/slideshow/:talkid', function(req, res) {
+app.get('/slideshowpicker/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('slideshowpicker', {
+    users: users,
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
+//====RENDER SLIDESHOW TALKS===//
+
+app.get('/slideshowpicker/slideshow/:talkid', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
     Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
       Talk.findOne({talkid: req.params.talkid}).then(function(talks){
   res.render('slideshow', {
+    users: users,
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
+//====RENDER SLIDESHOW TALKS===//
+
+app.get('/slideshowpicker/slideshow2/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('slideshow2', {
     users: users,
     talktopics: talktopics,
     talks: talks,
@@ -1942,8 +1980,8 @@ app.post('/api/images/selfreliance', function(req, res) {
 
 //====GET IMAGE UPLOAD FOR API===//
 
-app.get('/api/images/testimony', function(req, res) {
-  Imagetestimony.find({}).then(images => {
+app.get('/api/images/apostle', function(req, res) {
+  Imageapostle.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1952,8 +1990,8 @@ app.get('/api/images/testimony', function(req, res) {
 
 //====POST IMAGE API===//
 
-app.post('/api/images/testimony', function(req, res) {
-  Imagetestimony.create({
+app.post('/api/images/apostle', function(req, res) {
+  Imageapostle.create({
     image_data: req.body.image_data,
     tag: req.body.tag,
     image: req.body.image,

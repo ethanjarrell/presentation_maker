@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+<link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="navbar">
+  <a href="/mytalks"><img class="logo" src="/logo2.png"></a>
+  <a class="link2" href="/createp1">new</a>
+  <a class="link" href="/saved">saved</a>
+  <a class="link" href="/completed">completed</a>
+  <a class="link" href="/shared">shared</a>
+  <a class="link" href="/account">account</a>
+  <a class="link" href="/logout">logout</a>
+  </div>
+
+  <div class="bodywrapper7">
+
+
+
+    <form class="blink">
+          <label class="talk_name">Pick a slideshow template:</label>
+          {{#talktopics}}
+          <div class="buttonz"><a href="slideshow/{{talkid}}">classic lds.org theme</a></div>
+          <div class="buttonz"><a href="slideshow2/{{talkid}}">retro church material theme</a></div>
+          {{/talktopics}}
+        </form>
+
+
+
+
+
+
+</div>
+
+</body>
+
+</html>
