@@ -142,10 +142,11 @@ box-sizing: border-box;
     width: 40vw;
     height: 100vh;
     border: #E89749 solid 14px;
-    outline: solid #3B7286 2px;
+    outline: solid #3B7286 5px;
     background: #00f;
     margin: 0px;
     object-fit: cover;
+    filter: saturate(150%) contrast(70%);
 }
 
 .imglabelcontainer {
