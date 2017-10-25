@@ -10,18 +10,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
   $(document).ready(function(){
+      let searchInput = document.getElementById('searchInput').value;
+      $.getJSON('http://anyorigin.com/go?url=http%3A//scriptures.nephi.org/docbook/bom/c6.html%23AEN8&callback=?', function(data){
+        var nephi = $("p:contains(Nephi)")
+        console.log(nephi);
+	// $('#output').html(data.contents);
+});
+});
+
+
+
+
+
+
+  </script>
+  <script>
+  $(document).ready(function(){
   console.log("talking");
-  /*
-  Here is a guide for the steps you could take:
-  */
-  // 1. First select and store the elements you'll be working with
+
+
   let searchInput = document.getElementById('searchInput');
   let submitButton = document.getElementById('submitButton');
   submitButton.onclick = searchAPI;
   console.log(searchInput);
   console.log(submitButton);
-  //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
-  // 2. Create your `onSubmit` event for getting the user's search term
+
 
 
   function searchAPI() {
@@ -45,10 +58,10 @@ var mapObj = {
    "church organization":"church",
    "d&c":"doctrinecovenants",
    "events":"events",
-   "god":"heavenlyfather",
-   "father in heaven":"heavenlyfather",
-   "god the father":"heavenlyfather",
-   "father":"heavenlyfather",
+   "heavenly father":"god",
+   "father in heaven":"god",
+   "god the father":"god",
+   "father":"god",
    "belief":"faith",
    "hope":"faith",
    "holy spirit":"holyghost",
@@ -267,7 +280,8 @@ function convert()
         <section class="search">
           <label> TOPIC SEARCH: </label>
         <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
-        <button class="submitButton2" type="submit" id="submitButton"  name="button">SEARCH</button>
+        <button class="submitButton2" type="submit" id="submitButton"  name="button">images</button>
+        <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">book of mormon</button>
 
         </section>
 
@@ -4424,6 +4438,8 @@ function convert()
 
         <input class="submit" value="save talk" type="submit">
       </form>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="/search.js"></script>
 </body>
 
 </html>
