@@ -122,72 +122,72 @@ app.get('/', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/test0012', function(req, res) {
-  res.render('test0012')
+  res.render('game2')
 });
 
 //==========================//
 
 //====GET ALL IMAGES===//
 
-app.get('/game', function(req, res) {
-Imageagency.aggregate().sample(1).then(imageagencies => {
-Imageangels.aggregate().sample(1).then(imageangels => {
-Imageapostasy.aggregate().sample(1).then(imageapostasy => {
-Imageapostle.aggregate().sample(1).then(imageapostles => {
-Imageatonement.aggregate().sample(1).then(imageatonements => {
-Imagebaptism.aggregate().sample(1).then(imagebaptisms => {
-Imagebookofmormon.aggregate().sample(1).then(imagebookofmormons => {
-Imagecharity.aggregate().sample(1).then(imagecharities => {
-Imagechastity.aggregate().sample(1).then(imagechastities => {
-Imagechildren.aggregate().sample(1).then(imagechildrens => {
-Imagechurch.aggregate().sample(1).then(imagechurches => {
-Imagecovenants.aggregate().sample(1).then(imagecovenants => {
-Imagecreation.aggregate().sample(1).then(imagecreations => {
-Imagedeath.aggregate().sample(1).then(imagedeaths => {
-Imagedoctrinecovenants.aggregate().sample(1).then(imagedoctrinecovenants => {
-Imageevents.aggregate().sample(1).then(imageevents => {
-Imagepeople.aggregate().sample(1).then(imagepeoples => {
-Imagefaith.aggregate().sample(1).then(imagefaiths => {
-Imagefamily.aggregate().sample(1).then(imagefamilies => {
-Imagefasting.aggregate().sample(1).then(imagefastings => {
-Imagegenealogy.aggregate().sample(1).then(imagegenealogies => {
-Imagegiftsofthespirit.aggregate().sample(1).then(imagegiftsofthespirits => {
-Imagegod.aggregate().sample(1).then(imagegods => {
-Imagegospel.aggregate().sample(1).then(imagegospels => {
-Imagehappiness.aggregate().sample(1).then(imagehappinesses => {
-Imageheaven.aggregate().sample(1).then(imageheavens => {
-Imagehell.aggregate().sample(1).then(imagehells => {
-Imageholyghost.aggregate().sample(1).then(imageholyghosts => {
-Imagehonesty.aggregate().sample(1).then(imagehonesties => {
-Imagehumility.aggregate().sample(1).then(imagehumilities => {
-Imagejesus.aggregate().sample(1).then(imagejesuses => {
-Imagemarriage.aggregate().sample(1).then(imagemarriages => {
-Imagemiracles.aggregate().sample(1).then(imagemiracles => {
-Imagemissionary.aggregate().sample(1).then(imagemissionaries => {
-Imagenativity.aggregate().sample(1).then(imagenativities => {
-Imagenewtestament.aggregate().sample(1).then(imagenewtestaments => {
-Imageobedience.aggregate().sample(1).then(imageobediences => {
-Imageoldtestament.aggregate().sample(1).then(imageoldtestaments => {
-Imagepioneer.aggregate().sample(1).then(imagepioneers => {
-Imageprayer.aggregate().sample(1).then(imageprayers => {
-Imagepremortal.aggregate().sample(1).then(imagepremortals => {
-Imagepriesthood.aggregate().sample(1).then(imagepriesthoods => {
-Imageprophets.aggregate().sample(1).then(imageprophets => {
-Imagerepentence.aggregate().sample(1).then(imagerepentences => {
-Imageresurrection.aggregate().sample(1).then(imageresurrections => {
-Imagesacrament.aggregate().sample(1).then(imagesacraments => {
-Imagescriptures.aggregate().sample(1).then(imagescriptures => {
-Imagesecondcoming.aggregate().sample(1).then(imagesecondcomings => {
-Imageselfreliance.aggregate().sample(1).then(imageselfreliances =>   {
-Imageservice.aggregate().sample(1).then(imageservices =>   {
-Imagetemple.aggregate().sample(1).then(imagetemples =>   {
-Imagetestimony.aggregate().sample(1).then(imagetestimonies =>   {
-Imagethefall.aggregate().sample(1).then(imagethefalls =>   {
-Imagetithing.aggregate().sample(1).then(imagetithings =>   {
-Imagetrials.aggregate().sample(1).then(imagetrials =>   {
-Imagewomen.aggregate().sample(1).then(imagewomens =>   {
-Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
-  res.render('game', {
+app.get('/gamestart', function(req, res) {
+Imageagency.find({}).then(imageagencies => {
+Imageangels.find({}).then(imageangels => {
+Imageapostasy.find({}).then(imageapostasy => {
+Imageapostle.find({}).then(imageapostles => {
+Imageatonement.find({}).then(imageatonements => {
+Imagebaptism.find({}).then(imagebaptisms => {
+Imagebookofmormon.find({}).then(imagebookofmormons => {
+Imagecharity.find({}).then(imagecharities => {
+Imagechastity.find({}).then(imagechastities => {
+Imagechildren.find({}).then(imagechildrens => {
+Imagechurch.find({}).then(imagechurches => {
+Imagecovenants.find({}).then(imagecovenants => {
+Imagecreation.find({}).then(imagecreations => {
+Imagedeath.find({}).then(imagedeaths => {
+Imagedoctrinecovenants.find({}).then(imagedoctrinecovenants => {
+Imageevents.find({}).then(imageevents => {
+Imagepeople.find({}).then(imagepeoples => {
+Imagefaith.find({}).then(imagefaiths => {
+Imagefamily.find({}).then(imagefamilies => {
+Imagefasting.find({}).then(imagefastings => {
+Imagegenealogy.find({}).then(imagegenealogies => {
+Imagegiftsofthespirit.find({}).then(imagegiftsofthespirits => {
+Imagegod.find({}).then(imagegods => {
+Imagegospel.find({}).then(imagegospels => {
+Imagehappiness.find({}).then(imagehappinesses => {
+Imageheaven.find({}).then(imageheavens => {
+Imagehell.find({}).then(imagehells => {
+Imageholyghost.find({}).then(imageholyghosts => {
+Imagehonesty.find({}).then(imagehonesties => {
+Imagehumility.find({}).then(imagehumilities => {
+Imagejesus.find({}).then(imagejesuses => {
+Imagemarriage.find({}).then(imagemarriages => {
+Imagemiracles.find({}).then(imagemiracles => {
+Imagemissionary.find({}).then(imagemissionaries => {
+Imagenativity.find({}).then(imagenativities => {
+Imagenewtestament.find({}).then(imagenewtestaments => {
+Imageobedience.find({}).then(imageobediences => {
+Imageoldtestament.find({}).then(imageoldtestaments => {
+Imagepioneer.find({}).then(imagepioneers => {
+Imageprayer.find({}).then(imageprayers => {
+Imagepremortal.find({}).then(imagepremortals => {
+Imagepriesthood.find({}).then(imagepriesthoods => {
+Imageprophets.find({}).then(imageprophets => {
+Imagerepentence.find({}).then(imagerepentences => {
+Imageresurrection.find({}).then(imageresurrections => {
+Imagesacrament.find({}).then(imagesacraments => {
+Imagescriptures.find({}).then(imagescriptures => {
+Imagesecondcoming.find({}).then(imagesecondcomings => {
+Imageselfreliance.find({}).then(imageselfreliances =>   {
+Imageservice.find({}).then(imageservices =>   {
+Imagetemple.find({}).then(imagetemples =>   {
+Imagetestimony.find({}).then(imagetestimonies =>   {
+Imagethefall.find({}).then(imagethefalls =>   {
+Imagetithing.find({}).then(imagetithings =>   {
+Imagetrials.find({}).then(imagetrials =>   {
+Imagewomen.find({}).then(imagewomens =>   {
+Imagewordofwisdom.find({}).then(imagewordofwisdoms =>   {
+  res.render('gamestart', {
     imageagencies:imageagencies,
     imageangels:imageangels,
     imageapostasy:imageapostasy,
@@ -332,9 +332,11 @@ app.post('/api/images', function(req, res) {
 
 //====GET IMAGE UPLOAD FOR API===//
 
-app.get('/api/images/people', function(req, res) {
-  Imagepeople.find({}).then(images => {
-  res.json(images)
+app.get('/game1', function(req, res) {
+  Imagejesus.find({}).then(imagejesus => {
+  res.render('game1', {
+    imagejesus: imagejesus,
+  })
 });
 });
 
@@ -354,16 +356,16 @@ app.post('/api/images/people', function(req, res) {
 
 //==========================//
 
-app.post('/game/:image', function(req, res) {
+app.post('/api/images/people', function(req, res) {
   Imagepeople.findOneAndUpdate({
     standard_work_location: req.body.standard_work_location,
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
-    image_data: req.body.image_data,
-    tag: req.body.tag,
+    image_data: req.params.image_data,
+    tag: req.params.tag,
     image: req.params.image,
   }).then(images => {
-  res.redirect('/game')
+  res.redirect('/gamestart')
 });
 });
 

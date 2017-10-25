@@ -485,6 +485,20 @@ td {
   margin: 8px;
 }
 
+.formholder {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.formholder img {
+  height: 270px;
+  width: 180px;
+  object-fit: cover;
+  border: black solid 1.5px;
+}
+
 .formContainer {
   display: flex;
   flex-flow: row wrap;

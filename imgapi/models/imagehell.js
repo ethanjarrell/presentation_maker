@@ -5,25 +5,25 @@ var timestamps = require('mongoose-timestamp');
 let Schema = mongoose.Schema;
 
 const imagehellSchema = new Schema({
-  standard_work_location: {
-    type: String,
-  },
-  scripture: [{
-    book_and_verse_number: {
+  image_data: [{
+    standard_work_location: {
       type: String,
     },
-    verse_text: {
+    scripture: [{
+      book_and_verse_number: {
+        type: String,
+      },
+      verse_text: {
+        type: String,
+      },
+    }],
+    tag: [{
+      type: String,
+    }],
+    image: {
       type: String,
     },
   }],
-image_data: [{
-  tag: [{
-    type: String,
-  }],
-  image: {
-    type: String,
-  },
-}],
 
 
 })
