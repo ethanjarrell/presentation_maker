@@ -121,6 +121,193 @@ app.get('/', function(req, res) {
 
 //====GET IMAGE UPLOAD FOR API===//
 
+app.get('/test0012', function(req, res) {
+  res.render('test0012')
+});
+
+//==========================//
+
+//====GET ALL IMAGES===//
+
+app.get('/game', function(req, res) {
+Imageagency.aggregate().sample(1).then(imageagencies => {
+Imageangels.aggregate().sample(1).then(imageangels => {
+Imageapostasy.aggregate().sample(1).then(imageapostasy => {
+Imageapostle.aggregate().sample(1).then(imageapostles => {
+Imageatonement.aggregate().sample(1).then(imageatonements => {
+Imagebaptism.aggregate().sample(1).then(imagebaptisms => {
+Imagebookofmormon.aggregate().sample(1).then(imagebookofmormons => {
+Imagecharity.aggregate().sample(1).then(imagecharities => {
+Imagechastity.aggregate().sample(1).then(imagechastities => {
+Imagechildren.aggregate().sample(1).then(imagechildrens => {
+Imagechurch.aggregate().sample(1).then(imagechurches => {
+Imagecovenants.aggregate().sample(1).then(imagecovenants => {
+Imagecreation.aggregate().sample(1).then(imagecreations => {
+Imagedeath.aggregate().sample(1).then(imagedeaths => {
+Imagedoctrinecovenants.aggregate().sample(1).then(imagedoctrinecovenants => {
+Imageevents.aggregate().sample(1).then(imageevents => {
+Imagepeople.aggregate().sample(1).then(imagepeoples => {
+Imagefaith.aggregate().sample(1).then(imagefaiths => {
+Imagefamily.aggregate().sample(1).then(imagefamilies => {
+Imagefasting.aggregate().sample(1).then(imagefastings => {
+Imagegenealogy.aggregate().sample(1).then(imagegenealogies => {
+Imagegiftsofthespirit.aggregate().sample(1).then(imagegiftsofthespirits => {
+Imagegod.aggregate().sample(1).then(imagegods => {
+Imagegospel.aggregate().sample(1).then(imagegospels => {
+Imagehappiness.aggregate().sample(1).then(imagehappinesses => {
+Imageheaven.aggregate().sample(1).then(imageheavens => {
+Imagehell.aggregate().sample(1).then(imagehells => {
+Imageholyghost.aggregate().sample(1).then(imageholyghosts => {
+Imagehonesty.aggregate().sample(1).then(imagehonesties => {
+Imagehumility.aggregate().sample(1).then(imagehumilities => {
+Imagejesus.aggregate().sample(1).then(imagejesuses => {
+Imagemarriage.aggregate().sample(1).then(imagemarriages => {
+Imagemiracles.aggregate().sample(1).then(imagemiracles => {
+Imagemissionary.aggregate().sample(1).then(imagemissionaries => {
+Imagenativity.aggregate().sample(1).then(imagenativities => {
+Imagenewtestament.aggregate().sample(1).then(imagenewtestaments => {
+Imageobedience.aggregate().sample(1).then(imageobediences => {
+Imageoldtestament.aggregate().sample(1).then(imageoldtestaments => {
+Imagepioneer.aggregate().sample(1).then(imagepioneers => {
+Imageprayer.aggregate().sample(1).then(imageprayers => {
+Imagepremortal.aggregate().sample(1).then(imagepremortals => {
+Imagepriesthood.aggregate().sample(1).then(imagepriesthoods => {
+Imageprophets.aggregate().sample(1).then(imageprophets => {
+Imagerepentence.aggregate().sample(1).then(imagerepentences => {
+Imageresurrection.aggregate().sample(1).then(imageresurrections => {
+Imagesacrament.aggregate().sample(1).then(imagesacraments => {
+Imagescriptures.aggregate().sample(1).then(imagescriptures => {
+Imagesecondcoming.aggregate().sample(1).then(imagesecondcomings => {
+Imageselfreliance.aggregate().sample(1).then(imageselfreliances =>   {
+Imageservice.aggregate().sample(1).then(imageservices =>   {
+Imagetemple.aggregate().sample(1).then(imagetemples =>   {
+Imagetestimony.aggregate().sample(1).then(imagetestimonies =>   {
+Imagethefall.aggregate().sample(1).then(imagethefalls =>   {
+Imagetithing.aggregate().sample(1).then(imagetithings =>   {
+Imagetrials.aggregate().sample(1).then(imagetrials =>   {
+Imagewomen.aggregate().sample(1).then(imagewomens =>   {
+Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
+  res.render('game', {
+    imageagencies:imageagencies,
+    imageangels:imageangels,
+    imageapostasy:imageapostasy,
+    imageapostles:imageapostles,
+    imageatonements:imageatonements,
+    imagebaptisms:imagebaptisms,
+    imagebookofmormons:imagebookofmormons,
+    imagecharities:imagecharities,
+    imagechastities:imagechastities,
+    imagechildrens:imagechildrens,
+    imagechurches:imagechurches,
+    imagecovenants:imagecovenants,
+    imagecreations:imagecreations,
+    imagedeaths:imagedeaths,
+    imagedoctrinecovenants:imagedoctrinecovenants,
+    imageevents:imageevents,
+    imagepeoples:imagepeoples,
+    imagefaiths:imagefaiths,
+    imagefamilies:imagefamilies,
+    imagefastings:imagefastings,
+    imagegenealogies:imagegenealogies,
+    imagegiftsofthespirits:imagegiftsofthespirits,
+    imagegods:imagegods,
+    imagegospels:imagegospels,
+    imagehappinesses:imagehappinesses,
+    imageheavens:imageheavens,
+    imagehells:imagehells,
+    imageholyghosts:imageholyghosts,
+    imagehonesties:imagehonesties,
+    imagehumilities:imagehumilities,
+    imagejesuses:imagejesuses,
+    imagemarriages:imagemarriages,
+    imagemiracles:imagemiracles,
+    imagemissionaries:imagemissionaries,
+    imagenativities:imagenativities,
+    imagenewtestaments:imagenewtestaments,
+    imageobediences:imageobediences,
+    imageoldtestaments:imageoldtestaments,
+    imagepioneers:imagepioneers,
+    imageprayers:imageprayers,
+    imagepremortals:imagepremortals,
+    imagepriesthoods:imagepriesthoods,
+    imageprophets:imageprophets,
+    imagerepentences:imagerepentences,
+    imageresurrections:imageresurrections,
+    imagesacraments:imagesacraments,
+    imagescriptures:imagescriptures,
+    imagesecondcomings:imagesecondcomings,
+    imageselfreliances:imageselfreliances,
+    imageservices:imageservices,
+    imagetemples:imagetemples,
+    imagetestimonies:imagetestimonies,
+    imagethefalls:imagethefalls,
+    imagetithings:imagetithings,
+    imagetrials:imagetrials,
+    imagewomens:imagewomens,
+    imagewordofwisdoms:imagewordofwisdoms,
+    })
+    })
+    })
+    })
+    })
+    })
+    })
+    })
+    })
+    })
+  })
+  })
+  })
+  })
+  })
+  })
+  })
+  })
+  })
+  })
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+  })
+});
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
 app.get('/api/images', function(req, res) {
   Image.find({}).then(images => {
   res.json(images)
@@ -166,6 +353,19 @@ app.post('/api/images/people', function(req, res) {
 });
 
 //==========================//
+
+app.post('/game/:image', function(req, res) {
+  Imagepeople.findOneAndUpdate({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.params.image,
+  }).then(images => {
+  res.redirect('/game')
+});
+});
 
 //====GET IMAGE UPLOAD FOR API===//
 
@@ -1532,5 +1732,12 @@ app.post('/api/images/god', function(req, res) {
   res.json(images)
 });
 });
+
+//==========================//
+
+//====APP LISTEN ON ENVIRONMENT PORT===//
+
+app.listen(process.env.PORT || 3000);
+console.log('starting applicaiton.  Good job!');
 
 //==========================//
