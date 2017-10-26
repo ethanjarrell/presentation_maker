@@ -1061,7 +1061,7 @@ Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images', function(req, res) {
-  Image.aggregate().sample(1).then(images => {
+  Image.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1085,7 +1085,7 @@ app.post('/api/images', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/people', function(req, res) {
-  Imagepeople.aggregate().sample(1).then(images => {
+  Imagepeople.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1109,7 +1109,7 @@ app.post('/api/images/people', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/events', function(req, res) {
-  Imageevents.aggregate().sample(1).then(images => {
+  Imageevents.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1133,7 +1133,7 @@ app.post('/api/images/events', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/bookofmormon', function(req, res) {
-  Imagebookofmormon.aggregate().sample(1).then(images => {
+  Imagebookofmormon.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1157,7 +1157,7 @@ app.post('/api/images/bookofmormon', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/newtestament', function(req, res) {
-  Imagenewtestament.aggregate().sample(1).then(images => {
+  Imagenewtestament.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1181,7 +1181,7 @@ app.post('/api/images/newtestament', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/oldtestament', function(req, res) {
-  Imageoldtestament.aggregate().sample(1).then(images => {
+  Imageoldtestament.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1205,7 +1205,7 @@ app.post('/api/images/oldtestament', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/doctrinecovenants', function(req, res) {
-  Imagedoctrinecovenants.aggregate().sample(1).then(images => {
+  Imagedoctrinecovenants.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1229,7 +1229,7 @@ app.post('/api/images/doctrinecovenants', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/baptism', function(req, res) {
-  Imagebaptism.aggregate().sample(1).then(images => {
+  Imagebaptism.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1253,7 +1253,7 @@ app.post('/api/images/baptism', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/faith', function(req, res) {
-  Imagefaith.aggregate().sample(1).then(images => {
+  Imagefaith.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1277,7 +1277,7 @@ app.post('/api/images/faith', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/repentence', function(req, res) {
-  Imagerepentence.aggregate().sample(1).then(images => {
+  Imagerepentence.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1301,7 +1301,7 @@ app.post('/api/images/repentence', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/charity', function(req, res) {
-  Imagecharity.aggregate().sample(1).then(images => {
+  Imagecharity.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1325,7 +1325,7 @@ app.post('/api/images/charity', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/prophets', function(req, res) {
-  Imageprophets.aggregate().sample(1).then(images => {
+  Imageprophets.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1349,7 +1349,7 @@ app.post('/api/images/prophets', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/atonement', function(req, res) {
-  Imageatonement.aggregate().sample(1).then(images => {
+  Imageatonement.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1373,7 +1373,7 @@ app.post('/api/images/atonement', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/wordofwisdom', function(req, res) {
-  Imagewordofwisdom.aggregate().sample(1).then(images => {
+  Imagewordofwisdom.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1397,7 +1397,7 @@ app.post('/api/images/wordofwisdom', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/service', function(req, res) {
-  Imageservice.aggregate().sample(1).then(images => {
+  Imageservice.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1421,7 +1421,7 @@ app.post('/api/images/service', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/creation', function(req, res) {
-  Imagecreation.aggregate().sample(1).then(images => {
+  Imagecreation.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1445,7 +1445,7 @@ app.post('/api/images/creation', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/agency', function(req, res) {
-  Imageagency.aggregate().sample(1).then(images => {
+  Imageagency.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1469,7 +1469,7 @@ app.post('/api/images/agency', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/thefall', function(req, res) {
-  Imagethefall.aggregate().sample(1).then(images => {
+  Imagethefall.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1493,7 +1493,7 @@ app.post('/api/images/thefall', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/holyghost', function(req, res) {
-  Imageholyghost.aggregate().sample(1).then(images => {
+  Imageholyghost.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1517,7 +1517,7 @@ app.post('/api/images/holyghost', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/scriptures', function(req, res) {
-  Imagescriptures.aggregate().sample(1).then(images => {
+  Imagescriptures.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1541,7 +1541,7 @@ app.post('/api/images/scriptures', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/priesthood', function(req, res) {
-  Imagepriesthood.aggregate().sample(1).then(images => {
+  Imagepriesthood.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1565,7 +1565,7 @@ app.post('/api/images/priesthood', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/sacrament', function(req, res) {
-  Imagesacrament.aggregate().sample(1).then(images => {
+  Imagesacrament.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1589,7 +1589,7 @@ app.post('/api/images/sacrament', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/honesty', function(req, res) {
-  Imagehonesty.aggregate().sample(1).then(images => {
+  Imagehonesty.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1613,7 +1613,7 @@ app.post('/api/images/honesty', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/obedience', function(req, res) {
-  Imageobedience.aggregate().sample(1).then(images => {
+  Imageobedience.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1637,7 +1637,7 @@ app.post('/api/images/obedience', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/angels', function(req, res) {
-  Imageangels.aggregate().sample(1).then(images => {
+  Imageangels.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1661,7 +1661,7 @@ app.post('/api/images/angels', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/apostasy', function(req, res) {
-  Imageapostasy.aggregate().sample(1).then(images => {
+  Imageapostasy.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1685,7 +1685,7 @@ app.post('/api/images/apostasy', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/church', function(req, res) {
-  Imagechurch.aggregate().sample(1).then(images => {
+  Imagechurch.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1709,7 +1709,7 @@ app.post('/api/images/church', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/family', function(req, res) {
-  Imagefamily.aggregate().sample(1).then(images => {
+  Imagefamily.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1733,7 +1733,7 @@ app.post('/api/images/family', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/fasting', function(req, res) {
-  Imagefasting.aggregate().sample(1).then(images => {
+  Imagefasting.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1757,7 +1757,7 @@ app.post('/api/images/fasting', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/humility', function(req, res) {
-  Imagehumility.aggregate().sample(1).then(images => {
+  Imagehumility.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1781,7 +1781,7 @@ app.post('/api/images/humility', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/jesus', function(req, res) {
-  Imagejesus.aggregate().sample(1).then(images => {
+  Imagejesus.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1805,7 +1805,7 @@ app.post('/api/images/jesus', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/marriage', function(req, res) {
-  Imagemarriage.aggregate().sample(1).then(images => {
+  Imagemarriage.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1829,7 +1829,7 @@ app.post('/api/images/marriage', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/prayer', function(req, res) {
-  Imageprayer.aggregate().sample(1).then(images => {
+  Imageprayer.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1853,7 +1853,7 @@ app.post('/api/images/prayer', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/premortal', function(req, res) {
-  Imagepremortal.aggregate().sample(1).then(images => {
+  Imagepremortal.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1877,7 +1877,7 @@ app.post('/api/images/premortal', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/secondcoming', function(req, res) {
-  Imagesecondcoming.aggregate().sample(1).then(images => {
+  Imagesecondcoming.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1901,7 +1901,7 @@ app.post('/api/images/secondcoming', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/temple', function(req, res) {
-  Imagetemple.aggregate().sample(1).then(images => {
+  Imagetemple.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1925,7 +1925,7 @@ app.post('/api/images/temple', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/tithing', function(req, res) {
-  Imagetithing.aggregate().sample(1).then(images => {
+  Imagetithing.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1949,7 +1949,7 @@ app.post('/api/images/tithing', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/trials', function(req, res) {
-  Imagetrials.aggregate().sample(1).then(images => {
+  Imagetrials.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1973,7 +1973,7 @@ app.post('/api/images/trials', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/heaven', function(req, res) {
-  Imageheaven.aggregate().sample(1).then(images => {
+  Imageheaven.find({}).then(images => {
   res.json(images)
 });
 });
@@ -1997,7 +1997,7 @@ app.post('/api/images/heaven', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/hell', function(req, res) {
-  Imagehell.aggregate().sample(1).then(images => {
+  Imagehell.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2021,7 +2021,7 @@ app.post('/api/images/hell', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/missionary', function(req, res) {
-  Imagemissionary.aggregate().sample(1).then(images => {
+  Imagemissionary.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2045,7 +2045,7 @@ app.post('/api/images/missionary', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/nativity', function(req, res) {
-  Imagenativity.aggregate().sample(1).then(images => {
+  Imagenativity.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2069,7 +2069,7 @@ app.post('/api/images/nativity', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/pioneer', function(req, res) {
-  Imagepioneer.aggregate().sample(1).then(images => {
+  Imagepioneer.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2093,7 +2093,7 @@ app.post('/api/images/pioneer', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/resurrection', function(req, res) {
-  Imageresurrection.aggregate().sample(1).then(images => {
+  Imageresurrection.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2117,7 +2117,7 @@ app.post('/api/images/resurrection', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/testimony', function(req, res) {
-  Imagetestimony.aggregate().sample(1).then(images => {
+  Imagetestimony.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2141,7 +2141,7 @@ app.post('/api/images/testimony', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/women', function(req, res) {
-  Imagewomen.aggregate().sample(1).then(images => {
+  Imagewomen.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2165,7 +2165,7 @@ app.post('/api/images/women', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/godhead', function(req, res) {
-  Imagegodhead.aggregate().sample(1).then(images => {
+  Imagegodhead.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2189,7 +2189,7 @@ app.post('/api/images/godhead', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/selfreliance', function(req, res) {
-  Imageselfreliance.aggregate().sample(1).then(images => {
+  Imageselfreliance.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2213,7 +2213,7 @@ app.post('/api/images/selfreliance', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/apostle', function(req, res) {
-  Imageapostle.aggregate().sample(1).then(images => {
+  Imageapostle.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2237,7 +2237,7 @@ app.post('/api/images/apostle', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/chastity', function(req, res) {
-  Imagechastity.aggregate().sample(1).then(images => {
+  Imagechastity.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2261,7 +2261,7 @@ app.post('/api/images/chastity', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/children', function(req, res) {
-  Imagechildren.aggregate().sample(1).then(images => {
+  Imagechildren.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2285,7 +2285,7 @@ app.post('/api/images/children', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/covenants', function(req, res) {
-  Imagecovenants.aggregate().sample(1).then(images => {
+  Imagecovenants.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2309,7 +2309,7 @@ app.post('/api/images/covenants', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/death', function(req, res) {
-  Imagedeath.aggregate().sample(1).then(images => {
+  Imagedeath.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2333,7 +2333,7 @@ app.post('/api/images/death', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/genealogy', function(req, res) {
-  Imagegenealogy.aggregate().sample(1).then(images => {
+  Imagegenealogy.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2357,7 +2357,7 @@ app.post('/api/images/genealogy', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/giftsofthespirit', function(req, res) {
-  Imagegiftsofthespirit.aggregate().sample(1).then(images => {
+  Imagegiftsofthespirit.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2381,7 +2381,7 @@ app.post('/api/images/giftsofthespirit', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/gospel', function(req, res) {
-  Imagegospel.aggregate().sample(1).then(images => {
+  Imagegospel.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2405,7 +2405,7 @@ app.post('/api/images/gospel', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/happiness', function(req, res) {
-  Imagehappiness.aggregate().sample(1).then(images => {
+  Imagehappiness.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2429,7 +2429,7 @@ app.post('/api/images/happiness', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/miracles', function(req, res) {
-  Imagemiracles.aggregate().sample(1).then(images => {
+  Imagemiracles.find({}).then(images => {
   res.json(images)
 });
 });
@@ -2453,7 +2453,7 @@ app.post('/api/images/miracles', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images/god', function(req, res) {
-  Imagegod.aggregate().sample(1).then(images => {
+  Imagegod.find({}).then(images => {
   res.json(images)
 });
 });
@@ -4229,6 +4229,544 @@ app.get('/game57/:_id', function(req, res) {
 });
 });
 
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures', function(req, res) {
+  Scripture.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/people', function(req, res) {
+  Scripturepeople.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/events', function(req, res) {
+  Scriptureevents.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/bookofmormon', function(req, res) {
+  Scripturebookofmormon.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/newtestament', function(req, res) {
+  Scripturenewtestament.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/oldtestament', function(req, res) {
+  Scriptureoldtestament.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/doctrinecovenants', function(req, res) {
+  Scripturedoctrinecovenants.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/baptism', function(req, res) {
+  Scripturebaptism.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/faith', function(req, res) {
+  Scripturefaith.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/repentence', function(req, res) {
+  Scripturerepentence.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/charity', function(req, res) {
+  Scripturecharity.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/prophets', function(req, res) {
+  Scriptureprophets.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/atonement', function(req, res) {
+  Scriptureatonement.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/wordofwisdom', function(req, res) {
+  Scripturewordofwisdom.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/service', function(req, res) {
+  Scriptureservice.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/creation', function(req, res) {
+  Scripturecreation.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/agency', function(req, res) {
+  Scriptureagency.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/thefall', function(req, res) {
+  Scripturethefall.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/holyghost', function(req, res) {
+  Scriptureholyghost.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/scriptures', function(req, res) {
+  Scripturescriptures.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/priesthood', function(req, res) {
+  Scripturepriesthood.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/sacrament', function(req, res) {
+  Scripturesacrament.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/honesty', function(req, res) {
+  Scripturehonesty.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/obedience', function(req, res) {
+  Scriptureobedience.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/angels', function(req, res) {
+  Scriptureangels.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/apostasy', function(req, res) {
+  Scriptureapostasy.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/church', function(req, res) {
+  Scripturechurch.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/family', function(req, res) {
+  Scripturefamily.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/fasting', function(req, res) {
+  Scripturefasting.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/humility', function(req, res) {
+  Scripturehumility.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/jesus', function(req, res) {
+  Scripturejesus.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/marriage', function(req, res) {
+  Scripturemarriage.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/prayer', function(req, res) {
+  Scriptureprayer.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/premortal', function(req, res) {
+  Scripturepremortal.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/secondcoming', function(req, res) {
+  Scripturesecondcoming.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/temple', function(req, res) {
+  Scripturetemple.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/tithing', function(req, res) {
+  Scripturetithing.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/trials', function(req, res) {
+  Scripturetrials.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/heaven', function(req, res) {
+  Scriptureheaven.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/hell', function(req, res) {
+  Scripturehell.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/missionary', function(req, res) {
+  Scripturemissionary.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/nativity', function(req, res) {
+  Scripturenativity.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/pioneer', function(req, res) {
+  Scripturepioneer.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/resurrection', function(req, res) {
+  Scriptureresurrection.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/testimony', function(req, res) {
+  Scripturetestimony.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/women', function(req, res) {
+  Scripturewomen.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/godhead', function(req, res) {
+  Scripturegodhead.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/selfreliance', function(req, res) {
+  Scriptureselfreliance.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/apostle', function(req, res) {
+  Scriptureapostle.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/chastity', function(req, res) {
+  Scripturechastity.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/children', function(req, res) {
+  Scripturechildren.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/covenants', function(req, res) {
+  Scripturecovenants.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/death', function(req, res) {
+  Scripturedeath.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/genealogy', function(req, res) {
+  Scripturegenealogy.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/giftsofthespirit', function(req, res) {
+  Scripturegiftsofthespirit.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/gospel', function(req, res) {
+  Scripturegospel.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/happiness', function(req, res) {
+  Scripturehappiness.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/miracles', function(req, res) {
+  Scripturemiracles.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/god', function(req, res) {
+  Scripturegod.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
 
 //==========================//
 
