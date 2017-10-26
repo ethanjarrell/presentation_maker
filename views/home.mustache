@@ -549,6 +549,216 @@
   */
   // 1. First select and store the elements you'll be working with
   let searchInput = document.getElementById('searchInput');
+  let bofmSearch = document.getElementById('bofmSearch');
+  bofmSearch.onclick = searchAPI;
+  console.log(searchInput);
+  console.log(bofmSearch);
+  //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
+  // 2. Create your `onSubmit` event for getting the user's search term
+
+
+  function searchAPI() {
+
+  let searchResults = searchInput.value;
+
+  var str = searchInput.value;
+
+
+var mapObj = {
+  "free agency":"agency",
+  "the atonement":"atonement",
+  "baptize":"baptism",
+  "book of mormon":"bookofmormon",
+  "love":"charity",
+  "charitable":"charity",
+  "pure love":"charity",
+  "pure love of christ":"charity",
+  "created":"creation",
+  "religion":"church",
+  "church organization":"church",
+  "d&c":"doctrinecovenants",
+  "events":"events",
+  "heavenly father":"god",
+  "father in heaven":"god",
+  "god the father":"god",
+  "father":"god",
+  "belief":"faith",
+  "hope":"faith",
+  "holy spirit":"holyghost",
+  "holy ghost":"holyghost",
+  "spirit":"holyghost",
+  "the spirit":"holyghost",
+  "honest":"honesty",
+  "lie":"honesty",
+  "steal":"honesty",
+  "integrity":"honesty",
+  "bible":"newtestament",
+  "new testament":"newtestament",
+  "follow":"obedience",
+  "submission":"obedience",
+  "submissive":"obedience",
+  "old testament":"oldtestament",
+  "people":"people",
+  "melchizedek priesthood":"priesthood",
+  "aaronic priesthood":"priesthood",
+  "melchizedek":"priesthood",
+  "aaronic":"priesthood",
+  "prophets of god":"prophets",
+  "prophet":"prophets",
+  "repentance":"repentence",
+  "forgiveness":"repentence",
+  "bread and water":"sacrament",
+  "scripture":"scriptures",
+  "word of god":"scriptures",
+  "labor":"service",
+  "work":"service",
+  "responsibility":"service",
+  "personal responsibility":"service",
+  "fall of man":"thefall",
+  "the fall":"thefall",
+  "fall of mankind":"thefall",
+  "fall":"thefall",
+  "jesus christ":"jesus",
+  "christ":"jesus",
+  "savior":"jesus",
+  "redeemer":"jesus",
+  "lord":"jesus",
+  "fall of adam":"thefall",
+  "garden of eden":"thefall",
+  "lucifer":"thefall",
+  "original sin":"thefall",
+  "law of health":"wordofwisdom",
+  "word of wisdom":"wordofwisdom",
+  "apostles":"apostle",
+  "the godhead":"godhead",
+  "revelation":"testimony",
+  "truth":"testimony",
+  "testify":"testimony",
+  "conversion":"testimony",
+  "devil":"hell",
+  "satan":"hell",
+  "damnation":"hell",
+  "torment":"hell",
+  "eternal marriage":"marriage",
+  "temple marriage":"marriage",
+  "fire and brimstone":"hell",
+  "celestial kingdom":"heaven",
+  "plan of salvation":"heaven",
+  "telestial":"heaven",
+  "exaltation":"heaven",
+  "immortality":"heaven",
+  "eternal life":"heaven",
+  "three degrees of glory":"heaven",
+  "missionaries":"missionary",
+  "preach":"missionary",
+  "preaching":"missionary",
+  "missionary work":"missionary",
+  "christmas":"nativity",
+  "church history":"pioneer",
+  "pioneers":"pioneer",
+  "handcarts":"pioneer",
+  "nauvoo":"pioneer",
+  "premortal existence":"premortal",
+  "council in heaven":"premortal",
+  "premortal life":"premortal",
+  "war in heaven":"premortal",
+  "easter":"resurrection",
+  "resurrected":"resurrection",
+  "crucifixion":"resurrection",
+  "cross":"resurrection",
+  "woman":"women",
+  "widow":"women",
+  "mary":"women",
+  "mothers":"women",
+  "mother":"women",
+  "motherhood":"women",
+  "daughter":"women",
+  "daughters":"women",
+  "relief society":"women",
+  "daughters of god":"women",
+  "the great apostasy":"apostasy",
+  "restoration":"apostasy",
+  "first vision":"apostasy",
+  "the first vision":"apostasy",
+  "the restoration":"apostasy",
+  "apostasy and restoration":"apostasy",
+  "first vision":"apostasy",
+  "family home evening":"family",
+  "family prayer":"family",
+  "eternal family":"family",
+  "virtue":"chastity",
+  "chaste":"chastity",
+  "virtuous":"chastity",
+  "child":"children",
+  "primary":"children",
+  "primary children":"children",
+  "covenant":"covenants",
+  "temple covenant":"covenants",
+  "temple covenants":"covenants",
+  "baptismal covenant":"covenants",
+  "baptismal covenants":"covenants",
+  "life after death":"death",
+  "die":"death",
+  "mortality":"death",
+  "family history":"genealogy",
+  "ancestors":"genealogy",
+  "family tree":"genealogy",
+  "spiritual gifts":"gifts of the spirit",
+  "good news":"gospel",
+  "good news of the gospel":"gospel",
+  "the gospel":"gospel",
+  "gospel":"gospel",
+  "plan of salvation":"gospel",
+  "the plan of salvation":"gospel",
+  "happy":"happiness",
+  "joy":"happiness",
+  "plan of happiness":"happiness",
+  "miracle":"miracles",
+};
+var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
+str = str.replace(re, function(matched){
+  return mapObj[matched.toLowerCase()];
+});
+
+
+  fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+      if (response.status != 200) {
+          console.log('Looks like there was a problem. Status Code' + response.status);
+          return;
+      }
+
+      response.json().then(function(data) {
+          let api = data;
+
+          function renderapis() {
+
+            return `${api.map(api =>
+            `<div class="scripturediv">
+            <h2 class="book_and_verse">${api.book_and_verse_number}</h2>
+            <p class="verse_text">${api.verse_text}</p>
+            </div>`
+            )}
+            `
+            }
+
+          let markup = `${renderapis()}`;
+          document.getElementById('updatediv').innerHTML = markup;
+          console.log(markup);
+          })
+        })
+      }
+    })
+
+
+  </script>
+  <script>
+  $(document).ready(function(){
+  console.log("talking");
+  /*
+  Here is a guide for the steps you could take:
+  */
+  // 1. First select and store the elements you'll be working with
+  let searchInput = document.getElementById('searchInput');
   let submitButton = document.getElementById('submitButton');
   submitButton.onclick = searchAPI;
   console.log(searchInput);
@@ -800,14 +1010,24 @@ function convert()
     <section class="search">
     <label> TOPIC SEARCH: </label>
     <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
-    <button class="submitButton2" type="submit" id="submitButton"  name="button">SEARCH</button>
 
+
+    <div class="buttonwrapper2">
+    <button class="submitButton2" type="submit" id="submitButton"  name="button">image search</button>
+    <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scripture search</button>
+  </div>
+
+</div>
 </section>
 
 </section>
 <div id="searched"></div>
 <div class="results">
+  <div class="scrollholder">
+    <img src="/scrollleft.png" />
 <section id="updatediv"></section>
+<img src="/scrollright.png" />
+</div>
 </div>
 
 {{#talktopics}}
