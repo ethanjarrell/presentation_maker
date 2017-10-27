@@ -10,9 +10,10 @@ user: {
   type: String,
   ref: 'User',
 },
-points: {
+points: [{
   type: Number,
-},
+  default: 0,
+}],
 
 })
 pointsSchema.plugin(timestamps);

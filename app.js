@@ -4770,6 +4770,18 @@ app.get('/api/scriptures/god', function(req, res) {
 
 //==========================//
 
+//====GET HIGH SCORES===//
+
+app.get('/highscores', function(req, res) {
+  User.find({}).then(users => {
+    Points.find({}).then(points => {
+  res.render('highscores')
+});
+});
+});
+
+//==========================//
+
 //====APP LISTEN ON ENVIRONMENT PORT===//
 
 app.listen(process.env.PORT || 3000);
