@@ -734,6 +734,7 @@ str = str.replace(re, function(matched){
 
             return `${api.map(api =>
             `<div class="scripturediv">
+            <h2 class="location_title">${api.standard_work_location}</h2>
             <h2 class="book_and_verse">${api.book_and_verse_number}</h2>
             <p class="verse_text">${api.verse_text}</p>
             </div>`

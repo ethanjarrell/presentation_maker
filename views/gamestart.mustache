@@ -6,12 +6,24 @@
   <title>The Talk Maker</title>
   <link rel="stylesheet" href="/game2.css">
 <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<script>
+$(window).on('load', function () {
+console.log("talking");
+  let userpoints = parseInt("{{#points}}{{points}}{{/points}}");
+  let integer = Number.isInteger(userpoints);
+  console.log("is userpoints a number?", integer);
+});
 </script>
 </head>
+  <div class="linkcontainer">
+  <a href="/mytalks" class="logo">Back</a>
+  <a href="/highscores" class="logo">High Scores</a>
+</div>
 
 <body>
-  {{#users}}<div class="display"><h1>User {{username}}{{/users}} has {{#points}}{{points}}{{/points}} points!</h1></div>
+  {{#users}}<div class="display"><h1>{{username}}{{/users}} has {{#points}}{{points}}{{/points}} points!</h1></div>
 
 
 <div class="bodywrapper">

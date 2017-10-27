@@ -5,23 +5,23 @@
   <meta charset="utf-8">
   <title>The Talk Maker</title>
   <link rel="stylesheet" href="/game1.css">
-<link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 
-</script>
+  </script>
 </head>
 
 <body>
 
 
-{{#imagepeoples}}
+  {{#imagepeoples}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
-<form class="form2" action="/api/scriptures/people" method="post">
+    <form class="form2" action="/api/scriptures/people" method="post">
 
-<label>Category: People</label>
-<label>What scripture could this picture reference?</label>
-<select name="image_data[standard_work_location]">
+      <label>Category: People</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
   <option value="book of mormon">Book of Mormon
   </option>
   <option value="new testament">New Testament
@@ -32,24 +32,24 @@
   </option>
   <option value="D&C">Doctrine and Covenants
   </option>
-</select>
-<label>What's the book name and verse number?</label>
-<input name="book_and_verse_number" />
-<label>What's the verse text?</label>
-<textarea name="verse_text">Verse Text</textarea>
+<option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-<input class="submit" type="submit" value="submit">
-</form>
-{{/imagepeoples}}
-{{#imageagencies}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagepeoples}}
+  {{#imageagencies}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
-<form class="form2" action="/api/scriptures/agency" method="post">
+    <form class="form2" action="/api/scriptures/agency" method="post">
 
-<label>Category: Agency</label>
-<label>What scripture could this picture reference?</label>
-<select name="image_data[standard_work_location]">
+      <label>Category: Agency</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
   <option value="book of mormon">Book of Mormon
   </option>
   <option value="new testament">New Testament
@@ -60,24 +60,24 @@
   </option>
   <option value="D&C">Doctrine and Covenants
   </option>
-</select>
-<label>What's the book name and verse number?</label>
-<input name="book_and_verse_number" />
-<label>What's the verse text?</label>
-<textarea name="verse_text">Verse Text</textarea>
+<option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-<input class="submit" type="submit" value="submit">
-</form>
-{{/imageagencies}}
-{{#imageangels}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageagencies}}
+  {{#imageangels}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/angels" method="post">
 
-    <label>Category: Angels</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Angels</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -88,25 +88,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageangels}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageangels}}
 
-{{#imageapostasy}}
+  {{#imageapostasy}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/apostasy" method="post">
 
-    <label>Category: Apostasy</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Apostasy</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -117,25 +117,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageapostasy}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageapostasy}}
 
-{{#imageapostles}}
+  {{#imageapostles}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/apostle" method="post">
 
-    <label>Category: Apostles</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Apostles</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -146,25 +146,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageapostles}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageapostles}}
 
-{{#imageatonements}}
+  {{#imageatonements}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/atonement" method="post">
 
-    <label>Category: The Atonement</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Atonement</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -175,25 +175,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageatonements}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageatonements}}
 
-{{#imagebaptisms}}
+  {{#imagebaptisms}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/baptism" method="post">
 
-    <label>Category: Baptism</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Baptism</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -204,25 +204,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagebaptisms}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagebaptisms}}
 
-{{#imagebookofmormons}}
+  {{#imagebookofmormons}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/bookofmormon" method="post">
 
-    <label>Category: Book of mormon</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Book of mormon</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -233,25 +233,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagebookofmormons}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagebookofmormons}}
 
-{{#imagecharities}}
+  {{#imagecharities}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/charity" method="post">
 
-    <label>Category: Charity</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Charity</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -262,25 +262,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagecharities}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagecharities}}
 
-{{#imagechastities}}
+  {{#imagechastities}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/chastity" method="post">
 
-    <label>Category: Chastity</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Chastity</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -291,25 +291,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagechastities}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagechastities}}
 
-{{#imagechildrens}}
+  {{#imagechildrens}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/children" method="post">
 
-    <label>Category: Children</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Children</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -320,25 +320,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagechildrens}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagechildrens}}
 
-{{#imagechurches}}
+  {{#imagechurches}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/church" method="post">
 
-    <label>Category: Church</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Church</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -349,25 +349,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagechurches}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagechurches}}
 
-{{#imagecovenants}}
+  {{#imagecovenants}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/covenants" method="post">
 
-    <label>Category: Covenants</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Covenants</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -378,25 +378,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagecovenants}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagecovenants}}
 
-{{#imagecreations}}
+  {{#imagecreations}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/creation" method="post">
 
-    <label>Category: The Creation</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Creation</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -407,25 +407,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagecreations}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagecreations}}
 
-{{#imagedeaths}}
+  {{#imagedeaths}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/death" method="post">
 
-    <label>Category: Death</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Death</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -436,25 +436,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagedeaths}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagedeaths}}
 
-{{#imagedoctrinecovenants}}
+  {{#imagedoctrinecovenants}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/doctrinecovenants" method="post">
 
-    <label>Category: Doctrine & Covenants</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Doctrine & Covenants</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -465,25 +465,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagedoctrinecovenants}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagedoctrinecovenants}}
 
-{{#imageevents}}
+  {{#imageevents}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/events" method="post">
 
-    <label>Category: Events from the Scriptures</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Events from the Scriptures</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -494,25 +494,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageevents}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageevents}}
 
-{{#imagefaiths}}
+  {{#imagefaiths}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/faith" method="post">
 
-    <label>Category: Faith</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Faith</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -523,25 +523,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagefaiths}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagefaiths}}
 
-{{#imagefamilies}}
+  {{#imagefamilies}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/family" method="post">
 
-    <label>Category: Family</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Family</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -552,25 +552,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagefamilies}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagefamilies}}
 
-{{#imagefastings}}
+  {{#imagefastings}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/fasting" method="post">
 
-    <label>Category: Fasting</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Fasting</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -581,25 +581,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagefastings}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagefastings}}
 
-{{#imagegenealogies}}
+  {{#imagegenealogies}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/genealogy" method="post">
 
-    <label>Category: genealogy</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: genealogy</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -610,25 +610,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagegenealogies}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagegenealogies}}
 
-{{#imagegiftsofthespirits}}
+  {{#imagegiftsofthespirits}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/giftsofthespirit" method="post">
 
-    <label>Category: Gifts of the Spirit</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Gifts of the Spirit</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -639,25 +639,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagegiftsofthespirits}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagegiftsofthespirits}}
 
-{{#imagegods}}
+  {{#imagegods}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/god" method="post">
 
-    <label>Category: Heavenly Father</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Heavenly Father</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -668,25 +668,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagegods}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagegods}}
 
-{{#imagegodheads}}
+  {{#imagegodheads}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/godhead" method="post">
 
-    <label>Category: The Godhead</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Godhead</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -697,25 +697,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagegodheads}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagegodheads}}
 
-{{#imagegospels}}
+  {{#imagegospels}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/gospel" method="post">
 
-    <label>Category: The Gospel of Jesus Christ</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Gospel of Jesus Christ</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -726,25 +726,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagegospels}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagegospels}}
 
-{{#imagehappinesses}}
+  {{#imagehappinesses}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/happiness" method="post">
 
-    <label>Category: Happiness</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Happiness</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -755,25 +755,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagehappinesses}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagehappinesses}}
 
-{{#imageheavens}}
+  {{#imageheavens}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/heaven" method="post">
 
-    <label>Category: Heaven</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Heaven</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -784,25 +784,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageheavens}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageheavens}}
 
-{{#imagehells}}
+  {{#imagehells}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/hell" method="post">
 
-    <label>Category: Hell</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Hell</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -813,25 +813,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagehells}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagehells}}
 
-{{#imageholyghosts}}
+  {{#imageholyghosts}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/holyghost" method="post">
 
-    <label>Category: The Holy Ghost</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Holy Ghost</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -842,25 +842,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageholyghosts}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageholyghosts}}
 
-{{#imagehonesties}}
+  {{#imagehonesties}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/honesty" method="post">
 
-    <label>Category: Honesty</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Honesty</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -871,25 +871,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagehonesties}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagehonesties}}
 
-{{#imagehumilities}}
+  {{#imagehumilities}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/humility" method="post">
 
-    <label>Category: Humility</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Humility</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -900,25 +900,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagehumilities}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagehumilities}}
 
-{{#imagejesuses}}
+  {{#imagejesuses}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/jesus" method="post">
 
-    <label>Category: Jesus Christ</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Jesus Christ</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -929,25 +929,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagejesuses}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagejesuses}}
 
-{{#imagemarriages}}
+  {{#imagemarriages}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/marriage" method="post">
 
-    <label>Category: Eternal Marriage</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Eternal Marriage</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -958,25 +958,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagemarriages}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagemarriages}}
 
-{{#imagemiracles}}
+  {{#imagemiracles}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/miracles" method="post">
 
-    <label>Category: Miracles</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Miracles</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -987,25 +987,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagemiracles}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagemiracles}}
 
-{{#imagemissionaries}}
+  {{#imagemissionaries}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/missionary" method="post">
 
-    <label>Category: Missionary Work</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Missionary Work</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1016,25 +1016,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagemissionaries}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagemissionaries}}
 
-{{#imagenativities}}
+  {{#imagenativities}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/nativity" method="post">
 
-    <label>Category: The Birth of Jesus Christ</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Birth of Jesus Christ</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1045,25 +1045,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagenativities}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagenativities}}
 
-{{#imagenewtestaments}}
+  {{#imagenewtestaments}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/newtestament" method="post">
 
-    <label>Category: The New Testament</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The New Testament</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1074,25 +1074,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagenewtestaments}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagenewtestaments}}
 
-{{#imageobediences}}
+  {{#imageobediences}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/obedience" method="post">
 
-    <label>Category: Obedience</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Obedience</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1103,25 +1103,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageobediences}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageobediences}}
 
-{{#imageoldtestaments}}
+  {{#imageoldtestaments}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/oldtestament" method="post">
 
-    <label>Category: The Old Testament</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Old Testament</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1132,25 +1132,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageoldtestaments}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageoldtestaments}}
 
-{{#imagepioneers}}
+  {{#imagepioneers}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/pioneer" method="post">
 
-    <label>Category: Pioneers</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Pioneers</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1161,25 +1161,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagepioneers}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagepioneers}}
 
-{{#imageprayers}}
+  {{#imageprayers}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/prayer" method="post">
 
-    <label>Category: Prayer</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Prayer</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1190,25 +1190,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageprayers}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageprayers}}
 
-{{#imagepremortals}}
+  {{#imagepremortals}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/premortal" method="post">
 
-    <label>Category: The Premortal Life</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Premortal Life</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1219,25 +1219,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagepremortals}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagepremortals}}
 
-{{#imagepriesthoods}}
+  {{#imagepriesthoods}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/priesthood" method="post">
 
-    <label>Category: The Priesthood</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Priesthood</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1248,25 +1248,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagepriesthoods}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagepriesthoods}}
 
-{{#imageprophets}}
+  {{#imageprophets}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/prophets" method="post">
 
-    <label>Category: Prophets of God</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Prophets of God</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1277,25 +1277,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageprophets}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageprophets}}
 
-{{#imagerepentences}}
+  {{#imagerepentences}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/repentence" method="post">
 
-    <label>Category: Repentence</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Repentence</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1306,25 +1306,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagerepentences}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagerepentences}}
 
-{{#imageresurrections}}
+  {{#imageresurrections}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/resurrection" method="post">
 
-    <label>Category: The Resurrection</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Resurrection</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1335,25 +1335,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageresurrections}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageresurrections}}
 
-{{#imagesacraments}}
+  {{#imagesacraments}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/sacrament" method="post">
 
-    <label>Category: The Sacrament</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Sacrament</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1364,25 +1364,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagesacraments}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagesacraments}}
 
-{{#imagescriptures}}
+  {{#imagescriptures}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/scriptures" method="post">
 
-    <label>Category: The Scriptures</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Scriptures</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1393,25 +1393,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagescriptures}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagescriptures}}
 
-{{#imagesecondcomings}}
+  {{#imagesecondcomings}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/secondcoming" method="post">
 
-    <label>Category: The Second Coming</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Second Coming</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1422,25 +1422,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagesecondcomings}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagesecondcomings}}
 
-{{#imageselfreliances}}
+  {{#imageselfreliances}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/selfreliance" method="post">
 
-    <label>Category: Self Reliance</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Self Reliance</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1451,25 +1451,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageselfreliances}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageselfreliances}}
 
-{{#imageservices}}
+  {{#imageservices}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/service" method="post">
 
-    <label>Category: Service</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Service</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1480,25 +1480,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imageservices}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imageservices}}
 
-{{#imagetemples}}
+  {{#imagetemples}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/temple" method="post">
 
-    <label>Category: The Temple</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Temple</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1509,25 +1509,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagetemples}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagetemples}}
 
-{{#imagetestimonies}}
+  {{#imagetestimonies}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/testimony" method="post">
 
-    <label>Category: Testimony</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Testimony</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1538,25 +1538,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagetestimonies}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagetestimonies}}
 
-{{#imagethefalls}}
+  {{#imagethefalls}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
-    <form class="form2" action="/api/scriptures/the fall" method="post">
+    <form class="form2" action="/api/scriptures/thefall" method="post">
 
-    <label>Category: The Fall of Adam and Eve</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: The Fall of Adam and Eve</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1567,25 +1567,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagethefalls}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagethefalls}}
 
-{{#imagetithings}}
+  {{#imagetithings}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/tithing" method="post">
 
-    <label>Category: Tithing</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Tithing</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1596,25 +1596,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagetithings}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagetithings}}
 
-{{#imagetrials}}
+  {{#imagetrials}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/trials" method="post">
 
-    <label>Category: Trials and Tribulations</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Trials and Tribulations</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1625,25 +1625,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagetrials}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagetrials}}
 
-{{#imagewomens}}
+  {{#imagewomens}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/women" method="post">
 
-    <label>Category: Women</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Women</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1654,25 +1654,25 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagewomens}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagewomens}}
 
-{{#imagewordofwisdoms}}
+  {{#imagewordofwisdoms}}
 
-<img src="{{#image_data}}{{image}}{{/image_data}}"/>
+    <img src="{{#image_data}}{{image}}{{/image_data}}" />
 
     <form class="form2" action="/api/scriptures/wordofwisdom" method="post">
 
-    <label>Category: Word of Wisdom</label>
-    <label>What scripture could this picture reference?</label>
-    <select name="image_data[standard_work_location]">
+      <label>Category: Word of Wisdom</label>
+      <label>Can you think of a scripture or quote that helps describe this picture?</label>
+      <select name="standard_work_location">
       <option value="book of mormon">Book of Mormon
       </option>
       <option value="new testament">New Testament
@@ -1683,15 +1683,15 @@
       </option>
       <option value="D&C">Doctrine and Covenants
       </option>
-    </select>
-    <label>What's the book name and verse number?</label>
-    <input name="book_and_verse_number" />
-  <label>What's the verse text?</label>
-    <textarea name="verse_text">Verse Text</textarea>
+    <option value="Quote or Church Material">Other Church Literature</option></select>
+      <label>Where is it located(book or author)?</label>
+      <input name="book_and_verse_number" />
+      <label>What's the verse text?</label>
+      <textarea name="verse_text">Write the verse or quote text here</textarea>
 
-    <input class="submit" type="submit" value="submit">
-  </form>
-{{/imagewordofwisdoms}}
+      <input class="submit" type="submit" value="submit">
+    </form>
+  {{/imagewordofwisdoms}}
 
 </body>
 

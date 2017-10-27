@@ -7,9 +7,24 @@
   <link rel="stylesheet" href="/game2.css">
 <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 <script>
+$(window).on('load', function () {
+console.log("talking");
+  let userpoints = parseInt("{{#points}}{{points}}{{/points}}");
+  console.log("what's the value of userpoints?", userpoints);
+  if (isNaN(userpoints)) userpoints = 0;
+  if (userpoints == 0) {
+    $("#updateform").hide();
+  } else {
+    $("#createform").hide();
+  }
+  console.log("what's the value of userpoints now?", userpoints);
 
+
+});
+
+</script>
+<script>
 $(document).ready(function(){
 console.log("talking");
 
@@ -30,9 +45,38 @@ function buttonClick() {
   console.log(field3value);
 
   document.getElementById("field3").value = field3value;
-  document.getElementById("yourpoints").innerHTML = "You currently have"+" "+{{#points}}{{points}}{{/points}}+" "+"point.";
-  document.getElementById("questionpoints").innerHTML = "You earned"+" "+field1value+" "+"points for this question.";
-  document.getElementById("totalpoints").innerHTML = "For a grand total of"+" "+field3value+" "+"total points!";
+  document.getElementById("yourpoints").textContent = "You currently have"+" "+userpoints+" "+"point.";
+  document.getElementById("questionpoints").textContent = "You earned"+" "+field1value+" "+"points for this question.";
+  document.getElementById("totalpoints").textContent = "For a grand total of"+" "+field3value+" "+"total points!";
+
+};
+});
+</script>
+<script>
+$(document).ready(function(){
+console.log("talking");
+
+let button2 = document.getElementById('button2');
+button2.onclick = buttonClick2;
+
+function buttonClick2() {
+  let field4value = parseInt("document.getElementById('field4')").value;
+  let field5value = parseInt("document.getElementById('field5')").value;
+  let field6value = parseInt("document.getElementById('field6')").value;
+  let tempNumber = Math.floor(Math.random() * 40) + 1;
+  field4value = tempNumber;
+  console.log(field4value);
+  let userpoints = parseInt("{{#points}}{{points}}{{/points}}");
+  userpoints = userpoints || 0
+  field6value = userpoints + tempNumber;
+  console.log(userpoints);
+  console.log(field6value);
+
+  document.getElementById("field6").value = field6value;
+  document.getElementById("yourpoints").textContent = "You currently have"+" "+userpoints+" "+"point.";
+  document.getElementById("questionpoints").textContent = "You earned"+" "+field4value+" "+"points for this question.";
+  document.getElementById("totalpoints").textContent = "For a grand total of"+" "+field6value+" "+"total points!";
+
 };
 });
 </script>
@@ -49,7 +93,8 @@ function buttonClick() {
 <h2 class="submitted" id="questionpoints"></h2>
 <h2 class="submitted" id="totalpoints"></h2>
 
-<form class="form2" action="/userpoints" method="post">
+
+<form id="createform" class="form2" action="/userpoints" method="post">
   <input class="invisible" type="text" id="field1"  value="0" >
   <input class="invisible" type="text" id="field2" value="0" >
   <input class="invisible" type="text" id="field3" name="points" value="0" >
@@ -57,7 +102,18 @@ function buttonClick() {
   <input id="button" type="button" class="increment" value="Click to claim your points" />
 
 <input class="submitbtn" type="submit" value="play again?" />
-<form>
+</form>
+
+<form id="updateform" class="form2" action="/userpoints/update" method="post">
+  <input class="invisible" type="text" id="field4"  value="0" >
+  <input class="invisible" type="text" id="field5" value="0" >
+  <input class="invisible" type="text" id="field6" name="updatepoints" value="0" >
+
+  <input id="button2" type="button" class="increment" value="Click to claim your points" />
+
+<input class="submitbtn" type="submit" value="play again?" />
+</form>
+
 <a href="/highscores">view high scores</a>
 
 </body>

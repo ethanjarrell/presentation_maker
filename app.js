@@ -3290,7 +3290,7 @@ app.post('/api/scriptures/wordofwisdom', function(req, res) {
 
 app.get('/playagain', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
-    Points.findOne({user: req.session.username}).sort({ field: 'asc', _id: -1 }).limit(1).then(function(points){
+    Points.findOne({user: req.session.username}).then(function(points){
   res.render('playagain', {
     users: users,
     points: points,
@@ -3299,14 +3299,12 @@ app.get('/playagain', function(req, res) {
 });
 });
 
-
 //==========================//
 
 //====POST TO USER POINTS===//
 
 app.post('/userpoints', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
-  Points.findOne().sort({ field: 'asc', _id: -1 }).limit(1).then(function(points){
     Points.create({
       user: req.session.username,
       points: req.body.points,
@@ -3315,7 +3313,22 @@ app.post('/userpoints', function(req, res) {
   });
   });
   });
-});
+
+
+//==========================//
+
+//====POST TO USER POINTS===//
+
+app.post('/userpoints/update', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Points.findOneAndUpdate({
+      user: req.session.username,
+      points: req.body.updatepoints,
+    }).then(points => {
+    res.redirect('/gamestart')
+  });
+  });
+  });
 
 
 //==========================//
@@ -4773,12 +4786,13 @@ app.get('/api/scriptures/god', function(req, res) {
 //====GET HIGH SCORES===//
 
 app.get('/highscores', function(req, res) {
-  User.find({}).then(users => {
     Points.find({}).then(points => {
-  res.render('highscores')
+  res.render('highscores', {
+  points: points,
 });
 });
 });
+
 
 //==========================//
 

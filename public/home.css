@@ -41,6 +41,12 @@ body {
   width: 100%;
 }
 
+.location_title {
+  color: #1691BA;
+  font-size: 14px;
+  width: 100%;
+}
+
 .verse_text {
   color: black;
   font-size: 15px;

@@ -20,11 +20,16 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
+    <th>username</th>
+    <th>total points</th>
   </tr>
-    {{#users.0}}<td>{{username}}</td>{{/users.0}}
-
+  <tr>
+    {{#points}}
+    <td>{{user}}</td>
+    <td>{{points}}</td>
+    {{/points}}
+  </tr>
+</table>
 </body>
 
 </html>
