@@ -1017,7 +1017,7 @@ Imagegenauthjosephfieldingsmith.aggregate().sample(1).then(imagegenauthjosephfie
 Imagegenauthjosephfsmith.aggregate().sample(1).then(imagegenauthjosephfsmiths =>   {
 Imagegenauthjosephsmith.aggregate().sample(1).then(imagegenauthjosephsmiths =>   {
 Imagegenauthjrholland.aggregate().sample(1).then(imagegenauthjrhollands =>   {
-Imagegenauthlorenzosnows.aggregate().sample(1).then(imagegenauthlorenzosnows =>   {
+Imagegenauthlorenzosnow.aggregate().sample(1).then(imagegenauthlorenzosnows =>   {
 Imagegenauthmrballard.aggregate().sample(1).then(imagegenauthmrballards =>   {
 Imagegenauthnlanderson.aggregate().sample(1).then(imagegenauthnlandersons =>   {
 Imagegenauthqlcook.aggregate().sample(1).then(imagegenauthqlcooks =>   {
