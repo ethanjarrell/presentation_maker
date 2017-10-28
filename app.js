@@ -8,7 +8,7 @@ const Image = require('./models/image.js');
 const Points = require('./models/points.js');
 //=================//
 
-//=====IMAGE API======//
+//=====TOPIC IMAGE API======//
 const Imagepeople = require('./models/imagepeople.js');
 const Imageevents = require('./models/imageevents.js');
 const Imagebookofmormon = require('./models/imagebookofmormon.js');
@@ -67,6 +67,70 @@ const Imagegospel = require('./models/imagegospel.js');
 const Imagehappiness = require('./models/imagehappiness.js');
 const Imagemiracles = require('./models/imagemiracles.js');
 const Imagegod = require('./models/imagegod.js');
+//=================//
+
+//=====GENERAL AUTHORITIES IMAGE API======//
+const Imagegenauthbrighamyoung = require('./models/imagegenauthbrighamyoung.js');
+const Imagegenauthdabednar = require('./models/imagegenauthdabednar.js');
+const Imagegenauthdavidomckay = require('./models/imagegenauthdavidomckay.js');
+const Imagegenauthdfuchtdorf = require('./models/imagegenauthdfuchtdorf.js');
+const Imagegenauthdgrenlund = require('./models/imagegenauthdgrenlund.js');
+const Imagegenauthdhoaks = require('./models/imagegenauthdhoaks.js');
+const Imagegenauthdtchristofferson = require('./models/imagegenauthdtchristofferson.js');
+const Imagegenauthezrataftbenson = require('./models/imagegenauthezrataftbenson.js');
+const Imagegenauthgeorgeasmith = require('./models/imagegenauthgeorgeasmith.js');
+const Imagegenauthgestevenson = require('./models/imagegenauthgestevenson.js');
+const Imagegenauthgordonbhinckley = require('./models/imagegenauthgordonbhinckley.js');
+const Imagegenauthharoldblee = require('./models/imagegenauthharoldblee.js');
+const Imagegenauthhbeyring = require('./models/imagegenauthhbeyring.js');
+const Imagegenauthheberjgrant = require('./models/imagegenauthheberjgrant.js');
+const Imagegenauthhowardwhunter = require('./models/imagegenauthhowardwhunter.js');
+const Imagegenauthjohntaylor = require('./models/imagegenauthjohntaylor.js');
+const Imagegenauthjosephfieldingsmith = require('./models/imagegenauthjosephfieldingsmith.js');
+const Imagegenauthjosephfsmith = require('./models/imagegenauthjosephfsmith.js');
+const Imagegenauthjosephsmith = require('./models/imagegenauthjosephsmith.js');
+const Imagegenauthjrholland = require('./models/imagegenauthjrholland.js');
+const Imagegenauthlorenzosnow = require('./models/imagegenauthlorenzosnow.js');
+const Imagegenauthmrballard = require('./models/imagegenauthmrballard.js');
+const Imagegenauthnlanderson = require('./models/imagegenauthnlanderson.js');
+const Imagegenauthqlcook = require('./models/imagegenauthqlcook.js');
+const Imagegenauthrarasband = require('./models/imagegenauthrarasband.js');
+const Imagegenauthrmnelson = require('./models/imagegenauthrmnelson.js');
+const Imagegenauthspencerkimball = require('./models/imagegenauthspencerkimball.js');
+const Imagegenauthtsmonson = require('./models/imagegenauthtsmonson.js');
+const Imagegenauthwilfordwoodruff = require('./models/imagegenauthwilfordwoodruff.js');
+//=================//
+
+//=====GENERAL AUTHORITIES QUOTES API======//
+const Scripturegenauthbrighamyoung = require('./models/scripturegenauthbrighamyoung.js');
+const Scripturegenauthdabednar = require('./models/scripturegenauthdabednar.js');
+const Scripturegenauthdavidomckay = require('./models/scripturegenauthdavidomckay.js');
+const Scripturegenauthdfuchtdorf = require('./models/scripturegenauthdfuchtdorf.js');
+const Scripturegenauthdgrenlund = require('./models/scripturegenauthdgrenlund.js');
+const Scripturegenauthdhoaks = require('./models/scripturegenauthdhoaks.js');
+const Scripturegenauthdtchristofferson = require('./models/scripturegenauthdtchristofferson.js');
+const Scripturegenauthezrataftbenson = require('./models/scripturegenauthezrataftbenson.js');
+const Scripturegenauthgeorgeasmith = require('./models/scripturegenauthgeorgeasmith.js');
+const Scripturegenauthgestevenson = require('./models/scripturegenauthgestevenson.js');
+const Scripturegenauthgordonbhinckley = require('./models/scripturegenauthgordonbhinckley.js');
+const Scripturegenauthharoldblee = require('./models/scripturegenauthharoldblee.js');
+const Scripturegenauthhbeyring = require('./models/scripturegenauthhbeyring.js');
+const Scripturegenauthheberjgrant = require('./models/scripturegenauthheberjgrant.js');
+const Scripturegenauthhowardwhunter = require('./models/scripturegenauthhowardwhunter.js');
+const Scripturegenauthjohntaylor = require('./models/scripturegenauthjohntaylor.js');
+const Scripturegenauthjosephfieldingsmith = require('./models/scripturegenauthjosephfieldingsmith.js');
+const Scripturegenauthjosephfsmith = require('./models/scripturegenauthjosephfsmith.js');
+const Scripturegenauthjosephsmith = require('./models/scripturegenauthjosephsmith.js');
+const Scripturegenauthjrholland = require('./models/scripturegenauthjrholland.js');
+const Scripturegenauthlorenzosnow = require('./models/scripturegenauthlorenzosnow.js');
+const Scripturegenauthmrballard = require('./models/scripturegenauthmrballard.js');
+const Scripturegenauthnlanderson = require('./models/scripturegenauthnlanderson.js');
+const Scripturegenauthqlcook = require('./models/scripturegenauthqlcook.js');
+const Scripturegenauthrarasband = require('./models/scripturegenauthrarasband.js');
+const Scripturegenauthrmnelson = require('./models/scripturegenauthrmnelson.js');
+const Scripturegenauthspencerkimball = require('./models/scripturegenauthspencerkimball.js');
+const Scripturegenauthtsmonson = require('./models/scripturegenauthtsmonson.js');
+const Scripturegenauthwilfordwoodruff = require('./models/scripturegenauthwilfordwoodruff.js');
 //=================//
 
 //=====SCRIPTURE API======//
@@ -933,6 +997,35 @@ Imagetithing.aggregate().sample(1).then(imagetithings =>   {
 Imagetrials.aggregate().sample(1).then(imagetrials =>   {
 Imagewomen.aggregate().sample(1).then(imagewomens =>   {
 Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
+Imagegenauthbrighamyoung.aggregate().sample(1).then(imagegenauthbrighamyoungs =>   {
+Imagegenauthdabednar.aggregate().sample(1).then(imagegenauthdabednars =>   {
+Imagegenauthdavidomckay.aggregate().sample(1).then(imagegenauthdavidomckays =>   {
+Imagegenauthdfuchtdorf.aggregate().sample(1).then(imagegenauthdfuchtdorfs =>   {
+Imagegenauthdgrenlund.aggregate().sample(1).then(imagegenauthdgrenlunds =>   {
+Imagegenauthdhoaks.aggregate().sample(1).then(imagegenauthdhoaks =>   {
+Imagegenauthdtchristofferson.aggregate().sample(1).then(imagegenauthdtchristoffersons =>   {
+Imagegenauthezrataftbenson.aggregate().sample(1).then(imagegenauthezrataftbensons =>   {
+Imagegenauthgeorgeasmith.aggregate().sample(1).then(imagegenauthgeorgeasmiths =>   {
+Imagegenauthgestevenson.aggregate().sample(1).then(imagegenauthgestevensons =>   {
+Imagegenauthgordonbhinckley.aggregate().sample(1).then(imagegenauthgordonbhinckleys =>   {
+Imagegenauthharoldblee.aggregate().sample(1).then(imagegenauthharoldblees =>   {
+Imagegenauthhbeyring.aggregate().sample(1).then(imagegenauthhbeyrings =>   {
+Imagegenauthheberjgrant.aggregate().sample(1).then(imagegenauthheberjgrants =>   {
+Imagegenauthhowardwhunter.aggregate().sample(1).then(imagegenauthhowardwhunters =>   {
+Imagegenauthjohntaylor.aggregate().sample(1).then(imagegenauthjohntaylors =>   {
+Imagegenauthjosephfieldingsmith.aggregate().sample(1).then(imagegenauthjosephfieldingsmiths =>   {
+Imagegenauthjosephfsmith.aggregate().sample(1).then(imagegenauthjosephfsmiths =>   {
+Imagegenauthjosephsmith.aggregate().sample(1).then(imagegenauthjosephsmiths =>   {
+Imagegenauthjrholland.aggregate().sample(1).then(imagegenauthjrhollands =>   {
+Imagegenauthlorenzosnows.aggregate().sample(1).then(imagegenauthlorenzosnows =>   {
+Imagegenauthmrballard.aggregate().sample(1).then(imagegenauthmrballards =>   {
+Imagegenauthnlanderson.aggregate().sample(1).then(imagegenauthnlandersons =>   {
+Imagegenauthqlcook.aggregate().sample(1).then(imagegenauthqlcooks =>   {
+Imagegenauthrarasband.aggregate().sample(1).then(imagegenauthrarasbands =>   {
+Imagegenauthrmnelson.aggregate().sample(1).then(imagegenauthrmnelsons =>   {
+Imagegenauthspencerkimball.aggregate().sample(1).then(imagegenauthspencerkimballs =>   {
+Imagegenauthtsmonson.aggregate().sample(1).then(imagegenauthtsmonsons =>   {
+Imagegenauthwilfordwoodruff.aggregate().sample(1).then(imagegenauthwilfordwoodruffs =>   {
   res.render('gamestart', {
     users: users,
     points: points,
@@ -994,9 +1087,67 @@ Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
     imagetrials:imagetrials,
     imagewomens:imagewomens,
     imagewordofwisdoms:imagewordofwisdoms,
+    imagegenauthbrighamyoungs: imagegenauthbrighamyoungs,
+    imagegenauthdabednars: imagegenauthdabednars,
+    imagegenauthdavidomckays: imagegenauthdavidomckays,
+    imagegenauthdfuchtdorfs: imagegenauthdfuchtdorfs,
+    imagegenauthdgrenlunds: imagegenauthdgrenlunds,
+    imagegenauthdhoaks: imagegenauthdhoaks,
+    imagegenauthdtchristoffersons: imagegenauthdtchristoffersons,
+    imagegenauthezrataftbensons: imagegenauthezrataftbensons,
+    imagegenauthgeorgeasmiths: imagegenauthgeorgeasmiths,
+    imagegenauthgestevensons: imagegenauthgestevensons,
+    imagegenauthgordonbhinckleys: imagegenauthgordonbhinckleys,
+    imagegenauthharoldblees: imagegenauthharoldblees,
+    imagegenauthhbeyrings: imagegenauthhbeyrings,
+    imagegenauthheberjgrants: imagegenauthheberjgrants,
+    imagegenauthhowardwhunters: imagegenauthhowardwhunters,
+    imagegenauthjohntaylors: imagegenauthjohntaylors,
+    imagegenauthjosephfieldingsmiths: imagegenauthjosephfieldingsmiths,
+    imagegenauthjosephfsmiths: imagegenauthjosephfsmiths,
+    imagegenauthjosephsmiths: imagegenauthjosephsmiths,
+    imagegenauthjrhollands: imagegenauthjrhollands,
+    imagegenauthlorenzosnows: imagegenauthlorenzosnows,
+    imagegenauthmrballards: imagegenauthmrballards,
+    imagegenauthnlandersons: imagegenauthnlandersons,
+    imagegenauthqlcooks: imagegenauthqlcooks,
+    imagegenauthrarasbands: imagegenauthrarasbands,
+    imagegenauthrmnelsons: imagegenauthrmnelsons,
+    imagegenauthspencerkimballs: imagegenauthspencerkimballs,
+    imagegenauthtsmonsons: imagegenauthtsmonsons,
+    imagegenauthwilfordwoodruffs: imagegenauthwilfordwoodruffs,
   })
     })
   })
+  })
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
     })
     })
     })
@@ -2469,6 +2620,1108 @@ app.post('/api/images/god', function(req, res) {
     image: req.body.image,
   }).then(images => {
   res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/brighamyoung', function(req, res) {
+  Imagegenauthbrighamyoung.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/brighamyoung', function(req, res) {
+  Imagegenauthbrighamyoung.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/dabednar', function(req, res) {
+  Imagegenauthdabednar.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/dabednar', function(req, res) {
+  Imagegenauthdabednar.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/davidomckay', function(req, res) {
+  Imagegenauthdavidomckay.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/davidomckay', function(req, res) {
+  Imagegenauthdavidomckay.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/dfuchtdorf', function(req, res) {
+  Imagegenauthdfuchtdorf.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/dfuchtdorf', function(req, res) {
+  Imagegenauthdfuchtdorf.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/dgrenlund', function(req, res) {
+  Imagegenauthdgrenlund.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/dgrenlund', function(req, res) {
+  Imagegenauthdgrenlund.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/dhoaks', function(req, res) {
+  Imagegenauthdhoaks.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/dhoaks', function(req, res) {
+  Imagegenauthdhoaks.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/dtchristofferson', function(req, res) {
+  Imagegenauthdtchristofferson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/dtchristofferson', function(req, res) {
+  Imagegenauthdtchristofferson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/ezrataftbenson', function(req, res) {
+  Imagegenauthezrataftbenson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/ezrataftbenson', function(req, res) {
+  Imagegenauthezrataftbenson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/georgeasmith', function(req, res) {
+  Imagegenauthgeorgeasmith.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/georgeasmith', function(req, res) {
+  Imagegenauthgeorgeasmith.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/gestevenson', function(req, res) {
+  Imagegenauthgestevenson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/gestevenson', function(req, res) {
+  Imagegenauthgestevenson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/gordonbhinckley', function(req, res) {
+  Imagegenauthgordonbhinckley.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/gordonbhinckley', function(req, res) {
+  Imagegenauthgordonbhinckley.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/haroldblee', function(req, res) {
+  Imagegenauthharoldblee.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/haroldblee', function(req, res) {
+  Imagegenauthharoldblee.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/hbeyring', function(req, res) {
+  Imagegenauthhbeyring.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/hbeyring', function(req, res) {
+  Imagegenauthhbeyring.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/heberjgrant', function(req, res) {
+  Imagegenauthheberjgrant.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/heberjgrant', function(req, res) {
+  Imagegenauthheberjgrant.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/howardwhunter', function(req, res) {
+  Imagegenauthhowardwhunter.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/howardwhunter', function(req, res) {
+  Imagegenauthhowardwhunter.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/johntaylor', function(req, res) {
+  Imagegenauthjohntaylor.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/johntaylor', function(req, res) {
+  Imagegenauthjohntaylor.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/josephfieldingsmith', function(req, res) {
+  Imagegenauthjosephfieldingsmith.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/josephfieldingsmith', function(req, res) {
+  Imagegenauthjosephfieldingsmith.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/josephfsmith', function(req, res) {
+  Imagegenauthjosephfsmith.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/josephfsmith', function(req, res) {
+  Imagegenauthjosephfsmith.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/josephsmith', function(req, res) {
+  Imagegenauthjosephsmith.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/josephsmith', function(req, res) {
+  Imagegenauthjosephsmith.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/jrholland', function(req, res) {
+  Imagegenauthjrholland.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/jrholland', function(req, res) {
+  Imagegenauthjrholland.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/lorenzosnow', function(req, res) {
+  Imagegenauthlorenzosnow.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/lorenzosnow', function(req, res) {
+  Imagegenauthlorenzosnow.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/mrballard', function(req, res) {
+  Imagegenauthmrballard.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/mrballard', function(req, res) {
+  Imagegenauthmrballard.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/nlanderson', function(req, res) {
+  Imagegenauthnlanderson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/nlanderson', function(req, res) {
+  Imagegenauthnlanderson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/qlcook', function(req, res) {
+  Imagegenauthqlcook.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/qlcook', function(req, res) {
+  Imagegenauthqlcook.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/rarasband', function(req, res) {
+  Imagegenauthrarasband.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/rarasband', function(req, res) {
+  Imagegenauthrarasband.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/rmnelson', function(req, res) {
+  Imagegenauthrmnelson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/rmnelson', function(req, res) {
+  Imagegenauthrmnelson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/spencerkimball', function(req, res) {
+  Imagegenauthspencerkimball.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/spencerkimball', function(req, res) {
+  Imagegenauthspencerkimball.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/tsmonson', function(req, res) {
+  Imagegenauthtsmonson.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/tsmonson', function(req, res) {
+  Imagegenauthtsmonson.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/wilfordwoodruff', function(req, res) {
+  Imagegenauthwilfordwoodruff.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/wilfordwoodruff', function(req, res) {
+  Imagegenauthwilfordwoodruff.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/brighamyoung', function(req, res) {
+  Scripturegenauthbrighamyoung.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/dabednar', function(req, res) {
+  Scripturegenauthdabednar.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/davidomckay', function(req, res) {
+  Scripturegenauthdavidomckay.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/dfuchtdorf', function(req, res) {
+  Scripturegenauthdfuchtdorf.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/dgrenlund', function(req, res) {
+  Scripturegenauthdgrenlund.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/dhoaks', function(req, res) {
+  Scripturegenauthdhoaks.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/dtchristofferson', function(req, res) {
+  Scripturegenauthdtchristofferson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/ezrataftbenson', function(req, res) {
+  Scripturegenauthezrataftbenson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/georgeasmith', function(req, res) {
+  Scripturegenauthgeorgeasmith.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/gestevenson', function(req, res) {
+  Scripturegenauthgestevenson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/gordonbhinckley', function(req, res) {
+  Scripturegenauthgordonbhinckley.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/haroldblee', function(req, res) {
+  Scripturegenauthharoldblee.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/hbeyring', function(req, res) {
+  Scripturegenauthhbeyring.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/heberjgrant', function(req, res) {
+  Scripturegenauthheberjgrant.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/howardwhunter', function(req, res) {
+  Scripturegenauthhowardwhunter.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/johntaylor', function(req, res) {
+  Scripturegenauthjohntaylor.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/josephfieldingsmith', function(req, res) {
+  Scripturegenauthjosephfieldingsmith.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/josephfsmith', function(req, res) {
+  Scripturegenauthjosephfsmith.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/josephsmith', function(req, res) {
+  Scripturegenauthjosephsmith.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/jrholland', function(req, res) {
+  Scripturegenauthjrholland.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/lorenzosnow', function(req, res) {
+  Scripturegenauthlorenzosnow.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/mrballard', function(req, res) {
+  Scripturegenauthmrballard.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/nlanderson', function(req, res) {
+  Scripturegenauthnlanderson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/qlcook', function(req, res) {
+  Scripturegenauthqlcook.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/rarasband', function(req, res) {
+  Scripturegenauthrarasband.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/rmnelson', function(req, res) {
+  Scripturegenauthrmnelson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/spencerkimball', function(req, res) {
+  Scripturegenauthspencerkimball.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/tsmonson', function(req, res) {
+  Scripturegenauthtsmonson.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/wilfordwoodruff', function(req, res) {
+  Scripturegenauthwilfordwoodruff.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/playagain')
 });
 });
 
@@ -4245,6 +5498,470 @@ app.get('/game57/:_id', function(req, res) {
 
 //==========================//
 
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game58/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthbrighamyoung.findById({_id: req.params._id}).then(imagegenauthbrighamyoungs => {
+  res.render('game1', {
+    users: users,
+    imagegenauthbrighamyoungs: imagegenauthbrighamyoungs,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game59/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdabednar.findById({_id: req.params._id}).then(imagegenauthdabednars => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdabednars: imagegenauthdabednars,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game60/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdavidomckay.findById({_id: req.params._id}).then(imagegenauthdavidomckays => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdavidomckays: imagegenauthdavidomckays,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game61/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdfuchtdorf.findById({_id: req.params._id}).then(imagegenauthdfuchtdorfs => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdfuchtdorfs: imagegenauthdfuchtdorfs,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game62/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdgrenlund.findById({_id: req.params._id}).then(imagegenauthdgrenlunds => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdgrenlunds: imagegenauthdgrenlunds,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game62/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdhoaks.findById({_id: req.params._id}).then(imagegenauthdhoakss => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdhoakss: imagegenauthdhoakss,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game63/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthdtchristofferson.findById({_id: req.params._id}).then(imagegenauthdtchristoffersons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthdtchristoffersons: imagegenauthdtchristoffersons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game64/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthezrataftbenson.findById({_id: req.params._id}).then(imagegenauthezrataftbensons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthezrataftbensons: imagegenauthezrataftbensons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game65/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthgeorgeasmith.findById({_id: req.params._id}).then(imagegenauthgeorgeasmiths => {
+  res.render('game1', {
+    users: users,
+    imagegenauthgeorgeasmiths: imagegenauthgeorgeasmiths,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game66/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthgestevenson.findById({_id: req.params._id}).then(imagegenauthgestevensons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthgestevensons: imagegenauthgestevensons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game67/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthgordonbhinckley.findById({_id: req.params._id}).then(imagegenauthgordonbhinckleys => {
+  res.render('game1', {
+    users: users,
+    imagegenauthgordonbhinckleys: imagegenauthgordonbhinckleys,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game68/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthharoldblee.findById({_id: req.params._id}).then(imagegenauthharoldblees => {
+  res.render('game1', {
+    users: users,
+    imagegenauthharoldblees: imagegenauthharoldblees,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game69/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthhbeyring.findById({_id: req.params._id}).then(imagegenauthhbeyrings => {
+  res.render('game1', {
+    users: users,
+    imagegenauthhbeyrings: imagegenauthhbeyrings,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game70/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthheberjgrant.findById({_id: req.params._id}).then(imagegenauthheberjgrants => {
+  res.render('game1', {
+    users: users,
+    imagegenauthheberjgrants: imagegenauthheberjgrants,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game71/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthhowardwhunter.findById({_id: req.params._id}).then(imagegenauthhowardwhunters => {
+  res.render('game1', {
+    users: users,
+    imagegenauthhowardwhunters: imagegenauthhowardwhunters,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game72/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthjohntaylor.findById({_id: req.params._id}).then(imagegenauthjohntaylors => {
+  res.render('game1', {
+    users: users,
+    imagegenauthjohntaylors: imagegenauthjohntaylors,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game73/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthjosephfieldingsmith.findById({_id: req.params._id}).then(imagegenauthjosephfieldingsmiths => {
+  res.render('game1', {
+    users: users,
+    imagegenauthjosephfieldingsmiths: imagegenauthjosephfieldingsmiths,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game74/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthjosephfsmith.findById({_id: req.params._id}).then(imagegenauthjosephfsmiths => {
+  res.render('game1', {
+    users: users,
+    imagegenauthjosephfsmiths: imagegenauthjosephfsmiths,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game75/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthjosephsmith.findById({_id: req.params._id}).then(imagegenauthjosephsmiths => {
+  res.render('game1', {
+    users: users,
+    imagegenauthjosephsmiths: imagegenauthjosephsmiths,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game76/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthjrholland.findById({_id: req.params._id}).then(imagegenauthjrhollands => {
+  res.render('game1', {
+    users: users,
+    imagegenauthjrhollands: imagegenauthjrhollands,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game77/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthlorenzosnow.findById({_id: req.params._id}).then(imagegenauthlorenzosnows => {
+  res.render('game1', {
+    users: users,
+    imagegenauthlorenzosnows: imagegenauthlorenzosnows,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game78/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthmrballard.findById({_id: req.params._id}).then(imagegenauthmrballards => {
+  res.render('game1', {
+    users: users,
+    imagegenauthmrballards: imagegenauthmrballards,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game79/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthnlanderson.findById({_id: req.params._id}).then(imagegenauthnlandersons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthnlandersons: imagegenauthnlandersons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game80/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthqlcook.findById({_id: req.params._id}).then(imagegenauthqlcooks => {
+  res.render('game1', {
+    users: users,
+    imagegenauthqlcooks: imagegenauthqlcooks,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game81/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthrarasband.findById({_id: req.params._id}).then(imagegenauthrarasbands => {
+  res.render('game1', {
+    users: users,
+    imagegenauthrarasbands: imagegenauthrarasbands,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game82/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthrmnelson.findById({_id: req.params._id}).then(imagegenauthrmnelsons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthrmnelsons: imagegenauthrmnelsons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game83/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthspencerkimball.findById({_id: req.params._id}).then(imagegenauthspencerkimballs => {
+  res.render('game1', {
+    users: users,
+    imagegenauthspencerkimballs: imagegenauthspencerkimballs,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game84/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthtsmonson.findById({_id: req.params._id}).then(imagegenauthtsmonsons => {
+  res.render('game1', {
+    users: users,
+    imagegenauthtsmonsons: imagegenauthtsmonsons,
+  })
+  })
+});
+});
+
+
+//==========================//
+
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game85/:_id', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+  Imagegenauthwilfordwoodruff.findById({_id: req.params._id}).then(imagegenauthwilfordwoodruffs => {
+  res.render('game1', {
+    users: users,
+    imagegenauthwilfordwoodruffs: imagegenauthwilfordwoodruffs,
+  })
+  })
+});
+});
+
+
+//==========================//
+
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/scriptures', function(req, res) {
@@ -4777,6 +6494,296 @@ app.get('/api/scriptures/miracles', function(req, res) {
 
 app.get('/api/scriptures/god', function(req, res) {
   Scripturegod.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/brighamyoung', function(req, res) {
+  Scripturegenauthbrighamyoung.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/dabednar', function(req, res) {
+  Scripturegenauthdabednar.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/davidomckay', function(req, res) {
+  Scripturegenauthdavidomckay.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/dfuchtdorf', function(req, res) {
+  Scripturegenauthdfuchtdorf.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/dgrenlund', function(req, res) {
+  Scripturegenauthdgrenlund.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/dhoaks', function(req, res) {
+  Scripturegenauthdhoaks.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/dtchristofferson', function(req, res) {
+  Scripturegenauthdtchristofferson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/ezrataftbenson', function(req, res) {
+  Scripturegenauthezrataftbenson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/georgeasmith', function(req, res) {
+  Scripturegenauthgeorgeasmith.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/gestevenson', function(req, res) {
+  Scripturegenauthgestevenson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/gordonbhinckley', function(req, res) {
+  Scripturegenauthgordonbhinckley.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/haroldblee', function(req, res) {
+  Scripturegenauthharoldblee.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/hbeyring', function(req, res) {
+  Scripturegenauthhbeyring.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/heberjgrant', function(req, res) {
+  Scripturegenauthheberjgrant.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/howardwhunter', function(req, res) {
+  Scripturegenauthhowardwhunter.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/johntaylor', function(req, res) {
+  Scripturegenauthjohntaylor.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/josephfieldingsmith', function(req, res) {
+  Scripturegenauthjosephfieldingsmith.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/josephfsmith', function(req, res) {
+  Scripturegenauthjosephfsmith.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/josephsmith', function(req, res) {
+  Scripturegenauthjosephsmith.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/jrholland', function(req, res) {
+  Scripturegenauthjrholland.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/lorenzosnow', function(req, res) {
+  Scripturegenauthlorenzosnow.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/mrballard', function(req, res) {
+  Scripturegenauthmrballard.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/nlanderson', function(req, res) {
+  Scripturegenauthnlanderson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/qlcook', function(req, res) {
+  Scripturegenauthqlcook.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/rarasband', function(req, res) {
+  Scripturegenauthrarasband.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/rmnelson', function(req, res) {
+  Scripturegenauthrmnelson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/spencerkimball', function(req, res) {
+  Scripturegenauthspencerkimball.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/tsmonson', function(req, res) {
+  Scripturegenauthtsmonson.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/wilfordwoodruff', function(req, res) {
+  Scripturegenauthwilfordwoodruff.find({}).then(scriptures => {
   res.json(scriptures)
 });
 });

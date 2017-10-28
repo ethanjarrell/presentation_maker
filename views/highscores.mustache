@@ -8,15 +8,22 @@
 <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-
+<script>
+      function goBack() {
+        window.history.back();
+      }
+      </script>
 
 </head>
 
 <body>
+<div class="bodywrapper">
 
 
-
-<h1 class="submitted">Nice Job!</h1>
+<div class="display">
+  <a class="logo" onclick="goBack()">Go Back</a>
+  <h1>High Scores</h1>
+</div>
 
 <table>
   <tr>
@@ -30,6 +37,7 @@
     {{/points}}
   </tr>
 </table>
+</div>
 </body>
 
 </html>

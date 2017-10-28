@@ -17,16 +17,22 @@ console.log("talking");
 });
 </script>
 </head>
-  <div class="linkcontainer">
-  <a href="/mytalks" class="logo">Back</a>
-  <a href="/highscores" class="logo">High Scores</a>
-</div>
+
 
 <body>
-  {{#users}}<div class="display"><h1>{{username}}{{/users}} has {{#points}}{{points}}{{/points}} points!</h1></div>
+  {{#users}}
+  <div class="display">
+    <a href="/mytalks" class="logo">Back</a>
+    <h1>
+      {{username}}{{/users}} has {{#points}}{{points}}{{/points}} points!
+    </h1>
+    <a href="/highscores" class="logo">High Scores</a>
+  </div>
 
 
 <div class="bodywrapper">
+
+
 {{#imagepeoples}}
 
     <a href="/game1/{{_id}}">People</a>
@@ -311,11 +317,145 @@ console.log("talking");
     <a href="/game57/{{_id}}">Word of Wisdom</a>
 {{/imagewordofwisdoms}}
 
-{{#imageagencies}}
+{{#imagebrighamyoungs}}
 
-    <a href="/game2/{{_id}}">Agency</a>
-{{/imageagencies}}
+    <a href="/game58/{{_id}}">Brigham Young</a>
+{{/imagebrighamyoungs}}
 
+{{#imagedabednars}}
+
+    <a href="/game59/{{_id}}">David A. Bednar</a>
+{{/imagedabednars}}
+
+{{#imagedavidomckays}}
+
+    <a href="/game60/{{_id}}">David O. Mckay</a>
+{{/imagedavidomckays}}
+
+{{#imagedfuchtdorfs}}
+
+    <a href="/game61/{{_id}}">Dieter F. Uchtdorf</a>
+{{/imagedfuchtdorfs}}
+
+{{#imagedgrenlunds}}
+
+    <a href="/game62/{{_id}}">Dale G. Renlund</a>
+{{/imagedgrenlunds}}
+
+{{#imagedhoaks}}
+
+    <a href="/game63/{{_id}}">Dallin H. Oaks</a>
+{{/imagedhoaks}}
+
+{{#imagedtchristoffersons}}
+
+    <a href="/game64/{{_id}}">D. Todd Christofferson</a>
+{{/imagedtchristoffersons}}
+
+{{#imageezrataftbensons}}
+
+    <a href="/game65/{{_id}}">Ezra Taft Benson</a>
+{{/imageezrataftbensons}}
+
+{{#imagegeorgeasmiths}}
+
+    <a href="/game66/{{_id}}">George A. Smith</a>
+{{/imagegeorgeasmiths}}
+
+{{#imagegestevensons}}
+
+    <a href="/game67/{{_id}}">Gary E. Stevenson</a>
+{{/imagegestevensons}}
+
+{{#imagegordonbhinckleys}}
+
+    <a href="/game68/{{_id}}">Gordon B. Hinckley</a>
+{{/imagegordonbhinckleys}}
+
+{{#imageharoldblees}}
+
+    <a href="/game69/{{_id}}">Harold B. Lee</a>
+{{/imageharoldblees}}
+
+{{#imagehbeyrings}}
+
+    <a href="/game70/{{_id}}">Henry B. Eyring</a>
+{{/imagehbeyrings}}
+
+{{#imageheberjgrants}}
+
+    <a href="/game71/{{_id}}">Heber J. Grant</a>
+{{/imageheberjgrants}}
+
+{{#imagehowardwhunters}}
+
+    <a href="/game72/{{_id}}">Howard W. Hunter</a>
+{{/imagehowardwhunters}}
+
+{{#imagejohntaylors}}
+
+    <a href="/game73/{{_id}}">John Taylor</a>
+{{/imagejohntaylors}}
+
+{{#imagejosephfieldingsmiths}}
+
+    <a href="/game74/{{_id}}">Joseph Fielding Smith</a>
+{{/imagejosephfieldingsmiths}}
+
+{{#imagejosephfsmiths}}
+
+    <a href="/game75/{{_id}}">Joseph F. Smith</a>
+{{/imagejosephfsmiths}}
+
+{{#imagejosephsmiths}}
+
+    <a href="/game76/{{_id}}">Joseph Smith</a>
+{{/imagejosephsmiths}}
+
+{{#imagejrhollands}}
+
+    <a href="/game77/{{_id}}">Jeffrey R. Holland</a>
+{{/imagejrhollands}}
+
+{{#imagelorenzosnows}}
+
+    <a href="/game78/{{_id}}">Lorenzo Snow</a>
+{{/imagelorenzosnows}}
+
+{{#imagemrballards}}
+
+    <a href="/game79/{{_id}}">M. Russell Ballard</a>
+{{/imagemrballards}}
+
+{{#imagenlandersons}}
+
+    <a href="/game80/{{_id}}">Neil L. Anderson</a>
+{{/imagenlandersons}}
+
+{{#imageqlcooks}}
+
+    <a href="/game81/{{_id}}">Quentin L. Cook</a>
+{{/imageqlcooks}}
+
+{{#imagerarasbands}}
+
+    <a href="/game82/{{_id}}">Ronald A. Rasband</a>
+{{/imagerarasbands}}
+
+{{#imagermnelsons}}
+
+    <a href="/game83/{{_id}}">Russell M. Nelson</a>
+{{/imagermnelsons}}
+
+{{#imagespencerkimballs}}
+
+    <a href="/game84/{{_id}}">Spencer W. Kimball</a>
+{{/imagespencerkimballs}}
+
+{{#imagewilfordwoodruffs}}
+
+    <a href="/game/85{{_id}}">Wilford Woodruff</a>
+{{/imagewilfordwoodruffs}}
 
 </div>
 
