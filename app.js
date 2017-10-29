@@ -5580,7 +5580,7 @@ app.get('/game62/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game62/:_id', function(req, res) {
+app.get('/game63/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthdhoaks.findById({_id: req.params._id}).then(imagegenauthdhoakss => {
   res.render('game1', {
@@ -5596,7 +5596,7 @@ app.get('/game62/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game63/:_id', function(req, res) {
+app.get('/game64/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthdtchristofferson.findById({_id: req.params._id}).then(imagegenauthdtchristoffersons => {
   res.render('game1', {
@@ -5612,7 +5612,7 @@ app.get('/game63/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game64/:_id', function(req, res) {
+app.get('/game65/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthezrataftbenson.findById({_id: req.params._id}).then(imagegenauthezrataftbensons => {
   res.render('game1', {
@@ -5628,7 +5628,7 @@ app.get('/game64/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game65/:_id', function(req, res) {
+app.get('/game66/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthgeorgeasmith.findById({_id: req.params._id}).then(imagegenauthgeorgeasmiths => {
   res.render('game1', {
@@ -5644,7 +5644,7 @@ app.get('/game65/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game66/:_id', function(req, res) {
+app.get('/game67/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthgestevenson.findById({_id: req.params._id}).then(imagegenauthgestevensons => {
   res.render('game1', {
@@ -5660,7 +5660,7 @@ app.get('/game66/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game67/:_id', function(req, res) {
+app.get('/game68/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthgordonbhinckley.findById({_id: req.params._id}).then(imagegenauthgordonbhinckleys => {
   res.render('game1', {
@@ -5676,7 +5676,7 @@ app.get('/game67/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game68/:_id', function(req, res) {
+app.get('/game69/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthharoldblee.findById({_id: req.params._id}).then(imagegenauthharoldblees => {
   res.render('game1', {
@@ -5692,7 +5692,7 @@ app.get('/game68/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game69/:_id', function(req, res) {
+app.get('/game70/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthhbeyring.findById({_id: req.params._id}).then(imagegenauthhbeyrings => {
   res.render('game1', {
@@ -5708,7 +5708,7 @@ app.get('/game69/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game70/:_id', function(req, res) {
+app.get('/game71/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthheberjgrant.findById({_id: req.params._id}).then(imagegenauthheberjgrants => {
   res.render('game1', {
@@ -5724,7 +5724,7 @@ app.get('/game70/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game71/:_id', function(req, res) {
+app.get('/game72/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthhowardwhunter.findById({_id: req.params._id}).then(imagegenauthhowardwhunters => {
   res.render('game1', {
@@ -5740,7 +5740,7 @@ app.get('/game71/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game72/:_id', function(req, res) {
+app.get('/game73/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthjohntaylor.findById({_id: req.params._id}).then(imagegenauthjohntaylors => {
   res.render('game1', {
@@ -5756,7 +5756,7 @@ app.get('/game72/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game73/:_id', function(req, res) {
+app.get('/game74/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthjosephfieldingsmith.findById({_id: req.params._id}).then(imagegenauthjosephfieldingsmiths => {
   res.render('game1', {
@@ -5772,7 +5772,7 @@ app.get('/game73/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game74/:_id', function(req, res) {
+app.get('/game75/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthjosephfsmith.findById({_id: req.params._id}).then(imagegenauthjosephfsmiths => {
   res.render('game1', {
@@ -5788,7 +5788,7 @@ app.get('/game74/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game75/:_id', function(req, res) {
+app.get('/game76/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthjosephsmith.findById({_id: req.params._id}).then(imagegenauthjosephsmiths => {
   res.render('game1', {
@@ -5804,7 +5804,7 @@ app.get('/game75/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game76/:_id', function(req, res) {
+app.get('/game77/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthjrholland.findById({_id: req.params._id}).then(imagegenauthjrhollands => {
   res.render('game1', {
@@ -5820,7 +5820,7 @@ app.get('/game76/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game77/:_id', function(req, res) {
+app.get('/game78/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthlorenzosnow.findById({_id: req.params._id}).then(imagegenauthlorenzosnows => {
   res.render('game1', {
@@ -5836,7 +5836,7 @@ app.get('/game77/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game78/:_id', function(req, res) {
+app.get('/game79/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthmrballard.findById({_id: req.params._id}).then(imagegenauthmrballards => {
   res.render('game1', {
@@ -5852,7 +5852,7 @@ app.get('/game78/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game79/:_id', function(req, res) {
+app.get('/game80/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthnlanderson.findById({_id: req.params._id}).then(imagegenauthnlandersons => {
   res.render('game1', {
@@ -5868,7 +5868,7 @@ app.get('/game79/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game80/:_id', function(req, res) {
+app.get('/game81/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthqlcook.findById({_id: req.params._id}).then(imagegenauthqlcooks => {
   res.render('game1', {
@@ -5884,7 +5884,7 @@ app.get('/game80/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game81/:_id', function(req, res) {
+app.get('/game82/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthrarasband.findById({_id: req.params._id}).then(imagegenauthrarasbands => {
   res.render('game1', {
@@ -5900,7 +5900,7 @@ app.get('/game81/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game82/:_id', function(req, res) {
+app.get('/game83/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthrmnelson.findById({_id: req.params._id}).then(imagegenauthrmnelsons => {
   res.render('game1', {
@@ -5916,7 +5916,7 @@ app.get('/game82/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game83/:_id', function(req, res) {
+app.get('/game84/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthspencerkimball.findById({_id: req.params._id}).then(imagegenauthspencerkimballs => {
   res.render('game1', {
@@ -5932,7 +5932,7 @@ app.get('/game83/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game84/:_id', function(req, res) {
+app.get('/game85/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthtsmonson.findById({_id: req.params._id}).then(imagegenauthtsmonsons => {
   res.render('game1', {
@@ -5948,7 +5948,7 @@ app.get('/game84/:_id', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game85/:_id', function(req, res) {
+app.get('/game86/:_id', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
   Imagegenauthwilfordwoodruff.findById({_id: req.params._id}).then(imagegenauthwilfordwoodruffs => {
   res.render('game1', {

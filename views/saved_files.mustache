@@ -9,266 +9,260 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
-  $(document).ready(function(){
+    $(document).ready(function() {
       let searchInput = document.getElementById('searchInput').value;
-      $.getJSON('http://anyorigin.com/go?url=http%3A//scriptures.nephi.org/docbook/bom/c6.html%23AEN8&callback=?', function(data){
+      $.getJSON('http://anyorigin.com/go?url=http%3A//scriptures.nephi.org/docbook/bom/c6.html%23AEN8&callback=?', function(data) {
         var nephi = $("p:contains(Nephi)")
         console.log(nephi);
-	// $('#output').html(data.contents);
-});
-});
-
-
-
-
-
-
+        // $('#output').html(data.contents);
+      });
+    });
   </script>
   <script>
-  $(document).ready(function(){
-  console.log("talking");
-  /*
-  Here is a guide for the steps you could take:
-  */
-  // 1. First select and store the elements you'll be working with
-  let searchInput = document.getElementById('searchInput');
-  let bofmSearch = document.getElementById('bofmSearch');
-  bofmSearch.onclick = searchAPI;
-  console.log(searchInput);
-  console.log(bofmSearch);
-  //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
-  // 2. Create your `onSubmit` event for getting the user's search term
+    $(document).ready(function() {
+      console.log("talking");
+      /*
+      Here is a guide for the steps you could take:
+      */
+      // 1. First select and store the elements you'll be working with
+      let searchInput = document.getElementById('searchInput');
+      let bofmSearch = document.getElementById('bofmSearch');
+      bofmSearch.onclick = searchAPI;
+      console.log(searchInput);
+      console.log(bofmSearch);
+      //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
+      // 2. Create your `onSubmit` event for getting the user's search term
 
 
-  function searchAPI() {
+      function searchAPI() {
 
-  let searchResults = searchInput.value;
+        let searchResults = searchInput.value;
 
-  var str = searchInput.value;
-
-
-var mapObj = {
-  "free agency":"agency",
-  "the atonement":"atonement",
-  "baptize":"baptism",
-  "book of mormon":"bookofmormon",
-  "love":"charity",
-  "charitable":"charity",
-  "pure love":"charity",
-  "pure love of christ":"charity",
-  "created":"creation",
-  "religion":"church",
-  "church organization":"church",
-  "d&c":"doctrinecovenants",
-  "events":"events",
-  "heavenly father":"god",
-  "father in heaven":"god",
-  "god the father":"god",
-  "father":"god",
-  "belief":"faith",
-  "hope":"faith",
-  "holy spirit":"holyghost",
-  "holy ghost":"holyghost",
-  "spirit":"holyghost",
-  "the spirit":"holyghost",
-  "honest":"honesty",
-  "lie":"honesty",
-  "steal":"honesty",
-  "integrity":"honesty",
-  "bible":"newtestament",
-  "new testament":"newtestament",
-  "follow":"obedience",
-  "submission":"obedience",
-  "submissive":"obedience",
-  "old testament":"oldtestament",
-  "people":"people",
-  "melchizedek priesthood":"priesthood",
-  "aaronic priesthood":"priesthood",
-  "melchizedek":"priesthood",
-  "aaronic":"priesthood",
-  "prophets of god":"prophets",
-  "prophet":"prophets",
-  "repentance":"repentence",
-  "forgiveness":"repentence",
-  "bread and water":"sacrament",
-  "scripture":"scriptures",
-  "word of god":"scriptures",
-  "labor":"service",
-  "work":"service",
-  "responsibility":"service",
-  "personal responsibility":"service",
-  "fall of man":"thefall",
-  "the fall":"thefall",
-  "fall of mankind":"thefall",
-  "fall":"thefall",
-  "jesus christ":"jesus",
-  "christ":"jesus",
-  "savior":"jesus",
-  "redeemer":"jesus",
-  "lord":"jesus",
-  "fall of adam":"thefall",
-  "garden of eden":"thefall",
-  "lucifer":"thefall",
-  "original sin":"thefall",
-  "law of health":"wordofwisdom",
-  "word of wisdom":"wordofwisdom",
-  "apostles":"apostle",
-  "the godhead":"godhead",
-  "revelation":"testimony",
-  "truth":"testimony",
-  "testify":"testimony",
-  "conversion":"testimony",
-  "devil":"hell",
-  "satan":"hell",
-  "damnation":"hell",
-  "torment":"hell",
-  "eternal marriage":"marriage",
-  "temple marriage":"marriage",
-  "fire and brimstone":"hell",
-  "celestial kingdom":"heaven",
-  "plan of salvation":"heaven",
-  "telestial":"heaven",
-  "exaltation":"heaven",
-  "immortality":"heaven",
-  "eternal life":"heaven",
-  "three degrees of glory":"heaven",
-  "missionaries":"missionary",
-  "preach":"missionary",
-  "preaching":"missionary",
-  "missionary work":"missionary",
-  "christmas":"nativity",
-  "church history":"pioneer",
-  "pioneers":"pioneer",
-  "handcarts":"pioneer",
-  "nauvoo":"pioneer",
-  "premortal existence":"premortal",
-  "council in heaven":"premortal",
-  "premortal life":"premortal",
-  "war in heaven":"premortal",
-  "easter":"resurrection",
-  "resurrected":"resurrection",
-  "crucifixion":"resurrection",
-  "cross":"resurrection",
-  "woman":"women",
-  "widow":"women",
-  "mary":"women",
-  "mothers":"women",
-  "mother":"women",
-  "motherhood":"women",
-  "daughter":"women",
-  "daughters":"women",
-  "relief society":"women",
-  "daughters of god":"women",
-  "the great apostasy":"apostasy",
-  "restoration":"apostasy",
-  "first vision":"apostasy",
-  "the first vision":"apostasy",
-  "the restoration":"apostasy",
-  "apostasy and restoration":"apostasy",
-  "first vision":"apostasy",
-  "family home evening":"family",
-  "family prayer":"family",
-  "eternal family":"family",
-  "virtue":"chastity",
-  "chaste":"chastity",
-  "virtuous":"chastity",
-  "child":"children",
-  "primary":"children",
-  "primary children":"children",
-  "covenant":"covenants",
-  "temple covenant":"covenants",
-  "temple covenants":"covenants",
-  "baptismal covenant":"covenants",
-  "baptismal covenants":"covenants",
-  "life after death":"death",
-  "die":"death",
-  "mortality":"death",
-  "family history":"genealogy",
-  "ancestors":"genealogy",
-  "family tree":"genealogy",
-  "spiritual gifts":"gifts of the spirit",
-  "good news":"gospel",
-  "good news of the gospel":"gospel",
-  "the gospel":"gospel",
-  "gospel":"gospel",
-  "plan of salvation":"gospel",
-  "the plan of salvation":"gospel",
-  "happy":"happiness",
-  "joy":"happiness",
-  "plan of happiness":"happiness",
-  "miracle":"miracles",
-  "brigham young":"brighamyoung",
-  "brigham":"brighamyoung",
-  "davdid bednar":"dabednar",
-  "bednar":"dabednar",
-  "davdid a. bednar":"dabednar",
-  "daivd o mckay":"davidomckay",
-  "daivd o. mckay":"davidomckay",
-  "uchtdorf":"dfuchtdorf",
-  "dieter uchtdorf":"dfuchtdorf",
-  "dieter f. uchtdorf":"dfuchtdorf",
-  "renlund":"dgrenlund",
-  "dale g. renlund":"dgrenlund",
-  "oaks":"dhoaks",
-  "dallin h. oaks":"dhoaks",
-  "D. Todd Christofferson":"dtchristofferson",
-  "Christofferson":"dtchristofferson",
-  "benson":"ezrataftbenson",
-  "ezra taft benson":"ezrataftbenson",
-  "benson":"ezrataftbenson",
-  "george a. smith":"georgeasmith",
-  "george albert smith":"georgeasmith",
-  "gary e. stevenson":"gestevenson",
-  "gordon b. hinckley":"gordonbhinckley",
-  "hinckley":"gordonbhinckley",
-  "harold b. lee":"haroldblee",
-  "eyring":"hbeyring",
-  "henry b. eyring":"hbeyring",
-  "grant":"heberjgrant",
-  "heber j. grant":"heberjgrant",
-  "howard w. hunter":"howardwhunter",
-  "hunter":"howardwhunter",
-  "john taylor":"johntaylor",
-  "joseph fielding smith":"josephfieldingsmith",
-  "joseph f. smith":"josephfsmith",
-  "joseph smith":"josephsmith",
-  "joseph":"josephsmith",
-  "jeffrey r. holland":"jrholland",
-  "holland":"jrholland",
-  "lorenzo snow":"lorenzosnow",
-  "snow":"lorenzosnow",
-  "m. russell ballard":"mrballard",
-  "ballard":"mrballard",
-  "neil l. anderson":"nlanderson",
-  "quentin l. cook":"qlcook",
-  "rasband":"rarasband",
-  "ronald a. rasband":"rarasband",
-  "russell m. nelson":"rmnelson",
-  "nelson":"rmnelson",
-  "spencer w. kimball":"spencerkimball",
-  "thomas s. monson":"tsmonson",
-  "monson":"tsmonson",
-  "woodruff":"wilfordwoodruff",
-  "wilford woodruff":"wilfordwoodruff",
-};
-var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
-str = str.replace(re, function(matched){
-  return mapObj[matched.toLowerCase()];
-});
+        var str = searchInput.value;
 
 
-  fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
-    if (response.status != 200) {
-        window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
-        return;
-    }
+        var mapObj = {
+          "free agency": "agency",
+          "the atonement": "atonement",
+          "baptize": "baptism",
+          "book of mormon": "bookofmormon",
+          "love": "charity",
+          "charitable": "charity",
+          "pure love": "charity",
+          "pure love of christ": "charity",
+          "created": "creation",
+          "religion": "church",
+          "church organization": "church",
+          "d&c": "doctrinecovenants",
+          "events": "events",
+          "heavenly father": "god",
+          "father in heaven": "god",
+          "god the father": "god",
+          "father": "god",
+          "belief": "faith",
+          "hope": "faith",
+          "holy spirit": "holyghost",
+          "holy ghost": "holyghost",
+          "spirit": "holyghost",
+          "the spirit": "holyghost",
+          "honest": "honesty",
+          "lie": "honesty",
+          "steal": "honesty",
+          "integrity": "honesty",
+          "bible": "newtestament",
+          "new testament": "newtestament",
+          "follow": "obedience",
+          "submission": "obedience",
+          "submissive": "obedience",
+          "old testament": "oldtestament",
+          "people": "people",
+          "melchizedek priesthood": "priesthood",
+          "aaronic priesthood": "priesthood",
+          "melchizedek": "priesthood",
+          "aaronic": "priesthood",
+          "prophets of god": "prophets",
+          "prophet": "prophets",
+          "repentance": "repentence",
+          "forgiveness": "repentence",
+          "bread and water": "sacrament",
+          "scripture": "scriptures",
+          "word of god": "scriptures",
+          "labor": "service",
+          "work": "service",
+          "responsibility": "service",
+          "personal responsibility": "service",
+          "fall of man": "thefall",
+          "the fall": "thefall",
+          "fall of mankind": "thefall",
+          "fall": "thefall",
+          "jesus christ": "jesus",
+          "christ": "jesus",
+          "savior": "jesus",
+          "redeemer": "jesus",
+          "lord": "jesus",
+          "fall of adam": "thefall",
+          "garden of eden": "thefall",
+          "lucifer": "thefall",
+          "original sin": "thefall",
+          "law of health": "wordofwisdom",
+          "word of wisdom": "wordofwisdom",
+          "apostles": "apostle",
+          "the godhead": "godhead",
+          "revelation": "testimony",
+          "truth": "testimony",
+          "testify": "testimony",
+          "conversion": "testimony",
+          "devil": "hell",
+          "satan": "hell",
+          "damnation": "hell",
+          "torment": "hell",
+          "eternal marriage": "marriage",
+          "temple marriage": "marriage",
+          "fire and brimstone": "hell",
+          "celestial kingdom": "heaven",
+          "plan of salvation": "heaven",
+          "telestial": "heaven",
+          "exaltation": "heaven",
+          "immortality": "heaven",
+          "eternal life": "heaven",
+          "three degrees of glory": "heaven",
+          "missionaries": "missionary",
+          "preach": "missionary",
+          "preaching": "missionary",
+          "missionary work": "missionary",
+          "christmas": "nativity",
+          "church history": "pioneer",
+          "pioneers": "pioneer",
+          "handcarts": "pioneer",
+          "nauvoo": "pioneer",
+          "premortal existence": "premortal",
+          "council in heaven": "premortal",
+          "premortal life": "premortal",
+          "war in heaven": "premortal",
+          "easter": "resurrection",
+          "resurrected": "resurrection",
+          "crucifixion": "resurrection",
+          "cross": "resurrection",
+          "woman": "women",
+          "widow": "women",
+          "mary": "women",
+          "mothers": "women",
+          "mother": "women",
+          "motherhood": "women",
+          "daughter": "women",
+          "daughters": "women",
+          "relief society": "women",
+          "daughters of god": "women",
+          "the great apostasy": "apostasy",
+          "restoration": "apostasy",
+          "first vision": "apostasy",
+          "the first vision": "apostasy",
+          "the restoration": "apostasy",
+          "apostasy and restoration": "apostasy",
+          "first vision": "apostasy",
+          "family home evening": "family",
+          "family prayer": "family",
+          "eternal family": "family",
+          "virtue": "chastity",
+          "chaste": "chastity",
+          "virtuous": "chastity",
+          "child": "children",
+          "primary": "children",
+          "primary children": "children",
+          "covenant": "covenants",
+          "temple covenant": "covenants",
+          "temple covenants": "covenants",
+          "baptismal covenant": "covenants",
+          "baptismal covenants": "covenants",
+          "life after death": "death",
+          "die": "death",
+          "mortality": "death",
+          "family history": "genealogy",
+          "ancestors": "genealogy",
+          "family tree": "genealogy",
+          "spiritual gifts": "gifts of the spirit",
+          "good news": "gospel",
+          "good news of the gospel": "gospel",
+          "the gospel": "gospel",
+          "gospel": "gospel",
+          "plan of salvation": "gospel",
+          "the plan of salvation": "gospel",
+          "happy": "happiness",
+          "joy": "happiness",
+          "plan of happiness": "happiness",
+          "miracle": "miracles",
+          "brigham young": "brighamyoung",
+          "brigham": "brighamyoung",
+          "davdid bednar": "dabednar",
+          "bednar": "dabednar",
+          "davdid a. bednar": "dabednar",
+          "daivd o mckay": "davidomckay",
+          "daivd o. mckay": "davidomckay",
+          "uchtdorf": "dfuchtdorf",
+          "dieter uchtdorf": "dfuchtdorf",
+          "dieter f. uchtdorf": "dfuchtdorf",
+          "renlund": "dgrenlund",
+          "dale g. renlund": "dgrenlund",
+          "oaks": "dhoaks",
+          "dallin h. oaks": "dhoaks",
+          "D. Todd Christofferson": "dtchristofferson",
+          "Christofferson": "dtchristofferson",
+          "benson": "ezrataftbenson",
+          "ezra taft benson": "ezrataftbenson",
+          "benson": "ezrataftbenson",
+          "george a. smith": "georgeasmith",
+          "george albert smith": "georgeasmith",
+          "gary e. stevenson": "gestevenson",
+          "gordon b. hinckley": "gordonbhinckley",
+          "hinckley": "gordonbhinckley",
+          "harold b. lee": "haroldblee",
+          "eyring": "hbeyring",
+          "henry b. eyring": "hbeyring",
+          "grant": "heberjgrant",
+          "heber j. grant": "heberjgrant",
+          "howard w. hunter": "howardwhunter",
+          "hunter": "howardwhunter",
+          "john taylor": "johntaylor",
+          "joseph fielding smith": "josephfieldingsmith",
+          "joseph f. smith": "josephfsmith",
+          "joseph smith": "josephsmith",
+          "joseph": "josephsmith",
+          "jeffrey r. holland": "jrholland",
+          "holland": "jrholland",
+          "lorenzo snow": "lorenzosnow",
+          "snow": "lorenzosnow",
+          "m. russell ballard": "mrballard",
+          "ballard": "mrballard",
+          "neil l. anderson": "nlanderson",
+          "quentin l. cook": "qlcook",
+          "rasband": "rarasband",
+          "ronald a. rasband": "rarasband",
+          "russell m. nelson": "rmnelson",
+          "nelson": "rmnelson",
+          "spencer w. kimball": "spencerkimball",
+          "thomas s. monson": "tsmonson",
+          "monson": "tsmonson",
+          "woodruff": "wilfordwoodruff",
+          "wilford woodruff": "wilfordwoodruff",
+        };
+        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+        str = str.replace(re, function(matched) {
+          return mapObj[matched.toLowerCase()];
+        });
 
-      response.json().then(function(data) {
-          let api = data;
 
-          function renderapis() {
+        fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
 
-            return `${api.map(api =>
+          response.json().then(function(data) {
+            let api = data;
+
+            function renderapis() {
+
+              return `${api.map(api =>
             `<div class="scripturediv">
             <h2 class="location_title">${api.standard_work_location}</h2>
             <h2 class="book_and_verse">${api.book_and_verse_number}</h2>
@@ -279,285 +273,280 @@ str = str.replace(re, function(matched){
             }
 
 
-          let markup = `${renderapis()}`;
-          document.getElementById('updatediv').innerHTML = markup;
-          console.log(markup);
+            let markup = `${renderapis()}`;
+            document.getElementById('updatediv').innerHTML = markup;
+            console.log(markup);
           })
         })
       }
     })
-
-
   </script>
   <script>
-  $(document).ready(function(){
-  console.log("talking");
+    $(document).ready(function() {
+      console.log("talking");
 
 
-  let searchInput = document.getElementById('searchInput');
-  let submitButton = document.getElementById('submitButton');
-  submitButton.onclick = searchAPI;
-  console.log(searchInput);
-  console.log(submitButton);
-
-
-
-  function searchAPI() {
-
-  let searchResults = searchInput.value;
-
-  var str = searchInput.value;
-
-
-var mapObj = {
-   "free agency":"agency",
-   "the atonement":"atonement",
-   "baptize":"baptism",
-   "book of mormon":"bookofmormon",
-   "love":"charity",
-   "charitable":"charity",
-   "pure love":"charity",
-   "pure love of christ":"charity",
-   "created":"creation",
-   "religion":"church",
-   "church organization":"church",
-   "d&c":"doctrinecovenants",
-   "events":"events",
-   "heavenly father":"god",
-   "father in heaven":"god",
-   "god the father":"god",
-   "father":"god",
-   "belief":"faith",
-   "hope":"faith",
-   "holy spirit":"holyghost",
-   "holy ghost":"holyghost",
-   "spirit":"holyghost",
-   "the spirit":"holyghost",
-   "honest":"honesty",
-   "lie":"honesty",
-   "steal":"honesty",
-   "integrity":"honesty",
-   "bible":"newtestament",
-   "new testament":"newtestament",
-   "follow":"obedience",
-   "submission":"obedience",
-   "submissive":"obedience",
-   "old testament":"oldtestament",
-   "people":"people",
-   "melchizedek priesthood":"priesthood",
-   "aaronic priesthood":"priesthood",
-   "melchizedek":"priesthood",
-   "aaronic":"priesthood",
-   "prophets of god":"prophets",
-   "prophet":"prophets",
-   "repentance":"repentence",
-   "forgiveness":"repentence",
-   "bread and water":"sacrament",
-   "scripture":"scriptures",
-   "word of god":"scriptures",
-   "labor":"service",
-   "work":"service",
-   "responsibility":"service",
-   "personal responsibility":"service",
-   "fall of man":"thefall",
-   "the fall":"thefall",
-   "fall of mankind":"thefall",
-   "fall":"thefall",
-   "jesus christ":"jesus",
-   "christ":"jesus",
-   "savior":"jesus",
-   "redeemer":"jesus",
-   "lord":"jesus",
-   "fall of adam":"thefall",
-   "garden of eden":"thefall",
-   "lucifer":"thefall",
-   "original sin":"thefall",
-   "law of health":"wordofwisdom",
-   "word of wisdom":"wordofwisdom",
-   "apostles":"apostle",
-   "the godhead":"godhead",
-   "revelation":"testimony",
-   "truth":"testimony",
-   "testify":"testimony",
-   "conversion":"testimony",
-   "devil":"hell",
-   "satan":"hell",
-   "damnation":"hell",
-   "torment":"hell",
-   "eternal marriage":"marriage",
-   "temple marriage":"marriage",
-   "fire and brimstone":"hell",
-   "celestial kingdom":"heaven",
-   "plan of salvation":"heaven",
-   "telestial":"heaven",
-   "exaltation":"heaven",
-   "immortality":"heaven",
-   "eternal life":"heaven",
-   "three degrees of glory":"heaven",
-   "missionaries":"missionary",
-   "preach":"missionary",
-   "preaching":"missionary",
-   "missionary work":"missionary",
-   "christmas":"nativity",
-   "church history":"pioneer",
-   "pioneers":"pioneer",
-   "handcarts":"pioneer",
-   "nauvoo":"pioneer",
-   "premortal existence":"premortal",
-   "council in heaven":"premortal",
-   "premortal life":"premortal",
-   "war in heaven":"premortal",
-   "easter":"resurrection",
-   "resurrected":"resurrection",
-   "crucifixion":"resurrection",
-   "cross":"resurrection",
-   "woman":"women",
-   "widow":"women",
-   "mary":"women",
-   "mothers":"women",
-   "mother":"women",
-   "motherhood":"women",
-   "daughter":"women",
-   "daughters":"women",
-   "relief society":"women",
-   "daughters of god":"women",
-   "the great apostasy":"apostasy",
-   "restoration":"apostasy",
-   "first vision":"apostasy",
-   "the first vision":"apostasy",
-   "the restoration":"apostasy",
-   "apostasy and restoration":"apostasy",
-   "first vision":"apostasy",
-   "family home evening":"family",
-   "family prayer":"family",
-   "eternal family":"family",
-   "virtue":"chastity",
-   "chaste":"chastity",
-   "virtuous":"chastity",
-   "child":"children",
-   "primary":"children",
-   "primary children":"children",
-   "covenant":"covenants",
-   "temple covenant":"covenants",
-   "temple covenants":"covenants",
-   "baptismal covenant":"covenants",
-   "baptismal covenants":"covenants",
-   "life after death":"death",
-   "die":"death",
-   "mortality":"death",
-   "family history":"genealogy",
-   "ancestors":"genealogy",
-   "family tree":"genealogy",
-   "spiritual gifts":"gifts of the spirit",
-   "good news":"gospel",
-   "good news of the gospel":"gospel",
-   "the gospel":"gospel",
-   "gospel":"gospel",
-   "plan of salvation":"gospel",
-   "the plan of salvation":"gospel",
-   "happy":"happiness",
-   "joy":"happiness",
-   "plan of happiness":"happiness",
-   "miracle":"miracles",
-   "brigham young":"brighamyoung",
-   "brigham":"brighamyoung",
-   "davdid bednar":"dabednar",
-   "bednar":"dabednar",
-   "davdid a. bednar":"dabednar",
-   "daivd o mckay":"davidomckay",
-   "daivd o. mckay":"davidomckay",
-   "uchtdorf":"dfuchtdorf",
-   "dieter uchtdorf":"dfuchtdorf",
-   "dieter f. uchtdorf":"dfuchtdorf",
-   "renlund":"dgrenlund",
-   "dale g. renlund":"dgrenlund",
-   "oaks":"dhoaks",
-   "dallin h. oaks":"dhoaks",
-   "D. Todd Christofferson":"dtchristofferson",
-   "Christofferson":"dtchristofferson",
-   "benson":"ezrataftbenson",
-   "ezra taft benson":"ezrataftbenson",
-   "benson":"ezrataftbenson",
-   "george a. smith":"georgeasmith",
-   "george albert smith":"georgeasmith",
-   "gary e. stevenson":"gestevenson",
-   "gordon b. hinckley":"gordonbhinckley",
-   "hinckley":"gordonbhinckley",
-   "harold b. lee":"haroldblee",
-   "eyring":"hbeyring",
-   "henry b. eyring":"hbeyring",
-   "grant":"heberjgrant",
-   "heber j. grant":"heberjgrant",
-   "howard w. hunter":"howardwhunter",
-   "hunter":"howardwhunter",
-   "john taylor":"johntaylor",
-   "joseph fielding smith":"josephfieldingsmith",
-   "joseph f. smith":"josephfsmith",
-   "joseph smith":"josephsmith",
-   "joseph":"josephsmith",
-   "jeffrey r. holland":"jrholland",
-   "holland":"jrholland",
-   "lorenzo snow":"lorenzosnow",
-   "snow":"lorenzosnow",
-   "m. russell ballard":"mrballard",
-   "ballard":"mrballard",
-   "neil l. anderson":"nlanderson",
-   "quentin l. cook":"qlcook",
-   "rasband":"rarasband",
-   "ronald a. rasband":"rarasband",
-   "russell m. nelson":"rmnelson",
-   "nelson":"rmnelson",
-   "spencer w. kimball":"spencerkimball",
-   "thomas s. monson":"tsmonson",
-   "monson":"tsmonson",
-   "woodruff":"wilfordwoodruff",
-   "wilford woodruff":"wilfordwoodruff",
-};
-var re = new RegExp(Object.keys(mapObj).join("|"),"gi");
-str = str.replace(re, function(matched){
-  return mapObj[matched.toLowerCase()];
-});
-
-
-  fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
-
-      if (response.status != 200) {
-          window.alert("Sorry, nothing matches those search terms.  Try another search.");
-          return;
-      }
+      let searchInput = document.getElementById('searchInput');
+      let submitButton = document.getElementById('submitButton');
+      submitButton.onclick = searchAPI;
+      console.log(searchInput);
+      console.log(submitButton);
 
 
 
-      response.json().then(function(data) {
-          let api = data;
+      function searchAPI() {
 
-          function renderapis() {
+        let searchResults = searchInput.value;
 
-            return `${api.map(api =>
+        var str = searchInput.value;
+
+
+        var mapObj = {
+          "free agency": "agency",
+          "the atonement": "atonement",
+          "baptize": "baptism",
+          "book of mormon": "bookofmormon",
+          "love": "charity",
+          "charitable": "charity",
+          "pure love": "charity",
+          "pure love of christ": "charity",
+          "created": "creation",
+          "religion": "church",
+          "church organization": "church",
+          "d&c": "doctrinecovenants",
+          "events": "events",
+          "heavenly father": "god",
+          "father in heaven": "god",
+          "god the father": "god",
+          "father": "god",
+          "belief": "faith",
+          "hope": "faith",
+          "holy spirit": "holyghost",
+          "holy ghost": "holyghost",
+          "spirit": "holyghost",
+          "the spirit": "holyghost",
+          "honest": "honesty",
+          "lie": "honesty",
+          "steal": "honesty",
+          "integrity": "honesty",
+          "bible": "newtestament",
+          "new testament": "newtestament",
+          "follow": "obedience",
+          "submission": "obedience",
+          "submissive": "obedience",
+          "old testament": "oldtestament",
+          "people": "people",
+          "melchizedek priesthood": "priesthood",
+          "aaronic priesthood": "priesthood",
+          "melchizedek": "priesthood",
+          "aaronic": "priesthood",
+          "prophets of god": "prophets",
+          "prophet": "prophets",
+          "repentance": "repentence",
+          "forgiveness": "repentence",
+          "bread and water": "sacrament",
+          "scripture": "scriptures",
+          "word of god": "scriptures",
+          "labor": "service",
+          "work": "service",
+          "responsibility": "service",
+          "personal responsibility": "service",
+          "fall of man": "thefall",
+          "the fall": "thefall",
+          "fall of mankind": "thefall",
+          "fall": "thefall",
+          "jesus christ": "jesus",
+          "christ": "jesus",
+          "savior": "jesus",
+          "redeemer": "jesus",
+          "lord": "jesus",
+          "fall of adam": "thefall",
+          "garden of eden": "thefall",
+          "lucifer": "thefall",
+          "original sin": "thefall",
+          "law of health": "wordofwisdom",
+          "word of wisdom": "wordofwisdom",
+          "apostles": "apostle",
+          "the godhead": "godhead",
+          "revelation": "testimony",
+          "truth": "testimony",
+          "testify": "testimony",
+          "conversion": "testimony",
+          "devil": "hell",
+          "satan": "hell",
+          "damnation": "hell",
+          "torment": "hell",
+          "eternal marriage": "marriage",
+          "temple marriage": "marriage",
+          "fire and brimstone": "hell",
+          "celestial kingdom": "heaven",
+          "plan of salvation": "heaven",
+          "telestial": "heaven",
+          "exaltation": "heaven",
+          "immortality": "heaven",
+          "eternal life": "heaven",
+          "three degrees of glory": "heaven",
+          "missionaries": "missionary",
+          "preach": "missionary",
+          "preaching": "missionary",
+          "missionary work": "missionary",
+          "christmas": "nativity",
+          "church history": "pioneer",
+          "pioneers": "pioneer",
+          "handcarts": "pioneer",
+          "nauvoo": "pioneer",
+          "premortal existence": "premortal",
+          "council in heaven": "premortal",
+          "premortal life": "premortal",
+          "war in heaven": "premortal",
+          "easter": "resurrection",
+          "resurrected": "resurrection",
+          "crucifixion": "resurrection",
+          "cross": "resurrection",
+          "woman": "women",
+          "widow": "women",
+          "mary": "women",
+          "mothers": "women",
+          "mother": "women",
+          "motherhood": "women",
+          "daughter": "women",
+          "daughters": "women",
+          "relief society": "women",
+          "daughters of god": "women",
+          "the great apostasy": "apostasy",
+          "restoration": "apostasy",
+          "first vision": "apostasy",
+          "the first vision": "apostasy",
+          "the restoration": "apostasy",
+          "apostasy and restoration": "apostasy",
+          "first vision": "apostasy",
+          "family home evening": "family",
+          "family prayer": "family",
+          "eternal family": "family",
+          "virtue": "chastity",
+          "chaste": "chastity",
+          "virtuous": "chastity",
+          "child": "children",
+          "primary": "children",
+          "primary children": "children",
+          "covenant": "covenants",
+          "temple covenant": "covenants",
+          "temple covenants": "covenants",
+          "baptismal covenant": "covenants",
+          "baptismal covenants": "covenants",
+          "life after death": "death",
+          "die": "death",
+          "mortality": "death",
+          "family history": "genealogy",
+          "ancestors": "genealogy",
+          "family tree": "genealogy",
+          "spiritual gifts": "gifts of the spirit",
+          "good news": "gospel",
+          "good news of the gospel": "gospel",
+          "the gospel": "gospel",
+          "gospel": "gospel",
+          "plan of salvation": "gospel",
+          "the plan of salvation": "gospel",
+          "happy": "happiness",
+          "joy": "happiness",
+          "plan of happiness": "happiness",
+          "miracle": "miracles",
+          "brigham young": "brighamyoung",
+          "brigham": "brighamyoung",
+          "davdid bednar": "dabednar",
+          "bednar": "dabednar",
+          "davdid a. bednar": "dabednar",
+          "daivd o mckay": "davidomckay",
+          "daivd o. mckay": "davidomckay",
+          "uchtdorf": "dfuchtdorf",
+          "dieter uchtdorf": "dfuchtdorf",
+          "dieter f. uchtdorf": "dfuchtdorf",
+          "renlund": "dgrenlund",
+          "dale g. renlund": "dgrenlund",
+          "oaks": "dhoaks",
+          "dallin h. oaks": "dhoaks",
+          "D. Todd Christofferson": "dtchristofferson",
+          "Christofferson": "dtchristofferson",
+          "benson": "ezrataftbenson",
+          "ezra taft benson": "ezrataftbenson",
+          "benson": "ezrataftbenson",
+          "george a. smith": "georgeasmith",
+          "george albert smith": "georgeasmith",
+          "gary e. stevenson": "gestevenson",
+          "gordon b. hinckley": "gordonbhinckley",
+          "hinckley": "gordonbhinckley",
+          "harold b. lee": "haroldblee",
+          "eyring": "hbeyring",
+          "henry b. eyring": "hbeyring",
+          "grant": "heberjgrant",
+          "heber j. grant": "heberjgrant",
+          "howard w. hunter": "howardwhunter",
+          "hunter": "howardwhunter",
+          "john taylor": "johntaylor",
+          "joseph fielding smith": "josephfieldingsmith",
+          "joseph f. smith": "josephfsmith",
+          "joseph smith": "josephsmith",
+          "joseph": "josephsmith",
+          "jeffrey r. holland": "jrholland",
+          "holland": "jrholland",
+          "lorenzo snow": "lorenzosnow",
+          "snow": "lorenzosnow",
+          "m. russell ballard": "mrballard",
+          "ballard": "mrballard",
+          "neil l. anderson": "nlanderson",
+          "quentin l. cook": "qlcook",
+          "rasband": "rarasband",
+          "ronald a. rasband": "rarasband",
+          "russell m. nelson": "rmnelson",
+          "nelson": "rmnelson",
+          "spencer w. kimball": "spencerkimball",
+          "thomas s. monson": "tsmonson",
+          "monson": "tsmonson",
+          "woodruff": "wilfordwoodruff",
+          "wilford woodruff": "wilfordwoodruff",
+        };
+        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+        str = str.replace(re, function(matched) {
+          return mapObj[matched.toLowerCase()];
+        });
+
+
+        fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
+
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search.");
+            return;
+          }
+
+
+
+          response.json().then(function(data) {
+            let api = data;
+
+            function renderapis() {
+
+              return `${api.map(api =>
             `<img class="images" src="${api.image_data[0].image}" />`
             )}
             `
             }
 
-          let markup = `${renderapis()}`;
-          document.getElementById('updatediv').innerHTML = markup;
+            let markup = `${renderapis()}`;
+            document.getElementById('updatediv').innerHTML = markup;
           })
         })
       }
     })
-
-
   </script>
 
-<script type="text/javascript">
-function convert()
-{
-    alert("hi");
-    var str ;
-    str = document.getElementById("searchInput").value;
-    document.writeln(str.toLowerCase());
-}
-</script>
+  <script type="text/javascript">
+    function convert() {
+      alert("hi");
+      var str;
+      str = document.getElementById("searchInput").value;
+      document.writeln(str.toLowerCase());
+    }
+  </script>
 </head>
 
 <body>
@@ -597,11 +586,11 @@ function convert()
       <div class="homelabeldiv1">
         <section class="search">
           <label> TOPIC SEARCH: </label>
-        <input placeholder="image search" class="searchInput"  type="text" id="searchInput">
-        <div class="buttonwrapper2">
-        <button class="submitButton2" type="submit" id="submitButton"  name="button">image search</button>
-        <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scripture search</button>
-      </div>
+          <input placeholder="image search" class="searchInput" type="text" id="searchInput">
+          <div class="buttonwrapper2">
+            <button class="submitButton2" type="submit" id="submitButton" name="button">image search</button>
+            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scripture search</button>
+          </div>
         </section>
 
         </section>
@@ -609,9 +598,9 @@ function convert()
         <div class="results">
           <div class="scrollholder">
             <img src="/scrollleft.png" />
-        <section id="updatediv"></section>
-        <img src="/scrollright.png" />
-        </div>
+            <section id="updatediv"></section>
+            <img src="/scrollright.png" />
+          </div>
         </div>
 
 
@@ -840,7 +829,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.10}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.10}} />
+                      <img class="image4" src= {{image1.10}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -857,7 +846,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.11}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.11}} />
+                      <img class="image4" src= {{image1.11}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -874,7 +863,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.12}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.12}} />
+                      <img class="image4" src= {{image1.12}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -891,7 +880,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.13}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.13}} />
+                      <img class="image4" src= {{image1.13}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -908,7 +897,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.14}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.14}} />
+                      <img class="image4" src= {{image1.14}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -925,7 +914,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.15}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.15}} />
+                      <img class="image4" src= {{image1.15}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -942,7 +931,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.16}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.16}} />
+                      <img class="image4" src= {{image1.16}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -959,7 +948,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.17}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.17}} />
+                      <img class="image4" src= {{image1.17}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -976,7 +965,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.18}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.18}} />
+                      <img class="image4" src= {{image1.18}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -993,7 +982,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.19}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.19}} />
+                      <img class="image4" src= {{image1.19}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>
@@ -1010,7 +999,7 @@ function convert()
           Image URL:
         </label>
                       <input class="inputfield7" type="text" name="image1" value= {{image1.20}} />
-                      <input class="inputfield7" type="text" name="image1" value= {{image1.20}} />
+                      <img class="image4" src= {{image1.20}} />
                     </div>
                     <div class="title-label-container"><label class="small-label">Title, Type or Author:
         </label>

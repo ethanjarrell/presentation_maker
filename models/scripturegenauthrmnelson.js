@@ -9,22 +9,12 @@ const scripturegenauthrmnelsonSchema = new Schema({
   standard_work_location: {
     type: String,
   },
-  scripture: [{
     book_and_verse_number: {
       type: String,
     },
     verse_text: {
       type: String,
     },
-  }],
-image_data: [{
-  tag: [{
-    type: String,
-  }],
-  image: {
-    type: String,
-  },
-}],
 
 
 })

@@ -51,6 +51,9 @@ if (n < 1) {slideIndex = slides.length}
 for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
 }
+if (document.getElementsByClassName("labelContainer3").innerHtml = ""){
+  slides[i]++
+}
 for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
 }
@@ -212,7 +215,7 @@ dots[slideIndex-1].className += " active";
 
   </div></div><div class="mySlides fade"><div class="insideSlide">
     <div class="labelContainer3">Section 2:</div>
-    <div class="imglabelcontainer"> <div class="labelContainer2">{{section1_topic.}}</div>
+    <div class="imglabelcontainer"> <div class="labelContainer2">{{section1_topic.1}}</div>
   </div>
 
   </div></div><div class="mySlides fade"><div class="insideSlide">
