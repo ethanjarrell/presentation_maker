@@ -221,6 +221,8 @@ box-sizing: border-box;
   margin-top: 4vh;
   z-index: 0;
   background-color: #F9E3B5;
+  height: 400px;
+  overflow-y: scroll;
 }
 
 .labelContainer4 {

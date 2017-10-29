@@ -43,6 +43,7 @@ showSlides(slideIndex = n);
 
 function showSlides(n) {
 var i;
+var innertext = document.getElementsByClassName("labelContainer3").textcontent;
 var slides = document.getElementsByClassName("mySlides");
 var dots = document.getElementsByClassName("dot");
 var label = document.getElementsByClassName("labelContainer2");
@@ -50,9 +51,6 @@ if (n > slides.length) {slideIndex = 1}
 if (n < 1) {slideIndex = slides.length}
 for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
-}
-if (document.getElementsByClassName("labelContainer3").innerHtml = ""){
-  slides[i]++
 }
 for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");

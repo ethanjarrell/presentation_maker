@@ -167,7 +167,6 @@ box-sizing: border-box;
 .labelContainer3 {
   text-align: left;
   width: 100%;
-  height: 70%;
   font-size: 30px;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -177,6 +176,7 @@ box-sizing: border-box;
   border-top: #3D4E6F solid 3px;
   margin-top: 4vh;
   z-index: 0;
+  height: 70%;
   overflow-y: scroll;
 }
 
