@@ -21,7 +21,7 @@ body {
 
 .scripturediv {
   display: block;
-  width: 300px;
+  width: 48%;
   height: 150px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -57,12 +57,13 @@ body {
 #updatediv {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: center;
   height: 255px;
   width: 80vw;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  border: lightgray 2px solid;
 }
 
 .search {
@@ -185,10 +186,6 @@ body {
   object-fit: cover;
   object-position: center;
   box-shadow: 6px 9px 15px 0px rgba(0,0,0,0.64);
-}
-
-#updatediv::-webkit-scrollbar {
-    display: none;
 }
 
 .invisiblespan {

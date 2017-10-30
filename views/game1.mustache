@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>The Talk Maker</title>
-  <link rel="stylesheet" href="/game1.css">
+  <link rel="stylesheet" href="/home.css">
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 
   </script>
@@ -13,9 +13,9 @@
 <body>
 
 
-  {{#imagepeoples}}
+  <div class="bodywrapper11">
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+<div class="formContainer">
 
     <form class="form2" action="/api/scriptures/people" method="post">
 
@@ -40,10 +40,10 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagepeoples}}
-  {{#imageagencies}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/agency" method="post">
 
@@ -68,10 +68,10 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageagencies}}
-  {{#imageangels}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/angels" method="post">
 
@@ -96,11 +96,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageangels}}
 
-  {{#imageapostasy}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/apostasy" method="post">
 
@@ -125,11 +125,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageapostasy}}
 
-  {{#imageapostles}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/apostle" method="post">
 
@@ -154,11 +154,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageapostles}}
 
-  {{#imageatonements}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/atonement" method="post">
 
@@ -183,11 +183,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageatonements}}
 
-  {{#imagebaptisms}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/baptism" method="post">
 
@@ -212,11 +212,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagebaptisms}}
 
-  {{#imagebookofmormons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/bookofmormon" method="post">
 
@@ -241,11 +241,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagebookofmormons}}
 
-  {{#imagecharities}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/charity" method="post">
 
@@ -270,11 +270,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagecharities}}
 
-  {{#imagechastities}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/chastity" method="post">
 
@@ -299,11 +299,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagechastities}}
 
-  {{#imagechildrens}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/children" method="post">
 
@@ -328,11 +328,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagechildrens}}
 
-  {{#imagechurches}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/church" method="post">
 
@@ -357,11 +357,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagechurches}}
 
-  {{#imagecovenants}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/covenants" method="post">
 
@@ -386,11 +386,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagecovenants}}
 
-  {{#imagecreations}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/creation" method="post">
 
@@ -415,11 +415,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagecreations}}
 
-  {{#imagedeaths}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/death" method="post">
 
@@ -444,11 +444,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagedeaths}}
 
-  {{#imagedoctrinecovenants}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/doctrinecovenants" method="post">
 
@@ -473,11 +473,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagedoctrinecovenants}}
 
-  {{#imageevents}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/events" method="post">
 
@@ -502,11 +502,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageevents}}
 
-  {{#imagefaiths}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/faith" method="post">
 
@@ -531,11 +531,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagefaiths}}
 
-  {{#imagefamilies}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/family" method="post">
 
@@ -560,11 +560,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagefamilies}}
 
-  {{#imagefastings}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/fasting" method="post">
 
@@ -589,11 +589,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagefastings}}
 
-  {{#imagegenealogies}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/genealogy" method="post">
 
@@ -618,11 +618,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenealogies}}
 
-  {{#imagegiftsofthespirits}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/giftsofthespirit" method="post">
 
@@ -647,11 +647,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegiftsofthespirits}}
 
-  {{#imagegods}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/god" method="post">
 
@@ -676,11 +676,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegods}}
 
-  {{#imagegodheads}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/godhead" method="post">
 
@@ -705,11 +705,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegodheads}}
 
-  {{#imagegospels}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/gospel" method="post">
 
@@ -734,11 +734,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegospels}}
 
-  {{#imagehappinesses}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/happiness" method="post">
 
@@ -763,11 +763,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagehappinesses}}
 
-  {{#imageheavens}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/heaven" method="post">
 
@@ -792,11 +792,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageheavens}}
 
-  {{#imagehells}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/hell" method="post">
 
@@ -821,11 +821,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagehells}}
 
-  {{#imageholyghosts}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/holyghost" method="post">
 
@@ -850,11 +850,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageholyghosts}}
 
-  {{#imagehonesties}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/honesty" method="post">
 
@@ -879,11 +879,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagehonesties}}
 
-  {{#imagehumilities}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/humility" method="post">
 
@@ -908,11 +908,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagehumilities}}
 
-  {{#imagejesuses}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/jesus" method="post">
 
@@ -937,11 +937,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagejesuses}}
 
-  {{#imagemarriages}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/marriage" method="post">
 
@@ -966,11 +966,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagemarriages}}
 
-  {{#imagemiracles}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/miracles" method="post">
 
@@ -995,11 +995,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagemiracles}}
 
-  {{#imagemissionaries}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/missionary" method="post">
 
@@ -1024,11 +1024,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagemissionaries}}
 
-  {{#imagenativities}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/nativity" method="post">
 
@@ -1053,11 +1053,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagenativities}}
 
-  {{#imagenewtestaments}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/newtestament" method="post">
 
@@ -1082,11 +1082,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagenewtestaments}}
 
-  {{#imageobediences}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/obedience" method="post">
 
@@ -1111,11 +1111,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageobediences}}
 
-  {{#imageoldtestaments}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/oldtestament" method="post">
 
@@ -1140,11 +1140,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageoldtestaments}}
 
-  {{#imagepioneers}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/pioneer" method="post">
 
@@ -1169,11 +1169,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagepioneers}}
 
-  {{#imageprayers}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/prayer" method="post">
 
@@ -1198,11 +1198,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageprayers}}
 
-  {{#imagepremortals}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/premortal" method="post">
 
@@ -1227,11 +1227,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagepremortals}}
 
-  {{#imagepriesthoods}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/priesthood" method="post">
 
@@ -1256,11 +1256,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagepriesthoods}}
 
-  {{#imageprophets}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/prophets" method="post">
 
@@ -1285,11 +1285,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageprophets}}
 
-  {{#imagerepentences}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/repentence" method="post">
 
@@ -1314,11 +1314,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagerepentences}}
 
-  {{#imageresurrections}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/resurrection" method="post">
 
@@ -1343,11 +1343,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageresurrections}}
 
-  {{#imagesacraments}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/sacrament" method="post">
 
@@ -1372,11 +1372,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagesacraments}}
 
-  {{#imagescriptures}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/scriptures" method="post">
 
@@ -1401,11 +1401,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagescriptures}}
 
-  {{#imagesecondcomings}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/secondcoming" method="post">
 
@@ -1430,11 +1430,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagesecondcomings}}
 
-  {{#imageselfreliances}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/selfreliance" method="post">
 
@@ -1459,11 +1459,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageselfreliances}}
 
-  {{#imageservices}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/service" method="post">
 
@@ -1488,11 +1488,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imageservices}}
 
-  {{#imagetemples}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/temple" method="post">
 
@@ -1517,11 +1517,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagetemples}}
 
-  {{#imagetestimonies}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/testimony" method="post">
 
@@ -1546,11 +1546,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagetestimonies}}
 
-  {{#imagethefalls}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/thefall" method="post">
 
@@ -1575,11 +1575,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagethefalls}}
 
-  {{#imagetithings}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/tithing" method="post">
 
@@ -1604,11 +1604,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagetithings}}
 
-  {{#imagetrials}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/trials" method="post">
 
@@ -1633,11 +1633,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagetrials}}
 
-  {{#imagewomens}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/women" method="post">
 
@@ -1662,11 +1662,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagewomens}}
 
-  {{#imagewordofwisdoms}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/wordofwisdom" method="post">
 
@@ -1691,11 +1691,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagewordofwisdoms}}
 
-  {{#imagegenauthbrighamyoungs}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/brighamyoung" method="post">
 
@@ -1720,11 +1720,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthbrighamyoungs}}
 
-  {{#imagegenauthdabednars}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/dabednar" method="post">
 
@@ -1749,11 +1749,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdabednars}}
 
-  {{#imagegenauthdavidomckays}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/davidomckay" method="post">
 
@@ -1778,11 +1778,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdavidomckays}}
 
-  {{#imagegenauthdfuchtdorfs}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/dfuchtdorf" method="post">
 
@@ -1807,11 +1807,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdfuchtdorfs}}
 
-  {{#imagegenauthdgrenlunds}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/dgrenlund" method="post">
 
@@ -1836,11 +1836,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdgrenlunds}}
 
-  {{#imagegenauthdhoaks}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/dhoaks" method="post">
 
@@ -1865,11 +1865,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdhoaks}}
 
-  {{#imagegenauthdtchristoffersons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/dtchristofferson" method="post">
 
@@ -1894,11 +1894,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthdtchristoffersons}}
 
-  {{#imagegenauthezrataftbensons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/ezrataftbenson" method="post">
 
@@ -1923,11 +1923,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthezrataftbensons}}
 
-  {{#imagegenauthgordonbhinckleys}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/gordonbhinckley" method="post">
 
@@ -1952,11 +1952,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthgordonbhinckleys}}
 
-  {{#imagegenauthharoldblees}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/haroldblee" method="post">
 
@@ -1981,11 +1981,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthharoldblees}}
 
-  {{#imagegenauthhbeyrings}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/hbeyring" method="post">
 
@@ -2010,11 +2010,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthhbeyrings}}
 
-  {{#imagegenauthheberjgrants}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/heberjgrant" method="post">
 
@@ -2039,11 +2039,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthheberjgrants}}
 
-  {{#imagegenauthhowardwhunters}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/howardwhunter" method="post">
 
@@ -2068,11 +2068,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthhowardwhunters}}
 
-  {{#imagegenauthjohntaylors}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/johntaylor" method="post">
 
@@ -2097,11 +2097,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthjohntaylors}}
 
-  {{#imagegenauthjosephfieldingsmiths}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/josephfieldingsmith" method="post">
 
@@ -2126,11 +2126,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthjosephfieldingsmiths}}
 
-  {{#imagegenauthjosephfsmiths}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/josephfsmith" method="post">
 
@@ -2155,11 +2155,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthjosephfsmiths}}
 
-  {{#imagegenauthjosephsmiths}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/josephsmith" method="post">
 
@@ -2184,11 +2184,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthjosephsmiths}}
 
-  {{#imagegenauthjrhollands}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/jrholland" method="post">
 
@@ -2213,11 +2213,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthjrhollands}}
 
-  {{#imagegenauthlorenzosnows}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/lorenzosnow" method="post">
 
@@ -2242,11 +2242,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthlorenzosnows}}
 
-  {{#imagegenauthmrballards}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/mrballard" method="post">
 
@@ -2271,11 +2271,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthmrballards}}
 
-  {{#imagegenauthnlandersons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/nlanderson" method="post">
 
@@ -2300,11 +2300,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthnlandersons}}
 
-  {{#imagegenauthqlcooks}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/qlcook" method="post">
 
@@ -2329,11 +2329,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthqlcooks}}
 
-  {{#imagegenauthrarasbands}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/rarasband" method="post">
 
@@ -2358,11 +2358,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthrarasbands}}
 
-  {{#imagegenauthrmnelsons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/rmnelson" method="post">
 
@@ -2387,11 +2387,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthrmnelsons}}
 
-  {{#imagegenauthspencerkimballs}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/spencerkimball" method="post">
 
@@ -2416,11 +2416,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthspencerkimballs}}
 
-  {{#imagegenauthtsmonsons}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/tsmonson" method="post">
 
@@ -2445,11 +2445,11 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthtsmonsons}}
 
-  {{#imagegenauthwilfordwoodruffs}}
 
-    <img src="{{#image_data}}{{image}}{{/image_data}}" />
+
+
+
 
     <form class="form2" action="/api/scriptures/wilfordwoodruff" method="post">
 
@@ -2474,7 +2474,8 @@
 
       <input class="submit" type="submit" value="submit">
     </form>
-  {{/imagegenauthwilfordwoodruffs}}
+  </div>
+  </div>
 
 </body>
 

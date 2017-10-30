@@ -934,281 +934,6 @@ app.post('/api/splashinfo', function(req, res) {
 
 //==========================//
 
-//====GET ALL IMAGES===//
-
-app.get('/gamestart', function(req, res) {
-User.findOne({username: req.session.username}).then(function(users){
-Points.findOne().sort({ field: 'asc', _id: -1 }).limit(1).then(function(points){
-Imageagency.aggregate().sample(1).then(imageagencies => {
-Imageangels.aggregate().sample(1).then(imageangels => {
-Imageapostasy.aggregate().sample(1).then(imageapostasy => {
-Imageapostle.aggregate().sample(1).then(imageapostles => {
-Imageatonement.aggregate().sample(1).then(imageatonements => {
-Imagebaptism.aggregate().sample(1).then(imagebaptisms => {
-Imagebookofmormon.aggregate().sample(1).then(imagebookofmormons => {
-Imagecharity.aggregate().sample(1).then(imagecharities => {
-Imagechastity.aggregate().sample(1).then(imagechastities => {
-Imagechildren.aggregate().sample(1).then(imagechildrens => {
-Imagechurch.aggregate().sample(1).then(imagechurches => {
-Imagecovenants.aggregate().sample(1).then(imagecovenants => {
-Imagecreation.aggregate().sample(1).then(imagecreations => {
-Imagedeath.aggregate().sample(1).then(imagedeaths => {
-Imagedoctrinecovenants.aggregate().sample(1).then(imagedoctrinecovenants => {
-Imageevents.aggregate().sample(1).then(imageevents => {
-Imagepeople.aggregate().sample(1).then(imagepeoples => {
-Imagefaith.aggregate().sample(1).then(imagefaiths => {
-Imagefamily.aggregate().sample(1).then(imagefamilies => {
-Imagefasting.aggregate().sample(1).then(imagefastings => {
-Imagegenealogy.aggregate().sample(1).then(imagegenealogies => {
-Imagegiftsofthespirit.aggregate().sample(1).then(imagegiftsofthespirits => {
-Imagegod.aggregate().sample(1).then(imagegods => {
-Imagegospel.aggregate().sample(1).then(imagegospels => {
-Imagehappiness.aggregate().sample(1).then(imagehappinesses => {
-Imageheaven.aggregate().sample(1).then(imageheavens => {
-Imagehell.aggregate().sample(1).then(imagehells => {
-Imageholyghost.aggregate().sample(1).then(imageholyghosts => {
-Imagehonesty.aggregate().sample(1).then(imagehonesties => {
-Imagehumility.aggregate().sample(1).then(imagehumilities => {
-Imagejesus.aggregate().sample(1).then(imagejesuses => {
-Imagemarriage.aggregate().sample(1).then(imagemarriages => {
-Imagemiracles.aggregate().sample(1).then(imagemiracles => {
-Imagemissionary.aggregate().sample(1).then(imagemissionaries => {
-Imagenativity.aggregate().sample(1).then(imagenativities => {
-Imagenewtestament.aggregate().sample(1).then(imagenewtestaments => {
-Imageobedience.aggregate().sample(1).then(imageobediences => {
-Imageoldtestament.aggregate().sample(1).then(imageoldtestaments => {
-Imagepeople.aggregate().sample(1).then(imagepeoples => {
-Imagepioneer.aggregate().sample(1).then(imagepioneers => {
-Imageprayer.aggregate().sample(1).then(imageprayers => {
-Imagepremortal.aggregate().sample(1).then(imagepremortals => {
-Imagepriesthood.aggregate().sample(1).then(imagepriesthoods => {
-Imageprophets.aggregate().sample(1).then(imageprophets => {
-Imagerepentence.aggregate().sample(1).then(imagerepentences => {
-Imageresurrection.aggregate().sample(1).then(imageresurrections => {
-Imagesacrament.aggregate().sample(1).then(imagesacraments => {
-Imagescriptures.aggregate().sample(1).then(imagescriptures => {
-Imagesecondcoming.aggregate().sample(1).then(imagesecondcomings => {
-Imageselfreliance.aggregate().sample(1).then(imageselfreliances =>   {
-Imageservice.aggregate().sample(1).then(imageservices =>   {
-Imagetemple.aggregate().sample(1).then(imagetemples =>   {
-Imagetestimony.aggregate().sample(1).then(imagetestimonies =>   {
-Imagethefall.aggregate().sample(1).then(imagethefalls =>   {
-Imagetithing.aggregate().sample(1).then(imagetithings =>   {
-Imagetrials.aggregate().sample(1).then(imagetrials =>   {
-Imagewomen.aggregate().sample(1).then(imagewomens =>   {
-Imagewordofwisdom.aggregate().sample(1).then(imagewordofwisdoms =>   {
-Imagegenauthbrighamyoung.aggregate().sample(1).then(imagegenauthbrighamyoungs =>   {
-Imagegenauthdabednar.aggregate().sample(1).then(imagegenauthdabednars =>   {
-Imagegenauthdavidomckay.aggregate().sample(1).then(imagegenauthdavidomckays =>   {
-Imagegenauthdfuchtdorf.aggregate().sample(1).then(imagegenauthdfuchtdorfs =>   {
-Imagegenauthdgrenlund.aggregate().sample(1).then(imagegenauthdgrenlunds =>   {
-Imagegenauthdhoaks.aggregate().sample(1).then(imagegenauthdhoaks =>   {
-Imagegenauthdtchristofferson.aggregate().sample(1).then(imagegenauthdtchristoffersons =>   {
-Imagegenauthezrataftbenson.aggregate().sample(1).then(imagegenauthezrataftbensons =>   {
-Imagegenauthgeorgeasmith.aggregate().sample(1).then(imagegenauthgeorgeasmiths =>   {
-Imagegenauthgestevenson.aggregate().sample(1).then(imagegenauthgestevensons =>   {
-Imagegenauthgordonbhinckley.aggregate().sample(1).then(imagegenauthgordonbhinckleys =>   {
-Imagegenauthharoldblee.aggregate().sample(1).then(imagegenauthharoldblees =>   {
-Imagegenauthhbeyring.aggregate().sample(1).then(imagegenauthhbeyrings =>   {
-Imagegenauthheberjgrant.aggregate().sample(1).then(imagegenauthheberjgrants =>   {
-Imagegenauthhowardwhunter.aggregate().sample(1).then(imagegenauthhowardwhunters =>   {
-Imagegenauthjohntaylor.aggregate().sample(1).then(imagegenauthjohntaylors =>   {
-Imagegenauthjosephfieldingsmith.aggregate().sample(1).then(imagegenauthjosephfieldingsmiths =>   {
-Imagegenauthjosephfsmith.aggregate().sample(1).then(imagegenauthjosephfsmiths =>   {
-Imagegenauthjosephsmith.aggregate().sample(1).then(imagegenauthjosephsmiths =>   {
-Imagegenauthjrholland.aggregate().sample(1).then(imagegenauthjrhollands =>   {
-Imagegenauthlorenzosnow.aggregate().sample(1).then(imagegenauthlorenzosnows =>   {
-Imagegenauthmrballard.aggregate().sample(1).then(imagegenauthmrballards =>   {
-Imagegenauthnlanderson.aggregate().sample(1).then(imagegenauthnlandersons =>   {
-Imagegenauthqlcook.aggregate().sample(1).then(imagegenauthqlcooks =>   {
-Imagegenauthrarasband.aggregate().sample(1).then(imagegenauthrarasbands =>   {
-Imagegenauthrmnelson.aggregate().sample(1).then(imagegenauthrmnelsons =>   {
-Imagegenauthspencerkimball.aggregate().sample(1).then(imagegenauthspencerkimballs =>   {
-Imagegenauthtsmonson.aggregate().sample(1).then(imagegenauthtsmonsons =>   {
-Imagegenauthwilfordwoodruff.aggregate().sample(1).then(imagegenauthwilfordwoodruffs =>   {
-  res.render('gamestart', {
-    users: users,
-    points: points,
-    imageagencies:imageagencies,
-    imageangels:imageangels,
-    imageapostasy:imageapostasy,
-    imageapostles:imageapostles,
-    imageatonements:imageatonements,
-    imagebaptisms:imagebaptisms,
-    imagebookofmormons:imagebookofmormons,
-    imagecharities:imagecharities,
-    imagechastities:imagechastities,
-    imagechildrens:imagechildrens,
-    imagechurches:imagechurches,
-    imagecovenants:imagecovenants,
-    imagecreations:imagecreations,
-    imagedeaths:imagedeaths,
-    imagedoctrinecovenants:imagedoctrinecovenants,
-    imageevents:imageevents,
-    imagepeoples:imagepeoples,
-    imagefaiths:imagefaiths,
-    imagefamilies:imagefamilies,
-    imagefastings:imagefastings,
-    imagegenealogies:imagegenealogies,
-    imagegiftsofthespirits:imagegiftsofthespirits,
-    imagegods:imagegods,
-    imagegospels:imagegospels,
-    imagehappinesses:imagehappinesses,
-    imageheavens:imageheavens,
-    imagehells:imagehells,
-    imageholyghosts:imageholyghosts,
-    imagehonesties:imagehonesties,
-    imagehumilities:imagehumilities,
-    imagejesuses:imagejesuses,
-    imagemarriages:imagemarriages,
-    imagemiracles:imagemiracles,
-    imagemissionaries:imagemissionaries,
-    imagenativities:imagenativities,
-    imagenewtestaments:imagenewtestaments,
-    imageobediences:imageobediences,
-    imageoldtestaments:imageoldtestaments,
-    imagepeoples: imagepeoples,
-    imagepioneers:imagepioneers,
-    imageprayers:imageprayers,
-    imagepremortals:imagepremortals,
-    imagepriesthoods:imagepriesthoods,
-    imageprophets:imageprophets,
-    imagerepentences:imagerepentences,
-    imageresurrections:imageresurrections,
-    imagesacraments:imagesacraments,
-    imagescriptures:imagescriptures,
-    imagesecondcomings:imagesecondcomings,
-    imageselfreliances:imageselfreliances,
-    imageservices:imageservices,
-    imagetemples:imagetemples,
-    imagetestimonies:imagetestimonies,
-    imagethefalls:imagethefalls,
-    imagetithings:imagetithings,
-    imagetrials:imagetrials,
-    imagewomens:imagewomens,
-    imagewordofwisdoms:imagewordofwisdoms,
-    imagegenauthbrighamyoungs: imagegenauthbrighamyoungs,
-    imagegenauthdabednars: imagegenauthdabednars,
-    imagegenauthdavidomckays: imagegenauthdavidomckays,
-    imagegenauthdfuchtdorfs: imagegenauthdfuchtdorfs,
-    imagegenauthdgrenlunds: imagegenauthdgrenlunds,
-    imagegenauthdhoaks: imagegenauthdhoaks,
-    imagegenauthdtchristoffersons: imagegenauthdtchristoffersons,
-    imagegenauthezrataftbensons: imagegenauthezrataftbensons,
-    imagegenauthgeorgeasmiths: imagegenauthgeorgeasmiths,
-    imagegenauthgestevensons: imagegenauthgestevensons,
-    imagegenauthgordonbhinckleys: imagegenauthgordonbhinckleys,
-    imagegenauthharoldblees: imagegenauthharoldblees,
-    imagegenauthhbeyrings: imagegenauthhbeyrings,
-    imagegenauthheberjgrants: imagegenauthheberjgrants,
-    imagegenauthhowardwhunters: imagegenauthhowardwhunters,
-    imagegenauthjohntaylors: imagegenauthjohntaylors,
-    imagegenauthjosephfieldingsmiths: imagegenauthjosephfieldingsmiths,
-    imagegenauthjosephfsmiths: imagegenauthjosephfsmiths,
-    imagegenauthjosephsmiths: imagegenauthjosephsmiths,
-    imagegenauthjrhollands: imagegenauthjrhollands,
-    imagegenauthlorenzosnows: imagegenauthlorenzosnows,
-    imagegenauthmrballards: imagegenauthmrballards,
-    imagegenauthnlandersons: imagegenauthnlandersons,
-    imagegenauthqlcooks: imagegenauthqlcooks,
-    imagegenauthrarasbands: imagegenauthrarasbands,
-    imagegenauthrmnelsons: imagegenauthrmnelsons,
-    imagegenauthspencerkimballs: imagegenauthspencerkimballs,
-    imagegenauthtsmonsons: imagegenauthtsmonsons,
-    imagegenauthwilfordwoodruffs: imagegenauthwilfordwoodruffs,
-  })
-    })
-  })
-  })
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-    })
-    })
-    })
-    })
-    })
-    })
-    })
-    })
-    })
-  })
-  })
-  })
-  })
-  })
-  })
-  })
-  })
-  })
-  })
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-})
-  })
-});
-//==========================//
-
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/images', function(req, res) {
@@ -3329,7 +3054,7 @@ app.post('/api/scriptures/brighamyoung', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3343,7 +3068,7 @@ app.post('/api/scriptures/dabednar', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3357,7 +3082,7 @@ app.post('/api/scriptures/davidomckay', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3371,7 +3096,7 @@ app.post('/api/scriptures/dfuchtdorf', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3385,7 +3110,7 @@ app.post('/api/scriptures/dgrenlund', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3399,7 +3124,7 @@ app.post('/api/scriptures/dhoaks', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3413,7 +3138,7 @@ app.post('/api/scriptures/dtchristofferson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3427,7 +3152,7 @@ app.post('/api/scriptures/ezrataftbenson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3441,7 +3166,7 @@ app.post('/api/scriptures/georgeasmith', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3455,7 +3180,7 @@ app.post('/api/scriptures/gestevenson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3469,7 +3194,7 @@ app.post('/api/scriptures/gordonbhinckley', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3483,7 +3208,7 @@ app.post('/api/scriptures/haroldblee', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3497,7 +3222,7 @@ app.post('/api/scriptures/hbeyring', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3511,7 +3236,7 @@ app.post('/api/scriptures/heberjgrant', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3525,7 +3250,7 @@ app.post('/api/scriptures/howardwhunter', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3539,7 +3264,7 @@ app.post('/api/scriptures/johntaylor', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3553,7 +3278,7 @@ app.post('/api/scriptures/josephfieldingsmith', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3567,7 +3292,7 @@ app.post('/api/scriptures/josephfsmith', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3581,7 +3306,7 @@ app.post('/api/scriptures/josephsmith', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3595,7 +3320,7 @@ app.post('/api/scriptures/jrholland', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3609,7 +3334,7 @@ app.post('/api/scriptures/lorenzosnow', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3623,7 +3348,7 @@ app.post('/api/scriptures/mrballard', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3637,7 +3362,7 @@ app.post('/api/scriptures/nlanderson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3651,7 +3376,7 @@ app.post('/api/scriptures/qlcook', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3665,7 +3390,7 @@ app.post('/api/scriptures/rarasband', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3679,7 +3404,7 @@ app.post('/api/scriptures/rmnelson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3693,7 +3418,7 @@ app.post('/api/scriptures/spencerkimball', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3707,7 +3432,7 @@ app.post('/api/scriptures/tsmonson', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3721,7 +3446,7 @@ app.post('/api/scriptures/wilfordwoodruff', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3735,7 +3460,7 @@ app.post('/api/scriptures/people', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3749,7 +3474,7 @@ app.post('/api/scriptures/agency', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3763,7 +3488,7 @@ app.post('/api/scriptures/angels', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3777,7 +3502,7 @@ app.post('/api/scriptures/apostasy', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3791,7 +3516,7 @@ app.post('/api/scriptures/apostle', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3805,7 +3530,7 @@ app.post('/api/scriptures/atonement', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3819,7 +3544,7 @@ app.post('/api/scriptures/baptism', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3833,7 +3558,7 @@ app.post('/api/scriptures/bookofmormon', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3847,7 +3572,7 @@ app.post('/api/scriptures/charity', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3861,7 +3586,7 @@ app.post('/api/scriptures/chastity', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3875,7 +3600,7 @@ app.post('/api/scriptures/children', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3889,7 +3614,7 @@ app.post('/api/scriptures/church', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3903,7 +3628,7 @@ app.post('/api/scriptures/covenants', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3917,7 +3642,7 @@ app.post('/api/scriptures/creation', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3931,7 +3656,7 @@ app.post('/api/scriptures/death', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3945,7 +3670,7 @@ app.post('/api/scriptures/doctrinecovenants', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3959,7 +3684,7 @@ app.post('/api/scriptures/events', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3973,7 +3698,7 @@ app.post('/api/scriptures/faith', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -3987,7 +3712,7 @@ app.post('/api/scriptures/family', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4001,7 +3726,7 @@ app.post('/api/scriptures/fasting', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4015,7 +3740,7 @@ app.post('/api/scriptures/genealogy', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4029,7 +3754,7 @@ app.post('/api/scriptures/giftsofthespirit', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4043,7 +3768,7 @@ app.post('/api/scriptures/god', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4057,7 +3782,7 @@ app.post('/api/scriptures/godhead', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4071,7 +3796,7 @@ app.post('/api/scriptures/gospel', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4085,7 +3810,7 @@ app.post('/api/scriptures/happiness', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4099,7 +3824,7 @@ app.post('/api/scriptures/heaven', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4113,7 +3838,7 @@ app.post('/api/scriptures/hell', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4127,7 +3852,7 @@ app.post('/api/scriptures/holyghost', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4141,7 +3866,7 @@ app.post('/api/scriptures/honesty', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4155,7 +3880,7 @@ app.post('/api/scriptures/humility', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4169,7 +3894,7 @@ app.post('/api/scriptures/jesus', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4183,7 +3908,7 @@ app.post('/api/scriptures/marriage', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4197,7 +3922,7 @@ app.post('/api/scriptures/miracles', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4211,7 +3936,7 @@ app.post('/api/scriptures/missionary', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4225,7 +3950,7 @@ app.post('/api/scriptures/nativity', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4239,7 +3964,7 @@ app.post('/api/scriptures/newtestament', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4253,7 +3978,7 @@ app.post('/api/scriptures/obedience', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4267,7 +3992,7 @@ app.post('/api/scriptures/oldtestament', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4281,7 +4006,7 @@ app.post('/api/scriptures/pioneer', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4295,7 +4020,7 @@ app.post('/api/scriptures/prayer', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4309,7 +4034,7 @@ app.post('/api/scriptures/premortal', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4323,7 +4048,7 @@ app.post('/api/scriptures/priesthood', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4337,7 +4062,7 @@ app.post('/api/scriptures/prophets', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4351,7 +4076,7 @@ app.post('/api/scriptures/repentence', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4365,7 +4090,7 @@ app.post('/api/scriptures/resurrection', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4379,7 +4104,7 @@ app.post('/api/scriptures/sacrament', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4393,7 +4118,7 @@ app.post('/api/scriptures/scriptures', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4407,7 +4132,7 @@ app.post('/api/scriptures/secondcoming', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4421,7 +4146,7 @@ app.post('/api/scriptures/selfreliance', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4435,7 +4160,7 @@ app.post('/api/scriptures/service', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4449,7 +4174,7 @@ app.post('/api/scriptures/temple', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4463,7 +4188,7 @@ app.post('/api/scriptures/testimony', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4477,7 +4202,7 @@ app.post('/api/scriptures/thefall', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4491,7 +4216,7 @@ app.post('/api/scriptures/tithing', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4505,7 +4230,7 @@ app.post('/api/scriptures/trials', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4519,7 +4244,7 @@ app.post('/api/scriptures/women', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4533,7 +4258,7 @@ app.post('/api/scriptures/wordofwisdom', function(req, res) {
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
   }).then(scriptures => {
-  res.redirect('/playagain')
+  res.redirect('/game1')
 });
 });
 
@@ -4588,1377 +4313,12 @@ app.post('/userpoints/update', function(req, res) {
 
 //====GET IMAGE FOR SCRIPTURE API===//
 
-app.get('/game1/:_id', function(req, res) {
+app.get('/game1', function(req, res) {
   User.findOne({username: req.session.username}).then(function(users){
-  Imagepeople.findById({_id: req.params._id}).then(imagepeoples => {
-  res.render('game1', {
-    users: users,
-    imagepeoples: imagepeoples,
-  })
-  })
+}).then(users => {
+  res.render('game1')
 });
 });
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game2/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageagency.findById({_id: req.params._id}).then(imageagencies => {
-  res.render('game1', {
-    users: users,
-    imageagencies: imageagencies,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game3/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageangels.findById({_id: req.params._id}).then(imageangels => {
-  res.render('game1', {
-    users: users,
-    imageangels: imageangels,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game4/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageapostasy.findById({_id: req.params._id}).then(imageapostasy => {
-  res.render('game1', {
-    users: users,
-    imageapostasy: imageapostasy,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game6/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageapostle.findById({_id: req.params._id}).then(imageapostles => {
-  res.render('game1', {
-    users: users,
-    imageapostles: imageapostles,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game5/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageatonement.findById({_id: req.params._id}).then(imageatonements => {
-  res.render('game1', {
-    users: users,
-    imageatonements: imageatonements,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game7/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagebaptism.findById({_id: req.params._id}).then(imagebaptisms => {
-  res.render('game1', {
-    users: users,
-    imagebaptisms: imagebaptisms,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game8/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagebookofmormon.findById({_id: req.params._id}).then(imagebookofmormons => {
-  res.render('game1', {
-    users: users,
-    imagebookofmormons: imagebookofmormons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game9/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagecharity.findById({_id: req.params._id}).then(imagecharities => {
-  res.render('game1', {
-    users: users,
-    imagecharities: imagecharities,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game10/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagechastity.findById({_id: req.params._id}).then(imagechastities => {
-  res.render('game1', {
-    users: users,
-    imagechastities: imagechastities,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game11/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagechildren.findById({_id: req.params._id}).then(imagechildrens => {
-  res.render('game1', {
-    users: users,
-    imagechildrens: imagechildrens,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game12/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagechurch.findById({_id: req.params._id}).then(imagechurches => {
-  res.render('game1', {
-    users: users,
-    imagechurches: imagechurches,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game13/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagecovenants.findById({_id: req.params._id}).then(imagecovenants => {
-  res.render('game1', {
-    users: users,
-    imagecovenants: imagecovenants,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game14/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagecreation.findById({_id: req.params._id}).then(imagecreations => {
-  res.render('game1', {
-    users: users,
-    imagecreations: imagecreations,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game15/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagedeath.findById({_id: req.params._id}).then(imagedeaths => {
-  res.render('game1', {
-    users: users,
-    imagedeaths: imagedeaths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game16/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagedoctrinecovenants.findById({_id: req.params._id}).then(imagedoctrinecovenants => {
-  res.render('game1', {
-    users: users,
-    imagedoctrinecovenants: imagedoctrinecovenants,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game17/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageevents.findById({_id: req.params._id}).then(imageevents => {
-  res.render('game1', {
-    users: users,
-    imageevents: imageevents,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game18/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagefaith.findById({_id: req.params._id}).then(imagefaiths => {
-  res.render('game1', {
-    users: users,
-    imagefaiths: imagefaiths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game19/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagefamily.findById({_id: req.params._id}).then(imagefamilies => {
-  res.render('game1', {
-    users: users,
-    imagefamilies: imagefamilies,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game20/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagefasting.findById({_id: req.params._id}).then(imagefastings => {
-  res.render('game1', {
-    users: users,
-    imagefastings: imagefastings,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game21/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenealogy.findById({_id: req.params._id}).then(imagegenealogies => {
-  res.render('game1', {
-    users: users,
-    imagegenealogies: imagegenealogies,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game22/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegiftsofthespirit.findById({_id: req.params._id}).then(imagegiftsofthespirits => {
-  res.render('game1', {
-    users: users,
-    imagegiftsofthespirits: imagegiftsofthespirits,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game23/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegod.findById({_id: req.params._id}).then(imagegods => {
-  res.render('game1', {
-    users: users,
-    imagegods: imagegods,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game24/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegodhead.findById({_id: req.params._id}).then(imagegodheads => {
-  res.render('game1', {
-    users: users,
-    imagegodheads: imagegodheads,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game25/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegospel.findById({_id: req.params._id}).then(imagegospels => {
-  res.render('game1', {
-    users: users,
-    imagegospels: imagegospels,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game26/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagehappiness.findById({_id: req.params._id}).then(imagehappinesses => {
-  res.render('game1', {
-    users: users,
-    imagehappinesses: imagehappinesses,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game27/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageheaven.findById({_id: req.params._id}).then(imageheavens => {
-  res.render('game1', {
-    users: users,
-    imageheavens: imageheavens,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game28/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagehell.findById({_id: req.params._id}).then(imagehells => {
-  res.render('game1', {
-    users: users,
-    imagehells: imagehells,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game29/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageholyghost.findById({_id: req.params._id}).then(imageholyghosts => {
-  res.render('game1', {
-    users: users,
-    imageholyghosts: imageholyghosts,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game30/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagehonesty.findById({_id: req.params._id}).then(imagehonesties => {
-  res.render('game1', {
-    users: users,
-    imagehonesties: imagehonesties,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game31/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagehumility.findById({_id: req.params._id}).then(imagehumilities => {
-  res.render('game1', {
-    users: users,
-    imagehumilities: imagehumilities,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game32/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagejesus.findById({_id: req.params._id}).then(imagejesuses => {
-  res.render('game1', {
-    users: users,
-    imagejesuses: imagejesuses,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game33/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagemarriage.findById({_id: req.params._id}).then(imagemarriages => {
-  res.render('game1', {
-    users: users,
-    imagemarriages: imagemarriages,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game34/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagemiracles.findById({_id: req.params._id}).then(imagemiracles => {
-  res.render('game1', {
-    users: users,
-    imagemiracles: imagemiracles,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game35/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagemissionary.findById({_id: req.params._id}).then(imagemissionaries => {
-  res.render('game1', {
-    users: users,
-    imagemissionaries: imagemissionaries,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game36/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagenativity.findById({_id: req.params._id}).then(imagenativities => {
-  res.render('game1', {
-    users: users,
-    imagenativities: imagenativities,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game37/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagenewtestament.findById({_id: req.params._id}).then(imagenewtestaments => {
-  res.render('game1', {
-    users: users,
-    imagenewtestaments: imagenewtestaments,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game38/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageobedience.findById({_id: req.params._id}).then(imageobediences => {
-  res.render('game1', {
-    users: users,
-    imageobediences: imageobediences,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game39/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageoldtestament.findById({_id: req.params._id}).then(imageoldtestaments => {
-  res.render('game1', {
-    users: users,
-    imageoldtestaments: imageoldtestaments,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game40/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagepioneer.findById({_id: req.params._id}).then(imagepioneers => {
-  res.render('game1', {
-    users: users,
-    imagepioneers: imagepioneers,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game41/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageprayer.findById({_id: req.params._id}).then(imageprayers => {
-  res.render('game1', {
-    users: users,
-    imageprayers: imageprayers,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game42/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagepremortal.findById({_id: req.params._id}).then(imagepremortals => {
-  res.render('game1', {
-    users: users,
-    imagepremortals: imagepremortals,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game43/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagepriesthood.findById({_id: req.params._id}).then(imagepriesthoods => {
-  res.render('game1', {
-    users: users,
-    imagepriesthoods: imagepriesthoods,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game44/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageprophets.findById({_id: req.params._id}).then(imageprophets => {
-  res.render('game1', {
-    users: users,
-    imageprophets: imageprophets,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game45/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagerepentence.findById({_id: req.params._id}).then(imagerepentences => {
-  res.render('game1', {
-    users: users,
-    imagerepentences: imagerepentences,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game46/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagesacrament.findById({_id: req.params._id}).then(imagesacraments => {
-  res.render('game1', {
-    users: users,
-    imagesacraments: imagesacraments,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game47/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagescriptures.findById({_id: req.params._id}).then(imagescriptures => {
-  res.render('game1', {
-    users: users,
-    imagescriptures: imagescriptures,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game48/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagesecondcoming.findById({_id: req.params._id}).then(imagesecondcomings => {
-  res.render('game1', {
-    users: users,
-    imagesecondcomings: imagesecondcomings,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game49/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageselfreliance.findById({_id: req.params._id}).then(imageselfreliances => {
-  res.render('game1', {
-    users: users,
-    imageselfreliances: imageselfreliances,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game50/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagetemple.findById({_id: req.params._id}).then(imagetemples => {
-  res.render('game1', {
-    users: users,
-    imagetemples: imagetemples,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game51/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagetestimony.findById({_id: req.params._id}).then(imagetestimonies => {
-  res.render('game1', {
-    users: users,
-    imagetestimonies: imagetestimonies,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game52/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imageservice.findById({_id: req.params._id}).then(imageservices => {
-  res.render('game1', {
-    users: users,
-    imageservices: imageservices,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game53/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagethefall.findById({_id: req.params._id}).then(imagethefalls => {
-  res.render('game1', {
-    users: users,
-    imagethefalls: imagethefalls,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game54/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagetithing.findById({_id: req.params._id}).then(imagetithings => {
-  res.render('game1', {
-    users: users,
-    imagetithings: imagetithings,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game55/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagetrials.findById({_id: req.params._id}).then(imagetrials => {
-  res.render('game1', {
-    users: users,
-    imagetrials: imagetrials,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game56/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagewomen.findById({_id: req.params._id}).then(imagewomens => {
-  res.render('game1', {
-    users: users,
-    imagewomens: imagewomens,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game57/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagewordofwisdom.findById({_id: req.params._id}).then(imagewordofwisdoms => {
-  res.render('game1', {
-    users: users,
-    imagewordofwisdoms: imagewordofwisdoms,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game58/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthbrighamyoung.findById({_id: req.params._id}).then(imagegenauthbrighamyoungs => {
-  res.render('game1', {
-    users: users,
-    imagegenauthbrighamyoungs: imagegenauthbrighamyoungs,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game59/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdabednar.findById({_id: req.params._id}).then(imagegenauthdabednars => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdabednars: imagegenauthdabednars,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game60/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdavidomckay.findById({_id: req.params._id}).then(imagegenauthdavidomckays => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdavidomckays: imagegenauthdavidomckays,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game61/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdfuchtdorf.findById({_id: req.params._id}).then(imagegenauthdfuchtdorfs => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdfuchtdorfs: imagegenauthdfuchtdorfs,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game62/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdgrenlund.findById({_id: req.params._id}).then(imagegenauthdgrenlunds => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdgrenlunds: imagegenauthdgrenlunds,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game63/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdhoaks.findById({_id: req.params._id}).then(imagegenauthdhoakss => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdhoakss: imagegenauthdhoakss,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game64/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthdtchristofferson.findById({_id: req.params._id}).then(imagegenauthdtchristoffersons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthdtchristoffersons: imagegenauthdtchristoffersons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game65/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthezrataftbenson.findById({_id: req.params._id}).then(imagegenauthezrataftbensons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthezrataftbensons: imagegenauthezrataftbensons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game66/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthgeorgeasmith.findById({_id: req.params._id}).then(imagegenauthgeorgeasmiths => {
-  res.render('game1', {
-    users: users,
-    imagegenauthgeorgeasmiths: imagegenauthgeorgeasmiths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game67/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthgestevenson.findById({_id: req.params._id}).then(imagegenauthgestevensons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthgestevensons: imagegenauthgestevensons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game68/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthgordonbhinckley.findById({_id: req.params._id}).then(imagegenauthgordonbhinckleys => {
-  res.render('game1', {
-    users: users,
-    imagegenauthgordonbhinckleys: imagegenauthgordonbhinckleys,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game69/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthharoldblee.findById({_id: req.params._id}).then(imagegenauthharoldblees => {
-  res.render('game1', {
-    users: users,
-    imagegenauthharoldblees: imagegenauthharoldblees,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game70/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthhbeyring.findById({_id: req.params._id}).then(imagegenauthhbeyrings => {
-  res.render('game1', {
-    users: users,
-    imagegenauthhbeyrings: imagegenauthhbeyrings,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game71/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthheberjgrant.findById({_id: req.params._id}).then(imagegenauthheberjgrants => {
-  res.render('game1', {
-    users: users,
-    imagegenauthheberjgrants: imagegenauthheberjgrants,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game72/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthhowardwhunter.findById({_id: req.params._id}).then(imagegenauthhowardwhunters => {
-  res.render('game1', {
-    users: users,
-    imagegenauthhowardwhunters: imagegenauthhowardwhunters,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game73/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthjohntaylor.findById({_id: req.params._id}).then(imagegenauthjohntaylors => {
-  res.render('game1', {
-    users: users,
-    imagegenauthjohntaylors: imagegenauthjohntaylors,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game74/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthjosephfieldingsmith.findById({_id: req.params._id}).then(imagegenauthjosephfieldingsmiths => {
-  res.render('game1', {
-    users: users,
-    imagegenauthjosephfieldingsmiths: imagegenauthjosephfieldingsmiths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game75/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthjosephfsmith.findById({_id: req.params._id}).then(imagegenauthjosephfsmiths => {
-  res.render('game1', {
-    users: users,
-    imagegenauthjosephfsmiths: imagegenauthjosephfsmiths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game76/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthjosephsmith.findById({_id: req.params._id}).then(imagegenauthjosephsmiths => {
-  res.render('game1', {
-    users: users,
-    imagegenauthjosephsmiths: imagegenauthjosephsmiths,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game77/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthjrholland.findById({_id: req.params._id}).then(imagegenauthjrhollands => {
-  res.render('game1', {
-    users: users,
-    imagegenauthjrhollands: imagegenauthjrhollands,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game78/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthlorenzosnow.findById({_id: req.params._id}).then(imagegenauthlorenzosnows => {
-  res.render('game1', {
-    users: users,
-    imagegenauthlorenzosnows: imagegenauthlorenzosnows,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game79/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthmrballard.findById({_id: req.params._id}).then(imagegenauthmrballards => {
-  res.render('game1', {
-    users: users,
-    imagegenauthmrballards: imagegenauthmrballards,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game80/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthnlanderson.findById({_id: req.params._id}).then(imagegenauthnlandersons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthnlandersons: imagegenauthnlandersons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game81/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthqlcook.findById({_id: req.params._id}).then(imagegenauthqlcooks => {
-  res.render('game1', {
-    users: users,
-    imagegenauthqlcooks: imagegenauthqlcooks,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game82/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthrarasband.findById({_id: req.params._id}).then(imagegenauthrarasbands => {
-  res.render('game1', {
-    users: users,
-    imagegenauthrarasbands: imagegenauthrarasbands,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game83/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthrmnelson.findById({_id: req.params._id}).then(imagegenauthrmnelsons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthrmnelsons: imagegenauthrmnelsons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game84/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthspencerkimball.findById({_id: req.params._id}).then(imagegenauthspencerkimballs => {
-  res.render('game1', {
-    users: users,
-    imagegenauthspencerkimballs: imagegenauthspencerkimballs,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game85/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthtsmonson.findById({_id: req.params._id}).then(imagegenauthtsmonsons => {
-  res.render('game1', {
-    users: users,
-    imagegenauthtsmonsons: imagegenauthtsmonsons,
-  })
-  })
-});
-});
-
-
-//==========================//
-
-//====GET IMAGE FOR SCRIPTURE API===//
-
-app.get('/game86/:_id', function(req, res) {
-  User.findOne({username: req.session.username}).then(function(users){
-  Imagegenauthwilfordwoodruff.findById({_id: req.params._id}).then(imagegenauthwilfordwoodruffs => {
-  res.render('game1', {
-    users: users,
-    imagegenauthwilfordwoodruffs: imagegenauthwilfordwoodruffs,
-  })
-  })
-});
-});
-
 
 //==========================//
 
