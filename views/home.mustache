@@ -7,21 +7,6 @@
   <link rel="stylesheet" href="/home.css">
 <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
   <script>
-    function allowDrop(ev) {
-      ev.preventDefault();
-    }
-
-    function drag(ev) {
-      ev.dataTransfer.setData("text", ev.target.id);
-    }
-
-    function drop(ev) {
-      ev.preventDefault();
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-    }
-  </script>
-  <script>
     function add_section16() {
       document.getElementById('wrapper18').innerHTML +=
         `<div class="topic">
@@ -541,6 +526,102 @@
   </script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    let yellowbtn = document.getElementById('yellowbtn');
+    yellowbtn.onclick = searchtext;
+    function searchtext(){
+    if($('#yellowsearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#yellowsearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightyellow'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+  <script>
+  $(document).ready(function() {
+    let orangebtn = document.getElementById('orangebtn');
+    orangebtn.onclick = searchtext2;
+    function searchtext2(){
+    if($('#orangesearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#orangesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightorange'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let redbtn = document.getElementById('redbtn');
+    redbtn.onclick = searchtext3;
+    function searchtext3(){
+    if($('#redsearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#redsearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightred'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let greenbtn = document.getElementById('greenbtn');
+    greenbtn.onclick = searchtext4;
+    function searchtext4(){
+    if($('#greensearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#greensearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgreen'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let bluebtn = document.getElementById('bluebtn');
+    bluebtn.onclick = searchtext5;
+    function searchtext5(){
+    if($('#bluesearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#bluesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightblue'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let graybtn = document.getElementById('graybtn');
+    graybtn.onclick = searchtext6;
+    function searchtext6(){
+    if($('#graysearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#graysearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgray'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
   <script>
   $(document).ready(function(){
   console.log("talking");
@@ -775,10 +856,10 @@ str = str.replace(re, function(matched){
 
 
   fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
-      if (response.status != 200) {
-          console.log('Looks like there was a problem. Status Code' + response.status);
-          return;
-      }
+    if (response.status != 200) {
+      window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+      return;
+    }
 
       response.json().then(function(data) {
           let api = data;
@@ -786,9 +867,8 @@ str = str.replace(re, function(matched){
           function renderapis() {
 
             return `${api.map(api =>
-            `<div class="scripturediv">
-            <h2 class="location_title">${api.standard_work_location}</h2>
-            <h2 class="book_and_verse">${api.book_and_verse_number}</h2>
+            `<div class="main">
+            <p class="book_verse">${api.book_and_verse_number}</p>
             <p class="verse_text">${api.verse_text}</p>
             </div>`
             )}
@@ -1039,10 +1119,10 @@ str = str.replace(re, function(matched){
 
 
   fetch('https://presentation-maker.herokuapp.com/api/images/' + str).then(function(response) {
-      if (response.status != 200) {
-          console.log('Looks like there was a problem. Status Code' + response.status);
-          return;
-      }
+    if (response.status != 200) {
+      window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+      return;
+    }
 
       response.json().then(function(data) {
           let api = data;
@@ -1126,7 +1206,40 @@ function convert()
 
 </div>
 </section>
+<label class="submitButton2">Scripture Search Highlighter</label>
+<section class="searchtextHolder">
 
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="yellowsearch">
+<button class="submitButton2" type="submit" id="yellowbtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="orangesearch">
+<button class="submitButton2" type="submit" id="orangebtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="redsearch">
+<button class="submitButton2" type="submit" id="redbtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="greensearch">
+<button class="submitButton2" type="submit" id="greenbtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="bluesearch">
+<button class="submitButton2" type="submit" id="bluebtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="graysearch">
+<button class="submitButton2" type="submit" id="graybtn" name="button" >find</button>
+</div>
+
+</section>
 </section>
 <div id="searched"></div>
 <div class="results">

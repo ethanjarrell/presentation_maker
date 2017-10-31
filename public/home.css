@@ -10,6 +10,128 @@ body {
   margin: 0;
 }
 
+.searchtextHolder {
+  display: flex;
+  width: 95%;
+  max-width: 600px;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.searchtextHolder div{
+  margin: 5px;
+}
+
+#yellowbtn {
+  padding: 2px;
+  background-color: yellow;
+  border: #e8c517 solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.yellowsearch {
+  border: 1.5px black solid;
+  width: 100px;
+  height: 20px;
+  font-size: 16px;
+}
+
+.highlightyellow {
+  padding: 2px;
+  background-color: yellow;
+  border: #e8c517 solid 1px;
+}
+
+#redbtn {
+  padding: 2px;
+  background-color: #ff0000;
+  border: #b20c0c solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.highlightred {
+  padding: 2px;
+  background-color: #ff0000;
+  border: #b20c0c solid 1px;
+}
+
+#orangebtn {
+  padding: 2px;
+  background-color: #ed851e;
+  border: #a55200 solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.highlightorange {
+  padding: 2px;
+  background-color: #ed851e;
+  border: #a55200 solid 1px;
+}
+
+#greenbtn {
+  padding: 2px;
+  background-color: #52ff38;
+  border: #179604 solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.highlightgreen {
+  padding: 2px;
+  background-color: #52ff38;
+  border: #179604 solid 1px;
+}
+
+#bluebtn {
+  padding: 2px;
+  background-color: #30ffed;
+  border: #0133ba solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.highlightblue {
+  padding: 2px;
+  background-color: #30ffed;
+  border: #0133ba solid 1px;
+}
+
+#graybtn {
+  padding: 2px;
+  background-color: #cccccc;
+  border: #7f7f7f solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.highlightgray {
+  padding: 2px;
+  background-color: #cccccc;
+  border: #7f7f7f solid 1px;
+}
+
 .buttonwrapper2 {
   display: flex;
   flex-flow: row wrap;
@@ -19,47 +141,36 @@ body {
   width: 500px;
 }
 
-.scripturediv {
-  display: block;
-  width: 48%;
-  height: 150px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  border: black solid 2px;
-  background-color: #d8d8d8;
-  overflow-y: scroll;
-}
-
-.scripturediv:hover {
-  background-color: white;
-}
-
-.book_and_verse {
+.book_verse {
   color: #1691BA;
   font-size: 18px;
-  font-weight: black;
+  font-weight: bold;
   width: 100%;
+  background-color: #e8e8e8;
+  border: solid 1px #d3d3d3;
+  padding-left: 15px;
+  margin-top: 0px;
 }
 
-.location_title {
-  color: #1691BA;
-  font-size: 14px;
-  width: 100%;
+.main {
+  width: 98%;
+  border-top: solid gray 1.5px;
+  border-bottom: solid gray 1.5px;
 }
 
 .verse_text {
   color: black;
   font-size: 15px;
-  width: 100%;
+  width: 94%;
+  padding-left: 25px;
 }
-
 
 #updatediv {
   position: relative;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  height: 255px;
+  max-height: 400px;
   width: 80vw;
   overflow-x: hidden;
   overflow-y: scroll;
