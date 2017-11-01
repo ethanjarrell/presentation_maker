@@ -197,7 +197,7 @@ const Scripturefellowship = require('./models/scripturefellowship.js');
 //=================//
 
 //=====GENERAL CONFERENCE API======//
-const Genconffellowship = require('./models/Genconffellowship.js');
+const Genconffellowship = require('./models/genconffellowship.js');
 //=================//
 
 //=====SPLASH API======//
