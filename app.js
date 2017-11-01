@@ -5234,8 +5234,8 @@ app.get('/api/scriptures/wilfordwoodruff', function(req, res) {
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/genconf/fellowship', function(req, res) {
-  Genconffellowship.find({}).then(genconfellowships => {
-  res.json(genconfellowships)
+  Genconffellowship.find({}).then(genconfs => {
+  res.json(genconfs)
 });
 });
 
@@ -5261,7 +5261,7 @@ app.post('/api/genconf/fellowship', function(req, res) {
     paragraph8: req.body.paragraph8,
     paragraph9: req.body.paragraph9,
     paragraph10: req.body.paragraph10,
-  }).then(genconfellowships => {
+  }).then(genconfs => {
   res.redirect('/game2')
 });
 });
