@@ -623,6 +623,38 @@
   </script>
 
   <script>
+  $(document).ready(function() {
+    let pinkbtn = document.getElementById('pinkbtn');
+    pinkbtn.onclick = searchtext7;
+    function searchtext7(){
+    if($('#pinksearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#pinksearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightpink'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let purplebtn = document.getElementById('purplebtn');
+    purplebtn.onclick = searchtext8;
+    function searchtext8(){
+    if($('#purplesearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#purplesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightpurple'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
   $(document).ready(function(){
   console.log("talking");
   /*
@@ -1144,7 +1176,18 @@ str = str.replace(re, function(matched){
 
 
   </script>
-
+  <script>
+  $(window).load(function() {
+    $("#scripture_highlighter").hide();
+  })
+  </script>
+<script>
+$(document).ready(function(){
+  $("#bofmSearch").click(function(){
+    $("#scripture_highlighter").show();
+});
+});
+</script>
 <script type="text/javascript">
 function convert()
 {
@@ -1206,9 +1249,10 @@ function convert()
 
 </div>
 </section>
-<label class="submitButton2">Scripture Search Highlighter</label>
+<div id="scripture_highlighter">
 <section class="searchtextHolder">
-
+  <label class="yoyoyo">use these boxes to search for words within the search results</label>
+<div class="highlight_row">
 <div class="seach6">
 <input placeholder="search" class="yellowsearch" type="text" id="yellowsearch">
 <button class="submitButton2" type="submit" id="yellowbtn" name="button" >find</button>
@@ -1228,7 +1272,8 @@ function convert()
 <input placeholder="search" class="yellowsearch" type="text" id="greensearch">
 <button class="submitButton2" type="submit" id="greenbtn" name="button" >find</button>
 </div>
-
+</div>
+<div class="highlight_row">
 <div class="seach6">
 <input placeholder="search" class="yellowsearch" type="text" id="bluesearch">
 <button class="submitButton2" type="submit" id="bluebtn" name="button" >find</button>
@@ -1239,7 +1284,20 @@ function convert()
 <button class="submitButton2" type="submit" id="graybtn" name="button" >find</button>
 </div>
 
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="pinksearch">
+<button class="submitButton2" type="submit" id="pinkbtn" name="button" >find</button>
+</div>
+
+<div class="seach6">
+<input placeholder="search" class="yellowsearch" type="text" id="purplesearch">
+<button class="submitButton2" type="submit" id="purplebtn" name="button" >find</button>
+</div>
+</div>
+</div>
+<div>
 </section>
+</div>
 </section>
 <div id="searched"></div>
 <div class="results">

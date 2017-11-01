@@ -15,13 +15,13 @@
     yellowbtn.onclick = searchtext;
     function searchtext(){
     if($('#yellowsearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#yellowsearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightyellow'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#yellowsearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightyellow'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
   <script>
@@ -30,13 +30,13 @@
     orangebtn.onclick = searchtext2;
     function searchtext2(){
     if($('#orangesearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#orangesearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightorange'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#orangesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightorange'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
 
@@ -46,13 +46,13 @@
     redbtn.onclick = searchtext3;
     function searchtext3(){
     if($('#redsearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#redsearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightred'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#redsearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightred'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
 
@@ -62,13 +62,13 @@
     greenbtn.onclick = searchtext4;
     function searchtext4(){
     if($('#greensearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#greensearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgreen'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#greensearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgreen'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
 
@@ -78,13 +78,13 @@
     bluebtn.onclick = searchtext5;
     function searchtext5(){
     if($('#bluesearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#bluesearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightblue'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#bluesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightblue'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
 
@@ -94,13 +94,45 @@
     graybtn.onclick = searchtext6;
     function searchtext6(){
     if($('#graysearch').val().length !== 0){
- $('.verse_text').each(function(){
- var search_value = $("#graysearch").val();
- var search_regexp = new RegExp(search_value, "g");
- $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgray'>"+search_value+"</span>"));
-});
-}
-};
+  $('.verse_text').each(function(){
+  var search_value = $("#graysearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightgray'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let pinkbtn = document.getElementById('pinkbtn');
+    pinkbtn.onclick = searchtext7;
+    function searchtext7(){
+    if($('#pinksearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#pinksearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightpink'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+
+  <script>
+  $(document).ready(function() {
+    let purplebtn = document.getElementById('purplebtn');
+    purplebtn.onclick = searchtext8;
+    function searchtext8(){
+    if($('#purplesearch').val().length !== 0){
+  $('.verse_text').each(function(){
+  var search_value = $("#purplesearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightpurple'>"+search_value+"</span>"));
+  });
+  }
+  };
     });
   </script>
 
@@ -627,6 +659,18 @@
       }
     })
   </script>
+  <script>
+  $(window).load(function() {
+    $("#scripture_highlighter").hide();
+  })
+  </script>
+<script>
+$(document).ready(function(){
+  $("#bofmSearch").click(function(){
+    $("#scripture_highlighter").show();
+});
+});
+</script>
 
   <script type="text/javascript">
     function convert() {
@@ -670,52 +714,64 @@
 
     <div class="bodywrapper6">
 
-      <button>button</button>
-
       <div class="homelabeldiv1">
         <section class="search">
           <label> TOPIC SEARCH: </label>
           <input placeholder="image search" class="searchInput" type="text" id="searchInput">
           <div class="buttonwrapper2">
-            <button class="submitButton2" type="submit" id="submitButton" name="button">image search</button>
-            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scripture search</button>
+            <button class="submitButton2" type="submit" id="submitButton" name="button">images</button>
+            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures</button>
+            <button class="submitButton2" type="submit" id="genconf" onclick="genconf()" name="button">general conference</button>
+            <button class="submitButton2" type="submit" id="byu" onclick="byu()" name="button">other speeches</button>
           </div>
         </section>
 
-
-
-          <label class="submitButton2">Scripture Search Highlighter</label>
-          <section class="searchtextHolder">
-
-          <div class="seach6">
-          <input placeholder="search" class="yellowsearch" type="text" id="yellowsearch">
-          <button class="submitButton2" type="submit" id="yellowbtn" name="button" >find</button>
+        <div id="scripture_highlighter">
+        <section class="searchtextHolder">
+          <label class="yoyoyo">use these boxes to search for words within the search results</label>
+        <div class="highlight_row">
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="yellowsearch">
+        <button class="submitButton2" type="submit" id="yellowbtn" name="button" >find</button>
         </div>
 
         <div class="seach6">
         <input placeholder="search" class="yellowsearch" type="text" id="orangesearch">
         <button class="submitButton2" type="submit" id="orangebtn" name="button" >find</button>
-      </div>
+        </div>
 
-      <div class="seach6">
-      <input placeholder="search" class="yellowsearch" type="text" id="redsearch">
-      <button class="submitButton2" type="submit" id="redbtn" name="button" >find</button>
-    </div>
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="redsearch">
+        <button class="submitButton2" type="submit" id="redbtn" name="button" >find</button>
+        </div>
 
-    <div class="seach6">
-    <input placeholder="search" class="yellowsearch" type="text" id="greensearch">
-    <button class="submitButton2" type="submit" id="greenbtn" name="button" >find</button>
-  </div>
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="greensearch">
+        <button class="submitButton2" type="submit" id="greenbtn" name="button" >find</button>
+        </div>
+        </div>
+        <div class="highlight_row">
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="bluesearch">
+        <button class="submitButton2" type="submit" id="bluebtn" name="button" >find</button>
+        </div>
 
-  <div class="seach6">
-  <input placeholder="search" class="yellowsearch" type="text" id="bluesearch">
-  <button class="submitButton2" type="submit" id="bluebtn" name="button" >find</button>
-</div>
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="graysearch">
+        <button class="submitButton2" type="submit" id="graybtn" name="button" >find</button>
+        </div>
 
-<div class="seach6">
-<input placeholder="search" class="yellowsearch" type="text" id="graysearch">
-<button class="submitButton2" type="submit" id="graybtn" name="button" >find</button>
-</div>
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="pinksearch">
+        <button class="submitButton2" type="submit" id="pinkbtn" name="button" >find</button>
+        </div>
+
+        <div class="seach6">
+        <input placeholder="search" class="yellowsearch" type="text" id="purplesearch">
+        <button class="submitButton2" type="submit" id="purplebtn" name="button" >find</button>
+        </div>
+        </div>
+        </div>
 
         </section>
         </section>
