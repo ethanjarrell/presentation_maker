@@ -234,33 +234,87 @@ box-sizing: border-box;
   margin-top: 4vh;
 }
 
-.buttonx {
-  cursor: pointer;
+.navigation {
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
   position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 13px;
-  background-color: black;
-  color: white;
-  font-weight: bold;
-  border: white solid 2px;
+  z-index: 4;
+  top: 5px;
+  border-top: 1px white solid;
+  border-bottom: 1px white solid;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: -webkit-linear-gradient(left, rgba(230,150,80,0) 0%,rgba(230,150,80,0) 1%,rgba(230,150,80,1) 92%,rgba(230,150,80,1) 99%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(230,150,80,0) 0%,rgba(230,150,80,0) 1%,rgba(230,150,80,1) 92%,rgba(230,150,80,1) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e69650', endColorstr='#e69650',GradientType=1 );
+}
+
+.buttonx {
+  z-index: 3;
+  cursor: pointer;
 }
 
 .buttonx:hover {
+  transform: scale(1.2);
   filter: invert(100%);
-  transform: scale(1.1);
 }
 
 .buttony {
+  z-index: 3;
   cursor: pointer;
-  position: fixed;
-  top: 15px;
-  left: 105px;
-  font-size: 13px;
-  color: black;
-  font-weight: bold;
 }
 
 .buttony:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  filter: invert(100%);
+}
+
+.seach6 {
+  z-index: 3;
+}
+
+#yellowbtn {
+  z-index: 3;
+  background-color: yellow;
+  border: #e8c517 solid 1px;
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#yellowbtn:hover {
+  color: blue;
+  transform: scale(1.2);
+  filter: invert(100%);
+}
+
+.yellowsearch {
+  z-index: 3;
+  border: .75px gray solid;
+  width: 300px;
+  height: 20px;
+  font-size: 16px;
+}
+
+.highlightyellow {
+  z-index: 3;
+  padding-right: 2.5px;
+  padding-left: 2.5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background-color: yellow;
+  border: #e8c517 solid 1px;
+  cursor: pointer;
+  color: black;
+  text-shadow: none;
+}
+
+.highlightyellow:hover {
+  border: #e8c517 solid 2.5px;
+  font-weight: bold;
 }

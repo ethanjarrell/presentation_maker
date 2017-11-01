@@ -67,6 +67,7 @@ const Imagegospel = require('./models/imagegospel.js');
 const Imagehappiness = require('./models/imagehappiness.js');
 const Imagemiracles = require('./models/imagemiracles.js');
 const Imagegod = require('./models/imagegod.js');
+const Imagefellowship = require('./models/imagefellowship.js');
 //=================//
 
 //=====GENERAL AUTHORITIES IMAGE API======//
@@ -192,8 +193,12 @@ const Scripturegospel = require('./models/scripturegospel.js');
 const Scripturehappiness = require('./models/scripturehappiness.js');
 const Scripturemiracles = require('./models/scripturemiracles.js');
 const Scripturegod = require('./models/scripturegod.js');
+const Scripturefellowship = require('./models/scripturefellowship.js');
 //=================//
 
+//=====GENERAL CONFERENCE API======//
+const Genconffellowship = require('./models/Genconffellowship.js');
+//=================//
 
 //=====SPLASH API======//
 const Splashinfo = require('./models/splashinfo.js');
@@ -644,6 +649,24 @@ app.get('/slideshowpicker/slideshow2/:talkid', function(req, res) {
     Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
       Talk.findOne({talkid: req.params.talkid}).then(function(talks){
   res.render('slideshow2', {
+    users: users,
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
+//====RENDER SLIDESHOW TALKS===//
+
+app.get('/slideshowpicker/slideshow3/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('slideshow3', {
     users: users,
     talktopics: talktopics,
     talks: talks,
@@ -1404,6 +1427,30 @@ app.get('/api/images/scriptures', function(req, res) {
 
 app.post('/api/images/scriptures', function(req, res) {
   Imagescriptures.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/fellowship', function(req, res) {
+  Imagefellowship.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/fellowship', function(req, res) {
+  Imagefellowship.create({
     image_data: req.body.image_data,
     tag: req.body.tag,
     image: req.body.image,
@@ -3650,6 +3697,20 @@ app.post('/api/scriptures/creation', function(req, res) {
 
 //====POST SCRIPTURE API===//
 
+app.post('/api/scriptures/fellowship', function(req, res) {
+  Scripturefellowship.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
 app.post('/api/scriptures/death', function(req, res) {
   Scripturedeath.create({
     standard_work_location: req.body.standard_work_location,
@@ -4322,6 +4383,17 @@ app.get('/game1', function(req, res) {
 
 //==========================//
 
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game2', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+}).then(users => {
+  res.render('game2')
+});
+});
+
+//==========================//
+
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/scriptures', function(req, res) {
@@ -4353,6 +4425,15 @@ app.get('/api/scriptures/events', function(req, res) {
 
 app.get('/api/scriptures/bookofmormon', function(req, res) {
   Scripturebookofmormon.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/fellowship', function(req, res) {
+  Scripturefellowship.find({}).then(scriptures => {
   res.json(scriptures)
 });
 });
@@ -5145,6 +5226,43 @@ app.get('/api/scriptures/tsmonson', function(req, res) {
 app.get('/api/scriptures/wilfordwoodruff', function(req, res) {
   Scripturegenauthwilfordwoodruff.find({}).then(scriptures => {
   res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/fellowship', function(req, res) {
+  Genconffellowship.find({}).then(genconfellowships => {
+  res.json(genconfellowships)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/fellowship', function(req, res) {
+  Genconffellowship.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfellowships => {
+  res.redirect('/game2')
 });
 });
 

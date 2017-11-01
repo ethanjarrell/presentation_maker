@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
   <script>
   $(document).ready(function() {
     let yellowbtn = document.getElementById('yellowbtn');
@@ -135,21 +134,307 @@
   };
     });
   </script>
-
   <script>
     $(document).ready(function() {
       console.log("talking");
-      /*
-      Here is a guide for the steps you could take:
-      */
-      // 1. First select and store the elements you'll be working with
+
+      let searchInput = document.getElementById('searchInput');
+      let genconf = document.getElementById('genconf');
+      genconf.onclick = searchgenconf;
+      console.log(searchInput);
+      console.log(genconf);
+
+
+      function searchgenconf() {
+
+        let searchResults = searchInput.value;
+
+        var str = searchInput.value;
+
+        var mapObj = {
+          "free agency": "agency",
+          "the atonement": "atonement",
+          "baptize": "baptism",
+          "book of mormon": "bookofmormon",
+          "love": "charity",
+          "charitable": "charity",
+          "pure love": "charity",
+          "pure love of christ": "charity",
+          "created": "creation",
+          "religion": "church",
+          "church organization": "church",
+          "d&c": "doctrinecovenants",
+          "events": "events",
+          "heavenly father": "god",
+          "father in heaven": "god",
+          "god the father": "god",
+          "father": "god",
+          "belief": "faith",
+          "hope": "faith",
+          "holy spirit": "holyghost",
+          "holy ghost": "holyghost",
+          "spirit": "holyghost",
+          "the spirit": "holyghost",
+          "honest": "honesty",
+          "lie": "honesty",
+          "steal": "honesty",
+          "integrity": "honesty",
+          "bible": "newtestament",
+          "new testament": "newtestament",
+          "follow": "obedience",
+          "submission": "obedience",
+          "submissive": "obedience",
+          "old testament": "oldtestament",
+          "people": "people",
+          "melchizedek priesthood": "priesthood",
+          "aaronic priesthood": "priesthood",
+          "melchizedek": "priesthood",
+          "aaronic": "priesthood",
+          "prophets of god": "prophets",
+          "prophet": "prophets",
+          "repentance": "repentence",
+          "forgiveness": "repentence",
+          "bread and water": "sacrament",
+          "scripture": "scriptures",
+          "word of god": "scriptures",
+          "labor": "service",
+          "work": "service",
+          "responsibility": "service",
+          "personal responsibility": "service",
+          "fall of man": "thefall",
+          "the fall": "thefall",
+          "fall of mankind": "thefall",
+          "fall": "thefall",
+          "jesus christ": "jesus",
+          "christ": "jesus",
+          "savior": "jesus",
+          "redeemer": "jesus",
+          "lord": "jesus",
+          "fall of adam": "thefall",
+          "garden of eden": "thefall",
+          "lucifer": "thefall",
+          "original sin": "thefall",
+          "law of health": "wordofwisdom",
+          "word of wisdom": "wordofwisdom",
+          "apostles": "apostle",
+          "the godhead": "godhead",
+          "revelation": "testimony",
+          "truth": "testimony",
+          "testify": "testimony",
+          "conversion": "testimony",
+          "devil": "hell",
+          "satan": "hell",
+          "damnation": "hell",
+          "torment": "hell",
+          "eternal marriage": "marriage",
+          "temple marriage": "marriage",
+          "fire and brimstone": "hell",
+          "celestial kingdom": "heaven",
+          "plan of salvation": "heaven",
+          "telestial": "heaven",
+          "exaltation": "heaven",
+          "immortality": "heaven",
+          "eternal life": "heaven",
+          "three degrees of glory": "heaven",
+          "missionaries": "missionary",
+          "preach": "missionary",
+          "preaching": "missionary",
+          "missionary work": "missionary",
+          "christmas": "nativity",
+          "church history": "pioneer",
+          "pioneers": "pioneer",
+          "handcarts": "pioneer",
+          "nauvoo": "pioneer",
+          "premortal existence": "premortal",
+          "council in heaven": "premortal",
+          "premortal life": "premortal",
+          "war in heaven": "premortal",
+          "easter": "resurrection",
+          "resurrected": "resurrection",
+          "crucifixion": "resurrection",
+          "cross": "resurrection",
+          "woman": "women",
+          "widow": "women",
+          "mary": "women",
+          "mothers": "women",
+          "mother": "women",
+          "motherhood": "women",
+          "daughter": "women",
+          "daughters": "women",
+          "relief society": "women",
+          "daughters of god": "women",
+          "the great apostasy": "apostasy",
+          "restoration": "apostasy",
+          "first vision": "apostasy",
+          "the first vision": "apostasy",
+          "the restoration": "apostasy",
+          "apostasy and restoration": "apostasy",
+          "first vision": "apostasy",
+          "family home evening": "family",
+          "family prayer": "family",
+          "eternal family": "family",
+          "virtue": "chastity",
+          "chaste": "chastity",
+          "virtuous": "chastity",
+          "child": "children",
+          "primary": "children",
+          "primary children": "children",
+          "covenant": "covenants",
+          "temple covenant": "covenants",
+          "temple covenants": "covenants",
+          "baptismal covenant": "covenants",
+          "baptismal covenants": "covenants",
+          "life after death": "death",
+          "die": "death",
+          "mortality": "death",
+          "family history": "genealogy",
+          "ancestors": "genealogy",
+          "family tree": "genealogy",
+          "spiritual gifts": "gifts of the spirit",
+          "good news": "gospel",
+          "good news of the gospel": "gospel",
+          "the gospel": "gospel",
+          "gospel": "gospel",
+          "plan of salvation": "gospel",
+          "the plan of salvation": "gospel",
+          "happy": "happiness",
+          "joy": "happiness",
+          "plan of happiness": "happiness",
+          "miracle": "miracles",
+          "brigham young": "brighamyoung",
+          "brigham": "brighamyoung",
+          "davdid bednar": "dabednar",
+          "bednar": "dabednar",
+          "davdid a. bednar": "dabednar",
+          "daivd o mckay": "davidomckay",
+          "daivd o. mckay": "davidomckay",
+          "uchtdorf": "dfuchtdorf",
+          "dieter uchtdorf": "dfuchtdorf",
+          "dieter f. uchtdorf": "dfuchtdorf",
+          "renlund": "dgrenlund",
+          "dale g. renlund": "dgrenlund",
+          "oaks": "dhoaks",
+          "dallin h. oaks": "dhoaks",
+          "D. Todd Christofferson": "dtchristofferson",
+          "Christofferson": "dtchristofferson",
+          "benson": "ezrataftbenson",
+          "ezra taft benson": "ezrataftbenson",
+          "benson": "ezrataftbenson",
+          "george a. smith": "georgeasmith",
+          "george albert smith": "georgeasmith",
+          "gary e. stevenson": "gestevenson",
+          "gordon b. hinckley": "gordonbhinckley",
+          "hinckley": "gordonbhinckley",
+          "harold b. lee": "haroldblee",
+          "eyring": "hbeyring",
+          "henry b. eyring": "hbeyring",
+          "grant": "heberjgrant",
+          "heber j. grant": "heberjgrant",
+          "howard w. hunter": "howardwhunter",
+          "hunter": "howardwhunter",
+          "john taylor": "johntaylor",
+          "joseph fielding smith": "josephfieldingsmith",
+          "joseph f. smith": "josephfsmith",
+          "joseph smith": "josephsmith",
+          "joseph": "josephsmith",
+          "jeffrey r. holland": "jrholland",
+          "holland": "jrholland",
+          "lorenzo snow": "lorenzosnow",
+          "snow": "lorenzosnow",
+          "m. russell ballard": "mrballard",
+          "ballard": "mrballard",
+          "neil l. anderson": "nlanderson",
+          "quentin l. cook": "qlcook",
+          "rasband": "rarasband",
+          "ronald a. rasband": "rarasband",
+          "russell m. nelson": "rmnelson",
+          "nelson": "rmnelson",
+          "spencer w. kimball": "spencerkimball",
+          "thomas s. monson": "tsmonson",
+          "monson": "tsmonson",
+          "woodruff": "wilfordwoodruff",
+          "wilford woodruff": "wilfordwoodruff",
+        };
+        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+        str = str.replace(re, function(matched) {
+          return mapObj[matched.toLowerCase()];
+        });
+
+
+        fetch('https://presentation-maker.herokuapp.com/api/genconf/' + str).then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+
+          response.json().then(function(data) {
+            let api = data;
+
+            function renderapis() {
+
+              return `${api.map(api =>
+            `<div class="genconwrapper">
+            <button class="genconbtn">
+            <p class="gencontitle">${api.talk_title}</p>
+            <p class="genconauthor">${api.author}</p>
+            </button>
+            <div class="hiddentalk">
+            <p class="genconyear">${api.year}</p>
+            <p class="gencontitle">${api.talk_title}</p>
+            <p class="genconauthor">${api.author}</p>
+            <img class="genconimg" src="${api.image_url}" />
+            <p class="genconblurb">${api.talk_blurb}</p>
+            <p class="genconpara">${api.paragraph1}</p>
+            <p class="genconpara">${api.paragraph2}</p>
+            <p class="genconpara">${api.paragraph3}</p>
+            <p class="genconpara">${api.paragraph4}</p>
+            <p class="genconpara">${api.paragraph5}</p>
+            <p class="genconpara">${api.paragraph6}</p>
+            <p class="genconpara">${api.paragraph7}</p>
+            <p class="genconpara">${api.paragraph8}</p>
+            <p class="genconpara">${api.paragraph9}</p>
+            <p class="genconpara">${api.paragraph10}</p>
+            </div>
+            </div>
+            `
+            )}
+            `
+
+            }
+
+            let markup = `${renderapis()}`;
+            document.getElementById('updatediv').innerHTML = markup;
+            console.log(markup);
+          })
+        })
+      }
+
+
+
+})
+  </script>
+  <script>
+  $(window).load(function() {
+    $(".hiddentalk").hide();
+  })
+  </script>
+<script>
+$(document).ready(function(){
+  $(".genconbtn").click(function(){
+    $(".hiddentalk").toggle();
+});
+});
+</script>
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+
       let searchInput = document.getElementById('searchInput');
       let bofmSearch = document.getElementById('bofmSearch');
       bofmSearch.onclick = searchAPI;
       console.log(searchInput);
       console.log(bofmSearch);
-      //let usersApi = 'https://api.soundcloud.com/users/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + userSearchResults;
-      // 2. Create your `onSubmit` event for getting the user's search term
+
 
 
       function searchAPI() {
@@ -671,6 +956,13 @@ $(document).ready(function(){
 });
 });
 </script>
+<script>
+$(document).ready(function(){
+  $("#genconf").click(function(){
+    $("#scripture_highlighter").show();
+});
+});
+</script>
 
   <script type="text/javascript">
     function convert() {
@@ -721,7 +1013,7 @@ $(document).ready(function(){
           <div class="buttonwrapper2">
             <button class="submitButton2" type="submit" id="submitButton" name="button">images</button>
             <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures</button>
-            <button class="submitButton2" type="submit" id="genconf" onclick="genconf()" name="button">general conference</button>
+            <button class="submitButton2" type="submit" id="genconf" name="button">general conference</button>
             <button class="submitButton2" type="submit" id="byu" onclick="byu()" name="button">other speeches</button>
           </div>
         </section>

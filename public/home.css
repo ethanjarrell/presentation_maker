@@ -69,6 +69,12 @@ body {
   background-color: yellow;
   border: #e8c517 solid 1px;
   margin: 1.5px;
+  cursor: pointer;
+}
+
+.highlightyellow:hover {
+  border: #e8c517 solid 2.5px;
+  font-weight: bold;
 }
 
 #redbtn {
@@ -89,6 +95,12 @@ body {
   padding-bottom: 2px;
   background-color: #ff0000;
   border: #b20c0c solid 1px;
+  cursor: pointer;
+}
+
+.highlightred:hover {
+  border: #b20c0c solid 2.5px;
+  font-weight: bold;
 }
 
 #orangebtn {
@@ -109,6 +121,12 @@ body {
   padding-bottom: 2px;
   background-color: #ed851e;
   border: #a55200 solid 1px;
+  cursor: pointer;
+}
+
+.highlightorange:hover {
+  border: #a55200 solid 2.5px;
+  font-weight: bold;
 }
 
 #greenbtn {
@@ -129,6 +147,12 @@ body {
   padding-bottom: 2px;
   background-color: #52ff38;
   border: #179604 solid 1px;
+  cursor: pointer;
+}
+
+.highlightgreen:hover {
+  border: #179604 solid 2.5px;
+  font-weight: bold;
 }
 
 #bluebtn {
@@ -149,6 +173,12 @@ body {
   padding-bottom: 2px;
   background-color: #30ffed;
   border: #0133ba solid 1px;
+  cursor: pointer;
+}
+
+.highlightblue:hover {
+  border: #0133ba solid 2.5px;
+  font-weight: bold;
 }
 
 #graybtn {
@@ -169,6 +199,12 @@ body {
   padding-bottom: 2px;
   background-color: #cccccc;
   border: #7f7f7f solid 1px;
+  cursor: pointer;
+}
+
+.highlightgray:hover {
+  border: #7f7f7f solid 2.5px;
+  font-weight: bold;
 }
 
 #pinkbtn {
@@ -189,6 +225,12 @@ body {
   padding-bottom: 2px;
   background-color: #ff7cf4;
   border: #b249a9 solid 1px;
+  cursor: pointer;
+}
+
+.highlightpink:hover {
+  border: #b249a9 solid 2.5px;
+  font-weight: bold;
 }
 
 #purplebtn {
@@ -209,6 +251,12 @@ body {
   padding-bottom: 2px;
   background-color: #ca4fff;
   border: #9c39c6 solid 1px;
+  cursor: pointer;
+}
+
+.highlightpurple:hover {
+  border: #9c39c6 solid 2.5px;
+  font-weight: bold;
 }
 
 .highlight_row {

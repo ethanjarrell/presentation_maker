@@ -61,6 +61,21 @@ dots[slideIndex-1].className += " active";
 }
   </script>
   <script>
+  $(document).ready(function() {
+    let yellowbtn = document.getElementById('yellowbtn');
+    yellowbtn.onclick = searchtext;
+    function searchtext(){
+    if($('#yellowsearch').val().length !== 0){
+  $('.labelContainer3').each(function(){
+  var search_value = $("#yellowsearch").val();
+  var search_regexp = new RegExp(search_value, "g");
+  $(this).html($(this).html().replace(search_regexp,"<span class = 'highlightyellow'>"+search_value+"</span>"));
+  });
+  }
+  };
+    });
+  </script>
+  <script>
         function goBack() {
           window.history.back();
         }
@@ -1550,13 +1565,17 @@ dots[slideIndex-1].className += " active";
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 <div style="text-align:center">
-  <span class="buttony" onclick="currentSlide(1)">Start Slideshow</span>
 </div>
 {{/talktopics}}
 {{/talks}}
-
-</div>
+<div class="navigation">
 <button class="buttonx" onclick="goBack()">Go Back</button>
+<button class="buttony" onclick="currentSlide(1)">Start Slideshow</button>
+<div class="seach6">
+  <input placeholder="search" class="yellowsearch" type="text" id="yellowsearch">
+  <button class="submitButton2" type="submit" id="yellowbtn" name="button" >find</button>
+</div>
+</div>
 </body>
 
 </html>
