@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <title>The Talk Maker</title>
   <link rel="stylesheet" href="/home.css">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
   <script>
     function add_section16() {
@@ -652,6 +655,384 @@
   }
   };
     });
+  </script>
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+
+      let searchInput = document.getElementById('searchInput');
+      let genconf = document.getElementById('genconf');
+      genconf.onclick = searchgenconf;
+      console.log(searchInput);
+      console.log(genconf);
+
+
+      function searchgenconf() {
+
+        let searchResults = searchInput.value;
+
+        var str = searchInput.value;
+
+        var mapObj = {
+          "free agency": "agency",
+          "the atonement": "atonement",
+          "baptize": "baptism",
+          "book of mormon": "bookofmormon",
+          "love": "charity",
+          "charitable": "charity",
+          "pure love": "charity",
+          "pure love of christ": "charity",
+          "created": "creation",
+          "religion": "church",
+          "church organization": "church",
+          "d&c": "doctrinecovenants",
+          "events": "events",
+          "heavenly father": "god",
+          "father in heaven": "god",
+          "god the father": "god",
+          "father": "god",
+          "belief": "faith",
+          "hope": "faith",
+          "holy spirit": "holyghost",
+          "holy ghost": "holyghost",
+          "spirit": "holyghost",
+          "the spirit": "holyghost",
+          "honest": "honesty",
+          "lie": "honesty",
+          "steal": "honesty",
+          "integrity": "honesty",
+          "bible": "newtestament",
+          "new testament": "newtestament",
+          "follow": "obedience",
+          "submission": "obedience",
+          "submissive": "obedience",
+          "old testament": "oldtestament",
+          "people": "people",
+          "melchizedek priesthood": "priesthood",
+          "aaronic priesthood": "priesthood",
+          "melchizedek": "priesthood",
+          "aaronic": "priesthood",
+          "prophets of god": "prophets",
+          "prophet": "prophets",
+          "repentance": "repentence",
+          "forgiveness": "repentence",
+          "bread and water": "sacrament",
+          "scripture": "scriptures",
+          "word of god": "scriptures",
+          "labor": "service",
+          "work": "service",
+          "responsibility": "service",
+          "personal responsibility": "service",
+          "fall of man": "thefall",
+          "the fall": "thefall",
+          "fall of mankind": "thefall",
+          "fall": "thefall",
+          "jesus christ": "jesus",
+          "christ": "jesus",
+          "savior": "jesus",
+          "redeemer": "jesus",
+          "lord": "jesus",
+          "fall of adam": "thefall",
+          "garden of eden": "thefall",
+          "lucifer": "thefall",
+          "original sin": "thefall",
+          "law of health": "wordofwisdom",
+          "word of wisdom": "wordofwisdom",
+          "apostles": "apostle",
+          "the godhead": "godhead",
+          "revelation": "testimony",
+          "truth": "testimony",
+          "testify": "testimony",
+          "conversion": "testimony",
+          "devil": "hell",
+          "satan": "hell",
+          "damnation": "hell",
+          "torment": "hell",
+          "eternal marriage": "marriage",
+          "temple marriage": "marriage",
+          "fire and brimstone": "hell",
+          "celestial kingdom": "heaven",
+          "plan of salvation": "heaven",
+          "telestial": "heaven",
+          "exaltation": "heaven",
+          "immortality": "heaven",
+          "eternal life": "heaven",
+          "three degrees of glory": "heaven",
+          "missionaries": "missionary",
+          "preach": "missionary",
+          "preaching": "missionary",
+          "missionary work": "missionary",
+          "christmas": "nativity",
+          "church history": "pioneer",
+          "pioneers": "pioneer",
+          "handcarts": "pioneer",
+          "nauvoo": "pioneer",
+          "premortal existence": "premortal",
+          "council in heaven": "premortal",
+          "premortal life": "premortal",
+          "war in heaven": "premortal",
+          "easter": "resurrection",
+          "resurrected": "resurrection",
+          "crucifixion": "resurrection",
+          "cross": "resurrection",
+          "woman": "women",
+          "widow": "women",
+          "mary": "women",
+          "mothers": "women",
+          "mother": "women",
+          "motherhood": "women",
+          "daughter": "women",
+          "daughters": "women",
+          "relief society": "women",
+          "daughters of god": "women",
+          "the great apostasy": "apostasy",
+          "restoration": "apostasy",
+          "first vision": "apostasy",
+          "the first vision": "apostasy",
+          "the restoration": "apostasy",
+          "apostasy and restoration": "apostasy",
+          "first vision": "apostasy",
+          "family home evening": "family",
+          "family prayer": "family",
+          "eternal family": "family",
+          "virtue": "chastity",
+          "chaste": "chastity",
+          "virtuous": "chastity",
+          "child": "children",
+          "primary": "children",
+          "primary children": "children",
+          "covenant": "covenants",
+          "temple covenant": "covenants",
+          "temple covenants": "covenants",
+          "baptismal covenant": "covenants",
+          "baptismal covenants": "covenants",
+          "life after death": "death",
+          "die": "death",
+          "mortality": "death",
+          "family history": "genealogy",
+          "ancestors": "genealogy",
+          "family tree": "genealogy",
+          "spiritual gifts": "gifts of the spirit",
+          "good news": "gospel",
+          "good news of the gospel": "gospel",
+          "the gospel": "gospel",
+          "gospel": "gospel",
+          "plan of salvation": "gospel",
+          "the plan of salvation": "gospel",
+          "happy": "happiness",
+          "joy": "happiness",
+          "plan of happiness": "happiness",
+          "miracle": "miracles",
+          "brigham young": "brighamyoung",
+          "brigham": "brighamyoung",
+          "davdid bednar": "dabednar",
+          "bednar": "dabednar",
+          "davdid a. bednar": "dabednar",
+          "daivd o mckay": "davidomckay",
+          "daivd o. mckay": "davidomckay",
+          "uchtdorf": "dfuchtdorf",
+          "dieter uchtdorf": "dfuchtdorf",
+          "dieter f. uchtdorf": "dfuchtdorf",
+          "renlund": "dgrenlund",
+          "dale g. renlund": "dgrenlund",
+          "oaks": "dhoaks",
+          "dallin h. oaks": "dhoaks",
+          "D. Todd Christofferson": "dtchristofferson",
+          "Christofferson": "dtchristofferson",
+          "benson": "ezrataftbenson",
+          "ezra taft benson": "ezrataftbenson",
+          "benson": "ezrataftbenson",
+          "george a. smith": "georgeasmith",
+          "george albert smith": "georgeasmith",
+          "gary e. stevenson": "gestevenson",
+          "gordon b. hinckley": "gordonbhinckley",
+          "hinckley": "gordonbhinckley",
+          "harold b. lee": "haroldblee",
+          "eyring": "hbeyring",
+          "henry b. eyring": "hbeyring",
+          "grant": "heberjgrant",
+          "heber j. grant": "heberjgrant",
+          "howard w. hunter": "howardwhunter",
+          "hunter": "howardwhunter",
+          "john taylor": "johntaylor",
+          "joseph fielding smith": "josephfieldingsmith",
+          "joseph f. smith": "josephfsmith",
+          "joseph smith": "josephsmith",
+          "joseph": "josephsmith",
+          "jeffrey r. holland": "jrholland",
+          "holland": "jrholland",
+          "lorenzo snow": "lorenzosnow",
+          "snow": "lorenzosnow",
+          "m. russell ballard": "mrballard",
+          "ballard": "mrballard",
+          "neil l. anderson": "nlanderson",
+          "quentin l. cook": "qlcook",
+          "rasband": "rarasband",
+          "ronald a. rasband": "rarasband",
+          "russell m. nelson": "rmnelson",
+          "nelson": "rmnelson",
+          "spencer w. kimball": "spencerkimball",
+          "thomas s. monson": "tsmonson",
+          "monson": "tsmonson",
+          "woodruff": "wilfordwoodruff",
+          "wilford woodruff": "wilfordwoodruff",
+        };
+        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+        str = str.replace(re, function(matched) {
+          return mapObj[matched.toLowerCase()];
+        });
+
+
+        fetch('https://presentation-maker.herokuapp.com/api/genconf/' + str).then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+
+          response.json().then(function(data) {
+            let api = data;
+
+            for (var i = 0; i < 1; i++) {
+              let api = data;
+
+
+          let markup =`
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#one">
+          <p class="genconyear1">${data[0].year}</p>
+          <p class="gencontitle1">${data[0].talk_title}</p>
+          <p class="genconauthor1">${data[0].author}</p>
+          </button>
+          <div id="one" class="collapse">
+          <p class="genconyear2">${data[0].year}</p>
+          <p class="gencontitle2">${data[0].talk_title}</p>
+          <p class="genconauthor2">${data[0].author}</p>
+          <p class="genconposition">${data[0].position}</p>
+          <img class="genconimg" src="${data[0].image_url}" />
+          <p class="genconblurb">${data[0].talk_blurb}</p>
+          <p class="genconpara">${data[0].paragraph1}</p>
+          <p class="genconpara">${data[0].paragraph2}</p>
+          <p class="genconpara">${data[0].paragraph3}</p>
+          <p class="genconpara">${data[0].paragraph4}</p>
+          <p class="genconpara">${data[0].paragraph5}</p>
+          <p class="genconpara">${data[0].paragraph6}</p>
+          <p class="genconpara">${data[0].paragraph7}</p>
+          <p class="genconpara">${data[0].paragraph8}</p>
+          <p class="genconpara">${data[0].paragraph9}</p>
+          <p class="genconpara">${data[0].paragraph10}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#two">
+          <p class="genconyear1">${data[1].year}</p>
+          <p class="gencontitle1">${data[1].talk_title}</p>
+          <p class="genconauthor1">${data[1].author}</p>
+          </button>
+          <div id="two" class="collapse">
+          <p class="genconyear2">${data[1].year}</p>
+          <p class="gencontitle2">${data[1].talk_title}</p>
+          <p class="genconauthor2">${data[1].author}</p>
+          <p class="genconposition">${data[1].position}</p>
+          <img class="genconimg" src="${data[1].image_url}" />
+          <p class="genconblurb">${data[1].talk_blurb}</p>
+          <p class="genconpara">${data[1].paragraph1}</p>
+          <p class="genconpara">${data[1].paragraph2}</p>
+          <p class="genconpara">${data[1].paragraph3}</p>
+          <p class="genconpara">${data[1].paragraph4}</p>
+          <p class="genconpara">${data[1].paragraph5}</p>
+          <p class="genconpara">${data[1].paragraph6}</p>
+          <p class="genconpara">${data[1].paragraph7}</p>
+          <p class="genconpara">${data[1].paragraph8}</p>
+          <p class="genconpara">${data[1].paragraph9}</p>
+          <p class="genconpara">${data[1].paragraph10}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#three">
+          <p class="genconyear1">${data[2].year}</p>
+          <p class="gencontitle1">${data[2].talk_title}</p>
+          <p class="genconauthor1">${data[2].author}</p>
+          </button>
+          <div id="three" class="collapse">
+          <p class="genconyear2">${data[2].year}</p>
+          <p class="gencontitle2">${data[2].talk_title}</p>
+          <p class="genconauthor2">${data[2].author}</p>
+          <p class="genconposition">${data[2].position}</p>
+          <img class="genconimg" src="${data[2].image_url}" />
+          <p class="genconblurb">${data[2].talk_blurb}</p>
+          <p class="genconpara">${data[2].paragraph1}</p>
+          <p class="genconpara">${data[2].paragraph2}</p>
+          <p class="genconpara">${data[2].paragraph3}</p>
+          <p class="genconpara">${data[2].paragraph4}</p>
+          <p class="genconpara">${data[2].paragraph5}</p>
+          <p class="genconpara">${data[2].paragraph6}</p>
+          <p class="genconpara">${data[2].paragraph7}</p>
+          <p class="genconpara">${data[2].paragraph8}</p>
+          <p class="genconpara">${data[2].paragraph9}</p>
+          <p class="genconpara">${data[2].paragraph10}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#four">
+          <p class="genconyear1">${data[3].year}</p>
+          <p class="gencontitle1">${data[3].talk_title}</p>
+          <p class="genconauthor1">${data[3].author}</p>
+          </button>
+          <div id="four" class="collapse">
+          <p class="genconyear2">${data[3].year}</p>
+          <p class="gencontitle2">${data[3].talk_title}</p>
+          <p class="genconauthor2">${data[3].author}</p>
+          <p class="genconposition">${data[3].position}</p>
+          <img class="genconimg" src="${data[3].image_url}" />
+          <p class="genconblurb">${data[3].talk_blurb}</p>
+          <p class="genconpara">${data[3].paragraph1}</p>
+          <p class="genconpara">${data[3].paragraph2}</p>
+          <p class="genconpara">${data[3].paragraph3}</p>
+          <p class="genconpara">${data[3].paragraph4}</p>
+          <p class="genconpara">${data[3].paragraph5}</p>
+          <p class="genconpara">${data[3].paragraph6}</p>
+          <p class="genconpara">${data[3].paragraph7}</p>
+          <p class="genconpara">${data[3].paragraph8}</p>
+          <p class="genconpara">${data[3].paragraph9}</p>
+          <p class="genconpara">${data[3].paragraph10}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#five">
+          <p class="genconyear1">${data[4].year}</p>
+          <p class="gencontitle1">${data[4].talk_title}</p>
+          <p class="genconauthor1">${data[4].author}</p>
+          </button>
+          <div id="five" class="collapse">
+          <p class="genconyear2">${data[4].year}</p>
+          <p class="gencontitle2">${data[4].talk_title}</p>
+          <p class="genconauthor2">${data[4].author}</p>
+          <p class="genconposition">${data[4].position}</p>
+          <img class="genconimg" src="${data[4].image_url}" />
+          <p class="genconblurb">${data[4].talk_blurb}</p>
+          <p class="genconpara">${data[4].paragraph1}</p>
+          <p class="genconpara">${data[4].paragraph2}</p>
+          <p class="genconpara">${data[4].paragraph3}</p>
+          <p class="genconpara">${data[4].paragraph4}</p>
+          <p class="genconpara">${data[4].paragraph5}</p>
+          <p class="genconpara">${data[4].paragraph6}</p>
+          <p class="genconpara">${data[4].paragraph7}</p>
+          <p class="genconpara">${data[4].paragraph8}</p>
+          <p class="genconpara">${data[4].paragraph9}</p>
+          <p class="genconpara">${data[4].paragraph10}</p>
+          </div>
+
+
+
+             `
+             console.log(data[1]);
+
+
+
+            document.getElementById('updatediv').innerHTML = markup;
+}
+          })
+        })
+      }
+
+
+
+})
   </script>
 
   <script>

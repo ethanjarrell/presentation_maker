@@ -506,7 +506,7 @@
 
 
 
-            document.getElementById('updatediv').innerHTML += markup;
+            document.getElementById('updatediv').innerHTML = markup;
 }
           })
         })
@@ -516,12 +516,7 @@
 
 })
   </script>
-  <script>
-  $(document).ready(function() {
 
-
-});
-  </script>
   <script>
     $(document).ready(function() {
       console.log("talking");
@@ -1032,7 +1027,7 @@
             `<img class="images" src="${api.image_data.image}" />`
             )}
             `
-            }
+          }
 
             let markup = `${renderapis()}`;
             document.getElementById('updatediv').innerHTML = markup;
