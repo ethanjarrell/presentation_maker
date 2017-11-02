@@ -198,6 +198,59 @@ const Scripturefellowship = require('./models/scripturefellowship.js');
 
 //=====GENERAL CONFERENCE API======//
 const Genconffellowship = require('./models/genconffellowship.js');
+const Genconfbookofmormon = require('./models/genconfbookofmormon.js');
+const Genconfbaptism = require('./models/genconfbaptism.js');
+const Genconffaith = require('./models/genconffaith.js');
+const Genconfrepentence = require('./models/genconfrepentence.js');
+const Genconfcharity = require('./models/genconfcharity.js');
+const Genconfprophets = require('./models/genconfprophets.js');
+const Genconfatonement = require('./models/genconfatonement.js');
+const Genconfwordofwisdom = require('./models/genconfwordofwisdom.js');
+const Genconfservice = require('./models/genconfservice.js');
+const Genconfcreation = require('./models/genconfcreation.js');
+const Genconfagency = require('./models/genconfagency.js');
+const Genconfthefall = require('./models/genconfthefall.js');
+const Genconfholyghost = require('./models/genconfholyghost.js');
+const Genconfscriptures = require('./models/genconfscriptures.js');
+const Genconfpriesthood = require('./models/genconfpriesthood.js');
+const Genconfsacrament = require('./models/genconfsacrament.js');
+const Genconfhonesty = require('./models/genconfhonesty.js');
+const Genconfobedience = require('./models/genconfobedience.js');
+const Genconfangels = require('./models/genconfangels.js');
+const Genconfapostasy = require('./models/genconfapostasy.js');
+const Genconfchurch = require('./models/genconfchurch.js');
+const Genconffamily = require('./models/genconffamily.js');
+const Genconffasting = require('./models/genconffasting.js');
+const Genconfhumility = require('./models/genconfhumility.js');
+const Genconfjesus = require('./models/genconfjesus.js');
+const Genconfmarriage = require('./models/genconfmarriage.js');
+const Genconfprayer = require('./models/genconfprayer.js');
+const Genconfpremortal = require('./models/genconfpremortal.js');
+const Genconfsecondcoming = require('./models/genconfsecondcoming.js');
+const Genconftemple = require('./models/genconftemple.js');
+const Genconftithing = require('./models/genconftithing.js');
+const Genconftrials = require('./models/genconftrials.js');
+const Genconftestimony = require('./models/genconftestimony.js');
+const Genconfgodhead = require('./models/genconfgodhead.js');
+const Genconfheaven = require('./models/genconfheaven.js');
+const Genconfhell = require('./models/genconfhell.js');
+const Genconfmissionary = require('./models/genconfmissionary.js');
+const Genconfnativity = require('./models/genconfnativity.js');
+const Genconfpioneer = require('./models/genconfpioneer.js');
+const Genconfresurrection = require('./models/genconfresurrection.js');
+const Genconfwomen = require('./models/genconfwomen.js');
+const Genconfapostle = require('./models/genconfapostle.js');
+const Genconfselfreliance = require('./models/genconfselfreliance.js');
+const Genconfchastity = require('./models/genconfchastity.js');
+const Genconfchildren = require('./models/genconfchildren.js');
+const Genconfcovenants = require('./models/genconfcovenants.js');
+const Genconfdeath = require('./models/genconfdeath.js');
+const Genconfgenealogy = require('./models/genconfgenealogy.js');
+const Genconfgiftsofthespirit = require('./models/genconfgiftsofthespirit.js');
+const Genconfgospel = require('./models/genconfgospel.js');
+const Genconfhappiness = require('./models/genconfhappiness.js');
+const Genconfmiracles = require('./models/genconfmiracles.js');
+const Genconfgod = require('./models/genconfgod.js');
 //=================//
 
 //=====SPLASH API======//
@@ -5245,6 +5298,1967 @@ app.get('/api/genconf/fellowship', function(req, res) {
 
 app.post('/api/genconf/fellowship', function(req, res) {
   Genconffellowship.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/agency', function(req, res) {
+  Genconfagency.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/agency', function(req, res) {
+  Genconfagency.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/angels', function(req, res) {
+  Genconfangels.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/angels', function(req, res) {
+  Genconfangels.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/apostasy', function(req, res) {
+  Genconfapostasy.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/apostasy', function(req, res) {
+  Genconfapostasy.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/apostle', function(req, res) {
+  Genconfapostle.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/apostle', function(req, res) {
+  Genconfapostle.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/atonement', function(req, res) {
+  Genconfatonement.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/atonement', function(req, res) {
+  Genconfatonement.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/baptism', function(req, res) {
+  Genconfbaptism.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/baptism', function(req, res) {
+  Genconfbaptism.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/bookofmormon', function(req, res) {
+  Genconfbookofmormon.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/bookofmormon', function(req, res) {
+  Genconfbookofmormon.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/charity', function(req, res) {
+  Genconfcharity.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/charity', function(req, res) {
+  Genconfcharity.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/chastity', function(req, res) {
+  Genconfchastity.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/chastity', function(req, res) {
+  Genconfchastity.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/children', function(req, res) {
+  Genconfchildren.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/children', function(req, res) {
+  Genconfchildren.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/church', function(req, res) {
+  Genconfchurch.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/church', function(req, res) {
+  Genconfchurch.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/covenants', function(req, res) {
+  Genconfcovenants.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/covenants', function(req, res) {
+  Genconfcovenants.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/creation', function(req, res) {
+  Genconfcreation.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/creation', function(req, res) {
+  Genconfcreation.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/death', function(req, res) {
+  Genconfdeath.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/death', function(req, res) {
+  Genconfdeath.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/faith', function(req, res) {
+  Genconffaith.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/faith', function(req, res) {
+  Genconffaith.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/family', function(req, res) {
+  Genconffamily.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/family', function(req, res) {
+  Genconffamily.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/fasting', function(req, res) {
+  Genconffasting.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/fasting', function(req, res) {
+  Genconffasting.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/genealogy', function(req, res) {
+  Genconfgenealogy.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/genealogy', function(req, res) {
+  Genconfgenealogy.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/giftsofthespirit', function(req, res) {
+  Genconfgiftsofthespirit.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/giftsofthespirit', function(req, res) {
+  Genconfgiftsofthespirit.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/god', function(req, res) {
+  Genconfgod.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/god', function(req, res) {
+  Genconfgod.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/godhead', function(req, res) {
+  Genconfgodhead.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/godhead', function(req, res) {
+  Genconfgodhead.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/gospel', function(req, res) {
+  Genconfgospel.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/gospel', function(req, res) {
+  Genconfgospel.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/happiness', function(req, res) {
+  Genconfhappiness.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/happiness', function(req, res) {
+  Genconfhappiness.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/heaven', function(req, res) {
+  Genconfheaven.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/heaven', function(req, res) {
+  Genconfheaven.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/hell', function(req, res) {
+  Genconfhell.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/hell', function(req, res) {
+  Genconfhell.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/holyghost', function(req, res) {
+  Genconfholyghost.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/holyghost', function(req, res) {
+  Genconfholyghost.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/honesty', function(req, res) {
+  Genconfhonesty.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/honesty', function(req, res) {
+  Genconfhonesty.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/humility', function(req, res) {
+  Genconfhumility.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/humility', function(req, res) {
+  Genconfhumility.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/jesus', function(req, res) {
+  Genconfjesus.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/jesus', function(req, res) {
+  Genconfjesus.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/marriage', function(req, res) {
+  Genconfmarriage.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/marriage', function(req, res) {
+  Genconfmarriage.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/miracles', function(req, res) {
+  Genconfmiracles.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/miracles', function(req, res) {
+  Genconfmiracles.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/missionary', function(req, res) {
+  Genconfmissionary.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/missionary', function(req, res) {
+  Genconfmissionary.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/nativity', function(req, res) {
+  Genconfnativity.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/nativity', function(req, res) {
+  Genconfnativity.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/obedience', function(req, res) {
+  Genconfobedience.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/obedience', function(req, res) {
+  Genconfobedience.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/pioneer', function(req, res) {
+  Genconfpioneer.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/pioneer', function(req, res) {
+  Genconfpioneer.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/prayer', function(req, res) {
+  Genconfprayer.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/prayer', function(req, res) {
+  Genconfprayer.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/premortal', function(req, res) {
+  Genconfpremortal.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/premortal', function(req, res) {
+  Genconfpremortal.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/priesthood', function(req, res) {
+  Genconfpriesthood.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/priesthood', function(req, res) {
+  Genconfpriesthood.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/prophets', function(req, res) {
+  Genconfprophets.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/prophets', function(req, res) {
+  Genconfprophets.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/repentence', function(req, res) {
+  Genconfrepentence.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/repentence', function(req, res) {
+  Genconfrepentence.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/resurrection', function(req, res) {
+  Genconfresurrection.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/resurrection', function(req, res) {
+  Genconfresurrection.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/sacrament', function(req, res) {
+  Genconfsacrament.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/sacrament', function(req, res) {
+  Genconfsacrament.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/scriptures', function(req, res) {
+  Genconfscriptures.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/scriptures', function(req, res) {
+  Genconfscriptures.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/secondcoming', function(req, res) {
+  Genconfsecondcoming.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/secondcoming', function(req, res) {
+  Genconfsecondcoming.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/selfreliance', function(req, res) {
+  Genconfselfreliance.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/selfreliance', function(req, res) {
+  Genconfselfreliance.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/service', function(req, res) {
+  Genconfservice.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/service', function(req, res) {
+  Genconfservice.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/temple', function(req, res) {
+  Genconftemple.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/temple', function(req, res) {
+  Genconftemple.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/testimony', function(req, res) {
+  Genconftestimony.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/testimony', function(req, res) {
+  Genconftestimony.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/thefall', function(req, res) {
+  Genconfthefall.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/thefall', function(req, res) {
+  Genconfthefall.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/tithing', function(req, res) {
+  Genconftithing.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/tithing', function(req, res) {
+  Genconftithing.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/trials', function(req, res) {
+  Genconftrials.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/trials', function(req, res) {
+  Genconftrials.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/women', function(req, res) {
+  Genconfwomen.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/women', function(req, res) {
+  Genconfwomen.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/wordofwisdom', function(req, res) {
+  Genconfwordofwisdom.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/wordofwisdom', function(req, res) {
+  Genconfwordofwisdom.create({
     talk_title: req.body.talk_title,
     year: req.body.year,
     author: req.body.author,

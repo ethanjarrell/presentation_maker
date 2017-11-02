@@ -18,6 +18,73 @@ body {
   width: 98%;
 }
 
+button.btn.btn-info {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gencontitle1 {
+  font-size: 20px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.genconyear2 {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.gencontitle2 {
+  font-size: 45px;
+  font-family: 'Slabo 27px', serif;
+  text-align: center;
+}
+
+.genconauthor2 {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  color: #8B9AB1;
+  text-align: center;
+}
+
+.genconposition {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 17px;
+  color: black;
+  text-align: center;
+}
+
+.genconimg {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border: #5FC0DD solid 2.5px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.genconblurb {
+  text-align: center;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: lighter;
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 50px;
+}
+
+.genconpara {
+  text-indent: 20px;
+}
+
 .scripture_highlighter {
   display: flex;
   flex-flow: column wrap;
