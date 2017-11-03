@@ -185,6 +185,7 @@
           "integrity": "honesty",
           "bible": "newtestament",
           "new testament": "newtestament",
+          "obedience": "obedience",
           "follow": "obedience",
           "submission": "obedience",
           "submissive": "obedience",
@@ -196,10 +197,15 @@
           "aaronic": "priesthood",
           "prophets of god": "prophets",
           "prophet": "prophets",
+          "prophets" : "prophets",
+          "repent": "repentence",
           "repentance": "repentence",
           "forgiveness": "repentence",
           "bread and water": "sacrament",
+          "the sacrament": "sacrament",
           "scripture": "scriptures",
+          "scriptures": "scriptures",
+          "the scriptures": "scriptures",
           "word of god": "scriptures",
           "labor": "service",
           "work": "service",
@@ -257,6 +263,7 @@
           "resurrected": "resurrection",
           "crucifixion": "resurrection",
           "cross": "resurrection",
+          "the resurrection": "resurrection",
           "woman": "women",
           "widow": "women",
           "mary": "women",
@@ -358,6 +365,10 @@
           "monson": "tsmonson",
           "woodruff": "wilfordwoodruff",
           "wilford woodruff": "wilfordwoodruff",
+          "self reliance" : "selfreliance",
+          "self-reliance" : "selfreliance",
+          "second coming" : "secondcoming",
+          "the second coming" : "secondcoming",
         };
         var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
         str = str.replace(re, function(matched) {
@@ -380,9 +391,11 @@
 
           let markup =`
           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#one">
-          <p class="genconyear1">${data[0].year}</p>
           <p class="gencontitle1">${data[0].talk_title}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[0].year}</p>
           <p class="genconauthor1">${data[0].author}</p>
+          </div>
           </button>
           <div id="one" class="collapse">
           <p class="genconyear2">${data[0].year}</p>
@@ -404,9 +417,11 @@
           </div>
 
           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#two">
-          <p class="genconyear1">${data[1].year}</p>
           <p class="gencontitle1">${data[1].talk_title}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[1].year}</p>
           <p class="genconauthor1">${data[1].author}</p>
+          </div>
           </button>
           <div id="two" class="collapse">
           <p class="genconyear2">${data[1].year}</p>
@@ -428,8 +443,9 @@
           </div>
 
           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#three">
-          <p class="genconyear1">${data[2].year}</p>
           <p class="gencontitle1">${data[2].talk_title}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[2].year}</p>
           <p class="genconauthor1">${data[2].author}</p>
           </button>
           <div id="three" class="collapse">
@@ -452,8 +468,9 @@
           </div>
 
           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#four">
-          <p class="genconyear1">${data[3].year}</p>
           <p class="gencontitle1">${data[3].talk_title}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[3].year}</p>
           <p class="genconauthor1">${data[3].author}</p>
           </button>
           <div id="four" class="collapse">
@@ -476,8 +493,9 @@
           </div>
 
           <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#five">
-          <p class="genconyear1">${data[4].year}</p>
           <p class="gencontitle1">${data[4].talk_title}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[4].year}</p>
           <p class="genconauthor1">${data[4].author}</p>
           </button>
           <div id="five" class="collapse">
@@ -565,6 +583,7 @@
           "integrity": "honesty",
           "bible": "newtestament",
           "new testament": "newtestament",
+          "obedience": "obedience",
           "follow": "obedience",
           "submission": "obedience",
           "submissive": "obedience",
@@ -576,10 +595,15 @@
           "aaronic": "priesthood",
           "prophets of god": "prophets",
           "prophet": "prophets",
+          "prophets" : "prophets",
+          "repent": "repentence",
           "repentance": "repentence",
           "forgiveness": "repentence",
           "bread and water": "sacrament",
+          "the sacrament": "sacrament",
           "scripture": "scriptures",
+          "scriptures": "scriptures",
+          "the scriptures": "scriptures",
           "word of god": "scriptures",
           "labor": "service",
           "work": "service",
@@ -637,6 +661,7 @@
           "resurrected": "resurrection",
           "crucifixion": "resurrection",
           "cross": "resurrection",
+          "the resurrection": "resurrection",
           "woman": "women",
           "widow": "women",
           "mary": "women",
@@ -738,6 +763,10 @@
           "monson": "tsmonson",
           "woodruff": "wilfordwoodruff",
           "wilford woodruff": "wilfordwoodruff",
+          "self reliance" : "selfreliance",
+          "self-reliance" : "selfreliance",
+          "second coming" : "secondcoming",
+          "the second coming" : "secondcoming",
         };
         var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
         str = str.replace(re, function(matched) {
@@ -829,6 +858,7 @@
           "integrity": "honesty",
           "bible": "newtestament",
           "new testament": "newtestament",
+          "obedience": "obedience",
           "follow": "obedience",
           "submission": "obedience",
           "submissive": "obedience",
@@ -840,10 +870,15 @@
           "aaronic": "priesthood",
           "prophets of god": "prophets",
           "prophet": "prophets",
+          "prophets" : "prophets",
+          "repent": "repentence",
           "repentance": "repentence",
           "forgiveness": "repentence",
           "bread and water": "sacrament",
+          "the sacrament": "sacrament",
           "scripture": "scriptures",
+          "scriptures": "scriptures",
+          "the scriptures": "scriptures",
           "word of god": "scriptures",
           "labor": "service",
           "work": "service",
@@ -901,6 +936,7 @@
           "resurrected": "resurrection",
           "crucifixion": "resurrection",
           "cross": "resurrection",
+          "the resurrection": "resurrection",
           "woman": "women",
           "widow": "women",
           "mary": "women",
@@ -1002,6 +1038,10 @@
           "monson": "tsmonson",
           "woodruff": "wilfordwoodruff",
           "wilford woodruff": "wilfordwoodruff",
+          "self reliance" : "selfreliance",
+          "self-reliance" : "selfreliance",
+          "second coming" : "secondcoming",
+          "the second coming" : "secondcoming",
         };
         var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
         str = str.replace(re, function(matched) {
@@ -1024,7 +1064,7 @@
             function renderapis() {
 
               return `${api.map(api =>
-            `<img class="images" src="${api.image_data.image}" />`
+            `<img class="images" src="${api.image_data[0].image}" />`
             )}
             `
           }
