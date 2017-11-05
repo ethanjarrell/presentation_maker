@@ -318,3 +318,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00e69650', e
   border: #e8c517 solid 2.5px;
   font-weight: bold;
 }
+
+.imglabelcontainer p {
+  text-align: left;
+  font-size: 30px;
+  font-weight: bold;
+}

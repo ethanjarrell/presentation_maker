@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <title>The Talk Maker</title>
+  <link rel="stylesheet" href="/home.css">
+  <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+
+
+
+
+
+
+      function renderIntro() {
+        let nameInput = document.getElementById('nameInput').value;
+        let topicInput = document.getElementById('topicInput').value;
+        console.log(nameInput);
+        console.log(topicInput);
+        let sentence = "Good morning brothers and sisters. My name is"+ " " + nameInput +".";
+        document.getElementById('introduction').innerHTML = sentence;
+      }
+
+  </script>
+  <script>
+
+
+
+
+
+
+      function renderTopic() {
+        let nameInput = document.getElementById('nameInput').value;
+        let topicInput = document.getElementById('topicInput').value;
+        console.log(nameInput);
+        console.log(topicInput);
+        let sentence = "Today I have been asked to speak on the topic of"+" "+topicInput+".";
+        document.getElementById('topic').innerHTML = sentence;
+      }
+
+  </script>
+  <script>
+
+
+
+
+
+
+      function renderFrom() {
+        let from = document.getElementById('fromInput').value;
+        let sentence = "Originally I'm from"+" "+from+".";
+        document.getElementById('from').innerHTML = sentence;
+      }
+
+  </script>
+  <script>
+
+
+
+
+
+
+      function renderHere() {
+        let here = document.getElementById('hereInput').value;
+        let time = document.getElementById('timeInput').value;
+        let sentence = "But I've lived in"+" "+here+" "+"for the past"+" "+time+" "+"and have grown to love the area.";
+        document.getElementById('here').innerHTML = sentence;
+      }
+
+  </script>
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+
+      let topicInput = document.getElementById('topicInput');
+      let searchbtn = document.getElementById('searchbtn');
+      searchbtn.onclick = searchAPI;
+
+      function searchAPI() {
+
+        let searchResults = topicInput.value;
+
+        fetch('https://owlbot.info/api/v1/dictionary/'+searchResults+'?format=json').then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+
+          response.json().then(function(data) {
+            let api = data;
+
+            for (var i = 0; i < 1; i++) {
+              let api = data;
+
+              let markup =`
+                <p class="genconauthor1">${data[0].defenition}</p>
+              `
+
+            document.getElementById('updatediv').innerHTML = markup;
+            console.log(markup);
+          })
+        })
+      })
+    }
+})
+  </script>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</head>
+
+<body>
+
+  <section class="search">
+    <label> TOPIC SEARCH: </label>
+    <input placeholder="name" class="nameInput" type="text" id="nameInput">
+
+    <input placeholder="from" class="nameInput" type="text" id="fromInput">
+
+    <input placeholder="here" class="nameInput" type="text" id="hereInput">
+
+    <input placeholder="time" class="nameInput" type="text" id="timeInput">
+
+    <input placeholder="topic" class="topicInput" type="text" id="topicInput">
+
+    <button class="submitButton2" type="submit" id="searchbtn" onclick="renderIntro(); renderFrom(); renderHere(); renderTopic();"  name="button">other speeches</button>
+</section>
+
+<div id="introduction"></div>
+<div id="from"></div>
+<div id="here"></div>
+<div id="topic"></div>
+<div id="definition"></div>
+<div id="scripture-definition"></div>
+<div id="genconf-definition"></div>
+<div id="importance"></div>
+<div id="three-ways-to-develop"></div>
+<div id="develop-one"></div>
+<div id="d-one-genconf"></div>
+<div id="develop-two"></div>
+<div id="d-two-genconf"></div>
+<div id="develop-three"></div>
+<div id="d-three-genconf"></div>
+<div id="conclusion"></div>
+
+</body>
+
+</html>

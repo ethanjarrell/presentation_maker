@@ -278,7 +278,7 @@ app.set('view engine', 'mustache');
 app.set('views', './views');
 app.use(cors());
 app.use(express.static('public'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '50mb'}));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -907,6 +907,16 @@ app.post('/saved/:talkid', function(req, res) {
 });
 });
 
+//==========================//
+
+//====GET TALKGENERATOR===//
+app.get('/talkgenerator', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    res.render('talkgenerator', {
+      users: users,
+    })
+  })
+})
 //==========================//
 
 //====GET DELETE===//
