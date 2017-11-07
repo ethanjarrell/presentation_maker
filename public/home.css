@@ -10,12 +10,58 @@ body {
   margin: 0;
 }
 
+.videoInputContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+}
+
+.coolbutton {
+  margin: 10px;
+}
+
+.contentColumn5 input.inputfield7 {
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  border: black solid 1.7px;
+  width: 200px;
+  font-size: 10px;
+}
+
 .searchUpdate {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   width: 98%;
+}
+
+.videoInputContainer .vidvid {
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  border: black solid 1.7px;
+  width: 300px;
+  font-size: 12px;
+}
+
+.vidvid2 {
+  display: none;
+  margin: 10px;
+  background-color: transparent;
+  border: none;
+  border: black solid 1.7px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 button.btn.btn-info {
@@ -1507,8 +1553,8 @@ li {
   object-fit: cover;
 }
 
-.contentColumn5 .inputfield7 {
-  width: 200px;
+.contentColumn5 input.inputfield7 {
+  width: 170px;
   height: 20px;
   font-size: 15px;
   font-weight: normal;

@@ -253,6 +253,63 @@ const Genconfmiracles = require('./models/genconfmiracles.js');
 const Genconfgod = require('./models/genconfgod.js');
 //=================//
 
+//=====VIDEOS API======//
+const Videofellowship = require('./models/videofellowship.js');
+const Videobookofmormon = require('./models/videobookofmormon.js');
+const Videobaptism = require('./models/videobaptism.js');
+const Videofaith = require('./models/videofaith.js');
+const Videorepentence = require('./models/videorepentence.js');
+const Videocharity = require('./models/videocharity.js');
+const Videoprophets = require('./models/videoprophets.js');
+const Videoatonement = require('./models/videoatonement.js');
+const Videowordofwisdom = require('./models/videowordofwisdom.js');
+const Videoservice = require('./models/videoservice.js');
+const Videocreation = require('./models/videocreation.js');
+const Videoagency = require('./models/videoagency.js');
+const Videothefall = require('./models/videothefall.js');
+const Videoholyghost = require('./models/videoholyghost.js');
+const Videoscriptures = require('./models/videoscriptures.js');
+const Videopriesthood = require('./models/videopriesthood.js');
+const Videosacrament = require('./models/videosacrament.js');
+const Videohonesty = require('./models/videohonesty.js');
+const Videoobedience = require('./models/videoobedience.js');
+const Videoangels = require('./models/videoangels.js');
+const Videoapostasy = require('./models/videoapostasy.js');
+const Videochurch = require('./models/videochurch.js');
+const Videofamily = require('./models/videofamily.js');
+const Videofasting = require('./models/videofasting.js');
+const Videohumility = require('./models/videohumility.js');
+const Videojesus = require('./models/videojesus.js');
+const Videomarriage = require('./models/videomarriage.js');
+const Videoprayer = require('./models/videoprayer.js');
+const Videopremortal = require('./models/videopremortal.js');
+const Videosecondcoming = require('./models/videosecondcoming.js');
+const Videotemple = require('./models/videotemple.js');
+const Videotithing = require('./models/videotithing.js');
+const Videotrials = require('./models/videotrials.js');
+const Videotestimony = require('./models/videotestimony.js');
+const Videogodhead = require('./models/videogodhead.js');
+const Videoheaven = require('./models/videoheaven.js');
+const Videohell = require('./models/videohell.js');
+const Videomissionary = require('./models/videomissionary.js');
+const Videonativity = require('./models/videonativity.js');
+const Videopioneer = require('./models/videopioneer.js');
+const Videoresurrection = require('./models/videoresurrection.js');
+const Videowomen = require('./models/videowomen.js');
+const Videoapostle = require('./models/videoapostle.js');
+const Videoselfreliance = require('./models/videoselfreliance.js');
+const Videochastity = require('./models/videochastity.js');
+const Videochildren = require('./models/videochildren.js');
+const Videocovenants = require('./models/videocovenants.js');
+const Videodeath = require('./models/videodeath.js');
+const Videogenealogy = require('./models/videogenealogy.js');
+const Videogiftsofthespirit = require('./models/videogiftsofthespirit.js');
+const Videogospel = require('./models/videogospel.js');
+const Videohappiness = require('./models/videohappiness.js');
+const Videomiracles = require('./models/videomiracles.js');
+const Videogod = require('./models/videogod.js');
+//=================//
+
 //=====SPLASH API======//
 const Splashinfo = require('./models/splashinfo.js');
 //=================//
@@ -826,33 +883,43 @@ app.post('/talk/talkid/:talkid', function(req, res) {
     shared: req.body.shared,
     section1_topic: req.body.section1_topic,
     image1: req.body.image1,
+    video1: req.body.video1,
     topic1: req.body.topic1,
     textarea1: req.body.textarea1,
     image2: req.body.image2,
+    video2: req.body.video2,
     topic2: req.body.topic2,
     textarea2: req.body.textarea2,
     image3: req.body.image3,
+    video3: req.body.video3,
     topic3: req.body.topic3,
     textarea3: req.body.textarea3,
     image4: req.body.image4,
+    video4: req.body.video4,
     topic4: req.body.topic4,
     textarea4: req.body.textarea4,
     image5: req.body.image5,
+    video5: req.body.video5,
     topic5: req.body.topic5,
     textarea5: req.body.textarea5,
     image6: req.body.image6,
+    video6: req.body.video6,
     topic6: req.body.topic6,
     textarea6: req.body.textarea6,
     image7: req.body.image7,
+    video7: req.body.video7,
     topic7: req.body.topic7,
     textarea7: req.body.textarea7,
     image8: req.body.image8,
+    video8: req.body.video8,
     topic8: req.body.topic8,
     textarea8: req.body.textarea8,
     image9: req.body.image9,
+    video9: req.body.video9,
     topic9: req.body.topic9,
     textarea9: req.body.textarea9,
     image10: req.body.image10,
+    video10: req.body.video10,
     topic10: req.body.topic10,
     textarea10: req.body.textarea10,
   }).then(talks => {
@@ -873,33 +940,43 @@ app.post('/saved/:talkid', function(req, res) {
     shared: req.body.shared,
     section1_topic: req.body.section1_topic,
     image1: req.body.image1,
+    video1: req.body.video1,
     topic1: req.body.topic1,
     textarea1: req.body.textarea1,
     image2: req.body.image2,
+    video2: req.body.video2,
     topic2: req.body.topic2,
     textarea2: req.body.textarea2,
     image3: req.body.image3,
+    video3: req.body.video3,
     topic3: req.body.topic3,
     textarea3: req.body.textarea3,
     image4: req.body.image4,
+    video4: req.body.video4,
     topic4: req.body.topic4,
     textarea4: req.body.textarea4,
     image5: req.body.image5,
+    video5: req.body.video5,
     topic5: req.body.topic5,
     textarea5: req.body.textarea5,
     image6: req.body.image6,
+    video6: req.body.video6,
     topic6: req.body.topic6,
     textarea6: req.body.textarea6,
     image7: req.body.image7,
+    video7: req.body.video7,
     topic7: req.body.topic7,
     textarea7: req.body.textarea7,
     image8: req.body.image8,
+    video8: req.body.video8,
     topic8: req.body.topic8,
     textarea8: req.body.textarea8,
     image9: req.body.image9,
+    video9: req.body.video9,
     topic9: req.body.topic9,
     textarea9: req.body.textarea9,
     image10: req.body.image10,
+    video10: req.body.video10,
     topic10: req.body.topic10,
     textarea10: req.body.textarea10,
   }).then(talks => {
@@ -4457,6 +4534,17 @@ app.get('/game2', function(req, res) {
 
 //==========================//
 
+//====GET IMAGE FOR SCRIPTURE API===//
+
+app.get('/game3', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+}).then(users => {
+  res.render('game3')
+});
+});
+
+//==========================//
+
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/scriptures', function(req, res) {
@@ -7287,6 +7375,2004 @@ app.post('/api/genconf/wordofwisdom', function(req, res) {
     paragraph10: req.body.paragraph10,
   }).then(genconfs => {
   res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/fellowship', function(req, res) {
+  Videofellowship.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/fellowship', function(req, res) {
+  Videofellowship.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/agency', function(req, res) {
+  Videoagency.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/agency', function(req, res) {
+  Videoagency.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/angels', function(req, res) {
+  Videoangels.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/angels', function(req, res) {
+  Videoangels.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/apostasy', function(req, res) {
+  Videoapostasy.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/apostasy', function(req, res) {
+  Videoapostasy.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/apostle', function(req, res) {
+  Videoapostle.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/apostle', function(req, res) {
+  Videoapostle.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/atonement', function(req, res) {
+  Videoatonement.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/atonement', function(req, res) {
+  Videoatonement.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/baptism', function(req, res) {
+  Videobaptism.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/baptism', function(req, res) {
+  Videobaptism.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/bookofmormon', function(req, res) {
+  Videobookofmormon.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/bookofmormon', function(req, res) {
+  Videobookofmormon.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/charity', function(req, res) {
+  Videocharity.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/charity', function(req, res) {
+  Videocharity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/chastity', function(req, res) {
+  Videochastity.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/chastity', function(req, res) {
+  Videochastity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/children', function(req, res) {
+  Videochildren.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/children', function(req, res) {
+  Videochildren.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/church', function(req, res) {
+  Videochurch.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/church', function(req, res) {
+  Videochurch.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/covenants', function(req, res) {
+  Videocovenants.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/covenants', function(req, res) {
+  Videocovenants.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/creation', function(req, res) {
+  Videocreation.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/creation', function(req, res) {
+  Videocreation.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/death', function(req, res) {
+  Videodeath.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/death', function(req, res) {
+  Videodeath.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/faith', function(req, res) {
+  Videofaith.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/faith', function(req, res) {
+  Videofaith.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/family', function(req, res) {
+  Videofamily.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/family', function(req, res) {
+  Videofamily.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/fasting', function(req, res) {
+  Videofasting.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/fasting', function(req, res) {
+  Videofasting.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/genealogy', function(req, res) {
+  Videogenealogy.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/genealogy', function(req, res) {
+  Videogenealogy.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/giftsofthespirit', function(req, res) {
+  Videogiftsofthespirit.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/giftsofthespirit', function(req, res) {
+  Videogiftsofthespirit.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/god', function(req, res) {
+  Videogod.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/god', function(req, res) {
+  Videogod.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/godhead', function(req, res) {
+  Videogodhead.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/godhead', function(req, res) {
+  Videogodhead.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/gospel', function(req, res) {
+  Videogospel.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/gospel', function(req, res) {
+  Videogospel.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/happiness', function(req, res) {
+  Videohappiness.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/happiness', function(req, res) {
+  Videohappiness.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/heaven', function(req, res) {
+  Videoheaven.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/heaven', function(req, res) {
+  Videoheaven.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/hell', function(req, res) {
+  Videohell.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/hell', function(req, res) {
+  Videohell.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/holyghost', function(req, res) {
+  Videoholyghost.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/holyghost', function(req, res) {
+  Videoholyghost.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/honesty', function(req, res) {
+  Videohonesty.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/honesty', function(req, res) {
+  Videohonesty.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/humility', function(req, res) {
+  Videohumility.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/humility', function(req, res) {
+  Videohumility.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/jesus', function(req, res) {
+  Videojesus.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/jesus', function(req, res) {
+  Videojesus.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/marriage', function(req, res) {
+  Videomarriage.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/marriage', function(req, res) {
+  Videomarriage.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/miracles', function(req, res) {
+  Videomiracles.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/miracles', function(req, res) {
+  Videomiracles.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/missionary', function(req, res) {
+  Videomissionary.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/missionary', function(req, res) {
+  Videomissionary.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/nativity', function(req, res) {
+  Videonativity.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/nativity', function(req, res) {
+  Videonativity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/obedience', function(req, res) {
+  Videoobedience.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/obedience', function(req, res) {
+  Videoobedience.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/pioneer', function(req, res) {
+  Videopioneer.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/pioneer', function(req, res) {
+  Videopioneer.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/prayer', function(req, res) {
+  Videoprayer.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/prayer', function(req, res) {
+  Videoprayer.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/premortal', function(req, res) {
+  Videopremortal.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/premortal', function(req, res) {
+  Videopremortal.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/priesthood', function(req, res) {
+  Videopriesthood.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/priesthood', function(req, res) {
+  Videopriesthood.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/prophets', function(req, res) {
+  Videoprophets.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/prophets', function(req, res) {
+  Videoprophets.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/repentence', function(req, res) {
+  Videorepentence.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/repentence', function(req, res) {
+  Videorepentence.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/resurrection', function(req, res) {
+  Videoresurrection.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/resurrection', function(req, res) {
+  Videoresurrection.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/sacrament', function(req, res) {
+  Videosacrament.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/sacrament', function(req, res) {
+  Videosacrament.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/scriptures', function(req, res) {
+  Videoscriptures.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/scriptures', function(req, res) {
+  Videoscriptures.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/secondcoming', function(req, res) {
+  Videosecondcoming.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/secondcoming', function(req, res) {
+  Videosecondcoming.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/selfreliance', function(req, res) {
+  Videoselfreliance.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/selfreliance', function(req, res) {
+  Videoselfreliance.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/service', function(req, res) {
+  Videoservice.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/service', function(req, res) {
+  Videoservice.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/temple', function(req, res) {
+  Videotemple.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/temple', function(req, res) {
+  Videotemple.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/testimony', function(req, res) {
+  Videotestimony.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/testimony', function(req, res) {
+  Videotestimony.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/thefall', function(req, res) {
+  Videothefall.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/thefall', function(req, res) {
+  Videothefall.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/tithing', function(req, res) {
+  Videotithing.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/tithing', function(req, res) {
+  Videotithing.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/trials', function(req, res) {
+  Videotrials.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/trials', function(req, res) {
+  Videotrials.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/women', function(req, res) {
+  Videowomen.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/women', function(req, res) {
+  Videowomen.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/wordofwisdom', function(req, res) {
+  Videowordofwisdom.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/wordofwisdom', function(req, res) {
+  Videowordofwisdom.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
 });
 });
 

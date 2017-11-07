@@ -31,6 +31,9 @@ section1_topic: [{
 image1: [{
   type: String,
 }],
+video1: [{
+  type: String,
+}],
 topic1: [{
   type: String,
 }],
@@ -38,6 +41,9 @@ textarea1: [{
   type: String,
 }],
 image2: [{
+  type: String,
+}],
+video2: [{
   type: String,
 }],
 topic2: [{
@@ -49,6 +55,9 @@ textarea2: [{
 image3: [{
   type: String,
 }],
+video3: [{
+  type: String,
+}],
 topic3: [{
   type: String,
 }],
@@ -56,6 +65,9 @@ textarea3: [{
   type: String,
 }],
 image4: [{
+  type: String,
+}],
+video4: [{
   type: String,
 }],
 topic4: [{
@@ -67,6 +79,9 @@ textarea4: [{
 image5: [{
   type: String,
 }],
+video5: [{
+  type: String,
+}],
 topic5: [{
   type: String,
 }],
@@ -74,6 +89,9 @@ textarea5: [{
   type: String,
 }],
 image6: [{
+  type: String,
+}],
+video6: [{
   type: String,
 }],
 topic6: [{
@@ -85,6 +103,9 @@ textarea6: [{
 image7: [{
   type: String,
 }],
+video7: [{
+  type: String,
+}],
 topic7: [{
   type: String,
 }],
@@ -92,6 +113,9 @@ textarea7: [{
   type: String,
 }],
 image8: [{
+  type: String,
+}],
+video8: [{
   type: String,
 }],
 topic8: [{
@@ -103,6 +127,9 @@ textarea8: [{
 image9: [{
   type: String,
 }],
+video9: [{
+  type: String,
+}],
 topic9: [{
   type: String,
 }],
@@ -110,6 +137,9 @@ textarea9: [{
   type: String,
 }],
 image10: [{
+  type: String,
+}],
+video10: [{
   type: String,
 }],
 topic10: [{

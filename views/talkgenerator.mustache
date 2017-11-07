@@ -12,16 +12,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script>
 
-
-
-
-
-
       function renderIntro() {
         let nameInput = document.getElementById('nameInput').value;
         let topicInput = document.getElementById('topicInput').value;
-        console.log(nameInput);
-        console.log(topicInput);
         let sentence = "Good morning brothers and sisters. My name is"+ " " + nameInput +".";
         document.getElementById('introduction').innerHTML = sentence;
       }
@@ -29,27 +22,15 @@
   </script>
   <script>
 
-
-
-
-
-
       function renderTopic() {
         let nameInput = document.getElementById('nameInput').value;
         let topicInput = document.getElementById('topicInput').value;
-        console.log(nameInput);
-        console.log(topicInput);
         let sentence = "Today I have been asked to speak on the topic of"+" "+topicInput+".";
         document.getElementById('topic').innerHTML = sentence;
       }
 
   </script>
   <script>
-
-
-
-
-
 
       function renderFrom() {
         let from = document.getElementById('fromInput').value;
@@ -60,11 +41,6 @@
   </script>
   <script>
 
-
-
-
-
-
       function renderHere() {
         let here = document.getElementById('hereInput').value;
         let time = document.getElementById('timeInput').value;
@@ -73,7 +49,28 @@
       }
 
   </script>
+
   <script>
+
+
+      function renderVideo() {
+        var element = document.getElementsByClassName('videoInput');
+      for (var i = 0; i < element.length; ++i) {
+          var string = element[i];
+        let strval = string.value;
+        let str2 = "watch?v=";
+        let newval = "";
+        if (strval.includes(str2)){
+          newval1 = strval.replace(str2, "embed/");
+          newval = newval1;
+        }
+        else {newval = strval;}
+
+        console.log(newval);
+      }
+  }
+  </script>
+  <!-- <script>
     $(document).ready(function() {
       console.log("talking");
 
@@ -103,34 +100,39 @@
 
             document.getElementById('updatediv').innerHTML = markup;
             console.log(markup);
-          })
-        })
+        }})
       })
     }
-})
-  </script>
-  <script>
-    function goBack() {
-      window.history.back();
-    }
-  </script>
+  })
+
+  </script> -->
+
 </head>
 
-<body>
+<body id="body">
+<div id="videocontainer">
+<iframe class="video" width="560" height="315" src="https://www.youtube.com/watch?v=DazsehmxS3I" frameborder="0" allowfullscreen></iframe>
+</div>
+<section class="search">
+  <label> VIDEO UPLOAD: </label>
+  <input name="videoInput" placeholder="video URL" class="videoInput" type="text" id="videoInput">
+
+  <button class="submitButton2" type="submit" id="vidbtn" onclick="renderVideo();"  name="button">submitvideo</button>
+
 
   <section class="search">
     <label> TOPIC SEARCH: </label>
-    <input placeholder="name" class="nameInput" type="text" id="nameInput">
+    <input  placeholder="name" class="videoInput" type="text" id="nameInput">
 
-    <input placeholder="from" class="nameInput" type="text" id="fromInput">
+    <input placeholder="from" class="videoInput" type="text" id="fromInput">
 
-    <input placeholder="here" class="nameInput" type="text" id="hereInput">
+    <input placeholder="here" class="videoInput" type="text" id="hereInput">
 
-    <input placeholder="time" class="nameInput" type="text" id="timeInput">
+    <input placeholder="time" class="videoInput" type="text" id="timeInput">
 
-    <input placeholder="topic" class="topicInput" type="text" id="topicInput">
+    <input placeholder="topic" class="videoInput" type="text" id="topicInput">
 
-    <button class="submitButton2" type="submit" id="searchbtn" onclick="renderIntro(); renderFrom(); renderHere(); renderTopic();"  name="button">other speeches</button>
+    <button class="submitButton2" type="submit" id="searchbtn" onclick="renderIntro(); renderFrom(); renderHere(); renderTopic(); renderVideo();"  name="button">other speeches</button>
 </section>
 
 <div id="introduction"></div>
@@ -149,6 +151,7 @@
 <div id="develop-three"></div>
 <div id="d-three-genconf"></div>
 <div id="conclusion"></div>
+<div id="videoOutput"></div>
 
 </body>
 
