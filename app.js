@@ -25,6 +25,7 @@ const Imagewordofwisdom = require('./models/imagewordofwisdom.js');
 const Imageservice = require('./models/imageservice.js');
 const Imagecreation = require('./models/imagecreation.js');
 const Imageagency = require('./models/imageagency.js');
+const Imagegratitude = require('./models/imagegratitude.js');
 const Imagethefall = require('./models/imagethefall.js');
 const Imageholyghost = require('./models/imageholyghost.js');
 const Imagescriptures = require('./models/imagescriptures.js');
@@ -151,6 +152,7 @@ const Scripturewordofwisdom = require('./models/scripturewordofwisdom.js');
 const Scriptureservice = require('./models/scriptureservice.js');
 const Scripturecreation = require('./models/scripturecreation.js');
 const Scriptureagency = require('./models/scriptureagency.js');
+const Scripturegratitude = require('./models/scripturegratitude.js');
 const Scripturethefall = require('./models/scripturethefall.js');
 const Scriptureholyghost = require('./models/scriptureholyghost.js');
 const Scripturescriptures = require('./models/scripturescriptures.js');
@@ -209,6 +211,7 @@ const Genconfwordofwisdom = require('./models/genconfwordofwisdom.js');
 const Genconfservice = require('./models/genconfservice.js');
 const Genconfcreation = require('./models/genconfcreation.js');
 const Genconfagency = require('./models/genconfagency.js');
+const Genconfgratitude = require('./models/genconfgratitude.js');
 const Genconfthefall = require('./models/genconfthefall.js');
 const Genconfholyghost = require('./models/genconfholyghost.js');
 const Genconfscriptures = require('./models/genconfscriptures.js');
@@ -266,6 +269,7 @@ const Videowordofwisdom = require('./models/videowordofwisdom.js');
 const Videoservice = require('./models/videoservice.js');
 const Videocreation = require('./models/videocreation.js');
 const Videoagency = require('./models/videoagency.js');
+const Videogratitude = require('./models/videogratitude.js');
 const Videothefall = require('./models/videothefall.js');
 const Videoholyghost = require('./models/videoholyghost.js');
 const Videoscriptures = require('./models/videoscriptures.js');
@@ -1495,6 +1499,30 @@ app.get('/api/images/agency', function(req, res) {
 
 app.post('/api/images/agency', function(req, res) {
   Imageagency.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/gratitude', function(req, res) {
+  Imagegratitude.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/gratitude', function(req, res) {
+  Imagegratitude.create({
     image_data: req.body.image_data,
     tag: req.body.tag,
     image: req.body.image,
@@ -3669,6 +3697,20 @@ app.post('/api/scriptures/agency', function(req, res) {
 
 //====POST SCRIPTURE API===//
 
+app.post('/api/scriptures/gratitude', function(req, res) {
+  Scripturegratitude.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
 app.post('/api/scriptures/angels', function(req, res) {
   Scriptureangels.create({
     standard_work_location: req.body.standard_work_location,
@@ -4710,6 +4752,15 @@ app.get('/api/scriptures/agency', function(req, res) {
 //==========================//
 //====GET IMAGE UPLOAD FOR API===//
 
+app.get('/api/scriptures/gratitude', function(req, res) {
+  Scripturegratitude.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+//====GET IMAGE UPLOAD FOR API===//
+
 app.get('/api/scriptures/thefall', function(req, res) {
   Scripturethefall.find({}).then(scriptures => {
   res.json(scriptures)
@@ -5455,6 +5506,44 @@ app.post('/api/genconf/agency', function(req, res) {
 });
 
 //==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/gratitude', function(req, res) {
+  Genconfgratitude.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/gratitude', function(req, res) {
+  Genconfgratitude.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
 
 //====GET IMAGE UPLOAD FOR API===//
 
@@ -7431,6 +7520,43 @@ app.get('/api/video/agency', function(req, res) {
 
 app.post('/api/video/agency', function(req, res) {
   Videoagency.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/gratitude', function(req, res) {
+  Videogratitude.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/gratitude', function(req, res) {
+  Videogratitude.create({
 
 
 
