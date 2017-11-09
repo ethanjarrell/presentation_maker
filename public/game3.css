@@ -13,6 +13,13 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
 }
+
+.vidvid {
+  border: black solid 2px;
+  width: 300px;
+  font-size: 10px;
+}
+
 .form7 {
   display: flex;
   flex-flow: column wrap;

@@ -8,1026 +8,67 @@
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
 
   </script>
+  <script>
+    function renderVideo() {
+      var string = document.getElementById('01');
+      let strval = string.value;
+      let str2 = "penguin-bottoms";
+      let str3 = "baby-cheeks";
+      let str4 = "rose-colored-glasses";
+      console.log("original value of:", str2);
+      console.log("original value of:", str3);
+      console.log("original value of:", str4);
+      if (strval.indexOf("watch?v=") >= 0) {
+        myFunction();
+
+        function myFunction(){
+          str2 = "watch?v=";
+        }
+    }
+    console.log("new value of:", str2);
+      if (strval.indexOf("&") >= 0) {
+        myFunction();
+        function myFunction(){
+          str3 = strval.match(/&([^ ]*)/)[1];
+          str4 = "&";
+        }
+    }
+    console.log("new value of:", str3);
+    console.log("new value of:", str4);
+      let newval = "";
+      if (strval.includes(str2)){
+        newval1 = strval.replace(str2, "embed/");
+        newval = newval1;
+      } else {
+        newval = strval;
+      }
+      console.log("newval after str2 replaced:", newval);
+
+      if (newval.includes(str3)){
+        newval2 = newval.replace(str3, "");
+        newval = newval2;
+      } else {
+        newval = newval;
+      }
+      console.log("newval after str3 replaced:", newval);
+      if (newval.includes(str4)){
+        newval3 = newval.replace(str4, "");
+        newval = newval3;
+      } else {
+        newval = newval;
+      }
+      console.log("newval after str4 replaced:", newval);
+        document.getElementById('02').value = newval;
+      }
+  </script>
+
 </head>
 
 <body>
 
-
-
-
-  <form class="form7" action="/api/video/godhead" method="post">
-    <label>godhead</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/god" method="post">
-    <label>god</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/giftsofthespirit" method="post">
-    <label>giftsofthespirit</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/genealogy" method="post">
-    <label>genealogy</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/fasting" method="post">
-    <label>fasting</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/family" method="post">
-    <label>family</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/faith" method="post">
-    <label>faith</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/death" method="post">
-    <label>death</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/creation" method="post">
-    <label>creation</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/covenants" method="post">
-    <label>covenants</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/church" method="post">
-    <label>church</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/children" method="post">
-    <label>children</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/chastity" method="post">
-    <label>chastity</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/charity" method="post">
-    <label>charity</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/bookofmormon" method="post">
-    <label>bookofmormon</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/baptism" method="post">
-    <label>baptism</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/atonement" method="post">
-    <label>atonement</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/apostle" method="post">
-    <label>apostle</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/angels" method="post">
-    <label>angels</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/agency" method="post">
-    <label>agency</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/apostasy" method="post">
-    <label>apostasy</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-
-  <form class="form7" action="/api/video/fellowship" method="post">
-    <label>Fellowship</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/wordofwisdom" method="post">
-    <label>wordofwisdom</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/women" method="post">
-    <label>women</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-
-
-  <form class="form7" action="/api/video/trials" method="post">
-    <label>trials</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-  <form class="form7" action="/api/video/tithing" method="post">
-    <label>tithing</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-
-
-  <form class="form7" action="/api/video/thefall" method="post">
-    <label>thefall</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
-
-
-  <form class="form7" action="/api/video/testimony" method="post">
-    <label>testimony</label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <label>Youtube Video URL</label>
-    <input name="video_url" />
-
-    <input class="submit" type="submit" value="submit">
-  </form>
+  <input id="01" type="text" class="vidvid"  />
+  <button class="coolbutton" type="button" onclick="renderVideo();">click to format video for presentation</button>
+  <input id="02" type="text" name="video1" class="vidvid"  />
 
 
   <form class="form7" action="/api/video/temple" method="post">
@@ -1998,6 +1039,1030 @@
 
                             <input class="submit" type="submit" value="submit">
                           </form>
+
+
+                          <form class="form7" action="/api/video/godhead" method="post">
+                            <label>godhead</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/god" method="post">
+                            <label>god</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/giftsofthespirit" method="post">
+                            <label>giftsofthespirit</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/genealogy" method="post">
+                            <label>genealogy</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/fasting" method="post">
+                            <label>fasting</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/family" method="post">
+                            <label>family</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+                          <form class="form7" action="/api/video/faith" method="post">
+                            <label>faith</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            <label>Youtube Video URL</label>
+                            <input name="video_url" />
+
+                            <input class="submit" type="submit" value="submit">
+                          </form>
+
+
+                            <form class="form7" action="/api/video/death" method="post">
+                              <label>death</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <label>Youtube Video URL</label>
+                              <input name="video_url" />
+
+                              <input class="submit" type="submit" value="submit">
+                            </form>
+
+                            <form class="form7" action="/api/video/creation" method="post">
+                              <label>creation</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <label>Youtube Video URL</label>
+                              <input name="video_url" />
+
+                              <input class="submit" type="submit" value="submit">
+                            </form>
+
+                            <form class="form7" action="/api/video/covenants" method="post">
+                              <label>covenants</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <label>Youtube Video URL</label>
+                              <input name="video_url" />
+
+                              <input class="submit" type="submit" value="submit">
+                            </form>
+
+                            <form class="form7" action="/api/video/church" method="post">
+                              <label>church</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <label>Youtube Video URL</label>
+                              <input name="video_url" />
+
+                              <input class="submit" type="submit" value="submit">
+                            </form>
+
+                            <form class="form7" action="/api/video/children" method="post">
+                              <label>children</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                              <label>Youtube Video URL</label>
+                              <input name="video_url" />
+
+                              <input class="submit" type="submit" value="submit">
+                            </form>
+
+
+
+                              <form class="form7" action="/api/video/chastity" method="post">
+                                <label>chastity</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/charity" method="post">
+                                <label>charity</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/bookofmormon" method="post">
+                                <label>bookofmormon</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/baptism" method="post">
+                                <label>baptism</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/atonement" method="post">
+                                <label>atonement</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/apostle" method="post">
+                                <label>apostle</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/angels" method="post">
+                                <label>angels</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/agency" method="post">
+                                <label>agency</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/apostasy" method="post">
+                                <label>apostasy</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+
+                              <form class="form7" action="/api/video/fellowship" method="post">
+                                <label>Fellowship</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+                              <form class="form7" action="/api/video/wordofwisdom" method="post">
+                                <label>wordofwisdom</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <label>Youtube Video URL</label>
+                                <input name="video_url" />
+
+                                <input class="submit" type="submit" value="submit">
+                              </form>
+
+
+
+
+                                <form class="form7" action="/api/video/women" method="post">
+                                  <label>women</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <label>Youtube Video URL</label>
+                                  <input name="video_url" />
+
+                                  <input class="submit" type="submit" value="submit">
+                                </form>
+
+
+
+                                <form class="form7" action="/api/video/trials" method="post">
+                                  <label>trials</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <label>Youtube Video URL</label>
+                                  <input name="video_url" />
+
+                                  <input class="submit" type="submit" value="submit">
+                                </form>
+
+                                <form class="form7" action="/api/video/tithing" method="post">
+                                  <label>tithing</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <label>Youtube Video URL</label>
+                                  <input name="video_url" />
+
+                                  <input class="submit" type="submit" value="submit">
+                                </form>
+
+
+
+                                <form class="form7" action="/api/video/thefall" method="post">
+                                  <label>thefall</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <label>Youtube Video URL</label>
+                                  <input name="video_url" />
+
+                                  <input class="submit" type="submit" value="submit">
+                                </form>
+
+
+                                <form class="form7" action="/api/video/testimony" method="post">
+                                  <label>testimony</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                  <label>Youtube Video URL</label>
+                                  <input name="video_url" />
+
+                                  <input class="submit" type="submit" value="submit">
+                                </form>
+
+
+
 
 </body>
 

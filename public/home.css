@@ -458,6 +458,10 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   align-items: center;
 }
 
+.video_imported {
+  width: 25vw;
+}
+
 .buttong a{
   display: flex;
   flex-flow: column nowrap;

@@ -5,71 +5,12 @@
 
   <meta charset="utf-8">
   <title>The Talk Maker</title>
-  <link rel="stylesheet" href="/home.css">
+  <link rel="stylesheet" href="/talkgenerator.css">
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js">
-  </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-      function renderIntro() {
-        let nameInput = document.getElementById('nameInput').value;
-        let topicInput = document.getElementById('topicInput').value;
-        let sentence = "Good morning brothers and sisters. My name is"+ " " + nameInput +".";
-        document.getElementById('introduction').innerHTML = sentence;
-      }
-
-  </script>
-  <script>
-
-      function renderTopic() {
-        let nameInput = document.getElementById('nameInput').value;
-        let topicInput = document.getElementById('topicInput').value;
-        let sentence = "Today I have been asked to speak on the topic of"+" "+topicInput+".";
-        document.getElementById('topic').innerHTML = sentence;
-      }
-
-  </script>
-  <script>
-
-      function renderFrom() {
-        let from = document.getElementById('fromInput').value;
-        let sentence = "Originally I'm from"+" "+from+".";
-        document.getElementById('from').innerHTML = sentence;
-      }
-
-  </script>
-  <script>
-
-      function renderHere() {
-        let here = document.getElementById('hereInput').value;
-        let time = document.getElementById('timeInput').value;
-        let sentence = "But I've lived in"+" "+here+" "+"for the past"+" "+time+" "+"and have grown to love the area.";
-        document.getElementById('here').innerHTML = sentence;
-      }
-
-  </script>
-
-  <script>
-
-
-      function renderVideo() {
-        var element = document.getElementsByClassName('videoInput');
-      for (var i = 0; i < element.length; ++i) {
-          var string = element[i];
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)){
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        }
-        else {newval = strval;}
-
-        console.log(newval);
-      }
-  }
-  </script>
   <!-- <script>
     $(document).ready(function() {
       console.log("talking");
@@ -107,51 +48,546 @@
 
   </script> -->
 
+  <script>
+
+      function renderHere() {
+        let firstName = document.getElementById('firstNameInput').value;
+        let lastName = document.getElementById('lastNameInput').value;
+        let topic = document.getElementById('topicInput').value;
+        let here = document.getElementById('hereInput').value;
+        let time = document.getElementById('timeInput').value;
+        let genderInput = document.getElementById('malefemaleInput');
+        let marriage = document.getElementById('marriedSingleInput');
+        let from = document.getElementById('fromInput').value;
+        let areaSwitch = document.getElementById('areaSwitch');
+        function determineGender(x){
+          let genderX = "monkey";
+          if (x.value == "male") {
+            genderX = "male";
+          }
+          else if (x.value == "female"){
+            genderX = "female";
+          }
+          return genderX;
+        }
+        let newGender = determineGender(genderInput);
+        console.log(newGender);
+
+        function determineTitle(x){
+          let titleX = "snake";
+          if (x.value == "male") {
+            titleX = "brother";
+          }
+          else if (x.value == "female"){
+            titleX = "sister";
+          }
+          return titleX;
+        }
+        let newTitle = determineTitle(genderInput);
+        console.log(newTitle);
+
+        function determineMaritalStatus(x){
+          let maritalX = "monkey";
+          if (x.value == "married") {
+            maritalX = "married";
+          }
+          else if (x.value == "single"){
+            maritalX = "single";
+          }
+          return maritalX;
+        }
+        let newMaritalStatus = determineMaritalStatus(marriage);
+        console.log(newMaritalStatus);
+
+        function determineWhy(x){
+          let whyX = "bananas";
+          if (x.value == "work") {
+            whyX = "work";
+          }
+          else if (x.value == "school"){
+            whyX = "school";
+          }
+          else if (x.value == "opportunities"){
+            whyX = "opportunities";
+          }
+          return whyX;
+        }
+        let newWhy = determineWhy(areaSwitch);
+        console.log(newWhy);
+
+
+          function determineMarital(x, y){
+            let pronoun = "undetermined";
+            let sentence = "undetermined";
+            if (x == "single") {
+              newStatus = "I";
+            }
+          else if (x == "married" && (y == "male")) {
+            newStatus = "My wife and I";
+          }
+          else if (x == "married" && (y == "female")) {
+            newStatus = "My husband and I";
+          }
+          return newStatus;
+        }
+        let marital =  determineMarital(newMaritalStatus, newGender);
+
+        console.log(marital);
+
+        function determinePronoun(x){
+          let pronoun = "undetermined";
+          if (x == "single") {
+            pronoun = "I";
+          }
+          else {
+            pronoun = "we";
+          }
+          return pronoun;
+        }
+        let pronoun = determinePronoun(newMaritalStatus);
+        console.log(pronoun);
+
+
+        let paragraph1 = "Good morning brothers and sisters. For those of you who don't know me, I'm "+firstName+" ."+" Or, if you prefer, you can call me "+newTitle+" "+lastName+". I grew up in "+ from +" but " + marital + " moved here to " + here +" and have been in the area for the past " + time + ". " + pronoun + " moved to the area because of "+ newWhy +","+ "  and moving here has been one of the best decisions that " + pronoun + " have ever made. I'm grateful to be here today, and have been asked to speak on the topic of "+topic+".";
+
+
+        document.getElementById('intro').innerHTML = paragraph1;
+      }
+
+  </script>
+  <script>
+  $(document).ready(function() {
+    console.log("talking");
+
+    let topicInput = document.getElementById('topicInput');
+    let genconf = document.getElementById('genconf');
+    genconf.onclick = searchAPI;
+    console.log(topicInput);
+    console.log(genconf);
+
+
+
+    function searchAPI() {
+
+      let searchResults = topicInput.value;
+
+      var str = topicInput.value;
+
+      var mapObj = {
+        "free agency": "agency",
+        "the atonement": "atonement",
+        "baptize": "baptism",
+        "book of mormon": "bookofmormon",
+        "love": "charity",
+        "charitable": "charity",
+        "pure love": "charity",
+        "pure love of christ": "charity",
+        "created": "creation",
+        "religion": "church",
+        "church organization": "church",
+        "d&c": "doctrinecovenants",
+        "events": "events",
+        "heavenly father": "god",
+        "father in heaven": "god",
+        "god the father": "god",
+        "father": "god",
+        "belief": "faith",
+        "hope": "faith",
+        "the holy ghost": "holyghost",
+        "holy spirit": "holyghost",
+        "holy ghost": "holyghost",
+        "spirit": "holyghost",
+        "the spirit": "holyghost",
+        "honesty": "honesty",
+        "honest": "honesty",
+        "lie": "honesty",
+        "steal": "honesty",
+        "integrity": "honesty",
+        "bible": "newtestament",
+        "new testament": "newtestament",
+        "obedience": "obedience",
+        "follow": "obedience",
+        "submission": "obedience",
+        "submissive": "obedience",
+        "old testament": "oldtestament",
+        "people": "people",
+        "melchizedek priesthood": "priesthood",
+        "aaronic priesthood": "priesthood",
+        "melchizedek": "priesthood",
+        "aaronic": "priesthood",
+        "prophets of god": "prophets",
+        "prophet": "prophets",
+        "prophets": "prophets",
+        "repent": "repentence",
+        "repentance": "repentence",
+        "forgiveness": "repentence",
+        "bread and water": "sacrament",
+        "the sacrament": "sacrament",
+        "scripture": "scriptures",
+        "scriptures": "scriptures",
+        "the scriptures": "scriptures",
+        "word of god": "scriptures",
+        "labor": "service",
+        "work": "service",
+        "responsibility": "service",
+        "personal responsibility": "service",
+        "fall of man": "thefall",
+        "the fall": "thefall",
+        "fall of mankind": "thefall",
+        "fall": "thefall",
+        "jesus christ": "jesus",
+        "christ": "jesus",
+        "savior": "jesus",
+        "redeemer": "jesus",
+        "lord": "jesus",
+        "fall of adam": "thefall",
+        "garden of eden": "thefall",
+        "lucifer": "thefall",
+        "original sin": "thefall",
+        "law of health": "wordofwisdom",
+        "word of wisdom": "wordofwisdom",
+        "apostles": "apostle",
+        "the godhead": "godhead",
+        "revelation": "testimony",
+        "truth": "testimony",
+        "testify": "testimony",
+        "conversion": "testimony",
+        "devil": "hell",
+        "satan": "hell",
+        "damnation": "hell",
+        "torment": "hell",
+        "eternal marriage": "marriage",
+        "temple marriage": "marriage",
+        "fire and brimstone": "hell",
+        "celestial kingdom": "heaven",
+        "plan of salvation": "heaven",
+        "telestial": "heaven",
+        "exaltation": "heaven",
+        "immortality": "heaven",
+        "eternal life": "heaven",
+        "three degrees of glory": "heaven",
+        "missionaries": "missionary",
+        "preach": "missionary",
+        "preaching": "missionary",
+        "missionary work": "missionary",
+        "christmas": "nativity",
+        "church history": "pioneer",
+        "pioneers": "pioneer",
+        "handcarts": "pioneer",
+        "nauvoo": "pioneer",
+        "premortal existence": "premortal",
+        "council in heaven": "premortal",
+        "premortal life": "premortal",
+        "war in heaven": "premortal",
+        "easter": "resurrection",
+        "resurrected": "resurrection",
+        "crucifixion": "resurrection",
+        "cross": "resurrection",
+        "the resurrection": "resurrection",
+        "woman": "women",
+        "widow": "women",
+        "mary": "women",
+        "mothers": "women",
+        "mother": "women",
+        "motherhood": "women",
+        "daughter": "women",
+        "daughters": "women",
+        "relief society": "women",
+        "daughters of god": "women",
+        "the great apostasy": "apostasy",
+        "restoration": "apostasy",
+        "first vision": "apostasy",
+        "the first vision": "apostasy",
+        "the restoration": "apostasy",
+        "apostasy and restoration": "apostasy",
+        "first vision": "apostasy",
+        "family home evening": "family",
+        "family prayer": "family",
+        "eternal family": "family",
+        "virtue": "chastity",
+        "chaste": "chastity",
+        "virtuous": "chastity",
+        "child": "children",
+        "primary": "children",
+        "primary children": "children",
+        "covenant": "covenants",
+        "temple covenant": "covenants",
+        "temple covenants": "covenants",
+        "baptismal covenant": "covenants",
+        "baptismal covenants": "covenants",
+        "life after death": "death",
+        "die": "death",
+        "mortality": "death",
+        "family history": "genealogy",
+        "ancestors": "genealogy",
+        "family tree": "genealogy",
+        "spiritual gifts": "giftsofthespirit",
+        "gifts of the spirit": "giftsofthespirit",
+        "good news": "gospel",
+        "good news of the gospel": "gospel",
+        "the gospel": "gospel",
+        "gospel": "gospel",
+        "plan of salvation": "gospel",
+        "the plan of salvation": "gospel",
+        "happy": "happiness",
+        "joy": "happiness",
+        "plan of happiness": "happiness",
+        "miracle": "miracles",
+        "brigham young": "brighamyoung",
+        "brigham": "brighamyoung",
+        "davdid bednar": "dabednar",
+        "bednar": "dabednar",
+        "davdid a. bednar": "dabednar",
+        "daivd o mckay": "davidomckay",
+        "daivd o. mckay": "davidomckay",
+        "uchtdorf": "dfuchtdorf",
+        "dieter uchtdorf": "dfuchtdorf",
+        "dieter f. uchtdorf": "dfuchtdorf",
+        "renlund": "dgrenlund",
+        "dale g. renlund": "dgrenlund",
+        "oaks": "dhoaks",
+        "dallin h. oaks": "dhoaks",
+        "D. Todd Christofferson": "dtchristofferson",
+        "Christofferson": "dtchristofferson",
+        "benson": "ezrataftbenson",
+        "ezra taft benson": "ezrataftbenson",
+        "benson": "ezrataftbenson",
+        "george a. smith": "georgeasmith",
+        "george albert smith": "georgeasmith",
+        "gary e. stevenson": "gestevenson",
+        "gordon b. hinckley": "gordonbhinckley",
+        "hinckley": "gordonbhinckley",
+        "harold b. lee": "haroldblee",
+        "eyring": "hbeyring",
+        "henry b. eyring": "hbeyring",
+        "grant": "heberjgrant",
+        "heber j. grant": "heberjgrant",
+        "howard w. hunter": "howardwhunter",
+        "hunter": "howardwhunter",
+        "john taylor": "johntaylor",
+        "joseph fielding smith": "josephfieldingsmith",
+        "joseph f. smith": "josephfsmith",
+        "joseph smith": "josephsmith",
+        "joseph": "josephsmith",
+        "jeffrey r. holland": "jrholland",
+        "holland": "jrholland",
+        "lorenzo snow": "lorenzosnow",
+        "snow": "lorenzosnow",
+        "m. russell ballard": "mrballard",
+        "ballard": "mrballard",
+        "neil l. anderson": "nlanderson",
+        "quentin l. cook": "qlcook",
+        "rasband": "rarasband",
+        "ronald a. rasband": "rarasband",
+        "russell m. nelson": "rmnelson",
+        "nelson": "rmnelson",
+        "spencer w. kimball": "spencerkimball",
+        "thomas s. monson": "tsmonson",
+        "monson": "tsmonson",
+        "woodruff": "wilfordwoodruff",
+        "wilford woodruff": "wilfordwoodruff",
+        "self reliance": "selfreliance",
+        "self-reliance": "selfreliance",
+        "second coming": "secondcoming",
+        "the second coming": "secondcoming",
+        "miracles": "miracles",
+        "miracle": "miracles",
+      };
+      var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+      str = str.replace(re, function(matched) {
+        return mapObj[matched.toLowerCase()];
+      });
+
+
+      fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+        if (response.status != 200) {
+          window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+          return;
+        }
+
+        response.json().then(function(data) {
+          let api = data;
+
+          function renderapis() {
+
+            return `${api.map(api =>
+          `
+          <div>
+          <p>&${api.book_and_verse_number}%</p>
+          <h3>#${api.verse_text}#&</h3>
+          </div>
+          `
+          )}
+          `
+
+          }
+
+          let markup = `${renderapis()}`;
+          document.getElementById('para2').innerHTML = markup;
+          alert("I found some sciptures for you.  Click on the add new paragagraph to generate the next part of your talk.")
+
+        })
+      })
+    }
+  })
+
+  </script>
+<script>
+function getscript () {
+let arrayScript = [];
+let sentence = "";
+let topic = document.getElementById('topicInput').value;
+let str = document.getElementById('para2').innerHTML;
+let result = str.match( /[^\&!\?]+[\&!\?]+/g );
+
+for (var i = 0; i < result.length; i++) {
+  let sentence = result[i];
+  if (sentence.indexOf("is") >= 0) {
+    arrayScript.push(sentence);
+  }
+
+  let random = arrayScript[Math.floor(Math.random(1) * arrayScript.length)];
+  document.getElementById('para3').innerHTML = random;
+}
+let text = document.getElementById('para3').innerHTML;
+
+let chapter = text.match( /[^\&!\?]+[\%!\?]+/g );
+document.getElementById('chapter').innerHTML = chapter;
+let book_and_chapter = document.getElementById('chapter').innerHTML;
+console.log("this is the book and chapter number", book_and_chapter);
+let cleaned_book = book_and_chapter.replace('amp;', '');
+console.log("this is the cleaned book", cleaned_book);
+let book_title = cleaned_book.replace(/[0-9]/g, '').replace('%', "");
+function replaceBookTitle(x){
+  if (x.length > 20) {
+    x = "Nephi";
+  }
+  else{
+    x = x;
+  }
+  return x;
+}
+let edited_title = replaceBookTitle(book_title);
+console.log("This is the book title:", book_title);
+function firstLetter (x) {
+  let a = x[0];
+  if (a == 1 || 2 || 3 || 4){
+    a = "";
+  }else{
+    a = a;
+  }
+  return x;
+}
+let new_book = firstLetter(cleaned_book);
+
+let chapter_number = new_book.replace(/\D/g,'');
+console.log("this is the chapter number", chapter_number);
+function chapterNmbr (x) {
+  if (x == ""){
+    x = 3;
+  }else {
+    x = x;
+  }
+  return x;
+}
+let edited_number = chapterNmbr(chapter_number);
+console.log("If it was blank, chapter number is", edited_number);
+  let number = text.match( /[^\[!\?]+[\]!\?]+/g );
+  let verse = text.match( /[^\#!\?]+[\#!\?]+/g );
+  document.getElementById('number').innerHTML = number;
+  let dirtyNumber = document.getElementById('number').innerHTML;
+  let cleanNumber = dirtyNumber.replace(/\D/g,'');
+  document.getElementById('verse').innerHTML = verse;
+  let dirtyVerse = document.getElementById('verse').innerHTML;
+  let cleanVerse = dirtyVerse.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
+console.log("this is apparently a clean verse", cleanVerse);
+
+let paragraph2 = "As I started to think about the topic, the first question that came to my mind was simply,what is "+topic+"?"+" Naturally, I turned to the scriptures for help. In the Book of Mormon, "+edited_title+" gives us a little more insight into what "+topic+" is. In "+edited_title+" chapter "+edited_number+", verse " +cleanNumber+ " we read the following:";
+console.log(paragraph2);
+let paragraph3 = '"'+cleanVerse+'."';
+let paragraph4 = "(now is a good place to share a personal experience.  Think of someone you know who is an example of "+topic+" or an experince where you learned something about"+topic+" )";
+
+document.getElementById('para5').innerHTML = paragraph2;
+document.getElementById('para6').innerHTML = paragraph3;
+document.getElementById('para7').innerHTML = paragraph4;
+
+
+}
+
+</script>
+
+
 </head>
 
 <body id="body">
-<div id="videocontainer">
-<iframe class="video" width="560" height="315" src="https://www.youtube.com/watch?v=DazsehmxS3I" frameborder="0" allowfullscreen></iframe>
-</div>
-<section class="search">
-  <label> VIDEO UPLOAD: </label>
-  <input name="videoInput" placeholder="video URL" class="videoInput" type="text" id="videoInput">
-
-  <button class="submitButton2" type="submit" id="vidbtn" onclick="renderVideo();"  name="button">submitvideo</button>
 
 
   <section class="search">
-    <label> TOPIC SEARCH: </label>
-    <input  placeholder="name" class="videoInput" type="text" id="nameInput">
-
+    <span>
+    <label> First Name? </label>
+    <input  placeholder="name" class="videoInput" type="text" id="firstNameInput">
+  </span>
+  <span>
+  <label> Last Name? </label>
+  <input  placeholder="name" class="videoInput" type="text" id="lastNameInput">
+</span>
+  <span>
+  <label> What city are you from originally? </label>
     <input placeholder="from" class="videoInput" type="text" id="fromInput">
-
+    </span>
+    <span>
+    <label> What city or ward do you live in now? </label>
     <input placeholder="here" class="videoInput" type="text" id="hereInput">
-
+    </span>
+    <span>
+    <label> How long have you lived here? </label>
     <input placeholder="time" class="videoInput" type="text" id="timeInput">
-
+    </span>
+    <span>
+    <label> Are you male or female? </label>
+    <select placeholder="topic" class="videoInput" type="text" id="malefemaleInput">
+      <option value="male" id="male">male</option>
+      <option value="female" id="female">female</option>
+    </select>
+    </span>
+    <span>
+    <label> Are you married or single? </label>
+    <select placeholder="topic" class="videoInput" type="text" id="marriedSingleInput">
+      <option value="single" id="single">single</option>
+      <option value="married" id="married">married</option>
+    </select>
+    </span>
+    <span>
+    <label> What brought you to this area? </label>
+    <select placeholder="topic" class="videoInput" type="text" id="areaSwitch">
+      <option value="work" id="work">work</option>
+      <option value="school" id="school">school</option>
+      <option value="opportunities" id="opportunities">other opportunities</option>
+    </select>
+    </span>
+    <span>
+    <label> What is your talk topic? </label>
     <input placeholder="topic" class="videoInput" type="text" id="topicInput">
-
-    <button class="submitButton2" type="submit" id="searchbtn" onclick="renderIntro(); renderFrom(); renderHere(); renderTopic(); renderVideo();"  name="button">other speeches</button>
+    </span>
+<div class= "buttoncontainer">
+    <button class="submitButton2" type="submit" id="searchbtn" onclick=" renderHere();"  name="button">create introduction</button>
+    <button class="submitButton2" type="submit" id="genconf" name="button">find scriptures for talk</button>
+    <button class="submitButton2" onclick="getscript();" type="submit" id="getscript" name="button">add new paragraph with scripture</button>
+  </div>
 </section>
 
-<div id="introduction"></div>
-<div id="from"></div>
-<div id="here"></div>
-<div id="topic"></div>
-<div id="definition"></div>
-<div id="scripture-definition"></div>
-<div id="genconf-definition"></div>
-<div id="importance"></div>
-<div id="three-ways-to-develop"></div>
-<div id="develop-one"></div>
-<div id="d-one-genconf"></div>
-<div id="develop-two"></div>
-<div id="d-two-genconf"></div>
-<div id="develop-three"></div>
-<div id="d-three-genconf"></div>
-<div id="conclusion"></div>
-<div id="videoOutput"></div>
+
+<p id="intro"></p>
+<p id="para2"></p>
+<p id="para3"></p>
+<p id="para4"></p>
+<p id="para5"></p>
+<p id="para6"></p>
+<p id="para7"></p>
+<p id="chapter"></p>
+<p id="number"></p>
+<p id="verse"></p>
+
 
 </body>
 

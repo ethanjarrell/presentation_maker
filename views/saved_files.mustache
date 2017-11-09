@@ -311,7 +311,8 @@
           "family history": "genealogy",
           "ancestors": "genealogy",
           "family tree": "genealogy",
-          "spiritual gifts": "gifts of the spirit",
+          "spiritual gifts": "giftsofthespirit",
+          "gifts of the spirit": "giftsofthespirit",
           "good news": "gospel",
           "good news of the gospel": "gospel",
           "the gospel": "gospel",
@@ -714,7 +715,8 @@
           "family history": "genealogy",
           "ancestors": "genealogy",
           "family tree": "genealogy",
-          "spiritual gifts": "gifts of the spirit",
+          "spiritual gifts": "giftsofthespirit",
+          "gifts of the spirit": "giftsofthespirit",
           "good news": "gospel",
           "good news of the gospel": "gospel",
           "the gospel": "gospel",
@@ -993,7 +995,8 @@
           "family history": "genealogy",
           "ancestors": "genealogy",
           "family tree": "genealogy",
-          "spiritual gifts": "gifts of the spirit",
+          "spiritual gifts": "giftsofthespirit",
+          "gifts of the spirit": "giftsofthespirit",
           "good news": "gospel",
           "good news of the gospel": "gospel",
           "the gospel": "gospel",
@@ -1265,7 +1268,8 @@
           "family history": "genealogy",
           "ancestors": "genealogy",
           "family tree": "genealogy",
-          "spiritual gifts": "gifts of the spirit",
+          "spiritual gifts": "giftsofthespirit",
+          "gifts of the spirit": "giftsofthespirit",
           "good news": "gospel",
           "good news of the gospel": "gospel",
           "the gospel": "gospel",
@@ -1349,24 +1353,31 @@
             return;
           }
 
-
           response.json().then(function(data) {
             let api = data;
 
             function renderapis() {
 
               return `${api.map(api =>
-            `<div class="black"></div>`
+            `
+            <iframe class="video_imported" src="${api.video_url}"  ></iframe>
+
+            `
             )}
             `
+
             }
 
             let markup = `${renderapis()}`;
             document.getElementById('updatediv').innerHTML = markup;
+            console.log(markup);
           })
-        })
-      }
-    })
+          })
+          }
+
+
+
+          })
 
   </script>
   <script>
@@ -1400,33 +1411,106 @@
   <script>
     function renderVideo() {
       var string = document.getElementById('01');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+      let strval = string.value;
+      let str2 = "penguin-bottoms";
+      let str3 = "baby-cheeks";
+      let str4 = "rose-colored-glasses";
+      console.log("original value of:", str2);
+      console.log("original value of:", str3);
+      console.log("original value of:", str4);
+      if (strval.indexOf("watch?v=") >= 0) {
+        myFunction();
 
+        function myFunction(){
+          str2 = "watch?v=";
+        }
+    }
+    console.log("new value of:", str2);
+      if (strval.indexOf("&") >= 0) {
+        myFunction();
+        function myFunction(){
+          str3 = strval.match(/&([^ ]*)/)[1];
+          str4 = "&";
+        }
+    }
+    console.log("new value of:", str3);
+    console.log("new value of:", str4);
+      let newval = "";
+      if (strval.includes(str2)){
+        newval1 = strval.replace(str2, "embed/");
+        newval = newval1;
+      } else {
+        newval = strval;
+      }
+      console.log("newval after str2 replaced:", newval);
+
+      if (newval.includes(str3)){
+        newval2 = newval.replace(str3, "");
+        newval = newval2;
+      } else {
+        newval = newval;
+      }
+      console.log("newval after str3 replaced:", newval);
+      if (newval.includes(str4)){
+        newval3 = newval.replace(str4, "");
+        newval = newval3;
+      } else {
+        newval = newval;
+      }
+      console.log("newval after str4 replaced:", newval);
         document.getElementById('02').value = newval;
       }
-
   </script>
   <script>
     function renderVideo1() {
       var string = document.getElementById('03');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('04').value = newval;
       }
 
@@ -1434,16 +1518,53 @@
   <script>
     function renderVideo2() {
       var string = document.getElementById('05');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('06').value = newval;
       }
 
@@ -1451,16 +1572,79 @@
   <script>
     function renderVideo3() {
       var string = document.getElementById('07');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);let strval = string.value;
+      let str2 = "watch?v=";
+      var str3 = strval.match(/&([^ ]*)/)[1];
+      var str4 = "&";
+      console.log(str3);
+      let newval = "";
+      if (strval.includes(str2)){
+        newval1 = strval.replace(str2, "embed/");
+        newval = newval1;
+      } else {
+        newval = strval;
+      }
+
+
+      if (newval.includes(str3)){
+        newval2 = newval.replace(str3, "");
+        newval = newval2;
+      } else {
+        newval = strval;
+      }
+
+      if (newval.includes(str4)){
+        newval3 = newval.replace(str4, "");
+        newval = newval3;
+      } else {
+        newval = strval;
+      }
         document.getElementById('08').value = newval;
       }
 
@@ -1468,16 +1652,79 @@
   <script>
     function renderVideo4() {
       var string = document.getElementById('09');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);let strval = string.value;
+      let str2 = "watch?v=";
+      var str3 = strval.match(/&([^ ]*)/)[1];
+      var str4 = "&";
+      console.log(str3);
+      let newval = "";
+      if (strval.includes(str2)){
+        newval1 = strval.replace(str2, "embed/");
+        newval = newval1;
+      } else {
+        newval = strval;
+      }
+
+
+      if (newval.includes(str3)){
+        newval2 = newval.replace(str3, "");
+        newval = newval2;
+      } else {
+        newval = strval;
+      }
+
+      if (newval.includes(str4)){
+        newval3 = newval.replace(str4, "");
+        newval = newval3;
+      } else {
+        newval = strval;
+      }
         document.getElementById('10').value = newval;
       }
 
@@ -1485,16 +1732,53 @@
   <script>
     function renderVideo5() {
       var string = document.getElementById('11');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('12').value = newval;
       }
 
@@ -1502,16 +1786,53 @@
   <script>
     function renderVideo6() {
       var string = document.getElementById('13');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('14').value = newval;
       }
 
@@ -1519,15 +1840,53 @@
   <script>
     function renderVideo7() {
       var string = document.getElementById('15');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('16').value = newval;
       }
@@ -1536,16 +1895,53 @@
   <script>
     function renderVideo8() {
       var string = document.getElementById('17');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('18').value = newval;
       }
 
@@ -1553,15 +1949,53 @@
   <script>
     function renderVideo9() {
       var string = document.getElementById('19');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('20').value = newval;
       }
@@ -1570,15 +2004,53 @@
   <script>
     function renderVideo10() {
       var string = document.getElementById('21');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('22').value = newval;
       }
@@ -1587,15 +2059,53 @@
   <script>
     function renderVideo11() {
       var string = document.getElementById('23');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('24').value = newval;
       }
@@ -1604,16 +2114,53 @@
   <script>
     function renderVideo12() {
       var string = document.getElementById('25');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('26').value = newval;
       }
 
@@ -1621,15 +2168,53 @@
   <script>
     function renderVideo13() {
       var string = document.getElementById('27');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('28').value = newval;
       }
@@ -1638,15 +2223,53 @@
   <script>
     function renderVideo14() {
       var string = document.getElementById('29');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('30').value = newval;
       }
@@ -1655,15 +2278,53 @@
   <script>
     function renderVideo15() {
       var string = document.getElementById('31');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('32').value = newval;
       }
@@ -1672,15 +2333,53 @@
   <script>
     function renderVideo16() {
       var string = document.getElementById('33');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('34').value = newval;
       }
@@ -1689,16 +2388,53 @@
   <script>
     function renderVideo17() {
       var string = document.getElementById('35');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('36').value = newval;
       }
 
@@ -1706,15 +2442,53 @@
   <script>
     function renderVideo18() {
       var string = document.getElementById('37');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('38').value = newval;
       }
@@ -1723,15 +2497,53 @@
   <script>
     function renderVideo19() {
       var string = document.getElementById('39');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('40').value = newval;
       }
@@ -1740,15 +2552,53 @@
   <script>
     function renderVideo20() {
       var string = document.getElementById('41');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('42').value = newval;
       }
@@ -1757,15 +2607,53 @@
   <script>
     function renderVideo21() {
       var string = document.getElementById('201');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('202').value = newval;
       }
@@ -1774,15 +2662,53 @@
   <script>
     function renderVideo22() {
       var string = document.getElementById('203');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('204').value = newval;
       }
@@ -1791,15 +2717,53 @@
   <script>
     function renderVideo23() {
       var string = document.getElementById('205');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('206').value = newval;
       }
@@ -1808,15 +2772,53 @@
   <script>
     function renderVideo24() {
       var string = document.getElementById('207');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('208').value = newval;
       }
@@ -1825,15 +2827,53 @@
   <script>
     function renderVideo25() {
       var string = document.getElementById('209');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('210').value = newval;
       }
@@ -1842,16 +2882,53 @@
   <script>
     function renderVideo26() {
       var string = document.getElementById('211');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('212').value = newval;
       }
 
@@ -1859,15 +2936,53 @@
   <script>
     function renderVideo27() {
       var string = document.getElementById('213');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('214').value = newval;
       }
@@ -1876,15 +2991,53 @@
   <script>
     function renderVideo28() {
       var string = document.getElementById('215');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('216').value = newval;
       }
@@ -1893,15 +3046,53 @@
   <script>
     function renderVideo29() {
       var string = document.getElementById('217');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('218').value = newval;
       }
@@ -1910,15 +3101,53 @@
   <script>
     function renderVideo30() {
       var string = document.getElementById('219');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('220').value = newval;
       }
@@ -1927,15 +3156,53 @@
   <script>
     function renderVideo31() {
       var string = document.getElementById('221');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('222').value = newval;
       }
@@ -1944,15 +3211,53 @@
   <script>
     function renderVideo32() {
       var string = document.getElementById('223');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('224').value = newval;
       }
@@ -1961,15 +3266,53 @@
   <script>
     function renderVideo33() {
       var string = document.getElementById('225');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('226').value = newval;
       }
@@ -1978,15 +3321,53 @@
   <script>
     function renderVideo34() {
       var string = document.getElementById('227');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('228').value = newval;
       }
@@ -1995,15 +3376,53 @@
   <script>
     function renderVideo35() {
       var string = document.getElementById('229');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('230').value = newval;
       }
@@ -2012,15 +3431,53 @@
   <script>
     function renderVideo36() {
       var string = document.getElementById('231');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('232').value = newval;
       }
@@ -2029,15 +3486,53 @@
   <script>
     function renderVideo37() {
       var string = document.getElementById('233');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('234').value = newval;
       }
@@ -2046,15 +3541,53 @@
   <script>
     function renderVideo38() {
       var string = document.getElementById('235');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('236').value = newval;
       }
@@ -2063,15 +3596,53 @@
   <script>
     function renderVideo39() {
       var string = document.getElementById('237');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('238').value = newval;
       }
@@ -2080,15 +3651,53 @@
   <script>
     function renderVideo40() {
       var string = document.getElementById('239');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('240').value = newval;
       }
@@ -2097,15 +3706,53 @@
   <script>
     function renderVideo41() {
       var string = document.getElementById('241');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('242').value = newval;
       }
@@ -2114,15 +3761,53 @@
   <script>
     function renderVideo42() {
       var string = document.getElementById('301');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('302').value = newval;
       }
@@ -2131,15 +3816,53 @@
   <script>
     function renderVideo43() {
       var string = document.getElementById('303');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('304').value = newval;
       }
@@ -2148,15 +3871,53 @@
   <script>
     function renderVideo44() {
       var string = document.getElementById('305');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('306').value = newval;
       }
@@ -2165,15 +3926,53 @@
   <script>
     function renderVideo45() {
       var string = document.getElementById('307');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('308').value = newval;
       }
@@ -2182,15 +3981,53 @@
   <script>
     function renderVideo46() {
       var string = document.getElementById('309');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('310').value = newval;
       }
@@ -2199,15 +4036,53 @@
   <script>
     function renderVideo47() {
       var string = document.getElementById('311');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('312').value = newval;
       }
@@ -2216,15 +4091,53 @@
   <script>
     function renderVideo48() {
       var string = document.getElementById('313');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('314').value = newval;
       }
@@ -2233,16 +4146,53 @@
   <script>
     function renderVideo49() {
       var string = document.getElementById('315');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('316').value = newval;
       }
 
@@ -2250,16 +4200,53 @@
   <script>
     function renderVideo50() {
       var string = document.getElementById('317');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('318').value = newval;
       }
 
@@ -2267,16 +4254,53 @@
   <script>
     function renderVideo51() {
       var string = document.getElementById('319');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('320').value = newval;
       }
 
@@ -2284,15 +4308,53 @@
   <script>
     function renderVideo52() {
       var string = document.getElementById('321');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('322').value = newval;
       }
@@ -2301,15 +4363,53 @@
   <script>
     function renderVideo53() {
       var string = document.getElementById('323');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('324').value = newval;
       }
@@ -2318,15 +4418,53 @@
   <script>
     function renderVideo54() {
       var string = document.getElementById('325');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('326').value = newval;
       }
@@ -2335,15 +4473,53 @@
   <script>
     function renderVideo55() {
       var string = document.getElementById('327');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('328').value = newval;
       }
@@ -2352,15 +4528,53 @@
   <script>
     function renderVideo56() {
       var string = document.getElementById('329');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('330').value = newval;
       }
@@ -2369,15 +4583,53 @@
   <script>
     function renderVideo57() {
       var string = document.getElementById('331');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('332').value = newval;
       }
@@ -2386,15 +4638,53 @@
   <script>
     function renderVideo58() {
       var string = document.getElementById('333');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('334').value = newval;
       }
@@ -2403,15 +4693,53 @@
   <script>
     function renderVideo59() {
       var string = document.getElementById('335');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('336').value = newval;
       }
@@ -2420,16 +4748,53 @@
   <script>
     function renderVideo60() {
       var string = document.getElementById('337');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('338').value = newval;
       }
 
@@ -2437,15 +4802,53 @@
   <script>
     function renderVideo61() {
       var string = document.getElementById('339');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('340').value = newval;
       }
@@ -2454,15 +4857,53 @@
   <script>
     function renderVideo62() {
       var string = document.getElementById('341');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('342').value = newval;
       }
@@ -2471,15 +4912,53 @@
   <script>
     function renderVideo63() {
       var string = document.getElementById('401');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('402').value = newval;
       }
@@ -2488,15 +4967,53 @@
   <script>
     function renderVideo64() {
       var string = document.getElementById('403');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('404').value = newval;
       }
@@ -2505,16 +5022,53 @@
   <script>
     function renderVideo65() {
       var string = document.getElementById('405');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('406').value = newval;
       }
 
@@ -2522,15 +5076,53 @@
   <script>
     function renderVideo66() {
       var string = document.getElementById('407');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('408').value = newval;
       }
@@ -2539,15 +5131,53 @@
   <script>
     function renderVideo67() {
       var string = document.getElementById('409');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('410').value = newval;
       }
@@ -2556,15 +5186,53 @@
   <script>
     function renderVideo68() {
       var string = document.getElementById('411');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('412').value = newval;
       }
@@ -2573,15 +5241,53 @@
   <script>
     function renderVideo69() {
       var string = document.getElementById('413');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('414').value = newval;
       }
@@ -2590,15 +5296,53 @@
   <script>
     function renderVideo70() {
       var string = document.getElementById('415');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('416').value = newval;
       }
@@ -2607,15 +5351,53 @@
   <script>
     function renderVideo71() {
       var string = document.getElementById('417');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('418').value = newval;
       }
@@ -2624,15 +5406,53 @@
   <script>
     function renderVideo72() {
       var string = document.getElementById('419');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('420').value = newval;
       }
@@ -2641,15 +5461,53 @@
   <script>
     function renderVideo73() {
       var string = document.getElementById('421');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('422').value = newval;
       }
@@ -2658,15 +5516,53 @@
   <script>
     function renderVideo74() {
       var string = document.getElementById('423');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('424').value = newval;
       }
@@ -2675,16 +5571,53 @@
   <script>
     function renderVideo75() {
       var string = document.getElementById('425');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('426').value = newval;
       }
 
@@ -2692,15 +5625,53 @@
   <script>
     function renderVideo76() {
       var string = document.getElementById('427');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('428').value = newval;
       }
@@ -2709,15 +5680,53 @@
   <script>
     function renderVideo77() {
       var string = document.getElementById('429');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('430').value = newval;
       }
@@ -2726,15 +5735,53 @@
   <script>
     function renderVideo78() {
       var string = document.getElementById('431');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('432').value = newval;
       }
@@ -2743,15 +5790,53 @@
   <script>
     function renderVideo79() {
       var string = document.getElementById('433');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
+
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
 
         document.getElementById('434').value = newval;
       }
@@ -2760,16 +5845,53 @@
   <script>
     function renderVideo80() {
       var string = document.getElementById('435');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('436').value = newval;
       }
 
@@ -2777,16 +5899,53 @@
   <script>
     function renderVideo81() {
       var string = document.getElementById('437');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('438').value = newval;
       }
 
@@ -2794,16 +5953,53 @@
   <script>
     function renderVideo82() {
       var string = document.getElementById('439');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('440').value = newval;
       }
 
@@ -2811,16 +6007,53 @@
   <script>
     function renderVideo83() {
       var string = document.getElementById('441');
-        let strval = string.value;
-        let str2 = "watch?v=";
-        let newval = "";
-        if (strval.includes(str2)) {
-          newval1 = strval.replace(str2, "embed/");
-          newval = newval1;
-        } else {
-          newval = strval;
-        }
+    let strval = string.value;
+let str2 = "penguin-bottoms";
+let str3 = "baby-cheeks";
+let str4 = "rose-colored-glasses";
+console.log("original value of:", str2);
+console.log("original value of:", str3);
+console.log("original value of:", str4);
+if (strval.indexOf("watch?v=") >= 0) {
+  myFunction();
 
+  function myFunction(){
+    str2 = "watch?v=";
+  }
+}
+console.log("new value of:", str2);
+if (strval.indexOf("&") >= 0) {
+  myFunction();
+  function myFunction(){
+    str3 = strval.match(/&([^ ]*)/)[1];
+    str4 = "&";
+  }
+}
+console.log("new value of:", str3);
+console.log("new value of:", str4);
+let newval = "";
+if (strval.includes(str2)){
+  newval1 = strval.replace(str2, "embed/");
+  newval = newval1;
+} else {
+  newval = strval;
+}
+console.log("newval after str2 replaced:", newval);
+
+if (newval.includes(str3)){
+  newval2 = newval.replace(str3, "");
+  newval = newval2;
+} else {
+  newval = newval;
+}
+console.log("newval after str3 replaced:", newval);
+if (newval.includes(str4)){
+  newval3 = newval.replace(str4, "");
+  newval = newval3;
+} else {
+  newval = newval;
+}
+console.log("newval after str4 replaced:", newval);
         document.getElementById('442').value = newval;
       }
 
