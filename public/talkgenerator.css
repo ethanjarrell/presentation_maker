@@ -12,9 +12,11 @@ body {
 span {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
   width: 455px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 p {
   text-indent: 50px;
@@ -26,6 +28,8 @@ p {
 
 input {
   width: 135px;
+  float: right;
+  border: black solid 1px;
 }
 
 select {
@@ -45,6 +49,11 @@ section {
   flex-flow: column wrap;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+h3 {
+  text-align: left;
+  width: 50vw;
 }
 
 #para2 {

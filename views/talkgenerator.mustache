@@ -47,114 +47,46 @@
   })
 
   </script> -->
+<script>
+$(window).load(function() {
+let labelText = "click here to ";
+let labelArray = [
+  "make magic happen",
+  "unleash the unicorns",
+  "hit a bees nest with stick",
+  "use a concrete parachute",
+  "hit nail with glass hammer",
+  "invent the internet",
+  "turn on opaque light bulb",
+  "watch invisible TV",
+  "add your name to the do not call list",
+  "print the phonebook",
+  "invent gas powered cordless radio",
+  "put roller skates on dog",
+  "invent wooden chimney",
+  "invent leather guitar",
+  "install internet explorer",
+  "do a yahoo search",
+  "order book of the inetnet, volume 2",
+  "invent shrimp bubble gum",
+  "invent hand cranked electric skateboar",
+  "invent glass flyswatter",
+  "invent battery powered batteries",
+  "replace Iron Man with Dry Clean Man",
+  "invent McDonalds Sad Meals",
+  "ban prime numbers",
+  "invent gas powered solar panel",
+  "give 101%",
+  "organize a three man quartet",
+  "combine a giraffe and a koala",
+  "",
+];
+let randomLabelArray = labelArray[Math.floor(Math.random(1) * labelArray.length)];
+let labelOutput = labelText +" "+randomLabelArray;
+document.getElementById('label').innerHTML = labelOutput;
+})
+</script>
 
-  <script>
-
-      function renderHere() {
-        let firstName = document.getElementById('firstNameInput').value;
-        let lastName = document.getElementById('lastNameInput').value;
-        let topic = document.getElementById('topicInput').value;
-        let here = document.getElementById('hereInput').value;
-        let time = document.getElementById('timeInput').value;
-        let genderInput = document.getElementById('malefemaleInput');
-        let marriage = document.getElementById('marriedSingleInput');
-        let from = document.getElementById('fromInput').value;
-        let areaSwitch = document.getElementById('areaSwitch');
-        function determineGender(x){
-          let genderX = "monkey";
-          if (x.value == "male") {
-            genderX = "male";
-          }
-          else if (x.value == "female"){
-            genderX = "female";
-          }
-          return genderX;
-        }
-        let newGender = determineGender(genderInput);
-        console.log(newGender);
-
-        function determineTitle(x){
-          let titleX = "snake";
-          if (x.value == "male") {
-            titleX = "brother";
-          }
-          else if (x.value == "female"){
-            titleX = "sister";
-          }
-          return titleX;
-        }
-        let newTitle = determineTitle(genderInput);
-        console.log(newTitle);
-
-        function determineMaritalStatus(x){
-          let maritalX = "monkey";
-          if (x.value == "married") {
-            maritalX = "married";
-          }
-          else if (x.value == "single"){
-            maritalX = "single";
-          }
-          return maritalX;
-        }
-        let newMaritalStatus = determineMaritalStatus(marriage);
-        console.log(newMaritalStatus);
-
-        function determineWhy(x){
-          let whyX = "bananas";
-          if (x.value == "work") {
-            whyX = "work";
-          }
-          else if (x.value == "school"){
-            whyX = "school";
-          }
-          else if (x.value == "opportunities"){
-            whyX = "opportunities";
-          }
-          return whyX;
-        }
-        let newWhy = determineWhy(areaSwitch);
-        console.log(newWhy);
-
-
-          function determineMarital(x, y){
-            let pronoun = "undetermined";
-            let sentence = "undetermined";
-            if (x == "single") {
-              newStatus = "I";
-            }
-          else if (x == "married" && (y == "male")) {
-            newStatus = "My wife and I";
-          }
-          else if (x == "married" && (y == "female")) {
-            newStatus = "My husband and I";
-          }
-          return newStatus;
-        }
-        let marital =  determineMarital(newMaritalStatus, newGender);
-
-        console.log(marital);
-
-        function determinePronoun(x){
-          let pronoun = "undetermined";
-          if (x == "single") {
-            pronoun = "I";
-          }
-          else {
-            pronoun = "we";
-          }
-          return pronoun;
-        }
-        let pronoun = determinePronoun(newMaritalStatus);
-        console.log(pronoun);
-
-
-        let paragraph1 = "Good morning brothers and sisters. For those of you who don't know me, I'm "+firstName+" ."+" Or, if you prefer, you can call me "+newTitle+" "+lastName+". I grew up in "+ from +" but " + marital + " moved here to " + here +" and have been in the area for the past " + time + ". " + pronoun + " moved to the area because of "+ newWhy +","+ "  and moving here has been one of the best decisions that " + pronoun + " have ever made. I'm grateful to be here today, and have been asked to speak on the topic of "+topic+".";
-
-
-        document.getElementById('intro').innerHTML = paragraph1;
-      }
-
-  </script>
   <script>
   $(document).ready(function() {
     console.log("talking");
@@ -469,9 +401,22 @@ let cleaned_book = book_and_chapter.replace('amp;', '');
 let cleaned_book2 = book_and_chapter2.replace('amp;', '');
 let book_title = cleaned_book.replace(/[0-9]/g, '').replace('%', "");
 let book_title2 = cleaned_book2.replace(/[0-9]/g, '').replace('%', "");
+let prophetArray = [
+  "Nephi",
+  "Mosiah",
+  "Alma",
+  "Helaman",
+  "Jacob",
+  "Enos",
+  "Jarom",
+  "Mormon",
+  "Moroni",
+  "Ether",
+];
+let randomProphet = prophetArray[Math.floor(Math.random(1) * prophetArray.length)];
 function replaceBookTitle(x){
   if (x.length > 20) {
-    x = "Nephi";
+    x = randomProphet;
   }
   else{
     x = x;
@@ -521,22 +466,129 @@ let edited_number2 = chapterNmbr(chapter_number2);
   let cleanVerse2 = dirtyVerse2.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
 
 let paragraph2 = "As I started to think about the topic, the first question that came to my mind was simply,what is "+topic+"?"+" Naturally, I turned to the scriptures for help. In the Book of Mormon, "+edited_title+" gives us a little more insight into what "+topic+" is. In "+edited_title+" chapter "+edited_number+", verse " +cleanNumber+ " we read the following:";
+
 console.log(paragraph2);
 let paragraph3 = '"'+cleanVerse+'."';
+
+let paragraph11 = "Here, "+edited_title+" teaches us that "+topic+" means...(add your comments here)";
+
 let paragraph4 = "(now is a good place to share a personal experience.  Think of someone you know who is an example of "+topic+" or an experince where you learned something about"+topic+" )";
+
 let paragraph5 = "As I thought about the meaning of "+topic+" and how it relates to my experiences, the next question that came to mind was, 'why is "+topic+" truly important? Is it simply because I know it brings me blessings? As I pondered these questions, I again turned to the scriptures to try to understand the real importance of this principle, and how it can strengthen my life. The Book of Mormon helped to clarify and answer some of my questions for me.  In "+edited_title2+" chapter "+edited_number2+" verse "+cleanNumber2+" "+edited_title2+" says the following:";
+
 let paragraph6 = '"'+cleanVerse2+'."';
 console.log(edited_title2);
 console.log(edited_number2);
 console.log(cleanVerse2);
 console.log(cleanNumber2);
 
+let firstName = document.getElementById('firstNameInput').value;
+let lastName = document.getElementById('lastNameInput').value;
+let here = document.getElementById('hereInput').value;
+let time = document.getElementById('timeInput').value;
+let genderInput = document.getElementById('malefemaleInput');
+let marriage = document.getElementById('marriedSingleInput');
+let from = document.getElementById('fromInput').value;
+let areaSwitch = document.getElementById('areaSwitch');
+function determineGender(x){
+  let genderX = "monkey";
+  if (x.value == "male") {
+    genderX = "male";
+  }
+  else if (x.value == "female"){
+    genderX = "female";
+  }
+  return genderX;
+}
+let newGender = determineGender(genderInput);
+console.log(newGender);
+
+function determineTitle(x){
+  let titleX = "snake";
+  if (x.value == "male") {
+    titleX = "brother";
+  }
+  else if (x.value == "female"){
+    titleX = "sister";
+  }
+  return titleX;
+}
+let newTitle = determineTitle(genderInput);
+console.log(newTitle);
+
+function determineMaritalStatus(x){
+  let maritalX = "monkey";
+  if (x.value == "married") {
+    maritalX = "married";
+  }
+  else if (x.value == "single"){
+    maritalX = "single";
+  }
+  return maritalX;
+}
+let newMaritalStatus = determineMaritalStatus(marriage);
+console.log(newMaritalStatus);
+
+function determineWhy(x){
+  let whyX = "bananas";
+  if (x.value == "work") {
+    whyX = "work";
+  }
+  else if (x.value == "school"){
+    whyX = "school";
+  }
+  else if (x.value == "opportunities"){
+    whyX = "opportunities";
+  }
+  return whyX;
+}
+let newWhy = determineWhy(areaSwitch);
+console.log(newWhy);
+
+
+  function determineMarital(x, y){
+    let pronoun = "undetermined";
+    let sentence = "undetermined";
+    if (x == "single") {
+      newStatus = "I";
+    }
+  else if (x == "married" && (y == "male")) {
+    newStatus = "My wife and I";
+  }
+  else if (x == "married" && (y == "female")) {
+    newStatus = "My husband and I";
+  }
+  return newStatus;
+}
+let marital =  determineMarital(newMaritalStatus, newGender);
+
+console.log(marital);
+
+function determinePronoun(x){
+  let pronoun = "undetermined";
+  if (x == "single") {
+    pronoun = "I";
+  }
+  else {
+    pronoun = "we";
+  }
+  return pronoun;
+}
+let pronoun = determinePronoun(newMaritalStatus);
+console.log(pronoun);
+
+
+let paragraph1 = "Good morning brothers and sisters. For those of you who don't know me, I'm "+firstName+" ."+" Or, if you prefer, you can call me "+newTitle+" "+lastName+". I grew up in "+ from +" but " + marital + " moved here to " + here +" and have been in the area for the past " + time + ". " + pronoun + " moved to the area because of "+ newWhy +","+ "  and moving here has been one of the best decisions that " + pronoun + " have ever made. I'm grateful to be here today, and have been asked to speak on the topic of "+topic+".";
+
+
+document.getElementById('intro').innerHTML = paragraph1;
+
 document.getElementById('para5').innerHTML = paragraph2;
 document.getElementById('para6').innerHTML = paragraph3;
 document.getElementById('para7').innerHTML = paragraph4;
 document.getElementById('para9').innerHTML = paragraph5;
 document.getElementById('para10').innerHTML = paragraph6;
-
+document.getElementById('para11').innerHTML = paragraph11;
 
 }
 
@@ -547,8 +599,9 @@ document.getElementById('para10').innerHTML = paragraph6;
 
 <body id="body">
 
-<h3>First: Enter personal information and talk topic.</h3>
+
   <section class="search">
+    <h3>Step 1: Complete some basic information.</h3>
     <span>
     <label> First Name? </label>
     <input  placeholder="name" class="videoInput" type="text" id="firstNameInput">
@@ -595,19 +648,15 @@ document.getElementById('para10').innerHTML = paragraph6;
     <label> What is your talk topic? </label>
     <input placeholder="topic" class="videoInput" type="text" id="topicInput">
     </span>
-    <h3>Next: Add content to talk.  If you don't like the content, click "add content" again to generate different content for that section.</h3>
-    <span>
-      <label>Step 1: generate introduction</label>
-    <button class="submitButton2" type="submit" id="searchbtn" onclick=" renderHere();"  name="button">click here</button>
-    </span>
-    <span>
-      <label>Step 2: find scripture content</label>
-    <button class="submitButton2" type="submit" id="genconf" name="button">click here</button>
+    <h3>Step 2: <label id="label"></label><button class="submitButton2" type="submit" id="genconf" name="button">click here</button></h3>
+
+
   </span>
-  <span>
-    <label>Step 3: add content (section 1)</label>
+
+<h3>Step 3: click here to generate new talk:
     <button class="submitButton2" onclick="getscript();" type="submit" id="getscript" name="button">click here</button>
-  </span>
+  </h3>
+
 </section>
 
 
@@ -617,6 +666,7 @@ document.getElementById('para10').innerHTML = paragraph6;
 <p id="para4"></p>
 <p id="para5"></p>
 <p id="para6"></p>
+<p id="para11"></p>
 <p id="para7"></p>
 <p id="para8"></p>
 <p id="para9"></p>
