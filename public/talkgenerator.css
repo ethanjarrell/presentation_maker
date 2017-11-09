@@ -59,6 +59,10 @@ section {
   display: none;
 }
 
+#para8 {
+  display: none;
+}
+
 #chapter {
   display: none;
 }
@@ -68,5 +72,17 @@ section {
 }
 
 #verse {
+  display: none;
+}
+
+#chapter2 {
+  display: none;
+}
+
+#number2 {
+  display: none;
+}
+
+#verse2 {
   display: none;
 }

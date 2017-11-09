@@ -401,7 +401,7 @@
 
       fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
         if (response.status != 200) {
-          window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+          window.alert("Sorry, nothing matches those search terms.  Try a different word, or a similar terms.");
           return;
         }
 
@@ -435,29 +435,40 @@
 <script>
 function getscript () {
 let arrayScript = [];
+let arrayScript2 = [];
 let sentence = "";
 let topic = document.getElementById('topicInput').value;
 let str = document.getElementById('para2').innerHTML;
 let result = str.match( /[^\&!\?]+[\&!\?]+/g );
-
+for (var i = 0; i < result.length; i++) {
+  let sentence2 = result[i];
+if (sentence2.indexOf(topic) >= 0) {
+    arrayScript2.push(sentence2);
+  }
+  let random2 = arrayScript2[Math.floor(Math.random(1) * arrayScript2.length)];
+  document.getElementById('para8').innerHTML = random2;
+}
 for (var i = 0; i < result.length; i++) {
   let sentence = result[i];
   if (sentence.indexOf("is") >= 0) {
     arrayScript.push(sentence);
   }
-
   let random = arrayScript[Math.floor(Math.random(1) * arrayScript.length)];
   document.getElementById('para3').innerHTML = random;
 }
 let text = document.getElementById('para3').innerHTML;
+let text2 = document.getElementById('para8').innerHTML;
 
 let chapter = text.match( /[^\&!\?]+[\%!\?]+/g );
+let chapter2 = text2.match( /[^\&!\?]+[\%!\?]+/g );
 document.getElementById('chapter').innerHTML = chapter;
+document.getElementById('chapter2').innerHTML = chapter2;
 let book_and_chapter = document.getElementById('chapter').innerHTML;
-console.log("this is the book and chapter number", book_and_chapter);
+let book_and_chapter2 = document.getElementById('chapter2').innerHTML;
 let cleaned_book = book_and_chapter.replace('amp;', '');
-console.log("this is the cleaned book", cleaned_book);
+let cleaned_book2 = book_and_chapter2.replace('amp;', '');
 let book_title = cleaned_book.replace(/[0-9]/g, '').replace('%', "");
+let book_title2 = cleaned_book2.replace(/[0-9]/g, '').replace('%', "");
 function replaceBookTitle(x){
   if (x.length > 20) {
     x = "Nephi";
@@ -468,7 +479,7 @@ function replaceBookTitle(x){
   return x;
 }
 let edited_title = replaceBookTitle(book_title);
-console.log("This is the book title:", book_title);
+let edited_title2 = replaceBookTitle(book_title2);
 function firstLetter (x) {
   let a = x[0];
   if (a == 1 || 2 || 3 || 4){
@@ -479,9 +490,9 @@ function firstLetter (x) {
   return x;
 }
 let new_book = firstLetter(cleaned_book);
-
+let new_book2 = firstLetter(cleaned_book2);
 let chapter_number = new_book.replace(/\D/g,'');
-console.log("this is the chapter number", chapter_number);
+let chapter_number2 = new_book2.replace(/\D/g,'');
 function chapterNmbr (x) {
   if (x == ""){
     x = 3;
@@ -491,25 +502,40 @@ function chapterNmbr (x) {
   return x;
 }
 let edited_number = chapterNmbr(chapter_number);
-console.log("If it was blank, chapter number is", edited_number);
+let edited_number2 = chapterNmbr(chapter_number2);
   let number = text.match( /[^\[!\?]+[\]!\?]+/g );
+  let number2 = text2.match( /[^\[!\?]+[\]!\?]+/g );
   let verse = text.match( /[^\#!\?]+[\#!\?]+/g );
+  let verse2 = text2.match( /[^\#!\?]+[\#!\?]+/g );
   document.getElementById('number').innerHTML = number;
+  document.getElementById('number2').innerHTML = number2;
   let dirtyNumber = document.getElementById('number').innerHTML;
+  let dirtyNumber2 = document.getElementById('number2').innerHTML;
   let cleanNumber = dirtyNumber.replace(/\D/g,'');
+  let cleanNumber2 = dirtyNumber2.replace(/\D/g,'');
   document.getElementById('verse').innerHTML = verse;
+  document.getElementById('verse2').innerHTML = verse2;
   let dirtyVerse = document.getElementById('verse').innerHTML;
+  let dirtyVerse2 = document.getElementById('verse2').innerHTML;
   let cleanVerse = dirtyVerse.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
-console.log("this is apparently a clean verse", cleanVerse);
+  let cleanVerse2 = dirtyVerse2.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
 
 let paragraph2 = "As I started to think about the topic, the first question that came to my mind was simply,what is "+topic+"?"+" Naturally, I turned to the scriptures for help. In the Book of Mormon, "+edited_title+" gives us a little more insight into what "+topic+" is. In "+edited_title+" chapter "+edited_number+", verse " +cleanNumber+ " we read the following:";
 console.log(paragraph2);
 let paragraph3 = '"'+cleanVerse+'."';
 let paragraph4 = "(now is a good place to share a personal experience.  Think of someone you know who is an example of "+topic+" or an experince where you learned something about"+topic+" )";
+let paragraph5 = "As I thought about the meaning of "+topic+" and how it relates to my experiences, the next question that came to mind was, 'why is "+topic+" truly important? Is it simply because I know it brings me blessings? As I pondered these questions, I again turned to the scriptures to try to understand the real importance of this principle, and how it can strengthen my life. The Book of Mormon helped to clarify and answer some of my questions for me.  In "+edited_title2+" chapter "+edited_number2+" verse "+cleanNumber2+" "+edited_title2+" says the following:";
+let paragraph6 = '"'+cleanVerse2+'."';
+console.log(edited_title2);
+console.log(edited_number2);
+console.log(cleanVerse2);
+console.log(cleanNumber2);
 
 document.getElementById('para5').innerHTML = paragraph2;
 document.getElementById('para6').innerHTML = paragraph3;
 document.getElementById('para7').innerHTML = paragraph4;
+document.getElementById('para9').innerHTML = paragraph5;
+document.getElementById('para10').innerHTML = paragraph6;
 
 
 }
@@ -521,7 +547,7 @@ document.getElementById('para7').innerHTML = paragraph4;
 
 <body id="body">
 
-
+<h3>First: Enter personal information and talk topic.</h3>
   <section class="search">
     <span>
     <label> First Name? </label>
@@ -569,11 +595,19 @@ document.getElementById('para7').innerHTML = paragraph4;
     <label> What is your talk topic? </label>
     <input placeholder="topic" class="videoInput" type="text" id="topicInput">
     </span>
-<div class= "buttoncontainer">
-    <button class="submitButton2" type="submit" id="searchbtn" onclick=" renderHere();"  name="button">create introduction</button>
-    <button class="submitButton2" type="submit" id="genconf" name="button">find scriptures for talk</button>
-    <button class="submitButton2" onclick="getscript();" type="submit" id="getscript" name="button">add new paragraph with scripture</button>
-  </div>
+    <h3>Next: Add content to talk.  If you don't like the content, click "add content" again to generate different content for that section.</h3>
+    <span>
+      <label>Step 1: generate introduction</label>
+    <button class="submitButton2" type="submit" id="searchbtn" onclick=" renderHere();"  name="button">click here</button>
+    </span>
+    <span>
+      <label>Step 2: find scripture content</label>
+    <button class="submitButton2" type="submit" id="genconf" name="button">click here</button>
+  </span>
+  <span>
+    <label>Step 3: add content (section 1)</label>
+    <button class="submitButton2" onclick="getscript();" type="submit" id="getscript" name="button">click here</button>
+  </span>
 </section>
 
 
@@ -584,10 +618,15 @@ document.getElementById('para7').innerHTML = paragraph4;
 <p id="para5"></p>
 <p id="para6"></p>
 <p id="para7"></p>
+<p id="para8"></p>
+<p id="para9"></p>
+<p id="para10"></p>
 <p id="chapter"></p>
 <p id="number"></p>
 <p id="verse"></p>
-
+<p id="chapter2"></p>
+<p id="number2"></p>
+<p id="verse2"></p>
 
 </body>
 
