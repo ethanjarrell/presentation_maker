@@ -491,70 +491,60 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   align-items: center;
 }
 
-#bofmSearch {
-  outline: none;
+#vidoesrchbtn {
   cursor: pointer;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  font-size: 15px;
-  background: none;
-  border: none;
+  width: 150px;
   font-family: 'Volkhov', serif;
-  color: #3D4E6F;
   font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
+}
+
+#vidoesrchbtn:hover {
+  filter: brightness(190%);
+  border: black solid 1px;
+}
+
+#bofmSearch {
+  cursor: pointer;
+  width: 150px;
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
 }
 
 #bofmSearch:hover {
-  transform: scale(1.2);
-  border-bottom: solid #3D4E6F 2px;
+  filter: brightness(190%);
+  border: black solid 1px;
 }
 
 #genconf {
-  outline: none;
   cursor: pointer;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  font-size: 15px;
-  background: none;
-  border: none;
+  width: 150px;
   font-family: 'Volkhov', serif;
-  color: #3D4E6F;
   font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
 }
 
 #genconf:hover {
-  transform: scale(1.2);
-  border-bottom: solid #3D4E6F 2px;
+  filter: brightness(190%);
+  border: black solid 1px;
 }
 
 #byu {
-  outline: none;
   cursor: pointer;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  font-size: 15px;
-  background: none;
-  border: none;
+  width: 150px;
   font-family: 'Volkhov', serif;
-  color: #3D4E6F;
   font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
 }
 
 #byu:hover {
-  transform: scale(1.2);
-  border-bottom: solid #3D4E6F 2px;
+  filter: brightness(190%);
+  border: black solid 1px;
 }
 
 .scrollholder {
@@ -565,25 +555,17 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
 }
 
 #submitButton {
-  outline: none;
   cursor: pointer;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  text-align: center;
-  font-size: 15px;
-  background: none;
-  border: none;
+  width: 150px;
   font-family: 'Volkhov', serif;
-  color: #3D4E6F;
   font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
 }
 
 #submitButton:hover {
-  transform: scale(1.2);
-  border-bottom: solid #3D4E6F 2px;
+  filter: brightness(190%);
+  border: black solid 1px;
 }
 
 .searchInput {
