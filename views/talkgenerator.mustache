@@ -331,266 +331,779 @@ document.getElementById('label').innerHTML = labelOutput;
       });
 
 
+
+
+
       fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
         if (response.status != 200) {
           window.alert("Sorry, nothing matches those search terms.  Try a different word, or a similar terms.");
           return;
         }
 
+
+
         response.json().then(function(data) {
           let api = data;
+          let bookArray = [];
 
-          function renderapis() {
+          let standardWork = "";
+          let book = "";
+          let verses = "";
+          let verse_text = "";
+          let chapter = "";
+          let speaker = "";
+          let listener = "";
+          let newObj = {};
+          let objectArray = [];
 
-            return `${api.map(api =>
-          `
-          <div>
-          <p>&${api.book_and_verse_number}%</p>
-          <h3>#${api.verse_text}#&</h3>
-          </div>
-          `
-          )}
-          `
 
+            for (var i = 0; i < api.length; i++) {
+              let book = api[i].book_and_verse_number;
+
+             let verse_text = api[i].verse_text;
+              bookArray.push(book);
+              bookArray.push(verse_text);
+
+
+
+
+            for (var i = 0; i < bookArray.length; i++) {
+              let a = [];
+              function determineVerses(x) {
+                if (x[i].length > 0) {
+                let verses = x[i].match(/\d+/g);
+                x[i].match( verses );
+                a.push(verses);
+            }else{
+            }
+            return a;
+          }
+           verses = determineVerses(bookArray);
+
+
+
+               str = bookArray,
+                  matches = bookArray[i].match(/\d+$/),
+                  chapter;
+
+              if (matches) {
+                  chapter = matches[0];
+              }
+               book = bookArray[i].replace(/\d+$/, "");
+            let newBook = book.toLowerCase();
+            let newerBook = newBook.replace(/ /g,'');
+            let newChapter = parseInt(chapter);
+
+
+
+            switch (newerBook) {
+              case '1nephi' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case '2nephi' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'jacob' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'enos' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'jarom' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'omni' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'wordsofmormon' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'mosiah' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'alma' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'helaman' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case '3nephi' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case '4nephi' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'mormon' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'ether' :
+              standardWork = "The Book of Mormon";
+              break;
+
+              case 'moroni':
+              standardWork = "The Book of Mormon";
+              break;
+
+              standardWork = "The Book of Mormon";
+              break;
+
+              default:
+              standardWork = "The New Testament";
+            }
+
+
+            function determineSpeakerAndListener(a, b) {
+
+              let speaker = "";
+              let listener = "";
+
+              if (a == '1nephi') {
+                speaker = "Nephi";
+                listener = "his family";
+              }
+
+              else if (a == '2nephi') {
+                speaker = "Nephi";
+                listener = "his family";
+              }
+
+              else if (a == 'jacob') {
+                speaker = "Jacob";
+                listener = "readers of the Book of Mormon";
+              }
+
+              else if (a == 'enos') {
+                speaker = "Enos";
+                listener = "his posterity";
+              }
+
+              else if (a == 'jarom') {
+                speaker = "Jarom";
+                listener = "his family";
+              }
+
+              if (a == 'omni') {
+                speaker = "Omni";
+                listener = "future generations";
+              }
+
+              if (a == 'wordsofmormon') {
+                speaker = "Mormon";
+                listener = "those who would read the Book of Mormon";
+              }
+
+              else if ( a == 'mosiah' && ( b == 1 || 2 || 3 || 4 || 5 || 6 )) {
+              speaker = "King Benjamin";
+              listener = "His sons and his people"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 7 || 8 )) {
+              speaker = "Ammon";
+              listener = "The people of Limhi"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 9 || 10 )) {
+              speaker = "Zeniff";
+              listener = "His people"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 11 || 12 || 13 )) {
+              speaker = "Abinadi";
+              listener = "The wicked King Noah"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 14  )) {
+              speaker = "Isaiah";
+              listener = "A future generation"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 17 || 18 )) {
+              speaker = "Alma the Elder";
+              listener = "a small group of believers"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 21 )) {
+              speaker = "Ammon";
+              listener = "The people of Limhi"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 22 )) {
+              speaker = "Ammon";
+              listener = "his people"; }
+
+
+
+              else if ( a == 'mosiah' && ( b == 23 || 24 || 25 || 26 )) {
+              speaker = "Alma the Elder";
+              listener = "members of the Church"; }
+
+
+              else if ( a == 'mosiah' && ( b == 27 || 28 || 29 )) {
+              speaker = "Mosiah";
+              listener = "His sons"; }
+
+
+
+              else if ( a == 'alma' && ( b == 1 )) {
+              speaker = "Gideon";
+              listener = "His sons and his people"; }
+
+
+
+              else if ( a == 'alma' && ( b == 4 || 5 )) {
+              speaker = "Alma the Younger";
+              listener = "the people in their cities and villages throughout the land"; }
+
+
+
+              else if ( a == 'alma' && ( b == 6 || 7 )) {
+              speaker = "Alma the Younger";
+              listener = "the people in the land of Gideon"; }
+
+
+
+              else if ( a == 'alma' && ( b == 8 )) {
+              speaker = "Alma the Younger";
+              listener = "Amulek and the people in the land of Ammonihah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 9 || 10 )) {
+              speaker = "Alma the Younger";
+              listener = "Amulek and the people in the land of Ammonihah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 11 )) {
+              speaker = "Amulek";
+              listener = "Zeezrom"; }
+
+
+
+              else if ( a == 'alma' && ( b == 12 )) {
+              speaker = "Alma the Younger";
+              listener = "Zeezrom"; }
+
+
+
+              else if ( a == 'alma' && ( b == 13 )) {
+              speaker = "Alma the Younger and Amulek";
+              listener = "the people in the land of Ammonihah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 14 )) {
+              speaker = "Alma the Younger and Amulek";
+              listener = "the people in the land of Ammonihah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 15 )) {
+              speaker = "Alma the Younger and Amulek";
+              listener = "Zeezrom and the Church in Sidom"; }
+
+
+
+              else if ( a == 'alma' && ( b == 16 )) {
+              speaker = "Alma the Younger and Amulek";
+              listener = "the Church"; }
+
+
+
+              else if ( a == 'alma' && ( b == 17 )) {
+              speaker = "Ammon";
+              listener = "the Lamanites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 18 )) {
+              speaker = "Ammon";
+              listener = "King Lamoni"; }
+
+
+
+              else if ( a == 'alma' && ( b == 19 )) {
+              speaker = "Ammon";
+              listener = "King Lamoni and the Lamanites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 20 )) {
+              speaker = "Ammon";
+              listener = "Lamoni and Lamoni's Father"; }
+
+
+
+              else if ( a == 'alma' && ( b == 21 )) {
+              speaker = "Aaron";
+              listener = "the Amalekites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 22 )) {
+              speaker = "Ammon";
+              listener = "Lamoni's Father"; }
+
+
+
+              else if ( a == 'alma' && ( b == 23 )) {
+              speaker = "The Sons of Mosiah";
+              listener = "the Anti-Nephi-Lehies"; }
+
+
+
+              else if ( a == 'alma' && ( b == 24 )) {
+              speaker = "The Sons of Mosiah";
+              listener = "the Anti-Nephi-Lehies"; }
+
+
+
+              else if ( a == 'alma' && ( b == 26 )) {
+              speaker = "Ammon";
+              listener = "his brethren"; }
+
+
+
+              else if ( a == 'alma' && ( b == 27 )) {
+              speaker = "Ammon";
+              listener = "Alma and the Son's of Mosiah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 29 )) {
+              speaker = "Alma";
+              listener = "the Nephites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 30 )) {
+              speaker = "Alma";
+              listener = "Korihor"; }
+
+
+
+              else if ( a == 'alma' && ( b == 31 )) {
+              speaker = "Alma";
+              listener = "the Zoramites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 32 )) {
+              speaker = "Alma";
+              listener = "the poorer segment of the Zoramites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 33 )) {
+              speaker = "Zenos and Zenock";
+              listener = "a future generation"; }
+
+
+
+              else if ( a == 'alma' && ( b == 34 )) {
+              speaker = "Amulek";
+              listener = "the Church"; }
+
+
+
+              else if ( a == 'alma' && ( b == 35 )) {
+              speaker = "Alma";
+              listener = "the people of Zarahemla"; }
+
+
+
+              else if ( a == 'alma' && ( b == 36 )) {
+              speaker = "Alma";
+              listener = "his son, Helaman"; }
+
+
+
+              else if ( a == 'alma' && ( b == 37 )) {
+              speaker = "Alma";
+              listener = "his son, Helaman"; }
+
+
+
+              else if ( a == 'alma' && ( b == 38 )) {
+              speaker = "Alma";
+              listener = "his son, Shiblon"; }
+
+
+
+              else if ( a == 'alma' && ( b == 39 || 40 || 41 || 42 )) {
+              speaker = "Alma";
+              listener = "his son, Corianton"; }
+
+
+
+              else if ( a == 'alma' && ( b == 43 )) {
+              speaker = "Alma and his sons";
+              listener = "the Zoramites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 44 )) {
+              speaker = "Captain Moroni";
+              listener = "Zerahemnah"; }
+
+
+
+              else if ( a == 'alma' && ( b == 45 )) {
+              speaker = "Helaman";
+              listener = "his people"; }
+
+
+
+              else if ( a == 'alma' && ( b == 46 )) {
+              speaker = "Captain Moroni";
+              listener = "the people of Zarahemla"; }
+
+
+
+              else if ( a == 'alma' && ( b == 48 )) {
+              speaker = "Captain Moroni";
+              listener = "the people of Zarahemla"; }
+
+
+
+              else if ( a == 'alma' && ( b == 50 )) {
+              speaker = "Captain Moroni";
+              listener = "the Nephites"; }
+
+
+
+              else if ( a == 'alma' && ( b == 51 )) {
+              speaker = "Captain Moroni";
+              listener = "Pahoran and the king men"; }
+
+
+
+              else if ( a == 'alma' && ( b == 52 )) {
+              speaker = "Captain Moroni";
+              listener = "his armies"; }
+
+
+
+              else if ( a == 'alma' && ( b == 53 )) {
+              speaker = "Helaman";
+              listener = "the 2000 stripling warriors"; }
+
+
+
+              else if ( a == 'alma' && ( b == 54 )) {
+              speaker = "Captain Moroni";
+              listener = "Ammoron"; }
+
+
+
+              else if ( a == 'alma' && ( b == 55 )) {
+              speaker = "Captain Moroni";
+              listener = "his army and the Lamanties"; }
+
+
+
+              else if ( a == 'alma' && ( b == 56 || 57 )) {
+              speaker = "Helaman";
+              listener = "Moroni"; }
+
+
+
+              else if ( a == 'alma' && ( b == 59 || 60 || 61 || 62 )) {
+              speaker = "Captain Moroni";
+              listener = "Pahoran"; }
+
+
+              else if ( a == 'helaman' && ( b == 4 || 5 || 6 || 7 || 8 )) {
+              speaker = "the missionaries, Nephi and Lehi";
+              listener = "the people of Nephi"; }
+
+
+              else if ( a == 'helaman' && ( b == 9 || 10 || 11 || 12 )) {
+              speaker = "Nephi";
+              listener = "the people of Nephi"; }
+
+
+              else if ( a == 'helaman' && ( b == 13 || 14 || 15 )) {
+              speaker = "Samuel the Lamanite";
+              listener = "the Nephites"; }
+
+
+              else if ( a == 'helaman' && ( b == 16 )) {
+              speaker = "Nephi";
+              listener = "the people of Nephi"; }
+
+
+              else if ( a == '3nephi' && ( b == 1)) {
+              speaker = "Nephi";
+              listener = "the Nephites"; }
+
+
+              else if ( a == '3nephi' && ( b == 9 || 10 || 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 25 || 26)) {
+              speaker = "Jesus Christ";
+              listener = "the Nephites"; }
+
+
+              else if ( a == '4nephi' && ( b == 1 )) {
+              speaker = "Mormon";
+              listener = "a future generation"; }
+
+
+              else if ( a == 'mormon' && ( b == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 )) {
+              speaker = "Mormon";
+              listener = "a future generation"; }
+
+
+              else {
+                speaker = "the main figure here";
+                listener = "the people";
+              }
+
+              return [speaker, listener];
+}
+let newBook_andChapter = determineSpeakerAndListener(newerBook, newChapter);
+ speaker = newBook_andChapter[0];
+ listener = newBook_andChapter[1];
+
+
+ newObj =
+   {"standard_works" : standardWork,
+   "book" : book,
+   "verses" : verses,
+   "verse_text" : verse_text,
+   "chapter" : chapter,
+   "speaker" : speaker,
+   "listener" : listener,};
+
+
+ function pushToArray(x, y) {
+
+   if (typeof{x} === 'object') {
+     y.push(x);
+   }
+   return y;
+ }
+ objectArray = pushToArray(newObj, objectArray);
+
+}
           }
 
-          let markup = `${renderapis()}`;
-          document.getElementById('para2').innerHTML = markup;
-          alert("I found some sciptures for you.  Click on the add new paragagraph to generate the next part of your talk.")
+          let topic = document.getElementById('topicInput').value;
 
-        })
-      })
+
+
+          let key = "";
+          function checkForValue(json, value) {
+            for (key in json) {
+        if (typeof (json[key]) === "object") {
+            return checkForValue(json[key], value);
+        } else if (json[key] === value) {
+            return true;
+            key = value;
+        }
     }
-  })
+    return key;
+}
+let myValue = checkForValue(mapObj, topic);
+
+
+          var scripture1 = objectArray[Math.floor(Math.random() * objectArray.length)];
+
+
+          let verse1 = scripture1.verse_text;
+
+          var scripture2 = objectArray[Math.floor(Math.random() * objectArray.length)];
+
+          let verse2 = scripture2.verse_text;
+          var scripture3 = objectArray[Math.floor(Math.random() * objectArray.length)];
+
+          let verse3 = scripture3.verse_text;
+          var scripture4 = objectArray[Math.floor(Math.random() * objectArray.length)];
+
+          let verse4 = scripture4.verse_text;
+          var scripture5 = objectArray[Math.floor(Math.random() * objectArray.length)];
+
+          let verse5 = scripture5.verse_text;
+          let test_str = "";
+          let start_pos = "";
+          let end_pos = "";
+          let text_to_get = "";
+
+          function getPhrase1 (x, y) {
+
+            if(x.includes(key) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key) - 10;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos,end_pos)
+
+          }else if (x.includes(topic) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic) - 10;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos,end_pos)
+
+          } else {
+            console.log("NONONONONONONONO");
+          }
+            return text_to_get;
+          }
+          let phrase1 = getPhrase1(verse1, verse1);
+
+
+          function getPhrase2 (x, y) {
+
+            if(x.includes(key) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key) - 10;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos,end_pos)
+
+          }else if (x.includes(topic) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic) - 10;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos,end_pos)
+
+          } else {
+            console.log("NONONONONONONONO");
+          }
+            return text_to_get;
+          }
+          let phrase2 = getPhrase2(verse2, verse2);
+
+
+
+          function getPhrase3 (x, y) {
+
+            if(x.includes(key) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key) - 10;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos,end_pos)
+
+          }else if (x.includes(topic) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic) - 10;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos,end_pos)
+
+          } else {
+            console.log("NONONONONONONONO");
+          }
+            return text_to_get;
+          }
+          let phrase3 = getPhrase3(verse3, verse3);
+
+
+          let markup =
+            `<p>As I started to ponder the topic of ${topic}, the first question that came to my mind was simply, 'what is ${topic}?' To help me understand more about the topic, and what it really means, I turned to the Scriptures for help.  In ${scripture1.standard_works} I found a passage where ${scripture1.speaker} is addressing ${scripture1.listener}, and explains the significance of ${topic}. In ${scripture1.book}, chapter ${scripture1.chapter} verse ${scripture1.verses} he says:
+            </p>
+            <p>
+              ${verse1}.
+            </p>
+            <p>
+            I really love this passage.  One of the things that stood out to me, is the way ${scripture1.speaker} describes ${topic}:
+            </p>
+            <p>
+            "${phrase1}."
+            </p>
+            <p>
+            From this scripture, it seems like ${scripture1.speaker} is trying to tell us that the meaning of ${topic} is...( insert your own definition here.)
+            </p>
+            <p>
+            (this is a good place for a personal experience you've had that deals with ${topic})
+            </p>
+            <p>
+            As I thought about this, what I really wanted to know is why ${topic} is really important.  Is it simply because of the blessings associated with it?  Or is it because of the transformation it can bring to my character?  For answers to these questions, I again turned to the scriptures, and found some answers in ${scripture2.standard_works}.  In the book of ${scripture2.book}, ${scripture2.speaker} provides some insight while speaking with ${scripture2.listener}. In chapter ${scripture2.chapter}, verse ${scripture2.verses}, we read the following:
+            </p>
+            <p>
+            ${verse2}
+            </p>
+            <p>
+            Now, I just want to re-read that first part.
+            "${phrase2}"
+            </p>
+            <p>
+            To me, it's significant that ${scripture2.speaker} seems to draw a connection between ${topic} and ${key}. And that got me thinking.  How can I be more ${topic} minded?  What can I do to do better?  Maybe, as ${scripture2.speaker} says, ${key} really is the key.
+            </p>
+            <p>
+            In order to find ways that I could be more ${topic} minded, I turned to the book of ${scripture3.book}, in ${scripture3.standard_works}, chapter ${scripture3.chapter}, verse ${scripture3.verses} for help.  I was reminded of the way ${scripture3.speaker} described how we can have more ${topic}, as he was speaking with ${scripture3.listener}.  Here's what he says:
+            </p>
+            <p>
+            ${verse3}
+            </p>
+            <p>
+            Notice how ${scripture3.speaker} says, "${phrase3}", again, drawing a connection between ${topic} and ${key}.
+            </p>
+            `
+
+
+
+
+
+          document.getElementById('para1').innerHTML = markup;
+
+
+
+
+
+          //
+          //
+          // console.log(newObj);
+          // let paragraph2 = "As I was preparing to speak today"
+
+
+
+
+})
+
+
+
+})
+}
+})
+
+
+
+
+
 
   </script>
 <script>
-function getscript () {
-let arrayScript = [];
-let arrayScript2 = [];
-let sentence = "";
-let topic = document.getElementById('topicInput').value;
-let str = document.getElementById('para2').innerHTML;
-let result = str.match( /[^\&!\?]+[\&!\?]+/g );
-for (var i = 0; i < result.length; i++) {
-  let sentence2 = result[i];
-if (sentence2.indexOf(topic) >= 0) {
-    arrayScript2.push(sentence2);
-  }
-  let random2 = arrayScript2[Math.floor(Math.random(1) * arrayScript2.length)];
-  document.getElementById('para8').innerHTML = random2;
-}
-for (var i = 0; i < result.length; i++) {
-  let sentence = result[i];
-  if (sentence.indexOf("is") >= 0) {
-    arrayScript.push(sentence);
-  }
-  let random = arrayScript[Math.floor(Math.random(1) * arrayScript.length)];
-  document.getElementById('para3').innerHTML = random;
-}
-let text = document.getElementById('para3').innerHTML;
-let text2 = document.getElementById('para8').innerHTML;
-
-let chapter = text.match( /[^\&!\?]+[\%!\?]+/g );
-let chapter2 = text2.match( /[^\&!\?]+[\%!\?]+/g );
-document.getElementById('chapter').innerHTML = chapter;
-document.getElementById('chapter2').innerHTML = chapter2;
-let book_and_chapter = document.getElementById('chapter').innerHTML;
-let book_and_chapter2 = document.getElementById('chapter2').innerHTML;
-let cleaned_book = book_and_chapter.replace('amp;', '');
-let cleaned_book2 = book_and_chapter2.replace('amp;', '');
-let book_title = cleaned_book.replace(/[0-9]/g, '').replace('%', "");
-let book_title2 = cleaned_book2.replace(/[0-9]/g, '').replace('%', "");
-let prophetArray = [
-  "Nephi",
-  "Mosiah",
-  "Alma",
-  "Helaman",
-  "Jacob",
-  "Enos",
-  "Jarom",
-  "Mormon",
-  "Moroni",
-  "Ether",
-];
-let randomProphet = prophetArray[Math.floor(Math.random(1) * prophetArray.length)];
-function replaceBookTitle(x){
-  if (x.length > 20) {
-    x = randomProphet;
-  }
-  else{
-    x = x;
-  }
-  return x;
-}
-let edited_title = replaceBookTitle(book_title);
-let edited_title2 = replaceBookTitle(book_title2);
-function firstLetter (x) {
-  let a = x[0];
-  if (a == 1 || 2 || 3 || 4){
-    a = "";
-  }else{
-    a = a;
-  }
-  return x;
-}
-let new_book = firstLetter(cleaned_book);
-let new_book2 = firstLetter(cleaned_book2);
-let chapter_number = new_book.replace(/\D/g,'');
-let chapter_number2 = new_book2.replace(/\D/g,'');
-function chapterNmbr (x) {
-  if (x == ""){
-    x = 3;
-  }else {
-    x = x;
-  }
-  return x;
-}
-let edited_number = chapterNmbr(chapter_number);
-let edited_number2 = chapterNmbr(chapter_number2);
-  let number = text.match( /[^\[!\?]+[\]!\?]+/g );
-  let number2 = text2.match( /[^\[!\?]+[\]!\?]+/g );
-  let verse = text.match( /[^\#!\?]+[\#!\?]+/g );
-  let verse2 = text2.match( /[^\#!\?]+[\#!\?]+/g );
-  document.getElementById('number').innerHTML = number;
-  document.getElementById('number2').innerHTML = number2;
-  let dirtyNumber = document.getElementById('number').innerHTML;
-  let dirtyNumber2 = document.getElementById('number2').innerHTML;
-  let cleanNumber = dirtyNumber.replace(/\D/g,'');
-  let cleanNumber2 = dirtyNumber2.replace(/\D/g,'');
-  document.getElementById('verse').innerHTML = verse;
-  document.getElementById('verse2').innerHTML = verse2;
-  let dirtyVerse = document.getElementById('verse').innerHTML;
-  let dirtyVerse2 = document.getElementById('verse2').innerHTML;
-  let cleanVerse = dirtyVerse.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
-  let cleanVerse2 = dirtyVerse2.replace('"amp;%','').replace('%','').replace('<p>','').replace('</p>','').replace('<h3>','').replace('#','').replace('↵','').replace('amp','').replace(';','').replace('[', '').replace(']', ')');
-
-let paragraph2 = "As I started to think about the topic, the first question that came to my mind was simply,what is "+topic+"?"+" Naturally, I turned to the scriptures for help. In the Book of Mormon, "+edited_title+" gives us a little more insight into what "+topic+" is. In "+edited_title+" chapter "+edited_number+", verse " +cleanNumber+ " we read the following:";
-
-console.log(paragraph2);
-let paragraph3 = '"'+cleanVerse+'."';
-
-let paragraph11 = "Here, "+edited_title+" teaches us that "+topic+" means...(add your comments here)";
-
-let paragraph4 = "(now is a good place to share a personal experience.  Think of someone you know who is an example of "+topic+" or an experince where you learned something about"+topic+" )";
-
-let paragraph5 = "As I thought about the meaning of "+topic+" and how it relates to my experiences, the next question that came to mind was, 'why is "+topic+" truly important? Is it simply because I know it brings me blessings? As I pondered these questions, I again turned to the scriptures to try to understand the real importance of this principle, and how it can strengthen my life. The Book of Mormon helped to clarify and answer some of my questions for me.  In "+edited_title2+" chapter "+edited_number2+" verse "+cleanNumber2+" "+edited_title2+" says the following:";
-
-let paragraph6 = '"'+cleanVerse2+'."';
-console.log(edited_title2);
-console.log(edited_number2);
-console.log(cleanVerse2);
-console.log(cleanNumber2);
-
-let firstName = document.getElementById('firstNameInput').value;
-let lastName = document.getElementById('lastNameInput').value;
-let here = document.getElementById('hereInput').value;
-let time = document.getElementById('timeInput').value;
-let genderInput = document.getElementById('malefemaleInput');
-let marriage = document.getElementById('marriedSingleInput');
-let from = document.getElementById('fromInput').value;
-let areaSwitch = document.getElementById('areaSwitch');
-function determineGender(x){
-  let genderX = "monkey";
-  if (x.value == "male") {
-    genderX = "male";
-  }
-  else if (x.value == "female"){
-    genderX = "female";
-  }
-  return genderX;
-}
-let newGender = determineGender(genderInput);
-console.log(newGender);
-
-function determineTitle(x){
-  let titleX = "snake";
-  if (x.value == "male") {
-    titleX = "brother";
-  }
-  else if (x.value == "female"){
-    titleX = "sister";
-  }
-  return titleX;
-}
-let newTitle = determineTitle(genderInput);
-console.log(newTitle);
-
-function determineMaritalStatus(x){
-  let maritalX = "monkey";
-  if (x.value == "married") {
-    maritalX = "married";
-  }
-  else if (x.value == "single"){
-    maritalX = "single";
-  }
-  return maritalX;
-}
-let newMaritalStatus = determineMaritalStatus(marriage);
-console.log(newMaritalStatus);
-
-function determineWhy(x){
-  let whyX = "bananas";
-  if (x.value == "work") {
-    whyX = "work";
-  }
-  else if (x.value == "school"){
-    whyX = "school";
-  }
-  else if (x.value == "opportunities"){
-    whyX = "opportunities";
-  }
-  return whyX;
-}
-let newWhy = determineWhy(areaSwitch);
-console.log(newWhy);
 
 
-  function determineMarital(x, y){
-    let pronoun = "undetermined";
-    let sentence = "undetermined";
-    if (x == "single") {
-      newStatus = "I";
-    }
-  else if (x == "married" && (y == "male")) {
-    newStatus = "My wife and I";
-  }
-  else if (x == "married" && (y == "female")) {
-    newStatus = "My husband and I";
-  }
-  return newStatus;
-}
-let marital =  determineMarital(newMaritalStatus, newGender);
+//
+//
+// document.getElementById('intro').innerHTML = paragraph1;
+//
+// document.getElementById('para5').innerHTML = paragraph2;
+// document.getElementById('para6').innerHTML = paragraph3;
+// document.getElementById('para7').innerHTML = paragraph4;
+// document.getElementById('para9').innerHTML = paragraph5;
+// document.getElementById('para10').innerHTML = paragraph6;
+// document.getElementById('para11').innerHTML = paragraph11;
 
-console.log(marital);
-
-function determinePronoun(x){
-  let pronoun = "undetermined";
-  if (x == "single") {
-    pronoun = "I";
-  }
-  else {
-    pronoun = "we";
-  }
-  return pronoun;
-}
-let pronoun = determinePronoun(newMaritalStatus);
-console.log(pronoun);
-
-
-let paragraph1 = "Good morning brothers and sisters. For those of you who don't know me, I'm "+firstName+" ."+" Or, if you prefer, you can call me "+newTitle+" "+lastName+". I grew up in "+ from +" but " + marital + " moved here to " + here +" and have been in the area for the past " + time + ". " + pronoun + " moved to the area because of "+ newWhy +","+ "  and moving here has been one of the best decisions that " + pronoun + " have ever made. I'm grateful to be here today, and have been asked to speak on the topic of "+topic+".";
-
-
-document.getElementById('intro').innerHTML = paragraph1;
-
-document.getElementById('para5').innerHTML = paragraph2;
-document.getElementById('para6').innerHTML = paragraph3;
-document.getElementById('para7').innerHTML = paragraph4;
-document.getElementById('para9').innerHTML = paragraph5;
-document.getElementById('para10').innerHTML = paragraph6;
-document.getElementById('para11').innerHTML = paragraph11;
-
-}
+// }
 
 </script>
 
@@ -601,72 +1114,21 @@ document.getElementById('para11').innerHTML = paragraph11;
 
 
   <section class="search">
-    <h3>Step 1: Complete some basic information.</h3>
-    <span>
-    <label> First Name? </label>
-    <input  placeholder="name" class="videoInput" type="text" id="firstNameInput">
-  </span>
-  <span>
-  <label> Last Name? </label>
-  <input  placeholder="name" class="videoInput" type="text" id="lastNameInput">
-</span>
-  <span>
-  <label> What city are you from originally? </label>
-    <input placeholder="from" class="videoInput" type="text" id="fromInput">
-    </span>
-    <span>
-    <label> What city or ward do you live in now? </label>
-    <input placeholder="here" class="videoInput" type="text" id="hereInput">
-    </span>
-    <span>
-    <label> How long have you lived here? </label>
-    <input placeholder="time" class="videoInput" type="text" id="timeInput">
-    </span>
-    <span>
-    <label> Are you male or female? </label>
-    <select placeholder="topic" class="videoInput" type="text" id="malefemaleInput">
-      <option value="male" id="male">male</option>
-      <option value="female" id="female">female</option>
-    </select>
-    </span>
-    <span>
-    <label> Are you married or single? </label>
-    <select placeholder="topic" class="videoInput" type="text" id="marriedSingleInput">
-      <option value="single" id="single">single</option>
-      <option value="married" id="married">married</option>
-    </select>
-    </span>
-    <span>
-    <label> What brought you to this area? </label>
-    <select placeholder="topic" class="videoInput" type="text" id="areaSwitch">
-      <option value="work" id="work">work</option>
-      <option value="school" id="school">school</option>
-      <option value="opportunities" id="opportunities">other opportunities</option>
-    </select>
-    </span>
-    <span>
     <label> What is your talk topic? </label>
     <input placeholder="topic" class="videoInput" type="text" id="topicInput">
     </span>
-    <h3>Step 2: <label id="label"></label><button class="submitButton2" type="submit" id="genconf" name="button">click here</button></h3>
-
-
-  </span>
-
-<h3>Step 3: click here to generate new talk:
-    <button class="submitButton2" onclick="getscript();" type="submit" id="getscript" name="button">click here</button>
-  </h3>
+    <h3>Generate Talk -  <label id="label"></label><button class="submitButton2" type="submit" id="genconf" name="button">click here</button></h3>
 
 </section>
 
 
 <p id="intro"></p>
+<p id="para1"></p>
 <p id="para2"></p>
 <p id="para3"></p>
 <p id="para4"></p>
 <p id="para5"></p>
 <p id="para6"></p>
-<p id="para11"></p>
 <p id="para7"></p>
 <p id="para8"></p>
 <p id="para9"></p>
