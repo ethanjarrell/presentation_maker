@@ -326,7 +326,7 @@ document.getElementById('label').innerHTML = labelOutput;
         "miracle": "miracles",
       };
       var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
-      str = str.replace(re, function(matched) {
+      keyWord = str.replace(re, function(matched) {
         return mapObj[matched.toLowerCase()];
       });
 
@@ -334,16 +334,19 @@ document.getElementById('label').innerHTML = labelOutput;
 
 
 
-      fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+
+      fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + keyWord).then(function(response) {
         if (response.status != 200) {
           window.alert("Sorry, nothing matches those search terms.  Try a different word, or a similar terms.");
-          return;
+          return ;
         }
 
 
 
         response.json().then(function(data) {
           let api = data;
+
+
           let bookArray = [];
 
           let standardWork = "";
@@ -925,6 +928,385 @@ let newBook_andChapter = determineSpeakerAndListener(newerBook, newChapter);
 }
 let myValue = checkForValue(mapObj, topic);
 
+let wordArray = [];
+
+function determineWordKeys(x) {
+  let wordKeys = [];
+  let toDo = [];
+  let blessings = [];
+  if (x == "agency") {
+    wordKeys = ["choice", "responsibility", "accountability", "choose", "good and evil", "freedom", "free"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "atonement") {
+    wordKeys = ["suffering", "death", "resurrection", "last supper", "price", "cost", "die", "succor", "sin", "repent", "repentance", "He loves"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "baptism") {
+    wordKeys = ["fulfill all", "gateway", "name of Christ", "covenants", "remember", "born again", "washed away", "die", "succor", "sin", "repent"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "bookofmormon") {
+    wordKeys = ["testament", "keystone", "Joseph Smith", "stick of Joseph", "closer to Jesus Christ", "the Bible", "truth", "true", "revelation"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "charity") {
+    wordKeys = ["love", "giving", "service", "selfless", "caring", "empathy", "kindness", "those in need", "stranger", "neighbor"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "creation") {
+    wordKeys = ["garden", "image", "everything", "heaven", "probation", "time to prepare", "test", "plan of salvation"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "church") {
+    wordKeys = ["meetings", "sacrament", "restored", "Christ's Church", "Church of God", "Church of Christ", "apostles and prophets", "organized", "organization", "built"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+  else if (x == "doctrinecovenants") {
+    wordKeys = ["Church history", "pioneers", "Joseph Smith", "revelation", "modern", "revealed", "Nauvoo"];
+    toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+    blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+  }
+
+    else if (x == "god") {
+      wordKeys = ["Father in Heaven", "Heavenly Father", "earthly Father", "family", "loves us", "plan of salvation", "council in heaven", "Father"];
+      toDo = ["prayer", "fasting", "study", "faith", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "faith") {
+      wordKeys = ["belief", "hope", "knowledge", "without seeing", "believing", "believe", "steadfast", "choice", "neighbor"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "holyghost") {
+      wordKeys = ["promptings", "revelation", "comfort", "comforter", "listen", "peace", "voice", "influence"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "honesty") {
+      wordKeys = ["lie", "cheat", "steal", "deceit", "pride", "humility", "truth", "righteous"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "obedience") {
+      wordKeys = ["follow", "submission", "submissiveness", "humility", "love", "example", "sheep"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "priesthood") {
+      wordKeys = ["keys", "authority", "blessings", "power", "righteous", "righteousness", "service", "organization", "restoration"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "prophets") {
+      wordKeys = ["mouthpiece", "messengers", "teachings", "scriptures", "modern", "word of God", "obedient", "Jesus Christ", "teach"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "repentence") {
+      wordKeys = ["sin", "sorrow", "guilt", "remorse", "honesty", "honest", "admit", "remember", "atonement", "come back"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "sacrament") {
+      wordKeys = ["covenants", "renew", "renewal", "feed the hungry", "Jesus Christ", "atonement", "Atonement", "remember", "His name"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "scriptures") {
+      wordKeys = ["word of God", "study", "record", "Spirit", "revelation", "revealed", "Holy Ghost", "Jesus Christ", "restoration"];
+      toDo = ["prayer", "fasting", "belief", "enduring", "patience", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "service") {
+      wordKeys = ["work", "labor", "kindness", "neighbor", "love", "random acts", "feed the hungry", "widows", "widow"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "thefall") {
+      wordKeys = ["sin", "cut off", "transgression", "obedience", "lucifer", "decieve", "have joy", "probation", "worship", "plan of salvation"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "jesus") {
+      wordKeys = ["kindness", "serve", "service", "love", "atonement", "Atonement", "His teachings", "Heavenly Father", "Father"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "wordofwisdom") {
+      wordKeys = ["health", "spirit", "promptings", "Holy Ghost", "serve", "obedient", "obedience", "follow", "obey"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "testimony") {
+      wordKeys = ["faith", "belief", "knowledge", "witness", "Holy Ghost", "truth", "true", "know", "hope"];
+      toDo = ["prayer", "fasting", "study", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "marriage") {
+      wordKeys = ["eternal life", "companion", "temple", "work", "service", "happiness", "lasting", "love", "eternal"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "heaven") {
+      wordKeys = ["eternal life", "live with", "Father", "knowledge", "faith", "endure", "service", "love", "restoration"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+    else if (x == "missionary") {
+      wordKeys = ["teach", "preach", "fellowship", "fellowshipping", "friends", "example", "invite", "prepare", "preparation", "love", "Jesus Christ"];
+      toDo = ["prayer", "fasting", "study", "belief", "enduring", "patience", "scripture study", "studying the scriptures", "service", "charity", "love", "the atonement", "righteousness"];
+      blessings = ["eternal life", "draw closer to", "peace", "happiness", "grow", "become more", "more like Christ", "become more like", "happier", "return to live", "come to know God", "relationship with our", "blessed", "will be blessed"];
+    }
+
+
+  return [wordKeys, toDo, blessings];
+
+}
+wordArray = determineWordKeys(keyWord);
+wordKeys = wordArray[0];
+toDo = wordArray[1];
+blessings = wordArray[2];
+
+
+
+
+
+
+fetch('https://presentation-maker.herokuapp.com/api/genconf/' + keyWord).then(function(response) {
+  if (response.status != 200) {
+    window.alert("Sorry, nothing matches those search terms.  Try a different word, or a similar terms.");
+    return ;
+  }
+
+  let author = "";
+  let position = "";
+  let talk_title = "";
+  let year = "";
+  let paragraph11 = "";
+  let paragraph21 = "";
+  let paragraph31 = "";
+  let paragraph41 = "";
+  let paragraph51 = "";
+  let paragraph61 = "";
+  let paragraph71 = "";
+  let paragraph81 = "";
+  let paragraph91 = "";
+  let paragraph101 = "";
+  let paragraph12 = "";
+  let paragraph22 = "";
+  let paragraph32 = "";
+  let paragraph42 = "";
+  let paragraph52 = "";
+  let paragraph62 = "";
+  let paragraph72 = "";
+  let paragraph82 = "";
+  let paragraph92 = "";
+  let paragraph102 = "";
+  let paragraph13 = "";
+  let paragraph23 = "";
+  let paragraph33 = "";
+  let paragraph43 = "";
+  let paragraph53 = "";
+  let paragraph63 = "";
+  let paragraph73 = "";
+  let paragraph83 = "";
+  let paragraph93 = "";
+  let paragraph103 = "";
+  let paragraph14 = "";
+  let paragraph24 = "";
+  let paragraph34 = "";
+  let paragraph44 = "";
+  let paragraph54 = "";
+  let paragraph64 = "";
+  let paragraph74 = "";
+  let paragraph84 = "";
+  let paragraph94 = "";
+  let paragraph104 = "";
+  let paragraph15 = "";
+  let paragraph25 = "";
+  let paragraph35 = "";
+  let paragraph45 = "";
+  let paragraph55 = "";
+  let paragraph65 = "";
+  let paragraph75 = "";
+  let paragraph85 = "";
+  let paragraph95 = "";
+  let paragraph105 = "";
+
+
+  let paragraphs1 = "";
+  let paragraphs2 = "";
+  let paragraphs3 = "";
+  let paragraphs4 = "";
+  let paragraphs5 = "";
+
+  let gencon_talk1 = [];
+  let gencon_talk2 = [];
+  let gencon_talk3 = [];
+  let gencon_talk4 = [];
+  let gencon_talk5 = [];
+  console.log(gencon_talk2);
+
+  response.json().then(function(data) {
+    let generalConference = data;
+
+    for (var i = 0; i < generalConference.length - 4; i++) {
+            author1 = generalConference[0].author;
+            gencon_talk1.push(author1);
+            position1 = generalConference[0].position;
+            gencon_talk1.push(position1);
+            talk_title1 = generalConference[0].talk_title;
+            gencon_talk1.push(talk_title1);
+            year1 = generalConference[0].year;
+            gencon_talk1.push(year1);
+            paragraph11 = generalConference[0].paragraph1;
+            paragraph21 = generalConference[0].paragraph2;
+            paragraph31 = generalConference[0].paragraph3;
+            paragraph41 = generalConference[0].paragraph4;
+            paragraph51 = generalConference[0].paragraph5;
+            paragraph61 = generalConference[0].paragraph6;
+            paragraph71 = generalConference[0].paragraph7;
+            paragraph81 = generalConference[0].paragraph8;
+            paragraph91 = generalConference[0].paragraph9;
+            paragraph101 = generalConference[0].paragraph10;
+            paragraphs1 = paragraph11.concat(paragraph21, paragraph31, paragraph41, paragraph51, paragraph61, paragraph61, paragraph71, paragraph81, paragraph91, paragraph101);
+            paragraphs1.toString();
+            gencon_talk1.push(paragraphs1);
+          }
+
+      for (var i = 0; i < generalConference.length; i++) {
+            author2 = generalConference[1].author;
+            gencon_talk2.push(author2);
+            position2 = generalConference[1].position;
+            gencon_talk2.push(position2);
+            talk_title2 = generalConference[1].talk_title;
+            gencon_talk2.push(talk_title2);
+            year2 = generalConference[1].year;
+            gencon_talk2.push(year2);
+            paragraph12 = generalConference[1].paragraph1;
+            paragraph22 = generalConference[1].paragraph2;
+            paragraph32 = generalConference[1].paragraph3;
+            paragraph42 = generalConference[1].paragraph4;
+            paragraph52 = generalConference[1].paragraph5;
+            paragraph62 = generalConference[1].paragraph6;
+            paragraph72 = generalConference[1].paragraph7;
+            paragraph82 = generalConference[1].paragraph8;
+            paragraph92 = generalConference[1].paragraph9;
+            paragraph102 = generalConference[1].paragraph10;
+            paragraphs2 = paragraph12.concat(paragraph22, paragraph32, paragraph42, paragraph52, paragraph62, paragraph62, paragraph72, paragraph82, paragraph92, paragraph102);
+            paragraphs2.toString();
+            gencon_talk2.push(paragraphs2);
+          }
+
+          for (var i = 0; i < generalConference.length; i++) {
+            author3 = generalConference[2].author;
+            gencon_talk3.push(author3);
+            position3 = generalConference[2].position;
+            gencon_talk3.push(position3);
+            talk_title3 = generalConference[2].talk_title;
+            gencon_talk3.push(talk_title3);
+            year3 = generalConference[2].year;
+            gencon_talk3.push(year3);
+            paragraph13 = generalConference[2].paragraph1;
+            paragraph23 = generalConference[2].paragraph2;
+            paragraph33 = generalConference[2].paragraph3;
+            paragraph43 = generalConference[2].paragraph4;
+            paragraph53 = generalConference[2].paragraph5;
+            paragraph63 = generalConference[2].paragraph6;
+            paragraph73 = generalConference[2].paragraph7;
+            paragraph83 = generalConference[2].paragraph8;
+            paragraph93 = generalConference[2].paragraph9;
+            paragraph103 = generalConference[2].paragraph10;
+            paragraphs3 = paragraph13.concat(paragraph23, paragraph33, paragraph43, paragraph53, paragraph63, paragraph63, paragraph73, paragraph83, paragraph93, paragraph103);
+            paragraphs3.toString();
+            gencon_talk3.push(paragraphs3);
+          }
+
+        for (var i = 0; i < generalConference.length; i++) {
+            author4 = generalConference[3].author;
+            gencon_talk4.push(author4);
+            position4 = generalConference[3].position;
+            gencon_talk4.push(position4);
+            talk_title4 = generalConference[3].talk_title;
+            gencon_talk4.push(talk_title4);
+            year4 = generalConference[3].year;
+            gencon_talk4.push(year4);
+            paragraph14 = generalConference[3].paragraph1;
+            paragraph24 = generalConference[3].paragraph2;
+            paragraph34 = generalConference[3].paragraph3;
+            paragraph44 = generalConference[3].paragraph4;
+            paragraph54 = generalConference[3].paragraph5;
+            paragraph64 = generalConference[3].paragraph6;
+            paragraph74 = generalConference[3].paragraph7;
+            paragraph84 = generalConference[3].paragraph8;
+            paragraph94 = generalConference[3].paragraph9;
+            paragraph104 = generalConference[3].paragraph10;
+            paragraphs4 = paragraph14.concat(paragraph24, paragraph34, paragraph44, paragraph54, paragraph64, paragraph64, paragraph74, paragraph84, paragraph94, paragraph101);
+            paragraphs4.toString();
+            gencon_talk4.push(paragraphs4);
+          }
+
+for (var i = 0; i < generalConference.length; i++) {
+            author5 = generalConference[4].author;
+            gencon_talk5.push(author5);
+            position5 = generalConference[4].position;
+            gencon_talk5.push(position5);
+            talk_title5 = generalConference[4].talk_title;
+            gencon_talk5.push(talk_title5);
+            year5 = generalConference[4].year;
+            gencon_talk5.push(year5);
+            paragraph15 = generalConference[4].paragraph1;
+            paragraph25 = generalConference[4].paragraph2;
+            paragraph35 = generalConference[4].paragraph3;
+            paragraph45 = generalConference[4].paragraph4;
+            paragraph55 = generalConference[4].paragraph5;
+            paragraph65 = generalConference[4].paragraph6;
+            paragraph75 = generalConference[4].paragraph7;
+            paragraph85 = generalConference[4].paragraph8;
+            paragraph95 = generalConference[4].paragraph9;
+            paragraph105 = generalConference[4].paragraph10;
+            paragraphs5 = paragraph15.concat(paragraph25, paragraph35, paragraph45, paragraph55, paragraph65, paragraph65, paragraph75, paragraph85, paragraph95, paragraph105);
+            paragraphs5.toString();
+            gencon_talk5.push(paragraphs5);
+          }
+
+let pa1 = gencon_talk1[4];
+let pa2 = gencon_talk2[4];
+let pa3 = gencon_talk3[4];
+let pa4 = gencon_talk4[4];
+let pa5 = gencon_talk5[4];
 
           var scripture1 = objectArray[Math.floor(Math.random() * objectArray.length)];
 
@@ -947,6 +1329,257 @@ let myValue = checkForValue(mapObj, topic);
           let start_pos = "";
           let end_pos = "";
           let text_to_get = "";
+
+          let myKeyWord = "";
+
+          function getblessingsPhrase1 (x, y) {
+
+            if(x.includes(blessings[5]) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key)+1;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos-[250],end_pos)}
+
+          else if (x.includes(blessings[4]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos)}
+
+          else if (x.includes(blessings[3]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+              else if (x.includes(blessings[2]) == true) {
+                test_str = y;
+                  start_pos = test_str.indexOf(topic)+1;
+                  end_pos = test_str.indexOf(".",start_pos);
+                  text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                  else if (x.includes(blessings[1]) == true) {
+                    test_str = y;
+                      start_pos = test_str.indexOf(topic)+1;
+                      end_pos = test_str.indexOf(".",start_pos);
+                      text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                      else if (x.includes(blessings[0]) == true) {
+                        test_str = y;
+                          start_pos = test_str.indexOf(topic)+1;
+                          end_pos = test_str.indexOf(".",start_pos);
+                          text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                          else if (x.includes(blessings[6]) == true) {
+                            test_str = y;
+                              start_pos = test_str.indexOf(topic)+1;
+                              end_pos = test_str.indexOf(".",start_pos);
+                              text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                              else if (x.includes(blessings[7]) == true) {
+                                test_str = y;
+                                  start_pos = test_str.indexOf(topic)+1;
+                                  end_pos = test_str.indexOf(".",start_pos);
+                                  text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                                  else if (x.includes(blessings[8]) == true) {
+                                    test_str = y;
+                                      start_pos = test_str.indexOf(topic)+1;
+                                      end_pos = test_str.indexOf(".",start_pos);
+                                      text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                                      else if (x.includes(blessings[9]) == true) {
+                                        test_str = y;
+                                          start_pos = test_str.indexOf(topic)+1;
+                                          end_pos = test_str.indexOf(".",start_pos);
+                                          text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+              else {
+            console.log("none found");
+          }
+            return text_to_get;
+          }
+
+
+          function gettoDoPhrase1 (x, y) {
+
+            if(x.includes(toDo[5]) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key)+1;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos-[250],end_pos)}
+
+          else if (x.includes(toDo[4]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos)}
+
+          else if (x.includes(toDo[3]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+              else if (x.includes(toDo[2]) == true) {
+                test_str = y;
+                  start_pos = test_str.indexOf(topic)+1;
+                  end_pos = test_str.indexOf(".",start_pos);
+                  text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                  else if (x.includes(toDo[1]) == true) {
+                    test_str = y;
+                      start_pos = test_str.indexOf(topic)+1;
+                      end_pos = test_str.indexOf(".",start_pos);
+                      text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                      else if (x.includes(toDo[0]) == true) {
+                        test_str = y;
+                          start_pos = test_str.indexOf(topic)+1;
+                          end_pos = test_str.indexOf(".",start_pos);
+                          text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                          else if (x.includes(toDo[6]) == true) {
+                            test_str = y;
+                              start_pos = test_str.indexOf(topic)+1;
+                              end_pos = test_str.indexOf(".",start_pos);
+                              text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                              else if (x.includes(toDo[7]) == true) {
+                                test_str = y;
+                                  start_pos = test_str.indexOf(topic)+1;
+                                  end_pos = test_str.indexOf(".",start_pos);
+                                  text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                                  else if (x.includes(toDo[8]) == true) {
+                                    test_str = y;
+                                      start_pos = test_str.indexOf(topic)+1;
+                                      end_pos = test_str.indexOf(".",start_pos);
+                                      text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+                                      else if (x.includes(toDo[9]) == true) {
+                                        test_str = y;
+                                          start_pos = test_str.indexOf(topic)+1;
+                                          end_pos = test_str.indexOf(".",start_pos);
+                                          text_to_get = test_str.substring(start_pos-[250],end_pos) }
+
+              else {
+            console.log("none found");
+          }
+            return text_to_get;
+          }
+
+          function getGenConPhrase1 (x, y) {
+
+            if(x.includes(wordKeys[5]) == true) {
+           test_str = y;
+             start_pos = test_str.indexOf(key)+1;
+             end_pos = test_str.indexOf(".",start_pos);
+             text_to_get = test_str.substring(start_pos-[250],end_pos);
+           myKeyWord = wordKeys[5];}
+
+          else if (x.includes(wordKeys[4]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos);
+            myKeyWord = wordKeys[4];}
+
+          else if (x.includes(wordKeys[3]) == true) {
+            test_str = y;
+              start_pos = test_str.indexOf(topic)+1;
+              end_pos = test_str.indexOf(".",start_pos);
+              text_to_get = test_str.substring(start_pos-[250],end_pos);
+            myKeyWord = wordKeys[4];}
+
+              else if (x.includes(wordKeys[2]) == true) {
+                test_str = y;
+                  start_pos = test_str.indexOf(topic)+1;
+                  end_pos = test_str.indexOf(".",start_pos);
+                  text_to_get = test_str.substring(start_pos-[250],end_pos) ;
+                  myKeyWord = wordKeys[2];}
+
+                  else if (x.includes(wordKeys[1]) == true) {
+                    test_str = y;
+                      start_pos = test_str.indexOf(topic)+1;
+                      end_pos = test_str.indexOf(".",start_pos);
+                      text_to_get = test_str.substring(start_pos-[250],end_pos);
+                    myKeyWord = wordKeys[1];}
+
+                      else if (x.includes(wordKeys[0]) == true) {
+                        test_str = y;
+                          start_pos = test_str.indexOf(topic)+1;
+                          end_pos = test_str.indexOf(".",start_pos);
+                          text_to_get = test_str.substring(start_pos-[250],end_pos);
+                        myKeyWord = wordKeys[0];}
+
+                          else if (x.includes(wordKeys[6]) == true) {
+                            test_str = y;
+                              start_pos = test_str.indexOf(topic)+1;
+                              end_pos = test_str.indexOf(".",start_pos);
+                              text_to_get = test_str.substring(start_pos-[250],end_pos);
+                            myKeyWord = wordKeys[6];}
+
+                              else if (x.includes(wordKeys[7]) == true) {
+                                test_str = y;
+                                  start_pos = test_str.indexOf(topic)+1;
+                                  end_pos = test_str.indexOf(".",start_pos);
+                                  text_to_get = test_str.substring(start_pos-[250],end_pos);
+                                myKeyWord = wordKeys[7];}
+
+                                  else if (x.includes(wordKeys[8]) == true) {
+                                    test_str = y;
+                                      start_pos = test_str.indexOf(topic)+1;
+                                      end_pos = test_str.indexOf(".",start_pos);
+                                      text_to_get = test_str.substring(start_pos-[250],end_pos);
+                                    myKeyWord = wordKeys[8];}
+
+                                      else if (x.includes(wordKeys[9]) == true) {
+                                        test_str = y;
+                                          start_pos = test_str.indexOf(topic)+1;
+                                          end_pos = test_str.indexOf(".",start_pos);
+                                          text_to_get = test_str.substring(start_pos-[250],end_pos);
+                                        myKeyWord = wordKeys[9];}
+
+
+              else {
+            console.log("none found");
+          }
+            return [text_to_get, wordKeys];
+          }
+
+          let toDoQuote1 = gettoDoPhrase1(pa1, pa1);
+          let toDoQuote2 = gettoDoPhrase1(pa2, pa2);
+          let toDoQuote3 = gettoDoPhrase1(pa3, pa3);
+          let toDoQuote4 = gettoDoPhrase1(pa4, pa4);
+          let toDoQuote5 = gettoDoPhrase1(pa5, pa5);
+
+
+          let blessingsQuote1 = getblessingsPhrase1(pa1, pa1);
+          let blessingsQuote2 = getblessingsPhrase1(pa2, pa2);
+          let blessingsQuote3 = getblessingsPhrase1(pa3, pa3);
+          let blessingsQuote4 = getblessingsPhrase1(pa4, pa4);
+          let blessingsQuote5 = getblessingsPhrase1(pa5, pa5);
+
+          let resultsArray1 = getGenConPhrase1(pa1, pa1);
+          let resultsArray2 = getGenConPhrase1(pa2, pa2);
+          let resultsArray3 = getGenConPhrase1(pa3, pa3);
+          let resultsArray4 = getGenConPhrase1(pa4, pa4);
+          let resultsArray5 = getGenConPhrase1(pa5, pa5);
+
+          let genConQuote1 = resultsArray1[0];
+          let genConQuote2 = resultsArray2[0];
+          let genConQuote3 = resultsArray3[0];
+          let genConQuote4 = resultsArray4[0];
+          let genConQuote5 = resultsArray5[0];
+
+          let kywrd1 = resultsArray1[0];
+          let kywrd2 = resultsArray1[1];
+          let kywrd3 = resultsArray1[2];
+          let kywrd4 = resultsArray1[3];
+          let kywrd5 = resultsArray1[4];
+          console.log(genConQuote1);
+
 
           function getPhrase1 (x, y) {
 
@@ -1015,6 +1648,8 @@ let myValue = checkForValue(mapObj, topic);
           let phrase3 = getPhrase3(verse3, verse3);
 
 
+
+
           let markup =
             `<p>As I started to ponder the topic of ${topic}, the first question that came to my mind was simply, 'what is ${topic}?' To help me understand more about the topic, and what it really means, I turned to the Scriptures for help.  In ${scripture1.standard_works} I found a passage where ${scripture1.speaker} is addressing ${scripture1.listener}, and explains the significance of ${topic}. In ${scripture1.book}, chapter ${scripture1.chapter} verse ${scripture1.verses} he says:
             </p>
@@ -1033,7 +1668,14 @@ let myValue = checkForValue(mapObj, topic);
             <p>
             (this is a good place for a personal experience you've had that deals with ${topic})
             </p>
+            After reading this scripture, I was reminded of a General Conference address from ${gencon_talk2[3]} by ${gencon_talk2[0]}, ${gencon_talk2[1]} entitled, "${gencon_talk2[2]}".  In this talk, he discusses ${topic} in a similar way, especially in how it relates to ${wordKeys[0]}.  ${gencon_talk2[0]} says:
             <p>
+            <p>
+            "${genConQuote1}"
+            </p>
+            <p>
+            I really love, again, how he draws that connection between ${topic} and ${wordKeys[0]}.
+            </p>
             As I thought about this, what I really wanted to know is why ${topic} is really important.  Is it simply because of the blessings associated with it?  Or is it because of the transformation it can bring to my character?  For answers to these questions, I again turned to the scriptures, and found some answers in ${scripture2.standard_works}.  In the book of ${scripture2.book}, ${scripture2.speaker} provides some insight while speaking with ${scripture2.listener}. In chapter ${scripture2.chapter}, verse ${scripture2.verses}, we read the following:
             </p>
             <p>
@@ -1044,7 +1686,7 @@ let myValue = checkForValue(mapObj, topic);
             "${phrase2}"
             </p>
             <p>
-            To me, it's significant that ${scripture2.speaker} seems to draw a connection between ${topic} and ${key}. And that got me thinking.  How can I be more ${topic} minded?  What can I do to do better?  Maybe, as ${scripture2.speaker} says, ${key} really is the key.
+            To me, it's significant that ${scripture2.speaker} seems to draw a connection between ${topic} and ${wordKeys[2]}. And that got me thinking.  How can I be more ${topic} minded?  What can I do to do better?  Maybe, as ${scripture2.speaker} says, ${key} really is the key.
             </p>
             <p>
             In order to find ways that I could be more ${topic} minded, I turned to the book of ${scripture3.book}, in ${scripture3.standard_works}, chapter ${scripture3.chapter}, verse ${scripture3.verses} for help.  I was reminded of the way ${scripture3.speaker} described how we can have more ${topic}, as he was speaking with ${scripture3.listener}.  Here's what he says:
@@ -1053,7 +1695,7 @@ let myValue = checkForValue(mapObj, topic);
             ${verse3}
             </p>
             <p>
-            Notice how ${scripture3.speaker} says, "${phrase3}", again, drawing a connection between ${topic} and ${key}.
+            Notice how ${scripture3.speaker} says, "${phrase3}", again, drawing a connection between ${topic} and ${wordKeys[3]}.
             </p>
             `
 
@@ -1072,8 +1714,8 @@ let myValue = checkForValue(mapObj, topic);
           // console.log(newObj);
           // let paragraph2 = "As I was preparing to speak today"
 
-
-
+})
+})
 
 })
 
