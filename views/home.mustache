@@ -6205,13 +6205,14 @@ console.log("newval after str4 replaced:", newval);
 </h3>
               <h2>
   {{talkid}}
+
 </h2>
             </div>
           </div>
         {{/talktopics}}
       </div>
-      <form class="form1" action="/saved/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
-        
+      <form class="form1" action="/talk/talkid/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
+
 
 
           <div class="talkHeader">
