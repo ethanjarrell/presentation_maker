@@ -71,9 +71,9 @@
         "aaronic priesthood": "priesthood",
         "melchizedek": "priesthood",
         "aaronic": "priesthood",
+        "prophets": "prophets",
         "prophets of god": "prophets",
         "prophet": "prophets",
-        "prophets": "prophets",
         "repentence": "repentence",
         "repent": "repentence",
         "repentance": "repentence",
@@ -162,6 +162,8 @@
         "family prayer": "family",
         "eternal family": "family",
         "virtue": "chastity",
+        "prayer": "prayer",
+        "pray": "prayer",
         "chaste": "chastity",
         "virtuous": "chastity",
         "child": "children",
@@ -929,7 +931,11 @@ fetch('https://presentation-maker.herokuapp.com/api/genconf/' + keyWord).then(fu
   let gencon_talk3 = [];
   let gencon_talk4 = [];
   let gencon_talk5 = [];
-
+console.log(gencon_talk1);
+console.log(gencon_talk2);
+console.log(gencon_talk3);
+console.log(gencon_talk4);
+console.log(gencon_talk5);
   response.json().then(function(data) {
     let generalConference = data;
 
@@ -1053,11 +1059,31 @@ for (var i = 0; i < generalConference.length; i++) {
             gencon_talk5.push(paragraphs5);
           }
 
-let pa1 = gencon_talk1[4];
-let pa2 = gencon_talk2[4];
-let pa3 = gencon_talk3[4];
-let pa4 = gencon_talk4[4];
-let pa5 = gencon_talk5[4];
+          let author_1 = gencon_talk1[0];
+          let author_2 = gencon_talk2[0];
+          let author_3 = gencon_talk3[0];
+          let author_4 = gencon_talk4[0];
+          let author_5 = gencon_talk5[0];
+          let position_1 = gencon_talk1[1];
+          let position_2 = gencon_talk2[1];
+          let position_3 = gencon_talk3[1];
+          let position_4 = gencon_talk4[1];
+          let position_5 = gencon_talk5[1];
+          let title_1 = gencon_talk1[2];
+          let title_2 = gencon_talk2[2];
+          let title_3 = gencon_talk3[2];
+          let title_4 = gencon_talk4[2];
+          let title_5 = gencon_talk5[2];
+          let year_1 = gencon_talk1[3];
+          let year_2 = gencon_talk2[3];
+          let year_3 = gencon_talk3[3];
+          let year_4 = gencon_talk4[3];
+          let year_5 = gencon_talk5[3];
+          let pa1 = gencon_talk1[4];
+          let pa2 = gencon_talk2[4];
+          let pa3 = gencon_talk3[4];
+          let pa4 = gencon_talk4[4];
+          let pa5 = gencon_talk5[4];
 
           var scripture1 = objectArray[Math.floor(Math.random() * objectArray.length)];
 
@@ -1286,34 +1312,34 @@ console.log(gencon_talk1);
             let genConYear = "";
             if (a != "") {
               quoteToUse = a;
-              genConAuthor = gencon_talk1[0];
-              genConPosition = gencon_talk1[1];
-              genConTalkTitle = gencon_talk1[2];
-              genConYear = gencon_talk1[3];
+              genConAuthor = author_1;
+              genConPosition = position_1;
+              genConTalkTitle = title_1;
+              genConYear = year_1;
             }else if (b != "") {
               quoteToUse = b;
-              genConAuthor = gencon_talk2[0];
-              genConPosition = gencon_talk2[1];
-              genConTalkTitle = gencon_talk2[2];
-              genConAuthor = gencon_talk2[3];
+              genConAuthor = author_2;
+              genConPosition = position_2;
+              genConTalkTitle = title_2;
+              genConYear = year_2;
             } else if (c != "") {
               quoteToUse = c;
-              genConAuthor = gencon_talk3[0];
-              genConPosition = gencon_talk3[1];
-              genConTalkTitle = gencon_talk3[2];
-              genConYear = gencon_talk3[3];
+              genConAuthor = author_3;
+              genConPosition = position_3;
+              genConTalkTitle = title_3;
+              genConYear = year_3;
             } else if (d != "") {
               quoteToUse = d;
-              genConAuthor = gencon_talk4[0];
-              genConPosition = gencon_talk4[1];
-              genConTalkTitle = gencon_talk4[2];
-              genConYear = gencon_talk4[3];
+              genConAuthor = author_4;
+              genConPosition = position_4;
+              genConTalkTitle = title_4;
+              genConYear = year_4;
             } else if (e != "") {
               quoteToUse = e;
-              genConAuthor = gencon_talk5[0];
-              genConPosition = gencon_talk5[1];
-              genConTalkTitle = gencon_talk5[2];
-              genConYear = gencon_talk5[3];
+              genConAuthor = author_5;
+              genConPosition = position_5;
+              genConTalkTitle = title_5;
+              genConYear = year_5;
             }
             return [quoteToUse, genConAuthor, genConPosition, genConTalkTitle, genConYear];
           }
@@ -1344,7 +1370,7 @@ console.log(gencon_talk1);
 
 
           function getPhrase1 (x, y) {
-
+            let text_to_get = "";
             if(x.includes(key) == true) {
            test_str = y;
              start_pos = test_str.indexOf(key) - 10;
@@ -1366,7 +1392,7 @@ console.log(gencon_talk1);
 
 
           function getPhrase2 (x, y) {
-
+            let text_to_get = "";
             if(x.includes(key) == true) {
            test_str = y;
              start_pos = test_str.indexOf(key) - 10;
@@ -1389,7 +1415,7 @@ console.log(gencon_talk1);
 
 
           function getPhrase3 (x, y) {
-
+            let text_to_get = "";
             if(x.includes(key) == true) {
            test_str = y;
              start_pos = test_str.indexOf(key) - 10;
@@ -1470,6 +1496,22 @@ console.log(gencon_talk1);
               before = "what is";
               after = "is";
               questiontoDo = "what must we do to recieve blessings from";
+              questionBlessings = "what are the blessings of";
+            }
+
+            else if ( x == "prayer") {
+              theBefore = "";
+              before = "what is";
+              after = "is";
+              questiontoDo = "how can we improve our";
+              questionBlessings = "what are the blessings of";
+            }
+
+            else if ( x == "gratitude") {
+              theBefore = "";
+              before = "what is";
+              after = "is";
+              questiontoDo = "how can we be more";
               questionBlessings = "what are the blessings of";
             }
 
@@ -1802,6 +1844,8 @@ console.log(gencon_talk1);
            after = questionArray[2];
            questiontoDo = questionArray[3];
            questionBlessings = questionArray[4];
+           console.log(questiontoDo);
+           console.log(questionArray[3]);
 
           let is_are = "";
           function isPlural (x) {
@@ -1814,14 +1858,15 @@ console.log(gencon_talk1);
             return is_are
           }
           let isAre = isPlural(topic);
-
+console.log(genConfAuthor1);
+console.log(genConfYear1);
           let markup =
             `<p>
 
               As I was preparing to speak today, on the topic of ${theBefore} ${keyWord}, one of the first questions I asked myself was ${before}, ${theBefore} ${keyWord}?  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
               </p>
               <p>
-              To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${genConfYear1}, ${genConfAuthor1}, who is ${genConfPosition1}, gave a conference address entitled, ${genConfTitle1}, in which he defines ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what he says:
+              To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${genConfYear1}, ${genConfAuthor1}, who was ${genConfPosition1} when she gave an address entitled, ${genConfTitle1}, in which he defines ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what he says:
               </p>
               <p>
               ${defQuote}
@@ -1833,7 +1878,7 @@ console.log(gencon_talk1);
               It made me think about a time in my life when (share a personal experience related to the topic.)
               </p>
               <p>
-              So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${genConfAuthor2} who is ${genConfPosition2}.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${genConfTitle2} from the ${genConfYear2} General Conference.  In that address he has this to say, about what we can do.
+              So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${genConfAuthor2} who was ${genConfPosition2} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${genConfTitle2} from the ${genConfYear2} General Conference.  In that address he has this to say, about what we can do.
               </p>
               <p>
               ${toDoQoute}
@@ -1848,7 +1893,7 @@ console.log(gencon_talk1);
               In my own life, I think I can apply this by ( describe ways you can apply these verses and talks)
               </p>
               <p>
-              Lastly, I really wanted to know why ${theBefore} ${keyWord} is so important.  ${questionBlessings} ${theBefore} ${keyWord}?  ${genConfAuthor3} who is ${genConfPosition3}, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${genConfYear3}, they gave an address entitled ${genConfTitle3}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
+              Lastly, I really wanted to know why ${theBefore} ${keyWord} is so important.  ${questionBlessings} ${theBefore} ${keyWord}?  ${genConfAuthor3} who was ${genConfPosition3} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${genConfYear3}, they gave an address entitled ${genConfTitle3}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
               </p>
               <p>
               ${blessQuote}
