@@ -326,73 +326,16 @@
 
 
 
-            switch (newerBook) {
-              case '1nephi' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case '2nephi' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'jacob' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'enos' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'jarom' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'omni' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'wordsofmormon' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'mosiah' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'alma' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'helaman' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case '3nephi' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case '4nephi' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'mormon' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'ether' :
-              standardWork = "The Book of Mormon";
-              break;
-
-              case 'moroni':
-              standardWork = "The Book of Mormon";
-              break;
-
-              standardWork = "The Book of Mormon";
-              break;
-
-              default:
-              standardWork = "The New Testament";
+            function determineBook (x) {
+              if (x == "1nephi" || "2nephi" || "jacob" || "enos" || "jarom" || "omnni" || "wordsofmormon" || "mosiah" || "alma" || "helaman" || "3nephi" || "4nephi" || "mormon" || "ether" || "moroni") {
+                standardWork = "The Book of Mormon";
+              } else {
+                standardWork = "The New Testament";
+              }
+              return standardWork;
             }
+            determineBook(newerBook);
+            console.log(standardWork);
 
 
             function determineSpeakerAndListener(a, b) {
@@ -825,17 +768,19 @@ let newBook_andChapter = determineSpeakerAndListener(newerBook, newChapter);
    "listener" : listener,};
 
 
- function pushToArray(x, y) {
+ function pushToArray(x, y, z) {
 
-   if (typeof{x} === 'object') {
+   if (z.length < 15) {
      y.push(x);
    }
    return y;
  }
- objectArray = pushToArray(newObj, objectArray);
-
+ objectArray = pushToArray(newObj, objectArray, newObj.book);
 }
+
           }
+          console.log(objectArray);
+
 
           let topic = document.getElementById('topicInput').value;
 
@@ -1104,168 +1049,501 @@ for (var i = 0; i < generalConference.length; i++) {
           let verse5 = scripture5.verse_text;
 
           function getGenConPhrase1 (x) {
-            let definition = ["define", "definition", "meaning of", "defined", topic+" is", topic+" means"];
+            let definition = ["define", "definition", "meaning of", "defined", topic+" is", topic+" means", keyWord+" is", keyWord+" are", "dictionary", topic, "Jesus"];
             let test_str = "";
             let start_pos = "";
             let end_pos = "";
             let text_to_get = "";
+            let str = "";
+            let str2 = "";
+            let str3 = "";
             let myKeyWord = "";
             if(x.includes(definition[0]) == true) {
              test_str = x;
-             start_pos = test_str.indexOf(definition[0])-300;
-             end_pos = test_str.indexOf(definition[0])+300;
+             start_pos = test_str.indexOf(definition[0])-400;
+             end_pos = test_str.indexOf(definition[0])+400;
              text_to_get = test_str.substring(start_pos, end_pos);
+             str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+             str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+             str3 = str.replace(str2, "");
            myKeyWord = definition[0];}
 
            else if(x.includes(definition[1]) == true) {
             test_str = x;
-            start_pos = test_str.indexOf(definition[1])-300;
-            end_pos = test_str.indexOf(definition[1])+300;
+            start_pos = test_str.indexOf(definition[1])-400;
+            end_pos = test_str.indexOf(definition[1])+500;
             text_to_get = test_str.substring(start_pos, end_pos);
+            str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+            str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+            str3 = str.replace(str2, "");
+
           myKeyWord = definition[1];}
 
           else if(x.includes(definition[2]) == true) {
            test_str = x;
-           start_pos = test_str.indexOf(definition[2])-300;
-           end_pos = test_str.indexOf(definition[2])+300;
+           start_pos = test_str.indexOf(definition[2])-400;
+           end_pos = test_str.indexOf(definition[2])+400;
            text_to_get = test_str.substring(start_pos, end_pos);
+           str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+           str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+           str3 = str.replace(str2, "");
          myKeyWord = definition[2];}
 
          else if(x.includes(definition[3]) == true) {
           test_str = x;
-          start_pos = test_str.indexOf(definition[3])-300;
-          end_pos = test_str.indexOf(definition[3])+300;
+          start_pos = test_str.indexOf(definition[3])-400;
+          end_pos = test_str.indexOf(definition[3])+400;
           text_to_get = test_str.substring(start_pos, end_pos);
+          str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+          str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+          str3 = str.replace(str2, "");
         myKeyWord = definition[3];}
 
         else if(x.includes(definition[4]) == true) {
          test_str = x;
-         start_pos = test_str.indexOf(definition[4])-300;
-         end_pos = test_str.indexOf(definition[4])+300;
+         start_pos = test_str.indexOf(definition[4])-400;
+         end_pos = test_str.indexOf(definition[4])+400;
          text_to_get = test_str.substring(start_pos, end_pos);
+         str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+         str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+         str3 = str.replace(str2, "");
        myKeyWord = definition[4];}
 
        else if(x.includes(definition[5]) == true) {
         test_str = x;
-        start_pos = test_str.indexOf(definition[5])-300;
-        end_pos = test_str.indexOf(definition[5])+300;
+        start_pos = test_str.indexOf(definition[5])-400;
+        end_pos = test_str.indexOf(definition[5])+400;
         text_to_get = test_str.substring(start_pos, end_pos);
+        str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+        str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+        str3 = str.replace(str2, "");
       myKeyWord = definition[5];}
+
+      else if(x.includes(definition[6]) == true) {
+       test_str = x;
+       start_pos = test_str.indexOf(definition[6])-400;
+       end_pos = test_str.indexOf(definition[6])+400;
+       text_to_get = test_str.substring(start_pos, end_pos);
+       str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+       str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+       str3 = str.replace(str2, "");
+     myKeyWord = definition[6];}
+
+     else if(x.includes(definition[7]) == true) {
+      test_str = x;
+      start_pos = test_str.indexOf(definition[7])-400;
+      end_pos = test_str.indexOf(definition[7])+400;
+      text_to_get = test_str.substring(start_pos, end_pos);
+      str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+      str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+      str3 = str.replace(str2, "");
+    myKeyWord = definition[7];}
+
+    else if(x.includes(definition[8]) == true) {
+     test_str = x;
+     start_pos = test_str.indexOf(definition[8])-400;
+     end_pos = test_str.indexOf(definition[8])+400;
+     text_to_get = test_str.substring(start_pos, end_pos);
+     str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+     str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+     str3 = str.replace(str2, "");
+   myKeyWord = definition[8];}
+
+   else if(x.includes(definition[9]) == true) {
+    test_str = x;
+    start_pos = test_str.indexOf(definition[9])-400;
+    end_pos = test_str.indexOf(definition[9])+400;
+    text_to_get = test_str.substring(start_pos, end_pos);
+    str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+    str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+    str3 = str.replace(str2, "");
+  myKeyWord = definition[9];}
+
+  else if(x.includes(definition[10]) == true) {
+   test_str = x;
+   start_pos = test_str.indexOf(definition[10])-400;
+   end_pos = test_str.indexOf(definition[10])+400;
+   text_to_get = test_str.substring(start_pos, end_pos);
+   str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+   str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+   str3 = str.replace(str2, "");
+ myKeyWord = definition[10];}
+
+ else if(x.includes(definition[11]) == true) {
+  test_str = x;
+  start_pos = test_str.indexOf(definition[11])-400;
+  end_pos = test_str.indexOf(definition[11])+400;
+  text_to_get = test_str.substring(start_pos, end_pos);
+  str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+  str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+  str3 = str.replace(str2, "");
+myKeyWord = definition[11];}
+
 
               else {
             console.log("none found");
           }
-            return [text_to_get, myKeyWord];
+            return [str3, myKeyWord];
           }
 
           function getGenConBlessings1 (x) {
-            let definition = ["blessings of", "blessings from", "brings us", "we receive", "blessed with", "blessings"];
+            let definition = ["blessings of", "blessings from", "brings us", "we receive", "blessed with", "He gives", "blessings", "we can receive", "we are promised", "promises us"];
             let test_str = "";
             let start_pos = "";
             let end_pos = "";
             let text_to_get = "";
+            let str = "";
+            let str2 = "";
+            let str3 = "";
             let myKeyWord = "";
             if(x.includes(definition[0]) == true) {
              test_str = x;
-             start_pos = test_str.indexOf(definition[0])-300;
-             end_pos = test_str.indexOf(definition[0])+300;
+             start_pos = test_str.indexOf(definition[0])-450;
+             end_pos = test_str.indexOf(definition[0])+450;
              text_to_get = test_str.substring(start_pos, end_pos);
+             str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+             str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+             str3 = str.replace(str2, "");
            myKeyWord = definition[0];}
 
            else if(x.includes(definition[1]) == true) {
             test_str = x;
-            start_pos = test_str.indexOf(definition[1])-300;
-            end_pos = test_str.indexOf(definition[1])+300;
+            start_pos = test_str.indexOf(definition[1])-450;
+            end_pos = test_str.indexOf(definition[1])+450;
             text_to_get = test_str.substring(start_pos, end_pos);
+            str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+            str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+            str3 = str.replace(str2, "");
           myKeyWord = definition[1];}
 
           else if(x.includes(definition[2]) == true) {
            test_str = x;
-           start_pos = test_str.indexOf(definition[2])-300;
-           end_pos = test_str.indexOf(definition[2])+300;
+           start_pos = test_str.indexOf(definition[2])-450;
+           end_pos = test_str.indexOf(definition[2])+450;
            text_to_get = test_str.substring(start_pos, end_pos);
+           str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+           str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+           str3 = str.replace(str2, "");
          myKeyWord = definition[2];}
 
          else if(x.includes(definition[3]) == true) {
           test_str = x;
-          start_pos = test_str.indexOf(definition[3])-300;
-          end_pos = test_str.indexOf(definition[3])+300;
+          start_pos = test_str.indexOf(definition[3])-450;
+          end_pos = test_str.indexOf(definition[3])+450;
           text_to_get = test_str.substring(start_pos, end_pos);
+          str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+          str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+          str3 = str.replace(str2, "");
         myKeyWord = definition[3];}
 
         else if(x.includes(definition[4]) == true) {
          test_str = x;
-         start_pos = test_str.indexOf(definition[4])-300;
-         end_pos = test_str.indexOf(definition[4])+300;
+         start_pos = test_str.indexOf(definition[4])-450;
+         end_pos = test_str.indexOf(definition[4])+450;
          text_to_get = test_str.substring(start_pos, end_pos);
+         str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+         str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+         str3 = str.replace(str2, "");
        myKeyWord = definition[4];}
 
        else if(x.includes(definition[5]) == true) {
         test_str = x;
-        start_pos = test_str.indexOf(definition[5])-300;
-        end_pos = test_str.indexOf(definition[5])+300;
+        start_pos = test_str.indexOf(definition[5])-450;
+        end_pos = test_str.indexOf(definition[5])+450;
         text_to_get = test_str.substring(start_pos, end_pos);
+        str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+        str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+        str3 = str.replace(str2, "");
       myKeyWord = definition[5];}
+
+      else if(x.includes(definition[6]) == true) {
+       test_str = x;
+       start_pos = test_str.indexOf(definition[6])-450;
+       end_pos = test_str.indexOf(definition[6])+450;
+       text_to_get = test_str.substring(start_pos, end_pos);
+       str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+       str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+       str3 = str.replace(str2, "");
+     myKeyWord = definition[6];}
+
+     else if(x.includes(definition[7]) == true) {
+      test_str = x;
+      start_pos = test_str.indexOf(definition[7])-450;
+      end_pos = test_str.indexOf(definition[7])+450;
+      text_to_get = test_str.substring(start_pos, end_pos);
+      str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+      str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+      str3 = str.replace(str2, "");
+    myKeyWord = definition[7];}
+
+    else if(x.includes(definition[8]) == true) {
+     test_str = x;
+     start_pos = test_str.indexOf(definition[8])-450;
+     end_pos = test_str.indexOf(definition[8])+450;
+     text_to_get = test_str.substring(start_pos, end_pos);
+     str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+     str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+     str3 = str.replace(str2, "");
+   myKeyWord = definition[8];}
+
+   else if(x.includes(definition[9]) == true) {
+    test_str = x;
+    start_pos = test_str.indexOf(definition[9])-450;
+    end_pos = test_str.indexOf(definition[9])+450;
+    text_to_get = test_str.substring(start_pos, end_pos);
+    str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+    str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+    str3 = str.replace(str2, "");
+  myKeyWord = definition[9];}
+
+  else if(x.includes(definition[10]) == true) {
+   test_str = x;
+   start_pos = test_str.indexOf(definition[10])-450;
+   end_pos = test_str.indexOf(definition[10])+450;
+   text_to_get = test_str.substring(start_pos, end_pos);
+   str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+   str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+   str3 = str.replace(str2, "");
+ myKeyWord = definition[10];}
 
               else {
             console.log("none found");
           }
-            return text_to_get;
+            return str3;
           }
 
           function getGenConToDo1 (x) {
-            let definition = ["we must", "we should", "in order to", "can become", "strive for", "if we will"];
+            let notIncluded = ["blessings of", "blessings from", "brings us", "we receive", "blessed with", "He gives", "blessings", "we can receive", "we are promised", "promises us"];
+            let definition = ["we must", "we should", "in order to", "to become", "strive for", "if we will", "our responsibility", "we promise to", "if we obey", "if we do"];
             let test_str = "";
             let start_pos = "";
             let end_pos = "";
             let text_to_get = "";
+            let str = "";
+            let str2 = "";
+            let str3 = "";
             let myKeyWord = "";
             if(x.includes(definition[0]) == true) {
              test_str = x;
-             start_pos = test_str.indexOf(definition[0])-300;
-             end_pos = test_str.indexOf(definition[0])+300;
+             start_pos = test_str.indexOf(definition[0])-450;
+             end_pos = test_str.indexOf(definition[0])+450;
              text_to_get = test_str.substring(start_pos, end_pos);
+             str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+             str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+             str3 = str.replace(str2, "");
            myKeyWord = definition[0];}
 
            else if(x.includes(definition[1]) == true) {
             test_str = x;
-            start_pos = test_str.indexOf(definition[1])-300;
-            end_pos = test_str.indexOf(definition[1])+300;
+            start_pos = test_str.indexOf(definition[1])-450;
+            end_pos = test_str.indexOf(definition[1])+450;
             text_to_get = test_str.substring(start_pos, end_pos);
+            str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+            str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+            str3 = str.replace(str2, "");
           myKeyWord = definition[1];}
 
           else if(x.includes(definition[2]) == true) {
            test_str = x;
-           start_pos = test_str.indexOf(definition[2])-300;
-           end_pos = test_str.indexOf(definition[2])+300;
+           start_pos = test_str.indexOf(definition[2])-450;
+           end_pos = test_str.indexOf(definition[2])+450;
            text_to_get = test_str.substring(start_pos, end_pos);
+           str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+           str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+           str3 = str.replace(str2, "");
          myKeyWord = definition[2];}
 
          else if(x.includes(definition[3]) == true) {
           test_str = x;
-          start_pos = test_str.indexOf(definition[3])-300;
-          end_pos = test_str.indexOf(definition[3])+300;
+          start_pos = test_str.indexOf(definition[3])-450;
+          end_pos = test_str.indexOf(definition[3])+450;
           text_to_get = test_str.substring(start_pos, end_pos);
+          str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+          str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+          str3 = str.replace(str2, "");
         myKeyWord = definition[3];}
 
         else if(x.includes(definition[4]) == true) {
          test_str = x;
-         start_pos = test_str.indexOf(definition[4])-300;
-         end_pos = test_str.indexOf(definition[4])+300;
+         start_pos = test_str.indexOf(definition[4])-450;
+         end_pos = test_str.indexOf(definition[4])+450;
          text_to_get = test_str.substring(start_pos, end_pos);
+         str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+         str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+         str3 = str.replace(str2, "");
        myKeyWord = definition[4];}
 
        else if(x.includes(definition[5]) == true) {
         test_str = x;
-        start_pos = test_str.indexOf(definition[5])-300;
-        end_pos = test_str.indexOf(definition[5])+300;
+        start_pos = test_str.indexOf(definition[5])-450;
+        end_pos = test_str.indexOf(definition[5])+450;
         text_to_get = test_str.substring(start_pos, end_pos);
+        str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+        str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+        str3 = str.replace(str2, "");
       myKeyWord = definition[5];}
+
+      else if(x.includes(definition[6]) == true) {
+       test_str = x;
+       start_pos = test_str.indexOf(definition[6])-450;
+       end_pos = test_str.indexOf(definition[6])+450;
+       text_to_get = test_str.substring(start_pos, end_pos);
+       str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+       str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+       str3 = str.replace(str2, "");
+     myKeyWord = definition[6];}
+
+     else if(x.includes(definition[7]) == true) {
+      test_str = x;
+      start_pos = test_str.indexOf(definition[7])-450;
+      end_pos = test_str.indexOf(definition[7])+450;
+      text_to_get = test_str.substring(start_pos, end_pos);
+      str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+      str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+      str3 = str.replace(str2, "");
+    myKeyWord = definition[7];}
+
+    else if(x.includes(definition[8]) == true) {
+     test_str = x;
+     start_pos = test_str.indexOf(definition[8])-450;
+     end_pos = test_str.indexOf(definition[8])+450;
+     text_to_get = test_str.substring(start_pos, end_pos);
+     str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+     str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+     str3 = str.replace(str2, "");
+   myKeyWord = definition[8];}
+
+   else if(x.includes(definition[9]) == true) {
+    test_str = x;
+    start_pos = test_str.indexOf(definition[9])-450;
+    end_pos = test_str.indexOf(definition[9])+450;
+    text_to_get = test_str.substring(start_pos, end_pos);
+    str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+    str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+    str3 = str.replace(str2, "");
+  myKeyWord = definition[9];}
+
+  else if(x.includes(definition[10]) == true) {
+   test_str = x;
+   start_pos = test_str.indexOf(definition[10])-450;
+   end_pos = test_str.indexOf(definition[10])+450;
+   text_to_get = test_str.substring(start_pos, end_pos);
+   str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+   str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+   str3 = str.replace(str2, "");
+ myKeyWord = definition[10];}
 
               else {
             console.log("none found");
           }
-            return text_to_get;
+            return str3;
+          }
+
+          function getGenConTrials1 (x) {
+            let notIncluded = ["blessings of", "blessings from", "brings us", "we receive", "blessed with", "He gives", "blessings", "we can receive", "we are promised", "promises us", "we must", "we should", "in order to", "to become", "strive for", "if we will", "our responsibility", "we promise to", "if we obey", "if we do"];
+            let definition = ["opposition", "obstacles", "adversity", "not easy", "difficulty", "hard to", "trial", "give up", "difficult"];
+            let test_str = "";
+            let start_pos = "";
+            let end_pos = "";
+            let text_to_get = "";
+            let str = "";
+            let str2 = "";
+            let str3 = "";
+            let myKeyWord = "";
+            if(x.includes(definition[0]) == true) {
+             test_str = x;
+             start_pos = test_str.indexOf(definition[0])-450;
+             end_pos = test_str.indexOf(definition[0])+450;
+             text_to_get = test_str.substring(start_pos, end_pos);
+             str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+             str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+             str3 = str.replace(str2, "");
+           myKeyWord = definition[0];}
+
+           else if(x.includes(definition[1]) == true) {
+            test_str = x;
+            start_pos = test_str.indexOf(definition[1])-450;
+            end_pos = test_str.indexOf(definition[1])+450;
+            text_to_get = test_str.substring(start_pos, end_pos);
+            str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+            str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+            str3 = str.replace(str2, "");
+          myKeyWord = definition[1];}
+
+          else if(x.includes(definition[2]) == true) {
+           test_str = x;
+           start_pos = test_str.indexOf(definition[2])-450;
+           end_pos = test_str.indexOf(definition[2])+450;
+           text_to_get = test_str.substring(start_pos, end_pos);
+           str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+           str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+           str3 = str.replace(str2, "");
+         myKeyWord = definition[2];}
+
+         else if(x.includes(definition[3]) == true) {
+          test_str = x;
+          start_pos = test_str.indexOf(definition[3])-450;
+          end_pos = test_str.indexOf(definition[3])+450;
+          text_to_get = test_str.substring(start_pos, end_pos);
+          str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+          str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+          str3 = str.replace(str2, "");
+        myKeyWord = definition[3];}
+
+        else if(x.includes(definition[4]) == true) {
+         test_str = x;
+         start_pos = test_str.indexOf(definition[4])-450;
+         end_pos = test_str.indexOf(definition[4])+450;
+         text_to_get = test_str.substring(start_pos, end_pos);
+         str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+         str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+         str3 = str.replace(str2, "");
+       myKeyWord = definition[4];}
+
+       else if(x.includes(definition[5]) == true) {
+        test_str = x;
+        start_pos = test_str.indexOf(definition[5])-450;
+        end_pos = test_str.indexOf(definition[5])+450;
+        text_to_get = test_str.substring(start_pos, end_pos);
+        str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+        str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+        str3 = str.replace(str2, "");
+      myKeyWord = definition[5];}
+
+      else if(x.includes(definition[6]) == true) {
+       test_str = x;
+       start_pos = test_str.indexOf(definition[6])-450;
+       end_pos = test_str.indexOf(definition[6])+450;
+       text_to_get = test_str.substring(start_pos, end_pos);
+       str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+       str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+       str3 = str.replace(str2, "");
+     myKeyWord = definition[6];}
+
+     else if(x.includes(definition[7]) == true) {
+      test_str = x;
+      start_pos = test_str.indexOf(definition[7])-450;
+      end_pos = test_str.indexOf(definition[7])+450;
+      text_to_get = test_str.substring(start_pos, end_pos);
+      str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+      str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+      str3 = str.replace(str2, "");
+    myKeyWord = definition[7];}
+
+    else if(x.includes(definition[8]) == true) {
+     test_str = x;
+     start_pos = test_str.indexOf(definition[8])-450;
+     end_pos = test_str.indexOf(definition[8])+450;
+     text_to_get = test_str.substring(start_pos, end_pos);
+     str = text_to_get.substring(text_to_get.indexOf(".") + 1);
+     str2 = text_to_get.substring(text_to_get.lastIndexOf("."));
+     str3 = str.replace(str2, "");
+   myKeyWord = definition[8];}
+
+              else {
+            console.log("none found");
+          }
+            return str3;
           }
 
 
@@ -1288,8 +1566,11 @@ for (var i = 0; i < generalConference.length; i++) {
           let toDoQuote4 = getGenConToDo1(pa4);
           let toDoQuote5 = getGenConToDo1(pa5);
 
-          console.log(resultsArray1);
-          console.log(resultsArray2);
+          let trialsQuote1 = getGenConTrials1(pa1);
+          let trialsQuote2 = getGenConTrials1(pa2);
+          let trialsQuote3 = getGenConTrials1(pa3);
+          let trialsQuote4 = getGenConTrials1(pa4);
+          let trialsQuote5 = getGenConTrials1(pa5);
 
           let genConQuote1 = resultsArray1[0];
           let genConQuote2 = resultsArray2[0];
@@ -1344,7 +1625,7 @@ console.log(gencon_talk1);
             return [quoteToUse, genConAuthor, genConPosition, genConTalkTitle, genConYear];
           }
 
-          let genConTalkQuoteArray = determineWhichQuoteToUse(genConQuote1, genConQuote2, genConQuote3, genConQuote3, genConQuote4, genConQuote5);
+          let genConTalkQuoteArray = determineWhichQuoteToUse(genConQuote1, genConQuote2, genConQuote3, genConQuote4, genConQuote5);
           let defQuote = genConTalkQuoteArray[0];
           let genConfAuthor1 = genConTalkQuoteArray[1];
           let genConfPosition1 = genConTalkQuoteArray[2];
@@ -1365,7 +1646,12 @@ console.log(gencon_talk1);
           let genConfTitle3 = genConTalktoDoArray[3];
           let genConfYear3 = genConTalktoDoArray[4];
 
-
+          let genConTalkTrialsArray = determineWhichQuoteToUse(trialsQuote1, trialsQuote2, trialsQuote3, trialsQuote4, trialsQuote5);
+          let trialsQoute = genConTalkTrialsArray[0];
+          let genConfAuthor4 = genConTalkTrialsArray[1];
+          let genConfPosition4 = genConTalkTrialsArray[2];
+          let genConfTitle4 = genConTalkTrialsArray[3];
+          let genConfYear4 = genConTalkTrialsArray[4];
 
 
 
@@ -1443,10 +1729,12 @@ console.log(gencon_talk1);
             let after = "";
             let questiontoDo = "";
             let questionBlessings = "";
+            let questionTrials = "";
             if (x == "agency") {
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some of the obstacles we face in righteously exercising our agency?";
               questiontoDo = "how can we righteously exercise";
               questionBlessings = "what are the blessings of";
             }
@@ -1455,6 +1743,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some of the obstacles we face in applying the atonement in our lives?";
               questiontoDo = "what must we do to access";
               questionBlessings = "what are the blessings of";
             }
@@ -1463,6 +1752,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are things we face that make it difficult to keep our baptismal covenants?";
               questiontoDo = "what must we do to recieve the blessings of";
               questionBlessings = "what are the blessings of";
             }
@@ -1471,6 +1761,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "why is it hard to make the Book of Mormon a priority in our lives?";
               questiontoDo = "how can we benefit from";
               questionBlessings = "what are the blessings of";
             }
@@ -1479,6 +1770,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some things that make it difficult to be charitable?";
               questiontoDo = "what must we do to have";
               questionBlessings = "what are the blessings of";
             }
@@ -1487,6 +1779,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some challenges in understanding the creation?";
               questiontoDo = "what can we learn from";
               questionBlessings = "what are the blessings of";
             }
@@ -1495,6 +1788,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what obstacles can make attending and benefiting from church difficult?";
               questiontoDo = "what must we do to recieve blessings from";
               questionBlessings = "what are the blessings of";
             }
@@ -1503,6 +1797,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "why might it be difficult to pray daily?";
               questiontoDo = "how can we improve our";
               questionBlessings = "what are the blessings of";
             }
@@ -1511,6 +1806,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "why can showing gratitude sometimes be difficult?";
               questiontoDo = "how can we be more";
               questionBlessings = "what are the blessings of";
             }
@@ -1519,6 +1815,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "why can understanding the Doctrine and Covenants be difficult?";
               questiontoDo = "what must we do to access the blessings of";
               questionBlessings = "what are the blessings of";
             }
@@ -1527,6 +1824,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "who is";
               after = "is";
+              questionTrials = "what things can make it difficult to have a relationship with our Heavenly Father?";
               questiontoDo = "what must we do to be closer to";
               questionBlessings = "what are the blessings of being closer to";
             }
@@ -1535,6 +1833,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what types of things can be obstacles to faith?";
               questiontoDo = "how can we have more";
               questionBlessings = "what are the blessings of";
             }
@@ -1543,6 +1842,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some things that may make it difficult to feel the Holy Ghost?";
               questiontoDo = "what must we do to receive promptings from";
               questionBlessings = "what are the blessings of";
             }
@@ -1551,6 +1851,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some things that may make it difficult to be completely honest?";
               questiontoDo = "how can we be more";
               questionBlessings = "what are the blessings of";
             }
@@ -1559,6 +1860,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the New Testament?";
               questiontoDo = "what must we do to access blessings from";
               questionBlessings = "what are the blessings of";
             }
@@ -1567,6 +1869,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some obstacles to being completely obedient?";
               questiontoDo = "how can we strive for more";
               questionBlessings = "what are the blessings of";
             }
@@ -1575,6 +1878,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Old Testament?";
               questiontoDo = "what must we do to access the blessings of";
               questionBlessings = "what are the blessings of";
             }
@@ -1583,6 +1887,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Priesthood?";
               questiontoDo = "what can we do to benefit from";
               questionBlessings = "what are the blessings of";
             }
@@ -1591,6 +1896,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what are";
               after = "are";
+              questionTrials = "what are some things that may make it hard to always follow the Prophet?";
               questiontoDo = "what can we do to gain a testimony of";
               questionBlessings = "what are the blessings of";
             }
@@ -1599,6 +1905,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some things that may make it hard to repent?";
               questiontoDo = "what must we do to gain the blessings of";
               questionBlessings = "what are the blessings of";
             }
@@ -1607,6 +1914,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some obstacles to understanding and renewing our covenants each week at the Sacrament?";
               questiontoDo = "how can we be blessed by";
               questionBlessings = "what are the blessings of";
             }
@@ -1615,6 +1923,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what are";
               after = "are";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Scriptures?";
               questiontoDo = "how can we prioritize";
               questionBlessings = "what are the blessings of";
             }
@@ -1623,6 +1932,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "why might it be difficult to give selfless service?";
               questiontoDo = "how can we prioritize";
               questionBlessings = "what are the blessings of";
             }
@@ -1631,6 +1941,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what was";
               after = "was";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the The Fall?";
               questiontoDo = "what can we do to understand";
               questionBlessings = "what are the blessings of";
             }
@@ -1639,6 +1950,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "who is";
               after = "is";
+              questionTrials = "what are some obstacles to gaining a better understanding of and relationship with Jesus Christ?";
               questiontoDo = "how can we be more like";
               questionBlessings = "what blessings come from drawing closer to";
             }
@@ -1647,6 +1959,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some challenges to living the word of wisdom?";
               questiontoDo = "what must we do to live";
               questionBlessings = "what are the blessings of";
             }
@@ -1655,6 +1968,7 @@ console.log(gencon_talk1);
               theBefore = "an";
               before = "what is an";
               after = "is";
+              questionTrials = "why might we find it difficult to follow the counsel of the prophets and apostles?";
               questiontoDo = "how can we follow";
               questionBlessings = "what are the blessings of";
             }
@@ -1663,6 +1977,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Godhead?";
               questiontoDo = "how can we live closer to";
               questionBlessings = "what are the blessings of";
             }
@@ -1671,6 +1986,7 @@ console.log(gencon_talk1);
               theBefore = "a";
               before = "what is a";
               after = "is";
+              questionTrials = "what types of things might make it difficult to gain a testimony?";
               questiontoDo = "what can we do to gain";
               questionBlessings = "what are the blessings of";
             }
@@ -1679,6 +1995,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what types of things might make it difficult to avoid being in hell?";
               questiontoDo = "what must we do to avoid";
               questionBlessings = "what are the blessings of not being in";
             }
@@ -1687,6 +2004,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some challenges to making our marriages happy and gospel centered?";
               questiontoDo = "how can we be worthy of";
               questionBlessings = "what are the blessings of";
             }
@@ -1695,6 +2013,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties associated with living worthy of Eternal Life?";
               questiontoDo = "what must we do to one day be in";
               questionBlessings = "what are the blessings of";
             }
@@ -1703,6 +2022,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what obstacles can make missionary work difficult?";
               questiontoDo = "how can we be better at";
               questionBlessings = "what are the blessings of";
             }
@@ -1711,6 +2031,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Birth of Christ?";
               questiontoDo = "what can we do to understand";
               questionBlessings = "what are the blessings of";
             }
@@ -1719,6 +2040,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "who were";
               after = "are";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Pioneers?";
               questiontoDo = "what can we do to be like";
               questionBlessings = "what are the blessings of";
             }
@@ -1727,6 +2049,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Premortal Life?";
               questiontoDo = "what can we learn from";
               questionBlessings = "what are the blessings of knowing about";
             }
@@ -1735,6 +2058,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Resurrection?";
               questiontoDo = "what can we do to be ready for";
               questionBlessings = "what are the blessings of";
             }
@@ -1742,6 +2066,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "who are";
               after = "are";
+              questionTrials = "what types of things can make it difficult to show appreciation for the women in our lives?";
               questiontoDo = "what can we do to show appreciation for";
               questionBlessings = "what are the blessings of";
             }
@@ -1749,6 +2074,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the apostasy?";
               questiontoDo = "what can we learn from";
               questionBlessings = "what are the blessings of";
             }
@@ -1756,13 +2082,15 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
-              questiontoDo = "what blessings come from";
+              questionTrials = "what are some obstacles in strengthening our family?";
+              questiontoDo = "what can we do to strengthen";
               questionBlessings = "what are the blessings of";
             }
             else if ( x == "chastity") {
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some obsacles always being chaste?";
               questiontoDo = "how can we prioritize";
               questionBlessings = "what are the blessings of";
             }
@@ -1770,6 +2098,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what are";
               after = "are";
+              questionTrials = "what are some obstacles to heeding the Savior's counsel to be more like little Children?";
               questiontoDo = "how can we be more like";
               questionBlessings = "what are the blessings of";
             }
@@ -1777,6 +2106,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what are";
               after = "are";
+              questionTrials = "why might we find it difficult to keep our covenants?";
               questiontoDo = "how can we keep our";
               questionBlessings = "what are the blessings of";
             }
@@ -1784,6 +2114,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Death and the Resurrection?";
               questiontoDo = "what can we learn about";
               questionBlessings = "what are the blessings of";
             }
@@ -1791,6 +2122,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in doing our Family History and Temple work?";
               questiontoDo = "what can we learn from";
               questionBlessings = "what are the blessings of";
             }
@@ -1798,6 +2130,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what are";
               after = "are";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the the Gifts of the Spirit?";
               questiontoDo = "what can we do to receive";
               questionBlessings = "what are the blessings of";
             }
@@ -1805,6 +2138,7 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Gospel?";
               questiontoDo = "what can we do to live by the teachings of";
               questionBlessings = "what are the blessings of";
             }
@@ -1812,6 +2146,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "why might we find it difficult to be happy?";
               questiontoDo = "how can we have more";
               questionBlessings = "what are the blessings of";
             }
@@ -1819,6 +2154,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what are";
               after = "are";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of Miracles?";
               questiontoDo = "what can we do to learn about";
               questionBlessings = "what are the blessings of";
             }
@@ -1826,6 +2162,7 @@ console.log(gencon_talk1);
               theBefore = "";
               before = "what is";
               after = "is";
+              questionTrials = "why might we find it difficult to be self reliant?";
               questiontoDo = "how can we focus on";
               questionBlessings = "what are the blessings of";
             }
@@ -1833,10 +2170,11 @@ console.log(gencon_talk1);
               theBefore = "the";
               before = "what is";
               after = "is";
+              questionTrials = "what are some difficulties in understanding and gaining a testimony of the Second Coming?";
               questiontoDo = "what can we do to be prepared for";
               questionBlessings = "what are the blessings of";
             }
-            return [theBefore, before, after, questiontoDo, questionBlessings];
+            return [theBefore, before, after, questiontoDo, questionBlessings, questionTrials];
           }
           let questionArray = determinePhrasing(keyWord);
            theBefore = questionArray[0];
@@ -1844,6 +2182,7 @@ console.log(gencon_talk1);
            after = questionArray[2];
            questiontoDo = questionArray[3];
            questionBlessings = questionArray[4];
+           questionTrials = questionArray[5];
            console.log(questiontoDo);
            console.log(questionArray[3]);
 
@@ -1858,53 +2197,78 @@ console.log(gencon_talk1);
             return is_are
           }
           let isAre = isPlural(topic);
-console.log(genConfAuthor1);
-console.log(genConfYear1);
+
+
           let markup =
             `<p>
 
-              As I was preparing to speak today, on the topic of ${theBefore} ${keyWord}, one of the first questions I asked myself was ${before}, ${theBefore} ${keyWord}?  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
+              As I was preparing to speak today, on the topic of ${theBefore} ${keyWord}, one of the first questions I asked myself was, "${before} ${theBefore} ${keyWord}?"  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
               </p>
               <p>
-              To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${genConfYear1}, ${genConfAuthor1}, who was ${genConfPosition1} when she gave an address entitled, ${genConfTitle1}, in which he defines ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what he says:
+              To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${genConfYear1}, ${genConfAuthor1}, who was ${genConfPosition1} when they gave an address entitled, ${genConfTitle1}, in which they define ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what they said:
               </p>
-              <p>
+              <span class="quotation">"</span><p class="quote">
               ${defQuote}
-              </p>
+              </p><span class="quotation2">"</span>
               <p>
-              His words really stuck with me, (re-read a portion of the quote here)
+              Their words really stuck with me, (re-read a portion of the quote here)
               </p>
               <p>
               It made me think about a time in my life when (share a personal experience related to the topic.)
               </p>
               <p>
-              So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${genConfAuthor2} who was ${genConfPosition2} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${genConfTitle2} from the ${genConfYear2} General Conference.  In that address he has this to say, about what we can do.
+              So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${genConfAuthor2} who was ${genConfPosition2} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${genConfTitle2} from the ${genConfYear2} General Conference.  In that address they had this to say, about what we can do:
               </p>
-              <p>
+              <span class="quotation">"</span><p class="quote">
               ${toDoQoute}
-              </p>
+              </p><span class="quotation2">"</span>
               <p>
-              His comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${standardWork}, ${book}, ${chapter}.  Now, this is the part where ${speaker}, I believe, is speaking with ${listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${verses}, but I'll only read a few of them here.
+              Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${scripture1.standard_works}, ${scripture1.book}, ${scripture1.chapter}.  Now, this is the part where ${scripture1.speaker}, I believe, is speaking with ${scripture1.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${scripture1.verses}, but I'll only read a few of them here.
               </p>
-              <p>
-              ${verse1}
-              </p>
+              <span class="quotation">"</span><p class="quote">
+              ${scripture1.verse_text}
+              </p><span class="quotation2">"</span>
               <p>
               In my own life, I think I can apply this by ( describe ways you can apply these verses and talks)
               </p>
               <p>
-              Lastly, I really wanted to know why ${theBefore} ${keyWord} is so important.  ${questionBlessings} ${theBefore} ${keyWord}?  ${genConfAuthor3} who was ${genConfPosition3} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${genConfYear3}, they gave an address entitled ${genConfTitle3}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
+              I really like the way that ${genConfAuthor2} describes what we can do to improve.  However, I have found in my life what whenever I want to be better at a principle, or understand a doctrine better, knowing what to do is always easier than actually doing it.  Life gets busy, and things get in the way, and my priorities can often become skewed.  One thing that helps me overcome that, as I try to be more perfect, is knowing in advance what obstacles and difficulties I'm going to face as I strive to improve.  With that idea in mind, I came across another great talk where they addresses the question of "${questionTrials}".
               </p>
               <p>
+              The talk is from back in ${genConfYear4}, by ${genConfAuthor4}, who was ${genConfPosition4} at the time they gave this address.  In the talk, entitled ${genConfTitle4}, they touch on several of those obstacles we may face as we all strive for perfection, and may help us avoid some of the same pitfalls along the way.  Quote:
+              </p>
+              <span class="quotation">"</span><p class="quote">
+              ${trialsQoute}
+              </p><span class="quotation2">"</span>
+              <p>
+              Having a better unerstanding of how I can improve, and what some of the obstacles are, I think it's important to know why ${theBefore} ${keyWord} is so important, and   ${questionBlessings} ${theBefore} ${keyWord}?  ${genConfAuthor3} who was ${genConfPosition3} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${genConfYear3}, they gave an address entitled ${genConfTitle3}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
+              </p>
+              <span class="quotation">"</span><p class="quote">
               ${blessQuote}
+              </p><span class="quotation2">"</span>
+              <p>
+              Don't you just love that?  Obviously the blessings from living the gospel don't always come immediately, but if we are patient and continue to try and improve, they will eventually come.
               </p>
               <p>
-              Don't you just love that?  Now, I know I'm short on time, but let me just summarize by saying, (summarize the talk here briefly).
+              Now, I know I'm short on time, but let me just summarize by saying: (here's what to summarize)
+              1. "As we try to answer the question of ${questiontoDo} ${theBefore} ${keyWord}, knowing what to do is often easier than actually doing it"
+              2. "We can follow ${genConfAuthor4}'s counsel, and be aware of some of the obstacles that may stand in our way."
+              3. "And we can do as ${genConfAuthor2} suggests, and take steps to improving."
+              4. "We can look for the promised blessings that ${genConfAuthor3} reminded us of as we make ${keyWord} more of a priority in our lives."
               </p>
-
-
-
-
+              <p>
+              Let me end with one of my favorite scriptures on the topic of ${topic}/${keyWord}.
+              </p>
+              <p>
+              This comes from ${scripture3.standard_works}, in ${scripture3.book}, ${scripture3.chapter}.  This is one of my favorite parts of ${scripture3.standard_works}, and it's where ${scripture3.speaker} is speaking with ${scripture3.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${scripture3.verses}, it says
+              </p>
+              <span class="quotation">"</span><p class="quote">
+              ${scripture3.verse_text}
+              </p><span class="quotation2">"</span>
+              <p>
+              Finally, I'll close here with my testimony.
+              (bear testimony here about the importance of ${theBefore} ${keyWord})
+              </p>
 
 
 
