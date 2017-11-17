@@ -31,9 +31,9 @@
 
       var mapObj = {
         "free agency": "agency",
-        "agency" : "agency"
+        "agency" : "agency",
         "the atonement": "atonement",
-        "atonement" : "atonement"
+        "atonement" : "atonement",
         "baptize": "baptism",
         "baptism": "baptism",
         "book of mormon": "bookofmormon",
@@ -53,7 +53,7 @@
         "the church":"church",
         "church":"church",
         "d&c": "doctrinecovenants",
-        "the doctrine and covenants":"doctrinecovenants"
+        "the doctrine and covenants":"doctrinecovenants",
         "events": "events",
         "heavenly father": "god",
         "father in heaven": "god",
@@ -1604,141 +1604,243 @@ myKeyWord = definition[11];}
           let definition5 = resultsArray5[1];
 
 console.log(gencon_talk1);
-          function determineWhichQuoteToUse (a, b, c, d, e) {
-            let quoteToUse = "";
-            let genConAuthor = "";
-            let genConPosition = "";
-            let genConTalkTitle = "";
-            let genConYear = "";
-            if (a != "") {
-              quoteToUse = a;
-              genConAuthor = author_1;
-              genConPosition = position_1;
-              genConTalkTitle = title_1;
-              genConYear = year_1;
-            }else if (b != "") {
-              quoteToUse = b;
-              genConAuthor = author_2;
-              genConPosition = position_2;
-              genConTalkTitle = title_2;
-              genConYear = year_2;
-            } else if (c != "") {
-              quoteToUse = c;
-              genConAuthor = author_3;
-              genConPosition = position_3;
-              genConTalkTitle = title_3;
-              genConYear = year_3;
-            } else if (d != "") {
-              quoteToUse = d;
-              genConAuthor = author_4;
-              genConPosition = position_4;
-              genConTalkTitle = title_4;
-              genConYear = year_4;
-            } else if (e != "") {
-              quoteToUse = e;
-              genConAuthor = author_5;
-              genConPosition = position_5;
-              genConTalkTitle = title_5;
-              genConYear = year_5;
-            }
-            return [quoteToUse, genConAuthor, genConPosition, genConTalkTitle, genConYear];
-          }
+let talkQuoteObject1 = {
+  "quoteToUse": genConQuote1,
+  "genConAuthor": author_1,
+  "genConPosition": position_1,
+  "genConTalkTitle": title_1,
+  "genConYear": year_1,
+};
 
-          let genConTalkQuoteArray = determineWhichQuoteToUse(genConQuote1, genConQuote2, genConQuote3, genConQuote4, genConQuote5);
-          let defQuote = genConTalkQuoteArray[0];
-          let genConfAuthor1 = genConTalkQuoteArray[1];
-          let genConfPosition1 = genConTalkQuoteArray[2];
-          let genConfTitle1 = genConTalkQuoteArray[3];
-          let genConfYear1 = genConTalkQuoteArray[4];
+let talkQuoteObject2 = {
+  "quoteToUse": genConQuote2,
+  "genConAuthor": author_2,
+  "genConPosition": position_2,
+  "genConTalkTitle": title_2,
+  "genConYear": year_2,
+};
 
-          let genConTalkBlessingsArray = determineWhichQuoteToUse(blessingsQuote1, blessingsQuote2, blessingsQuote3, blessingsQuote4, blessingsQuote5);
-          let blessQuote = genConTalkBlessingsArray[0];
-          let genConfAuthor2 = genConTalkBlessingsArray[1];
-          let genConfPosition2 = genConTalkBlessingsArray[2];
-          let genConfTitle2 = genConTalkBlessingsArray[3];
-          let genConfYear2 = genConTalkBlessingsArray[4];
+let talkQuoteObject3 = {
+  "quoteToUse": genConQuote3,
+  "genConAuthor": author_3,
+  "genConPosition": position_3,
+  "genConTalkTitle": title_3,
+  "genConYear": year_3,
+};
 
-          let genConTalktoDoArray = determineWhichQuoteToUse(toDoQuote1, toDoQuote2, toDoQuote3, toDoQuote4, toDoQuote5);
-          let toDoQoute = genConTalktoDoArray[0];
-          let genConfAuthor3 = genConTalktoDoArray[1];
-          let genConfPosition3 = genConTalktoDoArray[2];
-          let genConfTitle3 = genConTalktoDoArray[3];
-          let genConfYear3 = genConTalktoDoArray[4];
+let talkQuoteObject4 = {
+  "quoteToUse": genConQuote4,
+  "genConAuthor": author_4,
+  "genConPosition": position_4,
+  "genConTalkTitle": title_4,
+  "genConYear": year_4,
+};
 
-          let genConTalkTrialsArray = determineWhichQuoteToUse(trialsQuote1, trialsQuote2, trialsQuote3, trialsQuote4, trialsQuote5);
-          let trialsQoute = genConTalkTrialsArray[0];
-          let genConfAuthor4 = genConTalkTrialsArray[1];
-          let genConfPosition4 = genConTalkTrialsArray[2];
-          let genConfTitle4 = genConTalkTrialsArray[3];
-          let genConfYear4 = genConTalkTrialsArray[4];
+let talkQuoteObject5 = {
+  "quoteToUse": genConQuote5,
+  "genConAuthor": author_5,
+  "genConPosition": position_5,
+  "genConTalkTitle": title_5,
+  "genConYear": year_5,
+};
 
+//----------------------------//
 
+let blessQuoteObject1 = {
+  "quoteToUse": blessingsQuote1,
+  "genConAuthor": author_1,
+  "genConPosition": position_1,
+  "genConTalkTitle": title_1,
+  "genConYear": year_1,
+};
 
-          function getPhrase1 (x, y) {
-            let text_to_get = "";
-            if(x.includes(key) == true) {
-           test_str = y;
-             start_pos = test_str.indexOf(key) - 10;
-             end_pos = test_str.indexOf(".",start_pos);
-             text_to_get = test_str.substring(start_pos,end_pos)
+let blessQuoteObject2 = {
+  "quoteToUse": blessingsQuote2,
+  "genConAuthor": author_2,
+  "genConPosition": position_2,
+  "genConTalkTitle": title_2,
+  "genConYear": year_2,
+};
 
-          }else if (x.includes(topic) == true) {
-            test_str = y;
-              start_pos = test_str.indexOf(topic) - 10;
-              end_pos = test_str.indexOf(".",start_pos);
-              text_to_get = test_str.substring(start_pos,end_pos)
+let blessQuoteObject3 = {
+  "quoteToUse": blessingsQuote3,
+  "genConAuthor": author_3,
+  "genConPosition": position_3,
+  "genConTalkTitle": title_3,
+  "genConYear": year_3,
+};
 
-          } else {
-            console.log("NONONONONONONONO");
-          }
-            return text_to_get;
-          }
-          let phrase1 = getPhrase1(verse1, verse1);
+let blessQuoteObject4 = {
+  "quoteToUse": blessingsQuote4,
+  "genConAuthor": author_4,
+  "genConPosition": position_4,
+  "genConTalkTitle": title_4,
+  "genConYear": year_4,
+};
 
+let blessQuoteObject5 = {
+  "quoteToUse": blessingsQuote5,
+  "genConAuthor": author_5,
+  "genConPosition": position_5,
+  "genConTalkTitle": title_5,
+  "genConYear": year_5,
+};
 
-          function getPhrase2 (x, y) {
-            let text_to_get = "";
-            if(x.includes(key) == true) {
-           test_str = y;
-             start_pos = test_str.indexOf(key) - 10;
-             end_pos = test_str.indexOf(".",start_pos);
-             text_to_get = test_str.substring(start_pos,end_pos)
+//--------------------------//
 
-          }else if (x.includes(topic) == true) {
-            test_str = y;
-              start_pos = test_str.indexOf(topic) - 10;
-              end_pos = test_str.indexOf(".",start_pos);
-              text_to_get = test_str.substring(start_pos,end_pos)
+let trialsQuoteObject1 = {
+  "quoteToUse": trialsQuote1,
+  "genConAuthor": author_1,
+  "genConPosition": position_1,
+  "genConTalkTitle": title_1,
+  "genConYear": year_1,
+};
 
-          } else {
-            console.log("NONONONONONONONO");
-          }
-            return text_to_get;
-          }
-          let phrase2 = getPhrase2(verse2, verse2);
+let trialsQuoteObject2 = {
+  "quoteToUse": trialsQuote2,
+  "genConAuthor": author_2,
+  "genConPosition": position_2,
+  "genConTalkTitle": title_2,
+  "genConYear": year_2,
+};
 
+let trialsQuoteObject3 = {
+  "quoteToUse": trialsQuote3,
+  "genConAuthor": author_3,
+  "genConPosition": position_3,
+  "genConTalkTitle": title_3,
+  "genConYear": year_3,
+};
 
+let trialsQuoteObject4 = {
+  "quoteToUse": trialsQuote4,
+  "genConAuthor": author_4,
+  "genConPosition": position_4,
+  "genConTalkTitle": title_4,
+  "genConYear": year_4,
+};
 
-          function getPhrase3 (x, y) {
-            let text_to_get = "";
-            if(x.includes(key) == true) {
-           test_str = y;
-             start_pos = test_str.indexOf(key) - 10;
-             end_pos = test_str.indexOf(".",start_pos);
-             text_to_get = test_str.substring(start_pos,end_pos)
+let trialsQuoteObject5 = {
+  "quoteToUse": trialsQuote5,
+  "genConAuthor": author_5,
+  "genConPosition": position_5,
+  "genConTalkTitle": title_5,
+  "genConYear": year_5,
+};
 
-          }else if (x.includes(topic) == true) {
-            test_str = y;
-              start_pos = test_str.indexOf(topic) - 10;
-              end_pos = test_str.indexOf(".",start_pos);
-              text_to_get = test_str.substring(start_pos,end_pos)
+//---------------------------//
 
-          } else {
-            console.log("NONONONONONONONO");
-          }
-            return text_to_get;
-          }
-          let phrase3 = getPhrase3(verse3, verse3);
+let toDoQuoteObject1 = {
+  "quoteToUse": toDoQuote1,
+  "genConAuthor": author_1,
+  "genConPosition": position_1,
+  "genConTalkTitle": title_1,
+  "genConYear": year_1,
+};
+
+let toDoQuoteObject2 = {
+  "quoteToUse": toDoQuote2,
+  "genConAuthor": author_2,
+  "genConPosition": position_2,
+  "genConTalkTitle": title_2,
+  "genConYear": year_2,
+};
+
+let toDoQuoteObject3 = {
+  "quoteToUse": toDoQuote3,
+  "genConAuthor": author_3,
+  "genConPosition": position_3,
+  "genConTalkTitle": title_3,
+  "genConYear": year_3,
+};
+
+let toDoQuoteObject4 = {
+  "quoteToUse": toDoQuote4,
+  "genConAuthor": author_4,
+  "genConPosition": position_4,
+  "genConTalkTitle": title_4,
+  "genConYear": year_4,
+};
+
+let toDoQuoteObject5 = {
+  "quoteToUse": toDoQuote5,
+  "genConAuthor": author_5,
+  "genConPosition": position_5,
+  "genConTalkTitle": title_5,
+  "genConYear": year_5,
+};
+
+let talkQuoteArray = [];
+let blessQuoteArray = [];
+let trialsQuoteArray = [];
+let toDoQuoteArray = [];
+
+function pushToQuoteArray (x) {
+  for (var i = 0; i < x.quoteToUse.length; i++) {
+    if (x.quoteToUse == undefined || null || "") {
+      x.quoteToUse = "-";
+    }
+    else if( x.quoteToUse != "" ) {
+      talkQuoteArray.push(x);
+    }
+return talkQuoteArray;
+  }
+  return talkQuoteArray;
+}
+pushToQuoteArray(talkQuoteObject1);
+pushToQuoteArray(talkQuoteObject2);
+pushToQuoteArray(talkQuoteObject3);
+pushToQuoteArray(talkQuoteObject4);
+pushToQuoteArray(talkQuoteObject5);
+console.log(talkQuoteArray);
+
+function pushToBlessArray (x) {
+  for (var i = 0; i < x.quoteToUse.length; i++) {
+    if( x.quoteToUse != "" ) {
+      blessQuoteArray.push(x);
+    }
+return blessQuoteArray;
+  }
+  return blessQuoteArray;
+}
+pushToBlessArray(blessQuoteObject1);
+pushToBlessArray(blessQuoteObject2);
+pushToBlessArray(blessQuoteObject3);
+pushToBlessArray(blessQuoteObject4);
+pushToBlessArray(blessQuoteObject5);
+console.log(blessQuoteArray);
+
+function pushToTrialsArray (x) {
+  for (var i = 0; i < x.quoteToUse.length; i++) {
+    if( x.quoteToUse != "" ) {
+      trialsQuoteArray.push(x);
+    }
+return trialsQuoteArray;
+  }
+  return trialsQuoteArray;
+}
+pushToTrialsArray(trialsQuoteObject1);
+pushToTrialsArray(trialsQuoteObject2);
+pushToTrialsArray(trialsQuoteObject3);
+pushToTrialsArray(trialsQuoteObject4);
+pushToTrialsArray(trialsQuoteObject5);
+console.log(trialsQuoteArray);
+
+function pushToToDoArray (x) {
+  for (var i = 0; i < x.quoteToUse.length; i++) {
+    if( x.quoteToUse != "" ) {
+      toDoQuoteArray.push(x);
+    }
+return toDoQuoteArray;
+  }
+  return toDoQuoteArray;
+}
+pushToToDoArray(toDoQuoteObject1);
+pushToToDoArray(toDoQuoteObject2);
+pushToToDoArray(toDoQuoteObject3);
+pushToToDoArray(toDoQuoteObject4);
+pushToToDoArray(toDoQuoteObject5);
+console.log(toDoQuoteArray);
 
 
 
@@ -2205,18 +2307,6 @@ console.log(gencon_talk1);
            console.log(questiontoDo);
            console.log(questionArray[3]);
 
-          let is_are = "";
-          function isPlural (x) {
-            let lastChar = x.substr(x.length - 1);
-            if ( lastChar == "s") {
-              is_are = "are";
-            }else{
-              is_are = "is";
-            }
-            return is_are
-          }
-          let isAre = isPlural(topic);
-
 
           let markup =
             `<p>
@@ -2227,71 +2317,46 @@ console.log(gencon_talk1);
               <p>Second, ${questiontoDo} ${theBefore} ${keyWord}?</p>
               <p>Third, ${questionTrials}? </p>
               <p>And finally, ${questionBlessings} ${theBefore} ${keyWord}? </p>
-
-
                <p>So, to begin, "${before} ${theBefore} ${keyWord}?"  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
               </p>
-              <p>
-              To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${genConfYear1}, ${genConfAuthor1}, who was ${genConfPosition1} when they gave an address entitled, ${genConfTitle1}, in which they define ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what they said:
-              </p>
-              <span class="quotation">"</span><p class="quote">
-              ${defQuote}
-              </p><span class="quotation2">"</span>
+              <p id="one"></p>
+              <button id="toggleQuote1">get new quote</button>
               <p>
               Their words really stuck with me, (re-read a portion of the quote here)
               </p>
               <p>
               It made me think about a time in my life when (share a personal experience related to the topic.)
               </p>
-              <p>
-              So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${genConfAuthor2} who was ${genConfPosition2} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${genConfTitle2} from the ${genConfYear2} General Conference.  In that address they had this to say, about what we can do:
-              </p>
-              <span class="quotation">"</span><p class="quote">
-              ${toDoQoute}
-              </p><span class="quotation2">"</span>
-              <p>
-              Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${scripture1.standard_works}, ${scripture1.book}, ${scripture1.chapter}.  Now, this is the part where ${scripture1.speaker}, I believe, is speaking with ${scripture1.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${scripture1.verses}, but I'll only read a few of them here.
-              </p>
-              <span class="quotation">"</span><p class="quote">
-              ${scripture1.verse_text}
-              </p><span class="quotation2">"</span>
+              <p id="two"></p>
+              <button id="toggleQuote2">get new quote</button>
+              <p id="six"></p>
+              <button id="toggleQuote6">get new scripture</button>
               <p>
               In my own life, I think I can apply this by ( describe ways you can apply these verses and talks)
               </p>
               <p>
-              I really like the way that ${genConfAuthor2} describes what we can do to improve.  However, I have found in my life that whenever I want to be better at a principle, or understand a doctrine better, knowing what to do is always easier than actually doing it.  Life gets busy, and things get in the way, and my priorities can often become skewed.  One thing that helps me overcome that, as I try to be more perfect, is knowing in advance what obstacles and difficulties I'm going to face as I strive to improve.  With that idea in mind, I came across another great talk where they addresses the question of "${questionTrials}".
+              These scriptures and quotes do seem to highlight what ${topic}/${keyWord} ${after}, and what we can do to improve.  However, I have found in my life that whenever I want to be better at a principle, or understand a doctrine better, knowing what to do is always easier than actually doing it.  Life gets busy, and things get in the way, and my priorities can often become skewed.  One thing that helps me overcome that, as I try to be more perfect, is knowing in advance what obstacles and difficulties I'm going to face as I strive to improve.  With that idea in mind, I came across another great talk where they addresses the question of "${questionTrials}".
               </p>
-              <p>
-              The talk is from back in ${genConfYear4}, by ${genConfAuthor4}, who was ${genConfPosition4} at the time they gave this address.  In the talk, entitled ${genConfTitle4}, they touch on several of those obstacles we may face as we all strive for perfection, and may help us avoid some of the same pitfalls along the way.  Quote:
-              </p>
-              <span class="quotation">"</span><p class="quote">
-              ${trialsQoute}
-              </p><span class="quotation2">"</span>
-              <p>
-              Having a better unerstanding of how I can improve, and what some of the obstacles are, I think it's important to know why ${theBefore} ${keyWord} is so important, and   ${questionBlessings} ${theBefore} ${keyWord}?  ${genConfAuthor3} who was ${genConfPosition3} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${genConfYear3}, they gave an address entitled ${genConfTitle3}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
-              </p>
-              <span class="quotation">"</span><p class="quote">
-              ${blessQuote}
-              </p><span class="quotation2">"</span>
+              <p id="three"></p>
+              <button id="toggleQuote3">get new quote</button>
+              <p id="four"></p>
+              <button id="toggleQuote4">get new quote</button>
               <p>
               Don't you just love that?  Obviously the blessings from living the gospel don't always come immediately, but if we are patient and continue to try and improve, they will eventually come.
               </p>
               <p>
               Now, I know I'm short on time, but let me just summarize by saying: (here's what to summarize)
               1. "As we try to answer the question of ${questiontoDo} ${theBefore} ${keyWord}, knowing what to do is often easier than actually doing it"
-              2. "We can follow ${genConfAuthor4}'s counsel, and be aware of some of the obstacles that may stand in our way."
-              3. "And we can do as ${genConfAuthor2} suggests, and take steps to improving."
-              4. "We can look for the promised blessings that ${genConfAuthor3} reminded us of as we make ${keyWord} more of a priority in our lives."
-              </p>
+
+
               <p>
               Let me end with one of my favorite scriptures on the topic of ${topic}/${keyWord}.
               </p>
+              <p id="five"></p>
+              <button id="toggleQuote5">get new scripture</button>
               <p>
-              This comes from ${scripture3.standard_works}, in ${scripture3.book}, ${scripture3.chapter}.  This is one of my favorite parts of ${scripture3.standard_works}, and it's where ${scripture3.speaker} is speaking with ${scripture3.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${scripture3.verses}, it says
+              In summary, living the gospel isn't always easy.  And often, knowing what to do is easier than actually doing it.  However, thanks to the Scriptures and modern revelation, we can know what to do, as well as what some of the obstacles are that may keep us from improving.  But the Lord promises us blessings as we continue to strive to be better.
               </p>
-              <span class="quotation">"</span><p class="quote">
-              ${scripture3.verse_text}
-              </p><span class="quotation2">"</span>
               <p>
               Finally, I'll close here with my testimony.
               (bear testimony here about the importance of ${theBefore} ${keyWord})
@@ -2300,16 +2365,167 @@ console.log(gencon_talk1);
 
 
             `
-
-
-
-
-
           document.getElementById('para1').innerHTML = markup;
 
+          let quote1Arr = [];
+          talkQuoteArray.forEach( function (arrayItem) {
+           let quote1 = `
+           <p>
+           To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${arrayItem.genConYear}, ${arrayItem.genConAuthor}, who was ${arrayItem.genConPosition} when they gave an address entitled, ${arrayItem.genConTalkTitle}, in which they define ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what they said:
+           </p>
+           <span class="quotation">"</span><p class="quote">
+           ${arrayItem.quoteToUse}
+           </p><span class="quotation2">"</span>`;
+            quote1Arr.push(quote1);
+              });
+
+              let toggleQ1 = document.getElementById('toggleQuote1');
+              toggleQ1.onclick = render1;
+
+              function render1(){
+                let randomQuote1 = quote1Arr[Math.floor(Math.random()*quote1Arr.length)];
+              document.getElementById('one').innerHTML = randomQuote1;
+              return randomQuote1;
+            }
+            let randomQuote1 = quote1Arr[Math.floor(Math.random()*quote1Arr.length)];
+            document.getElementById('one').innerHTML = randomQuote1;
 
 
 
+            let quote2Arr = [];
+            toDoQuoteArray.forEach( function (arrayItem) {
+             let quote2 = `
+             <p>
+             So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${arrayItem.genConTalkTitle} from the ${arrayItem.genConYear} General Conference.  In that address they had this to say, about what we can do:
+             </p>
+             <span class="quotation">"</span><p class="quote">
+             ${arrayItem.quoteToUse}
+             </p><span class="quotation2">"</span>`;
+
+
+              quote2Arr.push(quote2);
+                });
+
+                let toggleQ2 = document.getElementById('toggleQuote2');
+                toggleQ2.onclick = render2;
+
+                function render2(){
+                  let randomQuote2 = quote2Arr[Math.floor(Math.random()*quote2Arr.length)];
+                document.getElementById('two').innerHTML = randomQuote2;
+                return randomQuote2;
+              }
+              let randomQuote2 = quote2Arr[Math.floor(Math.random()*quote2Arr.length)];
+              document.getElementById('two').innerHTML = randomQuote2;
+
+
+              let quote3Arr = [];
+              trialsQuoteArray.forEach( function (arrayItem) {
+               let quote3 = `
+               <p>
+               The talk is from back in ${arrayItem.genConYear}, by ${arrayItem.genConAuthor}, who was ${arrayItem.genConPosition} at the time they gave this address.  In the talk, entitled ${arrayItem.genConTalkTitle}, they touch on several of those obstacles we may face as we all strive for perfection, and may help us avoid some of the same pitfalls along the way.  Quote:
+               </p>
+               <span class="quotation">"</span><p class="quote">
+               ${arrayItem.quoteToUse}
+               </p><span class="quotation2">"</span>`;
+
+
+
+
+                quote3Arr.push(quote3);
+                  });
+
+                  let toggleQ3 = document.getElementById('toggleQuote3');
+                  toggleQ3.onclick = render3;
+
+                  function render3(){
+                    let randomQuote3 = quote3Arr[Math.floor(Math.random()*quote3Arr.length)];
+                  document.getElementById('three').innerHTML = randomQuote3;
+                  return randomQuote3;
+                }
+                let randomQuote3 = quote3Arr[Math.floor(Math.random()*quote3Arr.length)];
+                document.getElementById('three').innerHTML = randomQuote3;
+
+
+                let quote4Arr = [];
+                blessQuoteArray.forEach( function (arrayItem) {
+                 let quote4 = `
+                 <p>
+                 Having a better unerstanding of how I can improve, and what some of the obstacles are, I think it's important to know why ${theBefore} ${keyWord} is so important, and   ${questionBlessings} ${theBefore} ${keyWord}?  ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${arrayItem.genConYear}, they gave an address entitled ${arrayItem.genConTalkTitle}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
+                 </p>
+                 <span class="quotation">"</span><p class="quote">
+                 ${arrayItem.quoteToUse}
+                 </p><span class="quotation2">"</span>`;
+
+
+
+                  quote4Arr.push(quote4);
+                    });
+
+                    let toggleQ4 = document.getElementById('toggleQuote4');
+                    toggleQ4.onclick = render4;
+
+                    function render4(){
+                      let randomQuote4 = quote4Arr[Math.floor(Math.random()*quote4Arr.length)];
+                    document.getElementById('four').innerHTML = randomQuote4;
+                    return randomQuote4;
+                  }
+                  let randomQuote4 = quote4Arr[Math.floor(Math.random()*quote4Arr.length)];
+                  document.getElementById('four').innerHTML = randomQuote4;
+
+                  console.log(objectArray);
+
+                  let script1Arr = [];
+                  objectArray.forEach( function (arrayItem) {
+                   let script1 = `
+                   <p>
+                   This comes from ${arrayItem.standard_works}, in ${arrayItem.book}, ${arrayItem.chapter}.  This is one of my favorite parts of ${arrayItem.standard_works}, and it's where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${arrayItem.verses}, it says
+                   </p>
+                   <span class="quotation">"</span><p class="quote">
+                   ${arrayItem.verse_text}
+                   </p><span class="quotation2">"</span>`;
+
+
+
+                    script1Arr.push(script1);
+                      });
+
+                      let toggleQ5 = document.getElementById('toggleQuote5');
+                      toggleQ5.onclick = render5;
+
+                      function render5(){
+                        let randomScript1 = script1Arr[Math.floor(Math.random()*script1Arr.length)];
+                      document.getElementById('five').innerHTML = randomScript1;
+                      return randomScript1;
+                    }
+                    let randomScript1 = script1Arr[Math.floor(Math.random()*script1Arr.length)];
+                    document.getElementById('five').innerHTML = randomScript1;
+
+
+                    let script2Arr = [];
+                    objectArray.forEach( function (arrayItem) {
+                     let script2 = `
+                     <p>
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${scripture1.standard_works}, ${scripture1.book}, ${scripture1.chapter}.  Now, this is the part where ${scripture1.speaker}, I believe, is speaking with ${scripture1.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${scripture1.verses}, but I'll only read a few of them here.
+                     </p>
+                     <span class="quotation">"</span><p class="quote">
+                     ${scripture1.verse_text}
+                     </p><span class="quotation2">"</span>`;
+
+
+
+                      script2Arr.push(script2);
+                        });
+
+                        let toggleQ6 = document.getElementById('toggleQuote6');
+                        toggleQ6.onclick = render6;
+
+                        function render6(){
+                          let randomScript2 = script2Arr[Math.floor(Math.random()*script2Arr.length)];
+                        document.getElementById('six').innerHTML = randomScript2;
+                        return randomScript2;
+                      }
+                      let randomScript2 = script1Arr[Math.floor(Math.random()*script2Arr.length)];
+                      document.getElementById('six').innerHTML = randomScript2;
 
           //
           //
