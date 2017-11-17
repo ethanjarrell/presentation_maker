@@ -10,6 +10,83 @@ body {
   margin: 0;
   width: 85%;
 }
+
+.logo {
+  width: 195px;
+  height: 35px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link {
+  display: flex;
+  flex-basis: .2;
+  color: white;
+}
+
+.link:hover {
+  flex-grow: .27;
+  background-color: #4f658e;
+  border: black solid 1px;
+  transform: scaleY(1);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-shadow: none;
+  color: white;
+}
+
+.link2 {
+  flex-basis: .2;
+  width: 20%;
+  background-color: #1691BA;
+  border: black solid 1px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  color: white;
+}
+
+.link2:hover {
+  flex-grow: .27;
+  background-color: #4f658e;
+  border: black solid 1px;
+  transform: scaleY(1);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  text-shadow: none;
+  color: white;
+}
+
+.navbar {
+
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: flex-start;
+  z-index: -10;
+  width: 100vw;
+  height: 50px;
+  top: 5px;
+  border: black solid 2px;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+}
+
 span {
   display: flex;
   flex-flow: row wrap;
