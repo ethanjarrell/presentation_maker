@@ -10,6 +10,47 @@ body {
   margin: 0;
 }
 
+.talkContainer {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border: 1px #a3a3a3 solid;
+}
+
+.talkContainer .talkTitle {
+  text-align: center;
+  font-size: bold;
+}
+
+.talkContainer .talkparagraph {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.talkContainer .talkpara {
+  font-size: 15px;
+  width: 100%;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  background-color: #dbdbdb;
+  border: 1px #a3a3a3 solid;
+}
+
+.talkContainer p {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .videoInputContainer {
   display: flex;
   flex-flow: column wrap;
@@ -489,6 +530,20 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+#commonQuest {
+  cursor: pointer;
+  width: 150px;
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
+}
+
+#commonQuest:hover {
+  filter: brightness(190%);
+  border: black solid 1px;
 }
 
 #vidoesrchbtn {
