@@ -387,12 +387,12 @@
                 listener = "his family";
               }
 
-              if (a == 'omni') {
+              else if (a == 'omni') {
                 speaker = "Omni";
                 listener = "future generations";
               }
 
-              if (a == 'wordsofmormon') {
+              else if (a == 'wordsofmormon') {
                 speaker = "Mormon";
                 listener = "those who would read the Book of Mormon";
               }
@@ -799,6 +799,8 @@ let newBook_andChapter = determineSpeakerAndListener(newerBook, newChapter);
 
           }
           console.log(objectArray);
+
+
 
 
           let topic = document.getElementById('topicInput').value;
@@ -2494,7 +2496,6 @@ console.log(toDoQuoteArray);
                    </p><span class="quotation2">"</span>`;
 
 
-
                     script1Arr.push(script1);
                       });
 
@@ -2514,10 +2515,10 @@ console.log(toDoQuoteArray);
                     objectArray.forEach( function (arrayItem) {
                      let script2 = `
                      <p>
-                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${scripture1.standard_works}, ${scripture1.book}, ${scripture1.chapter}.  Now, this is the part where ${scripture1.speaker}, I believe, is speaking with ${scripture1.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${scripture1.verses}, but I'll only read a few of them here.
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, ${arrayItem.book}, ${arrayItem.chapter}.  Now, this is the part where ${arrayItem.speaker}, I believe, is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${arrayItem.verses}, but I'll only read a few of them here.
                      </p>
                      <span class="quotation">"</span><p class="quote">
-                     ${scripture1.verse_text}
+                     ${arrayItem.verse_text}
                      </p><span class="quotation2">"</span>`;
 
 
