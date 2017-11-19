@@ -13,13 +13,25 @@
 
   <script>
   $(document).ready(function() {
-    console.log("talking");
+
 
     let topicInput = document.getElementById('topicInput');
     let genconf = document.getElementById('genconf');
     genconf.onclick = searchAPI;
-    console.log(topicInput);
-    console.log(genconf);
+
+
+    let bookArray = [];
+    let objBookArray = [];
+    let standardWork = "";
+    let book = "";
+    let verses = "";
+    let verse_text = "";
+    let chapter = "";
+    let speaker = "";
+    let listener = "";
+    let background = "";
+    let newObj = {};
+    let objectArray = [];
 
 
 
@@ -287,518 +299,941 @@
           return ;
         }
 
-
-
+        let temp1Array = [];
+        let book1array = [];
+        let chapter1array = [];
+        let standardwork1array = [];
+        let verse_number1array = [];
+        let verse_text1array = [];
+        let speaker1array = [];
+        let listener1array = [];
+        let background1array = [];
         response.json().then(function(data) {
           let api = data;
 
 
-          let bookArray = [];
+             function pushVerses (x) {
+               for (var i = 0; i < x.length; i++) {
+                 let y = x[i].verse_text
+                 verse_text1array.push(y);
+               }
+             }
+             pushVerses(api);
 
-          let standardWork = "";
-          let book = "";
-          let verses = "";
-          let verse_text = "";
-          let chapter = "";
-          let speaker = "";
-          let listener = "";
-          let newObj = {};
-          let objectArray = [];
-
-
-            for (var i = 0; i < api.length; i++) {
-              let book = api[i].book_and_verse_number;
-
-             let verse_text = api[i].verse_text;
-              bookArray.push(book);
-              bookArray.push(verse_text);
-
+             function pushVerseNumbers (x) {
+               for (var i = 0; i < x.length; i++) {
+                 let test_str = x[i].verse_text;
+                 let start_pos = test_str.indexOf('[') + 1;
+                 let end_pos = test_str.indexOf(']',start_pos);
+                 let text_to_get = test_str.substring(start_pos,end_pos)
+                 verse_number1array.push(text_to_get);
+               }
+             }
+             pushVerseNumbers(api);
 
 
-
-            for (var i = 0; i < bookArray.length; i++) {
-              let a = [];
-              function determineVerses(x) {
-                if (x[i].length > 0) {
-                let verses = x[i].match(/\d+/g);
-                x[i].match( verses );
-                a.push(verses);
-            }else{
-            }
-            return a;
-          }
-           verses = determineVerses(bookArray);
+             function bookCleanup (x) {
+               for (var i = 0; i < x.length; i++) {
+               let y = x[i].book_and_verse_number.replace(/ /g,'');
+               let z = y.toLowerCase();
+               temp1Array.push(z);
+             }
+             }
+             bookCleanup(api);
 
 
+             function getChapterNumbers (x) {
+               for (var i = 0; i < x.length; i++) {
+                 let y = x[i].split(/\d+$/);
+                 let z = x[i].match(/\d+$/);
+                 let w = parseInt(z[0]);
+                 chapter1array.push(w);
+                 book1array.push(y[0]);
+               }
+             }
+             getChapterNumbers(temp1Array);
 
-               str = bookArray,
-                  matches = bookArray[i].match(/\d+$/),
-                  chapter;
 
-              if (matches) {
-                  chapter = matches[0];
+
+
+            function determineStandardWork (x) {
+              for (var i = 0; i < x.length; i++) {
+              if (x[i] == "1nephi")
+              {  standardWork = "The Book of Mormon";
+                standardwork1array.push(standardWork);}
+                else if (x[i] == "2nephi")
+                {  standardWork = "The Book of Mormon";
+                  standardwork1array.push(standardWork);}
+                  else if (x[i] == "jacob")
+                  {  standardWork = "The Book of Mormon";
+                    standardwork1array.push(standardWork);}
+                    else if (x[i] == "enos")
+                    {  standardWork = "The Book of Mormon";
+                      standardwork1array.push(standardWork);}
+                      else if (x[i] == "jarom")
+                      {  standardWork = "The Book of Mormon";
+                        standardwork1array.push(standardWork);}
+                        else if (x[i] == "omni")
+                        {  standardWork = "The Book of Mormon";
+                          standardwork1array.push(standardWork);}
+                          else if (x[i] == "wordsofmormon")
+                          {  standardWork = "The Book of Mormon";
+                            standardwork1array.push(standardWork);}
+                            else if (x[i] == "mosiah")
+                            {  standardWork = "The Book of Mormon";
+                              standardwork1array.push(standardWork);}
+                              else if (x[i] == "alma")
+                              {  standardWork = "The Book of Mormon";
+                                standardwork1array.push(standardWork);}
+                                else if (x[i] == "helaman")
+                                {  standardWork = "The Book of Mormon";
+                                  standardwork1array.push(standardWork);}
+                                  else if (x[i] == "3nephi")
+                                  {  standardWork = "The Book of Mormon";
+                                    standardwork1array.push(standardWork);}
+                                    else if (x[i] == "4nephi")
+                                    {  standardWork = "The Book of Mormon";
+                                      standardwork1array.push(standardWork);}
+                                      else if (x[i] == "mormon")
+                                      {  standardWork = "The Book of Mormon";
+                                        standardwork1array.push(standardWork);}
+                                        else if (x[i] == "ether")
+                                        {  standardWork = "The Book of Mormon";
+                                          standardwork1array.push(standardWork);}
+                                          else if (x[i] == "moroni")
+                                          {  standardWork = "The Book of Mormon";
+                                            standardwork1array.push(standardWork);}
+                                            else if (x[i] == "matthew")
+                                            {  standardWork = "The New Testament";
+                                              standardwork1array.push(standardWork);}
+                                              else if (x[i] == "mark")
+                                              {  standardWork = "The New Testament";
+                                                standardwork1array.push(standardWork);}
+                                                else if (x[i] == "luke")
+                                                {  standardWork = "The New Testament";
+                                                  standardwork1array.push(standardWork);}
+                                              else if (x[i] == "john")
+                                              {  standardWork = "The New Testament";
+                                                standardwork1array.push(standardWork);}
+                                                else if (x[i] == "acts")
+                                                {  standardWork = "The New Testament";
+                                                  standardwork1array.push(standardWork);}
+                                                  else if (x[i] == "romans")
+                                                  {  standardWork = "The New Testament";
+                                                    standardwork1array.push(standardWork);}
+                                                    else if (x[i] == "1corinthians")
+                                                    {  standardWork = "The New Testament";
+                                                      standardwork1array.push(standardWork);}
+                                                      else if (x[i] == "2corinthians")
+                                                      {  standardWork = "The New Testament";
+                                                        standardwork1array.push(standardWork);}
+                                                        else if (x[i] == "galatians")
+                                                        {  standardWork = "The New Testament";
+                                                          standardwork1array.push(standardWork);}
+                                                          else if (x[i] == "ephesians")
+                                                          {  standardWork = "The New Testament";
+                                                            standardwork1array.push(standardWork);}
+                                                            else if (x[i] == "philippians")
+                                                            {  standardWork = "The New Testament";
+                                                              standardwork1array.push(standardWork);}
+                                                              else if (x[i] == "colossians")
+                                                              {  standardWork = "The New Testament";
+                                                                standardwork1array.push(standardWork);}
+                                                                else if (x[i] == "1thessalonians")
+                                                                {  standardWork = "The New Testament";
+                                                                  standardwork1array.push(standardWork);}
+                                                                  else if (x[i] == "2thessalonians")
+                                                                  {  standardWork = "The New Testament";
+                                                                    standardwork1array.push(standardWork);}
+                                                                    else if (x[i] == "1timothy")
+                                                                    {  standardWork = "The New Testament";
+                                                                      standardwork1array.push(standardWork);}
+                                                                      else if (x[i] == "2timothy")
+                                                                      {  standardWork = "The New Testament";
+                                                                        standardwork1array.push(standardWork);}
+                                                                        else if (x[i] == "titus")
+                                                                        {  standardWork = "The New Testament";
+                                                                          standardwork1array.push(standardWork);}
+                                                                          else if (x[i] == "philemon")
+                                                                          {  standardWork = "The New Testament";
+                                                                            standardwork1array.push(standardWork);}
+                                                                            else if (x[i] == "hebrews")
+                                                                            {  standardWork = "The New Testament";
+                                                                              standardwork1array.push(standardWork);}
+                                                                              else if (x[i] == "james")
+                                                                              {  standardWork = "The New Testament";
+                                                                                standardwork1array.push(standardWork);}
+                                                                                else if (x[i] == "1peter")
+                                                                                {  standardWork = "The New Testament";
+                                                                                  standardwork1array.push(standardWork);}
+                                                                                  else if (x[i] == "2peter")
+                                                                                  {  standardWork = "The New Testament";
+                                                                                    standardwork1array.push(standardWork);}
+                                                                                    else if (x[i] == "1john")
+                                                                                    {  standardWork = "The New Testament";
+                                                                                      standardwork1array.push(standardWork);}
+                                                                                      else if (x[i] == "2john")
+                                                                                      {  standardWork = "The New Testament";
+                                                                                        standardwork1array.push(standardWork);}
+                                                                                        else if (x[i] == "3john")
+                                                                                        {  standardWork = "The New Testament";
+                                                                                          standardwork1array.push(standardWork);}
+                                                                                          else if (x[i] == "jude")
+                                                                                          {  standardWork = "The New Testament";
+                                                                                            standardwork1array.push(standardWork);}
+                                                                                            else if (x[i] == "revelation")
+                                                                                            {  standardWork = "The New Testament";
+                                                                                              standardwork1array.push(standardWork);}
+                                                                                              else if (x[i] == "d&c")
+                                                                                              {  standardWork = "The Doctrine and Covenants";
+                                                                                                standardwork1array.push(standardWork);}
+                                                                                                else if (x[i] == "doctrineandcovenants")
+                                                                                                {  standardWork = "The Doctrine and Covenants";
+                                                                                                  standardwork1array.push(standardWork);}
+
+
+               else {
+                standardWork = "The Scriptures";
+                standardwork1array.push(standardWork);
               }
-               book = bookArray[i].replace(/\d+$/, "");
-            let newBook = book.toLowerCase();
-            let newerBook = newBook.replace(/ /g,'');
-            let newChapter = parseInt(chapter);
-
-
-
-            function determineBook (x) {
-              if (x == "1nephi" || "2nephi" || "jacob" || "enos" || "jarom" || "omnni" || "wordsofmormon" || "mosiah" || "alma" || "helaman" || "3nephi" || "4nephi" || "mormon" || "ether" || "moroni") {
-                standardWork = "The Book of Mormon";
-              } else {
-                standardWork = "The New Testament";
-              }
-              return standardWork;
             }
-            determineBook(newerBook);
-            console.log(standardWork);
+            }
+            determineStandardWork(book1array);
 
 
             function determineSpeakerAndListener(a, b) {
+              for (var i = 0; i < a.length; i++) {
 
               let speaker = "";
               let listener = "";
 
-              if (a == '1nephi') {
+              if (a[i] == '1nephi' && b[i] !== NaN) {
                 speaker = "Nephi";
                 listener = "his family";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == '2nephi') {
+              else if (a[i] == '2nephi' && b[i] !== NaN) {
                 speaker = "Nephi";
                 listener = "his family";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == 'jacob') {
+              else if (a[i] == 'jacob' && b[i] !== NaN) {
                 speaker = "Jacob";
                 listener = "readers of the Book of Mormon";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == 'enos') {
+              else if (a[i] == 'enos' && b[i] !== NaN) {
                 speaker = "Enos";
                 listener = "his posterity";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == 'jarom') {
+              else if (a[i] == 'jarom' && b[i] !== NaN) {
                 speaker = "Jarom";
                 listener = "his family";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == 'omni') {
+              else if (a[i] == 'omni' && b[i] !== NaN) {
                 speaker = "Omni";
                 listener = "future generations";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if (a == 'wordsofmormon') {
+              else if (a[i] == 'wordsofmormon' && b[i] !== NaN) {
                 speaker = "Mormon";
                 listener = "those who would read the Book of Mormon";
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
 
-              else if ( a == 'mosiah' && ( b == 1 || 2 || 3 || 4 || 5 || 6 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 1 || 2 || 3 || 4 || 5 || 6 )) {
               speaker = "King Benjamin";
-              listener = "His sons and his people"; }
+              listener = "His sons and his people";
+              background = "So a little background here.  This is all taking place in the land of Zarahemla King Benjamin has served his people his entire life, and has been a righteous king, but he's getting old and will soon turn over the kingdom to King Mosiah"
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 7 || 8 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 7 || 8 )) {
               speaker = "Ammon";
-              listener = "The people of Limhi"; }
+              listener = "The people of Limhi";
+              background = "So a little background here.  This is sort of an introduction into other stories in the Book of Mormon.  Ammon has just found king Limhi and his people who have been in bondage to the Lamanites.  You learn briefly about Abinadi and the Jaredite plates, both of which are addressed later in the Book of Mormon."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 9 || 10 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 9 || 10 )) {
               speaker = "Zeniff";
-              listener = "His people"; }
+              listener = "His people";
+              background = "So a little background here.  This is the beginning of the story of King Limhi and his people, who leave Zarahemla for the land of Lehi Nephi"
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 11 || 12 || 13 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 11 || 12 || 13 )) {
               speaker = "Abinadi";
-              listener = "The wicked King Noah"; }
+              listener = "The wicked King Noah";
+              background = "So a little background here.  This is after King Limhi and his people have settled the land of Lehi Nephi, and King Noah comes into power.  He's a very wicked king, and puts heavy burdeons on the people.  We also meet Abinadi, who is  a prophet that comes to call him to repentence."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 14  )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 14  )) {
               speaker = "Isaiah";
-              listener = "A future generation"; }
+              listener = "A future generation";
+              background = "So a little background here.  This is one of the compare Isaiah's, Isaiah 53, about the Messiah."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 17 || 18 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 17 || 18 )) {
               speaker = "Alma the Elder";
-              listener = "a small group of believers"; }
+              listener = "a small group of believers";
+              background = "So a little background here.  This is after King Noah has already killed Abinadi, who came to call them to repentance.  Nobody believed him except for one of King Noah's priests, named Alma.  Alma flees into the wilderness and begins teaching there in secret, and eventually establishes the church."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 21 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 21 )) {
               speaker = "Ammon";
-              listener = "The people of Limhi"; }
+              listener = "The people of Limhi";
+              background = "So a little background here.  This is back to King Limhi and his people, when they meet Ammon and are converted.  They tell him about the Jaredite plates and what not."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 22 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 22 )) {
               speaker = "Ammon";
-              listener = "his people"; }
+              listener = "his people";
+              background = "So a little background here.  So here, King Limhi and his people eventually break free of their Lamanite captivity, and escape, returning back to Zarahemla, where King Mosiah is now king."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'mosiah' && ( b == 23 || 24 || 25 || 26 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 23 || 24 || 25 || 26 )) {
               speaker = "Alma the Elder";
-              listener = "members of the Church"; }
+              listener = "members of the Church";
+              background = "So a little background here.  This is part of the Book of Mormon, where several of the separate groups all converge in Zarahemla.  After the people of Limhi return, they are baptized by Alma.  And we also meet the Mulekites, who align themselves with the Nephites."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'mosiah' && ( b == 27 || 28 || 29 )) {
+              else if ( a[i] == 'mosiah' && ( b[i] == 27 || 28 || 29 )) {
               speaker = "Mosiah";
-              listener = "His sons"; }
+              listener = "His sons";
+              background = "So a little background here.  In these chapters, there are several things going on.  The church is being established for one.  We also get a glimpse of Alma the Younger, and the son's of Mosiah, who although initially persecuted the church, become converted, and then go to preach the lamanites.  Of course we get much more about that experience in Alma, when Alma the Younger recounts the experience to his sons.  Then in chapter 29, after their missions, Alma the Younger is appointed Chief Judge and High Priest of the church, just before his father and King Mosiah pass away."
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 1 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 1 )) {
               speaker = "Gideon";
-              listener = "His sons and his people"; }
+              listener = "His sons and his people";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 4 || 5 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 4 || 5 )) {
               speaker = "Alma the Younger";
-              listener = "the people in their cities and villages throughout the land"; }
+              listener = "the people in their cities and villages throughout the land";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 6 || 7 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 6 || 7 )) {
               speaker = "Alma the Younger";
-              listener = "the people in the land of Gideon"; }
+              listener = "the people in the land of Gideon";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 8 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 8 )) {
               speaker = "Alma the Younger";
-              listener = "Amulek and the people in the land of Ammonihah"; }
+              listener = "Amulek and the people in the land of Ammonihah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 9 || 10 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 9 || 10 )) {
               speaker = "Alma the Younger";
-              listener = "Amulek and the people in the land of Ammonihah"; }
+              listener = "Amulek and the people in the land of Ammonihah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 11 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 11 )) {
               speaker = "Amulek";
-              listener = "Zeezrom"; }
+              listener = "Zeezrom";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 12 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 12 )) {
               speaker = "Alma the Younger";
-              listener = "Zeezrom"; }
+              listener = "Zeezrom";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 13 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 13 )) {
               speaker = "Alma the Younger and Amulek";
-              listener = "the people in the land of Ammonihah"; }
+              listener = "the people in the land of Ammonihah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 14 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 14 )) {
               speaker = "Alma the Younger and Amulek";
-              listener = "the people in the land of Ammonihah"; }
+              listener = "the people in the land of Ammonihah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 15 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 15 )) {
               speaker = "Alma the Younger and Amulek";
-              listener = "Zeezrom and the Church in Sidom"; }
+              listener = "Zeezrom and the Church in Sidom";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 16 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 16 )) {
               speaker = "Alma the Younger and Amulek";
-              listener = "the Church"; }
+              listener = "the Church";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 17 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 17 )) {
               speaker = "Ammon";
-              listener = "the Lamanites"; }
+              listener = "the Lamanites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 18 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 18 )) {
               speaker = "Ammon";
-              listener = "King Lamoni"; }
+              listener = "King Lamoni";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 19 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 19 )) {
               speaker = "Ammon";
-              listener = "King Lamoni and the Lamanites"; }
+              listener = "King Lamoni and the Lamanites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 20 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 20 )) {
               speaker = "Ammon";
-              listener = "Lamoni and Lamoni's Father"; }
+              listener = "Lamoni and Lamoni's Father";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 21 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 21 )) {
               speaker = "Aaron";
-              listener = "the Amalekites"; }
+              listener = "the Amalekites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 22 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 22 )) {
               speaker = "Ammon";
-              listener = "Lamoni's Father"; }
+              listener = "Lamoni's Father";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 23 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 23 )) {
               speaker = "The Sons of Mosiah";
-              listener = "the Anti-Nephi-Lehies"; }
+              listener = "the Anti-Nephi-Lehies";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 24 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 24 )) {
               speaker = "The Sons of Mosiah";
-              listener = "the Anti-Nephi-Lehies"; }
+              listener = "the Anti-Nephi-Lehies";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 26 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 26 )) {
               speaker = "Ammon";
-              listener = "his brethren"; }
+              listener = "his brethren";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 27 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 27 )) {
               speaker = "Ammon";
-              listener = "Alma and the Son's of Mosiah"; }
+              listener = "Alma and the Son's of Mosiah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 29 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 29 )) {
               speaker = "Alma";
-              listener = "the Nephites"; }
+              listener = "the Nephites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 30 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 30 )) {
               speaker = "Alma";
-              listener = "Korihor"; }
+              listener = "Korihor";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 31 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 31 )) {
               speaker = "Alma";
-              listener = "the Zoramites"; }
+              listener = "the Zoramites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 32 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 32 )) {
               speaker = "Alma";
-              listener = "the poorer segment of the Zoramites"; }
+              listener = "the poorer segment of the Zoramites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 33 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 33 )) {
               speaker = "Zenos and Zenock";
-              listener = "a future generation"; }
+              listener = "a future generation";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 34 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 34 )) {
               speaker = "Amulek";
-              listener = "the Church"; }
+              listener = "the Church";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 35 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 35 )) {
               speaker = "Alma";
-              listener = "the people of Zarahemla"; }
+              listener = "the people of Zarahemla";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 36 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 36 )) {
               speaker = "Alma";
-              listener = "his son, Helaman"; }
+              listener = "his son, Helaman";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 37 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 37 )) {
               speaker = "Alma";
-              listener = "his son, Helaman"; }
+              listener = "his son, Helaman";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 38 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 38 )) {
               speaker = "Alma";
-              listener = "his son, Shiblon"; }
+              listener = "his son, Shiblon";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 39 || 40 || 41 || 42 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 39 || 40 || 41 || 42 )) {
               speaker = "Alma";
-              listener = "his son, Corianton"; }
+              listener = "his son, Corianton";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 43 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 43 )) {
               speaker = "Alma and his sons";
-              listener = "the Zoramites"; }
+              listener = "the Zoramites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 44 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 44 )) {
               speaker = "Captain Moroni";
-              listener = "Zerahemnah"; }
+              listener = "Zerahemnah";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 45 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 45 )) {
               speaker = "Helaman";
-              listener = "his people"; }
+              listener = "his people";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 46 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 46 )) {
               speaker = "Captain Moroni";
-              listener = "the people of Zarahemla"; }
+              listener = "the people of Zarahemla";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 48 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 48 )) {
               speaker = "Captain Moroni";
-              listener = "the people of Zarahemla"; }
+              listener = "the people of Zarahemla";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 50 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 50 )) {
               speaker = "Captain Moroni";
-              listener = "the Nephites"; }
+              listener = "the Nephites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 51 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 51 )) {
               speaker = "Captain Moroni";
-              listener = "Pahoran and the king men"; }
+              listener = "Pahoran and the king men";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 52 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 52 )) {
               speaker = "Captain Moroni";
-              listener = "his armies"; }
+              listener = "his armies";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 53 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 53 )) {
               speaker = "Helaman";
-              listener = "the 2000 stripling warriors"; }
+              listener = "the 2000 stripling warriors";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 54 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 54 )) {
               speaker = "Captain Moroni";
-              listener = "Ammoron"; }
+              listener = "Ammoron";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 55 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 55 )) {
               speaker = "Captain Moroni";
-              listener = "his army and the Lamanties"; }
+              listener = "his army and the Lamanties";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 56 || 57 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 56 || 57 )) {
               speaker = "Helaman";
-              listener = "Moroni"; }
+              listener = "Moroni";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
 
-              else if ( a == 'alma' && ( b == 59 || 60 || 61 || 62 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 59 || 60 || 61 || 62 )) {
               speaker = "Captain Moroni";
-              listener = "Pahoran"; }
+              listener = "Pahoran";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'helaman' && ( b == 4 || 5 || 6 || 7 || 8 )) {
+              else if ( a[i] == 'helaman' && ( b[i] == 4 || 5 || 6 || 7 || 8 )) {
               speaker = "the missionaries, Nephi and Lehi";
-              listener = "the people of Nephi"; }
+              listener = "the people of Nephi";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'helaman' && ( b == 9 || 10 || 11 || 12 )) {
+              else if ( a[i] == 'helaman' && ( b[i] == 9 || 10 || 11 || 12 )) {
               speaker = "Nephi";
-              listener = "the people of Nephi"; }
+              listener = "the people of Nephi";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'helaman' && ( b == 13 || 14 || 15 )) {
+              else if ( a[i] == 'helaman' && ( b[i] == 13 || 14 || 15 )) {
               speaker = "Samuel the Lamanite";
-              listener = "the Nephites"; }
+              listener = "the Nephites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'helaman' && ( b == 16 )) {
+              else if ( a[i] == 'helaman' && ( b[i] == 16 )) {
               speaker = "Nephi";
-              listener = "the people of Nephi"; }
+              listener = "the people of Nephi";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == '3nephi' && ( b == 1)) {
+              else if ( a[i] == '3nephi' && ( b[i] == 1)) {
               speaker = "Nephi";
-              listener = "the Nephites"; }
+              listener = "the Nephites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == '3nephi' && ( b == 9 || 10 || 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 25 || 26)) {
+              else if ( a[i] == '3nephi' && ( b[i] == 9 || 10 || 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 25 || 26)) {
               speaker = "Jesus Christ";
-              listener = "the Nephites"; }
+              listener = "the Nephites";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == '4nephi' && ( b == 1 )) {
+              else if ( a[i] == '4nephi' && ( b[i] == 1 )) {
               speaker = "Mormon";
-              listener = "a future generation"; }
+              listener = "a future generation";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
-              else if ( a == 'mormon' && ( b == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 )) {
+              else if ( a[i] == 'mormon' && ( b[i] == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 )) {
               speaker = "Mormon";
-              listener = "a future generation"; }
+              listener = "a future generation";
+              background = "";
+              speaker1array.push(speaker);
+              listener1array.push(listener);
+            background1array.push(background); }
 
 
               else {
                 speaker = "the main figure here";
                 listener = "the people";
+                background = "I probably don't have time to share a lot of the background of this passage here,"
+                background = "";
+                speaker1array.push(speaker);
+                listener1array.push(listener);
+                background1array.push(background);
               }
-
-              return [speaker, listener];
-}
-let newBook_andChapter = determineSpeakerAndListener(newerBook, newChapter);
- speaker = newBook_andChapter[0];
- listener = newBook_andChapter[1];
-
-
- newObj =
-   {"standard_works" : standardWork,
-   "book" : book,
-   "verses" : verses,
-   "verse_text" : verse_text,
-   "chapter" : chapter,
-   "speaker" : speaker,
-   "listener" : listener,};
-
-
- function pushToArray(x, y, z) {
-
-   if (z.length < 15) {
-     y.push(x);
-   }
-   return y;
- }
- objectArray = pushToArray(newObj, objectArray, newObj.book);
-}
-
+            }
           }
-          console.log(objectArray);
+determineSpeakerAndListener(book1array, chapter1array);
+
+
+function populateObject (x) {
+
+for (var i = 0; i < x.length; i++) {
+  let a = standardwork1array;
+  let b = book1array;
+  let c = verse_number1array;
+  let d = verse_text1array;
+  let e = chapter1array;
+  let f = speaker1array;
+  let g = listener1array;
+  let h = background1array;
+ newObj =
+   {"standard_works" : a[i],
+   "book" : b[i],
+   "verses" : c[i],
+   "verse_text" : d[i],
+   "chapter" : e[i],
+   "speaker" : f[i],
+   "listener" : g[i],
+   "background" : h[i],
+ };
+  objectArray.push(newObj);
+}
+}
+populateObject(api);
+console.log(objectArray);
+
+
+
+
 
 
 
@@ -897,11 +1332,11 @@ fetch('https://presentation-maker.herokuapp.com/api/genconf/' + keyWord).then(fu
   let gencon_talk3 = [];
   let gencon_talk4 = [];
   let gencon_talk5 = [];
-console.log(gencon_talk1);
-console.log(gencon_talk2);
-console.log(gencon_talk3);
-console.log(gencon_talk4);
-console.log(gencon_talk5);
+
+
+
+
+
   response.json().then(function(data) {
     let generalConference = data;
 
@@ -1051,23 +1486,7 @@ for (var i = 0; i < generalConference.length; i++) {
           let pa4 = gencon_talk4[4];
           let pa5 = gencon_talk5[4];
 
-          var scripture1 = objectArray[Math.floor(Math.random() * objectArray.length)];
 
-
-          let verse1 = scripture1.verse_text;
-
-          var scripture2 = objectArray[Math.floor(Math.random() * objectArray.length)];
-
-          let verse2 = scripture2.verse_text;
-          var scripture3 = objectArray[Math.floor(Math.random() * objectArray.length)];
-
-          let verse3 = scripture3.verse_text;
-          var scripture4 = objectArray[Math.floor(Math.random() * objectArray.length)];
-
-          let verse4 = scripture4.verse_text;
-          var scripture5 = objectArray[Math.floor(Math.random() * objectArray.length)];
-
-          let verse5 = scripture5.verse_text;
 
           function getGenConPhrase1 (x) {
             let definition = ["define", "definition", "meaning of", "defined", topic+" is", topic+" means", keyWord+" is", keyWord+" are", "dictionary", topic, "Jesus"];
@@ -1202,7 +1621,7 @@ myKeyWord = definition[11];}
 
 
               else {
-            console.log("none found");
+
           }
             return [str3, myKeyWord];
           }
@@ -1328,7 +1747,7 @@ myKeyWord = definition[11];}
  myKeyWord = definition[10];}
 
               else {
-            console.log("none found");
+
           }
             return str3;
           }
@@ -1455,7 +1874,7 @@ myKeyWord = definition[11];}
  myKeyWord = definition[10];}
 
               else {
-            console.log("none found");
+
           }
             return str3;
           }
@@ -1562,7 +1981,7 @@ myKeyWord = definition[11];}
    myKeyWord = definition[8];}
 
               else {
-            console.log("none found");
+
           }
             return str3;
           }
@@ -1605,7 +2024,7 @@ myKeyWord = definition[11];}
           let definition4 = resultsArray4[1];
           let definition5 = resultsArray5[1];
 
-console.log(gencon_talk1);
+
 let talkQuoteObject1 = {
   "quoteToUse": genConQuote1,
   "genConAuthor": author_1,
@@ -1794,7 +2213,7 @@ pushToQuoteArray(talkQuoteObject2);
 pushToQuoteArray(talkQuoteObject3);
 pushToQuoteArray(talkQuoteObject4);
 pushToQuoteArray(talkQuoteObject5);
-console.log(talkQuoteArray);
+
 
 function pushToBlessArray (x) {
   for (var i = 0; i < x.quoteToUse.length; i++) {
@@ -1810,7 +2229,7 @@ pushToBlessArray(blessQuoteObject2);
 pushToBlessArray(blessQuoteObject3);
 pushToBlessArray(blessQuoteObject4);
 pushToBlessArray(blessQuoteObject5);
-console.log(blessQuoteArray);
+
 
 function pushToTrialsArray (x) {
   for (var i = 0; i < x.quoteToUse.length; i++) {
@@ -1826,7 +2245,7 @@ pushToTrialsArray(trialsQuoteObject2);
 pushToTrialsArray(trialsQuoteObject3);
 pushToTrialsArray(trialsQuoteObject4);
 pushToTrialsArray(trialsQuoteObject5);
-console.log(trialsQuoteArray);
+
 
 function pushToToDoArray (x) {
   for (var i = 0; i < x.quoteToUse.length; i++) {
@@ -1842,7 +2261,7 @@ pushToToDoArray(toDoQuoteObject2);
 pushToToDoArray(toDoQuoteObject3);
 pushToToDoArray(toDoQuoteObject4);
 pushToToDoArray(toDoQuoteObject5);
-console.log(toDoQuoteArray);
+
 
 
 
@@ -2324,12 +2743,13 @@ console.log(toDoQuoteArray);
            questiontoDo = questionArray[3];
            questionBlessings = questionArray[4];
            questionTrials = questionArray[5];
-           console.log(questiontoDo);
-           console.log(questionArray[3]);
+
+
 
 
           let markup =
-            `<p>
+            `
+            <p>
 
               As I was preparing to speak today, on the topic of ${theBefore} ${keyWord}, I came up with four questions that I wanted to answer, and over the course of my talk today, I'll try to address each one of them.
               </p>
@@ -2492,13 +2912,13 @@ console.log(toDoQuoteArray);
                   let randomQuote4 = quote4Arr[Math.floor(Math.random()*quote4Arr.length)];
                   document.getElementById('four').innerHTML = randomQuote4;
 
-                  console.log(objectArray);
+
 
                   let script1Arr = [];
                   objectArray.forEach( function (arrayItem) {
                    let script1 = `
                    <p>
-                   This comes from ${arrayItem.standard_works}, in ${arrayItem.book}, ${arrayItem.chapter}.  This is one of my favorite parts of ${arrayItem.standard_works}, and it's where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${arrayItem.verses}, it says
+                   This comes from ${arrayItem.standard_works}, in ${arrayItem.book}, ${arrayItem.chapter}. ${arrayItem.background}.  This is one of my favorite parts of ${arrayItem.standard_works}, and it's where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${arrayItem.verses}, it says
                    </p>
                    <span class="quotation">"</span><p class="quote">
                    ${arrayItem.verse_text}
@@ -2524,7 +2944,7 @@ console.log(toDoQuoteArray);
                     objectArray.forEach( function (arrayItem) {
                      let script2 = `
                      <p>
-                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, ${arrayItem.book}, ${arrayItem.chapter}.  Now, this is the part where ${arrayItem.speaker}, I believe, is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way.  This section really covers verses ${arrayItem.verses}, but I'll only read a few of them here.
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, ${arrayItem.book}, ${arrayItem.chapter}. ${arrayItem.background}.  Now, this is the part where ${arrayItem.speaker}, I believe, is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
                      </p>
                      <span class="quotation">"</span><p class="quote">
                      ${arrayItem.verse_text}
@@ -2548,7 +2968,7 @@ console.log(toDoQuoteArray);
 
           //
           //
-    // console.log(newObj);
+    //
           // let paragraph2 = "As I was preparing to speak today"
 
 })
@@ -2568,21 +2988,9 @@ console.log(toDoQuoteArray);
 
 
   </script>
-<script>
 
 
-//
-//
-// document.getElementById('intro').innerHTML = paragraph1;
-//
-// document.getElementById('para5').innerHTML = paragraph2;
-// document.getElementById('para6').innerHTML = paragraph3;
-// document.getElementById('para7').innerHTML = paragraph4;
-// document.getElementById('para9').innerHTML = paragraph5;
-// document.getElementById('para10').innerHTML = paragraph6;
-// document.getElementById('para11').innerHTML = paragraph11;
 
-// }
 
 </script>
 
@@ -2605,6 +3013,8 @@ console.log(toDoQuoteArray);
   While I was on my mission, my mission president taught me the value of always have a talk prepared in case of an emergency.  Although I've never yet been in a situation where I've had to give a talk with little or no notice, I made this program which generates a talk for you based on your topic.  The talk template is the same for each talk, but the General Conference talks and Scriptures will be tailored to address different aspects of any given topic.  If you don't like a particular quote or scripture, you can click the button that will swap it for another one.  Good luck!
 </section>
 
+
+
   <section class="search">
     <label> What is your talk topic? </label>
     <input placeholder="topic" class="videoInput" type="text" id="topicInput">
@@ -2613,7 +3023,7 @@ console.log(toDoQuoteArray);
 
 </section>
 
-
+<div id="target">
 <p id="intro"></p>
 <p id="para1"></p>
 <p id="para2"></p>
@@ -2631,7 +3041,7 @@ console.log(toDoQuoteArray);
 <p id="chapter2"></p>
 <p id="number2"></p>
 <p id="verse2"></p>
-
+</div>
 </body>
 
 </html>
