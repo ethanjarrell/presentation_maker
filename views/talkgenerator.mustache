@@ -341,19 +341,22 @@
              }
              bookCleanup(api);
 
-
              function getChapterNumbers (x) {
+               let w = "";
                for (var i = 0; i < x.length; i++) {
                  let y = x[i].split(/\d+$/);
                  let z = x[i].match(/\d+$/);
-                 let w = parseInt(z[0]);
+                 if (z == null) {
+                   console.log("uhoh");}
+                   else {
+                  w = parseInt(z[0]);}
                  chapter1array.push(w);
                  book1array.push(y[0]);
                }
              }
              getChapterNumbers(temp1Array);
 
-
+console.log(book1array);
 
 
             function determineStandardWork (x) {
@@ -672,57 +675,81 @@
               else if ( a[i] == 'alma' && ( b[i] == 1 )) {
               speaker = "Gideon";
               listener = "His sons and his people";
-              background = "";
+              background = "So a little background here to give these verses more context.  This is the beginning of the book of Alma.  Alma the younger has just been appointed chief judge, as well as high priest over the church.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 4 || 5 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 4 )) {
               speaker = "Alma the Younger";
               listener = "the people in their cities and villages throughout the land";
-              background = "";
+              background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
+            else if ( a[i] == 'alma' && ( b[i] ==  5 )) {
+            speaker = "Alma the Younger";
+            listener = "the people in their cities and villages throughout the land";
+            background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 6 || 7 )) {
+
+              else if ( a[i] == 'alma' && ( b[i] == 6 )) {
               speaker = "Alma the Younger";
               listener = "the people in the land of Gideon";
-              background = "";
+              background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.  After cleansing the church in Zarahemla, he goes to Gideon to preach.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
+
+            else if ( a[i] == 'alma' && ( b[i] == 7 )) {
+            speaker = "Alma the Younger";
+            listener = "the people in the land of Gideon";
+            background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.  After cleansing the church in Zarahemla, he goes to Gideon to preach.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
 
 
               else if ( a[i] == 'alma' && ( b[i] == 8 )) {
               speaker = "Alma the Younger";
               listener = "Amulek and the people in the land of Ammonihah";
-              background = "";
+              background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.  After success in preaching and baptizing in Zarahemla, Gideon and Melek, Alma goes to Ammonihah, where he is rejected.  However, he meets Amulek here, who is converted, and becomes a powerful companion to Alma, as the two begin to preach together.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 9 || 10 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 9 )) {
               speaker = "Alma the Younger";
               listener = "Amulek and the people in the land of Ammonihah";
-              background = "";
+              background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.  After doing missionary work and preaching in several cities, including Zarahemla, Gideon and Melek, Alma meets Amulek, and the two teach the people in Ammonihah, who largely reject their message.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
+
+            else if ( a[i] == 'alma' && ( b[i] == 10 )) {
+            speaker = "Alma the Younger";
+            listener = "Amulek and the people in the land of Ammonihah";
+            background = "So a little background here to give these verses more context.  Alma was initially appointed the chief judge and high priest over the church.  After baptizing thousands of converts, wickedness enters the church, and as a result, Alma appoints Nephihah to the position of chief judge, so that he can devote himself to building the church.  Much of the beginning of Alma, as here, focuses on his efforts to build the church, and obstacles he faces.  After doing missionary work and preaching in several cities, including Zarahemla, Gideon and Melek, Alma meets Amulek, and the two teach the people in Ammonihah, who largely reject their message.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
 
 
               else if ( a[i] == 'alma' && ( b[i] == 11 )) {
               speaker = "Amulek";
               listener = "Zeezrom";
-              background = "";
+              background = "So a little background here to give these verses more context. This is happening during the missionary work with Alma and Amulek, they are largely rejected at Ammonihah.  In addition to setting forth the Nephite monetary system, we they also have their first encounters with lawyers.  In this chapter, in particular, they are contending with a lawyer named Zeezrom.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -732,7 +759,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 12 )) {
               speaker = "Alma the Younger";
               listener = "Zeezrom";
-              background = "";
+              background = "So a little background here to give these verses more context. This is set during the missionary work with Alma and Amulek, they are largely rejected at Ammonihah.  In addition to setting forth the Nephite monetary system, we they also have their first encounters with lawyers.  In this chapter, in particular, they continue to contend with a lawyer named Zeezrom, but in the process, teach many things about the Gospel, and the Plan of Salvation.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -742,7 +769,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 13 )) {
               speaker = "Alma the Younger and Amulek";
               listener = "the people in the land of Ammonihah";
-              background = "";
+              background = "So a little background here to give these verses more context. While teaching Zeezrom and the people of Ammonihah, Alma and Amulek expound on many doctrines of the gospel.  In previous chapters, they touched on the resurrection, the plan of salvation and the Atonement.  In this chapter, they focus on the order of the Priesthood.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -752,7 +779,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 14 )) {
               speaker = "Alma the Younger and Amulek";
               listener = "the people in the land of Ammonihah";
-              background = "";
+              background = "So a little background here to give these verses more context. This is just after Alma and Amulek taught the people of Ammonihah.  They taught about the Savior, the Atonement, Resurrection and Plan of Salvation.  However, the wicked people of Ammonihah, with the exception of just a few, reject Alma and Amulek, and put them in prison.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -762,7 +789,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 15 )) {
               speaker = "Alma the Younger and Amulek";
               listener = "Zeezrom and the Church in Sidom";
-              background = "";
+              background = "So a little background here to give these verses more context. Alma and Amulek have been teaching in Ammonihah, and some of the cities which likely surrounded Zarahemla.  While they did suffer, and were put in prison for a time, they eventually are able to bring many people to repentance and conversion.  In this chapter, they establish the church in some of this cities, and then return back to Zarahemla.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -772,7 +799,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 16 )) {
               speaker = "Alma the Younger and Amulek";
               listener = "the Church";
-              background = "";
+              background = "So a little background to give these verses more context.  Alma and Amulek have just been preaching to the people at Ammonihah and Sidom, and several other cities that surround Zarahemla.  They finally return home to Zarahemla, and continue to preach the word there.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -782,7 +809,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 17 )) {
               speaker = "Ammon";
               listener = "the Lamanites";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  This group was eventually converted, and became known as the Anti-Nephi-Lehies.  ";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -792,7 +819,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 18 )) {
               speaker = "Ammon";
               listener = "King Lamoni";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  This group was eventually converted, and became known as the Anti-Nephi-Lehies.  After initially being a servant to the King, Ammon is eventually able to teach the King about the Plan of Salvation.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -802,7 +829,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 19 )) {
               speaker = "Ammon";
               listener = "King Lamoni and the Lamanites";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  This group was eventually converted, and became known as the Anti-Nephi-Lehies.  After initially being a servant to the King, Ammon is eventually able to teach the King about the Plan of Salvation.  The King and his household are converted.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -812,7 +839,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 20 )) {
               speaker = "Ammon";
               listener = "Lamoni and Lamoni's Father";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  This group was eventually converted, and became known as the Anti-Nephi-Lehies.  After initially being a servant to the King, Ammon is eventually able to teach the King about the Plan of Salvation.  The King is converted, as well as many of the people in his Kingdom. ";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -822,7 +849,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 21 )) {
               speaker = "Aaron";
               listener = "the Amalekites";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  Chapter 21 through 25 shift the focus to Aaron, who preaches at Middoni.  He is imprisoned, but when freed, is able to teach King Lamoni's father about the Gospel.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -832,7 +859,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 22 )) {
               speaker = "Ammon";
               listener = "Lamoni's Father";
-              background = "";
+              background = "A little background on this scripture.  Chapter 17 of Alma begins with Alma recollecting on the missionary journeys that he and the sons of Mosiah experienced.  In chapters 17 through 27, we see the record of their missions, starting with Ammon, who went to preach to the Lamanites in the Land of Ishmael, who were led by king Lamoni.  Chapter 21 through 25 shift the focus to Aaron, who preaches at Middoni.  He is imprisoned, but when freed, is able to teach King Lamoni's father about the Gospel.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -842,7 +869,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 23 )) {
               speaker = "The Sons of Mosiah";
               listener = "the Anti-Nephi-Lehies";
-              background = "";
+              background = "Nearing the end of the missionary work of Alma and the sons of Mosiah, the converted Lamanites repent, and call themselves Anti-Nephi-Lehies.  Because of their conversion and strong desire to be forgiven of their sins, they also bury their weapons in the ground, and commit to not take them up to fight any more.  This group of people also play a vital role in the war chapters, later on, starting in chapter 43.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -852,7 +879,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 24 )) {
               speaker = "The Sons of Mosiah";
               listener = "the Anti-Nephi-Lehies";
-              background = "";
+              background = "Nearing the end of the missionary work of Alma and the sons of Mosiah, the converted Lamanites repent, and call themselves Anti-Nephi-Lehies.  Because of their conversion and strong desire to be forgiven of their sins, they also bury their weapons in the ground, and commit to not take them up to fight any more.  This group of people also play a vital role in the war chapters, later on, starting in chapter 43.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -862,7 +889,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 26 )) {
               speaker = "Ammon";
               listener = "his brethren";
-              background = "";
+              background = "Nearing the end of the missionary work of Alma and the sons of Mosiah, the converted Lamanites repent, and call themselves Anti-Nephi-Lehies.  Because of their conversion and strong desire to be forgiven of their sins, they also bury their weapons in the ground, and commit to not take them up to fight any more.  This group of people also play a vital role in the war chapters, later on, starting in chapter 43.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -872,7 +899,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 27 )) {
               speaker = "Ammon";
               listener = "Alma and the Son's of Mosiah";
-              background = "";
+              background = "Nearing the end of the missionary work of Alma and the sons of Mosiah, the converted Lamanites repent, and call themselves Anti-Nephi-Lehies.  Because of their conversion and strong desire to be forgiven of their sins, they also bury their weapons in the ground, and commit to not take them up to fight any more.  This group of people also play a vital role in the war chapters, later on, starting in chapter 43.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -892,7 +919,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 30 )) {
               speaker = "Alma";
               listener = "Korihor";
-              background = "";
+              background = "In this chapter, we meet Korihor, who tries to fight against the Church of God, and Alma & Amulek.  Dissention and unbelief isn't quite as big of a problem here, as it becomes later in the in the book of Mormon.  Nevertheless, Alma does contend with Korihor, so that he doesn't lead away the the people into unbelief.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -902,7 +929,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 31 )) {
               speaker = "Alma";
               listener = "the Zoramites";
-              background = "";
+              background = "Alma here preaches to the Zoramites.  One of the major themes in these chapters is pride, and faith.  The Zoramites are lifted up in pride, and appear to believe that they are better than those around them.  Pride eventually leads to the downfall of the Nephites, and is a major theme throughout the Book of Mormon.  Here we can see how pride leads some of the Zoramites to unbelief, but humility leads them to belief and conversion.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -912,7 +939,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 32 )) {
               speaker = "Alma";
               listener = "the poorer segment of the Zoramites";
-              background = "";
+              background = "Alma here preaches to the Zoramites.  One of the major themes in these chapters is pride, and faith.  The Zoramites are lifted up in pride, and appear to believe that they are better than those around them.  Pride eventually leads to the downfall of the Nephites, and is a major theme throughout the Book of Mormon.  Here we can see how pride leads some of the Zoramites to unbelief, but humility leads them to belief and conversion.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -952,7 +979,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 36 )) {
               speaker = "Alma";
               listener = "his son, Helaman";
-              background = "";
+              background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -962,7 +989,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 37 )) {
               speaker = "Alma";
               listener = "his son, Helaman";
-              background = "";
+              background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -972,27 +999,51 @@
               else if ( a[i] == 'alma' && ( b[i] == 38 )) {
               speaker = "Alma";
               listener = "his son, Shiblon";
-              background = "";
+              background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 39 || 40 || 41 || 42 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 39 )) {
               speaker = "Alma";
               listener = "his son, Corianton";
-              background = "";
+              background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
+
+            else if ( a[i] == 'alma' && ( b[i] == 40  )) {
+            speaker = "Alma";
+            listener = "his son, Corianton";
+            background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
+
+          else if ( a[i] == 'alma' && ( b[i] ==  41 )) {
+          speaker = "Alma";
+          listener = "his son, Corianton";
+          background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
+          speaker1array.push(speaker);
+          listener1array.push(listener);
+        background1array.push(background); }
+
+        else if ( a[i] == 'alma' && ( b[i] == 42 )) {
+        speaker = "Alma";
+        listener = "his son, Corianton";
+        background = "So a little background on this.  Much of the Book of Alma focuses on the wars between the Lamanites and Nephites, as well as struggles that the people have within the church, and politically.  This group of chapters are a little different, where Alma takes time to instruct each of his sons, and teach them some of the doctrines of the gospel.  Chapter 36 and 47 are Alma's instructions to Helaman.  Chapter 38 is the Alma's instructions to his son Shiblon.  While chapter's 39 through 42 are Alma's counsel to Corianton.";
+        speaker1array.push(speaker);
+        listener1array.push(listener);
+      background1array.push(background); }
 
 
 
               else if ( a[i] == 'alma' && ( b[i] == 43 )) {
               speaker = "Alma and his sons";
               listener = "the Zoramites";
-              background = "";
+              background = "So a little background here.  Chapter 43 marks the end of Alma's counsel to each of his sons.  Here, Alma and his sons go to peach the Word.  Another important change happens during this part of the book of Alma.  Up until now, much of the book has chronicled missionary work and struggles within the church.  Chapter 43 begins a section of Alma known as the 'war chapters'.  From here, through the end of Alma, we learn much more about the contentions between the Lamanites and Nephites, and their wars.  We also meet Captain Moroni, a righteous general, who becomes a central figure of these chapters.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1002,7 +1053,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 44 )) {
               speaker = "Captain Moroni";
               listener = "Zerahemnah";
-              background = "";
+              background = "So a little background on this scripture.  This is near the beginning of the 'war chapters' in Alma.  After preparing for war, and making a commitment to defend their homes and families, Moroni leads the Nephites against the Lamanites and Zerahemnah.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1012,7 +1063,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 45 )) {
               speaker = "Helaman";
               listener = "his people";
-              background = "";
+              background = "So a little background on this scripture.  This is near the beginning of the 'war chapters' in Alma.  It's a very contentious time among the Nephites, as dissention is growing within the church, and the Lamanties become more threatening outside the church.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1022,7 +1073,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 46 )) {
               speaker = "Captain Moroni";
               listener = "the people of Zarahemla";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  It's a very contentious time among the Nephites, as dissention is growing within the church, and the Lamanties become more threatening outside the church.  Captain Moroni leads the and inspires his people, and unites them to face the Lamanites.  In these chapters, we also meet the wicked Amalickiah, who conspires to be king over the next several chapters.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1032,7 +1083,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 48 )) {
               speaker = "Captain Moroni";
               listener = "the people of Zarahemla";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  It's a very contentious time among the Nephites, as dissention is growing within the church, and the Lamanties become more threatening outside the church.  Moroni continues to prepare the Nephites against Lamanite invasions.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1042,7 +1093,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 50 )) {
               speaker = "Captain Moroni";
               listener = "the Nephites";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  It's a very contentious time among the Nephites, as dissention is growing within the church, and the Lamanties become more threatening outside the church.  While many of the war chapters cover actual wars, chapter 50 of Alma is slightly different.  Here, much more is recorded about the preparations that Moroni and the Nephites make for war.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1052,7 +1103,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 51 )) {
               speaker = "Captain Moroni";
               listener = "Pahoran and the king men";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  Here, we begin to see two forces, which play a larger role through the end of Alma.  First is the king men who become contention within the Nephite government and community.  Because of these internal contentions, Captain Moroni, the Nephite general, and Pahoran, the chief judge must continually try to resolve these rebellions.  Second is the continuing threat from the Lamanites, led by king Amalickiah.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1062,7 +1113,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 52 )) {
               speaker = "Captain Moroni";
               listener = "his armies";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  After Helaman's son, Teancum, slays King Amalickiah, Ammoron succeeds him as king.  The Nephites also begin to retake some of the cities that had been previously overtaken by the Lamanites.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1072,7 +1123,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 53 )) {
               speaker = "Helaman";
               listener = "the 2000 stripling warriors";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  With the growing threat from the Lamanites, a group of young men take up arms to defend their families.  These young men become known as the 2000 Stripling Warriors.  These brave young men are the sons of the Anti-Nephi-Lehies, who previously committed to not take up arms agains the Lamanites any more.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1082,7 +1133,7 @@
               else if ( a[i] == 'alma' && ( b[i] == 54 )) {
               speaker = "Captain Moroni";
               listener = "Ammoron";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  While many of the war chapters chronicle the wars and preparations for war made by the Nephites, chapters 54 and 55 show the negotiating strength and wisdom of Moroni, who tries to negotiate the exchange of prisoners with the Lamanites.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
@@ -1092,84 +1143,401 @@
               else if ( a[i] == 'alma' && ( b[i] == 55 )) {
               speaker = "Captain Moroni";
               listener = "his army and the Lamanties";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  While many of the war chapters chronicle the wars and preparations for war made by the Nephites, chapters 54 and 55 show the negotiating strength and wisdom of Moroni, who tries to negotiate the exchange of prisoners with the Lamanites.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 56 || 57 )) {
+              else if ( a[i] == 'alma' && ( b[i] == 56 )) {
               speaker = "Helaman";
               listener = "Moroni";
-              background = "";
+              background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  Chapter 56 is an epistle from Helaman to Moroni, where he tells of the battle between his 2000 stripling warriors and the Lamanites.  We learned of the 2000 stripling warriors earlier in Alma, who were the sons of the Anti-Nephi-Lehies.  Helaman became the commander of the group, which became an integral part of regaining some of the Nephite territories.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
+            else if ( a[i] == 'alma' && ( b[i] == 57 )) {
+            speaker = "Helaman";
+            listener = "Moroni";
+            background = "So a little background on this scripture.  This is right in the middle of the 'war chapters' in Alma.  Chapter 56 is an epistle from Helaman to Moroni, where he tells of the battle between his 2000 stripling warriors and the Lamanites.  We learned of the 2000 stripling warriors earlier in Alma, who were the sons of the Anti-Nephi-Lehies.  Helaman became the commander of the group, which became an integral part of regaining some of the Nephite territories.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
 
-              else if ( a[i] == 'alma' && ( b[i] == 59 || 60 || 61 || 62 )) {
+
+              else if ( a[i] == 'alma' && ( b[i] == 59 )) {
               speaker = "Captain Moroni";
               listener = "Pahoran";
-              background = "";
+              background = "So a little background on this scripture.  This is near the end of the 'war chapters' in Alma.  Many of the larger battles have ended between the Lamanites and Nephites.  After learning of the account of the 2000 stripling warriors from Helaman, Moroni writes to Pahoran, the chief Judge for re-enforcements.  Chapters 59 through 62 of Alma record much of the back and forth between Moroni and Pahoran, who must eventually work together to resolve an internal rebellion among the Nephites.  These chapters also highlight some of the political struggles that take place in the Nephite government.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
+            else if ( a[i] == 'alma' && ( b[i] == 60 )) {
+            speaker = "Captain Moroni";
+            listener = "Pahoran";
+            background = "So a little background on this scripture.  This is near the end of the 'war chapters' in Alma.  Many of the larger battles have ended between the Lamanites and Nephites.  After learning of the account of the 2000 stripling warriors from Helaman, Moroni writes to Pahoran, the chief Judge for re-enforcements.  Chapters 59 through 62 of Alma record much of the back and forth between Moroni and Pahoran, who must eventually work together to resolve an internal rebellion among the Nephites.  These chapters also highlight some of the political struggles that take place in the Nephite government.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
-              else if ( a[i] == 'helaman' && ( b[i] == 4 || 5 || 6 || 7 || 8 )) {
-              speaker = "the missionaries, Nephi and Lehi";
-              listener = "the people of Nephi";
-              background = "";
-              speaker1array.push(speaker);
-              listener1array.push(listener);
-            background1array.push(background); }
+          else if ( a[i] == 'alma' && ( b[i] == 61 )) {
+          speaker = "Captain Moroni";
+          listener = "Pahoran";
+          background = "So a little background on this scripture.  This is near the end of the 'war chapters' in Alma.  Many of the larger battles have ended between the Lamanites and Nephites.  After learning of the account of the 2000 stripling warriors from Helaman, Moroni writes to Pahoran, the chief Judge for re-enforcements.  Chapters 59 through 62 of Alma record much of the back and forth between Moroni and Pahoran, who must eventually work together to resolve an internal rebellion among the Nephites.  These chapters also highlight some of the political struggles that take place in the Nephite government.";
+          speaker1array.push(speaker);
+          listener1array.push(listener);
+        background1array.push(background); }
+
+        else if ( a[i] == 'alma' && ( b[i] == 62 )) {
+        speaker = "Captain Moroni";
+        listener = "Pahoran";
+        background = "So a little background on this scripture.  This is near the end of the 'war chapters' in Alma.  Many of the larger battles have ended between the Lamanites and Nephites.  After learning of the account of the 2000 stripling warriors from Helaman, Moroni writes to Pahoran, the chief Judge for re-enforcements.  Chapters 59 through 62 of Alma record much of the back and forth between Moroni and Pahoran, who must eventually work together to resolve an internal rebellion among the Nephites.  These chapters also highlight some of the political struggles that take place in the Nephite government.";
+        speaker1array.push(speaker);
+        listener1array.push(listener);
+      background1array.push(background); }
 
 
-              else if ( a[i] == 'helaman' && ( b[i] == 9 || 10 || 11 || 12 )) {
+              else if ( a[i] == 'helaman' && ( b[i] == 1 )) {
               speaker = "Nephi";
               listener = "the people of Nephi";
-              background = "";
+              background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  Such as dissention within the church, and men who threatened to overthrow the government.  Chapter 1 of Helaman continues that theme, as the Judgement seat is overtaken several times, highlighting the increasingly voilent and fragile state of the Nephite political system.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
+            else if ( a[i] == 'helaman' && ( b[i] == 2 )) {
+            speaker = "Nephi";
+            listener = "the people of Nephi";
+            background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  Such as dissention within the church, and men who threatened to overthrow the government.  Chapter 1 of Helaman continues that theme, as the Judgement seat is overtaken several times, highlighting the increasingly voilent and fragile state of the Nephite political system. At this point in the Book of Mormon, a wicked group known as the Gadianton robbers begin to become a more prominent force, who constantly threaten peace within the Nephites, by conspiring to overthrow the government, as well as other forms of wickedness and mischief.  The threat of the Gadianton robbers and secret combinations is something that the Nephites fight against up until the coming of Christ in 3rd Nephi.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
-              else if ( a[i] == 'helaman' && ( b[i] == 13 || 14 || 15 )) {
-              speaker = "Samuel the Lamanite";
-              listener = "the Nephites";
-              background = "";
-              speaker1array.push(speaker);
-              listener1array.push(listener);
-            background1array.push(background); }
+          else if ( a[i] == 'helaman' && ( b[i] == 3 )) {
+          speaker = "the missionaries, Nephi and Lehi";
+          listener = "the people of Nephi";
+          background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  At this point, many of the Nephites migrate northward.";
+          speaker1array.push(speaker);
+          listener1array.push(listener);
+        background1array.push(background); }
+
+        else if ( a[i] == 'helaman' && ( b[i] == 4 )) {
+        speaker = "the missionaries, Nephi and Lehi";
+        listener = "the people of Nephi";
+        background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief..";
+        speaker1array.push(speaker);
+        listener1array.push(listener);
+      background1array.push(background); }
+
+      else if ( a[i] == 'helaman' && ( b[i] == 5 )) {
+      speaker = "the missionaries, Nephi and Lehi";
+      listener = "the people of Nephi";
+      background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+      speaker1array.push(speaker);
+      listener1array.push(listener);
+    background1array.push(background); }
+
+    else if ( a[i] == 'helaman' && ( b[i] == 6 )) {
+    speaker = "Nephi";
+    listener = "the people of Nephi";
+    background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+    speaker1array.push(speaker);
+    listener1array.push(listener);
+  background1array.push(background); }
+
+  else if ( a[i] == 'helaman' && ( b[i] == 7 )) {
+  speaker = "Nephi";
+  listener = "the people of Nephi";
+  background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+  speaker1array.push(speaker);
+  listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 8 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 9 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 10 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 11 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 12 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
 
 
-              else if ( a[i] == 'helaman' && ( b[i] == 16 )) {
-              speaker = "Nephi";
-              listener = "the people of Nephi";
-              background = "";
-              speaker1array.push(speaker);
-              listener1array.push(listener);
-            background1array.push(background); }
+else if ( a[i] == 'helaman' && ( b[i] == 13 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 14 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 15 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == 'helaman' && ( b[i] == 16 )) {
+speaker = "Nephi";
+listener = "the people of Nephi";
+background = "So a little background on this scripture.  Towards the end of the War Chapters in Alma, the Nephites had to deal with more internal struggles than external ones.  The Gadianton robbers have fled into the wilderness, and many of the Nephites have fallen into unbelief.  The following chapters record the struggles of the prophets to bring the Nephites back, and keep the church from dwindling in unbelief. Nephi and Lehi devote themselves to preaching repentance to the Nephites.  The Lord also sends Samual the Lamanite to the Nephites, to call them to repentance.  However, unbelief within the church continues to be a problem.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
 
 
               else if ( a[i] == '3nephi' && ( b[i] == 1)) {
               speaker = "Nephi";
               listener = "the Nephites";
-              background = "";
+              background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
               speaker1array.push(speaker);
               listener1array.push(listener);
             background1array.push(background); }
 
+            else if ( a[i] == '3nephi' && ( b[i] == 2)) {
+            speaker = "Nephi";
+            listener = "the Nephites";
+            background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+            speaker1array.push(speaker);
+            listener1array.push(listener);
+          background1array.push(background); }
 
-              else if ( a[i] == '3nephi' && ( b[i] == 9 || 10 || 11 || 12 || 13 || 14 || 15 || 16 || 17 || 18 || 19 || 20 || 21 || 22 || 23 || 24 || 25 || 26)) {
-              speaker = "Jesus Christ";
-              listener = "the Nephites";
-              background = "";
-              speaker1array.push(speaker);
-              listener1array.push(listener);
-            background1array.push(background); }
+          else if ( a[i] == '3nephi' && ( b[i] == 3)) {
+          speaker = "Nephi";
+          listener = "the Nephites";
+          background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+          speaker1array.push(speaker);
+          listener1array.push(listener);
+        background1array.push(background); }
+
+        else if ( a[i] == '3nephi' && ( b[i] == 4)) {
+        speaker = "Nephi";
+        listener = "the Nephites";
+        background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+        speaker1array.push(speaker);
+        listener1array.push(listener);
+      background1array.push(background); }
+
+      else if ( a[i] == '3nephi' && ( b[i] == 5)) {
+      speaker = "Nephi";
+      listener = "the Nephites";
+      background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+      speaker1array.push(speaker);
+      listener1array.push(listener);
+    background1array.push(background); }
+
+    else if ( a[i] == '3nephi' && ( b[i] == 6)) {
+    speaker = "Nephi";
+    listener = "the Nephites";
+    background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+    speaker1array.push(speaker);
+    listener1array.push(listener);
+  background1array.push(background); }
+
+  else if ( a[i] == '3nephi' && ( b[i] == 7)) {
+  speaker = "Nephi";
+  listener = "the Nephites";
+  background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+  speaker1array.push(speaker);
+  listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 8)) {
+speaker = "Nephi";
+listener = "the Nephites";
+background = "At the beginning of third Nephi, we begin to see an increasing role of the Gadianton robbers, who become more powerful, as well as more dissention and unbelief among the Nephites.  Despite seeing the sign of Christ's brith in chapter 1, the wicked people make a plan to murder all of the believers.  However, the believers, who appear to be decreasing in number, continue to have faith and hope in Christ.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 9 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 10 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 11 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 12 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 13 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 14 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 15 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 16 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 17 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 18 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 19 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 20 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 21 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 22 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 23 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 24 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 25 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
+
+else if ( a[i] == '3nephi' && ( b[i] == 26 )) {
+speaker = "Jesus";
+listener = "the Nephites";
+background = "So a little background on this scripture.  The focal point of 3rd Nephi, and the Book of Mormon is Christ's visitation among the Nephites.  Many of the prophets have prophesied about this moment, and the faithful have looked forward to it.  When he visits, he blesses them, and establishes his church among them by calling the 12 apostles. These chapters in 3rd Nephi focus on his teachings and counsel to them.";
+speaker1array.push(speaker);
+listener1array.push(listener);
+background1array.push(background); }
 
 
               else if ( a[i] == '4nephi' && ( b[i] == 1 )) {
@@ -1181,7 +1549,7 @@
             background1array.push(background); }
 
 
-              else if ( a[i] == 'mormon' && ( b[i] == 1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 )) {
+              else if ( a[i] == 'mormon' && ( b[i] == 1  )) {
               speaker = "Mormon";
               listener = "a future generation";
               background = "";
@@ -1201,8 +1569,7 @@
               else {
                 speaker = "the main figure here";
                 listener = "the people";
-                background = "I probably don't have time to share a lot of the background of this passage here,"
-                background = "";
+                background = "I probably don't have time to share a lot of the background of this passage here,";
                 speaker1array.push(speaker);
                 listener1array.push(listener);
                 background1array.push(background);
@@ -2926,7 +3293,7 @@ pushToToDoArray(toDoQuoteObject5);
                   objectArray.forEach( function (arrayItem) {
                    let script1 = `
                    <p>
-                   This comes from ${arrayItem.standard_works}, in ${arrayItem.book}, ${arrayItem.chapter}. ${arrayItem.background}.  This is one of my favorite parts of ${arrayItem.standard_works}, and it's where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${arrayItem.verses}, it says
+                   This comes from ${arrayItem.standard_works}, in the book of ${arrayItem.book}, chapter ${arrayItem.chapter}. ${arrayItem.background}.  This is one of my favorite parts of ${arrayItem.standard_works}, and it's where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and there's really a lot that they cover in these verses about ${keyWord} but I just want to read a couple of the verse here.  Starting in verse ${arrayItem.verses}, it says
                    </p>
                    <span class="quotation">"</span><p class="quote">
                    ${arrayItem.verse_text}
@@ -2952,7 +3319,7 @@ pushToToDoArray(toDoQuoteObject5);
                     objectArray.forEach( function (arrayItem) {
                      let script2 = `
                      <p>
-                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, ${arrayItem.book}, ${arrayItem.chapter}. ${arrayItem.background}.  Now, this is the part where ${arrayItem.speaker}, I believe, is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, the book of ${arrayItem.book},  chapter ${arrayItem.chapter}. ${arrayItem.background}.  Now, this is the part where ${arrayItem.speaker}, I believe, is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
                      </p>
                      <span class="quotation">"</span><p class="quote">
                      ${arrayItem.verse_text}
@@ -2971,7 +3338,7 @@ pushToToDoArray(toDoQuoteObject5);
                         document.getElementById('six').innerHTML = randomScript2;
                         return randomScript2;
                       }
-                      let randomScript2 = script1Arr[Math.floor(Math.random()*script2Arr.length)];
+                      let randomScript2 = script2Arr[Math.floor(Math.random()*script2Arr.length)];
                       document.getElementById('six').innerHTML = randomScript2;
 
           //
