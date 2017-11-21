@@ -69,6 +69,14 @@ const Imagehappiness = require('./models/imagehappiness.js');
 const Imagemiracles = require('./models/imagemiracles.js');
 const Imagegod = require('./models/imagegod.js');
 const Imagefellowship = require('./models/imagefellowship.js');
+const Imagepatience = require('./models/imagepatience.js');
+const Imagesacrifice = require('./models/imagesacrifice.js');
+const Imagesabbathday = require('./models/imagesabbathday.js');
+const Imagetalents = require('./models/imagetalents.js');
+const Imagegatheringofisrael = require('./models/imagegatheringofisrael.js');
+const Imagelordscovenantpeople = require('./models/imagelordscovenantpeople.js');
+const Imageexaltation = require('./models/imageexaltation.js');
+const Imagefinaljudgement = require('./models/imagefinaljudgement.js');
 //=================//
 
 //=====GENERAL AUTHORITIES IMAGE API======//
@@ -196,6 +204,14 @@ const Scripturehappiness = require('./models/scripturehappiness.js');
 const Scripturemiracles = require('./models/scripturemiracles.js');
 const Scripturegod = require('./models/scripturegod.js');
 const Scripturefellowship = require('./models/scripturefellowship.js');
+const Scripturepatience = require('./models/scripturepatience.js');
+const Scripturesacrifice = require('./models/scripturesacrifice.js');
+const Scripturesabbathday = require('./models/scripturesabbathday.js');
+const Scripturetalents = require('./models/scripturetalents.js');
+const Scripturegatheringofisrael = require('./models/scripturegatheringofisrael.js');
+const Scripturelordscovenantpeople = require('./models/scripturelordscovenantpeople.js');
+const Scriptureexaltation = require('./models/scriptureexaltation.js');
+const Scripturefinaljudgement = require('./models/scripturefinaljudgement.js');
 //=================//
 
 //=====GENERAL CONFERENCE API======//
@@ -254,6 +270,14 @@ const Genconfgospel = require('./models/genconfgospel.js');
 const Genconfhappiness = require('./models/genconfhappiness.js');
 const Genconfmiracles = require('./models/genconfmiracles.js');
 const Genconfgod = require('./models/genconfgod.js');
+const Genconfenconfpatience = require('./models/genconfpatience.js');
+const Genconfenconfsacrifice = require('./models/genconfsacrifice.js');
+const Genconfenconfsabbathday = require('./models/genconfsabbathday.js');
+const Genconfenconftalents = require('./models/genconftalents.js');
+const Genconfenconfgatheringofisrael = require('./models/genconfgatheringofisrael.js');
+const Genconfenconflordscovenantpeople = require('./models/genconflordscovenantpeople.js');
+const Genconfenconfexaltation = require('./models/genconfexaltation.js');
+const Genconfenconffinaljudgement = require('./models/genconffinaljudgement.js');
 //=================//
 
 //=====VIDEOS API======//
@@ -312,6 +336,80 @@ const Videogospel = require('./models/videogospel.js');
 const Videohappiness = require('./models/videohappiness.js');
 const Videomiracles = require('./models/videomiracles.js');
 const Videogod = require('./models/videogod.js');
+const Videopatience = require('./models/videopatience.js');
+const Videosacrifice = require('./models/videosacrifice.js');
+const Videosabbathday = require('./models/videosabbathday.js');
+const Videotalents = require('./models/videotalents.js');
+const Videogatheringofisrael = require('./models/videogatheringofisrael.js');
+const Videolordscovenantpeople = require('./models/videolordscovenantpeople.js');
+const Videoexaltation = require('./models/videoexaltation.js');
+const Videofinaljudgement = require('./models/videofinaljudgement.js');
+//=================//
+
+//=====DEFINITION API======//
+const Deffellowship = require('./models/deffellowship.js');
+const Defbookofmormon = require('./models/defbookofmormon.js');
+const Defbaptism = require('./models/defbaptism.js');
+const Deffaith = require('./models/deffaith.js');
+const Defrepentence = require('./models/defrepentence.js');
+const Defcharity = require('./models/defcharity.js');
+const Defprophets = require('./models/defprophets.js');
+const Defatonement = require('./models/defatonement.js');
+const Defwordofwisdom = require('./models/defwordofwisdom.js');
+const Defservice = require('./models/defservice.js');
+const Defcreation = require('./models/defcreation.js');
+const Defagency = require('./models/defagency.js');
+const Defgratitude = require('./models/defgratitude.js');
+const Defthefall = require('./models/defthefall.js');
+const Defholyghost = require('./models/defholyghost.js');
+const Defscriptures = require('./models/defscriptures.js');
+const Defpriesthood = require('./models/defpriesthood.js');
+const Defsacrament = require('./models/defsacrament.js');
+const Defhonesty = require('./models/defhonesty.js');
+const Defobedience = require('./models/defobedience.js');
+const Defangels = require('./models/defangels.js');
+const Defapostasy = require('./models/defapostasy.js');
+const Defchurch = require('./models/defchurch.js');
+const Deffamily = require('./models/deffamily.js');
+const Deffasting = require('./models/deffasting.js');
+const Defhumility = require('./models/defhumility.js');
+const Defjesus = require('./models/defjesus.js');
+const Defmarriage = require('./models/defmarriage.js');
+const Defprayer = require('./models/defprayer.js');
+const Defpremortal = require('./models/defpremortal.js');
+const Defsecondcoming = require('./models/defsecondcoming.js');
+const Deftemple = require('./models/deftemple.js');
+const Deftithing = require('./models/deftithing.js');
+const Deftrials = require('./models/deftrials.js');
+const Deftestimony = require('./models/deftestimony.js');
+const Defgodhead = require('./models/defgodhead.js');
+const Defheaven = require('./models/defheaven.js');
+const Defhell = require('./models/defhell.js');
+const Defmissionary = require('./models/defmissionary.js');
+const Defnativity = require('./models/defnativity.js');
+const Defpioneer = require('./models/defpioneer.js');
+const Defresurrection = require('./models/defresurrection.js');
+const Defwomen = require('./models/defwomen.js');
+const Defapostle = require('./models/defapostle.js');
+const Defselfreliance = require('./models/defselfreliance.js');
+const Defchastity = require('./models/defchastity.js');
+const Defchildren = require('./models/defchildren.js');
+const Defcovenants = require('./models/defcovenants.js');
+const Defdeath = require('./models/defdeath.js');
+const Defgenealogy = require('./models/defgenealogy.js');
+const Defgiftsofthespirit = require('./models/defgiftsofthespirit.js');
+const Defgospel = require('./models/defgospel.js');
+const Defhappiness = require('./models/defhappiness.js');
+const Defmiracles = require('./models/defmiracles.js');
+const Defgod = require('./models/defgod.js');
+const Defpatience = require('./models/defpatience.js');
+const Defsacrifice = require('./models/defsacrifice.js');
+const Defsabbathday = require('./models/defsabbathday.js');
+const Deftalents = require('./models/deftalents.js');
+const Defgatheringofisrael = require('./models/defgatheringofisrael.js');
+const Deflordscovenantpeople = require('./models/deflordscovenantpeople.js');
+const Defexaltation = require('./models/defexaltation.js');
+const Deffinaljudgement = require('./models/deffinaljudgement.js');
 //=================//
 
 //=====SPLASH API======//
@@ -1151,6 +1249,174 @@ app.post('/api/images/people', function(req, res) {
 
 //====GET IMAGE UPLOAD FOR API===//
 
+app.get('/api/images/gatheringofisrael', function(req, res) {
+  Imagegatheringofisrael.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/gatheringofisrael', function(req, res) {
+  Imagegatheringofisrael.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/talents', function(req, res) {
+  Imagetalents.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/talents', function(req, res) {
+  Imagetalents.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/lordscovenantpeople', function(req, res) {
+  Imagelordscovenantpeople.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/lordscovenantpeople', function(req, res) {
+  Imagelordscovenantpeople.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/sabbathday', function(req, res) {
+  Imagesabbathday.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/sabbathday', function(req, res) {
+  Imagesabbathday.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/sacrifice', function(req, res) {
+  Imagesacrifice.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/sacrifice', function(req, res) {
+  Imagesacrifice.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/finaljudgement', function(req, res) {
+  Imagefinaljudgement.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/finaljudgement', function(req, res) {
+  Imagefinaljudgement.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/exaltation', function(req, res) {
+  Imageexaltation.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/exaltation', function(req, res) {
+  Imageexaltation.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
 app.get('/api/images/events', function(req, res) {
   Imageevents.find({}).then(images => {
   res.json(images)
@@ -1619,6 +1885,30 @@ app.get('/api/images/fellowship', function(req, res) {
 
 app.post('/api/images/fellowship', function(req, res) {
   Imagefellowship.create({
+    image_data: req.body.image_data,
+    tag: req.body.tag,
+    image: req.body.image,
+  }).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/images/patience', function(req, res) {
+  Imagepatience.find({}).then(images => {
+  res.json(images)
+});
+});
+
+//==========================//
+
+//====POST IMAGE API===//
+
+app.post('/api/images/patience', function(req, res) {
+  Imagepatience.create({
     image_data: req.body.image_data,
     tag: req.body.tag,
     image: req.body.image,
@@ -3669,8 +3959,120 @@ app.post('/api/scriptures/wilfordwoodruff', function(req, res) {
 
 //====POST SCRIPTURE API===//
 
+app.post('/api/scriptures/patience', function(req, res) {
+  Scripturepatience.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
 app.post('/api/scriptures/people', function(req, res) {
   Scripturepeople.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/gatheringofisrael', function(req, res) {
+  Scripturegatheringofisrael.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/sacrifice', function(req, res) {
+  Scripturesacrifice.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/sabbathday', function(req, res) {
+  Scripturesabbathday.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/lordscovenantpeople', function(req, res) {
+  Scripturelordscovenantpeople.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/talents', function(req, res) {
+  Scripturetalents.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/finaljudgement', function(req, res) {
+  Scripturefinaljudgement.create({
+    standard_work_location: req.body.standard_work_location,
+    book_and_verse_number: req.body.book_and_verse_number,
+    verse_text: req.body.verse_text,
+  }).then(scriptures => {
+  res.redirect('/game1')
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/scriptures/exaltation', function(req, res) {
+  Scriptureexaltation.create({
     standard_work_location: req.body.standard_work_location,
     book_and_verse_number: req.body.book_and_verse_number,
     verse_text: req.body.verse_text,
@@ -4605,6 +5007,87 @@ app.get('/api/scriptures/people', function(req, res) {
 });
 
 //==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/patience', function(req, res) {
+  Scripturepatience.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/exaltation', function(req, res) {
+  Scriptureexaltation.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/finaljudgement', function(req, res) {
+  Scripturefinaljudgement.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/sacrifice', function(req, res) {
+  Scripturesacrifice.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/sabbathday', function(req, res) {
+  Scripturesabbathday.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/lordscovenantpeople', function(req, res) {
+  Scripturelordscovenantpeople.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/talents', function(req, res) {
+  Scripturetalents.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/scriptures/gatheringofisrael', function(req, res) {
+  Scripturegatheringofisrael.find({}).then(scriptures => {
+  res.json(scriptures)
+});
+});
+
+//==========================//
+
 //====GET IMAGE UPLOAD FOR API===//
 
 app.get('/api/scriptures/events', function(req, res) {
@@ -5447,6 +5930,302 @@ app.get('/api/genconf/fellowship', function(req, res) {
 
 app.post('/api/genconf/fellowship', function(req, res) {
   Genconffellowship.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/exaltation', function(req, res) {
+  Genconfexaltation.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/exaltation', function(req, res) {
+  Genconfexaltation.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/gatheringofisrael', function(req, res) {
+  Genconfgatheringofisrael.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/gatheringofisrael', function(req, res) {
+  Genconfgatheringofisrael.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/lordscovenantpeople', function(req, res) {
+  Genconflordscovenantpeople.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/lordscovenantpeople', function(req, res) {
+  Genconflordscovenantpeople.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/sacrifice', function(req, res) {
+  Genconfsacrifice.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/sacrifice', function(req, res) {
+  Genconfsacrifice.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/sabbathday', function(req, res) {
+  Genconfsabbathday.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/sabbathday', function(req, res) {
+  Genconfsabbathday.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/talents', function(req, res) {
+  Genconftalents.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/talents', function(req, res) {
+  Genconftalents.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/finaljudgement', function(req, res) {
+  Genconffinaljudgement.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/finaljudgement', function(req, res) {
+  Genconffinaljudgement.create({
+    talk_title: req.body.talk_title,
+    year: req.body.year,
+    author: req.body.author,
+    position: req.body.position,
+    image_url: req.body.image_url,
+    talk_blurb: req.body.talk_blurb,
+    paragraph1: req.body.paragraph1,
+    paragraph2: req.body.paragraph2,
+    paragraph3: req.body.paragraph3,
+    paragraph4: req.body.paragraph4,
+    paragraph5: req.body.paragraph5,
+    paragraph6: req.body.paragraph6,
+    paragraph7: req.body.paragraph7,
+    paragraph8: req.body.paragraph8,
+    paragraph9: req.body.paragraph9,
+    paragraph10: req.body.paragraph10,
+  }).then(genconfs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/genconf/patience', function(req, res) {
+  Genconfpatience.find({}).then(genconfs => {
+  res.json(genconfs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/genconf/patience', function(req, res) {
+  Genconfpatience.create({
     talk_title: req.body.talk_title,
     year: req.body.year,
     author: req.body.author,
@@ -7508,6 +8287,302 @@ app.post('/api/video/fellowship', function(req, res) {
 
 //====GET IMAGE UPLOAD FOR API===//
 
+app.get('/api/video/patience', function(req, res) {
+  Videopatience.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/patience', function(req, res) {
+  Videopatience.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/gatheringofisrael', function(req, res) {
+  Videogatheringofisrael.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/gatheringofisrael', function(req, res) {
+  Videogatheringofisrael.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/sacrifice', function(req, res) {
+  Videosacrifice.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/sacrifice', function(req, res) {
+  Videosacrifice.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/sabbathday', function(req, res) {
+  Videosabbathday.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/sabbathday', function(req, res) {
+  Videosabbathday.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/lordscovenantpeople', function(req, res) {
+  Videolordscovenantpeople.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/lordscovenantpeople', function(req, res) {
+  Videolordscovenantpeople.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/talents', function(req, res) {
+  Videotalents.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/talents', function(req, res) {
+  Videotalents.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/finaljudgement', function(req, res) {
+  Videofinaljudgement.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/finaljudgement', function(req, res) {
+  Videofinaljudgement.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/video/exaltation', function(req, res) {
+  Videoexaltation.find({}).then(videos => {
+  res.json(videos)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/video/exaltation', function(req, res) {
+  Videoexaltation.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    video_url: req.body.video_url,
+  }).then(videos => {
+  res.redirect('/game3')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
 app.get('/api/video/agency', function(req, res) {
   Videoagency.find({}).then(videos => {
   res.json(videos)
@@ -9503,6 +10578,2376 @@ app.post('/api/video/wordofwisdom', function(req, res) {
 });
 
 //==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/fellowship', function(req, res) {
+  Deffellowship.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/fellowship', function(req, res) {
+  Deffellowship.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/agency', function(req, res) {
+  Defagency.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/agency', function(req, res) {
+  Defagency.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/gratitude', function(req, res) {
+  Defgratitude.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/gratitude', function(req, res) {
+  Defgratitude.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/angels', function(req, res) {
+  Defangels.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/angels', function(req, res) {
+  Defangels.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/apostasy', function(req, res) {
+  Defapostasy.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/apostasy', function(req, res) {
+  Defapostasy.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/apostle', function(req, res) {
+  Defapostle.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/apostle', function(req, res) {
+  Defapostle.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/atonement', function(req, res) {
+  Defatonement.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/atonement', function(req, res) {
+  Defatonement.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/baptism', function(req, res) {
+  Defbaptism.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/baptism', function(req, res) {
+  Defbaptism.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/bookofmormon', function(req, res) {
+  Defbookofmormon.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/bookofmormon', function(req, res) {
+  Defbookofmormon.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/charity', function(req, res) {
+  Defcharity.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/charity', function(req, res) {
+  Defcharity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/chastity', function(req, res) {
+  Defchastity.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/chastity', function(req, res) {
+  Defchastity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/children', function(req, res) {
+  Defchildren.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/children', function(req, res) {
+  Defchildren.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/church', function(req, res) {
+  Defchurch.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/church', function(req, res) {
+  Defchurch.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/covenants', function(req, res) {
+  Defcovenants.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/covenants', function(req, res) {
+  Defcovenants.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/creation', function(req, res) {
+  Defcreation.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/creation', function(req, res) {
+  Defcreation.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/death', function(req, res) {
+  Defdeath.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/death', function(req, res) {
+  Defdeath.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/faith', function(req, res) {
+  Deffaith.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/faith', function(req, res) {
+  Deffaith.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/family', function(req, res) {
+  Deffamily.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/family', function(req, res) {
+  Deffamily.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/fasting', function(req, res) {
+  Deffasting.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/fasting', function(req, res) {
+  Deffasting.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/genealogy', function(req, res) {
+  Defgenealogy.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/genealogy', function(req, res) {
+  Defgenealogy.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/giftsofthespirit', function(req, res) {
+  Defgiftsofthespirit.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/giftsofthespirit', function(req, res) {
+  Defgiftsofthespirit.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/god', function(req, res) {
+  Defgod.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/god', function(req, res) {
+  Defgod.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/godhead', function(req, res) {
+  Defgodhead.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/godhead', function(req, res) {
+  Defgodhead.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/gospel', function(req, res) {
+  Defgospel.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/gospel', function(req, res) {
+  Defgospel.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/happiness', function(req, res) {
+  Defhappiness.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/happiness', function(req, res) {
+  Defhappiness.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/heaven', function(req, res) {
+  Defheaven.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/heaven', function(req, res) {
+  Defheaven.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/hell', function(req, res) {
+  Defhell.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/hell', function(req, res) {
+  Defhell.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/holyghost', function(req, res) {
+  Defholyghost.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/holyghost', function(req, res) {
+  Defholyghost.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/honesty', function(req, res) {
+  Defhonesty.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/honesty', function(req, res) {
+  Defhonesty.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/humility', function(req, res) {
+  Defhumility.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/humility', function(req, res) {
+  Defhumility.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/jesus', function(req, res) {
+  Defjesus.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/jesus', function(req, res) {
+  Defjesus.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/marriage', function(req, res) {
+  Defmarriage.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/marriage', function(req, res) {
+  Defmarriage.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/miracles', function(req, res) {
+  Defmiracles.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/miracles', function(req, res) {
+  Defmiracles.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/missionary', function(req, res) {
+  Defmissionary.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/missionary', function(req, res) {
+  Defmissionary.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/nativity', function(req, res) {
+  Defnativity.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/nativity', function(req, res) {
+  Defnativity.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/obedience', function(req, res) {
+  Defobedience.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/obedience', function(req, res) {
+  Defobedience.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/pioneer', function(req, res) {
+  Defpioneer.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/pioneer', function(req, res) {
+  Defpioneer.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/prayer', function(req, res) {
+  Defprayer.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/prayer', function(req, res) {
+  Defprayer.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/premortal', function(req, res) {
+  Defpremortal.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/premortal', function(req, res) {
+  Defpremortal.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/priesthood', function(req, res) {
+  Defpriesthood.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/priesthood', function(req, res) {
+  Defpriesthood.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/prophets', function(req, res) {
+  Defprophets.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/prophets', function(req, res) {
+  Defprophets.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/repentence', function(req, res) {
+  Defrepentence.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/repentence', function(req, res) {
+  Defrepentence.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/resurrection', function(req, res) {
+  Defresurrection.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/resurrection', function(req, res) {
+  Defresurrection.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/sacrament', function(req, res) {
+  Defsacrament.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/sacrament', function(req, res) {
+  Defsacrament.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/scriptures', function(req, res) {
+  Defscriptures.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/scriptures', function(req, res) {
+  Defscriptures.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/secondcoming', function(req, res) {
+  Defsecondcoming.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/secondcoming', function(req, res) {
+  Defsecondcoming.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/selfreliance', function(req, res) {
+  Defselfreliance.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/selfreliance', function(req, res) {
+  Defselfreliance.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/service', function(req, res) {
+  Defservice.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/service', function(req, res) {
+  Defservice.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/temple', function(req, res) {
+  Deftemple.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/temple', function(req, res) {
+  Deftemple.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/testimony', function(req, res) {
+  Deftestimony.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/testimony', function(req, res) {
+  Deftestimony.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/thefall', function(req, res) {
+  Defthefall.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/thefall', function(req, res) {
+  Defthefall.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/tithing', function(req, res) {
+  Deftithing.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/tithing', function(req, res) {
+  Deftithing.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/trials', function(req, res) {
+  Deftrials.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/trials', function(req, res) {
+  Deftrials.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/women', function(req, res) {
+  Defwomen.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/women', function(req, res) {
+  Defwomen.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/wordofwisdom', function(req, res) {
+  Defwordofwisdom.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/wordofwisdom', function(req, res) {
+  Defwordofwisdom.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/wordofwisdom', function(req, res) {
+  Defwordofwisdom.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/wordofwisdom', function(req, res) {
+  Defwordofwisdom.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/talents', function(req, res) {
+  Deftalents.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/talents', function(req, res) {
+  Deftalents.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/exaltation', function(req, res) {
+  Defexaltation.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/exaltation', function(req, res) {
+  Defexaltation.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/finaljudgement', function(req, res) {
+  Deffinaljudgement.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/finaljudgement', function(req, res) {
+  Deffinaljudgement.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/sacrifice', function(req, res) {
+  Defsacrifice.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/sacrifice', function(req, res) {
+  Defsacrifice.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/sabbathday', function(req, res) {
+  Defsabbathday.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/sabbathday', function(req, res) {
+  Defsabbathday.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/lordscovenantpeople', function(req, res) {
+  Deflordscovenantpeople.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/lordscovenantpeople', function(req, res) {
+  Deflordscovenantpeople.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/gatheringofisrael', function(req, res) {
+  Defgatheringofisrael.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/gatheringofisrael', function(req, res) {
+  Defgatheringofisrael.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/def/patience', function(req, res) {
+  Defpatience.find({}).then(defs => {
+  res.json(defs)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/def/patience', function(req, res) {
+  Defpatience.create({
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    modern_def: req.body.modern_def,
+    encyclo: req.body.encyclo,
+  }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
 
 //====GET HIGH SCORES===//
 

@@ -4,7 +4,8 @@ var timestamps = require('mongoose-timestamp');
 
 let Schema = mongoose.Schema;
 
-const imagechildrenSchema = new Schema({
+const imagetalentsSchema = new Schema({
+
   standard_work_location: {
     type: String,
   },
@@ -27,7 +28,7 @@ image_data: [{
 
 
 })
-imagechildrenSchema.plugin(timestamps);
-const Imagechildren = mongoose.model('imagechildren', imagechildrenSchema);
+imagetalentsSchema.plugin(timestamps);
+const Imagetalents = mongoose.model('imagetalents', imagetalentsSchema);
 
-module.exports = Imagechildren;
+module.exports = Imagetalents;
