@@ -3131,18 +3131,53 @@ pushToToDoArray(toDoQuoteObject5);
 
 
 
+fetch('https://presentation-maker.herokuapp.com/api/def/' + keyWord).then(function(response) {
+             if (response.status != 200) {
+               window.alert("Sorry, nothing matches those search terms.  Try a different word, or a similar terms.");
+               return ;
+             }
+
+
+             response.json().then(function(data) {
+               let defi = data;
+                let define = "";
+                let encyclopedia_1 = "";
+
+                let encyclopedia_m = [];
+                let dictionary_def = [];
+
+               for (var i = 0; i < defi.length; i++) {
+                 define = defi[0].modern_def;
+                 encyclopedia_1 = defi[0].encyclo;
+                 encyclopedia_m.push(encyclopedia_1);
+                 dictionary_def.push(define);
+               }
+
+
+
+          let encyc_phrase = getGenConPhrase1(encyclopedia_m[0]);
+
+
           let markup =
             `
             <p>
 
-              As I was preparing to speak today, on the topic of ${theBefore} ${keyWord}, I came up with four questions that I wanted to answer, and over the course of my talk today, I'll try to address each one of them.
+              As I was preparing to speak today, on the topic of ${theBefore} ${topic}, I came up with four questions that I wanted to answer, and over the course of my talk today, I'll try to address each one of them.
               </p>
-              <p>First, ${before} ${theBefore} ${keyWord}?</p>
-              <p>Second, ${questiontoDo} ${theBefore} ${keyWord}?</p>
+              <p>First, ${before} ${theBefore} ${topic}?</p>
+              <p>Second, ${questiontoDo} ${theBefore} ${topic}?</p>
               <p>Third, ${questionTrials}? </p>
-              <p>And finally, ${questionBlessings} ${theBefore} ${keyWord}? </p>
-               <p>So, to begin, "${before} ${theBefore} ${keyWord}?"  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
+              <p>And finally, ${questionBlessings} ${theBefore} ${topic}? </p>
+               <p>So, to begin, "${before} ${theBefore} ${topic}?"  It may seem like a simple question, but sometimes the most simple doctrines are ones we often overlook.
               </p>
+              <p>The dictionary defines ${theBefore} ${topic} in the following way:</p>
+              <p>${dictionary_def[0]}</p>
+              <p>Although this is a good place to start, the most basic definition of ${theBefore} ${topic} lacks what I felt were some of the more important and deeper aspects of the topic.</p>
+              <p>Another source I like to use for information on gospel topics is the Encyclopedia of Mormonism.  This is a free, online resource that is part of the BYU religious studies center.  You can find some great information on a wide range of topics there.  When I went there to check it out, I found a little more information about ${theBefore} ${topic}.  Here's a quick paragraph from there:</p>
+              <span class="quotation">"</span><p class="quote">
+              ${encyc_phrase}
+              </p><span class="quotation2">"</span>
+              <p>(talk about part of the above quote.  Maybe something that sticks out to you, or something that you hadn't realized before)</p>
               <p id="one"></p>
               <button id="toggleQuote1">get new quote</button>
               <p>
@@ -3159,7 +3194,7 @@ pushToToDoArray(toDoQuoteObject5);
               In my own life, I think I can apply this by ( describe ways you can apply these verses and talks)
               </p>
               <p>
-              These scriptures and quotes do seem to highlight what ${topic}/${keyWord} ${after}, and what we can do to improve.  However, I have found in my life that whenever I want to be better at a principle, or understand a doctrine better, knowing what to do is always easier than actually doing it.  Life gets busy, and things get in the way, and my priorities can often become skewed.  One thing that helps me overcome that, as I try to be more perfect, is knowing in advance what obstacles and difficulties I'm going to face as I strive to improve.  With that idea in mind, I came across another great talk where they addresses the question of "${questionTrials}".
+              These scriptures and quotes do seem to highlight what ${topic}/${topic} ${after}, and what we can do to improve.  However, I have found in my life that whenever I want to be better at a principle, or understand a doctrine better, knowing what to do is always easier than actually doing it.  Life gets busy, and things get in the way, and my priorities can often become skewed.  One thing that helps me overcome that, as I try to be more perfect, is knowing in advance what obstacles and difficulties I'm going to face as I strive to improve.  With that idea in mind, I came across another great talk where they addresses the question of "${questionTrials}".
               </p>
               <p id="three"></p>
               <button id="toggleQuote3">get new quote</button>
@@ -3170,11 +3205,11 @@ pushToToDoArray(toDoQuoteObject5);
               </p>
               <p>
               Now, I know I'm short on time, but let me just summarize by saying: (here's what to summarize)
-              1. "As we try to answer the question of ${questiontoDo} ${theBefore} ${keyWord}, knowing what to do is often easier than actually doing it"
+              1. "As we try to answer the question of ${questiontoDo} ${theBefore} ${topic}, knowing what to do is often easier than actually doing it"
 
 
               <p>
-              Let me end with one of my favorite scriptures on the topic of ${topic}/${keyWord}.
+              Let me end with one of my favorite scriptures on the topic of ${topic}/${topic}.
               </p>
               <p id="five"></p>
               <button id="toggleQuote5">get new scripture</button>
@@ -3183,7 +3218,7 @@ pushToToDoArray(toDoQuoteObject5);
               </p>
               <p>
               Finally, I'll close here with my testimony.
-              (bear testimony here about the importance of ${theBefore} ${keyWord})
+              (bear testimony here about the importance of ${theBefore} ${topic})
               </p>
 
 
@@ -3195,7 +3230,7 @@ pushToToDoArray(toDoQuoteObject5);
           talkQuoteArray.forEach( function (arrayItem) {
            let quote1 = `
            <p>
-           To answer this question, I started by looking through recent General Conference addresses relating to ${theBefore} ${keyWord}.  In ${arrayItem.genConYear}, ${arrayItem.genConAuthor}, who was ${arrayItem.genConPosition} when they gave an address entitled, ${arrayItem.genConTalkTitle}, in which they define ${theBefore} ${keyWord} in what I thought was a very interesting way.  Here's what they said:
+            Now, it's easy to see how much more light the gospel brings to a topic, by compareing the difference between the standard definition, and the brief snippet from the Encyclopedia of Mormonism.  And that's one of the great things about the gospel, is that even the most simple topics have so much depth.  With that in mind, I started by looking through recent General Conference addresses relating to ${theBefore} ${topic}, hoping to gain even more understanding.  In ${arrayItem.genConYear}, ${arrayItem.genConAuthor}, who was ${arrayItem.genConPosition} when they gave an address entitled, ${arrayItem.genConTalkTitle}, in which they define ${theBefore} ${topic} in what I thought was a very interesting way.  Here's what they said:
            </p>
            <span class="quotation">"</span><p class="quote">
            ${arrayItem.quoteToUse}
@@ -3220,7 +3255,7 @@ pushToToDoArray(toDoQuoteObject5);
             toDoQuoteArray.forEach( function (arrayItem) {
              let quote2 = `
              <p>
-             So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${keyWord}?  Again turning to modern revelation, I was reminded of a General Conference address by ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${arrayItem.genConTalkTitle} from the ${arrayItem.genConYear} General Conference.  In that address they had this to say, about what we can do:
+             So naturally, with this in mind, my next question was, ${questiontoDo} ${theBefore} ${topic}?  Again turning to modern revelation, I was reminded of a General Conference address by ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time this talk was given.  It's really, great, and I don't have time to read all of it here, but if you get a chance to read it later this week, I would highly recommend it.  The talk is entitled ${arrayItem.genConTalkTitle} from the ${arrayItem.genConYear} General Conference.  In that address they had this to say, about what we can do:
              </p>
              <span class="quotation">"</span><p class="quote">
              ${arrayItem.quoteToUse}
@@ -3274,7 +3309,7 @@ pushToToDoArray(toDoQuoteObject5);
                 blessQuoteArray.forEach( function (arrayItem) {
                  let quote4 = `
                  <p>
-                 Having a better unerstanding of how I can improve, and what some of the obstacles are, I think it's important to know why ${theBefore} ${keyWord} is so important, and   ${questionBlessings} ${theBefore} ${keyWord}?  ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${arrayItem.genConYear}, they gave an address entitled ${arrayItem.genConTalkTitle}, where he talks about the blessings associated with ${theBefore} ${keyWord}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
+                 Having a better unerstanding of how I can improve, and what some of the obstacles are, I think it's important to know why ${theBefore} ${topic} is so important, and   ${questionBlessings} ${theBefore} ${topic}?  ${arrayItem.genConAuthor} who was ${arrayItem.genConPosition} at the time of this talk, I believe, answers this question the best.  Now, I know we aren't supposed to have favorite General Authorities, but we all do, and they're just one of my favorites, so I try to fit quotes in by them in any talk I give.  in ${arrayItem.genConYear}, they gave an address entitled ${arrayItem.genConTalkTitle}, where he talks about the blessings associated with ${theBefore} ${topic}.  Let me read just a segment of this talk, but if you ever get a chance to go back and read it again, it's great.  They start off by saying this:
                  </p>
                  <span class="quotation">"</span><p class="quote">
                  ${arrayItem.quoteToUse}
@@ -3328,7 +3363,7 @@ pushToToDoArray(toDoQuoteObject5);
                     objectArray.forEach( function (arrayItem) {
                      let script2 = `
                      <p>
-                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, the book of ${arrayItem.book},  chapter ${arrayItem.chapter}. Now, this is the part where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and they touch on the topic of ${keyWord} in a similar way. ${arrayItem.background}.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, the book of ${arrayItem.book},  chapter ${arrayItem.chapter}. Now, this is the part where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and they touch on the topic of ${topic} in a similar way. ${arrayItem.background}.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
                      </p>
                      <span class="quotation">"</span><p class="quote">
                      ${arrayItem.verse_text}
@@ -3354,7 +3389,8 @@ pushToToDoArray(toDoQuoteObject5);
           //
     //
           // let paragraph2 = "As I was preparing to speak today"
-
+})
+})
 })
 })
 
