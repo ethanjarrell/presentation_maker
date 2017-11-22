@@ -3175,7 +3175,7 @@ fetch('https://presentation-maker.herokuapp.com/api/def/' + keyWord).then(functi
               <p>Although this is a good place to start, the most basic definition of ${theBefore} ${topic} lacks what I felt were some of the more important and deeper aspects of the topic.</p>
               <p>Another source I like to use for information on gospel topics is the Encyclopedia of Mormonism.  This is a free, online resource that is part of the BYU religious studies center.  You can find some great information on a wide range of topics there.  When I went there to check it out, I found a little more information about ${theBefore} ${topic}.  Here's a quick paragraph from there:</p>
               <span class="quotation">"</span><p class="quote">
-              ${encyc_phrase}
+              ${encyc_phrase[0]}
               </p><span class="quotation2">"</span>
               <p>(talk about part of the above quote.  Maybe something that sticks out to you, or something that you hadn't realized before)</p>
               <p id="one"></p>
@@ -3363,7 +3363,7 @@ fetch('https://presentation-maker.herokuapp.com/api/def/' + keyWord).then(functi
                     objectArray.forEach( function (arrayItem) {
                      let script2 = `
                      <p>
-                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, the book of ${arrayItem.book},  chapter ${arrayItem.chapter}. Now, this is the part where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and they touch on the topic of ${topic} in a similar way. ${arrayItem.background}.  So, I just want to read a verse or two, starting in verse ${arrayItem.verses}:
+                     Their comments reminded me that while I'm always striving to be better, there is always room to improve.  It reminded me of one of my favorite scriptures, located in the ${arrayItem.standard_works}, the book of ${arrayItem.book},  chapter ${arrayItem.chapter}, and they touch on the topic of ${topic} in a similar way. ${arrayItem.background}. Now, this is the part where ${arrayItem.speaker} is speaking with ${arrayItem.listener}, and I just want to read a verse or two, starting in verse ${arrayItem.verses}:
                      </p>
                      <span class="quotation">"</span><p class="quote">
                      ${arrayItem.verse_text}
