@@ -412,6 +412,72 @@ const Defexaltation = require('./models/defexaltation.js');
 const Deffinaljudgement = require('./models/deffinaljudgement.js');
 //=================//
 
+//=====DEFINITION API======//
+const Byufellowship = require('./models/byufellowship.js');
+const Byubookofmormon = require('./models/byubookofmormon.js');
+const Byubaptism = require('./models/byubaptism.js');
+const Byufaith = require('./models/byufaith.js');
+const Byurepentence = require('./models/byurepentence.js');
+const Byucharity = require('./models/byucharity.js');
+const Byuprophets = require('./models/byuprophets.js');
+const Byuatonement = require('./models/byuatonement.js');
+const Byuwordofwisdom = require('./models/byuwordofwisdom.js');
+const Byuservice = require('./models/byuservice.js');
+const Byucreation = require('./models/byucreation.js');
+const Byuagency = require('./models/byuagency.js');
+const Byugratitude = require('./models/byugratitude.js');
+const Byuthefall = require('./models/byuthefall.js');
+const Byuholyghost = require('./models/byuholyghost.js');
+const Byuscriptures = require('./models/byuscriptures.js');
+const Byupriesthood = require('./models/byupriesthood.js');
+const Byusacrament = require('./models/byusacrament.js');
+const Byuhonesty = require('./models/byuhonesty.js');
+const Byuobedience = require('./models/byuobedience.js');
+const Byuangels = require('./models/byuangels.js');
+const Byuapostasy = require('./models/byuapostasy.js');
+const Byuchurch = require('./models/byuchurch.js');
+const Byufamily = require('./models/byufamily.js');
+const Byufasting = require('./models/byufasting.js');
+const Byuhumility = require('./models/byuhumility.js');
+const Byujesus = require('./models/byujesus.js');
+const Byumarriage = require('./models/byumarriage.js');
+const Byuprayer = require('./models/byuprayer.js');
+const Byupremortal = require('./models/byupremortal.js');
+const Byusecondcoming = require('./models/byusecondcoming.js');
+const Byutemple = require('./models/byutemple.js');
+const Byutithing = require('./models/byutithing.js');
+const Byutrials = require('./models/byutrials.js');
+const Byutestimony = require('./models/byutestimony.js');
+const Byugodhead = require('./models/byugodhead.js');
+const Byuheaven = require('./models/byuheaven.js');
+const Byuhell = require('./models/byuhell.js');
+const Byumissionary = require('./models/byumissionary.js');
+const Byunativity = require('./models/byunativity.js');
+const Byupioneer = require('./models/byupioneer.js');
+const Byuresurrection = require('./models/byuresurrection.js');
+const Byuwomen = require('./models/byuwomen.js');
+const Byuapostle = require('./models/byuapostle.js');
+const Byuselfreliance = require('./models/byuselfreliance.js');
+const Byuchastity = require('./models/byuchastity.js');
+const Byuchildren = require('./models/byuchildren.js');
+const Byucovenants = require('./models/byucovenants.js');
+const Byudeath = require('./models/byudeath.js');
+const Byugenealogy = require('./models/byugenealogy.js');
+const Byugiftsofthespirit = require('./models/byugiftsofthespirit.js');
+const Byugospel = require('./models/byugospel.js');
+const Byuhappiness = require('./models/byuhappiness.js');
+const Byumiracles = require('./models/byumiracles.js');
+const Byugod = require('./models/byugod.js');
+const Byupatience = require('./models/byupatience.js');
+const Byusacrifice = require('./models/byusacrifice.js');
+const Byusabbathday = require('./models/byusabbathday.js');
+const Byutalents = require('./models/byutalents.js');
+const Byugatheringofisrael = require('./models/byugatheringofisrael.js');
+const Byulordscovenantpeople = require('./models/byulordscovenantpeople.js');
+const Byuexaltation = require('./models/byuexaltation.js');
+const Byufinaljudgement = require('./models/byufinaljudgement.js');
+//=================//
+
 //=====SPLASH API======//
 const Splashinfo = require('./models/splashinfo.js');
 //=================//
@@ -8262,21 +8328,6 @@ app.get('/api/video/fellowship', function(req, res) {
 
 app.post('/api/video/fellowship', function(req, res) {
   Videofellowship.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8299,21 +8350,6 @@ app.get('/api/video/patience', function(req, res) {
 
 app.post('/api/video/patience', function(req, res) {
   Videopatience.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8336,21 +8372,6 @@ app.get('/api/video/gatheringofisrael', function(req, res) {
 
 app.post('/api/video/gatheringofisrael', function(req, res) {
   Videogatheringofisrael.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8373,21 +8394,6 @@ app.get('/api/video/sacrifice', function(req, res) {
 
 app.post('/api/video/sacrifice', function(req, res) {
   Videosacrifice.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8410,21 +8416,6 @@ app.get('/api/video/sabbathday', function(req, res) {
 
 app.post('/api/video/sabbathday', function(req, res) {
   Videosabbathday.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8447,21 +8438,6 @@ app.get('/api/video/lordscovenantpeople', function(req, res) {
 
 app.post('/api/video/lordscovenantpeople', function(req, res) {
   Videolordscovenantpeople.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8484,21 +8460,6 @@ app.get('/api/video/talents', function(req, res) {
 
 app.post('/api/video/talents', function(req, res) {
   Videotalents.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8521,21 +8482,6 @@ app.get('/api/video/finaljudgement', function(req, res) {
 
 app.post('/api/video/finaljudgement', function(req, res) {
   Videofinaljudgement.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8558,21 +8504,6 @@ app.get('/api/video/exaltation', function(req, res) {
 
 app.post('/api/video/exaltation', function(req, res) {
   Videoexaltation.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8595,21 +8526,6 @@ app.get('/api/video/agency', function(req, res) {
 
 app.post('/api/video/agency', function(req, res) {
   Videoagency.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8632,21 +8548,6 @@ app.get('/api/video/gratitude', function(req, res) {
 
 app.post('/api/video/gratitude', function(req, res) {
   Videogratitude.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8669,21 +8570,6 @@ app.get('/api/video/angels', function(req, res) {
 
 app.post('/api/video/angels', function(req, res) {
   Videoangels.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8706,21 +8592,6 @@ app.get('/api/video/apostasy', function(req, res) {
 
 app.post('/api/video/apostasy', function(req, res) {
   Videoapostasy.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8743,21 +8614,6 @@ app.get('/api/video/apostle', function(req, res) {
 
 app.post('/api/video/apostle', function(req, res) {
   Videoapostle.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8780,21 +8636,6 @@ app.get('/api/video/atonement', function(req, res) {
 
 app.post('/api/video/atonement', function(req, res) {
   Videoatonement.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8817,21 +8658,6 @@ app.get('/api/video/baptism', function(req, res) {
 
 app.post('/api/video/baptism', function(req, res) {
   Videobaptism.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8854,21 +8680,6 @@ app.get('/api/video/bookofmormon', function(req, res) {
 
 app.post('/api/video/bookofmormon', function(req, res) {
   Videobookofmormon.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8891,21 +8702,6 @@ app.get('/api/video/charity', function(req, res) {
 
 app.post('/api/video/charity', function(req, res) {
   Videocharity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8928,21 +8724,6 @@ app.get('/api/video/chastity', function(req, res) {
 
 app.post('/api/video/chastity', function(req, res) {
   Videochastity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -8965,21 +8746,6 @@ app.get('/api/video/children', function(req, res) {
 
 app.post('/api/video/children', function(req, res) {
   Videochildren.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9002,21 +8768,6 @@ app.get('/api/video/church', function(req, res) {
 
 app.post('/api/video/church', function(req, res) {
   Videochurch.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9039,21 +8790,6 @@ app.get('/api/video/covenants', function(req, res) {
 
 app.post('/api/video/covenants', function(req, res) {
   Videocovenants.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9076,21 +8812,6 @@ app.get('/api/video/creation', function(req, res) {
 
 app.post('/api/video/creation', function(req, res) {
   Videocreation.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9113,21 +8834,6 @@ app.get('/api/video/death', function(req, res) {
 
 app.post('/api/video/death', function(req, res) {
   Videodeath.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9150,21 +8856,6 @@ app.get('/api/video/faith', function(req, res) {
 
 app.post('/api/video/faith', function(req, res) {
   Videofaith.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9187,21 +8878,6 @@ app.get('/api/video/family', function(req, res) {
 
 app.post('/api/video/family', function(req, res) {
   Videofamily.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9224,21 +8900,6 @@ app.get('/api/video/fasting', function(req, res) {
 
 app.post('/api/video/fasting', function(req, res) {
   Videofasting.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9261,21 +8922,6 @@ app.get('/api/video/genealogy', function(req, res) {
 
 app.post('/api/video/genealogy', function(req, res) {
   Videogenealogy.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9298,21 +8944,6 @@ app.get('/api/video/giftsofthespirit', function(req, res) {
 
 app.post('/api/video/giftsofthespirit', function(req, res) {
   Videogiftsofthespirit.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9335,21 +8966,6 @@ app.get('/api/video/god', function(req, res) {
 
 app.post('/api/video/god', function(req, res) {
   Videogod.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9372,21 +8988,6 @@ app.get('/api/video/godhead', function(req, res) {
 
 app.post('/api/video/godhead', function(req, res) {
   Videogodhead.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9409,21 +9010,6 @@ app.get('/api/video/gospel', function(req, res) {
 
 app.post('/api/video/gospel', function(req, res) {
   Videogospel.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9446,21 +9032,6 @@ app.get('/api/video/happiness', function(req, res) {
 
 app.post('/api/video/happiness', function(req, res) {
   Videohappiness.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9483,21 +9054,6 @@ app.get('/api/video/heaven', function(req, res) {
 
 app.post('/api/video/heaven', function(req, res) {
   Videoheaven.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9520,21 +9076,6 @@ app.get('/api/video/hell', function(req, res) {
 
 app.post('/api/video/hell', function(req, res) {
   Videohell.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9557,21 +9098,6 @@ app.get('/api/video/holyghost', function(req, res) {
 
 app.post('/api/video/holyghost', function(req, res) {
   Videoholyghost.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9594,21 +9120,6 @@ app.get('/api/video/honesty', function(req, res) {
 
 app.post('/api/video/honesty', function(req, res) {
   Videohonesty.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9631,21 +9142,6 @@ app.get('/api/video/humility', function(req, res) {
 
 app.post('/api/video/humility', function(req, res) {
   Videohumility.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9668,21 +9164,6 @@ app.get('/api/video/jesus', function(req, res) {
 
 app.post('/api/video/jesus', function(req, res) {
   Videojesus.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9705,21 +9186,6 @@ app.get('/api/video/marriage', function(req, res) {
 
 app.post('/api/video/marriage', function(req, res) {
   Videomarriage.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9742,21 +9208,6 @@ app.get('/api/video/miracles', function(req, res) {
 
 app.post('/api/video/miracles', function(req, res) {
   Videomiracles.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9779,21 +9230,6 @@ app.get('/api/video/missionary', function(req, res) {
 
 app.post('/api/video/missionary', function(req, res) {
   Videomissionary.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9816,21 +9252,6 @@ app.get('/api/video/nativity', function(req, res) {
 
 app.post('/api/video/nativity', function(req, res) {
   Videonativity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9853,21 +9274,6 @@ app.get('/api/video/obedience', function(req, res) {
 
 app.post('/api/video/obedience', function(req, res) {
   Videoobedience.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9890,21 +9296,6 @@ app.get('/api/video/pioneer', function(req, res) {
 
 app.post('/api/video/pioneer', function(req, res) {
   Videopioneer.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9927,21 +9318,6 @@ app.get('/api/video/prayer', function(req, res) {
 
 app.post('/api/video/prayer', function(req, res) {
   Videoprayer.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -9964,21 +9340,6 @@ app.get('/api/video/premortal', function(req, res) {
 
 app.post('/api/video/premortal', function(req, res) {
   Videopremortal.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10001,21 +9362,6 @@ app.get('/api/video/priesthood', function(req, res) {
 
 app.post('/api/video/priesthood', function(req, res) {
   Videopriesthood.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10038,21 +9384,6 @@ app.get('/api/video/prophets', function(req, res) {
 
 app.post('/api/video/prophets', function(req, res) {
   Videoprophets.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10075,21 +9406,6 @@ app.get('/api/video/repentence', function(req, res) {
 
 app.post('/api/video/repentence', function(req, res) {
   Videorepentence.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10112,21 +9428,6 @@ app.get('/api/video/resurrection', function(req, res) {
 
 app.post('/api/video/resurrection', function(req, res) {
   Videoresurrection.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10149,21 +9450,6 @@ app.get('/api/video/sacrament', function(req, res) {
 
 app.post('/api/video/sacrament', function(req, res) {
   Videosacrament.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10186,21 +9472,6 @@ app.get('/api/video/scriptures', function(req, res) {
 
 app.post('/api/video/scriptures', function(req, res) {
   Videoscriptures.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10223,21 +9494,6 @@ app.get('/api/video/secondcoming', function(req, res) {
 
 app.post('/api/video/secondcoming', function(req, res) {
   Videosecondcoming.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10260,21 +9516,6 @@ app.get('/api/video/selfreliance', function(req, res) {
 
 app.post('/api/video/selfreliance', function(req, res) {
   Videoselfreliance.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10297,21 +9538,6 @@ app.get('/api/video/service', function(req, res) {
 
 app.post('/api/video/service', function(req, res) {
   Videoservice.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10334,21 +9560,6 @@ app.get('/api/video/temple', function(req, res) {
 
 app.post('/api/video/temple', function(req, res) {
   Videotemple.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10371,21 +9582,6 @@ app.get('/api/video/testimony', function(req, res) {
 
 app.post('/api/video/testimony', function(req, res) {
   Videotestimony.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10408,21 +9604,6 @@ app.get('/api/video/thefall', function(req, res) {
 
 app.post('/api/video/thefall', function(req, res) {
   Videothefall.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10445,21 +9626,6 @@ app.get('/api/video/tithing', function(req, res) {
 
 app.post('/api/video/tithing', function(req, res) {
   Videotithing.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10482,21 +9648,6 @@ app.get('/api/video/trials', function(req, res) {
 
 app.post('/api/video/trials', function(req, res) {
   Videotrials.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10519,21 +9670,6 @@ app.get('/api/video/women', function(req, res) {
 
 app.post('/api/video/women', function(req, res) {
   Videowomen.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10556,21 +9692,6 @@ app.get('/api/video/wordofwisdom', function(req, res) {
 
 app.post('/api/video/wordofwisdom', function(req, res) {
   Videowordofwisdom.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     video_url: req.body.video_url,
   }).then(videos => {
   res.redirect('/game3')
@@ -10593,20 +9714,6 @@ app.get('/api/def/fellowship', function(req, res) {
 
 app.post('/api/def/fellowship', function(req, res) {
   Deffellowship.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10630,20 +9737,6 @@ app.get('/api/def/agency', function(req, res) {
 
 app.post('/api/def/agency', function(req, res) {
   Defagency.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10667,20 +9760,6 @@ app.get('/api/def/gratitude', function(req, res) {
 
 app.post('/api/def/gratitude', function(req, res) {
   Defgratitude.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10705,20 +9784,6 @@ app.get('/api/def/angels', function(req, res) {
 
 app.post('/api/def/angels', function(req, res) {
   Defangels.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10742,20 +9807,6 @@ app.get('/api/def/apostasy', function(req, res) {
 
 app.post('/api/def/apostasy', function(req, res) {
   Defapostasy.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10779,20 +9830,6 @@ app.get('/api/def/apostle', function(req, res) {
 
 app.post('/api/def/apostle', function(req, res) {
   Defapostle.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10816,20 +9853,6 @@ app.get('/api/def/atonement', function(req, res) {
 
 app.post('/api/def/atonement', function(req, res) {
   Defatonement.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10853,20 +9876,6 @@ app.get('/api/def/baptism', function(req, res) {
 
 app.post('/api/def/baptism', function(req, res) {
   Defbaptism.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10890,20 +9899,6 @@ app.get('/api/def/bookofmormon', function(req, res) {
 
 app.post('/api/def/bookofmormon', function(req, res) {
   Defbookofmormon.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10927,20 +9922,6 @@ app.get('/api/def/charity', function(req, res) {
 
 app.post('/api/def/charity', function(req, res) {
   Defcharity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -10964,20 +9945,6 @@ app.get('/api/def/chastity', function(req, res) {
 
 app.post('/api/def/chastity', function(req, res) {
   Defchastity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11001,20 +9968,6 @@ app.get('/api/def/children', function(req, res) {
 
 app.post('/api/def/children', function(req, res) {
   Defchildren.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11038,20 +9991,6 @@ app.get('/api/def/church', function(req, res) {
 
 app.post('/api/def/church', function(req, res) {
   Defchurch.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11075,20 +10014,6 @@ app.get('/api/def/covenants', function(req, res) {
 
 app.post('/api/def/covenants', function(req, res) {
   Defcovenants.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11112,20 +10037,6 @@ app.get('/api/def/creation', function(req, res) {
 
 app.post('/api/def/creation', function(req, res) {
   Defcreation.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11149,20 +10060,6 @@ app.get('/api/def/death', function(req, res) {
 
 app.post('/api/def/death', function(req, res) {
   Defdeath.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11186,20 +10083,6 @@ app.get('/api/def/faith', function(req, res) {
 
 app.post('/api/def/faith', function(req, res) {
   Deffaith.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11223,20 +10106,6 @@ app.get('/api/def/family', function(req, res) {
 
 app.post('/api/def/family', function(req, res) {
   Deffamily.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11260,20 +10129,6 @@ app.get('/api/def/fasting', function(req, res) {
 
 app.post('/api/def/fasting', function(req, res) {
   Deffasting.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11297,20 +10152,6 @@ app.get('/api/def/genealogy', function(req, res) {
 
 app.post('/api/def/genealogy', function(req, res) {
   Defgenealogy.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11334,20 +10175,6 @@ app.get('/api/def/giftsofthespirit', function(req, res) {
 
 app.post('/api/def/giftsofthespirit', function(req, res) {
   Defgiftsofthespirit.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11371,20 +10198,6 @@ app.get('/api/def/god', function(req, res) {
 
 app.post('/api/def/god', function(req, res) {
   Defgod.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11408,20 +10221,6 @@ app.get('/api/def/godhead', function(req, res) {
 
 app.post('/api/def/godhead', function(req, res) {
   Defgodhead.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11445,20 +10244,6 @@ app.get('/api/def/gospel', function(req, res) {
 
 app.post('/api/def/gospel', function(req, res) {
   Defgospel.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11482,20 +10267,6 @@ app.get('/api/def/happiness', function(req, res) {
 
 app.post('/api/def/happiness', function(req, res) {
   Defhappiness.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11519,20 +10290,6 @@ app.get('/api/def/heaven', function(req, res) {
 
 app.post('/api/def/heaven', function(req, res) {
   Defheaven.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11556,20 +10313,6 @@ app.get('/api/def/hell', function(req, res) {
 
 app.post('/api/def/hell', function(req, res) {
   Defhell.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11593,20 +10336,6 @@ app.get('/api/def/holyghost', function(req, res) {
 
 app.post('/api/def/holyghost', function(req, res) {
   Defholyghost.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11630,20 +10359,6 @@ app.get('/api/def/honesty', function(req, res) {
 
 app.post('/api/def/honesty', function(req, res) {
   Defhonesty.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11667,20 +10382,6 @@ app.get('/api/def/humility', function(req, res) {
 
 app.post('/api/def/humility', function(req, res) {
   Defhumility.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11704,20 +10405,6 @@ app.get('/api/def/jesus', function(req, res) {
 
 app.post('/api/def/jesus', function(req, res) {
   Defjesus.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11741,20 +10428,6 @@ app.get('/api/def/marriage', function(req, res) {
 
 app.post('/api/def/marriage', function(req, res) {
   Defmarriage.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11778,20 +10451,6 @@ app.get('/api/def/miracles', function(req, res) {
 
 app.post('/api/def/miracles', function(req, res) {
   Defmiracles.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11815,20 +10474,6 @@ app.get('/api/def/missionary', function(req, res) {
 
 app.post('/api/def/missionary', function(req, res) {
   Defmissionary.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11852,20 +10497,6 @@ app.get('/api/def/nativity', function(req, res) {
 
 app.post('/api/def/nativity', function(req, res) {
   Defnativity.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11889,20 +10520,6 @@ app.get('/api/def/obedience', function(req, res) {
 
 app.post('/api/def/obedience', function(req, res) {
   Defobedience.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11926,20 +10543,6 @@ app.get('/api/def/pioneer', function(req, res) {
 
 app.post('/api/def/pioneer', function(req, res) {
   Defpioneer.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -11963,20 +10566,6 @@ app.get('/api/def/prayer', function(req, res) {
 
 app.post('/api/def/prayer', function(req, res) {
   Defprayer.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12000,20 +10589,6 @@ app.get('/api/def/premortal', function(req, res) {
 
 app.post('/api/def/premortal', function(req, res) {
   Defpremortal.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12037,20 +10612,6 @@ app.get('/api/def/priesthood', function(req, res) {
 
 app.post('/api/def/priesthood', function(req, res) {
   Defpriesthood.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12074,20 +10635,6 @@ app.get('/api/def/prophets', function(req, res) {
 
 app.post('/api/def/prophets', function(req, res) {
   Defprophets.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12111,20 +10658,6 @@ app.get('/api/def/repentence', function(req, res) {
 
 app.post('/api/def/repentence', function(req, res) {
   Defrepentence.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12148,20 +10681,6 @@ app.get('/api/def/resurrection', function(req, res) {
 
 app.post('/api/def/resurrection', function(req, res) {
   Defresurrection.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12185,20 +10704,6 @@ app.get('/api/def/sacrament', function(req, res) {
 
 app.post('/api/def/sacrament', function(req, res) {
   Defsacrament.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12222,20 +10727,6 @@ app.get('/api/def/scriptures', function(req, res) {
 
 app.post('/api/def/scriptures', function(req, res) {
   Defscriptures.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12259,20 +10750,6 @@ app.get('/api/def/secondcoming', function(req, res) {
 
 app.post('/api/def/secondcoming', function(req, res) {
   Defsecondcoming.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12296,20 +10773,6 @@ app.get('/api/def/selfreliance', function(req, res) {
 
 app.post('/api/def/selfreliance', function(req, res) {
   Defselfreliance.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12333,20 +10796,6 @@ app.get('/api/def/service', function(req, res) {
 
 app.post('/api/def/service', function(req, res) {
   Defservice.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12370,20 +10819,6 @@ app.get('/api/def/temple', function(req, res) {
 
 app.post('/api/def/temple', function(req, res) {
   Deftemple.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12407,20 +10842,6 @@ app.get('/api/def/testimony', function(req, res) {
 
 app.post('/api/def/testimony', function(req, res) {
   Deftestimony.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12444,20 +10865,6 @@ app.get('/api/def/thefall', function(req, res) {
 
 app.post('/api/def/thefall', function(req, res) {
   Defthefall.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12481,20 +10888,6 @@ app.get('/api/def/tithing', function(req, res) {
 
 app.post('/api/def/tithing', function(req, res) {
   Deftithing.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12518,20 +10911,6 @@ app.get('/api/def/trials', function(req, res) {
 
 app.post('/api/def/trials', function(req, res) {
   Deftrials.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12555,20 +10934,6 @@ app.get('/api/def/women', function(req, res) {
 
 app.post('/api/def/women', function(req, res) {
   Defwomen.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12592,20 +10957,6 @@ app.get('/api/def/wordofwisdom', function(req, res) {
 
 app.post('/api/def/wordofwisdom', function(req, res) {
   Defwordofwisdom.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12629,20 +10980,6 @@ app.get('/api/def/wordofwisdom', function(req, res) {
 
 app.post('/api/def/wordofwisdom', function(req, res) {
   Defwordofwisdom.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12666,20 +11003,6 @@ app.get('/api/def/talents', function(req, res) {
 
 app.post('/api/def/talents', function(req, res) {
   Deftalents.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12703,20 +11026,6 @@ app.get('/api/def/exaltation', function(req, res) {
 
 app.post('/api/def/exaltation', function(req, res) {
   Defexaltation.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12740,20 +11049,6 @@ app.get('/api/def/finaljudgement', function(req, res) {
 
 app.post('/api/def/finaljudgement', function(req, res) {
   Deffinaljudgement.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12777,20 +11072,6 @@ app.get('/api/def/sacrifice', function(req, res) {
 
 app.post('/api/def/sacrifice', function(req, res) {
   Defsacrifice.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12814,20 +11095,6 @@ app.get('/api/def/sabbathday', function(req, res) {
 
 app.post('/api/def/sabbathday', function(req, res) {
   Defsabbathday.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12851,20 +11118,6 @@ app.get('/api/def/lordscovenantpeople', function(req, res) {
 
 app.post('/api/def/lordscovenantpeople', function(req, res) {
   Deflordscovenantpeople.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12888,20 +11141,6 @@ app.get('/api/def/gatheringofisrael', function(req, res) {
 
 app.post('/api/def/gatheringofisrael', function(req, res) {
   Defgatheringofisrael.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
@@ -12925,23 +11164,1674 @@ app.get('/api/def/patience', function(req, res) {
 
 app.post('/api/def/patience', function(req, res) {
   Defpatience.create({
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     modern_def: req.body.modern_def,
     encyclo: req.body.encyclo,
   }).then(defs => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/fellowship', function(req, res) {
+  Byufellowship.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/fellowship', function(req, res) {
+  Byufellowship.create({ talk_name: req.body.talk_name,
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/agency', function(req, res) {
+  Byuagency.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/agency', function(req, res) {
+  Byuagency.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/gratitude', function(req, res) {
+  Byugratitude.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/gratitude', function(req, res) {
+  Byugratitude.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/angels', function(req, res) {
+  Byuangels.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/angels', function(req, res) {
+  Byuangels.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/apostasy', function(req, res) {
+  Byuapostasy.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/apostasy', function(req, res) {
+  Byuapostasy.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/apostle', function(req, res) {
+  Byuapostle.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/apostle', function(req, res) {
+  Byuapostle.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/atonement', function(req, res) {
+  Byuatonement.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/atonement', function(req, res) {
+  Byuatonement.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/baptism', function(req, res) {
+  Byubaptism.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/baptism', function(req, res) {
+  Byubaptism.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/bookofmormon', function(req, res) {
+  Byubookofmormon.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/bookofmormon', function(req, res) {
+  Byubookofmormon.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/charity', function(req, res) {
+  Byucharity.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/charity', function(req, res) {
+  Byucharity.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/chastity', function(req, res) {
+  Byuchastity.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/chastity', function(req, res) {
+  Byuchastity.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/children', function(req, res) {
+  Byuchildren.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/children', function(req, res) {
+  Byuchildren.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/church', function(req, res) {
+  Byuchurch.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/church', function(req, res) {
+  Byuchurch.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/covenants', function(req, res) {
+  Byucovenants.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/covenants', function(req, res) {
+  Byucovenants.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/creation', function(req, res) {
+  Byucreation.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/creation', function(req, res) {
+  Byucreation.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/death', function(req, res) {
+  Byudeath.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/death', function(req, res) {
+  Byudeath.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/faith', function(req, res) {
+  Byufaith.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/faith', function(req, res) {
+  Byufaith.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/family', function(req, res) {
+  Byufamily.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/family', function(req, res) {
+  Byufamily.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/fasting', function(req, res) {
+  Byufasting.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/fasting', function(req, res) {
+  Byufasting.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/genealogy', function(req, res) {
+  Byugenealogy.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/genealogy', function(req, res) {
+  Byugenealogy.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/giftsofthespirit', function(req, res) {
+  Byugiftsofthespirit.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/giftsofthespirit', function(req, res) {
+  Byugiftsofthespirit.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/god', function(req, res) {
+  Byugod.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/god', function(req, res) {
+  Byugod.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/godhead', function(req, res) {
+  Byugodhead.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/godhead', function(req, res) {
+  Byugodhead.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/gospel', function(req, res) {
+  Byugospel.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/gospel', function(req, res) {
+  Byugospel.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/happiness', function(req, res) {
+  Byuhappiness.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/happiness', function(req, res) {
+  Byuhappiness.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/heaven', function(req, res) {
+  Byuheaven.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/heaven', function(req, res) {
+  Byuheaven.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/hell', function(req, res) {
+  Byuhell.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/hell', function(req, res) {
+  Byuhell.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/holyghost', function(req, res) {
+  Byuholyghost.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/holyghost', function(req, res) {
+  Byuholyghost.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/honesty', function(req, res) {
+  Byuhonesty.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/honesty', function(req, res) {
+  Byuhonesty.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/humility', function(req, res) {
+  Byuhumility.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/humility', function(req, res) {
+  Byuhumility.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/jesus', function(req, res) {
+  Byujesus.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/jesus', function(req, res) {
+  Byujesus.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/marriage', function(req, res) {
+  Byumarriage.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/marriage', function(req, res) {
+  Byumarriage.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/miracles', function(req, res) {
+  Byumiracles.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/miracles', function(req, res) {
+  Byumiracles.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/missionary', function(req, res) {
+  Byumissionary.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/missionary', function(req, res) {
+  Byumissionary.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/nativity', function(req, res) {
+  Byunativity.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/nativity', function(req, res) {
+  Byunativity.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/obedience', function(req, res) {
+  Byuobedience.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/obedience', function(req, res) {
+  Byuobedience.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/pioneer', function(req, res) {
+  Byupioneer.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/pioneer', function(req, res) {
+  Byupioneer.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/prayer', function(req, res) {
+  Byuprayer.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/prayer', function(req, res) {
+  Byuprayer.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/premortal', function(req, res) {
+  Byupremortal.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/premortal', function(req, res) {
+  Byupremortal.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/priesthood', function(req, res) {
+  Byupriesthood.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/priesthood', function(req, res) {
+  Byupriesthood.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/prophets', function(req, res) {
+  Byuprophets.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/prophets', function(req, res) {
+  Byuprophets.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/repentence', function(req, res) {
+  Byurepentence.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/repentence', function(req, res) {
+  Byurepentence.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/resurrection', function(req, res) {
+  Byuresurrection.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/resurrection', function(req, res) {
+  Byuresurrection.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/sacrament', function(req, res) {
+  Byusacrament.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/sacrament', function(req, res) {
+  Byusacrament.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/scriptures', function(req, res) {
+  Byuscriptures.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/scriptures', function(req, res) {
+  Byuscriptures.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/secondcoming', function(req, res) {
+  Byusecondcoming.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/secondcoming', function(req, res) {
+  Byusecondcoming.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/selfreliance', function(req, res) {
+  Byuselfreliance.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/selfreliance', function(req, res) {
+  Byuselfreliance.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/service', function(req, res) {
+  Byuservice.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/service', function(req, res) {
+  Byuservice.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/temple', function(req, res) {
+  Byutemple.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/temple', function(req, res) {
+  Byutemple.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/testimony', function(req, res) {
+  Byutestimony.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/testimony', function(req, res) {
+  Byutestimony.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/thefall', function(req, res) {
+  Byuthefall.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/thefall', function(req, res) {
+  Byuthefall.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/tithing', function(req, res) {
+  Byutithing.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/tithing', function(req, res) {
+  Byutithing.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/trials', function(req, res) {
+  Byutrials.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/trials', function(req, res) {
+  Byutrials.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/women', function(req, res) {
+  Byuwomen.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/women', function(req, res) {
+  Byuwomen.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/wordofwisdom', function(req, res) {
+  Byuwordofwisdom.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/wordofwisdom', function(req, res) {
+  Byuwordofwisdom.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/wordofwisdom', function(req, res) {
+  Byuwordofwisdom.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/wordofwisdom', function(req, res) {
+  Byuwordofwisdom.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/talents', function(req, res) {
+  Byutalents.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/talents', function(req, res) {
+  Byutalents.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/exaltation', function(req, res) {
+  Byuexaltation.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/exaltation', function(req, res) {
+  Byuexaltation.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/finaljudgement', function(req, res) {
+  Byufinaljudgement.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/finaljudgement', function(req, res) {
+  Byufinaljudgement.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/sacrifice', function(req, res) {
+  Byusacrifice.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/sacrifice', function(req, res) {
+  Byusacrifice.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/sabbathday', function(req, res) {
+  Byusabbathday.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/sabbathday', function(req, res) {
+  Byusabbathday.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/lordscovenantpeople', function(req, res) {
+  Byulordscovenantpeople.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/lordscovenantpeople', function(req, res) {
+  Byulordscovenantpeople.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/gatheringofisrael', function(req, res) {
+  Byugatheringofisrael.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/gatheringofisrael', function(req, res) {
+  Byugatheringofisrael.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
+  res.redirect('/game2')
+});
+});
+
+//==========================//
+
+//====GET IMAGE UPLOAD FOR API===//
+
+app.get('/api/byu/patience', function(req, res) {
+  Byupatience.find({}).then(Byus => {
+  res.json(Byus)
+});
+});
+
+//==========================//
+
+//====POST SCRIPTURE API===//
+
+app.post('/api/byu/patience', function(req, res) {
+  Byupatience.create({
+talk_name: req.body.talk_name,
+talk_author: req.body.talk_author,
+talk_author_title: req.body.talk_author_title,
+talk_date: req.body.talk_date,
+talk_text: req.body.talk_text,
+  }).then(Byus => {
   res.redirect('/game2')
 });
 });

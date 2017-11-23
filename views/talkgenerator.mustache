@@ -3158,6 +3158,70 @@ fetch('https://presentation-maker.herokuapp.com/api/def/' + keyWord).then(functi
           let encyc_phrase = getGenConPhrase1(encyclopedia_m[0]);
 
 
+//====Trying to find where a story begins and ends by finding pronouns, determinging frequency of pronouns, and returning paragraphs that have the highest frequency of pronouns ====/
+
+//===This seems futile==//
+// let indices = [];
+// function determineStringIndices (x) {
+//   let his = /his/gi, result;
+// while ( (result = his.exec(x)) ) {
+//     indices.push(result.index);
+// }
+// let her = /her/gi, results2;
+// while ( (results2 = her.exec(x)) ) {
+//   indices.push(results2.index);
+// }
+// let he = /he/gi, results3;
+// while ( (results3 = he.exec(x)) ) {
+//   indices.push(results3.index);
+// }
+// let they = /they/gi, results4;
+// while ( (results4 = they.exec(x)) ) {
+//   indices.push(results4.index);
+// }
+// let their = /their/gi, results5;
+// while ( (results5 = their.exec(x)) ) {
+//   indices.push(results5.index);
+// }
+// let she = /she/gi, results6;
+// while ( (results6 = she.exec(x)) ) {
+//   indices.push(results6.index);
+// }
+// }
+//
+// determineStringIndices(pa1);
+// console.log(indices);
+//
+// let distance = [];
+//
+// function determineDistance (x) {
+//   for (var i = 0; i < x.length; i++) {
+//     let a = x[i];
+//     let b = x[i+1];
+//     let c = b - a;
+//     distance.push([a,b,c]);
+//   }
+// }
+// determineDistance(indices);
+// console.log(distance);
+//
+// let clusters = [];
+// function determineCluster (x) {
+//   for (var i = 0; i < x.length; i++) {
+//
+//     if(x[i][2] < 150) {
+//       clusters.push(x[i]);
+//     }
+//   }
+// }
+// determineCluster(distance);
+// console.log(clusters);
+//
+// function distanceBetweenClusters (x) {
+//
+// }
+
+
           let markup =
             `
             <p>
