@@ -25,6 +25,15 @@ talk_topic: {
 shared: [{
   type: String,
 }],
+brainstorm1: {
+  type: String,
+},
+brainstorm2: {
+  type: String,
+},
+brainstorm3: {
+  type: String,
+},
 section1_topic: [{
   type: String,
 }],
