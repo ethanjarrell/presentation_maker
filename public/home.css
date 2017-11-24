@@ -652,6 +652,20 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   border: black solid 1px;
 }
 
+#byuspeech {
+  cursor: pointer;
+  width: 150px;
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
+}
+
+#byuspeech:hover {
+  filter: brightness(190%);
+  border: black solid 1px;
+}
+
 #byu {
   cursor: pointer;
   width: 150px;
@@ -873,15 +887,23 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: column wrap;
 }
 
-.bodywrapper4 {
+.bodywrapper13 {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.brainstormContainer {
+  display: flex;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
 }
 
-.bodywrapper6 {
+.bodywrapper12 {
   width: 90vw;
+
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

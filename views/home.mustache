@@ -153,6 +153,385 @@
       console.log("talking");
 
       let searchInput = document.getElementById('searchInput');
+      let byuspeech = document.getElementById('byuspeech');
+      byuspeech.onclick = searchBYU;
+      console.log(searchInput);
+      console.log(byuspeech);
+
+
+      function searchBYU() {
+
+        let searchResults = searchInput.value;
+
+        var str = searchInput.value;
+
+        var mapObj = {
+          "the gathering of israel" : "gatheringofisrael",
+          "gathering of israel" : "gatheringofisrael",
+          "the gathering" : "gatheringofisrael",
+          "the lords covenant people" : "lordscovenantpeople",
+          "abrahamic covenant" : "lordscovenantpeople",
+          "covenant of abraham" : "lordscovenantpeople",
+          "eternal life and exaltation" : "exaltation",
+          "exalted" : "exaltation",
+          "exaltation" : "exaltation",
+          "patience" : "patience",
+          "enduring" : "patience",
+          "endure to the end" : "patience",
+          "the final judgement" : "finaljudgement",
+          "final judgement" : "finaljudgement",
+          "judgement day" : "finaljudgement",
+          "judgement" : "finaljudgement",
+          "sabbath day" : "sabbathday",
+          "sabbath" : "sabbathday",
+          "the sabbath day" : "sabbathday",
+          "the sabbath" : "sabbathday",
+          "developing talents" : "talents",
+          "talents" : "talents",
+          "talent" : "talents",
+          "animal sacrifices" : "sacrifice",
+          "sacrifices" : "sacrifice",
+          "sacrifice" : "sacrifice",
+          "thankful": "gratitude",
+          "thanks": "gratitude",
+          "grateful": "gratitude",
+          "gratitude": "gratitude",
+          "agency": "agency",
+          "free agency": "agency",
+          "the atonement": "atonement",
+          "baptize": "baptism",
+          "book of mormon": "bookofmormon",
+          "love": "charity",
+          "charitable": "charity",
+          "pure love": "charity",
+          "pure love of christ": "charity",
+          "created": "creation",
+          "religion": "church",
+          "church organization": "church",
+          "d&c": "doctrinecovenants",
+          "events": "events",
+          "heavenly father": "god",
+          "father in heaven": "god",
+          "god the father": "god",
+          "father": "god",
+          "belief": "faith",
+          "hope": "faith",
+          "holy spirit": "holyghost",
+          "holy ghost": "holyghost",
+          "the holy ghost": "holyghost",
+          "spirit": "holyghost",
+          "the spirit": "holyghost",
+          "honesty": "honesty",
+          "honest": "honesty",
+          "lie": "honesty",
+          "steal": "honesty",
+          "integrity": "honesty",
+          "bible": "newtestament",
+          "new testament": "newtestament",
+          "obedience": "obedience",
+          "follow": "obedience",
+          "submission": "obedience",
+          "submissive": "obedience",
+          "old testament": "oldtestament",
+          "people": "people",
+          "melchizedek priesthood": "priesthood",
+          "aaronic priesthood": "priesthood",
+          "melchizedek": "priesthood",
+          "aaronic": "priesthood",
+          "prophets of god": "prophets",
+          "prophet": "prophets",
+          "prophets": "prophets",
+          "repent": "repentence",
+          "repentance": "repentence",
+          "forgiveness": "repentence",
+          "bread and water": "sacrament",
+          "the sacrament": "sacrament",
+          "scripture": "scriptures",
+          "scriptures": "scriptures",
+          "the scriptures": "scriptures",
+          "word of god": "scriptures",
+          "labor": "service",
+          "work": "service",
+          "responsibility": "service",
+          "personal responsibility": "service",
+          "fall of man": "thefall",
+          "the fall": "thefall",
+          "fall of mankind": "thefall",
+          "fall": "thefall",
+          "jesus christ": "jesus",
+          "christ": "jesus",
+          "savior": "jesus",
+          "redeemer": "jesus",
+          "lord": "jesus",
+          "fall of adam": "thefall",
+          "garden of eden": "thefall",
+          "lucifer": "thefall",
+          "original sin": "thefall",
+          "law of health": "wordofwisdom",
+          "word of wisdom": "wordofwisdom",
+          "apostles": "apostle",
+          "the godhead": "godhead",
+          "revelation": "testimony",
+          "truth": "testimony",
+          "testify": "testimony",
+          "conversion": "testimony",
+          "devil": "hell",
+          "satan": "hell",
+          "damnation": "hell",
+          "torment": "hell",
+          "eternal marriage": "marriage",
+          "temple marriage": "marriage",
+          "fire and brimstone": "hell",
+          "celestial kingdom": "heaven",
+          "plan of salvation": "heaven",
+          "telestial": "heaven",
+          "exaltation": "heaven",
+          "immortality": "heaven",
+          "eternal life": "heaven",
+          "three degrees of glory": "heaven",
+          "missionaries": "missionary",
+          "preach": "missionary",
+          "preaching": "missionary",
+          "missionary work": "missionary",
+          "christmas": "nativity",
+          "church history": "pioneer",
+          "pioneers": "pioneer",
+          "handcarts": "pioneer",
+          "nauvoo": "pioneer",
+          "premortal existence": "premortal",
+          "council in heaven": "premortal",
+          "premortal life": "premortal",
+          "war in heaven": "premortal",
+          "easter": "resurrection",
+          "resurrected": "resurrection",
+          "crucifixion": "resurrection",
+          "cross": "resurrection",
+          "the resurrection": "resurrection",
+          "woman": "women",
+          "widow": "women",
+          "mary": "women",
+          "mothers": "women",
+          "mother": "women",
+          "motherhood": "women",
+          "daughter": "women",
+          "daughters": "women",
+          "relief society": "women",
+          "daughters of god": "women",
+          "the great apostasy": "apostasy",
+          "restoration": "apostasy",
+          "first vision": "apostasy",
+          "the first vision": "apostasy",
+          "the restoration": "apostasy",
+          "apostasy and restoration": "apostasy",
+          "first vision": "apostasy",
+          "family home evening": "family",
+          "family prayer": "family",
+          "eternal family": "family",
+          "virtue": "chastity",
+          "chaste": "chastity",
+          "virtuous": "chastity",
+          "child": "children",
+          "primary": "children",
+          "primary children": "children",
+          "covenant": "covenants",
+          "temple covenant": "covenants",
+          "temple covenants": "covenants",
+          "baptismal covenant": "covenants",
+          "baptismal covenants": "covenants",
+          "life after death": "death",
+          "die": "death",
+          "mortality": "death",
+          "family history": "genealogy",
+          "ancestors": "genealogy",
+          "family tree": "genealogy",
+          "spiritual gifts": "giftsofthespirit",
+          "gifts of the spirit": "giftsofthespirit",
+          "good news": "gospel",
+          "good news of the gospel": "gospel",
+          "the gospel": "gospel",
+          "gospel": "gospel",
+          "plan of salvation": "gospel",
+          "the plan of salvation": "gospel",
+          "happy": "happiness",
+          "joy": "happiness",
+          "plan of happiness": "happiness",
+          "miracle": "miracles",
+          "brigham young": "brighamyoung",
+          "brigham": "brighamyoung",
+          "davdid bednar": "dabednar",
+          "bednar": "dabednar",
+          "davdid a. bednar": "dabednar",
+          "daivd o mckay": "davidomckay",
+          "daivd o. mckay": "davidomckay",
+          "uchtdorf": "dfuchtdorf",
+          "dieter uchtdorf": "dfuchtdorf",
+          "dieter f. uchtdorf": "dfuchtdorf",
+          "renlund": "dgrenlund",
+          "dale g. renlund": "dgrenlund",
+          "oaks": "dhoaks",
+          "dallin h. oaks": "dhoaks",
+          "D. Todd Christofferson": "dtchristofferson",
+          "Christofferson": "dtchristofferson",
+          "benson": "ezrataftbenson",
+          "ezra taft benson": "ezrataftbenson",
+          "benson": "ezrataftbenson",
+          "george a. smith": "georgeasmith",
+          "george albert smith": "georgeasmith",
+          "gary e. stevenson": "gestevenson",
+          "gordon b. hinckley": "gordonbhinckley",
+          "hinckley": "gordonbhinckley",
+          "harold b. lee": "haroldblee",
+          "eyring": "hbeyring",
+          "henry b. eyring": "hbeyring",
+          "grant": "heberjgrant",
+          "heber j. grant": "heberjgrant",
+          "howard w. hunter": "howardwhunter",
+          "hunter": "howardwhunter",
+          "john taylor": "johntaylor",
+          "joseph fielding smith": "josephfieldingsmith",
+          "joseph f. smith": "josephfsmith",
+          "joseph smith": "josephsmith",
+          "joseph": "josephsmith",
+          "jeffrey r. holland": "jrholland",
+          "holland": "jrholland",
+          "lorenzo snow": "lorenzosnow",
+          "snow": "lorenzosnow",
+          "m. russell ballard": "mrballard",
+          "ballard": "mrballard",
+          "neil l. anderson": "nlanderson",
+          "quentin l. cook": "qlcook",
+          "rasband": "rarasband",
+          "ronald a. rasband": "rarasband",
+          "russell m. nelson": "rmnelson",
+          "nelson": "rmnelson",
+          "spencer w. kimball": "spencerkimball",
+          "thomas s. monson": "tsmonson",
+          "monson": "tsmonson",
+          "woodruff": "wilfordwoodruff",
+          "wilford woodruff": "wilfordwoodruff",
+          "self reliance": "selfreliance",
+          "self-reliance": "selfreliance",
+          "second coming": "secondcoming",
+          "the second coming": "secondcoming",
+          "miracles": "miracles",
+          "miracle": "miracles",
+        };
+        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+        str = str.replace(re, function(matched) {
+          return mapObj[matched.toLowerCase()];
+        });
+
+
+        fetch('https://presentation-maker.herokuapp.com/api/byu/' + str).then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+
+          response.json().then(function(data) {
+            let api = data;
+
+            for (var i = 0; i < 1; i++) {
+              let api = data;
+
+
+              let markup =
+                `
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#eight">
+          <p class="gencontitle1">${data[0].talk_name}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[0].talk_date}</p>
+          <p class="genconauthor1">${data[0].talk_author}</p>
+          </div>
+          </button>
+          <div id="eight" class="collapse">
+          <p class="genconyear2">${data[0].talk_date}</p>
+          <p class="gencontitle2">${data[0].talk_name}</p>
+          <p class="genconauthor2">${data[0].talk_author}</p>
+          <p class="genconposition">${data[0].talk_author_title}</p>
+          <p class="genconpara">${data[0].talk_text}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#nine">
+          <p class="gencontitle1">${data[1].talk_name}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[1].talk_date}</p>
+          <p class="genconauthor1">${data[1].talk_author}</p>
+          </div>
+          </button>
+          <div id="nine" class="collapse">
+          <p class="genconyear2">${data[1].talk_date}</p>
+          <p class="gencontitle2">${data[1].talk_name}</p>
+          <p class="genconauthor2">${data[1].talk_author}</p>
+          <p class="genconposition">${data[1].talk_author_title}</p>
+          <p class="genconpara">${data[1].talk_text}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ten">
+          <p class="gencontitle1">${data[2].talk_name}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[2].talk_date}</p>
+          <p class="genconauthor1">${data[2].talk_author}</p>
+          </button>
+          <div id="ten" class="collapse">
+          <p class="genconyear2">${data[2].talk_date}</p>
+          <p class="gencontitle2">${data[2].talk_name}</p>
+          <p class="genconauthor2">${data[2].talk_author}</p>
+          <p class="genconposition">${data[2].talk_author_title}</p>
+          <p class="genconpara">${data[2].talk_text}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#eleven">
+          <p class="gencontitle1">${data[3].talk_name}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[3].talk_date}</p>
+          <p class="genconauthor1">${data[3].talk_author}</p>
+          </button>
+          <div id="eleven" class="collapse">
+          <p class="genconyear2">${data[3].talk_date}</p>
+          <p class="gencontitle2">${data[3].talk_name}</p>
+          <p class="genconauthor2">${data[3].talk_author}</p>
+          <p class="genconposition">${data[3].talk_author_title}</p>
+          <p class="genconpara">${data[3].talk_text}</p>
+          </div>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twelve">
+          <p class="gencontitle1">${data[4].talk_name}</p>
+          <div class="gencontitlecontainer">
+          <p class="genconyear1">${data[4].talk_date}</p>
+          <p class="genconauthor1">${data[4].talk_author}</p>
+          </button>
+          <div id="twelve" class="collapse">
+          <p class="genconyear2">${data[4].talk_date}</p>
+          <p class="gencontitle2">${data[4].talk_name}</p>
+          <p class="genconauthor2">${data[4].talk_author}</p>
+          <p class="genconposition">${data[4].talk_author_title}</p>
+          <p class="genconpara">${data[4].talk_text}</p>
+          </div>
+
+
+
+             `
+
+
+
+
+              document.getElementById('updatediv4').innerHTML = markup;
+            }
+          })
+        })
+      }
+
+
+
+    })
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+
+      let searchInput = document.getElementById('searchInput');
       let genconf = document.getElementById('genconf');
       genconf.onclick = searchgenconf;
       console.log(searchInput);
@@ -1261,7 +1640,7 @@
     <a class="link" href="/logout">logout</a>
   </div>
 
-  <div class="bodywrapper4">
+  <div class="bodywrapper13">
 
     <div class="navbar3">
       {{#talktopics}}
@@ -1280,7 +1659,7 @@
       {{/talktopics}}
     </div>
 
-    <div class="bodywrapper6">
+    <div class="bodywrapper12">
       {{#talktopics}}
         <div class="homelabeldiv">
           <div class="homelabeldiv2">
@@ -1320,6 +1699,7 @@
 
 
             <button class="submitButton2" type="submit" id="moderndef" name="button">more info</button>
+            <button class="submitButton2" type="submit" id="byuspeech" name="button">byu speech</button>
           </div>
 
 
@@ -1388,36 +1768,22 @@
       </div>
       <form class="form1" action="/talk/talkid/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
 
+<div class="brainstormContainer">
+  <h2>Brainstorm Ideas</h2>
         <div class="results">
                 <textarea name="brainstorm1" id="brainstorm1">Quotes & Scriptures I liked</textarea>
                 <textarea name="brainstorm2" id="brainstorm2">Spiritual Impressions</textarea>
-                <textarea name="brainstorm3" id="brainstorm3">Other Thoughts</textarea>
+                <textarea name="brainstorm3" id="brainstorm3">Brainstorm an Outline</textarea>
         </div>
-
+</div>
 
             </div>
           </div>
     </div>
 
 
-    <div class="contentColumn3">
-      <label class="small-label">
-      Add usernames of the users you want to share your talk with:
-    </label>
-      <div class="row_of_input">
-        <input class="inputfield7" type="text" value="{{shared.0}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.1}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.2}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.3}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.4}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.5}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.6}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.7}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.8}}" name="shared" />
-        <input class="inputfield7" type="text" value="{{shared.9}}" name="shared" />
-      </div>
-    </div>
-    <input class="submit" value="save talk" type="submit" />
+
+    <input class="submit" value="save brainstorm" type="submit" />
     </form>
 
 
