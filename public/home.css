@@ -887,6 +887,15 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: column wrap;
 }
 
+.bodywrapper4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  margin-left: 5px;
+  width: 98vw;
+}
+
 .bodywrapper13 {
   display: flex;
   flex-flow: row nowrap;
@@ -902,6 +911,15 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
 }
 
 .bodywrapper12 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  border-left: solid black 2px;
+}
+
+.bodywrapper6 {
   width: 90vw;
 
   display: flex;
