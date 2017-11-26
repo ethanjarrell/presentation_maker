@@ -1625,20 +1625,6 @@ img {
   margin-right: 8px;
 }
 
-.submit {
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  font-size: 30px;
-  font-weight: bold;
-}
-
-.submit:hover {
-  transform: scale(1.12);
-  color: white;
-  text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000;
-}
-
 .submit1 {
   border: none;
   cursor: pointer;
@@ -1811,4 +1797,18 @@ li {
   height: 230px;
   font-size: 12px;
   font-weight: normal;
+}
+
+#submitTalk {
+  cursor: pointer;
+  width: 150px;
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
+}
+
+#submitTalk:hover {
+  filter: brightness(190%);
+  border: black solid 1px;
 }
