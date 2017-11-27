@@ -2745,6 +2745,61 @@ console.log(toDoQuoteArray);
     $(document).ready(function() {
       console.log("talking");
 
+      let scriptureInput = document.getElementById('scriptureInput');
+      let chapterInput = document.getElementById('chapterInput');
+      let scriptures = document.getElementById('scriptures');
+      scriptures.onclick = searchAPI;
+      console.log(scriptureInput);
+      console.log(scriptures);
+
+
+
+      function searchAPI() {
+
+
+        let a = scriptureInput.value;
+        let b = chapterInput.value;
+        let str = a + 
+
+        fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+
+          response.json().then(function(data) {
+            let api = data;
+
+            function renderapis() {
+
+              return `${api.map(api =>
+            `<div class="main">
+            <p class="book_verse">${api.book_and_verse_number}</p>
+            <p class="verse_text">${api.verse_text}</p>
+            </div>
+            `
+            )}
+            `
+
+            }
+
+            let markup = `${renderapis()}`;
+            document.getElementById('updatediv').innerHTML = markup;
+            console.log(markup);
+          })
+        })
+      }
+
+
+
+    })
+  </script>
+
+
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+
       let searchInput = document.getElementById('searchInput');
       let moderndef = document.getElementById('moderndef');
       moderndef.onclick = searchAPI;
@@ -8396,11 +8451,33 @@ console.log("newval after str4 replaced:", newval);
 
       <div class="homelabeldiv1">
         <section class="search">
+          <div class="searchContainer">
+            <div>
           <label> TOPIC SEARCH: </label>
           <input placeholder="image search" class="searchInput" type="text" id="searchInput">
+        </div>
+        <div>
+        <label> SCRIPTURE SEARCH: </label>
+        <div class="searchContainer">
+        <div>
+      <label> Book: </label>
+      <input placeholder="book" class="searchInput" type="text" id="scriptureInput">
+    </div>
+    <div>
+  <label> Chapter: </label>
+  <input placeholder="book" class="searchInput2" type="text" id="chapterInput">
+</div>
+</div>
+</div>
+  </div>
+
+
+
+
           <div class="buttonwrapper2">
             <button class="submitButton2" type="submit" id="submitButton" name="button">images</button>
-            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures</button>
+            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures on current topic</button>
+            <button class="submitButton2" type="submit" id="scriptures" name="button">all scriptures</button>
             <button class="submitButton2" type="submit" id="genconf" name="button">gen. conf.</button>
             <button class="submitButton2" type="submit" id="vidoesrchbtn" name="button">videos</button>
             <button class="submitButton2" type="submit" id="commonQuest" name="button">FAQs</button>

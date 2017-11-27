@@ -718,6 +718,23 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   transform: scaleX(1.3);
 }
 
+.searchInput2 {
+  width: 70px;
+  height: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: solid black 1.5px;
+  outline: none;
+}
+
+.searchInput2:hover {
+  transform: scaleX(1.1);
+}
+
+.searchInput2:focus {
+  transform: scaleX(1.3);
+}
+
 .images {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -1781,6 +1798,13 @@ li {
   height: 20px;
   font-size: 15px;
   font-weight: normal;
+}
+
+.searchContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .contentColumn5 .inputfield8 {
