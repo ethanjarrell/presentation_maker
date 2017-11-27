@@ -1280,8 +1280,8 @@ app.post('/api/splashinfo', function(req, res) {
 //====SCRIPTURE LDS API===//
 
 app.get('/api/lds/scriptures', function(req, res) {
-  ldsScriptures.find({}).then(ldsScriptures => {
-  res.json(ldsScriptures)
+  Ldsscriptures.find({}).then(Ldsscriptures => {
+  res.json(Ldsscriptures)
 });
 });
 
