@@ -116,6 +116,49 @@ button.btn.btn-info {
 box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
 }
 
+div#one.collapse.in {
+  width: 97%;
+}
+div#two.collapse.in {
+  width: 97%;
+}
+div#three.collapse.in {
+  width: 97%;
+}
+div#four.collapse.in {
+  width: 97%;
+}
+div#five.collapse.in {
+  width: 97%;
+}
+div#six.collapse.in {
+  width: 97%;
+}
+div#seven.collapse.in {
+  width: 97%;
+}
+div#eight.collapse.in {
+  width: 97%;
+}
+div#nine.collapse.in {
+  width: 97%;
+}
+div#ten.collapse.in {
+  width: 97%;
+}
+div#eleven.collapse.in {
+  width: 97%;
+}
+div#twelve.collapse.in {
+  width: 97%;
+}
+div#thirteen.collapse.in {
+  width: 97%;
+}
+div#fourteen.collapse.in {
+  width: 97%;
+}
+
 .gencontitlecontainer {
   display: flex;
   flex-flow: row wrap;
@@ -187,12 +230,17 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   font-size: 30px;
   font-family: sans-serif;
   font-weight: lighter;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
   line-height: 50px;
 }
 
 .genconpara {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
   text-indent: 20px;
   padding-left: 15px;
   padding-right: 15px;
@@ -209,6 +257,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
 .searchtextHolder {
   display: flex;
   width: 95%;
+  margin-top: 45px;
   max-width: 800px;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -218,8 +267,9 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
 .studyCompare {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  align-content: flex-start;
 }
 
 .updateContainer {
@@ -889,7 +939,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
