@@ -215,6 +215,21 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   align-items: center;
 }
 
+.studyCompare {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.updateContainer {
+  width: 25%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .searchtextHolder div{
   margin: 5px;
 }
@@ -500,7 +515,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: row wrap;
   align-items: center;
   max-height: 400px;
-  width: 25%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   border: lightgray 2px solid;
@@ -512,7 +527,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: row wrap;
   align-items: center;
   max-height: 400px;
-  width: 25%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   border: lightgray 2px solid;
@@ -524,7 +539,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: row wrap;
   align-items: center;
   max-height: 400px;
-  width: 25%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   border: lightgray 2px solid;
@@ -536,7 +551,7 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   flex-flow: row wrap;
   align-items: center;
   max-height: 400px;
-  width: 25%;
+  width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
   border: lightgray 2px solid;
@@ -680,6 +695,20 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   border: black solid 1px;
 }
 
+#scriptures {
+  cursor: pointer;
+  width: 150px;
+  font-family: 'Volkhov', serif;
+  font-weight: bold;
+  color: white;
+  background-color: #3D4E6F;
+}
+
+#scriptures:hover {
+  filter: brightness(190%);
+  border: black solid 1px;
+}
+
 .scrollholder {
   display: flex;
   flex-flow: row nowrap;
@@ -701,25 +730,17 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   border: black solid 1px;
 }
 
-.searchInput {
-  width: 380px;
+.searchInput1 {
+  width: 150px;
   height: 25px;
   font-size: 18px;
   font-weight: bold;
   border: solid black 1.5px;
   outline: none;
-}
-
-.searchInput:hover {
-  transform: scaleX(1.1);
-}
-
-.searchInput:focus {
-  transform: scaleX(1.3);
 }
 
 .searchInput2 {
-  width: 70px;
+  width: 150px;
   height: 25px;
   font-size: 18px;
   font-weight: bold;
@@ -727,12 +748,27 @@ box-shadow: inset -12px -14px 25px -17px rgba(0,0,0,0.86);
   outline: none;
 }
 
-.searchInput2:hover {
-  transform: scaleX(1.1);
+.searchInput3 {
+  width: 50px;
+  height: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border: solid black 1.5px;
+  outline: none;
 }
 
-.searchInput2:focus {
-  transform: scaleX(1.3);
+.searchLabel {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.search1 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 17px;
+  margin-right: 17px;
 }
 
 .images {
@@ -1805,6 +1841,16 @@ li {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.border {
+  background-color: black;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+  width: 1px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .contentColumn5 .inputfield8 {

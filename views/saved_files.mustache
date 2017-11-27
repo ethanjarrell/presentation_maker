@@ -2421,7 +2421,7 @@ console.log(toDoQuoteArray);
 
 
 
-              document.getElementById('updatediv').innerHTML = markup;
+              document.getElementById('updatediv3').innerHTML = markup;
             }
           })
         })
@@ -2730,7 +2730,7 @@ console.log(toDoQuoteArray);
             }
 
             let markup = `${renderapis()}`;
-            document.getElementById('updatediv').innerHTML = markup;
+            document.getElementById('updatediv1').innerHTML = markup;
             console.log(markup);
           })
         })
@@ -2757,11 +2757,10 @@ console.log(toDoQuoteArray);
       function searchAPI() {
 
 
-        let a = scriptureInput.value;
-        let b = chapterInput.value;
-        let str = a + 
+        let book = scriptureInput.value;
+        let chapter = chapterInput.value;
 
-        fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
+        fetch('https://api.mlab.com/api/1/databases/presentation-maker/collections/ldsScrtiptures?&apiKey=_ehmfqV-bs1PDWki2WNFVMsGmXGQuk77').then(function(response) {
           if (response.status != 200) {
             window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
             return;
@@ -2770,22 +2769,53 @@ console.log(toDoQuoteArray);
           response.json().then(function(data) {
             let api = data;
 
-            function renderapis() {
-
-              return `${api.map(api =>
-            `<div class="main">
-            <p class="book_verse">${api.book_and_verse_number}</p>
-            <p class="verse_text">${api.verse_text}</p>
-            </div>
-            `
-            )}
-            `
-
+            let bookArray = [];
+            for (var i = 0; i < api.length; i++) {
+              let bookTitle = api[i].book_title;
+              if (bookTitle !== book) {
+                continue;
+              } else if (bookTitle == book) {
+                bookArray.push(api[i])
+              }
             }
 
-            let markup = `${renderapis()}`;
-            document.getElementById('updatediv').innerHTML = markup;
-            console.log(markup);
+          console.log(bookArray);
+
+          let bookChapterArray = [];
+
+          function getChapter (x) {
+            for (var i = 0; i < x.length; i++) {
+              let chapterNumber = x[i].chapter_number;
+              if (chapterNumber == chapter) {
+                bookChapterArray.push(x[i])
+              }
+            }
+          }
+          getChapter(bookArray);
+          console.log(bookChapterArray);
+
+
+              function renderapis() {
+
+                return `${bookChapterArray.map(bookChapterArray =>
+              `
+              <p class="book_verse">${bookChapterArray.verse_title}</p>
+              <p class="verse_text">${bookChapterArray.scripture_text}</p>
+              </div>
+
+              `
+              )}
+              `
+
+              }
+
+              let markup = `${renderapis()}`;
+
+
+
+
+            document.getElementById('updatediv1').innerHTML = markup;
+
           })
         })
       }
@@ -3104,7 +3134,7 @@ console.log(toDoQuoteArray);
             }
 
             let markup = `${renderapis()}`;
-            document.getElementById('updatediv').innerHTML = markup;
+            document.getElementById('updatediv2').innerHTML = markup;
             console.log(markup);
           })
         })
@@ -3413,7 +3443,7 @@ console.log(toDoQuoteArray);
             }
 
             let markup = `${renderapis()}`;
-            document.getElementById('updatediv').innerHTML = markup;
+            document.getElementById('updatediv4').innerHTML = markup;
           })
         })
       }
@@ -3719,7 +3749,7 @@ console.log(toDoQuoteArray);
             }
 
             let markup = `${renderapis()}`;
-            document.getElementById('updatediv').innerHTML = markup;
+            document.getElementById('updatediv4').innerHTML = markup;
             console.log(markup);
           })
           })
@@ -8452,37 +8482,40 @@ console.log("newval after str4 replaced:", newval);
       <div class="homelabeldiv1">
         <section class="search">
           <div class="searchContainer">
-            <div>
+            <div class="search1">
           <label> TOPIC SEARCH: </label>
-          <input placeholder="image search" class="searchInput" type="text" id="searchInput">
+          <div>
+            <label class="searchLabel"> Topic: </label>
+          <input placeholder="image search" class="searchInput1" type="text" id="searchInput">
         </div>
-        <div>
+        <div class="buttonwrapper2">
+          <button class="submitButton2" type="submit" id="submitButton" name="button">images</button>
+          <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures</button>
+          <button class="submitButton2" type="submit" id="genconf" name="button">gen. conf.</button>
+          <button class="submitButton2" type="submit" id="vidoesrchbtn" name="button">videos</button>
+          <button class="submitButton2" type="submit" id="commonQuest" name="button">FAQs</button>
+          <button class="submitButton2" type="submit" id="moderndef" name="button">more info</button>
+        </div>
+        </div>
+        <div class="border"></div>
+        <div class="search2">
         <label> SCRIPTURE SEARCH: </label>
         <div class="searchContainer">
         <div>
-      <label> Book: </label>
-      <input placeholder="book" class="searchInput" type="text" id="scriptureInput">
+      <label class="searchLabel"> Book: </label>
+      <input placeholder="book" class="searchInput2" type="text" id="scriptureInput">
     </div>
     <div>
-  <label> Chapter: </label>
-  <input placeholder="book" class="searchInput2" type="text" id="chapterInput">
+  <label class="searchLabel"> Chapter: </label>
+  <input placeholder="book" class="searchInput3" type="text" id="chapterInput">
 </div>
+</div>
+<div class="buttonwrapper2">
+  <button class="submitButton2" type="submit" id="scriptures" name="button">search</button>
 </div>
 </div>
   </div>
 
-
-
-
-          <div class="buttonwrapper2">
-            <button class="submitButton2" type="submit" id="submitButton" name="button">images</button>
-            <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">scriptures on current topic</button>
-            <button class="submitButton2" type="submit" id="scriptures" name="button">all scriptures</button>
-            <button class="submitButton2" type="submit" id="genconf" name="button">gen. conf.</button>
-            <button class="submitButton2" type="submit" id="vidoesrchbtn" name="button">videos</button>
-            <button class="submitButton2" type="submit" id="commonQuest" name="button">FAQs</button>
-            <button class="submitButton2" type="submit" id="moderndef" name="button">more info</button>
-          </div>
 
 
         </section>
@@ -8537,12 +8570,28 @@ console.log("newval after str4 replaced:", newval);
         </section>
         </section>
         <div id="searched"></div>
+        <div class="studyCompare">
+          <label>Study and Compare</label>
         <div class="results">
 
-          <section id="updatediv"></section>
-
+          <div class="updateContainer">
+          <label>Scriptures</label>
+          <section id="updatediv1"></section>
         </div>
-
+        <div class="updateContainer">
+          <label>Definitions</label>
+          <section id="updatediv2"></section>
+          </div>
+          <div class="updateContainer">
+            <label>Talks</label>
+          <section id="updatediv3"></section>
+          </div>
+          <div class="updateContainer">
+            <label>Media</label>
+          <section id="updatediv4"></section>
+          </div>
+        </div>
+</div>
 
         {{#talktopics}}
           <div class="homelabeldiv">
