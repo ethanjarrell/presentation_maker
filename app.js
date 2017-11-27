@@ -8,12 +8,6 @@ const Image = require('./models/image.js');
 const Points = require('./models/points.js');
 //=================//
 
-//=====LDS SCRIPTURES======//
-
-const Ldsscriptures = require('./models/ldsscriptures.js');
-
-//=========================//
-
 //=====TOPIC IMAGE API======//
 const Imagepeople = require('./models/imagepeople.js');
 const Imageevents = require('./models/imageevents.js');
@@ -1272,16 +1266,6 @@ app.post('/api/splashinfo', function(req, res) {
     blurb_text: req.body.blurb_text,
   }).then(splashinfos => {
   res.json(splashinfos)
-});
-});
-
-//==========================//
-
-//====SCRIPTURE LDS API===//
-
-app.get('/api/lds/scriptures', function(req, res) {
-  Ldsscriptures.find({}).then(Ldsscriptures => {
-  res.json(Ldsscriptures)
 });
 });
 
