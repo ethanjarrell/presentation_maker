@@ -34,6 +34,9 @@ brainstorm2: {
 brainstorm3: {
   type: String,
 },
+notepad: {
+  type: String,
+},
 section1_topic: [{
   type: String,
 }],

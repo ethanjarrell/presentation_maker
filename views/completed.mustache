@@ -26,13 +26,24 @@
       <label class="labelContainer2">Select a completed talk:</label>
       {{#talktopics}}
         <div class="savedContainer">
+          <div class="labelContainer5">
+          <div class="labelContainer4">
           <div><label>for:</label><span>{{talk_name}}</span></div>
+
                 <div><label>talk topic:</label><span>{{talk_topic}}</span></div>
                 <div><label>talk title:</label><span>{{talkid}}</span></div>
+              </div>
+              <div class="labelContainer4">
                   <div><label>created at:</label><span>{{createdAt}}</span></div>
                     <div><label>updated at:</label><span>{{updatedAt}}</span></div>
-                    <div clas="buttonscontainer">
+
+                    </div>
+                    </div>
+                    <div class="buttonscontainer">
+
+
                       <div class="buttonz"><a href="completed/{{talkid}}">view this talk</a></div>
+                      <div class="buttonz"><a href="brainstorm/{{talkid}}">view brainstorm and notes</a></div>
                       <div class="buttonz"><a href="slideshowpicker/{{talkid}}">view slideshow of talk</a></div>
                       <div class="buttonz"><a href="delete/{{talkid}}">delete this talk</a></div>
                     </div>

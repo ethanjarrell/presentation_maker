@@ -176,11 +176,18 @@ a img {
 .title {
   font-size: 30px;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sectionHeading {
   font-size: 24px;
   font-weight: bold;
+}
+
+h1 {
+  text-align: center;
 }
 
 .outerSectionContainer {

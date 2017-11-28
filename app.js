@@ -884,6 +884,24 @@ app.get('/completed/:talkid', function(req, res) {
 
 //==========================//
 
+//====RENDER COMPLETED TALKS===//
+
+app.get('/brainstorm/:talkid', function(req, res) {
+  User.findOne({username: req.session.username}).then(function(users){
+    Talktopic.findOne({talkid: req.params.talkid}).then(function(talktopics){
+      Talk.findOne({talkid: req.params.talkid}).then(function(talks){
+  res.render('brainstorm', {
+    users: users,
+    talktopics: talktopics,
+    talks: talks,
+        })
+      })
+    })
+  })
+});
+
+//==========================//
+
 //====RENDER SLIDESHOW PICKER===//
 
 app.get('/slideshowpicker/:talkid', function(req, res) {
@@ -1052,6 +1070,7 @@ app.post('/talk/talkid/:talkid', function(req, res) {
     brainstorm1: req.body.brainstorm1,
     brainstorm2: req.body.brainstorm2,
     brainstorm3: req.body.brainstorm3,
+    notepad: req.body.notepad,
     section1_topic: req.body.section1_topic,
     image1: req.body.image1,
     video1: req.body.video1,
@@ -1112,6 +1131,7 @@ app.post('/saved/:talkid', function(req, res) {
     brainstorm1: req.body.brainstorm1,
     brainstorm2: req.body.brainstorm2,
     brainstorm3: req.body.brainstorm3,
+    notepad: req.body.notepad,
     section1_topic: req.body.section1_topic,
     image1: req.body.image1,
     video1: req.body.video1,

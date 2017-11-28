@@ -273,6 +273,45 @@ div#fourteen.collapse.in {
   justify-content: flex-start;
   align-items: center;
   align-content: flex-start;
+  width: 100%;
+}
+
+.studyCompare .collapse {
+  width: 100%;
+}
+
+.studyCompare button {
+  z-index: 10;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  border: black 2px solid;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
+.studyCompare button:hover {
+  background-color: #4f658e;
+}
+
+.studyCompare button:focus {
+  background-color: #1691BA;
+}
+
+
+.studyCompare h2 {
+  color: white;
+  font-family: 'Volkhov', serif;
+  width: 100%;
+  text-align: center;
+  margin: 0px;
 }
 
 .updateContainer {
@@ -518,9 +557,9 @@ div#fourteen.collapse.in {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   height: 50px;
-  width: 500px;
+  width: 650px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -615,6 +654,138 @@ div#fourteen.collapse.in {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
+}
+
+#nodepad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.buttonscontainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: #3D4E6F;
+}
+
+.notepad {
+  width: 100%;
+  margin: 20px;
+  height: 500px;
+}
+
+input#submitTalk {
+  margin-top: 5px;
+}
+
+.brainstorm_btn_ctnr {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-width: 700px;
+}
+
+#planTalk {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#brainstorm_btn {
+  width: 25%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+}
+
+#outline_btn {
+  width: 25%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+}
+
+#notepad_btn {
+  width: 25%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+}
+
+#brainstorm_btn:hover {
+  background-color: #4f658e;
+}
+
+#outline_btn:hover {
+  background-color: #4f658e;
+}
+
+#notepad_btn:hover {
+background-color: #4f658e;
+}
+
+#brainstorm_btn:focus {
+  background-color: #1691BA;
+}
+
+#outline_btn:focus {
+  background-color: #1691BA;
+}
+
+#notepad_btn:focus {
+background-color: #1691BA;
+}
+
+.search button {
+  z-index: 10;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  border: black 2px solid;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
+.search button:hover {
+  background-color: #4f658e;
+}
+
+.search button:focus {
+  background-color: #1691BA;
+}
+
+.search h2 {
+  z-index: 10;
+  color: white;
+  font-family: 'Volkhov', serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .video_imported {
@@ -630,11 +801,25 @@ div#fourteen.collapse.in {
 }
 
 .buttonz a{
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 25px;
+  cursor: pointer;
+  z-index: 10;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
+.buttonz a:hover {
+  background-color: #4f658e;
+  text-shadow: none;
 }
 
 .buttonz img {
@@ -648,6 +833,24 @@ div#fourteen.collapse.in {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.labelContainer5 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.labelContainer4 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 80%;
 }
 
 #commonQuest {
@@ -815,14 +1018,19 @@ div#fourteen.collapse.in {
   margin-right: 8px;
 }
 
+div.search1 {
+  height: 244px;
+}
+
 .search1 {
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
-  margin-left: 17px;
-  margin-right: 17px;
+  width: 50%;
+  min-width: 656px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
 }
 
 .images {
@@ -1027,13 +1235,21 @@ div#fourteen.collapse.in {
 }
 
 .bodywrapper6 {
-  width: 98vw;
+  width: 99vw;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
   padding-left: 15px;
   border-left: solid black 2px;
+}
+
+.buttonholder {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .bodywrapper7 {
@@ -1151,9 +1367,9 @@ div#fourteen.collapse.in {
 .savedContainer {
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
+  justify-content: space-around;
   align-items: flex-start;
-  width: 80%;
+  width: 90%;
   margin: 20px;
   padding-left: 30px;
   padding-right: 30px;
@@ -1184,6 +1400,55 @@ div#fourteen.collapse.in {
   align-items: center;
 }
 
+.homelabeldiv4 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-bottom: black 2px solid;
+  border-right: black 2px solid;
+  border-left: black 2px solid;
+}
+
+.homelabeldiv4 .collapse {
+  width: 100%;
+}
+
+.homelabeldiv4 button {
+  z-index: 10;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  border: black 2px solid;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
+.homelabeldiv4 button:hover {
+  background-color: #4f658e;
+}
+
+.homelabeldiv4 button:focus {
+  background-color: #1691BA;
+}
+
+.homelabeldiv4 h2 {
+  color: white;
+  font-family: 'Volkhov', serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
 .homelabeldiv {
   display: flex;
   flex-flow: row wrap;
@@ -1193,8 +1458,8 @@ div#fourteen.collapse.in {
   background-color: #e8e8e8;
   border-top: black 2px solid;
   padding-bottom: 10px;
-  margin-top: 10px;
-  margin-bottom: -15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .homelabeldiv h3{
@@ -1514,11 +1779,44 @@ a img {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  background-color: #d1d1d1;
+  background-color: #e8e8e8;
   border-bottom: 2px black solid;
   border-top: 2px black solid;
   margin-top: 0px;
+}
 
+.talkHeader button {
+  z-index: 10;
+  background-color: #3D4E6F;
+  color: white;
+  font-family: 'Volkhov', serif;
+  border: black 1px solid;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  outline: 0 !important;
+  outline-offset: 0  !important;
+  background-image: none  !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none  !important;
+}
+
+.talkHeader button:hover {
+  background-color: #4f658e;
+}
+
+.talkHeader button:focus {
+  background-color: #1691BA;
+}
+
+.talkHeader h2 {
+  color: white;
+  font-family: 'Volkhov', serif;
+  width: 100%;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .talkHeader label {
@@ -1636,6 +1934,10 @@ label {
 .logo {
   width: 195px;
   height: 35px;
+}
+
+div.navbar {
+  margin-bottom: 0px;
 }
 
 .navbar {
@@ -1905,10 +2207,8 @@ li {
   justify-content: center;
   align-items: center;
   background-color: #e8e8e8;
-  padding-bottom: 40px;
   border-bottom: black 2px solid;
   width: 98vw;
-  margin-top: -30px;
 }
 
 .searchContainer2 {
@@ -1917,7 +2217,7 @@ li {
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
   width: 100%;
 }
 

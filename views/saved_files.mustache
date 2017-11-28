@@ -8824,6 +8824,40 @@ console.log("newval after str4 replaced:", newval);
       }
 
   </script>
+  <script>
+    $(window).load(function() {
+      $("#brainstormCont").hide();
+      $("#notepad").hide();
+      $("#planTalk").hide();
+    })
+  </script>
+  <script>
+    $(document).ready(function() {
+      $("#brainstorm_btn").click(function() {
+        $("#brainstormCont").show();
+        $("#notepad").hide();
+        $("#planTalk").hide();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $("#outline_btn").click(function() {
+        $("#brainstormCont").hide();
+        $("#notepad").hide();
+        $("#planTalk").show();
+      });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      $("#notepad_btn").click(function() {
+        $("#brainstormCont").hide();
+        $("#notepad").show();
+        $("#planTalk").hide();
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -8837,14 +8871,63 @@ console.log("newval after str4 replaced:", newval);
     <a class="link" href="/logout">logout</a>
   </div>
 
-  
+
 
 
 
     <div class="bodywrapper6">
 
+
+
+
+
+
+<div class="homelabeldiv4">
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twentyfive">
+  <h2>TALK INFORMATION</h2>
+  </button>
+  <div id="twentyfive" class="collapse">
+        <div class="homelabeldiv">
+          {{#talktopics}}
+          <div class="homelabeldiv2">
+            <h3>
+      Talk Topic:
+      </h3>
+            <label>
+      {{talk_topic}}
+    </label>
+          </div>
+          <div class="homelabeldiv2">
+            <h3>
+      for:
+      </h3>
+            <label>
+      {{talk_name}}
+    </label>
+          </div>
+          <div class="homelabeldiv2">
+            <h3>
+      Talk Title:
+      </h3>
+            <label>
+      {{talkid}}
+    </label>
+          </div>
+          {{/talktopics}}
+        </div>
+      </div>
+</div>
+
       <div class="homelabeldiv1">
+
+
+
+
         <section class="search">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Ldsscriptures">
+          <h2>SEARCH</h2>
+          </button>
+          <div id="Ldsscriptures" class="collapse">
           <div class="searchContainer">
             <div class="search1">
           <label> TOPIC SEARCH: </label>
@@ -8853,16 +8936,28 @@ console.log("newval after str4 replaced:", newval);
           <input placeholder="topic" class="searchInput1" type="text" id="searchInput">
         </div>
         <div class="buttonwrapper2">
-          <button class="submitButton2" type="submit" id="submitButton" name="button">Images</button>
+
+          <div class="buttonholder">
           <button class="submitButton2" type="submit" id="bofmSearch" onclick="searchbookofmormon()" name="button">Scriptures</button>
+        </div>
+
+          <div class="buttonholder">
           <button class="submitButton2" type="submit" id="genconf" name="button">General Conf.</button>
-          <button class="submitButton2" type="submit" id="vidoesrchbtn" name="button">Videos</button>
-          <button class="submitButton2" type="submit" id="commonQuest" name="button">FAQs</button>
-          <button class="submitButton2" type="submit" id="moderndef" name="button">Definition</button>
+        </div>
+
+        <div class="buttonholder">
           <button class="submitButton2" type="submit" id="byuspeech" name="button">BYU Speeches</button>
         </div>
+
+        <div class="buttonholder">
+          <button class="submitButton2" type="submit" id="vidoesrchbtn" name="button">Videos</button>
+          <button class="submitButton2" type="submit" id="moderndef" name="button">Definition</button>
+          <button class="submitButton2" type="submit" id="commonQuest" name="button">FAQs</button>
+          <button class="submitButton2" type="submit" id="submitButton" name="button">Images</button>
         </div>
-        <div class="border"></div>
+
+        </div>
+        </div>
         <div class="search1">
         <label> SCRIPTURE SEARCH: </label>
         <div class="searchContainer2">
@@ -8880,7 +8975,7 @@ console.log("newval after str4 replaced:", newval);
 </div>
 </div>
   </div>
-
+</div>
 
 
         </section>
@@ -8936,7 +9031,13 @@ console.log("newval after str4 replaced:", newval);
         </section>
         <div id="searched"></div>
         <div class="studyCompare">
-          <label>Study and Compare</label>
+
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twentyseven">
+          <h2>STUDY</h2>
+          </button>
+          <div id="twentyseven" class="collapse">
+
+
         <div class="results">
 
           <div class="updateContainer">
@@ -8956,36 +9057,10 @@ console.log("newval after str4 replaced:", newval);
           <section id="updatediv4"></section>
           </div>
         </div>
+      </div>
 </div>
 
-        {{#talktopics}}
-          <div class="homelabeldiv">
-            <div class="homelabeldiv2">
-              <h3>
-    Talk Topic:
-  </h3>
-              <h2>
-    {{talk_topic}}
-  </h2>
-            </div>
-            <div class="homelabeldiv2">
-              <h3>
-    for:
-  </h3>
-              <h2>
-    {{talk_name}}
-  </h2>
-            </div>
-            <div class="homelabeldiv2">
-              <h3>
-  Talk Title:
-</h3>
-              <h2>
-  {{talkid}}
-</h2>
-            </div>
-          </div>
-        {{/talktopics}}
+
       </div>
       <form class="form1" action="/saved/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
         {{#talks}}
@@ -8993,14 +9068,20 @@ console.log("newval after str4 replaced:", newval);
 
           <div class="talkHeader">
 
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twentyeight">
+            <h2>PLAN</h2>
+            </button>
+            <div id="twentyeight" class="collapse">
 
+              <div class="brainstorm_btn_ctnr">
+              <button type="button" id="brainstorm_btn">brainstorm</button>
+              <button type="button" id="outline_btn">detailed outline</button>
+              <button type="button" id="notepad_btn">notes</button>
+            </div>
 
-
-
-
-
-              <div class="brainstormContainer">
-                <h2>Brainstorm Ideas</h2>
+              <div id="brainstormCont" class="brainstormContainer">
+<input id="submitTalk" class="submit" value="save talk" type="submit" />
+                <h3>Brainstorm Ideas</h3>
               <div class="results">
                       <div class="brainstorm">
                         <div>Scriptures & Quotes</div>
@@ -9017,15 +9098,21 @@ console.log("newval after str4 replaced:", newval);
               </div>
             </div>
 
+            <div id="notepad">
+              <input id="submitTalk" class="submit" value="save talk" type="submit" />
+              <textarea name="notepad" class="notepad"></textarea>
+            </div>
+
+<div id="planTalk">
 <input id="submitTalk" class="submit" value="save talk" type="submit" />
 <div class="section">
 
-            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#fifteen">
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirty">
             <div class="gencontitlecontainer">
               <input class="inputfield8" name="section1_topic" value="Section 1: {{section1_topic.0}}" />
             </div>
             </button>
-            <div id="fifteen" class="collapse">
+            <div id="thirty" class="collapse">
               <div class="topic">
 
 
@@ -9632,12 +9719,12 @@ console.log("newval after str4 replaced:", newval);
         </div>
 
 <div class="section">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#sixteen">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtyone">
           <div class="gencontitlecontainer">
             <input class="inputfield8" name="section1_topic" value="Section 2: {{section1_topic.1}}" />
           </div>
           </button>
-          <div id="sixteen" class="collapse">
+          <div id="thirtyone" class="collapse">
 
 
             <div class="topic">
@@ -10260,12 +10347,12 @@ console.log("newval after str4 replaced:", newval);
         </div>
 
 <div class="section">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#seventeen">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtythree">
           <div class="gencontitlecontainer">
             <input class="inputfield8" name="section1_topic" value="Section 3: {{section1_topic.2}}" />
           </div>
           </button>
-          <div id="seventeen" class="collapse">
+          <div id="thirtythree" class="collapse">
 
 
             <div class="topic">
@@ -12101,11 +12188,11 @@ console.log("newval after str4 replaced:", newval);
         </div>
 
 <div class="section">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twenty">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtyfour">
             <input class="inputfield8" name="section1_topic" value="Section 6: {{section1_topic.5}}" />
           </div>
           </button>
-          <div id="twenty" class="collapse">
+          <div id="thirtyfour" class="collapse">
 
 
             <div class="topic">
@@ -14198,11 +14285,11 @@ console.log("newval after str4 replaced:", newval);
             </div>
 
 <div class="section">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twentyfive">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtyfive">
             <input class="inputfield8" name="section1_topic" value="Section 11: {{section1_topic.10}}" />
           </div>
           </button>
-          <div id="twentyfive" class="collapse">
+          <div id="thirtyfive" class="collapse">
 
 
             <div class="topic">
@@ -14591,6 +14678,8 @@ console.log("newval after str4 replaced:", newval);
     </div>
 
     </form>
+</div>
+</div>
 </div>
 </div>
 
