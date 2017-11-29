@@ -10,6 +10,40 @@ body {
   margin: 0;
 }
 
+#totalTalkData {
+  display: none;
+}
+
+#talkYearData {
+  display: none;
+}
+
+#byu_Results {
+  display: none;
+}
+
+#genConf_Results {
+  display: none;
+}
+
+.resultsBox {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+#real_byu_Results {
+  width: 50%;
+  border-left: 1px solid black;
+}
+
+#real_genConf_Results {
+  width: 50%;
+  border-right: 1px solid black;
+}
+
 .talkContainer {
   width: 100%;
   padding-left: 10px;
