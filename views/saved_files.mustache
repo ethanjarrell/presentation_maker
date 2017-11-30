@@ -2753,7 +2753,7 @@ if (decadeMost == k) {
   mostFrequent = 1970;
 }
 if (decadeMost == l) {
-  mostFrequent = 1970;
+  mostFrequent = 1960;
 }
 
 if (decadeLeast == h) {
@@ -2769,7 +2769,7 @@ if (decadeLeast == k) {
   leastFrequent = 1970;
 }
 if (decadeLeast == l) {
-  leastFrequent = 1970;
+  leastFrequent = 1960;
 }
 
 let declineOrincline = "";
@@ -2783,18 +2783,22 @@ if (leastFrequent < mostFrequent) {
 
 let byuData = `
   <ol>
-  <label> Facts on selected BYU Speeches </label>
+  <label> Statistics on selected BYU Speeches </label>
     <li>Most talks ranged between about ${oldest} and ${latest}</li>
     <li>The majority of talks on this subject seemed to appeared to be clustered in the ${mostFrequent}'s</li>
+    <li>While the topic seems to have been addressed less frequently in the ${leastFrequent}'s</li>
     <li>${declineOrincline}</li>
-    <li>In addition, based on selected talks, the 7 most popular sub-themes within each talk are the following:</li>
+    <li>In addition, based on selected talks, the 10 most popular sub-themes within each talk are the following:</li>
     <li>1) ${finalSum[0][0]}, which appeared ${finalSum[0][1]} times across selected talks.</li>
     <li>2) ${finalSum[1][0]} was referenced a total of ${finalSum[1][1]} times.</li>
     <li>3) ${finalSum[2][0]} was third, being mentioned a total of ${finalSum[2][1]} times.</li>
     <li>4) ${finalSum[3][0]} was also a common sub-theme in thes talks, being referenced ${finalSum[3][1]} times.</li>
     <li>5) ${finalSum[4][0]} was mentioned ${finalSum[4][1]} times.</li>
     <li>6) ${finalSum[5][0]} was mentioned ${finalSum[5][1]} times.</li>
-    <li>7) ${finalSum[6][0]} was only referred to ${finalSum[6][1]} times.</li>
+    <li>7) ${finalSum[6][0]} was referred to ${finalSum[6][1]} times.</li>
+    <li>8) ${finalSum[7][0]} was referred to ${finalSum[7][1]} times.</li>
+    <li>9) ${finalSum[8][0]} was found ${finalSum[8][1]} times.</li>
+    <li>10) ${finalSum[9][0]} only appeared ${finalSum[9][1]} times.</li>
   </ol>
 `
 
@@ -3823,7 +3827,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
             mostFrequent = 1970;
             }
             if (decadeMost == l) {
-            mostFrequent = 1970;
+            mostFrequent = 1960;
             }
 
             if (decadeLeast == h) {
@@ -3839,7 +3843,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
             leastFrequent = 1970;
             }
             if (decadeLeast == l) {
-            leastFrequent = 1970;
+            leastFrequent = 1960;
             }
 
             let declineOrincline = "";
@@ -3853,18 +3857,22 @@ document.getElementById('byu_Results').innerHTML = byuData;
 
             let genCoData = `
             <ol>
-            <label> Facts on selected General Coference Talks </label>
+            <label> Statistics on selected General Coference Talks </label>
             <li>Most talks ranged between about ${oldest} and ${latest}</li>
             <li>The majority of talks on this subject seemed to appeared to be clustered in the ${mostFrequent}'s</li>
+            <li>While the topic seems to have been addressed less frequently in the ${leastFrequent}'s</li>
             <li>${declineOrincline}</li>
-            <li>In addition, based on selected talks, the 7 most popular sub-themes within each talk are the following:</li>
+            <li>In addition, based on selected talks, the 10 most popular sub-themes within each talk are the following:</li>
             <li>1) ${finalSum[0][0]}, which appeared ${finalSum[0][1]} times across selected talks.</li>
             <li>2) ${finalSum[1][0]} was referenced a total of ${finalSum[1][1]} times.</li>
             <li>3) ${finalSum[2][0]} was third, being mentioned a total of ${finalSum[2][1]} times.</li>
             <li>4) ${finalSum[3][0]} was also a common sub-theme in thes talks, being referenced ${finalSum[3][1]} times.</li>
             <li>5) ${finalSum[4][0]} was mentioned ${finalSum[4][1]} times.</li>
             <li>6) ${finalSum[5][0]} was mentioned ${finalSum[5][1]} times.</li>
-            <li>7) ${finalSum[6][0]} was only referred to ${finalSum[6][1]} times.</li>
+            <li>7) ${finalSum[6][0]} was referred to ${finalSum[6][1]} times.</li>
+            <li>8) ${finalSum[7][0]} was referred to ${finalSum[7][1]} times.</li>
+            <li>9) ${finalSum[8][0]} was found ${finalSum[8][1]} times.</li>
+            <li>10) ${finalSum[9][0]} only appeared ${finalSum[9][1]} times.</li>
             </ol>
             `
 
@@ -4360,7 +4368,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
               }
             }
 
-          console.log(bookArray);
+
 
           let bookChapterArray = [];
 
@@ -4373,8 +4381,538 @@ document.getElementById('byu_Results').innerHTML = byuData;
             }
           }
           getChapter(bookArray);
-          console.log(bookChapterArray);
 
+          let oldTestament = [];
+          let newTestament = [];
+          let bookOfMormon = [];
+          let dandC = [];
+          function getSW (x) {
+            for (var i = 0; i < x.length; i++) {
+              if (x[i].volume_long_title == "The Old Testament") {
+                oldTestament.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The New Testament") {
+                newTestament.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The Book of Mormon") {
+                bookOfMormon.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The Doctrine and Covenants") {
+                dandC.push(x[i].scripture_text
+);
+              }
+          }
+        }
+        getSW(api);
+
+
+
+        let str5 = searchInput.value;
+        let str6 = str5.toLowerCase();
+
+        function findMatches (x) {
+        let y = x.toString();
+        let w = y.toLowerCase();
+        var chars = w.split(' ');
+        var count = chars.reduce(function(n, val) {
+            return n + (val === str6);
+        }, 0);
+        return count;
+      }
+      let countDnC = findMatches(dandC);
+      let countOT = findMatches(oldTestament);
+      let countNT = findMatches(newTestament);
+      let countBofM = findMatches(bookOfMormon);
+      let bofMPages = 531;
+      let bofMPercent = ( Math.round((countBofM / 531) * 100 ));
+      let ntPages = 288;
+      let ntPercent = ( Math.round((countNT / 288) * 100 ));
+      let otPages = 993;
+      let otPercent = ( Math.round((countOT / 993) * 100 ));
+      let dncPages = 291;
+      let dncPercent = ( Math.round((countDnC / 291) * 100 ));
+
+      let bofMPhrase = [];
+      let OTPhrase = [];
+      let NTPhrase = [];
+      let DNCPhrase = [];
+
+          let str3 = "";
+          function getIndicesOf(searchStr, x) {
+            let y = x.toString();
+            let str = y.toLowerCase();
+            var searchStrLen = searchStr.length;
+            if (searchStrLen == 0) {
+              return [];
+            }
+            var startIndex = 0, index, indices = [];
+
+            while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+              indices.push(index);
+              startIndex = index + searchStrLen;
+            }
+            return indices;
+          }
+
+var BOMindices = getIndicesOf(str6, bookOfMormon);
+var OTindices = getIndicesOf(str6, oldTestament);
+var NTindices = getIndicesOf(str6, newTestament);
+var DNCindices = getIndicesOf(str6, dandC);
+
+let BOMstart_end = [];
+function grabSelection (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    BOMstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection(BOMindices);
+
+let OTstart_end = [];
+function grabSelection2 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    OTstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection2(OTindices);
+
+let NTstart_end = [];
+function grabSelection3 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    NTstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection3(NTindices);
+
+let DNCstart_end = [];
+function grabSelection4 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    DNCstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection4(DNCindices);
+
+var BoMrand1 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand2 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand3 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand4 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+
+var OTrand1 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand2 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand3 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand4 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+
+var NTrand1 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand2 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand3 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand4 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+
+var DNCrand1 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand2 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand3 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand4 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+
+let BoMtoString = bookOfMormon.toString();
+let OTtoString = oldTestament.toString();
+let NTtoString = newTestament.toString();
+let DNCtoString = dandC.toString();
+let BoMPhrase1 = BoMtoString.substring(BoMrand1[0], BoMrand1[1]);
+let BoMPhrase2 = BoMtoString.substring(BoMrand2[0], BoMrand2[1]);
+let BoMPhrase3 = BoMtoString.substring(BoMrand3[0], BoMrand3[1]);
+let BoMPhrase4 = BoMtoString.substring(BoMrand4[0], BoMrand4[1]);
+
+let NTPhrase1 = NTtoString.substring(NTrand1[0], NTrand1[1]);
+let NTPhrase2 = NTtoString.substring(NTrand2[0], NTrand2[1]);
+let NTPhrase3 = NTtoString.substring(NTrand3[0], NTrand3[1]);
+let NTPhrase4 = NTtoString.substring(NTrand4[0], NTrand4[1]);
+
+let OTPhrase1 = OTtoString.substring(OTrand1[0], OTrand1[1]);
+let OTPhrase2 = OTtoString.substring(OTrand2[0], OTrand2[1]);
+let OTPhrase3 = OTtoString.substring(OTrand3[0], OTrand3[1]);
+let OTPhrase4 = OTtoString.substring(OTrand4[0], OTrand4[1]);
+
+let DNCPhrase1 = DNCtoString.substring(DNCrand1[0], DNCrand1[1]);
+let DNCPhrase2 = DNCtoString.substring(DNCrand2[0], DNCrand2[1]);
+let DNCPhrase3 = DNCtoString.substring(DNCrand3[0], DNCrand3[1]);
+let DNCPhrase4 = DNCtoString.substring(DNCrand4[0], DNCrand4[1]);
+
+let BOMTemp = [];
+let DNCTemp = [];
+let NTTemp = [];
+let OTTemp = [];
+
+if (BoMPhrase1 !== undefined){
+  BOMTemp.push(BoMPhrase1)
+}
+if (BoMPhrase2 !== undefined){
+  BOMTemp.push(BoMPhrase2)
+}
+if (BoMPhrase3 !== undefined){
+  BOMTemp.push(BoMPhrase3)
+}
+if (BoMPhrase4 !== undefined){
+  BOMTemp.push(BoMPhrase4)
+}
+var BOMConst = BOMTemp[0].concat(BOMTemp[1], BOMTemp[2], BOMTemp[3], BOMTemp[4]);
+
+if (NTPhrase1 !== undefined){
+  NTTemp.push(NTPhrase1)
+}
+if (NTPhrase2 !== undefined){
+  NTTemp.push(NTPhrase2)
+}
+if (NTPhrase3 !== undefined){
+  NTTemp.push(NTPhrase3)
+}
+if (NTPhrase4 !== undefined){
+  NTTemp.push(NTPhrase4)
+}
+var NTConst = NTTemp[0].concat(NTTemp[1], NTTemp[2], NTTemp[3], NTTemp[4]);
+
+if (OTPhrase1 !== undefined){
+  OTTemp.push(OTPhrase1)
+}
+if (OTPhrase2 !== undefined){
+  OTTemp.push(OTPhrase2)
+}
+if (OTPhrase3 !== undefined){
+  OTTemp.push(OTPhrase3)
+}
+if (OTPhrase4 !== undefined){
+  OTTemp.push(OTPhrase4)
+}
+var OTConst = OTTemp[0].concat(OTTemp[1], OTTemp[2], OTTemp[3], OTTemp[4]);
+
+if (DNCPhrase1 !== undefined){
+  DNCTemp.push(DNCPhrase1)
+}
+if (DNCPhrase2 !== undefined){
+  DNCTemp.push(DNCPhrase2)
+}
+if (DNCPhrase3 !== undefined){
+  DNCTemp.push(DNCPhrase3)
+}
+if (DNCPhrase4 !== undefined){
+  DNCTemp.push(DNCPhrase4)
+}
+var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4]);
+
+      function findAllMatches (x) {
+
+        let Good = 0;
+        let Bad = 0;
+        let goodWords = ["light", "truth", "happy", "happiness", "peace", "comfort", "love", "good", "right", "heaven", "blessed", "joy", "glad", "hope", "charity"];
+        let badWords = ["dark", "false", "lie", "deceit", "sad", "fear", "sorrow", "anger", "hate", "bad", "satan", "devil", "hell", "torment", "cursed"];
+        if(x.includes(badWords[0])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[1])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[2])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[3])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[4])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[5])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[6])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[7])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[8])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[9])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[10])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[11])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[12])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[13])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[14])) {
+          Bad = Bad + 1;
+        }
+          if(x.includes(goodWords[0])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[1])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[2])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[3])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[4])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[5])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[6])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[7])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[8])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[9])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[10])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[11])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[12])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[13])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[14])) {
+            Good = Good + 1;
+          }
+          let total = Good + Bad;
+          let badPercent = ( Math.round((Bad / total) * 100));
+          let goodPercent = ( Math.round((Good / total) * 100));
+          let adjective = "";
+
+          let percentUsed = 0;
+          if (badPercent > goodPercent) {
+            percentUsed = badPercent - goodPercent;
+          } else {
+            percentUsed = goodPercent - badPercent;
+          }
+          if (percentUsed == 0 ) {
+            adjective = "indifferent";
+          }
+          else if (percentUsed > 0 && percentUsed < 15 ) {
+            adjective = "just barely more";
+          }
+          else if (percentUsed > 15 && percentUsed < 25 ) {
+            adjective = "a little bit more";
+          } else if (percentUsed > 25 && percentUsed < 45 ) {
+            adjective = "quite a bit more";
+          } else if (percentUsed > 45 && percentUsed < 55) {
+            adjective = "nearly twich as much more";
+          } else if (percentUsed > 55 && percentUsed < 75) {
+            adjective = "very much more";
+          } else if (percentUsed > 75 && percentUsed < 100) {
+            adjective = "almost completely";
+          } else if (percentUsed == 100) {
+            adjective = "completely";
+          }
+          let goodPhrase = `When prophets spoke of the topic, they used words such as, 'good', 'happiness' or 'joy' ${percentUsed}% more than words like 'sorrow', 'pain' or 'fear', indicating that they were ${adjective} optimistic about the topic`;
+          let badPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that they were ${adjective} pessimistic about the topic`;
+          let neturalPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that their mood may have been ${adjective} about the topic`;
+       if (Bad == Good) {
+          return [neturalPhrase];
+        }
+        else if (Bad > Good) {
+          return [badPhrase];
+        } else {
+          return [goodPhrase];
+        }
+      }
+      let BOMMood = findAllMatches(BOMConst);
+      let DNCMood = findAllMatches(DNCConst);
+      let NTMood = findAllMatches(NTConst);
+      let OTMood = findAllMatches(OTConst);
+
+      function compareVerseswithWords (x) {
+        let frequentWords = [
+          "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
+        ];
+        var sorted = [];
+        for (var i = 0; i < frequentWords.length; i++) {
+          sorted.push(frequentWords[i].toLowerCase());
+        }
+        sorted.sort();
+
+        var wordCounts = {};
+        y = x.toString();
+        var words = y.split(/\b/);
+        for(var i = 0; i < words.length; i++)
+        wordCounts["" + words[i]] = (wordCounts["" + words[i]] || 0) + 1;
+
+        let result = Object.keys(wordCounts).map(function(key) {
+          return [String(key), wordCounts[key]];
+        });
+
+        var lowercaseResults = [];
+        for (var i = 0; i < result.length; i++) {
+          result[i][0].toLowerCase();
+          lowercaseResults.push(result[i]);
+        }
+        lowercaseResults.sort();
+
+        let newWordArray = [];
+         function pushWords (y, z) {
+           for (var i = 0; i < z.length; i++) {
+             if (y.some(v => z[i][0].includes(v)) == true) {
+               newWordArray.push(z[i])
+             }
+           }
+         }
+         pushWords(sorted, lowercaseResults);
+
+         newWordArray.sort(function(a, b){return a[1]-b[1]});
+         let talk1 = newWordArray.slice(Math.max(newWordArray.length - 5));
+         return talk1;
+}
+let res1 = compareVerseswithWords(DNCPhrase1);
+let res11 = compareVerseswithWords(DNCPhrase2);
+let res111 = compareVerseswithWords(DNCPhrase3);
+let res1111 = compareVerseswithWords(DNCPhrase4);
+let DNCarr = [];
+for (var i = 0; i < res1.length; i++) {
+  if (res1[i] !== undefined) {
+  DNCarr.push(res1[i][0]);
+}
+  if (res11[i] !== undefined) {
+  DNCarr.push(res11[i][0]);
+}
+  if (res111[i] !== undefined) {
+  DNCarr.push(res111[i][0]);
+}
+  if (res1111[i] !== undefined) {
+  DNCarr.push(res1111[i][0]);
+}
+}
+if (DNCarr.length > 1) {
+  let last = DNCarr.length - 1;
+  DNCarr.splice(last, 0, "&");
+}
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+var UDNCarr = DNCarr.filter( onlyUnique );
+let SUDNCarr = UDNCarr.toString();
+
+let res2 = compareVerseswithWords(NTPhrase1);
+let res22 = compareVerseswithWords(NTPhrase2);
+let res222 = compareVerseswithWords(NTPhrase3);
+let res2222 = compareVerseswithWords(NTPhrase4);
+let NTarr = [];
+for (var i = 0; i < res2.length; i++) {
+  if (res2[i] !== undefined) {
+  NTarr.push(res2[i][0]);
+}
+  if (res22[i] !== undefined) {
+  NTarr.push(res22[i][0]);
+}
+  if (res222[i] !== undefined) {
+  NTarr.push(res222[i][0]);
+}
+  if (res2222[i] !== undefined) {
+  NTarr.push(res2222[i][0]);
+}
+}
+if (NTarr.length > 1) {
+  let last = NTarr.length - 1;
+  NTarr.splice(last, 0, "&");
+}
+var UNTarr = NTarr.filter( onlyUnique );
+let SUNTarr = UNTarr.toString();
+
+let res3 = compareVerseswithWords(OTPhrase1);
+let res33 = compareVerseswithWords(OTPhrase2);
+let res333 = compareVerseswithWords(OTPhrase3);
+let res3333 = compareVerseswithWords(OTPhrase4);
+let OTarr = [];
+for (var i = 0; i < res3.length; i++) {
+  if (res3[i] !== undefined) {
+  OTarr.push(res3[i][0]);
+}
+  if (res33[i] !== undefined) {
+  OTarr.push(res33[i][0]);
+}
+  if (res333[i] !== undefined) {
+  OTarr.push(res333[i][0]);
+}
+  if (res3333[i] !== undefined) {
+  OTarr.push(res3333[i][0]);
+}
+}
+if (OTarr.length > 1) {
+  let last = OTarr.length - 1;
+  OTarr.splice(last, 0, "&");
+}
+var UOTarr = OTarr.filter( onlyUnique );
+let SUOTarr = UOTarr.toString();
+
+let res4 = compareVerseswithWords(BoMPhrase1);
+let res44 = compareVerseswithWords(BoMPhrase2);
+let res444 = compareVerseswithWords(BoMPhrase3);
+let res4444 = compareVerseswithWords(BoMPhrase4);
+let BOMarr = [];
+for (var i = 0; i < res4.length; i++) {
+  if (res4[i] !== undefined) {
+  BOMarr.push(res4[i][0]);
+}
+  if (res44[i] !== undefined) {
+  BOMarr.push(res44[i][0]);
+}
+  if (res444[i] !== undefined) {
+  BOMarr.push(res444[i][0]);
+}
+  if (res4444[i] !== undefined) {
+  BOMarr.push(res4444[i][0]);
+}
+}
+if (BOMarr.length > 1) {
+  let last = BOMarr.length - 1;
+  BOMarr.splice(last, 0, "&");
+}
+var UBOMarr = BOMarr.filter( onlyUnique );
+let SUBOMarr = UBOMarr.toString();
+
+      let swData = `
+      <ol>
+      <label> Statistics from the Standard Works </label>
+      <li>In the Old Testament, the word '${str5}' occurs ${countOT} times.  The Old Testament contains ${otPages} pages, which means '${str5}' occurs on average in ${otPercent}% of the book.  Also, in the Old Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUOTarr}.
+      ${OTMood}</li>
+      <li>In the New Testament, the word '${str5}' occurs ${countNT} times. The New Testament contains ${ntPages} pages, which means '${str5}' occurs on average in ${ntPercent}% of the book.  Also, in the New Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUNTarr}.
+      ${NTMood}</li>
+      <li>In the Book of Mormon, the word '${str5}' occurs ${countBofM} times.  The Book of Mormon contains ${bofMPages} pages, which means '${str5}' occurs on average in ${bofMPercent}% of the book. Also, in the Book of Mormon, verses which contain the word '${str5}' also commonly mention themes such as: ${SUBOMarr}.
+      ${BOMMood}</li>
+      <li>In the Doctrine and Covenants, the word '${str5}' occurs ${countDnC} times. The Doctrine and Covenants contains ${dncPages} pages, which means '${str5}' occurs on average in ${dncPercent}% of the book.  Also, in the Doctrine and Covenants, verses which contain the word '${str5}' also commonly mention themes such as: ${SUDNCarr}.
+      ${DNCMood}</li>
+      </ol>
+      `
+document.getElementById('swData').innerHTML = swData;
 
               function renderapis() {
 
@@ -10064,9 +10602,38 @@ console.log("newval after str4 replaced:", newval);
     });
   </script>
   <script>
+$(window).load(function() {
+$('#resultsBox').hide();
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#talkData_btn').click(function(){
+$('#resultsBox').show();
+})
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#clearTalk').click(function(){
+$('#resultsBox').hide();
+$('#real_byu_Results').html("");
+$('#real_genConf_Results').html("");
+$('#real_swData').html("");
+})
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#resultsBox').show();
+})
+  </script>
+  <script>
     function getData() {
       let raw = document.getElementById('byu_Results').innerHTML;
       let raw2 = document.getElementById('genConf_Results').innerHTML;
+      let raw3 = document.getElementById('swData').innerHTML;
+      document.getElementById('real_swData').innerHTML = raw3;
       document.getElementById('real_genConf_Results').innerHTML = raw2;
       document.getElementById('real_byu_Results').innerHTML = raw;
     }
@@ -10273,12 +10840,13 @@ console.log("newval after str4 replaced:", newval);
         </div>
         <button id="talkData_btn" onclick="getData();">See Talk Data</button>
 
-
+        <div id="swData"></div>
         <div id="byu_Results"></div>
         <div id="genConf_Results"></div>
-        <div class="resultsBox">
+        <div id="resultsBox" class="resultsBox">
         <div id="real_genConf_Results"></div>
         <div id="real_byu_Results"></div>
+        <div id="real_swData"></div>
       </div>
         <button id="clearTalk" onclick="clearTalkData()">Clear Results</button>
       </div>

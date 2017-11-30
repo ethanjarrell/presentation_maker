@@ -22,6 +22,10 @@ body {
   display: none;
 }
 
+#swData {
+  display: none;
+}
+
 #genConf_Results {
   display: none;
 }
@@ -30,18 +34,28 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
 }
 
 #real_byu_Results {
-  width: 50%;
-  border-left: 1px solid black;
+  width: 33%;
+  height: 250px;
+  overflow-y: scroll;
 }
 
 #real_genConf_Results {
-  width: 50%;
+  width: 33%;
   border-right: 1px solid black;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+#real_swData {
+  width: 33%;
+  border-left: 1px solid black;
+  height: 250px;
+  overflow-y: scroll;
 }
 
 .talkContainer {
