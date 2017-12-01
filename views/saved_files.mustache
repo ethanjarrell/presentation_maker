@@ -4055,6 +4055,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
               }
             }
             
+            
             function renderapis() {
 
               return `${verseArray.map(verseArray =>
@@ -4070,7 +4071,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
 
             let rawScript = `${renderapis()}`;
             document.getElementById('updatediv1').innerHTML = rawScript;
-            console.log(document.getElementById('updatediv1').innerHTML );
+          
             
             
 
@@ -4469,8 +4470,9 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
 
       function compareVerseswithWords (x) {
         let frequentWords = [
-          "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
+          "voice", "offer", "soul", "glory", "blood", "wicked", "eyes", "ears", "answer", "babylon", "fire", "punish", "evil", "judah", "law of moses", "moses", "david", "jerusalem", "son", "king", "israel", "agony", "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
         ];
+        
         var sorted = [];
         for (var i = 0; i < frequentWords.length; i++) {
           sorted.push(frequentWords[i].toLowerCase());
@@ -4615,17 +4617,99 @@ if (BOMarr.length > 1) {
 var UBOMarr = BOMarr.filter( onlyUnique );
 let SUBOMarr = UBOMarr.toString();
 
+
+let OTBooks = [];
+let NTBooks = [];
+let BOMBooks = [];
+let DNCBooks = [];
+function diviBooks (x) {
+  for (var i = 0; i < x.length; i++) {
+    if( x[i].volume_title == "Old Testament" ) {
+      OTBooks.push(x[i]);
+    } else if ( x[i].volume_title == "New Testament" ) {
+      NTBooks.push(x[i]);
+    } else if ( x[i].volume_title == "Book of Mormon") {
+      BOMBooks.push(x[i]);
+    } else {
+      DNCBooks.push(x[i]);
+    }
+  }
+}
+diviBooks(verseArray);
+
+let NcompareArr = [];
+function NsortSW (x) {
+  for (var i = 0; i < x.length; i++) {
+    let v = x[i].scripture_text;
+for (let v of x) {
+  NcompareArr.push([x[i].book_title])
+}
+  }
+}
+NsortSW(NTBooks);
+
+let OcompareArr = [];
+function OsortSW (x) {
+  for (var i = 0; i < x.length; i++) {
+    let v = x[i].scripture_text;
+for (let v of x) {
+  OcompareArr.push([x[i].book_title])
+}
+  }
+}
+OsortSW(OTBooks);
+
+let BcompareArr = [];
+function BsortSW (x) {
+  for (var i = 0; i < x.length; i++) {
+    let v = x[i].scripture_text;
+for (let v of x) {
+  BcompareArr.push([x[i].book_title])
+}
+  }
+}
+BsortSW(BOMBooks);
+
+
+
+function sortByFrequency(array) {
+    var frequency = {};
+
+    array.forEach(function(value) { frequency[value] = 0; });
+
+    var uniques = array.filter(function(value) {
+        return ++frequency[value] == 1;
+    });
+
+    return uniques.sort(function(a, b) {
+        return frequency[b] - frequency[a];
+    });
+}
+let Bauthor = sortByFrequency(BcompareArr);
+let Nauthor = sortByFrequency(NcompareArr);
+let Oauthor = sortByFrequency(OcompareArr);
+let Omost = Oauthor[0];
+let Oleast = Oauthor[Oauthor.length - 1];
+let Nmost = Nauthor[0];
+let Nleast = Nauthor[Nauthor.length - 1];
+let Bmost = Bauthor[0];
+let Bleast = Bauthor[Bauthor.length - 1];
+
+
       let swData = `
       <ol>
       <label> Statistics from the Old Testament </label>
       <li>In the Old Testament, the word '${str5}' occurs ${countOT} times.  The Old Testament contains ${otPages} pages, which means '${str5}' occurs on average in ${otPercent}% of the book.  Also, in the Old Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUOTarr}.
-      ${OTMood}</li>
+      ${OTMood}.
+      Of all the Old Testament Prophets, ${Omost} talks about ${str5} the most, while it is mentioned least in ${Oleast}.</li>
       <label> Statistics from the New Testament </label>
       <li>In the New Testament, the word '${str5}' occurs ${countNT} times. The New Testament contains ${ntPages} pages, which means '${str5}' occurs on average in ${ntPercent}% of the book.  Also, in the New Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUNTarr}.
-      ${NTMood}</li>
+      ${NTMood}.
+      Of all the New Testament Prophets, ${Nmost} talks about ${str5} the most, while it is mentioned least in ${Nleast}.</li>
       <label> Statistics from the Book of Mormon </label>
       <li>In the Book of Mormon, the word '${str5}' occurs ${countBofM} times.  The Book of Mormon contains ${bofMPages} pages, which means '${str5}' occurs on average in ${bofMPercent}% of the book. Also, in the Book of Mormon, verses which contain the word '${str5}' also commonly mention themes such as: ${SUBOMarr}.
-      ${BOMMood}</li>
+      ${BOMMood}.
+      Of all the Book of Mormon Prophets, ${Bmost} talks about ${str5} the most, while it is mentioned least in ${Bleast}.</li>
       <label> Statistics from the Doctrine and Covenants </label>
       <li>In the Doctrine and Covenants, the word '${str5}' occurs ${countDnC} times. The Doctrine and Covenants contains ${dncPages} pages, which means '${str5}' occurs on average in ${dncPercent}% of the book.  Also, in the Doctrine and Covenants, verses which contain the word '${str5}' also commonly mention themes such as: ${SUDNCarr}.
       ${DNCMood}</li> 
