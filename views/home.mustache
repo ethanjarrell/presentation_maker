@@ -2281,9 +2281,529 @@ console.log(toDoQuoteArray);
 
           response.json().then(function(data) {
             let api = data;
-
+            let wordArray = [];
             for (var i = 0; i < 1; i++) {
-              let api = data;
+              console.log(api);
+
+              function getResults (x) {
+              let frequentWords = [
+                "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
+              ];
+              var sorted = [];
+              for (var i = 0; i < frequentWords.length; i++) {
+                sorted.push(frequentWords[i].toLowerCase());
+              }
+              sorted.sort();
+
+              var wordCounts = {};
+              var words = x.talk_text.split(/\b/);
+              for(var i = 0; i < words.length; i++)
+              wordCounts["" + words[i]] = (wordCounts["" + words[i]] || 0) + 1;
+
+              let result = Object.keys(wordCounts).map(function(key) {
+                return [String(key), wordCounts[key]];
+              });
+
+              var lowercaseResults = [];
+              for (var i = 0; i < result.length; i++) {
+                result[i][0].toLowerCase();
+                lowercaseResults.push(result[i]);
+              }
+              lowercaseResults.sort();
+
+              let newWordArray = [];
+               function pushWords (y, z) {
+                 for (var i = 0; i < z.length; i++) {
+                   if (y.some(v => z[i][0].includes(v)) == true) {
+                     newWordArray.push(z[i])
+                   }
+                 }
+               }
+               pushWords(sorted, lowercaseResults);
+
+              newWordArray.sort(function(a, b){return a[1]-b[1]});
+              let talk1 = newWordArray.slice(Math.max(newWordArray.length - 5));
+
+
+              let date = x.talk_date;
+              let lastFive = date.substr(date.length - 4);
+              parseInt(lastFive);
+              talk1.push(lastFive);
+              return talk1;
+}
+let talk1 = getResults(api[0]);
+let talk2 = getResults(api[1]);
+let talk3 = getResults(api[2]);
+let talk4 = getResults(api[3]);
+let talk5 = getResults(api[4]);
+
+let totalWords = [];
+let totalWords2 = [];
+let test = [];
+let word = [];
+let number = [];
+
+totalWords.push(talk1[0], talk2[0], talk3[0], talk4[0], talk5[0], talk1[1], talk2[1], talk3[1], talk4[1], talk5[1], talk1[2], talk2[2], talk3[2], talk4[2], talk5[2], talk1[3], talk2[3], talk3[3], talk4[3], talk5[3], talk1[4], talk2[4], talk3[4], talk4[4], talk5[4]);
+
+totalWords.sort(function(a, b){return a[1]-b[1]});
+
+function combine (x) {
+  for (var i = 0; i < x.length; i++) {
+    var str = x[i][0];
+    var num = x[i][1];
+    var mapObj = {
+      "the gathering of israel" : "gathering of israel",
+      "gathering of israel" : "gathering of israel",
+      "the gathering" : "gathering of israel",
+      "the lords covenant people" : "lords covenant people",
+      "abrahamic covenant" : "lords covenant people",
+      "covenant of abraham" : "lords covenant people",
+      "eternal life and exaltation" : "exaltation",
+      "exalted" : "exaltation",
+      "exaltation" : "exaltation",
+      "patience" : "patience",
+      "enduring" : "patience",
+      "endure to the end" : "patience",
+      "the final judgement" : "final judgement",
+      "final judgement" : "final judgement",
+      "judgement day" : "final judgement",
+      "judgement" : "final judgement",
+      "sabbath day" : "sabbath day",
+      "sabbath" : "sabbath day",
+      "the sabbath day" : "sabbath day",
+      "the sabbath" : "sabbath day",
+      "developing talents" : "talents",
+      "talents" : "talents",
+      "talent" : "talents",
+      "animal sacrifices" : "sacrifice",
+      "sacrifices" : "sacrifice",
+      "sacrifice" : "sacrifice",
+      "thankful": "gratitude",
+      "thanks": "gratitude",
+      "grateful": "gratitude",
+      "gratitude": "gratitude",
+      "agency": "agency",
+      "free agency": "agency",
+      "the atonement": "atonement",
+      "baptize": "baptism",
+      "book of mormon": "book of mormon",
+      "love": "charity",
+      "charitable": "charity",
+      "pure love": "charity",
+      "pure love of christ": "charity",
+      "created": "creation",
+      "religion": "church",
+      "church organization": "church",
+      "d&c": "doctrine covenants",
+      "events": "events",
+      "heavenly father": "god",
+      "father in heaven": "god",
+      "god the father": "god",
+      "father": "god",
+      "belief": "faith",
+      "hope": "faith",
+      "holy spirit": "holy ghost",
+      "holy ghost": "holy ghost",
+      "the holy ghost": "holy ghost",
+      "spirit": "holy ghost",
+      "the spirit": "holy ghost",
+      "honesty": "honesty",
+      "honest": "honesty",
+      "lie": "honesty",
+      "steal": "honesty",
+      "integrity": "honesty",
+      "bible": "new testament",
+      "new testament": "new testament",
+      "obedience": "obedience",
+      "follow": "obedience",
+      "submission": "obedience",
+      "submissive": "obedience",
+      "old testament": "old testament",
+      "people": "people",
+      "melchizedek priesthood": "priesthood",
+      "aaronic priesthood": "priesthood",
+      "melchizedek": "priesthood",
+      "aaronic": "priesthood",
+      "prophets of god": "prophets",
+      "prophet": "prophets",
+      "prophets": "prophets",
+      "repent": "repentence",
+      "repentance": "repentence",
+      "forgiveness": "repentence",
+      "bread and water": "sacrament",
+      "the sacrament": "sacrament",
+      "scripture": "scriptures",
+      "scriptures": "scriptures",
+      "the scriptures": "scriptures",
+      "word of god": "scriptures",
+      "labor": "service",
+      "work": "service",
+      "responsibility": "service",
+      "personal responsibility": "service",
+      "fall of man": "the fall",
+      "the fall": "the fall",
+      "fall of mankind": "the fall",
+      "fall": "the fall",
+      "jesus christ": "jesus",
+      "christ": "jesus",
+      "savior": "jesus",
+      "redeemer": "jesus",
+      "lord": "jesus",
+      "fall of adam": "the fall",
+      "garden of eden": "the fall",
+      "lucifer": "the fall",
+      "original sin": "the fall",
+      "law of health": "word of wisdom",
+      "word of wisdom": "word of wisdom",
+      "apostles": "apostle",
+      "the godhead": "god head",
+      "revelation": "testimony",
+      "truth": "testimony",
+      "testify": "testimony",
+      "conversion": "testimony",
+      "devil": "hell",
+      "satan": "hell",
+      "damnation": "hell",
+      "torment": "hell",
+      "eternal marriage": "marriage",
+      "temple marriage": "marriage",
+      "fire and brimstone": "hell",
+      "celestial kingdom": "heaven",
+      "plan of salvation": "heaven",
+      "telestial": "heaven",
+      "exaltation": "heaven",
+      "immortality": "heaven",
+      "eternal life": "heaven",
+      "three degrees of glory": "heaven",
+      "missionaries": "missionary",
+      "preach": "missionary",
+      "preaching": "missionary",
+      "missionary work": "missionary",
+      "christmas": "nativity",
+      "church history": "pioneer",
+      "pioneers": "pioneer",
+      "handcarts": "pioneer",
+      "nauvoo": "pioneer",
+      "premortal existence": "premortal",
+      "council in heaven": "premortal",
+      "premortal life": "premortal",
+      "war in heaven": "premortal",
+      "easter": "resurrection",
+      "resurrected": "resurrection",
+      "crucifixion": "resurrection",
+      "cross": "resurrection",
+      "the resurrection": "resurrection",
+      "woman": "women",
+      "widow": "women",
+      "mary": "women",
+      "mothers": "women",
+      "mother": "women",
+      "motherhood": "women",
+      "daughter": "women",
+      "daughters": "women",
+      "relief society": "women",
+      "daughters of god": "women",
+      "the great apostasy": "apostasy",
+      "restoration": "apostasy",
+      "first vision": "apostasy",
+      "the first vision": "apostasy",
+      "the restoration": "apostasy",
+      "apostasy and restoration": "apostasy",
+      "first vision": "apostasy",
+      "family home evening": "family",
+      "family prayer": "family",
+      "eternal family": "family",
+      "virtue": "chastity",
+      "chaste": "chastity",
+      "virtuous": "chastity",
+      "child": "children",
+      "primary": "children",
+      "primary children": "children",
+      "covenant": "covenants",
+      "temple covenant": "covenants",
+      "temple covenants": "covenants",
+      "baptismal covenant": "covenants",
+      "baptismal covenants": "covenants",
+      "life after death": "death",
+      "die": "death",
+      "mortality": "death",
+      "family history": "genealogy",
+      "ancestors": "genealogy",
+      "family tree": "genealogy",
+      "spiritual gifts": "gifts of the spirit",
+      "gifts of the spirit": "gifts of the spirit",
+      "good news": "gospel",
+      "good news of the gospel": "gospel",
+      "the gospel": "gospel",
+      "gospel": "gospel",
+      "plan of salvation": "gospel",
+      "the plan of salvation": "gospel",
+      "happy": "happiness",
+      "joy": "happiness",
+      "plan of happiness": "happiness",
+      "miracle": "miracles",
+      "self reliance": "self reliance",
+      "self-reliance": "self reliance",
+      "second coming": "second coming",
+      "the second coming": "second coming",
+      "miracles": "miracles",
+      "miracle": "miracles",
+    };
+    var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+    str = str.replace(re, function(matched) {
+      return mapObj[matched.toLowerCase()];
+    });
+  totalWords2.push([str, num]);
+
+  }
+
+}
+combine(totalWords);
+totalWords2.sort(function(a, b){return b[1]-a[1]});
+console.log(totalWords2);
+
+
+let arr1 = [];
+let arr2 = [];
+let arr3 = [];
+let arr4 = [];
+let arr5 = [];
+let arr6 = [];
+let arr7 = [];
+let arr8 = [];
+let arr9 = [];
+let arr10 = [];
+let arr11 = [];
+let arr12 = [];
+let arr13 = [];
+let arr14 = [];
+let arr15 = [];
+let arr16 = [];
+let arr17 = [];
+let arr18 = [];
+let arr19 = [];
+let arr20 = [];
+let arr21 = [];
+let arr22 = [];
+let arr23 = [];
+let arr24 = [];
+let arr25 = [];
+
+for(var i=0; i<totalWords2.length;i++) {
+    if (totalWords2[i][0] === totalWords2[0][0]) { arr1.push(totalWords2[i]);
+} else if (totalWords2[i][0] === totalWords2[1][0]) {
+  arr2.push(totalWords2[i]);
+} else if (totalWords2[i][0] === totalWords2[2][0]) {
+  arr3.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[3][0]) {
+  arr4.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[4][0]) {
+  arr5.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[5][0]) {
+  arr6.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[6][0]) {
+  arr7.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[7][0]) {
+  arr8.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[8][0]) {
+  arr9.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[9][0]) {
+  arr10.push(totalWords2[i])
+}  else if (totalWords2[i][0] === totalWords2[10][0]) {
+  arr11.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[11][0]) {
+  arr12.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[12][0]) {
+  arr13.push(totalWords2[i])
+}  else if (totalWords2[i][0] === totalWords2[13][0]) {
+  arr14.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[14][0]) {
+  arr15.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[15][0]) {
+  arr16.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[16][0]) {
+  arr17.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[17][0]) {
+  arr18.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[18][0]) {
+  arr19.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[19][0]) {
+  arr20.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[20][0]) {
+  arr21.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[21][0]) {
+  arr22.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[22][0]) {
+  arr23.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[23][0]) {
+  arr24.push(totalWords2[i])
+} else if (totalWords2[i][0] === totalWords2[24][0]) {
+  arr25.push(totalWords2[i])
+}
+}
+
+
+let duplicateSum = [];
+
+function addFunc (x) {
+  let toAdd = [];
+  let newVal = ["", 0];
+  for (var i = 0; i < x.length; i++) {
+    toAdd.push(x[i][1]);
+    let sum = toAdd.reduce((a, b) => a + b, 0);
+    newVal[0] = x[i][0];
+    newVal[1] = sum;
+    duplicateSum.push(newVal);
+  }
+}
+addFunc(arr1);
+addFunc(arr2);
+addFunc(arr3);
+addFunc(arr4);
+addFunc(arr5);
+addFunc(arr6);
+addFunc(arr7);
+addFunc(arr8);
+addFunc(arr9);
+addFunc(arr10);
+addFunc(arr11);
+addFunc(arr12);
+addFunc(arr13);
+addFunc(arr14);
+addFunc(arr15);
+addFunc(arr16);
+addFunc(arr17);
+addFunc(arr18);
+addFunc(arr19);
+addFunc(arr20);
+addFunc(arr21);
+addFunc(arr22);
+addFunc(arr23);
+addFunc(arr24);
+addFunc(arr25);
+
+var finalSum = [];
+$.each(duplicateSum, function(i, el){
+    if($.inArray(el, finalSum) === -1) finalSum.push(el);
+});
+
+console.log(finalSum);
+
+let yearsArray = [];
+let a = parseInt(talk1[5]);
+let b = parseInt(talk2[5]);
+let c = parseInt(talk3[5]);
+let d = parseInt(talk4[5]);
+let e = parseInt(talk5[5]);
+yearsArray.push(a);
+yearsArray.push(b);
+yearsArray.push(c);
+yearsArray.push(d);
+yearsArray.push(e);
+let latest = Math.max(a, b, c, d, e);
+let oldest = Math.min(a, b, c, d, e);
+console.log(oldest);
+console.log(latest);
+
+let decades = [];
+let ninety = [];
+let thousands = [];
+let eighties = [];
+let seventies = [];
+let previous = [];
+
+function determineDecade (x) {
+for (var i = 0; i < x.length; i++) {
+  if (x[i] > 1999) {
+    thousands.push(x[i])
+  } else if (x[i] > 1989 && x[i]< 2000) {
+    ninety.push(x[i])
+  } else if (x[i] > 1979 && x[i]< 1990) {
+    eighties.push(x[i])
+  } else if (x[i] > 1969 && x[i]< 1980) {
+    seventies.push(x[i])
+  } else {
+    previous.push(x[i])
+  }
+
+}
+}
+determineDecade(yearsArray);
+
+let h = ninety.length;
+let m = thousands.length;
+let j = eighties.length;
+let k = seventies.length;
+let l = previous.length;
+let decadeMost = Math.max(h, m, j, k, l);
+let decadeLeast = Math.min(h, m, j, k, l);
+let mostFrequent = "";
+let leastFrequent = "";
+
+if (decadeMost == h) {
+  mostFrequent = 1990;
+}
+if (decadeMost == m) {
+  mostFrequent = 2000;
+}
+if (decadeMost == j) {
+  mostFrequent = 1980;
+}
+if (decadeMost == k) {
+  mostFrequent = 1970;
+}
+if (decadeMost == l) {
+  mostFrequent = 1960;
+}
+
+if (decadeLeast == h) {
+  leastFrequent = 1990;
+}
+if (decadeLeast == m) {
+  leastFrequent = 2000;
+}
+if (decadeLeast == j) {
+  leastFrequent = 1980;
+}
+if (decadeLeast == k) {
+  leastFrequent = 1970;
+}
+if (decadeLeast == l) {
+  leastFrequent = 1960;
+}
+
+let declineOrincline = "";
+if (leastFrequent > mostFrequent) {
+  declineOrincline = "This indicates that there may be a decreast of importance being placed on this topic as time goes on.";
+}
+if (leastFrequent < mostFrequent) {
+  declineOrincline = "This indicates that there may be an increase of importance being placed on this topic as time goes on.";
+}
+
+
+let byuData = `
+  <ol>
+  <label> Statistics on selected BYU Speeches </label>
+    <li>Most talks ranged between about ${oldest} and ${latest}</li>
+    <li>The majority of talks on this subject seemed to appeared to be clustered in the ${mostFrequent}'s</li>
+    <li>While the topic seems to have been addressed less frequently in the ${leastFrequent}'s</li>
+    <li>${declineOrincline}</li>
+    <li>In addition, based on selected talks, the 10 most popular sub-themes within each talk are the following:</li>
+    <li>1) ${finalSum[0][0]}, which appeared ${finalSum[0][1]} times across selected talks.</li>
+    <li>2) ${finalSum[1][0]} was referenced a total of ${finalSum[1][1]} times.</li>
+    <li>3) ${finalSum[2][0]} was third, being mentioned a total of ${finalSum[2][1]} times.</li>
+    <li>4) ${finalSum[3][0]} was also a common sub-theme in thes talks, being referenced ${finalSum[3][1]} times.</li>
+    <li>5) ${finalSum[4][0]} was mentioned ${finalSum[4][1]} times.</li>
+    <li>6) ${finalSum[5][0]} was mentioned ${finalSum[5][1]} times.</li>
+    <li>7) ${finalSum[6][0]} was referred to ${finalSum[6][1]} times.</li>
+    <li>8) ${finalSum[7][0]} was referred to ${finalSum[7][1]} times.</li>
+    <li>9) ${finalSum[8][0]} was found ${finalSum[8][1]} times.</li>
+    <li>10) ${finalSum[9][0]} only appeared ${finalSum[9][1]} times.</li>
+  </ol>
+`
+
+
+document.getElementById('byu_Results').innerHTML = byuData;
 
 
               let markup =
@@ -2363,9 +2883,6 @@ console.log(toDoQuoteArray);
 
 
              `
-
-
-
 
               document.getElementById('updatediv3').innerHTML = markup;
             }
@@ -2663,6 +3180,704 @@ console.log(toDoQuoteArray);
             for (var i = 0; i < 1; i++) {
               let api = data;
 
+              let startingArray = [];
+
+              let generalConference = data;
+              let gencon_talk1 = [];
+              let gencon_talk2 = [];
+              let gencon_talk3 = [];
+              let gencon_talk4 = [];
+              let gencon_talk5 = [];
+
+              for (var i = 0; i < generalConference.length - 4; i++) {
+                      author1 = generalConference[0].author;
+                      gencon_talk1.push(author1);
+                      position1 = generalConference[0].position;
+                      gencon_talk1.push(position1);
+                      talk_title1 = generalConference[0].talk_title;
+                      gencon_talk1.push(talk_title1);
+                      year1 = generalConference[0].year;
+                      gencon_talk1.push(year1);
+                      paragraph11 = generalConference[0].paragraph1;
+                      paragraph21 = generalConference[0].paragraph2;
+                      paragraph31 = generalConference[0].paragraph3;
+                      paragraph41 = generalConference[0].paragraph4;
+                      paragraph51 = generalConference[0].paragraph5;
+                      paragraph61 = generalConference[0].paragraph6;
+                      paragraph71 = generalConference[0].paragraph7;
+                      paragraph81 = generalConference[0].paragraph8;
+                      paragraph91 = generalConference[0].paragraph9;
+                      paragraph101 = generalConference[0].paragraph10;
+                      paragraphs1 = paragraph11.concat(paragraph21, paragraph31, paragraph41, paragraph51, paragraph61, paragraph61, paragraph71, paragraph81, paragraph91, paragraph101);
+                      paragraphs1.toString();
+                      gencon_talk1.push(paragraphs1);
+                    }
+
+                for (var i = 0; i < generalConference.length; i++) {
+                      author2 = generalConference[1].author;
+                      gencon_talk2.push(author2);
+                      position2 = generalConference[1].position;
+                      gencon_talk2.push(position2);
+                      talk_title2 = generalConference[1].talk_title;
+                      gencon_talk2.push(talk_title2);
+                      year2 = generalConference[1].year;
+                      gencon_talk2.push(year2);
+                      paragraph12 = generalConference[1].paragraph1;
+                      paragraph22 = generalConference[1].paragraph2;
+                      paragraph32 = generalConference[1].paragraph3;
+                      paragraph42 = generalConference[1].paragraph4;
+                      paragraph52 = generalConference[1].paragraph5;
+                      paragraph62 = generalConference[1].paragraph6;
+                      paragraph72 = generalConference[1].paragraph7;
+                      paragraph82 = generalConference[1].paragraph8;
+                      paragraph92 = generalConference[1].paragraph9;
+                      paragraph102 = generalConference[1].paragraph10;
+                      paragraphs2 = paragraph12.concat(paragraph22, paragraph32, paragraph42, paragraph52, paragraph62, paragraph62, paragraph72, paragraph82, paragraph92, paragraph102);
+                      paragraphs2.toString();
+                      gencon_talk2.push(paragraphs2);
+                    }
+
+                    for (var i = 0; i < generalConference.length; i++) {
+                      author3 = generalConference[2].author;
+                      gencon_talk3.push(author3);
+                      position3 = generalConference[2].position;
+                      gencon_talk3.push(position3);
+                      talk_title3 = generalConference[2].talk_title;
+                      gencon_talk3.push(talk_title3);
+                      year3 = generalConference[2].year;
+                      gencon_talk3.push(year3);
+                      paragraph13 = generalConference[2].paragraph1;
+                      paragraph23 = generalConference[2].paragraph2;
+                      paragraph33 = generalConference[2].paragraph3;
+                      paragraph43 = generalConference[2].paragraph4;
+                      paragraph53 = generalConference[2].paragraph5;
+                      paragraph63 = generalConference[2].paragraph6;
+                      paragraph73 = generalConference[2].paragraph7;
+                      paragraph83 = generalConference[2].paragraph8;
+                      paragraph93 = generalConference[2].paragraph9;
+                      paragraph103 = generalConference[2].paragraph10;
+                      paragraphs3 = paragraph13.concat(paragraph23, paragraph33, paragraph43, paragraph53, paragraph63, paragraph63, paragraph73, paragraph83, paragraph93, paragraph103);
+                      paragraphs3.toString();
+                      gencon_talk3.push(paragraphs3);
+                    }
+
+                  for (var i = 0; i < generalConference.length; i++) {
+                      author4 = generalConference[3].author;
+                      gencon_talk4.push(author4);
+                      position4 = generalConference[3].position;
+                      gencon_talk4.push(position4);
+                      talk_title4 = generalConference[3].talk_title;
+                      gencon_talk4.push(talk_title4);
+                      year4 = generalConference[3].year;
+                      gencon_talk4.push(year4);
+                      paragraph14 = generalConference[3].paragraph1;
+                      paragraph24 = generalConference[3].paragraph2;
+                      paragraph34 = generalConference[3].paragraph3;
+                      paragraph44 = generalConference[3].paragraph4;
+                      paragraph54 = generalConference[3].paragraph5;
+                      paragraph64 = generalConference[3].paragraph6;
+                      paragraph74 = generalConference[3].paragraph7;
+                      paragraph84 = generalConference[3].paragraph8;
+                      paragraph94 = generalConference[3].paragraph9;
+                      paragraph104 = generalConference[3].paragraph10;
+                      paragraphs4 = paragraph14.concat(paragraph24, paragraph34, paragraph44, paragraph54, paragraph64, paragraph64, paragraph74, paragraph84, paragraph94, paragraph101);
+                      paragraphs4.toString();
+                      gencon_talk4.push(paragraphs4);
+                    }
+
+              for (var i = 0; i < generalConference.length; i++) {
+                      author5 = generalConference[4].author;
+                      gencon_talk5.push(author5);
+                      position5 = generalConference[4].position;
+                      gencon_talk5.push(position5);
+                      talk_title5 = generalConference[4].talk_title;
+                      gencon_talk5.push(talk_title5);
+                      year5 = generalConference[4].year;
+                      gencon_talk5.push(year5);
+                      paragraph15 = generalConference[4].paragraph1;
+                      paragraph25 = generalConference[4].paragraph2;
+                      paragraph35 = generalConference[4].paragraph3;
+                      paragraph45 = generalConference[4].paragraph4;
+                      paragraph55 = generalConference[4].paragraph5;
+                      paragraph65 = generalConference[4].paragraph6;
+                      paragraph75 = generalConference[4].paragraph7;
+                      paragraph85 = generalConference[4].paragraph8;
+                      paragraph95 = generalConference[4].paragraph9;
+                      paragraph105 = generalConference[4].paragraph10;
+                      paragraphs5 = paragraph15.concat(paragraph25, paragraph35, paragraph45, paragraph55, paragraph65, paragraph65, paragraph75, paragraph85, paragraph95, paragraph105);
+                      paragraphs5.toString();
+                      gencon_talk5.push(paragraphs5);
+                    }
+
+
+                    let year_1 = gencon_talk1[3];
+                    let year_2 = gencon_talk2[3];
+                    let year_3 = gencon_talk3[3];
+                    let year_4 = gencon_talk4[3];
+                    let year_5 = gencon_talk5[3];
+                    let pa1 = gencon_talk1[4];
+                    let pa2 = gencon_talk2[4];
+                    let pa3 = gencon_talk3[4];
+                    let pa4 = gencon_talk4[4];
+                    let pa5 = gencon_talk5[4];
+
+
+                    let talkObj1 = {
+                      "talk_text": pa1,
+                      "talk_date": year_1,
+                    };
+
+                    let talkObj2 = {
+                      "talk_text": pa2,
+                      "talk_date": year_2,
+                    };
+
+                    let talkObj3 = {
+                      "talk_text": pa3,
+                      "talk_date": year_3,
+                    };
+
+                    let talkObj4 = {
+                      "talk_text": pa4,
+                      "talk_date": year_4,
+                    };
+
+                    let talkObj5 = {
+                      "talk_text": pa5,
+                      "talk_date": year_5,
+                    };
+
+              startingArray.push(talkObj1);
+              startingArray.push(talkObj2);
+              startingArray.push(talkObj3);
+              startingArray.push(talkObj4);
+              startingArray.push(talkObj5);
+              console.log(startingArray);
+
+
+              function getResults (x) {
+
+
+
+              let frequentWords = [
+                "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
+              ];
+
+              var sorted = [];
+              for (var i = 0; i < frequentWords.length; i++) {
+                sorted.push(frequentWords[i].toLowerCase());
+              }
+              sorted.sort();
+
+              var wordCounts = {};
+              var words = x.talk_text.split(/\b/);
+              for(var i = 0; i < words.length; i++)
+              wordCounts["" + words[i]] = (wordCounts["" + words[i]] || 0) + 1;
+
+              let result = Object.keys(wordCounts).map(function(key) {
+                return [String(key), wordCounts[key]];
+              });
+
+              var lowercaseResults = [];
+              for (var i = 0; i < result.length; i++) {
+                result[i][0].toLowerCase();
+                lowercaseResults.push(result[i]);
+              }
+              lowercaseResults.sort();
+
+              let newWordArray = [];
+               function pushWords (y, z) {
+                 for (var i = 0; i < z.length; i++) {
+                   if (y.some(v => z[i][0].includes(v)) == true) {
+                     newWordArray.push(z[i])
+                   }
+                 }
+               }
+               pushWords(sorted, lowercaseResults);
+
+              newWordArray.sort(function(a, b){return a[1]-b[1]});
+              let talk1 = newWordArray.slice(Math.max(newWordArray.length - 5));
+
+
+              let date = x.talk_date;
+              let lastFive = date.substr(date.length - 4);
+              parseInt(lastFive);
+              talk1.push(lastFive);
+              return talk1;
+            }
+            let talk1 = getResults(startingArray[0]);
+            let talk2 = getResults(startingArray[1]);
+            let talk3 = getResults(startingArray[2]);
+            let talk4 = getResults(startingArray[3]);
+            let talk5 = getResults(startingArray[4]);
+
+            let totalWords = [];
+            let totalWords2 = [];
+            let test = [];
+            let word = [];
+            let number = [];
+
+            totalWords.push(talk1[0], talk2[0], talk3[0], talk4[0], talk5[0], talk1[1], talk2[1], talk3[1], talk4[1], talk5[1], talk1[2], talk2[2], talk3[2], talk4[2], talk5[2], talk1[3], talk2[3], talk3[3], talk4[3], talk5[3], talk1[4], talk2[4], talk3[4], talk4[4], talk5[4]);
+
+            totalWords.sort(function(a, b){return a[1]-b[1]});
+
+            function combine (x) {
+            for (var i = 0; i < x.length; i++) {
+            var str = x[i][0];
+            var num = x[i][1];
+            var mapObj = {
+            "the gathering of israel" : "gathering of israel",
+            "gathering of israel" : "gathering of israel",
+            "the gathering" : "gathering of israel",
+            "the lords covenant people" : "lords covenant people",
+            "abrahamic covenant" : "lords covenant people",
+            "covenant of abraham" : "lords covenant people",
+            "eternal life and exaltation" : "exaltation",
+            "exalted" : "exaltation",
+            "exaltation" : "exaltation",
+            "patience" : "patience",
+            "enduring" : "patience",
+            "endure to the end" : "patience",
+            "the final judgement" : "final judgement",
+            "final judgement" : "final judgement",
+            "judgement day" : "final judgement",
+            "judgement" : "final judgement",
+            "sabbath day" : "sabbath day",
+            "sabbath" : "sabbath day",
+            "the sabbath day" : "sabbath day",
+            "the sabbath" : "sabbath day",
+            "developing talents" : "talents",
+            "talents" : "talents",
+            "talent" : "talents",
+            "animal sacrifices" : "sacrifice",
+            "sacrifices" : "sacrifice",
+            "sacrifice" : "sacrifice",
+            "thankful": "gratitude",
+            "thanks": "gratitude",
+            "grateful": "gratitude",
+            "gratitude": "gratitude",
+            "agency": "agency",
+            "free agency": "agency",
+            "the atonement": "atonement",
+            "baptize": "baptism",
+            "book of mormon": "book of mormon",
+            "love": "charity",
+            "charitable": "charity",
+            "pure love": "charity",
+            "pure love of christ": "charity",
+            "created": "creation",
+            "religion": "church",
+            "church organization": "church",
+            "d&c": "doctrine covenants",
+            "events": "events",
+            "heavenly father": "god",
+            "father in heaven": "god",
+            "god the father": "god",
+            "father": "god",
+            "belief": "faith",
+            "hope": "faith",
+            "holy spirit": "holy ghost",
+            "holy ghost": "holy ghost",
+            "the holy ghost": "holy ghost",
+            "spirit": "holy ghost",
+            "the spirit": "holy ghost",
+            "honesty": "honesty",
+            "honest": "honesty",
+            "lie": "honesty",
+            "steal": "honesty",
+            "integrity": "honesty",
+            "bible": "new testament",
+            "new testament": "new testament",
+            "obedience": "obedience",
+            "follow": "obedience",
+            "submission": "obedience",
+            "submissive": "obedience",
+            "old testament": "old testament",
+            "people": "people",
+            "melchizedek priesthood": "priesthood",
+            "aaronic priesthood": "priesthood",
+            "melchizedek": "priesthood",
+            "aaronic": "priesthood",
+            "prophets of god": "prophets",
+            "prophet": "prophets",
+            "prophets": "prophets",
+            "repent": "repentence",
+            "repentance": "repentence",
+            "forgiveness": "repentence",
+            "bread and water": "sacrament",
+            "the sacrament": "sacrament",
+            "scripture": "scriptures",
+            "scriptures": "scriptures",
+            "the scriptures": "scriptures",
+            "word of god": "scriptures",
+            "labor": "service",
+            "work": "service",
+            "responsibility": "service",
+            "personal responsibility": "service",
+            "fall of man": "the fall",
+            "the fall": "the fall",
+            "fall of mankind": "the fall",
+            "fall": "the fall",
+            "jesus christ": "jesus",
+            "christ": "jesus",
+            "savior": "jesus",
+            "redeemer": "jesus",
+            "lord": "jesus",
+            "fall of adam": "the fall",
+            "garden of eden": "the fall",
+            "lucifer": "the fall",
+            "original sin": "the fall",
+            "law of health": "word of wisdom",
+            "word of wisdom": "word of wisdom",
+            "apostles": "apostle",
+            "the godhead": "god head",
+            "revelation": "testimony",
+            "truth": "testimony",
+            "testify": "testimony",
+            "conversion": "testimony",
+            "devil": "hell",
+            "satan": "hell",
+            "damnation": "hell",
+            "torment": "hell",
+            "eternal marriage": "marriage",
+            "temple marriage": "marriage",
+            "fire and brimstone": "hell",
+            "celestial kingdom": "heaven",
+            "plan of salvation": "heaven",
+            "telestial": "heaven",
+            "exaltation": "heaven",
+            "immortality": "heaven",
+            "eternal life": "heaven",
+            "three degrees of glory": "heaven",
+            "missionaries": "missionary",
+            "preach": "missionary",
+            "preaching": "missionary",
+            "missionary work": "missionary",
+            "christmas": "nativity",
+            "church history": "pioneer",
+            "pioneers": "pioneer",
+            "handcarts": "pioneer",
+            "nauvoo": "pioneer",
+            "premortal existence": "premortal",
+            "council in heaven": "premortal",
+            "premortal life": "premortal",
+            "war in heaven": "premortal",
+            "easter": "resurrection",
+            "resurrected": "resurrection",
+            "crucifixion": "resurrection",
+            "cross": "resurrection",
+            "the resurrection": "resurrection",
+            "woman": "women",
+            "widow": "women",
+            "mary": "women",
+            "mothers": "women",
+            "mother": "women",
+            "motherhood": "women",
+            "daughter": "women",
+            "daughters": "women",
+            "relief society": "women",
+            "daughters of god": "women",
+            "the great apostasy": "apostasy",
+            "restoration": "apostasy",
+            "first vision": "apostasy",
+            "the first vision": "apostasy",
+            "the restoration": "apostasy",
+            "apostasy and restoration": "apostasy",
+            "first vision": "apostasy",
+            "family home evening": "family",
+            "family prayer": "family",
+            "eternal family": "family",
+            "virtue": "chastity",
+            "chaste": "chastity",
+            "virtuous": "chastity",
+            "child": "children",
+            "primary": "children",
+            "primary children": "children",
+            "covenant": "covenants",
+            "temple covenant": "covenants",
+            "temple covenants": "covenants",
+            "baptismal covenant": "covenants",
+            "baptismal covenants": "covenants",
+            "life after death": "death",
+            "die": "death",
+            "mortality": "death",
+            "family history": "genealogy",
+            "ancestors": "genealogy",
+            "family tree": "genealogy",
+            "spiritual gifts": "gifts of the spirit",
+            "gifts of the spirit": "gifts of the spirit",
+            "good news": "gospel",
+            "good news of the gospel": "gospel",
+            "the gospel": "gospel",
+            "gospel": "gospel",
+            "plan of salvation": "gospel",
+            "the plan of salvation": "gospel",
+            "happy": "happiness",
+            "joy": "happiness",
+            "plan of happiness": "happiness",
+            "miracle": "miracles",
+            "self reliance": "self reliance",
+            "self-reliance": "self reliance",
+            "second coming": "second coming",
+            "the second coming": "second coming",
+            "miracles": "miracles",
+            "miracle": "miracles",
+            };
+            var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
+            str = str.replace(re, function(matched) {
+            return mapObj[matched.toLowerCase()];
+            });
+            totalWords2.push([str, num]);
+
+            }
+
+            }
+            combine(totalWords);
+            totalWords2.sort(function(a, b){return b[1]-a[1]});
+            console.log(totalWords2);
+
+
+            let arr1 = [];
+            let arr2 = [];
+            let arr3 = [];
+            let arr4 = [];
+            let arr5 = [];
+            let arr6 = [];
+            let arr7 = [];
+            let arr8 = [];
+            let arr9 = [];
+            let arr10 = [];
+            let arr11 = [];
+            let arr12 = [];
+            let arr13 = [];
+            let arr14 = [];
+            let arr15 = [];
+            let arr16 = [];
+            let arr17 = [];
+            let arr18 = [];
+            let arr19 = [];
+            let arr20 = [];
+            let arr21 = [];
+            let arr22 = [];
+            let arr23 = [];
+            let arr24 = [];
+            let arr25 = [];
+
+            for(var i=0; i<totalWords2.length;i++) {
+            if (totalWords2[i][0] === totalWords2[0][0]) { arr1.push(totalWords2[i]);
+            } else if (totalWords2[i][0] === totalWords2[1][0]) {
+            arr2.push(totalWords2[i]);
+            } else if (totalWords2[i][0] === totalWords2[2][0]) {
+            arr3.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[3][0]) {
+            arr4.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[4][0]) {
+            arr5.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[5][0]) {
+            arr6.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[6][0]) {
+            arr7.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[7][0]) {
+            arr8.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[8][0]) {
+            arr9.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[9][0]) {
+            arr10.push(totalWords2[i])
+            }  else if (totalWords2[i][0] === totalWords2[10][0]) {
+            arr11.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[11][0]) {
+            arr12.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[12][0]) {
+            arr13.push(totalWords2[i])
+            }  else if (totalWords2[i][0] === totalWords2[13][0]) {
+            arr14.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[14][0]) {
+            arr15.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[15][0]) {
+            arr16.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[16][0]) {
+            arr17.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[17][0]) {
+            arr18.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[18][0]) {
+            arr19.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[19][0]) {
+            arr20.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[20][0]) {
+            arr21.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[21][0]) {
+            arr22.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[22][0]) {
+            arr23.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[23][0]) {
+            arr24.push(totalWords2[i])
+            } else if (totalWords2[i][0] === totalWords2[24][0]) {
+            arr25.push(totalWords2[i])
+            }
+            }
+
+
+            let duplicateSum = [];
+
+            function addFunc (x) {
+            let toAdd = [];
+            let newVal = ["", 0];
+            for (var i = 0; i < x.length; i++) {
+            toAdd.push(x[i][1]);
+            let sum = toAdd.reduce((a, b) => a + b, 0);
+            newVal[0] = x[i][0];
+            newVal[1] = sum;
+            duplicateSum.push(newVal);
+            }
+            }
+            addFunc(arr1);
+            addFunc(arr2);
+            addFunc(arr3);
+            addFunc(arr4);
+            addFunc(arr5);
+            addFunc(arr6);
+            addFunc(arr7);
+            addFunc(arr8);
+            addFunc(arr9);
+            addFunc(arr10);
+            addFunc(arr11);
+            addFunc(arr12);
+            addFunc(arr13);
+            addFunc(arr14);
+            addFunc(arr15);
+            addFunc(arr16);
+            addFunc(arr17);
+            addFunc(arr18);
+            addFunc(arr19);
+            addFunc(arr20);
+            addFunc(arr21);
+            addFunc(arr22);
+            addFunc(arr23);
+            addFunc(arr24);
+            addFunc(arr25);
+
+            var finalSum = [];
+            $.each(duplicateSum, function(i, el){
+            if($.inArray(el, finalSum) === -1) finalSum.push(el);
+            });
+
+            console.log(finalSum);
+
+            let yearsArray = [];
+            let a = parseInt(talk1[5]);
+            let b = parseInt(talk2[5]);
+            let c = parseInt(talk3[5]);
+            let d = parseInt(talk4[5]);
+            let e = parseInt(talk5[5]);
+            yearsArray.push(a);
+            yearsArray.push(b);
+            yearsArray.push(c);
+            yearsArray.push(d);
+            yearsArray.push(e);
+            let latest = Math.max(a, b, c, d, e);
+            let oldest = Math.min(a, b, c, d, e);
+            console.log(oldest);
+            console.log(latest);
+
+            let decades = [];
+            let ninety = [];
+            let thousands = [];
+            let eighties = [];
+            let seventies = [];
+            let previous = [];
+
+            function determineDecade (x) {
+            for (var i = 0; i < x.length; i++) {
+            if (x[i] > 1999) {
+            thousands.push(x[i])
+            } else if (x[i] > 1989 && x[i]< 2000) {
+            ninety.push(x[i])
+            } else if (x[i] > 1979 && x[i]< 1990) {
+            eighties.push(x[i])
+            } else if (x[i] > 1969 && x[i]< 1980) {
+            seventies.push(x[i])
+            } else {
+            previous.push(x[i])
+            }
+
+            }
+            }
+            determineDecade(yearsArray);
+
+            let h = ninety.length;
+            let m = thousands.length;
+            let j = eighties.length;
+            let k = seventies.length;
+            let l = previous.length;
+            let decadeMost = Math.max(h, m, j, k, l);
+            let decadeLeast = Math.min(h, m, j, k, l);
+            let mostFrequent = "";
+            let leastFrequent = "";
+
+            if (decadeMost == h) {
+            mostFrequent = 1990;
+            }
+            if (decadeMost == m) {
+            mostFrequent = 2000;
+            }
+            if (decadeMost == j) {
+            mostFrequent = 1980;
+            }
+            if (decadeMost == k) {
+            mostFrequent = 1970;
+            }
+            if (decadeMost == l) {
+            mostFrequent = 1960;
+            }
+
+            if (decadeLeast == h) {
+            leastFrequent = 1990;
+            }
+            if (decadeLeast == m) {
+            leastFrequent = 2000;
+            }
+            if (decadeLeast == j) {
+            leastFrequent = 1980;
+            }
+            if (decadeLeast == k) {
+            leastFrequent = 1970;
+            }
+            if (decadeLeast == l) {
+            leastFrequent = 1960;
+            }
+
+            let declineOrincline = "";
+            if (leastFrequent > mostFrequent) {
+            declineOrincline = "This indicates that there may be a decreast of importance being placed on this topic as time goes on.";
+            }
+            if (leastFrequent < mostFrequent) {
+            declineOrincline = "This indicates that there may be an increase of importance being placed on this topic as time goes on.";
+            }
+
+
+            let genCoData = `
+            <ol>
+            <label> Statistics on selected General Coference Talks </label>
+            <li>Most talks ranged between about ${oldest} and ${latest}</li>
+            <li>The majority of talks on this subject seemed to appeared to be clustered in the ${mostFrequent}'s</li>
+            <li>While the topic seems to have been addressed less frequently in the ${leastFrequent}'s</li>
+            <li>${declineOrincline}</li>
+            <li>In addition, based on selected talks, the 10 most popular sub-themes within each talk are the following:</li>
+            <li>1) ${finalSum[0][0]}, which appeared ${finalSum[0][1]} times across selected talks.</li>
+            <li>2) ${finalSum[1][0]} was referenced a total of ${finalSum[1][1]} times.</li>
+            <li>3) ${finalSum[2][0]} was third, being mentioned a total of ${finalSum[2][1]} times.</li>
+            <li>4) ${finalSum[3][0]} was also a common sub-theme in thes talks, being referenced ${finalSum[3][1]} times.</li>
+            <li>5) ${finalSum[4][0]} was mentioned ${finalSum[4][1]} times.</li>
+            <li>6) ${finalSum[5][0]} was mentioned ${finalSum[5][1]} times.</li>
+            <li>7) ${finalSum[6][0]} was referred to ${finalSum[6][1]} times.</li>
+            <li>8) ${finalSum[7][0]} was referred to ${finalSum[7][1]} times.</li>
+            <li>9) ${finalSum[8][0]} was found ${finalSum[8][1]} times.</li>
+            <li>10) ${finalSum[9][0]} only appeared ${finalSum[9][1]} times.</li>
+            </ol>
+            `
+
+
+            document.getElementById('genConf_Results').innerHTML = genCoData;
 
               let markup =
                 `
@@ -2792,12 +4007,7 @@ console.log(toDoQuoteArray);
           <p class="genconpara">${data[4].paragraph9}</p>
           <p class="genconpara">${data[4].paragraph10}</p>
           </div>
-
-
-
              `
-
-
 
 
               document.getElementById('updatediv2').innerHTML = markup;
@@ -2810,328 +4020,17 @@ console.log(toDoQuoteArray);
 
     })
   </script>
-
-  <script>
-    $(document).ready(function() {
-      console.log("talking");
-
-      let searchInput = document.getElementById('searchInput');
-      let bofmSearch = document.getElementById('bofmSearch');
-      bofmSearch.onclick = searchAPI;
-      console.log(searchInput);
-      console.log(bofmSearch);
-
-
-
-      function searchAPI() {
-
-        let searchResults = searchInput.value;
-
-        var str = searchInput.value;
-
-        var mapObj = {
-          "the gathering of israel" : "gatheringofisrael",
-          "gathering of israel" : "gatheringofisrael",
-          "the gathering" : "gatheringofisrael",
-          "the lords covenant people" : "lordscovenantpeople",
-          "abrahamic covenant" : "lordscovenantpeople",
-          "covenant of abraham" : "lordscovenantpeople",
-          "eternal life and exaltation" : "exaltation",
-          "exalted" : "exaltation",
-          "exaltation" : "exaltation",
-          "patience" : "patience",
-          "enduring" : "patience",
-          "endure to the end" : "patience",
-          "the final judgement" : "finaljudgement",
-          "final judgement" : "finaljudgement",
-          "judgement day" : "finaljudgement",
-          "judgement" : "finaljudgement",
-          "sabbath day" : "sabbathday",
-          "sabbath" : "sabbathday",
-          "the sabbath day" : "sabbathday",
-          "the sabbath" : "sabbathday",
-          "developing talents" : "talents",
-          "talents" : "talents",
-          "talent" : "talents",
-          "animal sacrifices" : "sacrifice",
-          "sacrifices" : "sacrifice",
-          "sacrifice" : "sacrifice",
-          "thankful": "gratitude",
-          "thanks": "gratitude",
-          "grateful": "gratitude",
-          "gratitude": "gratitude",
-          "agency": "agency",
-          "free agency": "agency",
-          "the atonement": "atonement",
-          "baptize": "baptism",
-          "book of mormon": "bookofmormon",
-          "love": "charity",
-          "charitable": "charity",
-          "pure love": "charity",
-          "pure love of christ": "charity",
-          "created": "creation",
-          "religion": "church",
-          "church organization": "church",
-          "d&c": "doctrinecovenants",
-          "events": "events",
-          "heavenly father": "god",
-          "father in heaven": "god",
-          "god the father": "god",
-          "father": "god",
-          "belief": "faith",
-          "hope": "faith",
-          "holy spirit": "holyghost",
-          "holy ghost": "holyghost",
-          "the holy ghost": "holyghost",
-          "spirit": "holyghost",
-          "the spirit": "holyghost",
-          "honesty": "honesty",
-          "honest": "honesty",
-          "lie": "honesty",
-          "steal": "honesty",
-          "integrity": "honesty",
-          "bible": "newtestament",
-          "new testament": "newtestament",
-          "obedience": "obedience",
-          "follow": "obedience",
-          "submission": "obedience",
-          "submissive": "obedience",
-          "old testament": "oldtestament",
-          "people": "people",
-          "melchizedek priesthood": "priesthood",
-          "aaronic priesthood": "priesthood",
-          "melchizedek": "priesthood",
-          "aaronic": "priesthood",
-          "prophets of god": "prophets",
-          "prophet": "prophets",
-          "prophets": "prophets",
-          "repent": "repentence",
-          "repentance": "repentence",
-          "forgiveness": "repentence",
-          "bread and water": "sacrament",
-          "the sacrament": "sacrament",
-          "scripture": "scriptures",
-          "scriptures": "scriptures",
-          "the scriptures": "scriptures",
-          "word of god": "scriptures",
-          "labor": "service",
-          "work": "service",
-          "responsibility": "service",
-          "personal responsibility": "service",
-          "fall of man": "thefall",
-          "the fall": "thefall",
-          "fall of mankind": "thefall",
-          "fall": "thefall",
-          "jesus christ": "jesus",
-          "christ": "jesus",
-          "savior": "jesus",
-          "redeemer": "jesus",
-          "lord": "jesus",
-          "fall of adam": "thefall",
-          "garden of eden": "thefall",
-          "lucifer": "thefall",
-          "original sin": "thefall",
-          "law of health": "wordofwisdom",
-          "word of wisdom": "wordofwisdom",
-          "apostles": "apostle",
-          "the godhead": "godhead",
-          "revelation": "testimony",
-          "truth": "testimony",
-          "testify": "testimony",
-          "conversion": "testimony",
-          "devil": "hell",
-          "satan": "hell",
-          "damnation": "hell",
-          "torment": "hell",
-          "eternal marriage": "marriage",
-          "temple marriage": "marriage",
-          "fire and brimstone": "hell",
-          "celestial kingdom": "heaven",
-          "plan of salvation": "heaven",
-          "telestial": "heaven",
-          "exaltation": "heaven",
-          "immortality": "heaven",
-          "eternal life": "heaven",
-          "three degrees of glory": "heaven",
-          "missionaries": "missionary",
-          "preach": "missionary",
-          "preaching": "missionary",
-          "missionary work": "missionary",
-          "christmas": "nativity",
-          "church history": "pioneer",
-          "pioneers": "pioneer",
-          "handcarts": "pioneer",
-          "nauvoo": "pioneer",
-          "premortal existence": "premortal",
-          "council in heaven": "premortal",
-          "premortal life": "premortal",
-          "war in heaven": "premortal",
-          "easter": "resurrection",
-          "resurrected": "resurrection",
-          "crucifixion": "resurrection",
-          "cross": "resurrection",
-          "the resurrection": "resurrection",
-          "woman": "women",
-          "widow": "women",
-          "mary": "women",
-          "mothers": "women",
-          "mother": "women",
-          "motherhood": "women",
-          "daughter": "women",
-          "daughters": "women",
-          "relief society": "women",
-          "daughters of god": "women",
-          "the great apostasy": "apostasy",
-          "restoration": "apostasy",
-          "first vision": "apostasy",
-          "the first vision": "apostasy",
-          "the restoration": "apostasy",
-          "apostasy and restoration": "apostasy",
-          "first vision": "apostasy",
-          "family home evening": "family",
-          "family prayer": "family",
-          "eternal family": "family",
-          "virtue": "chastity",
-          "chaste": "chastity",
-          "virtuous": "chastity",
-          "child": "children",
-          "primary": "children",
-          "primary children": "children",
-          "covenant": "covenants",
-          "temple covenant": "covenants",
-          "temple covenants": "covenants",
-          "baptismal covenant": "covenants",
-          "baptismal covenants": "covenants",
-          "life after death": "death",
-          "die": "death",
-          "mortality": "death",
-          "family history": "genealogy",
-          "ancestors": "genealogy",
-          "family tree": "genealogy",
-          "spiritual gifts": "giftsofthespirit",
-          "gifts of the spirit": "giftsofthespirit",
-          "good news": "gospel",
-          "good news of the gospel": "gospel",
-          "the gospel": "gospel",
-          "gospel": "gospel",
-          "plan of salvation": "gospel",
-          "the plan of salvation": "gospel",
-          "happy": "happiness",
-          "joy": "happiness",
-          "plan of happiness": "happiness",
-          "miracle": "miracles",
-          "brigham young": "brighamyoung",
-          "brigham": "brighamyoung",
-          "davdid bednar": "dabednar",
-          "bednar": "dabednar",
-          "davdid a. bednar": "dabednar",
-          "daivd o mckay": "davidomckay",
-          "daivd o. mckay": "davidomckay",
-          "uchtdorf": "dfuchtdorf",
-          "dieter uchtdorf": "dfuchtdorf",
-          "dieter f. uchtdorf": "dfuchtdorf",
-          "renlund": "dgrenlund",
-          "dale g. renlund": "dgrenlund",
-          "oaks": "dhoaks",
-          "dallin h. oaks": "dhoaks",
-          "D. Todd Christofferson": "dtchristofferson",
-          "Christofferson": "dtchristofferson",
-          "benson": "ezrataftbenson",
-          "ezra taft benson": "ezrataftbenson",
-          "benson": "ezrataftbenson",
-          "george a. smith": "georgeasmith",
-          "george albert smith": "georgeasmith",
-          "gary e. stevenson": "gestevenson",
-          "gordon b. hinckley": "gordonbhinckley",
-          "hinckley": "gordonbhinckley",
-          "harold b. lee": "haroldblee",
-          "eyring": "hbeyring",
-          "henry b. eyring": "hbeyring",
-          "grant": "heberjgrant",
-          "heber j. grant": "heberjgrant",
-          "howard w. hunter": "howardwhunter",
-          "hunter": "howardwhunter",
-          "john taylor": "johntaylor",
-          "joseph fielding smith": "josephfieldingsmith",
-          "joseph f. smith": "josephfsmith",
-          "joseph smith": "josephsmith",
-          "joseph": "josephsmith",
-          "jeffrey r. holland": "jrholland",
-          "holland": "jrholland",
-          "lorenzo snow": "lorenzosnow",
-          "snow": "lorenzosnow",
-          "m. russell ballard": "mrballard",
-          "ballard": "mrballard",
-          "neil l. anderson": "nlanderson",
-          "quentin l. cook": "qlcook",
-          "rasband": "rarasband",
-          "ronald a. rasband": "rarasband",
-          "russell m. nelson": "rmnelson",
-          "nelson": "rmnelson",
-          "spencer w. kimball": "spencerkimball",
-          "thomas s. monson": "tsmonson",
-          "monson": "tsmonson",
-          "woodruff": "wilfordwoodruff",
-          "wilford woodruff": "wilfordwoodruff",
-          "self reliance": "selfreliance",
-          "self-reliance": "selfreliance",
-          "second coming": "secondcoming",
-          "the second coming": "secondcoming",
-          "miracles": "miracles",
-          "miracle": "miracles",
-        };
-        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
-        str = str.replace(re, function(matched) {
-          return mapObj[matched.toLowerCase()];
-        });
-
-
-        fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
-          if (response.status != 200) {
-            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
-            return;
-          }
-
-          response.json().then(function(data) {
-            let api = data;
-
-            function renderapis() {
-
-              return `${api.map(api =>
-            `<div class="main">
-            <p class="book_verse">${api.book_and_verse_number}</p>
-            <p class="verse_text">${api.verse_text}</p>
-            </div>
-            `
-            )}
-            `
-
-            }
-
-            let markup = `${renderapis()}`;
-            document.getElementById('updatediv1').innerHTML = markup;
-            console.log(markup);
-          })
-        })
-      }
-
-
-
-    })
-  </script>
-
   <script>
     $(document).ready(function() {
       console.log("talking");
 
       let scriptureInput = document.getElementById('scriptureInput');
       let chapterInput = document.getElementById('chapterInput');
+      let searchInput = document.getElementById('searchInput');
+      let bofmSearch = document.getElementById('bofmSearch');
       let scriptures = document.getElementById('scriptures');
+      bofmSearch.onclick = searchAPI;
       scriptures.onclick = searchAPI;
-      console.log(scriptureInput);
-      console.log(scriptures);
-
-
 
       function searchAPI() {
 
@@ -3146,7 +4045,34 @@ console.log(toDoQuoteArray);
           }
 
           response.json().then(function(data) {
+            
             let api = data;
+            let verseArray = [];
+            for (var i = 0; i < api.length; i++) {
+              let str = searchInput.value;
+              if (api[i].scripture_text.indexOf(str) > -1) {
+                verseArray.push(api[i]);
+              }
+            }
+            
+            function renderapis() {
+
+              return `${verseArray.map(verseArray =>
+            `<div class="main">
+            <p class="book_verse">${verseArray.verse_title}</p>
+            <p class="verse_text">${verseArray.scripture_text}</p>
+            </div>
+            `
+            )}
+            `
+
+            }
+
+            let rawScript = `${renderapis()}`;
+            document.getElementById('updatediv1').innerHTML = rawScript;
+            console.log(document.getElementById('updatediv1').innerHTML );
+            
+            
 
             let bookArray = [];
             for (var i = 0; i < api.length; i++) {
@@ -3158,7 +4084,7 @@ console.log(toDoQuoteArray);
               }
             }
 
-          console.log(bookArray);
+
 
           let bookChapterArray = [];
 
@@ -3171,29 +4097,565 @@ console.log(toDoQuoteArray);
             }
           }
           getChapter(bookArray);
-          console.log(bookChapterArray);
+
+          let oldTestament = [];
+          let newTestament = [];
+          let bookOfMormon = [];
+          let dandC = [];
+          function getSW (x) {
+            for (var i = 0; i < x.length; i++) {
+              if (x[i].volume_long_title == "The Old Testament") {
+                oldTestament.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The New Testament") {
+                newTestament.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The Book of Mormon") {
+                bookOfMormon.push(x[i].scripture_text
+);
+              } else if (x[i].volume_long_title == "The Doctrine and Covenants") {
+                dandC.push(x[i].scripture_text
+);
+              }
+          }
+        }
+        getSW(api);
 
 
+
+        let str5 = searchInput.value;
+        let str6 = str5.toLowerCase();
+
+        function findMatches (x) {
+        let y = x.toString();
+        let w = y.toLowerCase();
+        var chars = w.split(' ');
+        var count = chars.reduce(function(n, val) {
+            return n + (val === str6);
+        }, 0);
+        return count;
+      }
+      let countDnC = findMatches(dandC);
+      let countOT = findMatches(oldTestament);
+      let countNT = findMatches(newTestament);
+      let countBofM = findMatches(bookOfMormon);
+      let bofMPages = 531;
+      let bofMPercent = ( Math.round((countBofM / 531) * 100 ));
+      let ntPages = 288;
+      let ntPercent = ( Math.round((countNT / 288) * 100 ));
+      let otPages = 993;
+      let otPercent = ( Math.round((countOT / 993) * 100 ));
+      let dncPages = 291;
+      let dncPercent = ( Math.round((countDnC / 291) * 100 ));
+
+      let bofMPhrase = [];
+      let OTPhrase = [];
+      let NTPhrase = [];
+      let DNCPhrase = [];
+
+          let str3 = "";
+          function getIndicesOf(searchStr, x) {
+            let y = x.toString();
+            let str = y.toLowerCase();
+            var searchStrLen = searchStr.length;
+            if (searchStrLen == 0) {
+              return [];
+            }
+            var startIndex = 0, index, indices = [];
+
+            while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+              indices.push(index);
+              startIndex = index + searchStrLen;
+            }
+            return indices;
+          }
+
+var BOMindices = getIndicesOf(str6, bookOfMormon);
+var OTindices = getIndicesOf(str6, oldTestament);
+var NTindices = getIndicesOf(str6, newTestament);
+var DNCindices = getIndicesOf(str6, dandC);
+
+let BOMstart_end = [];
+function grabSelection (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    BOMstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection(BOMindices);
+
+let OTstart_end = [];
+function grabSelection2 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    OTstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection2(OTindices);
+
+let NTstart_end = [];
+function grabSelection3 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    NTstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection3(NTindices);
+
+let DNCstart_end = [];
+function grabSelection4 (x) {
+  for (var i = 0; i < x.length; i++) {
+    let midIndex = x[i];
+    let start_index = x[i] - 400;
+    let end_index = x[i] + 400;
+    DNCstart_end.push([start_index, end_index]);
+  }
+}
+grabSelection4(DNCindices);
+
+var BoMrand1 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand2 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand3 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+var BoMrand4 = BOMstart_end[Math.floor(Math.random() * BOMstart_end.length)];
+
+var OTrand1 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand2 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand3 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+var OTrand4 = OTstart_end[Math.floor(Math.random() * OTstart_end.length)];
+
+var NTrand1 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand2 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand3 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+var NTrand4 = NTstart_end[Math.floor(Math.random() * NTstart_end.length)];
+
+var DNCrand1 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand2 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand3 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+var DNCrand4 = DNCstart_end[Math.floor(Math.random() * DNCstart_end.length)];
+
+let BoMtoString = bookOfMormon.toString();
+let OTtoString = oldTestament.toString();
+let NTtoString = newTestament.toString();
+let DNCtoString = dandC.toString();
+let BoMPhrase1 = BoMtoString.substring(BoMrand1[0], BoMrand1[1]);
+let BoMPhrase2 = BoMtoString.substring(BoMrand2[0], BoMrand2[1]);
+let BoMPhrase3 = BoMtoString.substring(BoMrand3[0], BoMrand3[1]);
+let BoMPhrase4 = BoMtoString.substring(BoMrand4[0], BoMrand4[1]);
+
+let NTPhrase1 = NTtoString.substring(NTrand1[0], NTrand1[1]);
+let NTPhrase2 = NTtoString.substring(NTrand2[0], NTrand2[1]);
+let NTPhrase3 = NTtoString.substring(NTrand3[0], NTrand3[1]);
+let NTPhrase4 = NTtoString.substring(NTrand4[0], NTrand4[1]);
+
+let OTPhrase1 = OTtoString.substring(OTrand1[0], OTrand1[1]);
+let OTPhrase2 = OTtoString.substring(OTrand2[0], OTrand2[1]);
+let OTPhrase3 = OTtoString.substring(OTrand3[0], OTrand3[1]);
+let OTPhrase4 = OTtoString.substring(OTrand4[0], OTrand4[1]);
+
+let DNCPhrase1 = DNCtoString.substring(DNCrand1[0], DNCrand1[1]);
+let DNCPhrase2 = DNCtoString.substring(DNCrand2[0], DNCrand2[1]);
+let DNCPhrase3 = DNCtoString.substring(DNCrand3[0], DNCrand3[1]);
+let DNCPhrase4 = DNCtoString.substring(DNCrand4[0], DNCrand4[1]);
+
+let BOMTemp = [];
+let DNCTemp = [];
+let NTTemp = [];
+let OTTemp = [];
+
+if (BoMPhrase1 !== undefined){
+  BOMTemp.push(BoMPhrase1)
+}
+if (BoMPhrase2 !== undefined){
+  BOMTemp.push(BoMPhrase2)
+}
+if (BoMPhrase3 !== undefined){
+  BOMTemp.push(BoMPhrase3)
+}
+if (BoMPhrase4 !== undefined){
+  BOMTemp.push(BoMPhrase4)
+}
+var BOMConst = BOMTemp[0].concat(BOMTemp[1], BOMTemp[2], BOMTemp[3], BOMTemp[4]);
+
+if (NTPhrase1 !== undefined){
+  NTTemp.push(NTPhrase1)
+}
+if (NTPhrase2 !== undefined){
+  NTTemp.push(NTPhrase2)
+}
+if (NTPhrase3 !== undefined){
+  NTTemp.push(NTPhrase3)
+}
+if (NTPhrase4 !== undefined){
+  NTTemp.push(NTPhrase4)
+}
+var NTConst = NTTemp[0].concat(NTTemp[1], NTTemp[2], NTTemp[3], NTTemp[4]);
+
+if (OTPhrase1 !== undefined){
+  OTTemp.push(OTPhrase1)
+}
+if (OTPhrase2 !== undefined){
+  OTTemp.push(OTPhrase2)
+}
+if (OTPhrase3 !== undefined){
+  OTTemp.push(OTPhrase3)
+}
+if (OTPhrase4 !== undefined){
+  OTTemp.push(OTPhrase4)
+}
+var OTConst = OTTemp[0].concat(OTTemp[1], OTTemp[2], OTTemp[3], OTTemp[4]);
+
+if (DNCPhrase1 !== undefined){
+  DNCTemp.push(DNCPhrase1)
+}
+if (DNCPhrase2 !== undefined){
+  DNCTemp.push(DNCPhrase2)
+}
+if (DNCPhrase3 !== undefined){
+  DNCTemp.push(DNCPhrase3)
+}
+if (DNCPhrase4 !== undefined){
+  DNCTemp.push(DNCPhrase4)
+}
+var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4]);
+
+      function findAllMatches (x) {
+
+        let Good = 0;
+        let Bad = 0;
+        let goodWords = ["light", "truth", "happy", "happiness", "peace", "comfort", "love", "good", "right", "heaven", "blessed", "joy", "glad", "hope", "charity"];
+        let badWords = ["dark", "false", "lie", "deceit", "sad", "fear", "sorrow", "anger", "hate", "bad", "satan", "devil", "hell", "torment", "cursed"];
+        if(x.includes(badWords[0])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[1])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[2])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[3])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[4])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[5])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[6])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[7])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[8])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[9])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[10])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[11])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[12])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[13])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[14])) {
+          Bad = Bad + 1;
+        }
+          if(x.includes(goodWords[0])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[1])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[2])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[3])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[4])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[5])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[6])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[7])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[8])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[9])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[10])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[11])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[12])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[13])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[14])) {
+            Good = Good + 1;
+          }
+          let total = Good + Bad;
+          let badPercent = ( Math.round((Bad / total) * 100));
+          let goodPercent = ( Math.round((Good / total) * 100));
+          let adjective = "";
+
+          let percentUsed = 0;
+          if (badPercent > goodPercent) {
+            percentUsed = badPercent - goodPercent;
+          } else {
+            percentUsed = goodPercent - badPercent;
+          }
+          if (percentUsed == 0 ) {
+            adjective = "indifferent";
+          }
+          else if (percentUsed > 0 && percentUsed < 15 ) {
+            adjective = "just barely more";
+          }
+          else if (percentUsed > 15 && percentUsed < 25 ) {
+            adjective = "a little bit more";
+          } else if (percentUsed > 25 && percentUsed < 45 ) {
+            adjective = "quite a bit more";
+          } else if (percentUsed > 45 && percentUsed < 55) {
+            adjective = "nearly twich as much more";
+          } else if (percentUsed > 55 && percentUsed < 75) {
+            adjective = "very much more";
+          } else if (percentUsed > 75 && percentUsed < 100) {
+            adjective = "almost completely";
+          } else if (percentUsed == 100) {
+            adjective = "completely";
+          }
+          let goodPhrase = `When prophets spoke of the topic, they used words such as, 'good', 'happiness' or 'joy' ${percentUsed}% more than words like 'sorrow', 'pain' or 'fear', indicating that they were ${adjective} optimistic about the topic`;
+          let badPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that they were ${adjective} pessimistic about the topic`;
+          let neturalPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that their mood may have been ${adjective} about the topic`;
+       if (Bad == Good) {
+          return [neturalPhrase];
+        }
+        else if (Bad > Good) {
+          return [badPhrase];
+        } else {
+          return [goodPhrase];
+        }
+      }
+      let BOMMood = findAllMatches(BOMConst);
+      let DNCMood = findAllMatches(DNCConst);
+      let NTMood = findAllMatches(NTConst);
+      let OTMood = findAllMatches(OTConst);
+
+      function compareVerseswithWords (x) {
+        let frequentWords = [
+          "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
+        ];
+        var sorted = [];
+        for (var i = 0; i < frequentWords.length; i++) {
+          sorted.push(frequentWords[i].toLowerCase());
+        }
+        sorted.sort();
+
+        var wordCounts = {};
+        y = x.toString();
+        var words = y.split(/\b/);
+        for(var i = 0; i < words.length; i++)
+        wordCounts["" + words[i]] = (wordCounts["" + words[i]] || 0) + 1;
+
+        let result = Object.keys(wordCounts).map(function(key) {
+          return [String(key), wordCounts[key]];
+        });
+
+        var lowercaseResults = [];
+        for (var i = 0; i < result.length; i++) {
+          result[i][0].toLowerCase();
+          lowercaseResults.push(result[i]);
+        }
+        lowercaseResults.sort();
+
+        let newWordArray = [];
+         function pushWords (y, z) {
+           for (var i = 0; i < z.length; i++) {
+             if (y.some(v => z[i][0].includes(v)) == true) {
+               newWordArray.push(z[i])
+             }
+           }
+         }
+         pushWords(sorted, lowercaseResults);
+
+         newWordArray.sort(function(a, b){return a[1]-b[1]});
+         let talk1 = newWordArray.slice(Math.max(newWordArray.length - 5));
+         return talk1;
+}
+let res1 = compareVerseswithWords(DNCPhrase1);
+let res11 = compareVerseswithWords(DNCPhrase2);
+let res111 = compareVerseswithWords(DNCPhrase3);
+let res1111 = compareVerseswithWords(DNCPhrase4);
+let DNCarr = [];
+for (var i = 0; i < res1.length; i++) {
+  if (res1[i] !== undefined) {
+  DNCarr.push(res1[i][0]);
+}
+  if (res11[i] !== undefined) {
+  DNCarr.push(res11[i][0]);
+}
+  if (res111[i] !== undefined) {
+  DNCarr.push(res111[i][0]);
+}
+  if (res1111[i] !== undefined) {
+  DNCarr.push(res1111[i][0]);
+}
+}
+if (DNCarr.length > 1) {
+  let last = DNCarr.length - 1;
+  DNCarr.splice(last, 0, "&");
+}
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+var UDNCarr = DNCarr.filter( onlyUnique );
+let SUDNCarr = UDNCarr.toString();
+
+let res2 = compareVerseswithWords(NTPhrase1);
+let res22 = compareVerseswithWords(NTPhrase2);
+let res222 = compareVerseswithWords(NTPhrase3);
+let res2222 = compareVerseswithWords(NTPhrase4);
+let NTarr = [];
+for (var i = 0; i < res2.length; i++) {
+  if (res2[i] !== undefined) {
+  NTarr.push(res2[i][0]);
+}
+  if (res22[i] !== undefined) {
+  NTarr.push(res22[i][0]);
+}
+  if (res222[i] !== undefined) {
+  NTarr.push(res222[i][0]);
+}
+  if (res2222[i] !== undefined) {
+  NTarr.push(res2222[i][0]);
+}
+}
+if (NTarr.length > 1) {
+  let last = NTarr.length - 1;
+  NTarr.splice(last, 0, "&");
+}
+var UNTarr = NTarr.filter( onlyUnique );
+let SUNTarr = UNTarr.toString();
+
+let res3 = compareVerseswithWords(OTPhrase1);
+let res33 = compareVerseswithWords(OTPhrase2);
+let res333 = compareVerseswithWords(OTPhrase3);
+let res3333 = compareVerseswithWords(OTPhrase4);
+let OTarr = [];
+for (var i = 0; i < res3.length; i++) {
+  if (res3[i] !== undefined) {
+  OTarr.push(res3[i][0]);
+}
+  if (res33[i] !== undefined) {
+  OTarr.push(res33[i][0]);
+}
+  if (res333[i] !== undefined) {
+  OTarr.push(res333[i][0]);
+}
+  if (res3333[i] !== undefined) {
+  OTarr.push(res3333[i][0]);
+}
+}
+if (OTarr.length > 1) {
+  let last = OTarr.length - 1;
+  OTarr.splice(last, 0, "&");
+}
+var UOTarr = OTarr.filter( onlyUnique );
+let SUOTarr = UOTarr.toString();
+
+let res4 = compareVerseswithWords(BoMPhrase1);
+let res44 = compareVerseswithWords(BoMPhrase2);
+let res444 = compareVerseswithWords(BoMPhrase3);
+let res4444 = compareVerseswithWords(BoMPhrase4);
+let BOMarr = [];
+for (var i = 0; i < res4.length; i++) {
+  if (res4[i] !== undefined) {
+  BOMarr.push(res4[i][0]);
+}
+  if (res44[i] !== undefined) {
+  BOMarr.push(res44[i][0]);
+}
+  if (res444[i] !== undefined) {
+  BOMarr.push(res444[i][0]);
+}
+  if (res4444[i] !== undefined) {
+  BOMarr.push(res4444[i][0]);
+}
+}
+if (BOMarr.length > 1) {
+  let last = BOMarr.length - 1;
+  BOMarr.splice(last, 0, "&");
+}
+var UBOMarr = BOMarr.filter( onlyUnique );
+let SUBOMarr = UBOMarr.toString();
+
+      let swData = `
+      <ol>
+      <label> Statistics from the Old Testament </label>
+      <li>In the Old Testament, the word '${str5}' occurs ${countOT} times.  The Old Testament contains ${otPages} pages, which means '${str5}' occurs on average in ${otPercent}% of the book.  Also, in the Old Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUOTarr}.
+      ${OTMood}</li>
+      <label> Statistics from the New Testament </label>
+      <li>In the New Testament, the word '${str5}' occurs ${countNT} times. The New Testament contains ${ntPages} pages, which means '${str5}' occurs on average in ${ntPercent}% of the book.  Also, in the New Testament, verses which contain the word '${str5}' also commonly mention themes such as: ${SUNTarr}.
+      ${NTMood}</li>
+      <label> Statistics from the Book of Mormon </label>
+      <li>In the Book of Mormon, the word '${str5}' occurs ${countBofM} times.  The Book of Mormon contains ${bofMPages} pages, which means '${str5}' occurs on average in ${bofMPercent}% of the book. Also, in the Book of Mormon, verses which contain the word '${str5}' also commonly mention themes such as: ${SUBOMarr}.
+      ${BOMMood}</li>
+      <label> Statistics from the Doctrine and Covenants </label>
+      <li>In the Doctrine and Covenants, the word '${str5}' occurs ${countDnC} times. The Doctrine and Covenants contains ${dncPages} pages, which means '${str5}' occurs on average in ${dncPercent}% of the book.  Also, in the Doctrine and Covenants, verses which contain the word '${str5}' also commonly mention themes such as: ${SUDNCarr}.
+      ${DNCMood}</li> 
+      
+      </ol>
+      `
+document.getElementById('swData').innerHTML = swData;
+
+  $(document).ready(function() {
+    $('#scriptures').click(function(){
               function renderapis() {
-
+            
                 return `${bookChapterArray.map(bookChapterArray =>
               `
               <p class="book_verse">${bookChapterArray.verse_title}</p>
               <p class="verse_text">${bookChapterArray.scripture_text}</p>
               </div>
-
+            
               `
               )}
               `
-
+            
               }
-
+            
               let markup = `${renderapis()}`;
-
-
-
-
-            document.getElementById('updatediv1').innerHTML = markup;
+              document.getElementById('updatediv1').innerHTML = markup;
+            })
+            })
+            
+            
 
           })
         })
@@ -4139,6 +5601,9 @@ console.log(toDoQuoteArray);
           })
 
   </script>
+
+
+
   <script>
     $(window).load(function() {
       $("#scripture_highlighter").hide();
@@ -8858,6 +10323,44 @@ console.log("newval after str4 replaced:", newval);
       });
     });
   </script>
+  <script>
+$(window).load(function() {
+$('#resultsBox').hide();
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#talkData_btn').click(function(){
+$('#resultsBox').show();
+})
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#clearTalk').click(function(){
+$('#resultsBox').hide();
+$('#real_byu_Results').html("");
+$('#real_genConf_Results').html("");
+$('#real_swData').html("");
+})
+})
+  </script>
+  <script>
+$(document).ready(function() {
+$('#resultsBox').show();
+})
+  </script>
+  <script>
+    function getData() {
+      let raw = document.getElementById('byu_Results').innerHTML;
+      let raw2 = document.getElementById('genConf_Results').innerHTML;
+      let raw3 = document.getElementById('swData').innerHTML;
+      document.getElementById('real_swData').innerHTML = raw3;
+      document.getElementById('real_genConf_Results').innerHTML = raw2;
+      document.getElementById('real_byu_Results').innerHTML = raw;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -8924,10 +10427,10 @@ console.log("newval after str4 replaced:", newval);
 
 
         <section class="search">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#twentysix">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Ldsscriptures">
           <h2>SEARCH</h2>
           </button>
-          <div id="twentysix" class="collapse">
+          <div id="Ldsscriptures" class="collapse">
           <div class="searchContainer">
             <div class="search1">
           <label> TOPIC SEARCH: </label>
@@ -9057,12 +10560,24 @@ console.log("newval after str4 replaced:", newval);
           <section id="updatediv4"></section>
           </div>
         </div>
+        <button id="talkData_btn" onclick="getData();">See Talk Data</button>
+
+        <div id="swData"></div>
+        <div id="byu_Results"></div>
+        <div id="genConf_Results"></div>
+        <div id="resultsBox" class="resultsBox">
+        <div id="real_genConf_Results"></div>
+        <div id="real_byu_Results"></div>
+        <div id="real_swData"></div>
+      </div>
+        <button id="clearTalk" onclick="clearTalkData()">Clear Results</button>
       </div>
 </div>
 
 
       </div>
       <form class="form1" action="/talk/talkid/{{#talktopics}}{{talkid}}{{/talktopics}}" method="post">
+        
 
 
           <div class="talkHeader">
@@ -9718,12 +11233,12 @@ console.log("newval after str4 replaced:", newval);
         </div>
 
 <div class="section">
-          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtytwo">
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#thirtyone">
           <div class="gencontitlecontainer">
             <input class="inputfield8" name="section1_topic" value="Section 2: {{section1_topic.1}}" />
           </div>
           </button>
-          <div id="thirtytwo" class="collapse">
+          <div id="thirtyone" class="collapse">
 
 
             <div class="topic">
@@ -14656,7 +16171,7 @@ console.log("newval after str4 replaced:", newval);
               </div>
             </div>
     </div>
-
+    
 
     <div class="contentColumn3">
       <label class="small-label">

@@ -4020,328 +4020,17 @@ document.getElementById('byu_Results').innerHTML = byuData;
 
     })
   </script>
-
-  <script>
-    $(document).ready(function() {
-      console.log("talking");
-
-      let searchInput = document.getElementById('searchInput');
-      let bofmSearch = document.getElementById('bofmSearch');
-      bofmSearch.onclick = searchAPI;
-      console.log(searchInput);
-      console.log(bofmSearch);
-
-
-
-      function searchAPI() {
-
-        let searchResults = searchInput.value;
-
-        var str = searchInput.value;
-
-        var mapObj = {
-          "the gathering of israel" : "gatheringofisrael",
-          "gathering of israel" : "gatheringofisrael",
-          "the gathering" : "gatheringofisrael",
-          "the lords covenant people" : "lordscovenantpeople",
-          "abrahamic covenant" : "lordscovenantpeople",
-          "covenant of abraham" : "lordscovenantpeople",
-          "eternal life and exaltation" : "exaltation",
-          "exalted" : "exaltation",
-          "exaltation" : "exaltation",
-          "patience" : "patience",
-          "enduring" : "patience",
-          "endure to the end" : "patience",
-          "the final judgement" : "finaljudgement",
-          "final judgement" : "finaljudgement",
-          "judgement day" : "finaljudgement",
-          "judgement" : "finaljudgement",
-          "sabbath day" : "sabbathday",
-          "sabbath" : "sabbathday",
-          "the sabbath day" : "sabbathday",
-          "the sabbath" : "sabbathday",
-          "developing talents" : "talents",
-          "talents" : "talents",
-          "talent" : "talents",
-          "animal sacrifices" : "sacrifice",
-          "sacrifices" : "sacrifice",
-          "sacrifice" : "sacrifice",
-          "thankful": "gratitude",
-          "thanks": "gratitude",
-          "grateful": "gratitude",
-          "gratitude": "gratitude",
-          "agency": "agency",
-          "free agency": "agency",
-          "the atonement": "atonement",
-          "baptize": "baptism",
-          "book of mormon": "bookofmormon",
-          "love": "charity",
-          "charitable": "charity",
-          "pure love": "charity",
-          "pure love of christ": "charity",
-          "created": "creation",
-          "religion": "church",
-          "church organization": "church",
-          "d&c": "doctrinecovenants",
-          "events": "events",
-          "heavenly father": "god",
-          "father in heaven": "god",
-          "god the father": "god",
-          "father": "god",
-          "belief": "faith",
-          "hope": "faith",
-          "holy spirit": "holyghost",
-          "holy ghost": "holyghost",
-          "the holy ghost": "holyghost",
-          "spirit": "holyghost",
-          "the spirit": "holyghost",
-          "honesty": "honesty",
-          "honest": "honesty",
-          "lie": "honesty",
-          "steal": "honesty",
-          "integrity": "honesty",
-          "bible": "newtestament",
-          "new testament": "newtestament",
-          "obedience": "obedience",
-          "follow": "obedience",
-          "submission": "obedience",
-          "submissive": "obedience",
-          "old testament": "oldtestament",
-          "people": "people",
-          "melchizedek priesthood": "priesthood",
-          "aaronic priesthood": "priesthood",
-          "melchizedek": "priesthood",
-          "aaronic": "priesthood",
-          "prophets of god": "prophets",
-          "prophet": "prophets",
-          "prophets": "prophets",
-          "repent": "repentence",
-          "repentance": "repentence",
-          "forgiveness": "repentence",
-          "bread and water": "sacrament",
-          "the sacrament": "sacrament",
-          "scripture": "scriptures",
-          "scriptures": "scriptures",
-          "the scriptures": "scriptures",
-          "word of god": "scriptures",
-          "labor": "service",
-          "work": "service",
-          "responsibility": "service",
-          "personal responsibility": "service",
-          "fall of man": "thefall",
-          "the fall": "thefall",
-          "fall of mankind": "thefall",
-          "fall": "thefall",
-          "jesus christ": "jesus",
-          "christ": "jesus",
-          "savior": "jesus",
-          "redeemer": "jesus",
-          "lord": "jesus",
-          "fall of adam": "thefall",
-          "garden of eden": "thefall",
-          "lucifer": "thefall",
-          "original sin": "thefall",
-          "law of health": "wordofwisdom",
-          "word of wisdom": "wordofwisdom",
-          "apostles": "apostle",
-          "the godhead": "godhead",
-          "revelation": "testimony",
-          "truth": "testimony",
-          "testify": "testimony",
-          "conversion": "testimony",
-          "devil": "hell",
-          "satan": "hell",
-          "damnation": "hell",
-          "torment": "hell",
-          "eternal marriage": "marriage",
-          "temple marriage": "marriage",
-          "fire and brimstone": "hell",
-          "celestial kingdom": "heaven",
-          "plan of salvation": "heaven",
-          "telestial": "heaven",
-          "exaltation": "heaven",
-          "immortality": "heaven",
-          "eternal life": "heaven",
-          "three degrees of glory": "heaven",
-          "missionaries": "missionary",
-          "preach": "missionary",
-          "preaching": "missionary",
-          "missionary work": "missionary",
-          "christmas": "nativity",
-          "church history": "pioneer",
-          "pioneers": "pioneer",
-          "handcarts": "pioneer",
-          "nauvoo": "pioneer",
-          "premortal existence": "premortal",
-          "council in heaven": "premortal",
-          "premortal life": "premortal",
-          "war in heaven": "premortal",
-          "easter": "resurrection",
-          "resurrected": "resurrection",
-          "crucifixion": "resurrection",
-          "cross": "resurrection",
-          "the resurrection": "resurrection",
-          "woman": "women",
-          "widow": "women",
-          "mary": "women",
-          "mothers": "women",
-          "mother": "women",
-          "motherhood": "women",
-          "daughter": "women",
-          "daughters": "women",
-          "relief society": "women",
-          "daughters of god": "women",
-          "the great apostasy": "apostasy",
-          "restoration": "apostasy",
-          "first vision": "apostasy",
-          "the first vision": "apostasy",
-          "the restoration": "apostasy",
-          "apostasy and restoration": "apostasy",
-          "first vision": "apostasy",
-          "family home evening": "family",
-          "family prayer": "family",
-          "eternal family": "family",
-          "virtue": "chastity",
-          "chaste": "chastity",
-          "virtuous": "chastity",
-          "child": "children",
-          "primary": "children",
-          "primary children": "children",
-          "covenant": "covenants",
-          "temple covenant": "covenants",
-          "temple covenants": "covenants",
-          "baptismal covenant": "covenants",
-          "baptismal covenants": "covenants",
-          "life after death": "death",
-          "die": "death",
-          "mortality": "death",
-          "family history": "genealogy",
-          "ancestors": "genealogy",
-          "family tree": "genealogy",
-          "spiritual gifts": "giftsofthespirit",
-          "gifts of the spirit": "giftsofthespirit",
-          "good news": "gospel",
-          "good news of the gospel": "gospel",
-          "the gospel": "gospel",
-          "gospel": "gospel",
-          "plan of salvation": "gospel",
-          "the plan of salvation": "gospel",
-          "happy": "happiness",
-          "joy": "happiness",
-          "plan of happiness": "happiness",
-          "miracle": "miracles",
-          "brigham young": "brighamyoung",
-          "brigham": "brighamyoung",
-          "davdid bednar": "dabednar",
-          "bednar": "dabednar",
-          "davdid a. bednar": "dabednar",
-          "daivd o mckay": "davidomckay",
-          "daivd o. mckay": "davidomckay",
-          "uchtdorf": "dfuchtdorf",
-          "dieter uchtdorf": "dfuchtdorf",
-          "dieter f. uchtdorf": "dfuchtdorf",
-          "renlund": "dgrenlund",
-          "dale g. renlund": "dgrenlund",
-          "oaks": "dhoaks",
-          "dallin h. oaks": "dhoaks",
-          "D. Todd Christofferson": "dtchristofferson",
-          "Christofferson": "dtchristofferson",
-          "benson": "ezrataftbenson",
-          "ezra taft benson": "ezrataftbenson",
-          "benson": "ezrataftbenson",
-          "george a. smith": "georgeasmith",
-          "george albert smith": "georgeasmith",
-          "gary e. stevenson": "gestevenson",
-          "gordon b. hinckley": "gordonbhinckley",
-          "hinckley": "gordonbhinckley",
-          "harold b. lee": "haroldblee",
-          "eyring": "hbeyring",
-          "henry b. eyring": "hbeyring",
-          "grant": "heberjgrant",
-          "heber j. grant": "heberjgrant",
-          "howard w. hunter": "howardwhunter",
-          "hunter": "howardwhunter",
-          "john taylor": "johntaylor",
-          "joseph fielding smith": "josephfieldingsmith",
-          "joseph f. smith": "josephfsmith",
-          "joseph smith": "josephsmith",
-          "joseph": "josephsmith",
-          "jeffrey r. holland": "jrholland",
-          "holland": "jrholland",
-          "lorenzo snow": "lorenzosnow",
-          "snow": "lorenzosnow",
-          "m. russell ballard": "mrballard",
-          "ballard": "mrballard",
-          "neil l. anderson": "nlanderson",
-          "quentin l. cook": "qlcook",
-          "rasband": "rarasband",
-          "ronald a. rasband": "rarasband",
-          "russell m. nelson": "rmnelson",
-          "nelson": "rmnelson",
-          "spencer w. kimball": "spencerkimball",
-          "thomas s. monson": "tsmonson",
-          "monson": "tsmonson",
-          "woodruff": "wilfordwoodruff",
-          "wilford woodruff": "wilfordwoodruff",
-          "self reliance": "selfreliance",
-          "self-reliance": "selfreliance",
-          "second coming": "secondcoming",
-          "the second coming": "secondcoming",
-          "miracles": "miracles",
-          "miracle": "miracles",
-        };
-        var re = new RegExp(Object.keys(mapObj).join("|"), "gi");
-        str = str.replace(re, function(matched) {
-          return mapObj[matched.toLowerCase()];
-        });
-
-
-        fetch('https://presentation-maker.herokuapp.com/api/scriptures/' + str).then(function(response) {
-          if (response.status != 200) {
-            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
-            return;
-          }
-
-          response.json().then(function(data) {
-            let api = data;
-
-            function renderapis() {
-
-              return `${api.map(api =>
-            `<div class="main">
-            <p class="book_verse">${api.book_and_verse_number}</p>
-            <p class="verse_text">${api.verse_text}</p>
-            </div>
-            `
-            )}
-            `
-
-            }
-
-            let markup = `${renderapis()}`;
-            document.getElementById('updatediv1').innerHTML = markup;
-            console.log(markup);
-          })
-        })
-      }
-
-
-
-    })
-  </script>
-
   <script>
     $(document).ready(function() {
       console.log("talking");
 
       let scriptureInput = document.getElementById('scriptureInput');
       let chapterInput = document.getElementById('chapterInput');
+      let searchInput = document.getElementById('searchInput');
+      let bofmSearch = document.getElementById('bofmSearch');
       let scriptures = document.getElementById('scriptures');
+      bofmSearch.onclick = searchAPI;
       scriptures.onclick = searchAPI;
-      console.log(scriptureInput);
-      console.log(scriptures);
-
-
 
       function searchAPI() {
 
@@ -4356,7 +4045,34 @@ document.getElementById('byu_Results').innerHTML = byuData;
           }
 
           response.json().then(function(data) {
+            
             let api = data;
+            let verseArray = [];
+            for (var i = 0; i < api.length; i++) {
+              let str = searchInput.value;
+              if (api[i].scripture_text.indexOf(str) > -1) {
+                verseArray.push(api[i]);
+              }
+            }
+            
+            function renderapis() {
+
+              return `${verseArray.map(verseArray =>
+            `<div class="main">
+            <p class="book_verse">${verseArray.verse_title}</p>
+            <p class="verse_text">${verseArray.scripture_text}</p>
+            </div>
+            `
+            )}
+            `
+
+            }
+
+            let rawScript = `${renderapis()}`;
+            document.getElementById('updatediv1').innerHTML = rawScript;
+            console.log(document.getElementById('updatediv1').innerHTML );
+            
+            
 
             let bookArray = [];
             for (var i = 0; i < api.length; i++) {
@@ -4912,31 +4628,34 @@ let SUBOMarr = UBOMarr.toString();
       ${BOMMood}</li>
       <label> Statistics from the Doctrine and Covenants </label>
       <li>In the Doctrine and Covenants, the word '${str5}' occurs ${countDnC} times. The Doctrine and Covenants contains ${dncPages} pages, which means '${str5}' occurs on average in ${dncPercent}% of the book.  Also, in the Doctrine and Covenants, verses which contain the word '${str5}' also commonly mention themes such as: ${SUDNCarr}.
-      ${DNCMood}</li>
+      ${DNCMood}</li> 
+      
       </ol>
       `
 document.getElementById('swData').innerHTML = swData;
 
+  $(document).ready(function() {
+    $('#scriptures').click(function(){
               function renderapis() {
-
+            
                 return `${bookChapterArray.map(bookChapterArray =>
               `
               <p class="book_verse">${bookChapterArray.verse_title}</p>
               <p class="verse_text">${bookChapterArray.scripture_text}</p>
               </div>
-
+            
               `
               )}
               `
-
+            
               }
-
+            
               let markup = `${renderapis()}`;
-
-
-
-
-            document.getElementById('updatediv1').innerHTML = markup;
+              document.getElementById('updatediv1').innerHTML = markup;
+            })
+            })
+            
+            
 
           })
         })
