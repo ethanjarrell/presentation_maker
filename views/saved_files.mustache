@@ -4433,7 +4433,7 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
             percentUsed = goodPercent - badPercent;
           }
           if (percentUsed == 0 ) {
-            adjective = "indifferent";
+            adjective = "neither too overjoyed or sorrowful";
           }
           else if (percentUsed > 0 && percentUsed < 15 ) {
             adjective = "just barely more";
@@ -4451,9 +4451,9 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
           } else if (percentUsed == 100) {
             adjective = "completely";
           }
-          let goodPhrase = `When prophets spoke of the topic, they used words such as, 'good', 'happiness' or 'joy' ${percentUsed}% more than words like 'sorrow', 'pain' or 'fear', indicating that they were ${adjective} optimistic about the topic`;
-          let badPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that they were ${adjective} pessimistic about the topic`;
-          let neturalPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that their mood may have been ${adjective} about the topic`;
+          let goodPhrase = `When prophets spoke of the topic, they used words such as, 'good', 'happiness' or 'joy' ${percentUsed}% more than words like 'sorrow', 'pain' or 'fear', indicating that they were ${adjective} likely to focus on the positive aspects of the ${str5}, rather than dwelling on the negative.`;
+          let badPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that they were ${adjective} likely to focus on negative aspects of ${str5}.`;
+          let neturalPhrase = `When prophets spoke of the topic, they used words such as, 'grief', 'sadness' or 'fear' ${percentUsed}% more than words like 'joy', 'happiness' or 'peace', indicating that their mood may have been ${adjective} about the topic, but often addressed both the good and bad associated with ${str5}.`;
        if (Bad == Good) {
           return [neturalPhrase];
         }
