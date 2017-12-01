@@ -4329,8 +4329,8 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
 
         let Good = 0;
         let Bad = 0;
-        let goodWords = ["light", "truth", "happy", "happiness", "peace", "comfort", "love", "good", "right", "heaven", "blessed", "joy", "glad", "hope", "charity"];
-        let badWords = ["dark", "false", "lie", "deceit", "sad", "fear", "sorrow", "anger", "hate", "bad", "satan", "devil", "hell", "torment", "cursed"];
+        let goodWords = ["light", "truth", "happy", "happiness", "peace", "comfort", "love", "good", "right", "heaven", "blessed", "joy", "glad", "hope", "charity", "bless", "holy", "glory", "god"];
+        let badWords = ["dark", "false", "lie", "deceit", "sad", "fear", "sorrow", "anger", "hate", "bad", "satan", "devil", "hell", "torment", "cursed", "evil", "fire", "sin", "wicked"];
         if(x.includes(badWords[0])) {
           Bad = Bad + 1;
         }
@@ -4374,6 +4374,15 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
           Bad = Bad + 1;
         }
         if(x.includes(badWords[14])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[15])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[16])) {
+          Bad = Bad + 1;
+        }
+        if(x.includes(badWords[17])) {
           Bad = Bad + 1;
         }
           if(x.includes(goodWords[0])) {
@@ -4421,6 +4430,15 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
           if(x.includes(goodWords[14])) {
             Good = Good + 1;
           }
+          if(x.includes(goodWords[15])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[16])) {
+            Good = Good + 1;
+          }
+          if(x.includes(goodWords[17])) {
+            Good = Good + 1;
+          }
           let total = Good + Bad;
           let badPercent = ( Math.round((Bad / total) * 100));
           let goodPercent = ( Math.round((Good / total) * 100));
@@ -4443,7 +4461,7 @@ var DNCConst = DNCTemp[0].concat(DNCTemp[1], DNCTemp[2], DNCTemp[3], DNCTemp[4])
           } else if (percentUsed > 25 && percentUsed < 45 ) {
             adjective = "quite a bit more";
           } else if (percentUsed > 45 && percentUsed < 55) {
-            adjective = "nearly twich as much more";
+            adjective = "nearly twice as much more";
           } else if (percentUsed > 55 && percentUsed < 75) {
             adjective = "very much more";
           } else if (percentUsed > 75 && percentUsed < 100) {
