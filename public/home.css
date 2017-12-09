@@ -10,6 +10,63 @@ body {
   margin: 0;
 }
 
+.statsButtons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.otContainer {
+  background-color: #efefef;
+  border: black solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.otContainer2 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+}
+
+.percentLabel {
+  font-family: 'Bowlby One SC', cursive;
+  font-size: 15px;
+  color: orange;
+}
+
+.dataSubHeader {
+  font-weight: bold;
+  font-size: 19px;
+  font-family: sans-serif;
+}
+
+.dataSubHeader {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.percentContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#talkData_btn {
+  width: 50%;
+}
+
+#scriptureData_btn {
+  width: 50%;
+}
+
+
 #totalTalkData {
   display: none;
 }
@@ -36,6 +93,27 @@ body {
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+}
+
+#real_count_Results {
+  width: 33%;
+  border-right: 1px solid black;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+#real_goodBad_Results {
+  width: 33%;
+  border-right: 1px solid black;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+#real_wordAss_Results {
+  width: 33%;
+  border-right: 1px solid black;
+  height: 250px;
+  overflow-y: scroll;
 }
 
 #real_byu_Results {
