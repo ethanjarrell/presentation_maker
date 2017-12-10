@@ -4279,7 +4279,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
               totalWordsinBooks[1][1].splice(last, 1);
             }
           }
-            console.log(totalWordsinBooks);
+          
             
             function getSum(total, num) {
               return total + num;
@@ -4370,11 +4370,171 @@ document.getElementById('byu_Results').innerHTML = byuData;
             }
             }
             
-            function compareVerseswithWords (x) {
+            let strJoin = [];
+            
+            for (var i = 0; i < goodBadCompare.length; i++) {
+              strJoin.push(goodBadCompare[i][2]);
+            }
+            let goodBadJoin = strJoin.join();
+            let goodBadJoinArr = goodBadJoin.split(" ");
+            
+              
+              let testArr = [];
+              
+              for (var i = 0; i < goodBadJoinArr.length; i++) {
+                
+              
                   let frequentWords = [
                      "voice", "offer", "soul", "glory", "blood", "wicked", "eyes", "ears", "answer", "babylon", "fire", "punish", "evil", "judah", "law of moses", "moses", "david", "jerusalem", "son", "king", "israel", "agony", "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared"
                  ];
-          }
+                
+                 
+                 if (frequentWords.includes(goodBadJoinArr[i])) {
+                   testArr.push(goodBadJoinArr[i]);
+                 }
+                 
+                 
+               }
+               
+               
+               
+               let wordMap = foo(testArr);
+               console.log(wordMap);
+               let testArr2 = [];
+               
+               for (var i = 0; i < wordMap[1].length; i++) {
+                 let wordMapSum = wordMap[1].reduce(getSum);
+                 let wordMapPercent = (Math.ceil((wordMap[1][i] / wordMapSum) * 100));
+                 testArr2.push(wordMapPercent);
+               }
+        
+               console.log(testArr2);
+               
+               mostWords1 = -Infinity,
+               mostWords2 = -Infinity;
+               mostWords3 = -Infinity;
+               mostWords4 = -Infinity;
+               mostWords5 = -Infinity;
+               mostWords6 = -Infinity,
+               mostWords7 = -Infinity;
+               mostWords8 = -Infinity;
+               mostWords9 = -Infinity;
+               mostWords10 = -Infinity;
+
+               for (var i = 0, n = testArr2.length; i < n; ++i) {
+                 var nr = +testArr2[i]; 
+
+                 if (nr > mostWords1) {
+                   mostWords2 = mostWords1;
+                   mostWords1 = nr;
+                 } else if (nr < mostWords1 && nr > mostWords2) {
+                   mostWords2 = nr; 
+                 } else if (nr < mostWords2 && nr > mostWords3) {
+                   mostWords3 = nr; 
+                 } else if (nr < mostWords3 && nr > mostWords4) {
+                   mostWords4 = nr; 
+                 } else if (nr < mostWords4 && nr > mostWords5) {
+                   mostWords5 = nr; 
+                 } else if (nr < mostWords5 && nr > mostWords6) {
+                   mostWords6 = nr; 
+                 } else if (nr < mostWords6 && nr > mostWords7) {
+                   mostWords7 = nr; 
+                 } else if (nr < mostWords7 && nr > mostWords8) {
+                   mostWords8 = nr; 
+                 } else if (nr < mostWords8 && nr > mostWords9) {
+                   mostWords9 = nr; 
+                 } else if (nr < mostWords9 && nr > mostWords10) {
+                   mostWords10 = nr; 
+                 }
+               }
+               
+               console.log(mostWords6);
+               console.log(mostWords7);
+               console.log(mostWords8);
+               
+               let mostInit1 = Math.abs(testArr2.indexOf(mostWords1));
+               let mostInit2 = Math.abs(testArr2.indexOf(mostWords2));
+               let mostInit3 = Math.abs(testArr2.indexOf(mostWords3));
+               let mostInit4 = Math.abs(testArr2.indexOf(mostWords4));
+               let mostInit5 = Math.abs(testArr2.indexOf(mostWords5));
+               let mostInit6 = Math.abs(testArr2.indexOf(mostWords6));
+               console.log(mostInit6);
+               let mostInit7 = Math.abs(testArr2.indexOf(mostWords7));
+               console.log(mostInit7);
+               let mostInit8 = Math.abs(testArr2.indexOf(mostWords8));
+               console.log(mostInit8);
+               let mostInit9 = Math.abs(testArr2.indexOf(mostWords9));
+               let mostInit10 = Math.abs(testArr2.indexOf(mostWords10));
+               
+               console.log(testArr2);
+               
+               objMostWord1 = {
+                 "key_word" : wordMap[0][mostInit1],
+                 "word_count" : wordMap[1][mostInit1],
+                 "word_percent" : testArr2[mostInit1],
+               }
+               
+               objMostWord2 = {
+                 "key_word" : wordMap[0][mostInit2],
+                 "word_count" : wordMap[1][mostInit2],
+                 "word_percent" : testArr2[mostInit2],
+               }
+               
+               objMostWord3 = {
+                 "key_word" : wordMap[0][mostInit3],
+                 "word_count" : wordMap[1][mostInit3],
+                 "word_percent" : testArr2[mostInit3],
+               }
+               
+               objMostWord4 = {
+                 "key_word" : wordMap[0][mostInit4],
+                 "word_count" : wordMap[1][mostInit4],
+                 "word_percent" : testArr2[mostInit4],
+               }
+               
+               objMostWord5 = {
+                 "key_word" : wordMap[0][mostInit5],
+                 "word_count" : wordMap[1][mostInit5],
+                 "word_percent" : testArr2[mostInit5],
+               }
+               
+               objMostWord6 = {
+                 "key_word" : wordMap[0][mostInit6],
+                 "word_count" : wordMap[1][mostInit6],
+                 "word_percent" : testArr2[mostInit6],
+               }
+               
+               objMostWord7 = {
+                 "key_word" : wordMap[0][mostInit7],
+                 "word_count" : wordMap[1][mostInit7],
+                 "word_percent" : testArr2[mostInit7],
+               }
+               
+               objMostWord8 = {
+                 "key_word" : wordMap[0][mostInit8],
+                 "word_count" : wordMap[1][mostInit8],
+                 "word_percent" : testArr2[mostInit8],
+               }
+               
+               objMostWord9 = {
+                 "key_word" : wordMap[0][mostInit9],
+                 "word_count" : wordMap[1][mostInit9],
+                 "word_percent" : testArr2[mostInit9],
+               }
+               
+               objMostWord10 = {
+                 "key_word" : wordMap[0][mostInit10],
+                 "word_count" : wordMap[1][mostInit10],
+                 "word_percent" : testArr2[mostInit10],
+               }
+               
+               console.log(objMostWord1);
+               console.log(objMostWord2);
+               console.log(objMostWord3);
+               console.log(objMostWord4);
+               console.log(objMostWord5);
+               
+               
             
             let NTgoodBad = [];
             let OTgoodBad = [];
@@ -4688,6 +4848,46 @@ let max5Percent = Math.round((maxWord5 / sumOfWords) * 100 );
             let goodBadBOM = findAllMatches(BOMgoodBad);
             let goodBadDNC = findAllMatches(DNCgoodBad);
             console.log(goodBadNT);
+            
+            
+            let keyWordPercentages = `
+            <label class="dataSubHeader">When prophets spoke about ${str}, they often also addressed other topics.  For example, when talking about pride, prophets often speak of humility as well.  In the scriptures, these are the most common sub-topics for ${str}</label>
+            
+            <div class="otContainer">
+            <div class="dataSubLabel">${objMostWord1.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord1.word_percent}%;">${objMostWord1.word_count}</div>
+            </div>
+            
+            <div class="otContainer2">
+            <div class="dataSubLabel">${objMostWord2.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#1d4c1d;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord2.word_percent}%;">${objMostWord2.word_count}</div>
+            </div>
+            
+            <div class="otContainer">
+            <div class="dataSubLabel">${objMostWord3.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#256325;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord3.word_percent}%;">${objMostWord3.word_count}</div>
+            </div>
+            
+            <div class="otContainer2">
+            <div class="dataSubLabel">${objMostWord4.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#2c7c2c;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord4.word_percent}%;">${objMostWord4.word_count}</div>
+            </div>
+            
+            <div class="otContainer">
+            <div class="dataSubLabel">${objMostWord5.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#329332;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord5.word_percent}%;">${objMostWord5.word_count}</div>
+            </div>
+            
+            <div class="otContainer2">
+            <div class="dataSubLabel">${objMostWord6.key_word} is mentioned this many times:</div>
+            <div style="padding-left:50px;padding-right:8px;background-color:#38aa38;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${objMostWord6.word_percent}%;">${objMostWord6.word_count}</div>
+            </div>
+            
+          
+            
+            `
+            
+            document.getElementById('real_wordAss_Results').innerHTML = keyWordPercentages;
             
             let goodBadPercentages = `
             <label class="dataSubHeader">Prophets often spoke of topics, and focused on either the good or the bad associated with it.  For example, when addressing repentance, the author might speak of the consequences of not repenting, or the rewards of true repentance.  In the chart below is a comparison of how often prophets spoke of the good vs. the bad of ${str}</label>
