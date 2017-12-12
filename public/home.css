@@ -10,6 +10,40 @@ body {
   margin: 0;
 }
 
+.badRed {
+  color: red;
+}
+
+.goodGreen {
+  color: green;
+}
+
+.goodRow {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.goodColumn {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #efefef;
+  border: black solid 1px;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .statsButtons {
   display: flex;
   flex-flow: row wrap;
