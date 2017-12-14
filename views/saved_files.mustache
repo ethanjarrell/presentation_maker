@@ -4048,30 +4048,43 @@ document.getElementById('byu_Results').innerHTML = byuData;
           response.json().then(function(data) {
             
             let api = data;
-            let verseArray = [];
+          
+              
+            let scriptureObj = []
+            
             for (var i = 0; i < api.length; i++) {
-              let str = searchInput.value;
-              if (api[i].scripture_text.indexOf(str) > -1) {
-                verseArray.push(api[i]);
+              let str = scriptureInput.value;
+              let chp = chapterInput.value;
+              if (str == api[i].book_title) {
+                scriptureObj.push({
+                  "v" : api[i].volume_title,
+                  "b" : api[i].book_title,
+                  "c" : api[i].chapter_number,
+                  "v" : api[i].verse_number,
+                  "t" : api[i].scripture_text,
+                });
               }
             }
             
-            
+        
+            console.log(scriptureObj);
             
             let topicFrequencyByBook = [];
+            let frequentWordsTest = [];
             let volumeScripture = [];
             let totalBookWords = [];
-            let countBadWords = 0;
-            let countGoodWords = 0;
-            let goodCompareVolume = [];
-            let goodCompareBook = [];
-            let badCompareVolume = [];
-            let badCompareBook = [];
-            let goodBadCompare = [];
+            let goodBookTest = [];
+            let badBookTest = [];
+            let goodVolumeTest = [];
+            let badVolumeTest = [];
             for (var i = 0; i < api.length; i++) {
-               let goodWords = ["light", "truth", "happy", "happiness", "peace", "comfort", "love", "good", "right", "heaven", "blessed", "joy", "glad", "hope", "charity", "bless", "holy", "glory", "god"];
+              let frequentWords = [
+                 "voice", "offer", "soul", "glory", "blood", "wicked", "eyes", "ears", "answer", "babylon", "fire", "punish", "evil", "judah", "law of moses", "moses", "david", "jerusalem", "son", "king", "israel", "agony", "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared", "preparation", "power", "alone", "remember", "forget", "promise", "sad", "lord", "lack", "path", "name", "enemies", "enemy", "delight", "rejoice", "knowledge", "strength", "world", "perish", "understand", "refuge", "fruit", "man", "men", "see"
+             ];
+              
+               let goodWords = ["bless", "happiness", "happy", "love", "peace", "good", "truth", "humble", "humility", "right", "righteous", "saint", "virtue", "hope", "faithful", "trust", "meek", "pure", "joy", "cheer", "delight", "glad", "mercy", "save", "heal"];
                
-               let badWords = ["dark", "false", "lie", "deceit", "sad", "fear", "sorrow", "anger", "hate", "bad", "satan", "devil", "hell", "torment", "cursed", "evil", "fire", "sin", "wicked"];
+               let badWords = ["repent", "sin", "death", "forsake", "destr", "torment", "hell", "deny", "vain", "fool", "die", "corrupt", "false", "wicked", "abomination", "whore", "iniquity", "repentance", "anger", "curse", "fear", "sorrow", "anguish", "despair", "misery", "pain", "grief"];
               let str = searchInput.value;
               var contains = function(needle) {
                 // Per spec, the way to identify NaN is that it is not equal to itself
@@ -4104,27 +4117,77 @@ document.getElementById('byu_Results').innerHTML = byuData;
               if (api[i].scripture_text.indexOf(str) > -1) {
                 topicFrequencyByBook.push([api[i].book_title, api[i].chapter_number]);
                 volumeScripture.push(api[i].volume_title);
-                let chapter_id = [];
-                for (var j = 0; j < api.length; j++) {
-                  if (api[j].chapter_id == api[i].chapter_id) {
-                    chapter_id.push(api[j].scripture_text);
-                  }
-                }
-                let stringY = chapter_id.toString();
-                let arrayX = stringY.split(" ");
-                if (badWords.some(v => arrayX.includes(v)) == true ) {
-                  countBadWords++;
-                  badCompareBook.push([api[i].book_title, api[i].chapter_number]);
-                  badCompareVolume.push(api[i].volume_title);
-                }
-                if (goodWords.some(v => arrayX.includes(v)) == true ){
-                  countGoodWords ++;
-                  goodCompareBook.push([api[i].book_title, api[i].chapter_number]);
-                  goodCompareVolume.push(api[i].volume_title);
-                }
-                
-                goodBadCompare.push([api[i].book_title, api[i].chapter_number, api[i].scripture_text]);
               }
+              
+              if(api[i].scripture_text.indexOf(str) > -1) {
+                let stringX = api[i].scripture_text.split(" ");
+          for (var j = 0; j < goodWords.length; j++) {
+            for (var k = 0; k < stringX.length; k++) {
+              if (goodWords[j] == stringX[k]) {
+                goodBookTest.push([
+                  api[i].book_title,
+                  api[i].chapter_number
+                ])
+                        }
+                      }
+                    }
+                  }
+                  
+                  
+                  
+                  if(api[i].scripture_text.indexOf(str) > -1) {
+                    let stringX = api[i].scripture_text.split(" ");
+              for (var j = 0; j < badWords.length; j++) {
+                for (var k = 0; k < stringX.length; k++) {
+                  if (badWords[j] == stringX[k]) {
+                    badBookTest.push([
+                      api[i].book_title,
+                      api[i].chapter_number
+                    ])
+                            }
+                          }
+                        }
+                      }
+                      
+                      if(api[i].scripture_text.indexOf(str) > -1) {
+                        let stringX = api[i].scripture_text.split(" ");
+                  for (var j = 0; j < goodWords.length; j++) {
+                    for (var k = 0; k < stringX.length; k++) {
+                      if (goodWords[j] == stringX[k]) {
+                        goodVolumeTest.push([
+                          api[i].volume_title,
+                        ])
+                                }
+                              }
+                            }
+                          }
+                          
+                          if(api[i].scripture_text.indexOf(str) > -1) {
+                            let stringX = api[i].scripture_text.split(" ");
+                      for (var j = 0; j < badWords.length; j++) {
+                        for (var k = 0; k < stringX.length; k++) {
+                          if (badWords[j] == stringX[k]) {
+                            badVolumeTest.push([
+                              api[i].volume_title,
+                            ])
+                                    }
+                                  }
+                                }
+                              }
+                              
+                              if(api[i].scripture_text.indexOf(str) > -1) {
+                                let stringX = api[i].scripture_text.split(" ");
+                          for (var j = 0; j < frequentWords.length; j++) {
+                            for (var k = 0; k < stringX.length; k++) {
+                              if (frequentWords[j] == stringX[k]) {
+                                frequentWordsTest.push([
+                                  frequentWords[j]
+                                ])
+                                        }
+                                      }
+                                    }
+                                  }
+                
               
               if (api[i].scripture_text.indexOf(". ") > -1) {
                 for (var j = 0; j < topicFrequencyByBook.length; j++) {
@@ -4137,7 +4200,9 @@ document.getElementById('byu_Results').innerHTML = byuData;
               }
             
             }
-            console.log(countGoodWords);
+            
+        
+            
             
             Array.prototype.byCount= function(){
               var itm, a= [], L= this.length, o= {};
@@ -4169,16 +4234,28 @@ document.getElementById('byu_Results').innerHTML = byuData;
               });
             }
             
-          let goodBookTotal = goodCompareBook.byCount();
-          console.log(goodBookTotal);
-          let goodVolumeTotal = goodCompareVolume.byAlpha();
-          console.log(goodVolumeTotal);
-          console.log(countGoodWords);
-          let badBookTotal = badCompareBook.byCount();
-          console.log(badBookTotal);
-          let badVolumeTotal = badCompareVolume.byAlpha();
-          console.log(badVolumeTotal);
-          console.log(countBadWords);
+            let frequentWordCount = frequentWordsTest.byCount();
+            let goodBookTotal = goodBookTest.byCount();
+            let badBookTotal = badBookTest.byCount();
+            let goodVolumeTotal = goodVolumeTest.byAlpha();
+            let badVolumeTotal = badVolumeTest.byAlpha();
+            let totalwordMap = frequentWordCount[0] + frequentWordCount[1] + frequentWordCount[2] + frequentWordCount[3] + frequentWordCount[4] + frequentWordCount[5];
+          
+            if(goodVolumeTotal.length < 3) {
+              goodVolumeTotal.push({"item" : "No Data"}, {"frequency" : 0});
+            }
+          
+            if(goodVolumeTotal.length < 4) {
+            goodVolumeTotal.push({"item" : "No Data"}, {"frequency" : 0});
+          }
+          
+          if(badVolumeTotal.length < 3) {
+            badVolumeTotal.push({"item" : "No Data"}, {"frequency" : 0});
+          }
+        
+          if(badVolumeTotal.length < 4) {
+          badVolumeTotal.push({"item" : "No Data"}, {"frequency" : 0});
+        }
           
           
           let newTSUM = goodVolumeTotal[2].frequency + badVolumeTotal[2].frequency;
@@ -4198,9 +4275,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
           let DNCbadPercent = (Math.ceil((badVolumeTotal[1].frequency / dncSUM) * 100));
           let DNCgoodPercent = (Math.ceil((goodVolumeTotal[1].frequency / dncSUM) * 100));
           
-          let goodBadSum = countGoodWords + countBadWords;
-          let badPercent = (Math.ceil((countBadWords / goodBadSum) * 100));
-          let goodPercent = (Math.ceil((countGoodWords / goodBadSum) * 100));
+          
             
             
             let totalWords2B = totalBookWords.byCount();
@@ -4239,112 +4314,138 @@ document.getElementById('byu_Results').innerHTML = byuData;
       let totalSUM = sumTOT.reduce(add, 0);
             
           
-            let arrayToParse = [];
-            for (var i = 0; i < api.length; i++) {
-              let str = searchInput.value;
-            if (api[i].scripture_text.indexOf(str) > -1) {
-              for (var j = 0; j < api.length; j++) {
-                if (api[j].chapter_id == api[i].chapter_id) {
-                  arrayToParse.push(api[j].scripture_text);
-                }
-              }
-            }
-          }
-            let stringY = arrayToParse.toString();
-            let arrayM = stringY.split(" ");
+      
             
-            
-            
-              
-              let testArr = [];
-              
-              let goodCount = [];
-              
-              let badCount = [];
-              
-              for (var i = 0; i < arrayM.length; i++) {
-                
-              
-                  let frequentWords = [
-                     "voice", "offer", "soul", "glory", "blood", "wicked", "eyes", "ears", "answer", "babylon", "fire", "punish", "evil", "judah", "law of moses", "moses", "david", "jerusalem", "son", "king", "israel", "agony", "gathering", "covenant", "covenants", "Jesus", "Christ", "Savior", "Redeemer", "Lamb", "Sheep", "Shepherd", "abraham", "exalt", "exalted", "endure", "enduring", "endurance", "patience", "patient", "judge", "judgement", "sabbath", "holy", "talents", "sacrifice", "sacrifices", "thankful", "thanks", "gratitude", "grateful", "agency", "atonement", "baptize", "baptism", "book of mormon", "charity", "love", "charitable", "pure love", "created", "creation", "creator", "religion", "organization", "organized", "father", "heavenly father", "god", "god the father", "belief", "faith", "hope", "holy spirit", "holy ghost", "spirit", "promptings", "prompting", "comfort", "peace", "whispering", "still, small voice", "whisper", "comforter", "honest", "honesty", "integrity", "obedience", "follow", "submissiveness", "submissive", "submit", "humility", "humble", "priesthood", "prophet", "prophets", "repent", "repentance", "forgive", "forgiveness", "sacrament", "scriptures", "study", "search", "ponder", "pray", "word of god", "labor", "service", "work", "salvation", "responsibility", "fall of man", "fall of adam", "fall of mankind", "the fall", "word of wisdom", "law of health", "apostles", "holy men", "garden of eden", "lucifer", "godhead", "revelation", "testimony", "truth", "conversion", "devil", "hell", "torment", "eternal marriage", "marriage", "temple marriage", "fire and brimstone", "gnashing of teeth", "celestial kingdom", "heaven", "plan of salvation", "telestial", "immortality", "mortality", "mortal body", "eternal life", "three degrees of glory", "missionary work", "missionaries", "member missionary", "christmas", "christ's birth", "birth of christ", "birth of the savior", "nativity", "church history", "pioneer", "genealogy", "handcarts", "nauvoo", "premortal", "premortal existence", "council in heaven", "war in heaven", "preach the gospel", "easter", "resurrection", "resurrected", "empty tomb", "curcify", "crucified", "crucifixion", "widow", "mothers", "motherhood", "daughter", "daughters", "relief society", "daughters of god", "apostasy", "first vision", "restoration", "family", "family home evening", "family prayer", "virtue", "chaste", "chastity", "child", "children", "child of god", "primary", "temple work", "life after death", "death", "spiritual death", "physical death", "gifts of the spirit", "spiritual gifts", "gospel", "doctrine of Christ", "happy", "happiness", "plan of happiness", "miracle", "self-reliance", "second coming", "be prepared", "preparation", "power", "alone", "remember", "forget", "promise", "sad", "lord", "lack", "path", "name", "enemies", "enemy", "delight", "rejoice", "knowledge", "strength", "world", "perish", "understand", "refuge", "fruit", "man", "men", "see"
-                 ];
-                
-                 
-                 if (frequentWords.includes(arrayM[i])) {
-                   testArr.push(arrayM[i]);
-                 }
-                 
-                 
-               }
-               
-               
-              
-               
-               let wordMap = testArr.byCount();
-               
-               
-               
-               let sumWORDMAP = [];
-               for (var i = 0; i < wordMap.length; i++) {
-                 sumWORDMAP.push(wordMap[i].frequency);
-               }
-               
-               let totalwordMap = sumWORDMAP.reduce(add, 0);
                
                
                
                
                     
                
-                    let badWordCount = badCount.byCount();
+      if(badBookTotal.length < 4) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+      
+      if(badBookTotal.length < 5) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+
+      
+      if(badBookTotal.length < 6) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+
+      
+      if(badBookTotal.length < 6) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+      
+      if(badBookTotal.length < 7) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+      
+      if(badBookTotal.length < 8) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+      
+      if(badBookTotal.length < 9) {
+      badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+    }
+      
+    
+    if(badBookTotal.length < 10) {
+    badBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+  }
+  
+  if(goodBookTotal.length < 4) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+  
+  if(goodBookTotal.length < 5) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+
+  
+  if(goodBookTotal.length < 6) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+
+  
+  if(goodBookTotal.length < 6) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+  
+  if(goodBookTotal.length < 7) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+  
+  if(goodBookTotal.length < 8) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+  
+  if(goodBookTotal.length < 9) {
+  goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+  
+
+if(goodBookTotal.length < 10) {
+goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
+}
+    
                     
-                    let goodWordCount = goodCount.byCount();
                     
                     
-                    console.log(badBookTotal);
-                    console.log(goodBookTotal);
-                    
-                    
-                    
-                    if(wordMap.length < 4) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 4) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
                     
-                    if(wordMap.length < 5) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 5) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
 
                     
-                    if(wordMap.length < 6) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 6) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
 
                     
-                    if(wordMap.length < 6) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 6) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
                     
-                    if(wordMap.length < 7) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 7) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
                     
-                    if(wordMap.length < 8) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 8) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
                     
-                    if(wordMap.length < 9) {
-                    wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                    if(frequentWordCount.length < 9) {
+                    frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                   }
                     
                   
-                  if(wordMap.length < 10) {
-                  wordMap.push({"item" : "No Data"}, {"frequency" : 0});
+                  if(frequentWordCount.length < 10) {
+                  frequentWordCount.push({"item" : "No Data"}, {"frequency" : 0});
                 }
                   
                 
@@ -4405,35 +4506,26 @@ document.getElementById('byu_Results').innerHTML = byuData;
             <label class="dataSubHeader">When prophets spoke about ${str}, they often also addressed other topics.  For example, when talking about pride, prophets often speak of humility as well.  In the scriptures, these are the most common sub-topics for ${str}</label>
             
             <div class="otContainer">
-            <div class="dataSubLabel">1) ${wordMap[0].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[0].frequency / totalwordMap) * 100))}pt;">${wordMap[0].frequency}</div>
             
-            <div class="dataSubLabel">2) ${wordMap[1].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[1].frequency / totalwordMap) * 100))}pt;">${wordMap[1].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#749dd3;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:90%;">${frequentWordCount[0].item} - ${frequentWordCount[0].frequency}</div>
             
-            <div class="dataSubLabel">3) ${wordMap[2].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[2].frequency / totalwordMap) * 100))}pt;">${wordMap[2].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#6b92c6;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:85%;">${frequentWordCount[1].item} - ${frequentWordCount[1].frequency}</div>
             
-            <div class="dataSubLabel">4) ${wordMap[3].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[3].frequency / totalwordMap) * 100))}pt;">${wordMap[3].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#6186b7;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:80%;">${frequentWordCount[2].item} - ${frequentWordCount[2].frequency}</div>
             
-            <div class="dataSubLabel">5) ${wordMap[4].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[4].frequency / totalwordMap) * 100))}pt;">${wordMap[4].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#5779a5;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:75%;">${frequentWordCount[3].item} - ${frequentWordCount[3].frequency}</div>
             
-            <div class="dataSubLabel">6) ${wordMap[5].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[5].frequency / totalwordMap) * 100))}pt;">${wordMap[5].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#4f6e96;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:70%;">${frequentWordCount[4].item} - ${frequentWordCount[4].frequency}</div>
             
-            <div class="dataSubLabel">7) ${wordMap[6].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[6].frequency / totalwordMap) * 100))}pt;">${wordMap[6].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#466287;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:65%;">${frequentWordCount[5].item} - ${frequentWordCount[5].frequency}</div>
             
-            <div class="dataSubLabel">8) ${wordMap[7].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[7].frequency / totalwordMap) * 100))}pt;">${wordMap[7].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#405a7c;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:60%;">${frequentWordCount[6].item} - ${frequentWordCount[6].frequency}</div>
             
-            <div class="dataSubLabel">9) ${wordMap[8].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[8].frequency / totalwordMap) * 100))}pt;">${wordMap[8].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#395170;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:55%;">${frequentWordCount[7].item} - ${frequentWordCount[7].frequency}</div>
             
-            <div class="dataSubLabel">10) ${wordMap[9].item} is mentioned this many times:</div>
-            <div style="padding-left:50px;padding-right:8px;background-color:#143514;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${(Math.ceil((wordMap[9].frequency / totalwordMap) * 100))}pt;">${wordMap[9].frequency}</div>
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#2d415b;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:50%;">${frequentWordCount[8].item} - ${frequentWordCount[8].frequency}</div>
+            
+            <div style="padding-bottom:3px;padding-top:3px;margin-top:5px;margin-bottom:5px;padding-left:50px;padding-right:8px;background-color:#223247;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:45%;">${frequentWordCount[9].item} - ${frequentWordCount[9].frequency}</div>
             
             </div>
         
@@ -4443,13 +4535,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
             
             let goodBadPercentages = `
             <label class="dataSubHeader">Prophets often spoke of topics, and focused on either the good or the bad associated with it.  For example, when addressing repentance, the author might speak of the consequences of not repenting, or the rewards of true repentance.  In the chart below is a comparison of how often prophets spoke of the good vs. the bad of ${str}</label>
-            <div class="otContainer">
-            <div class="dataSubLabel">In the Standard Works</div>
-            <div class="dataSubLabel" style="color:green">Good:</div>
-            <div style="padding-left:50px;background-color:green;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${goodPercent}%;">${goodPercent}% </div>
-            <div class="dataSubLabel" style="color:red">Bad:</div>
-            <div style="padding-left:50px;background-color:red;color:white;display:flex;flex-direction: row;justify-content:flex-end;align-items:center;height:15px;width:${badPercent}%;">${badPercent}% </div>
-            </div>
+            
             
             <div class="otContainer2">
             <div class="dataSubLabel">Old Testament</div>
@@ -4761,42 +4847,31 @@ document.getElementById('byu_Results').innerHTML = byuData;
             document.getElementById('updatediv1').innerHTML = rawScript;
           
 
+          
+            
+            
 
-      let swData = `
-      <ol>
-      
-      <label> Statistics of All Standard Works</label>
-      <li>${percentSentance[0]}</li>
-      <li>${percentSentance[1]}</li>
-      <span><div style="background-color:orange;height:15px;width:${maxObj.percentage}%;"></div>${maxObj.percentage}%</span>
-      <span><div style="background-color:blue;height:15px;width:${maxObj2.percentage}%;"></div>${maxObj2.percentage}%</span>
-      
-      </ol>
-      `
-document.getElementById('swData').innerHTML = swData;
+              $(document).ready(function() {
+                $('#scriptures').click(function(){
+                  
+                  function renderScripture() {
 
-  $(document).ready(function() {
-    $('#scriptures').click(function(){
-              function renderapis() {
-            
-                return `${bookChapterArray.map(bookChapterArray =>
-              `
-              <p class="book_verse">${bookChapterArray.verse_title}</p>
-              <p class="verse_text">${bookChapterArray.scripture_text}</p>
-              </div>
-            
-              `
-              )}
-              `
-            
-              }
-            
-              let markup = `${renderapis()}`;
-              document.getElementById('updatediv1').innerHTML = markup;
-            })
-            })
-            
-            
+                    return `${verseArray.map(verseArray =>
+                  `<div class="main">
+                  <p class="book_verse">${verseArray.book_title}</p>
+                  <p class="verse_text">${verseArray.scripture_text}</p>
+                  </div>
+                  `
+                  )}
+                  `
+
+                  }
+
+                  let scriptureSearch = `${renderScripture()}`;
+                  
+                          document.getElementById('updatediv1').innerHTML = scriptureSearch;
+                        })
+                        })        
 
           })
         })
