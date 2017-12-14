@@ -4053,16 +4053,16 @@ document.getElementById('byu_Results').innerHTML = byuData;
             let scriptureObj = []
             
             for (var i = 0; i < api.length; i++) {
-              let str = scriptureInput.value;
-              let chp = chapterInput.value;
-              if (str == api[i].book_title) {
-                scriptureObj.push({
-                  "v" : api[i].volume_title,
-                  "b" : api[i].book_title,
-                  "c" : api[i].chapter_number,
-                  "v" : api[i].verse_number,
-                  "t" : api[i].scripture_text,
-                });
+              let str = searchInput.value;
+              if (api[i].scripture_text.indexOf(str) > -1) {
+                let obj = {
+                  "volume" : api[i].volume_title,
+                  "book" : api[i].book_title,
+                  "chapter" : api[i].chapter_number,
+                  "verse" : api[i].verse_number,
+                  "text" : api[i].scripture_text
+                }
+                scriptureObj.push(obj);
               }
             }
             
@@ -4830,12 +4830,14 @@ goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
         
         //==== END OBJECT FREQUENCY ===//
         
+      
+        
             function renderapis() {
 
-              return `${verseArray.map(verseArray =>
+              return `${scriptureObj.map(scriptureObj =>
             `<div class="main">
-            <p class="book_verse">${verseArray.verse_title}</p>
-            <p class="verse_text">${verseArray.scripture_text}</p>
+            <p class="book_verse">${scriptureObj.volume}, ${scriptureObj.book}, ${scriptureObj.chapter}:${scriptureObj.verse}</p>
+            <p class="verse_text">${scriptureObj.text}</p>
             </div>
             `
             )}
