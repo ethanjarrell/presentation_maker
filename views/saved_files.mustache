@@ -4050,11 +4050,25 @@ document.getElementById('byu_Results').innerHTML = byuData;
             let api = data;
           
               
-            let scriptureObj = []
+            let scriptureObj = [];
+            let scriptureObj2 = [];
             
             for (var i = 0; i < api.length; i++) {
               let str = searchInput.value;
-              if (api[i].scripture_text.indexOf(str) > -1) {
+              let str2 = scriptureInput.value;
+              let chp = chapterInput.value;
+              if (api[i].book_title == str2 && api[i].chapter_number == chp) {
+                let obj2 = {
+                  "volume" : api[i].volume_title,
+                  "book" : api[i].book_title,
+                  "chapter" : api[i].chapter_number,
+                  "verse" : api[i].verse_number,
+                  "text" : api[i].scripture_text
+                }
+                scriptureObj2.push(obj2);
+              }
+              
+              if (str !== "" && api[i].scripture_text.indexOf(str) > -1) {
                 let obj = {
                   "volume" : api[i].volume_title,
                   "book" : api[i].book_title,
@@ -4067,7 +4081,7 @@ document.getElementById('byu_Results').innerHTML = byuData;
             }
             
         
-            console.log(scriptureObj);
+            
             
             let topicFrequencyByBook = [];
             let frequentWordsTest = [];
@@ -4847,6 +4861,9 @@ goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
 
             let rawScript = `${renderapis()}`;
             document.getElementById('updatediv1').innerHTML = rawScript;
+            
+            
+            
           
 
           
@@ -4858,10 +4875,10 @@ goodBookTotal.push({"item" : "No Data"}, {"frequency" : 0});
                   
                   function renderScripture() {
 
-                    return `${verseArray.map(verseArray =>
+                    return `${scriptureObj2.map(scriptureObj2 =>
                   `<div class="main">
-                  <p class="book_verse">${verseArray.book_title}</p>
-                  <p class="verse_text">${verseArray.scripture_text}</p>
+                  <p class="book_verse">${scriptureObj2.volume}, ${scriptureObj2.book}, ${scriptureObj2.chapter}:${scriptureObj2.verse}</p>
+                  <p class="verse_text">${scriptureObj2.text}</p>
                   </div>
                   `
                   )}

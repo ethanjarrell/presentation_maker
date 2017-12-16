@@ -4,13 +4,339 @@
 <head>
   <meta charset="utf-8">
   <title>The Talk Maker</title>
-  <link rel="stylesheet" href="/mytalks.css">
+  <link rel="stylesheet" href="/home.css">
   <link href="https://fonts.googleapis.com/css?family=Volkhov" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
+  <script>
+    $(document).ready(function() {
+      console.log("talking");
+      let playGame = document.getElementById('playGame');
+      let playAgain = document.getElementById('playAgain');
+      let modal = document.getElementById('myModal');
+      playGame.onclick = searchAPI;
+      playAgain.onclick = searchAPI;
+      
+      
+
+      function searchAPI() {
+        modal.style.display = "none";
+        playGame.style.display = "none";
+
+        fetch('https://api.mlab.com/api/1/databases/presentation-maker/collections/ldsScrtiptures?&l=41000&apiKey=_ehmfqV-bs1PDWki2WNFVMsGmXGQuk77').then(function(response) {
+          if (response.status != 200) {
+            window.alert("Sorry, nothing matches those search terms.  Try another search, or use the panel on the left.");
+            return;
+          }
+          
+
+          response.json().then(function(data) {
+            
+            let api = data;
+            
+            
+            
+            let answerObj = [];
+            let Wordcount = 0;
+            for (var i = 0; i < api.length; i++) {
+              let words = ["love", "Jesus", "Nephi", "Alma", "atonement", "glory", "tribulation", "affliction", "work", "faith", "labor", "war", "sacrifice", "man", "Adam", "Judah", "Jerusalem", "Israel", "Moses", "suffer", "peace", "happiness", "joy"];
+              let str = words[Math.floor(Math.random()*words.length)];
+              if (api[i].scripture_text.indexOf(str) > -1) {
+                Wordcount++;
+                let verseObj = {
+                  "btnID" : api[i].verse_id,
+                  "book" : api[i].book_title,
+                  "chapter" : api[i].chapter_number,
+                  "verse" : api[i].verse_number,
+                  "text" : api[i].scripture_text,
+                  "word" : str,
+                }
+                answerObj.push(verseObj);
+              }
+            }
+            
+            let rightAnswer = answerObj[Math.floor(Math.random()*answerObj.length)];
+            
+            let wrongAnswer1 = answerObj[Math.floor(Math.random()*answerObj.length)];
+            
+            let wrongAnswer2 = answerObj[Math.floor(Math.random()*answerObj.length)];
+            
+            let wrongAnswer3 = answerObj[Math.floor(Math.random()*answerObj.length)];
+            
+            let answerArray = [];
+            
+            answerArray.push(rightAnswer);
+            answerArray.push(wrongAnswer1);
+            answerArray.push(wrongAnswer2);
+            answerArray.push(wrongAnswer3);
+            
+            console.log(answerArray);
+            
+            
+            
+            function shuffle(array) {
+              var copy = [], n = array.length, i;
+
+              // While there remain elements to shuffle…
+              while (n) {
+
+                // Pick a remaining element…
+                i = Math.floor(Math.random() * array.length);
+
+                // If not already shuffled, move it to the new array.
+                if (i in array) {
+                  copy.push(array[i]);
+                  delete array[i];
+                  n--;
+                }
+              }
+
+              return copy;
+            }
+            let arr = shuffle(answerArray);
+            console.log(arr);
+            
+            let gameQuestion = `
+            <h3 class="gamequestion1">Where is the following verse located?</h3>
+            <div class="gameVerse">${rightAnswer.text}</div>
+            `;
+            
+            document.getElementById('question').innerHTML = gameQuestion;
+            
+            let button1 = document.createElement('button1');
+            let button2 = document.createElement('button2');
+            let button3 = document.createElement('button3');
+            let button4 = document.createElement('button4');
+
+              button1.id = 'btn1';
+              button2.id = 'btn2';
+              button3.id = 'btn3';
+              button4.id = 'btn4';
+              document.body.appendChild(button1);
+              document.body.appendChild(button2);
+              document.body.appendChild(button3);
+              document.body.appendChild(button4);
+               document.getElementById('gameChoices').appendChild(button1);
+               document.getElementById('gameChoices').appendChild(button2);
+               document.getElementById('gameChoices').appendChild(button3);
+               document.getElementById('gameChoices').appendChild(button4);
+              button1.className = 'gameButton';
+              button2.className = 'gameButton';
+              button3.className = 'gameButton';
+              button4.className = 'gameButton';
+              
+              button1.innerHTML = arr[0].book+" "+arr[0].chapter+":"+arr[0].verse;
+              button2.innerHTML = arr[1].book+" "+arr[1].chapter+":"+arr[1].verse;
+              button3.innerHTML = arr[2].book+" "+arr[2].chapter+":"+arr[2].verse;
+              button4.innerHTML = arr[3].book+" "+arr[3].chapter+":"+arr[3].verse;
+              
+              
+              button1.draggable = "true";
+              button1.ondragstart = "drag(event)";
+              button2.draggable = "true";
+              button2.ondragstart = "drag(event)";
+              button3.draggable = "true";
+              button3.ondragstart = "drag(event)";
+              button4.draggable = "true";
+              button4.ondragstart = "drag(event)";
+              
+              button1.value = arr[0].btnID;
+              button2.value = arr[1].btnID;
+              button3.value = arr[2].btnID;
+              button4.value = arr[3].btnID;
+              
+              button1.onclick = checkVal1;
+              button2.onclick = checkVal2;
+              button3.onclick = checkVal3;
+              button4.onclick = checkVal4;
+              
+              function diff (a, b) 
+              { return Math.abs(a - b); }
+              let currentScore = document.getElementById('score').innerHTML;
+              let totalScore = parseInt(currentScore);
+              
+            
+            let response = "";
+            
+            let questVal = document.getElementById('questionsLeft').innerHTML;
+            let qVal = parseInt(questVal);
+            let answerVal = document.getElementById('answeredQuestions').innerHTML;
+            let aVal = parseInt(answerVal);
+            console.log(qVal);
+            console.log(aVal);
+            
+              function checkVal1 () {
+                
+                let score = diff(rightAnswer.btnID, button1.value);
+                if (button1.value == rightAnswer.btnID && qVal < 10) {
+                  response = `You got it right!  Nice Job!`;
+                  document.getElementById('modalContent').innerHTML = response;
+                  let newval1 = qVal + 1;
+                  document.getElementById('answeredQuestions').innerHTML = newval1;
+                  document.getElementById('questionsLeft').innerHTML = newval1;
+                  modal.style.display = "block";
+                } else if (button1.value !== rightAnswer.btnID && qVal < 10) {
+                  response = `"Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses."`;
+                  document.getElementById('score').innerHTML = score + totalScore;
+                  let newval1 = qVal + 1;
+                  document.getElementById('answeredQuestions').innerHTML = newval1;
+                  document.getElementById('questionsLeft').innerHTML = newval1;
+                  console.log(score);
+                  console.log(totalScore);
+                  console.log(response);
+                  modal.style.display = "block";
+                  document.getElementById('modalContent').innerHTML = response;
+                }
+                if (qVal && aVal >= 9) {
+                  response = `Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses.  Congratulations!  Your final score is ${totalScore}! Submit to high scores?`;  
+                  document.getElementById('modalContent').innerHTML = response;
+                }
+                
+                $("#btn1").remove();
+                $("#btn2").remove();
+                $("#btn3").remove();
+                $("#btn4").remove();
+                }
+                
+                function checkVal2 () {
+                  
+                  let score = diff(rightAnswer.btnID, button2.value);
+                  if (button2.value == rightAnswer.btnID && qVal < 10) {
+                    response = `You got it right!  Nice Job!`;
+                    document.getElementById('modalContent').innerHTML = response;
+                    let newval1 = qVal + 1;
+                    document.getElementById('answeredQuestions').innerHTML = newval1;
+                    document.getElementById('questionsLeft').innerHTML = newval1;
+                    modal.style.display = "block";
+                  }  else if (button2.value !== rightAnswer.btnID && qVal < 10) {
+                    response = `"Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses."`;
+                    document.getElementById('score').innerHTML = score + totalScore;
+                    let newval1 = qVal + 1;
+                    document.getElementById('answeredQuestions').innerHTML = newval1;
+                    document.getElementById('questionsLeft').innerHTML = newval1;
+                    console.log(score);
+                    console.log(totalScore);
+                    console.log(response);
+                    modal.style.display = "block";
+                    document.getElementById('modalContent').innerHTML = response;
+                  } 
+                  if (qVal && aVal >= 9) {
+                    response = `Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses.  Congratulations!  Your final score is ${totalScore}! Submit to high scores?`;  
+                    document.getElementById('modalContent').innerHTML = response;
+                  }
+                  
+                  $("#btn1").remove();
+                  $("#btn2").remove();
+                  $("#btn3").remove();
+                  $("#btn4").remove();
+                  }
+                  
+                  function checkVal3 () {
+                    
+                    let score = diff(rightAnswer.btnID, button3.value);
+                    if (button3.value == rightAnswer.btnID && qVal < 10) {
+                      response = `You got it right!  Nice Job!`;
+                      document.getElementById('modalContent').innerHTML = response;
+                      let newval1 = qVal + 1;
+                      document.getElementById('answeredQuestions').innerHTML = newval1;
+                      document.getElementById('questionsLeft').innerHTML = newval1;
+                      modal.style.display = "block";
+                    }  else if (button3.value !== rightAnswer.btnID && qVal < 10) {
+                      response = `"Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses."`;
+                      document.getElementById('score').innerHTML = score + totalScore;
+                      let newval1 = qVal + 1;
+                      document.getElementById('answeredQuestions').innerHTML = newval1;
+                      document.getElementById('questionsLeft').innerHTML = newval1;
+                      console.log(score);
+                      console.log(totalScore);
+                      console.log(response);
+                      modal.style.display = "block";
+                      document.getElementById('modalContent').innerHTML = response;
+                    } 
+                    if (qVal && aVal >= 9) {
+                      response = `Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses.  Congratulations!  Your final score is ${totalScore}! Submit to high scores?`;  
+                      document.getElementById('modalContent').innerHTML = response;
+                    }
+                    
+                    $("#btn1").remove();
+                    $("#btn2").remove();
+                    $("#btn3").remove();
+                    $("#btn4").remove();
+                    }
+                    
+                    function checkVal4 () {
+                      
+                      let score = diff(rightAnswer.btnID, button4.value);
+                      if (button4.value == rightAnswer.btnID && qVal < 10) {
+                        response = `You got it right!  Nice Job!`;  
+                        document.getElementById('modalContent').innerHTML = response;
+                        let newval1 = qVal + 1;
+                        document.getElementById('answeredQuestions').innerHTML = newval1;
+                        document.getElementById('questionsLeft').innerHTML = newval1;
+                        modal.style.display = "block";
+                      }  else if (button4.value !== rightAnswer.btnID && qVal < 10) {
+                        response = `"Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses."`;  
+                        document.getElementById('score').innerHTML = score + totalScore;
+                        let newval1 = qVal + 1;
+                        document.getElementById('answeredQuestions').innerHTML = newval1;
+                        document.getElementById('questionsLeft').innerHTML = newval1;
+                        console.log(score);
+                        console.log(totalScore);
+                        console.log(response);
+                        modal.style.display = "block";
+                        document.getElementById('modalContent').innerHTML = response;
+                      } 
+                      if (qVal && aVal >= 9) {
+                        response = `Sorry! The correct answer was ${rightAnswer.book}, ${rightAnswer.chapter} :${rightAnswer.verse} You were off by ${score} verses.  Congratulations!  Your final score is ${totalScore}! Submit to high scores?`;  
+                        document.getElementById('modalContent').innerHTML = response;
+                      }
+                      
+                      $("#btn1").remove();
+                      $("#btn2").remove();
+                      $("#btn3").remove();
+                      $("#btn4").remove();
+                      }
+                    
+                      
+  
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+            
+            
+            
+            
+          })
+      })
+    }
+  })
+      
+    
+  </script>
+  <script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
 </head>
 
 <body>
-  <div class="bodywrapper8">
+  <div class="bodywrapper14">
   <div class="navbar">
     <a class="link2" href="/mytalks">home</a>
     <a class="link" href="/createp1">new</a>
@@ -22,71 +348,47 @@
   </div>
 
 
-<div class="body">
-    <div class="sidebar">
-      <div class="sidebarbutton">
-        <a href="/talkgenerator">The Talk Generator (it's very beta)</a>
+<div class="gameContainer">
+  <div class="gameHeader">
+    <img src="/golf.png"></img>
+    <div class="scoreColumn">
+    <div class="scoreheader">
+      <h3 class="displayFont">Score:<h3>
+        <h3 class="displayFont" id="score">0</h3>
       </div>
-      <div class="sidebarbutton">
-        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-11-making-a-plan-to-improve-your-teaching?lang=eng">Making a Plan to Improve Your Teaching</a>
-      </div>
-      <div class="sidebarbutton">
-        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-2-understanding-those-you-teach?lang=eng">Understanding Those You Teach</a>
-      </div>
-      <div class="sidebarbutton">
-        <a target="_blank" href="https://www.lds.org/manual/teaching-no-greater-call-a-resource-guide-for-gospel-teaching/lesson-12-teaching-from-the-scriptures?lang=eng">Teaching From The Scriptures</a>
-      </div>
-      <div class="sidebarbutton">
-        <a target="_blank" href="https://www.lds.org/manual/teaching-in-the-saviors-way/part-2-teach-by-the-spirit/teach-by-the-spirit?lang=eng">Teach By The Spirit</a>
-      </div>
-      <div class="sidebarbutton">
-        <a target="_blank" href="https://www.lds.org/manual/gospel-teaching-and-learning-a-handbook-for-teachers-and-leaders-in-seminaries-and-institutes-of-religion/preparing-to-teach?lang=eng&query=teachers">Preparing to Teach</a>
-      </div>
-    </div>
-    <div class="mainbar">
-      <div class="mainbarheader"><div>
-        <a class="watchDemo" target="_blank" href="https://www.youtube.com/watch?v=jZnYNI-L9eM&feature=youtu.be">Watch Demo</a>
-      </div></div>
-      {{#splashinfos.3}}
-        <a href="{{link_url}}">
-      <div class="mainbarcontent">
-        <img class="imglarge" src="{{image_url}}" />
-          <div class="mainbarcontenttext">
-            <h1>{{title_text}}</h1>
-          <h4>{{blurb_text}}</h4>
+      <div class="scoreheader">
+        <h3 class="displayFont">Hole Number:<h3>
+          <h3 class="displayFont" id="answeredQuestions">1</h3>
         </div>
-      </div>
-        </a>
-      {{/splashinfos.3}}
-      <div class="mainbarfooter">
-        {{#splashinfos.0}}
-        <a target="_blank" href="{{link_url}}" class="linkContent">
-
-            <h2>{{title_text}}</h2>
-
-            <img class="imgsmall" src="{{image_url}}" />
-          {{/splashinfos.0}}
-        </a>
-          {{#splashinfos.1}}
-        <a target="_blank" href="{{link_url}}" class="linkContent">
-
-            <h2>{{title_text}}</h2>
-
-            <img class="imgsmall" src="{{image_url}}" />
-
-        </a>
-        {{/splashinfos.1}}
-        <a target="_blank" href="{{link_url}}" class="linkContent">
-          {{#splashinfos.2}}
-            <h2>{{title_text}}</h2>
-
-            <img class="imgsmall" src="{{image_url}}" />
-          {{/splashinfos.2}}
-        </a>
-      </div>
     </div>
-</div>
   </div>
+  <button class="displayFont2" id="playGame">Play Game</button>
+  <div id="question" class="gameQuestion">
+  </div>
+  <div id="gameChoices" class="gameChoices">
+    
+  </div>
+  <div id="myModal" class="modal">
+    
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modalContent"></p>
+    <button id="playAgain">
+    <p class="displayFont">continue to: hole</p><div class="displayFont" id="questionsLeft">1</div>
+  </button>
+    
+  </div>
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
 
 
 </body>
